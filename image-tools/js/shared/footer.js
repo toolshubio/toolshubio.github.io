@@ -1,139 +1,79 @@
 // ===================================
-// FOOTER COMPONENT
-// Site footer with tool links and info
+// TOOLSHUB FOOTER - New Design (Sample 1)
+// Dark premium footer, 4 columns
 // ===================================
 
-class Footer {
-  constructor() {
-    this.init();
+(function () {
+  'use strict';
+
+  function getPathPrefix() {
+    var path = window.location.pathname || '';
+    var clean = path.replace(/^\/|\/$/g, '');
+    var segs = clean ? clean.split('/') : [];
+    if (segs.length && segs[segs.length - 1].indexOf('.') !== -1) segs.pop();
+    if (!segs.length) return './';
+    return new Array(segs.length + 1).join('../');
   }
 
-  init() {
-    this.render();
+  function fixPath(p, prefix) {
+    if (/^(https?:|#|mailto:)/.test(p)) return p;
+    if (p === '/') return prefix + 'index.html';
+    return prefix + p.replace(/^\//, '');
   }
 
-  render() {
-    // Determine path prefix
-    const getPathPrefix = () => {
-      const path = window.location.pathname;
-      const cleanPath = path.replace(/^\/|\/$/g, '');
-      const segments = cleanPath ? cleanPath.split('/') : [];
-      if (segments.length > 0 && segments[segments.length - 1].includes('.')) {
-        segments.pop();
-      }
-      if (segments.length === 0) return './';
-      return '../'.repeat(segments.length);
-    };
+  function init() {
+    var placeholder = document.getElementById('footer-placeholder');
+    if (!placeholder) return;
+    var prefix = getPathPrefix();
+    var F = function (p) { return fixPath(p, prefix); };
 
-    const prefix = getPathPrefix();
+    var popular = [
+      ['image-tools/compression/image-compressor.html', 'Image Compressor'],
+      ['pdf-tools/merge-pdf.html', 'Merge PDF'],
+      ['seo-tools/word-counter.html', 'Word Counter'],
+      ['code-format-tools/formatters/json-formatter.html', 'JSON Formatter'],
+      ['image-tools/conversion/heic-jpg-converter.html', 'HEIC to JPG'],
+      ['code-format-tools/encoders/base64-encoder-decoder.html', 'Base64 Encoder']
+    ].map(function (t) { return '<li><a href="' + F(t[0]) + '">' + t[1] + '</a></li>'; }).join('');
 
-    const fixPath = (p) => {
-      if (p.startsWith('http') || p.startsWith('#')) return p;
-      if (p === '/') return prefix + 'index.html';
-      const cleanP = p.replace(/^\//, '');
-      return prefix + cleanP;
-    };
+    var categories = [
+      ['image-tools/index.html', 'Image Tools'],
+      ['pdf-tools/index.html', 'PDF Tools'],
+      ['text-tools/index.html', 'Text & Writing'],
+      ['seo-tools/index.html', 'SEO Tools'],
+      ['calculator-tools/index.html', 'Calculators'],
+      ['/', 'View All 203 Tools']
+    ].map(function (t) { return '<li><a href="' + F(t[0]) + '">' + t[1] + '</a></li>'; }).join('');
 
-    const footerHTML = `
-      <!-- ========== FOOTER ========== -->
-      <footer class="footer">
-        <div class="container">
-          <div class="footer-brand">
-            <div class="footer-logo">TOOLSHUB.COM</div>
-            <div class="footer-tagline">Your Ultimate Free Online Tools Suite</div>
-            <div class="footer-meta">178+ Tools • 100% Free • No Registration Required</div>
-          </div>
-
-          <div class="footer-content">
-            <div class="footer-column">
-              <h4 class="footer-column-title">Quick Links</h4>
-              <div class="footer-links">
-                <a href="${fixPath('/')}" class="footer-link">Home</a>
-                <a href="${fixPath('/all-tools.html')}" class="footer-link">All Tools</a>
-                <a href="${fixPath('/categories.html')}" class="footer-link">Categories</a>
-                <a href="${fixPath('/features.html')}" class="footer-link">Features</a>
-                <a href="${fixPath('/blog.html')}" class="footer-link">Blog</a>
-                <a href="${fixPath('/contact-us.html')}" class="footer-link">Contact Us</a>
-                <a href="${fixPath('/sitemap.xml')}" class="footer-link">Sitemap</a>
-              </div>
-            </div>
-
-            <div class="footer-column">
-              <h4 class="footer-column-title">Tool Categories</h4>
-              <div class="footer-links">
-                <a href="${fixPath('image-tools/index.html')}" class="footer-link">Image Tools</a>
-                <a href="${fixPath('seo-tools/index.html')}" class="footer-link">SEO Tools</a>
-                <a href="${fixPath('doc-tools/index.html')}" class="footer-link">Documents</a>
-                <a href="${fixPath('pdf-tools/index.html')}" class="footer-link">PDF Tools</a>
-                <a href="${fixPath('text-tools/index.html')}" class="footer-link">Text & Writing</a>
-                <a href="${fixPath('calculator-tools/index.html')}" class="footer-link">Calculators</a>
-                <a href="${fixPath('binary-tools/index.html')}" class="footer-link">Binary Tools</a>
-                <a href="${fixPath('code-format-tools/index.html')}" class="footer-link">Code & Formatters</a>
-                <a href="${fixPath('other-tools/index.html')}" class="footer-link">Other Tools</a>
-              </div>
-            </div>
-
-            <div class="footer-column">
-              <h4 class="footer-column-title">Company</h4>
-              <div class="footer-links">
-                <a href="${fixPath('/about-us.html')}" class="footer-link">About Us</a>
-                <a href="${fixPath('/how-it-works.html')}" class="footer-link">How It Works</a>
-                <a href="${fixPath('/privacy-policy.html')}" class="footer-link">Privacy Policy</a>
-                <a href="${fixPath('/terms-of-service.html')}" class="footer-link">Terms of Service</a>
-                <a href="${fixPath('/dmca.html')}" class="footer-link">DMCA</a>
-                <a href="${fixPath('/cookie-policy.html')}" class="footer-link">Cookie Policy</a>
-              </div>
-            </div>
-
-            <div class="footer-column">
-              <h4 class="footer-column-title">Connect With Us</h4>
-              <div class="social-links">
-                <a href="#" class="social-link">📘 Facebook</a>
-                <a href="#" class="social-link">🐦 Twitter</a>
-                <a href="#" class="social-link">💼 LinkedIn</a>
-                <a href="#" class="social-link">🐙 GitHub</a>
-                <a href="#" class="social-link">📺 YouTube</a>
-                <a href="#" class="social-link">💬 Discord</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="footer-bottom">
-            <div class="footer-languages">
-              <a href="#" class="language-link active">English</a>
-              <a href="#" class="language-link">Español</a>
-              <a href="#" class="language-link">Français</a>
-              <a href="#" class="language-link">Deutsch</a>
-              <a href="#" class="language-link">中文</a>
-              <a href="#" class="language-link">العربية</a>
-            </div>
-
-            <div class="footer-copyright">
-              Copyright © ${new Date().getFullYear()} Toolshub.com. All rights reserved.<br>
-              All trademarks and logos are the property of their respective owners.<br>
-              All tools are free for personal and commercial use.
-            </div>
-
-            <div class="footer-made-with">
-              Made with <span class="footer-heart">❤️</span> for the global community • 🇵🇰 Built in Pakistan
-            </div>
-          </div>
-        </div>
-      </footer>`;
-
-    // Inject into placeholder or body
-    const placeholder = document.getElementById('footer-placeholder');
-    if (placeholder) {
-      placeholder.innerHTML = footerHTML;
-    } else {
-      document.body.insertAdjacentHTML('beforeend', footerHTML);
-    }
+    placeholder.innerHTML =
+      '<footer class="th-footer">' +
+      '<div class="th-footer-top">' +
+      '<div class="th-f-brand">' +
+      '<a class="th-logo" href="' + F('/') + '"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>' +
+      '<p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>' +
+      '<div class="th-social">' +
+      '<a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>' +
+      '<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>' +
+      '<a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>' +
+      '<a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>' +
+      '<a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>' +
+      '</div></div>' +
+      '<div class="th-f-col"><h4>Popular Tools</h4><ul>' + popular + '</ul></div>' +
+      '<div class="th-f-col"><h4>Categories</h4><ul>' + categories + '</ul></div>' +
+      '<div class="th-f-col th-newsletter"><h4>Stay Updated</h4>' +
+      '<p>Get notified when we launch new tools. No spam, ever.</p>' +
+      '<form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>' +
+      '<div class="th-f-stats"><div><b>203</b><span>Free Tools</span></div><div><b>10</b><span>Categories</span></div><div><b>100%</b><span>Free Forever</span></div></div>' +
+      '</div></div>' +
+      '<div class="th-footer-bottom"><div class="th-footer-bottom-inner">' +
+      '<span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>' +
+      '<div class="th-f-legal"><a href="' + F('about-us.html') + '">About</a><a href="' + F('contact-us.html') + '">Contact</a><a href="' + F('sitemap.xml') + '">Sitemap</a></div>' +
+      '</div></div></footer>';
   }
-}
 
-// Initialize footer when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => new Footer());
-} else {
-  new Footer();
-}
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

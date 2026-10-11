@@ -1,293 +1,114 @@
 // ===================================
-// HEADER COMPONENT
-// Dynamic header with navigation and theme toggle
+// TOOLSHUB HEADER - New Design (Sample 1)
+// Sticky glass header with dropdown nav
 // ===================================
 
-class Header {
-  constructor() {
-    this.header = null;
-    this.mobileMenuOpen = false;
-    this.init();
+(function () {
+  'use strict';
+
+  function getPathPrefix() {
+    var path = window.location.pathname || '';
+    var clean = path.replace(/^\/|\/$/g, '');
+    var segs = clean ? clean.split('/') : [];
+    if (segs.length && segs[segs.length - 1].indexOf('.') !== -1) segs.pop();
+    if (!segs.length) return './';
+    return new Array(segs.length + 1).join('../');
   }
 
-  init() {
-    this.injectDependencies();
-    this.render();
-    this.attachEventListeners();
+  function fixPath(p, prefix) {
+    if (/^(https?:|#|mailto:)/.test(p)) return p;
+    if (p === '/') return prefix + 'index.html';
+    return prefix + p.replace(/^\//, '');
   }
 
-  injectDependencies() {
-    // Inject FontAwesome if not present
+  function init() {
+    // Ensure Font Awesome (category pages don't link it)
     if (!document.querySelector('link[href*="font-awesome"]')) {
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css';
-      document.head.appendChild(link);
+      var fa = document.createElement('link');
+      fa.rel = 'stylesheet';
+      fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css';
+      document.head.appendChild(fa);
     }
+    var placeholder = document.getElementById('header-placeholder');
+    if (!placeholder) return;
+    var prefix = getPathPrefix();
 
-    // Determine path prefix for CSS
-    const prefix = this.getPathPrefix();
-
-    // Inject Tools Data if not present (Required for search)
-    if (typeof TOOLS_DATA === 'undefined') {
-      const script = document.createElement('script');
-      script.src = prefix + 'scripts/tools-data.js';
-      document.head.appendChild(script);
-    }
-
-    // Inject Core CSS if not present
-    const cssFiles = [
-      'css/global.css',
-      'css/components.css',
-      'css/responsive.css'
+    var cats = [
+      ['image-tools/index.html', 'fa-regular fa-image', 'Image Tools'],
+      ['pdf-tools/index.html', 'fa-regular fa-file-pdf', 'PDF Tools'],
+      ['text-tools/index.html', 'fa-solid fa-font', 'Text & Writing'],
+      ['seo-tools/index.html', 'fa-solid fa-magnifying-glass-chart', 'SEO Tools'],
+      ['calculator-tools/index.html', 'fa-solid fa-calculator', 'Calculators'],
+      ['binary-tools/index.html', 'fa-solid fa-code', 'Binary Tools'],
+      ['code-format-tools/index.html', 'fa-solid fa-file-code', 'Code & Formatters'],
+      ['doc-tools/index.html', 'fa-regular fa-file-lines', 'Documents'],
+      ['other-tools/index.html', 'fa-solid fa-shapes', 'Other Tools']
     ];
+    var dropLinks = cats.map(function (c) {
+      return '<a href="' + fixPath(c[0], prefix) + '"><i class="' + c[1] + '"></i>' + c[2] + '</a>';
+    }).join('');
+    var mobLinks = cats.map(function (c) {
+      return '<a href="' + fixPath(c[0], prefix) + '">' + c[2] + '</a>';
+    }).join('') + '<a href="' + fixPath('about-us.html', prefix) + '">About Us</a>' +
+      '<a href="' + fixPath('contact-us.html', prefix) + '">Contact Us</a>';
 
-    cssFiles.forEach(file => {
-      const href = prefix + file;
-      const exists = Array.from(document.querySelectorAll('link[rel="stylesheet"]')).some(l => l.getAttribute('href') && l.getAttribute('href').includes(file));
-      if (!exists) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = href;
-        document.head.appendChild(link);
-      }
-    });
+    placeholder.innerHTML =
+      '<header class="th-header">' +
+      '<div class="th-header-inner">' +
+      '<a class="th-logo" href="' + fixPath('/', prefix) + '"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>' +
+      '<nav class="th-nav">' +
+      '<div class="th-dropdown"><button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>' +
+      '<div class="th-dropdown-menu">' + dropLinks + '</div></div>' +
+      '<a class="th-nav-link" href="' + fixPath('image-tools/index.html', prefix) + '">Image Tools</a>' +
+      '<a class="th-nav-link" href="' + fixPath('pdf-tools/index.html', prefix) + '">PDF Tools</a>' +
+      '<a class="th-nav-link" href="' + fixPath('seo-tools/index.html', prefix) + '">SEO Tools</a>' +
+      '<a class="th-nav-link" href="' + fixPath('about-us.html', prefix) + '">About</a>' +
+      '</nav><div class="th-spacer"></div>' +
+      '<div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" placeholder="Search 203 tools..." aria-label="Search tools"></div>' +
+      '<button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>' +
+      '<a class="th-cta" href="' + fixPath('/', prefix) + '#features">Explore Tools</a>' +
+      '<button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>' +
+      '</div><div class="th-mobile-menu" data-th-menu>' + mobLinks + '</div></header>';
+
+    bindInteractions(placeholder, prefix);
   }
 
-  getPathPrefix() {
-    const path = window.location.pathname;
-    
-    // Count how many directories deep we are
-    // Example: /image-tools/conversion/png-jpg-converter.html has 2 levels above root (image-tools, conversion)
-    // But we need to handle both / and /index.html
-    const cleanPath = path.replace(/^\/|\/$/g, '');
-    const segments = cleanPath ? cleanPath.split('/') : [];
-    
-    // If we have index.html at the end, it doesn't count as a directory level
-    if (segments.length > 0 && segments[segments.length - 1].includes('.')) {
-      segments.pop();
+  function bindInteractions(root, prefix) {
+    var menuBtn = root.querySelector('[data-th-menu-btn]');
+    var menu = root.querySelector('[data-th-menu]');
+    if (menuBtn && menu) menuBtn.addEventListener('click', function () { menu.classList.toggle('open'); });
+
+    var themeBtn = root.querySelector('[data-th-theme]');
+    function paintIcon() {
+      var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+      themeBtn.innerHTML = dark ? '<i class="fa-regular fa-sun"></i>' : '<i class="fa-regular fa-moon"></i>';
     }
-
-    if (segments.length === 0) return './';
-    return '../'.repeat(segments.length);
-  }
-
-  fixPath(p, prefix) {
-    if (p.startsWith('http') || p.startsWith('#')) return p;
-    
-    if (p === '/') {
-       return prefix + 'index.html';
-    }
-    
-    const cleanP = p.replace(/^\//, '');
-    return prefix + cleanP;
-  }
-
-  render() {
-    // Check if we should hide mobile nav (for Calculator and Code tools as requested)
-    const path = window.location.pathname;
-    const hideMobileNav = path.includes('calculator-tools') || path.includes('code-format-tools');
-
-    // Determine path prefix
-    const prefix = this.getPathPrefix();
-    const fixPath = (p) => this.fixPath(p, prefix);
-
-    // Generate dynamic category dropdown content
-    const generateMegaMenu = () => {
-      if (typeof TOOLS_DATA === 'undefined') return '<div class="loading-tools">Loading Tools...</div>';
-
-      return Object.values(TOOLS_DATA).map(category => {
-        return `
-          <div class="dropdown-category ${category.id}">
-            <div class="dropdown-tools">
-              ${category.tools.slice(0, 10).map(tool => `
-                <a href="${fixPath(tool.url === '#' ? category.id + '/index.html' : tool.url)}" class="dropdown-tool">${tool.name}</a>
-              `).join('')}
-            </div>
-          </div>
-        `;
-      }).join('');
-    };
-
-    const headerHTML = `
-      <!-- ========== HEADER ========== -->
-      <header class="header">
-        <div class="header-container">
-          <a href="${fixPath('/')}" class="logo">
-            <span class="logo-icon">🛠️</span>
-            <span class="logo-text">ToolsHub</span>
-          </a>
-
-          <nav class="header-nav">
-            <a href="${fixPath('/')}" class="nav-link">Home</a>
-            <a href="${fixPath('/')}#features" class="nav-link">Features</a>
-            <a href="${fixPath('/')}#pricing" class="nav-link">Pricing</a>
-            <a href="${prefix}about-us.html" class="nav-link">About Us</a>
-            <a href="${prefix}contact-us.html" class="nav-link">Contact Us</a>
-          </nav>
-
-          <div class="header-search-container">
-            <div class="header-search-control">
-              <i class="fas fa-search search-icon"></i>
-              <input type="text" placeholder="Search tools..." id="inline-search-input" autocomplete="off">
-            </div>
-            <div class="search-autocomplete" id="header-search-results"></div>
-          </div>
-
-          <div class="header-cta-container">
-            <button class="btn btn-primary cta-btn" onclick="window.location.href='${fixPath('/')}#get-started'">Get Started</button>
-          </div>
-
-          <div class="utility-icons">
-            <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-moon"></i>
-            </button>
-          </div>
-
-          ${!hideMobileNav ? `
-          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          ` : ''}
-        </div>
-      </header>
-
-      <!-- MEGA DROPDOWN REMOVED -->
-
-      <!-- ========== MOBILE NAVIGATION ========== -->
-      ${!hideMobileNav ? `
-      <div class="mobile-nav" id="mobile-nav">
-         <div class="mobile-nav-content">
-             <a href="${fixPath('/')}" class="mobile-link">Home</a>
-             <a href="${fixPath('#features')}" class="mobile-link">Features</a>
-             <a href="${fixPath('#pricing')}" class="mobile-link">Pricing</a>
-             <a href="${fixPath('about-us.html')}" class="mobile-link">About Us</a>
-             <a href="${fixPath('contact-us.html')}" class="mobile-link">Contact Us</a>
-             <button class="btn btn-primary mobile-cta" onclick="window.location.href='${fixPath('#get-started')}'">Get Started</button>
-         </div>
-      </div>
-      ` : ''}
-    `;
-
-    // Inject into placeholder or body
-    const placeholder = document.getElementById('header-placeholder');
-    if (placeholder) {
-      placeholder.innerHTML = headerHTML;
-    } else {
-      // Remove existing header if any
-      const existingHeader = document.querySelector('header.header');
-      if (existingHeader) existingHeader.remove();
-      document.body.insertAdjacentHTML('afterbegin', headerHTML);
-    }
-    this.header = document.querySelector('.header');
-  }
-
-  attachEventListeners() {
-    // Scroll effect
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        this.header.classList.add('scrolled');
-      } else {
-        this.header.classList.remove('scrolled');
-      }
-    });
-
-    // Mobile Menu
-    const mobileBtn = document.getElementById('mobile-menu-btn');
-    const mobileNav = document.getElementById('mobile-nav');
-    if (mobileBtn && mobileNav) {
-      mobileBtn.addEventListener('click', () => {
-        mobileBtn.classList.toggle('active');
-        mobileNav.classList.toggle('active');
-        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
-      });
-    }
-
-    // Inline Search Logic
-    const searchInput = document.getElementById('inline-search-input');
-    const searchResults = document.getElementById('header-search-results');
-
-    if (searchInput && searchResults) {
-      searchInput.addEventListener('input', (e) => {
-        const query = e.target.value;
-        if (query.length < 2) {
-          searchResults.classList.remove('active');
-          searchResults.style.display = 'none';
-          return;
-        }
-
-        if (typeof searchTools !== 'undefined') {
-          const results = searchTools(query);
-          this.renderSearchResults(results);
-        }
-      });
-
-      // Hide results on click outside
-      document.addEventListener('click', (e) => {
-        if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
-          searchResults.classList.remove('active');
-          searchResults.style.display = 'none';
-        }
-      });
-    }
-
-
-    // Theme Toggle
-    const themeBtn = document.getElementById('theme-toggle');
+    try {
+      var saved = null;
+      try { saved = localStorage.getItem('th-theme'); } catch (e) {}
+      if (saved) document.documentElement.setAttribute('data-theme', saved);
+    } catch (e) {}
     if (themeBtn) {
-      const updateThemeIcon = (theme) => {
-        themeBtn.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-      };
-
-      themeBtn.addEventListener('click', () => {
-        const html = document.documentElement;
-        const current = html.getAttribute('data-theme');
-        const next = current === 'dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', next);
-        localStorage.setItem('theme', next);
-        updateThemeIcon(next);
+      paintIcon();
+      themeBtn.addEventListener('click', function () {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+        try { localStorage.setItem('th-theme', dark ? 'light' : 'dark'); } catch (e) {}
+        paintIcon();
       });
-
-      const saved = localStorage.getItem('theme') || 'light';
-      document.documentElement.setAttribute('data-theme', saved);
-      updateThemeIcon(saved);
-    }
-  }
-
-  renderSearchResults(results) {
-    const searchResults = document.getElementById('header-search-results');
-    if (!searchResults) return;
-
-    if (!results || results.length === 0) {
-      searchResults.innerHTML = '<div class="autocomplete-item no-results">No tools found</div>';
-      searchResults.classList.add('active');
-      searchResults.style.display = 'block';
-      return;
     }
 
-    const prefix = this.getPathPrefix();
-    searchResults.innerHTML = results.slice(0, 8).map(tool => `
-      <div class="autocomplete-item" onclick="window.location.href='${this.fixPath(tool.url, prefix)}'">
-        <div class="autocomplete-icon" style="color: ${tool.categoryColor}">
-          ${tool.categoryIcon || '🛠️'}
-        </div>
-        <div class="autocomplete-info">
-            <div class="autocomplete-name">${tool.name}</div>
-            <div class="autocomplete-desc">${tool.desc.substring(0, 40)}...</div>
-        </div>
-      </div>
-    `).join('');
-
-    searchResults.classList.add('active');
-    searchResults.style.display = 'block';
+    var search = root.querySelector('.th-search-input');
+    if (search) search.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && search.value.trim()) {
+        window.location.href = fixPath('/', prefix) + '#search=' + encodeURIComponent(search.value.trim());
+      }
+    });
   }
-}
 
-// Initialize header when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', () => new Header());
-} else {
-  new Header();
-}
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();

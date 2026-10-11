@@ -15,26 +15,30 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
 
 
+  <link rel="stylesheet" href="../image-tools/css/th-header-footer.css">
 </head>
 <body class="tool-page">
-    <header class="header">
-        <div class="header-container">
-            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
-            <nav class="header-nav">
-                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
-                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
-                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
-                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
-                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
-                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
-                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
-                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
-                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
-                <a class="nav-link" href="../about-us.html">About</a>
-                <a class="nav-link" href="../contact-us.html">Contact</a>
-            </nav>
-        </div>
-    </header>
+    <header class="th-header">
+  <div class="th-header-inner">
+    <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
+    <nav class="th-nav" aria-label="Main navigation">
+      <div class="th-dropdown">
+        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
+        <div class="th-dropdown-menu"><a href="../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
+      </div>
+      <a class="th-nav-link" href="../image-tools/index.html">Image Tools</a>
+      <a class="th-nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+      <a class="th-nav-link" href="../seo-tools/index.html">SEO Tools</a>
+      <a class="th-nav-link" href="../about-us.html">About</a>
+    </nav>
+    <div class="th-spacer"></div>
+    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
+    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
+    <a class="th-cta" href="../index.html#features">Explore Tools</a>
+    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+  <div class="th-mobile-menu" data-th-menu><a href="../image-tools/index.html">Image Tools</a><a href="../pdf-tools/index.html">PDF Tools</a><a href="../text-tools/index.html">Text & Writing</a><a href="../seo-tools/index.html">SEO Tools</a><a href="../calculator-tools/index.html">Calculators</a><a href="../binary-tools/index.html">Binary Tools</a><a href="../code-format-tools/index.html">Code & Formatters</a><a href="../doc-tools/index.html">Documents</a><a href="../other-tools/index.html">Other Tools</a><a href="../about-us.html">About Us</a><a href="../contact-us.html">Contact Us</a></div>
+</header>
     <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
     <main class="tool-main">
         <div class="container">
@@ -173,32 +177,45 @@
 </section>
         </div>
     </main>
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">TOOLSHUB</div>
-                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
-                </div>
-                <div class="footer-links">
-                    <a class="footer-link" href="../about-us.html">About Us</a>
-                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
-                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
-                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
-                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
-                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
-                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
-                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
-                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
-                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
-                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <footer class="th-footer">
+  <div class="th-footer-top">
+    <div class="th-f-brand">
+      <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
+      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
+      <div class="th-social">
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+    <div class="th-f-col">
+      <h4>Popular Tools</h4>
+      <ul><li><a href="../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
+    </div>
+    <div class="th-f-col">
+      <h4>Categories</h4>
+      <ul><li><a href="../image-tools/index.html">Image Tools</a></li><li><a href="../pdf-tools/index.html">PDF Tools</a></li><li><a href="../text-tools/index.html">Text & Writing</a></li><li><a href="../seo-tools/index.html">SEO Tools</a></li><li><a href="../calculator-tools/index.html">Calculators</a></li><li><a href="../index.html#features">View All 203 Tools</a></li></ul>
+    </div>
+    <div class="th-f-col th-newsletter">
+      <h4>Stay Updated</h4>
+      <p>Get notified when we launch new tools. No spam, ever.</p>
+      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
+      <div class="th-f-stats">
+        <div><b>203</b><span>Free Tools</span></div>
+        <div><b>10</b><span>Categories</span></div>
+        <div><b>100%</b><span>Free Forever</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="th-footer-bottom">
+    <div class="th-footer-bottom-inner">
+      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
+      <div class="th-f-legal"><a href="../about-us.html">About</a><a href="../contact-us.html">Contact</a><a href="../sitemap.xml">Sitemap</a></div>
+    </div>
+  </div>
+</footer>
     <!-- MONETAG-ZONE: popunder - paste zone script here -->
     <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script src="js/text-utils.js"></script>
@@ -234,5 +251,6 @@
             document.getElementById('stat-issues').textContent = issues.length;
         }
     </script>
+  <script src="../image-tools/js/th-interactions.js"></script>
 </body>
 </html>

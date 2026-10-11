@@ -19,11 +19,20 @@
 
     function initializeApp() {
         // Load all tools from data
-        try { state.allTools = (typeof getAllTools === 'function') ? getAllTools() : []; } catch (e) { state.allTools = []; }
+        state.allTools = getAllTools();
 
         // Initialize features
         // theme is now handled by theme.js
-        [initSearch, initNavigation, initMobileMenu, populateMobileMenu, initFavorites, initScrollToTop, initNewsletter, initContactForm, playEntryAnimation].forEach(function (fn) { try { fn(); } catch (e) { console.warn('init skipped:', e.message); } });
+        initSearch();
+        initNavigation();
+        initMobileMenu();
+        populateMobileMenu();
+        initFavorites();
+        initScrollToTop();
+        // initStatsAnimation(); // Removed as per user request
+        initNewsletter();
+        initContactForm();
+        playEntryAnimation();
 
         console.log('ToolsHub initialized with', state.allTools.length, 'tools');
     }
