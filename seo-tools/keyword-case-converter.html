@@ -1,113 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <title>Keyword Case Converter | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../image-tools/css/global.css">
-    <link rel="stylesheet" href="../image-tools/css/components.css">
-    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keyword Case Converter | TOOLSHUB</title>
+<meta name="description" content="">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../image-tools/css/v3-design.css">
+<style>
+/* v3 compat — legacy tool markup mapped onto the v3 design system */
+:root{--border-color:#e4e4e7;--bg-tertiary:#f4f4f5;--bg-primary:#ffffff;--text-primary:#0a0a0b;--text-secondary:#3f3f46;--color-seo:#4f46e5}
+.ws-input,select.ws-input,textarea.ws-input{width:100%;border:1.5px solid #e4e4e7;border-radius:12px;padding:14px 16px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;outline:none;transition:.2s;background:#fff;color:#0a0a0b}
+.ws-input:focus{border-color:#4f46e5;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.ws-input::placeholder{color:#a1a1aa}
+.input-group{margin-bottom:20px}
+.input-label{display:block;font-weight:600;font-size:.92rem;margin-bottom:10px;color:#0a0a0b}
+.input-desc{font-size:.85rem;color:#71717a;margin-top:10px;line-height:1.6}
+.action-bar{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap}
+.output-section{margin-top:28px}
+.section-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.section-title{font-size:1.1rem;font-weight:700;letter-spacing:-.01em}
+.output-container{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden;background:#fff}
+.output-container table{width:100%;border-collapse:collapse;font-size:.94rem}
+.output-container th,.output-container td{padding:12px 16px;border-bottom:1px solid #f4f4f5;text-align:left}
+.output-code{font-family:monospace;font-size:.9rem;background:#f4f4f5;border:1px solid #e4e4e7;border-radius:12px;padding:16px;white-space:pre-wrap;word-break:break-all;color:#0a0a0b}
+.container,.tool-interface-container{max-width:100%}
+.schema-form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.mb-md{margin-bottom:16px}.mb-lg{margin-bottom:24px}.mb-sm{margin-bottom:8px}.mt-md{margin-top:16px}.mt-lg{margin-top:24px}.mt-sm{margin-top:8px}.text-center{text-align:center}
+.tab,.mode-btn,.device-tab,.preview-tab,.editor-tab,.nav-item{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;border:1px solid #e4e4e7;background:#fff;font-size:.88rem;font-weight:600;cursor:pointer;color:#3f3f46;transition:.15s;font-family:inherit}
+.tab:hover,.mode-btn:hover,.device-tab:hover,.preview-tab:hover,.editor-tab:hover,.nav-item:hover{border-color:#c7d2fe}
+.tab.active,.mode-btn.active,.device-tab.active,.preview-tab.active,.editor-tab.active,.nav-item.active{background:#0a0a0b;color:#fff;border-color:#0a0a0b}
+.btn-add-schema,.tu-btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;border:1px solid #e4e4e7;background:#fff;font-size:.85rem;font-weight:600;cursor:pointer;color:#3f3f46;transition:.15s;font-family:inherit}
+.btn-add-schema:hover,.tu-btn-ghost:hover{border-color:#c7d2fe;background:#eef2ff}
+.hidden{display:none!important}
+.selected{outline:2px solid #4f46e5;outline-offset:2px}
+.visual-card,.seo-card{border:1.5px solid #e4e4e7;border-radius:16px;padding:20px;cursor:pointer;transition:.15s;background:#fff}
+.visual-card:hover,.seo-card:hover{border-color:#c7d2fe}
+.option-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:24px}
+.card-icon{font-size:1.4rem;color:#4f46e5;display:block;margin-bottom:10px}
+.card-title{font-weight:700;margin-bottom:6px;color:#0a0a0b}
+.card-desc{font-size:.88rem;color:#71717a}
+.feature-card{border:1px solid #e4e4e7;border-radius:16px;padding:20px;background:#fff}
+.feature-title{font-size:.85rem;font-weight:600;color:#3f3f46;margin-bottom:8px}
+.feature-desc{font-size:.9rem;color:#71717a}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #f4f4f5;font-size:.92rem;color:#0a0a0b}
+.toggle-switch{position:relative;display:inline-block;width:48px;height:26px;flex:none}
+.toggle-switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;inset:0;background:#d4d4d8;border-radius:99px;transition:.2s;cursor:pointer}
+.slider:before{content:"";position:absolute;width:20px;height:20px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s}
+.toggle-switch input:checked+.slider{background:#4f46e5}
+.toggle-switch input:checked+.slider:before{transform:translateX(22px)}
+.checklist-item{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #e4e4e7;border-radius:12px;margin-bottom:10px;background:#fff;cursor:pointer;transition:.15s}
+.checklist-item:hover{border-color:#c7d2fe}
+.seo-result-item,.preview-box,#serpPreviewBox{border:1px solid #e4e4e7;border-radius:16px;padding:20px;background:#fff;margin-top:16px}
+.seo-url{color:#166534;font-size:.85rem}
+.seo-title{color:#1a0dab;font-size:1.1rem;margin:4px 0}
+.seo-desc{color:#3f3f46;font-size:.9rem}
+.status-badge{display:inline-block;padding:.5rem 1rem;border-radius:30px;font-weight:700}
+.bulk-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.bulk-table th,.bulk-table td{padding:10px 12px;border-bottom:1px solid #f4f4f5;text-align:left}
+.emotional-word{background:#fef3c7;padding:1px 4px;border-radius:4px}
+.power-word{background:#eef2ff;padding:1px 4px;border-radius:4px}
+.invalid,.duplicate-error{border-color:#ef4444!important}
+button.active:not(.nav-item):not(.tab):not(.mode-btn):not(.device-tab):not(.preview-tab):not(.editor-tab),a.active{box-shadow:inset 0 0 0 2px #4f46e5}
+.sim-row{display:flex;gap:10px;align-items:center;padding:8px 0;font-size:.9rem;color:#3f3f46}
+/* website speed test dashboard */
+.speed-dashboard{max-width:100%}
+.url-input-container{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.url-input-container .ws-input{flex:1;min-width:240px}
+.results-container,.history-section{margin-top:24px}
+.perf-header{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-bottom:20px}
+.vitals-summary{flex:1;min-width:240px}
+.gauge-wrapper{display:flex;gap:16px;flex-wrap:wrap}
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+.category-scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:20px 0}
+.screenshot-section,.audit-container{margin-top:28px}
+.audit-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:10px}
+.table-responsive{overflow-x:auto;border:1px solid #e4e4e7;border-radius:16px}
+.audit-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.audit-table th,.audit-table td{padding:12px 14px;border-bottom:1px solid #f4f4f5;text-align:left}
+.badge{display:inline-block;padding:4px 12px;border-radius:99px;font-size:.78rem;font-weight:700;background:#eef2ff;color:#4f46e5}
+.badge-secondary{background:#f4f4f5;color:#3f3f46}
+.analyze-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:14px;font-weight:600;font-size:.92rem;cursor:pointer;border:none;background:#0a0a0b;color:#fff;font-family:inherit;transition:.2s}
+.analyze-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -8px rgba(0,0,0,.3)}
+.loading-overlay{position:fixed;inset:0;background:rgba(255,255,255,.94);z-index:50;display:flex;align-items:center;justify-content:center}
+.progress-card{background:#fff;border:1px solid #e4e4e7;border-radius:20px;padding:36px;max-width:480px;width:90%;box-shadow:0 12px 40px -12px rgba(0,0,0,.12)}
+.p-bar{height:10px;background:#f4f4f5;border-radius:99px;overflow:hidden;margin:16px 0}
+.p-fill{height:100%;width:0;background:linear-gradient(135deg,#4f46e5,#7c3aed);border-radius:99px;transition:width .3s}
+.wst-step{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:.9rem;color:#3f3f46}
+.s-spin{width:16px;height:16px;border:2px solid #e4e4e7;border-top-color:#4f46e5;border-radius:50%;animation:spn .8s linear infinite;display:none;flex:none}
+@keyframes spn{to{transform:rotate(360deg)}}
+.error-board{border:1px solid #fecaca;background:#fef2f2;border-radius:16px;padding:28px;margin-top:20px}
+.screenshot-container{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden}
+.screenshot-img{max-width:100%;display:block}
+.data-source-badge{display:inline-block;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;background:#eef2ff;color:#4f46e5;margin-bottom:8px}
+/* aliases for markup injected by legacy JS at runtime */
+.seo-textarea{width:100%;min-height:160px;border:1.5px solid #e4e4e7;border-radius:16px;padding:22px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;line-height:1.8;resize:vertical;outline:none;transition:.2s;background:#fafafa;color:#0a0a0b}
+.seo-textarea:focus{border-color:#4f46e5;background:#fff;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.seo-textarea::placeholder{color:#a1a1aa}
+.seo-input,select.seo-input,.seo-select{width:100%;border:1.5px solid #e4e4e7;border-radius:12px;padding:14px 16px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;outline:none;transition:.2s;background:#fff;color:#0a0a0b}
+.seo-input:focus,.seo-select:focus{border-color:#4f46e5;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.seo-input::placeholder{color:#a1a1aa}
 
-
-  <link rel="stylesheet" href="../image-tools/css/th-header-footer.css">
+</style>
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../index.html#tools">All Tools</a><a href="../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../index.html#tools">Explore Tools</a></div>
+</div></header>
+<!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+<nav class="crumbs"><a href="../index.html">Home</a> &nbsp;/&nbsp; <span>Keyword Case Converter</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">SEO Tools</span>
+  <h1>Keyword <em>Case</em> Converter</h1>
+  <p>Convert your text to Uppercase, Lowercase, Title Case, Sentence Case, and more.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../image-tools/index.html">Image Tools</a><a href="../pdf-tools/index.html">PDF Tools</a><a href="../text-tools/index.html">Text & Writing</a><a href="../seo-tools/index.html">SEO Tools</a><a href="../calculator-tools/index.html">Calculators</a><a href="../binary-tools/index.html">Binary Tools</a><a href="../code-format-tools/index.html">Code & Formatters</a><a href="../doc-tools/index.html">Documents</a><a href="../other-tools/index.html">Other Tools</a><a href="../about-us.html">About Us</a><a href="../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a> &gt;
-                <a href="index.html">SEO Tools</a> &gt;
-                <span>Keyword Case Converter</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">Keyword Case Converter</h1>
-                <p class="tool-description"></p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
-<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
-<div class="container text-center">
-<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Keyword Case Converter</h1>
-<p class="hero-subtitle">Convert your text to Uppercase, Lowercase, Title Case, Sentence Case, and more.
-                </p>
-</div>
 </section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>Keyword Case Converter</b><span>v3.0 · local</span></div>
+  <div class="ws-body">
+
 <div class="container">
 <div class="tool-interface-container">
 <div class="input-group">
 <label class="input-label">Enter Text</label>
-<textarea class="seo-textarea" id="inputText" oninput="updateCounts()" placeholder="Enter your keywords or text here..." style="min-height: 200px;"></textarea>
+<textarea class="seo-textarea ws-textarea" id="inputText" oninput="updateCounts()" placeholder="Enter your keywords or text here..." style="min-height: 200px;"></textarea>
 <div style="display: flex; justify-content: flex-end; font-size: 0.875rem; color: var(--text-secondary); margin-top: 0.5rem; gap: 1rem;">
 <span id="charCount">0 Characters</span>
 <span id="wordCount">0 Words</span>
 </div>
 </div>
 <div class="action-bar" style="justify-content: center; gap: 1rem;">
-<button class="btn-secondary" onclick="convert('upper')">UPPER CASE</button>
-<button class="btn-secondary" onclick="convert('lower')">lower case</button>
-<button class="btn-secondary" onclick="convert('title')">Title Case</button>
-<button class="btn-secondary" onclick="convert('sentence')">Sentence case</button>
-<button class="btn-secondary" onclick="convert('capital')">Capitalized Case</button>
+<button class="btn-secondary btn btn-light tu-btn tu-btn-primary" onclick="convert('upper')"><i class="fa-solid fa-text-height"></i> UPPER CASE</button>
+<button class="btn-secondary btn btn-light tu-btn tu-btn-ghost" onclick="convert('lower')"><i class="fa-solid fa-text-height"></i> lower case</button>
+<button class="btn-secondary btn btn-light tu-btn tu-btn-ghost" onclick="convert('title')"><i class="fa-solid fa-text-height"></i> Title Case</button>
+<button class="btn-secondary btn btn-light tu-btn tu-btn-ghost" onclick="convert('sentence')"><i class="fa-solid fa-text-height"></i> Sentence case</button>
+<button class="btn-secondary btn btn-light tu-btn tu-btn-ghost" onclick="convert('capital')"><i class="fa-solid fa-text-height"></i> Capitalized Case</button>
 </div>
 <div class="action-bar" style="justify-content: center; gap: 1rem; margin-top: 1rem;">
-<button class="btn-primary" onclick="copyText()">Copy Text</button>
-<button class="btn-secondary" onclick="clearText()">Clear</button>
+<button class="btn-primary btn btn-dark tu-btn tu-btn-ghost" onclick="copyText()"><i class="fa-solid fa-copy"></i> Copy Text</button>
+<button class="btn-secondary btn btn-light tu-btn tu-btn-ghost" onclick="clearText()"><i class="fa-solid fa-rotate-right"></i> Clear</button>
 </div>
 </div>
 </div>
-            </div>
-            <section class="seo-article" data-tool="keyword-case-converter">
-<article class="tool-article">
-<h2>Keyword Case Converter — Format Keyword Lists in One Click</h2>
 
-<p>Export a keyword list from any SEO tool and you get chaos: "SEO Tools," "seo tools," "Seo Tools" — same keyword, three casings, wrecking your dedup and your pivot tables. A keyword case converter normalizes the mess instantly: paste the list, pick a case, and get back clean, uniform keywords ready for tracking, content briefs, or ad campaigns.</p>
+  </div>
+</div></div>
 
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 — HOW IT WORKS</span><h2>Three steps, zero learning curve</h2></div>
+  <div class="steps">
+<div class="step"><div class="step-n">i.</div><h3>Paste your keywords</h3><p>Drop in your keyword list or any text.</p></div>
+<div class="step"><div class="step-n">ii.</div><h3>Pick a case style</h3><p>Choose UPPER, lower, Title, Sentence, or Capitalized case.</p></div>
+<div class="step"><div class="step-n">iii.</div><h3>Copy the result</h3><p>Copy the converted text and use it anywhere.</p></div>
+  </div>
+</section>
+
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>Keyword Case Converter — Format Keyword Lists in One Click</h2>
+    <p class="deck">Export a keyword list from any SEO tool and you get chaos: "SEO Tools," "seo tools," "Seo Tools" — same keyword, three casings, wrecking your dedup and your pivot tables. A keyword case converter normalizes the mess instantly: paste the list, pick a case, and get back clean, uniform keywords ready for tracking, content briefs, or ad campaigns.</p>
+    <div class="article-meta">
+      <div class="avatar">T</div>
+      <div><b>TOOLSHUB Editorial</b><span>8 min read · Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+<p class="lead">Export a keyword list from any SEO tool and you get chaos: "SEO Tools," "seo tools," "Seo Tools" — same keyword, three casings, wrecking your dedup and your pivot tables. A keyword case converter normalizes the mess instantly: paste the list, pick a case, and get back clean, uniform keywords ready for tracking, content briefs, or ad campaigns.</p>
 <h3>What Is a Keyword Case Converter?</h3>
-
 <p>It is a text case tool tuned for SEO workflows. Beyond the standard transforms — UPPERCASE, lowercase, Title Case, Sentence case — it handles the cases keyword work actually needs: one keyword per line cleanup, duplicate removal after normalization, and whitespace trimming. The point is not typography; it is data hygiene.</p>
-
 <p>Why does keyword casing matter? Because "Best CRM" and "best crm" are the same search query to Google but different rows in your spreadsheet. Mixed-case lists break VLOOKUPs, inflate keyword counts, and make reports look sloppy. Normalizing to lowercase before dedup is the standard first step of keyword list cleaning — this tool does it in one click instead of a spreadsheet formula chain.</p>
-
 <p>The SEO-specific twist versus a generic case converter: keyword lists come with quirks — trailing spaces, blank lines, inconsistent delimiters, quoted phrases. A converter built for keywords strips and standardizes those as part of the transform, so the output is paste-ready for tools and trackers.</p>
-
 <h3>How to Use the Keyword Case Converter</h3>
-
 <p>Paste your keyword list into the input box — one keyword per line is the standard format, but comma-separated lists work too. Choose your target case: lowercase for data processing and dedup, Title Case for client-facing reports and ad headlines, Sentence case for meta descriptions. Click Convert, then copy the cleaned list.</p>
-
 <p>Pick the case by destination. Lowercase for anything a machine will process (rank trackers, spreadsheets, APIs) — machines prefer uniformity. Title Case for anything a human reads in a headline position (ad copy drafts, report tables). Sentence case for draft meta descriptions and title tags, where natural reading matters.</p>
-
 <p>Run dedup after converting, not before. "SEO Tools" and "seo tools" only reveal themselves as duplicates once casing is normalized — converting first, then removing duplicates, is the correct order. Many converters bundle both steps.</p>
-
 <h3>Case Styles and When to Use Them</h3>
-
 <table>
 <thead><tr><th>Case style</th><th>Example</th><th>Use it for</th></tr></thead>
 <tbody>
@@ -118,37 +200,21 @@
 <tr><td>Toggle case</td><td><code>bEST CRM SOFTWARE</code></td><td>Fixing caps-lock accidents</td></tr>
 </tbody>
 </table>
-
 <p>A note on Title Case: automated title-casing capitalizes every word including "and," "the," "of" — fine for internal lists, but human-polish headline capitalization before publishing anything client-facing.</p>
-
 <h3>How Keyword Case Conversion Works</h3>
-
 <p>Simple on the surface, with a few thoughtful details underneath.</p>
-
 <p><strong>Step 1 — Input parsing.</strong> The pasted text is split into individual keywords by line breaks (with comma and tab delimiters recognized). Blank lines are noted for optional removal.</p>
-
 <p><strong>Step 2 — Cleaning.</strong> Leading and trailing whitespace is trimmed per keyword, multiple internal spaces collapse to one, and stray quotes or bullets can be stripped. This is the step generic converters skip.</p>
-
 <p><strong>Step 3 — Case transform.</strong> The selected rule is applied per keyword: lowercasing everything, uppercasing everything, capitalizing first letters, or capitalizing only the first letter of the line. Unicode-aware transforms handle accented characters correctly.</p>
-
 <p><strong>Step 4 — Dedup and output.</strong> Optional duplicate removal (post-normalization, so casing variants collapse), then the cleaned list is reassembled one-per-line for copying.</p>
-
 <p>Everything runs locally in the browser — keyword lists, which can contain competitively sensitive terms, never leave your machine.</p>
-
 <h3>Who Uses Keyword Case Converters?</h3>
-
 <p><strong>SEO specialists</strong> clean keyword exports before analysis and tracking setup.</p>
-
 <p><strong>PPC managers</strong> normalize keyword lists for ad group builds and negative lists.</p>
-
 <p><strong>Content strategists</strong> format keyword sets for briefs and editorial calendars.</p>
-
 <p><strong>Data analysts</strong> standardize text fields before joins and lookups.</p>
-
 <p><strong>Freelancers</strong> polish keyword deliverables so client reports look professional.</p>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>Free to use</strong> — no signup, no limits on typical lists.</li>
 <li><strong>Multiple case styles</strong> — upper, lower, title, sentence, toggle.</li>
@@ -158,74 +224,41 @@
 <li><strong>Private</strong> — runs in your browser; lists never upload.</li>
 <li><strong>Copy-ready output</strong> — one keyword per line, paste anywhere.</li>
 </ul>
+<h3>Frequently asked</h3>
+<div class="faq">
+<div class="faq-item open"><div class="faq-q">Is this keyword case converter free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — free with no account required.</p></div></div>
+<div class="faq-item"><div class="faq-q">Does keyword case affect Google rankings? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>No. Google treats "SEO Tools" and "seo tools" as the same query. Casing matters for your data hygiene, not for rankings.</p></div></div>
+<div class="faq-item"><div class="faq-q">Which case should I use for rank tracking? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Lowercase. Uniform casing prevents duplicate rows and keeps your tracking data clean.</p></div></div>
+<div class="faq-item"><div class="faq-q">Can it remove duplicates too? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — run the case conversion first, then dedup, so casing variants collapse into single entries.</p></div></div>
+<div class="faq-item"><div class="faq-q">How many keywords can I convert at once? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Thousands without issue. Browser-based processing handles large lists instantly.</p></div></div>
+<div class="faq-item"><div class="faq-q">Will it fix my caps-lock accident? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — paste the text and apply Sentence case or lowercase to undo an all-caps mishap in one step.</p></div></div>
+<div class="faq-item"><div class="faq-q">Is my keyword list private? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes. Conversion runs locally in your browser; your keywords are never uploaded or stored.</p></div></div>
+</div>
+  </div>
+</article></div>
 
-<h3>Frequently Asked Questions</h3>
-
-<h4>Is this keyword case converter free?</h4>
-<p>Yes — free with no account required.</p>
-
-<h4>Does keyword case affect Google rankings?</h4>
-<p>No. Google treats "SEO Tools" and "seo tools" as the same query. Casing matters for your data hygiene, not for rankings.</p>
-
-<h4>Which case should I use for rank tracking?</h4>
-<p>Lowercase. Uniform casing prevents duplicate rows and keeps your tracking data clean.</p>
-
-<h4>Can it remove duplicates too?</h4>
-<p>Yes — run the case conversion first, then dedup, so casing variants collapse into single entries.</p>
-
-<h4>How many keywords can I convert at once?</h4>
-<p>Thousands without issue. Browser-based processing handles large lists instantly.</p>
-
-<h4>Will it fix my caps-lock accident?</h4>
-<p>Yes — paste the text and apply Sentence case or lowercase to undo an all-caps mishap in one step.</p>
-
-<h4>Is my keyword list private?</h4>
-<p>Yes. Conversion runs locally in your browser; your keywords are never uploaded or stored.</p>
-</article>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 — KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+<a class="rel" href="slug-generator.html"><i class="fa-solid fa-link" style="color:#4f46e5"></i><h3>Slug Generator</h3><p>SEO-friendly URL slugs.</p></a>
+<a class="rel" href="stop-words-remover.html"><i class="fa-solid fa-filter" style="color:#7c3aed"></i><h3>Stop Words Remover</h3><p>Strip stop words from text.</p></a>
+<a class="rel" href="keyword-density-checker.html"><i class="fa-solid fa-chart-pie" style="color:#4f46e5"></i><h3>Keyword Density Checker</h3><p>Find top words and phrases.</p></a>
+<a class="rel" href="word-counter.html"><i class="fa-solid fa-file-lines" style="color:#7c3aed"></i><h3>Word Counter</h3><p>Count words and characters live.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../image-tools/index.html">Image Tools</a></li><li><a href="../pdf-tools/index.html">PDF Tools</a></li><li><a href="../text-tools/index.html">Text & Writing</a></li><li><a href="../seo-tools/index.html">SEO Tools</a></li><li><a href="../calculator-tools/index.html">Calculators</a></li><li><a href="../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../index.html#tools">All 203 tools</a></li><li><a href="../index.html#seo-tools">SEO tools</a></li><li><a href="../index.html#image-tools">Image tools</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../about-us.html">About</a><a href="../contact-us.html">Contact</a><a href="../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>© 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script>
         const inputText = document.getElementById('inputText');
         const charCount = document.getElementById('charCount');
@@ -277,7 +310,6 @@
             inputText.value = '';
             updateCounts();
         }
-    </script>
-  <script src="../image-tools/js/th-interactions.js"></script>
+    </script><script src="../image-tools/js/th-interactions.js"></script><script src="../image-tools/js/tu-unified.js"></script><script src="../image-tools/js/v3.js"></script>
 </body>
 </html>

@@ -32,43 +32,11 @@ const ToolUI = {
     },
 
     loadSharedComponents: function () {
-        // Inject FontAwesome
-        if (!document.querySelector('link[href*="font-awesome"]')) {
-            const link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css';
-            document.head.appendChild(link);
-        }
-
-        // Inject Shared CSS (Global, Components from image-tools which acts as core)
-        const cssPaths = [
-            '../image-tools/css/global.css',
-            '../image-tools/css/components.css',
-            '../image-tools/css/responsive.css'
-        ];
-
-        cssPaths.forEach(path => {
-            if (!document.querySelector(`link[href="${path}"]`)) {
-                const link = document.createElement('link');
-                link.rel = 'stylesheet';
-                link.href = path;
-                document.head.appendChild(link);
-            }
-        });
-
-        // Inject Header Script
-        if (!document.querySelector('script[src*="header.js"]')) {
-            const script = document.createElement('script');
-            script.src = '../image-tools/js/shared/header.js';
-            document.body.appendChild(script);
-        }
-
-        // Inject Footer Script (assuming it exists and we want it)
-        if (!document.querySelector('script[src*="footer.js"]')) {
-            const script = document.createElement('script');
-            script.src = '../image-tools/js/shared/footer.js'; // Using image-tools shared footer
-            document.body.appendChild(script);
-        }
+        // v3 REBUILD (2026-10-11): from-scratch design uses only
+        // ../image-tools/css/v3-design.css. The old shared CSS (global.css,
+        // components.css, responsive.css) and the old header/footer scripts
+        // must NOT be injected at runtime, or they override the v3 design.
+        // FontAwesome 6.5.0 is already linked in the page head, so nothing to do.
     },
 
     // === THEME TOGGLE ===

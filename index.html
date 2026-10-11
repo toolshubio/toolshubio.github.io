@@ -1,1481 +1,316 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="TOOLSHUB.COM - Your Ultimate Free Online Tools Suite. 178+ free tools for images, SEO, text, calculators, and code. 100% free, no registration required.">
-  <meta name="keywords" content="free online tools, image converter, SEO tools, calculator, code formatter">
-  <title>TOOLSHUB.COM | Free Online Tools Suite - 178+ Tools</title>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap"
-    rel="stylesheet">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/components.css">
-  <!-- FontAwesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="image-tools/css/th-header-footer.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOOLSHUB — 200+ Free Online Tools</title>
+<meta name="description" content="Free online tools: PDF, image, text, SEO, calculators and more. No sign-up, private, fast.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="image-tools/css/v3-design.css">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
 </head>
-
 <body>
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="#tools">All Tools</a><a href="about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="#tools">Explore Tools</a></div>
+</div></header>
 
-  <!-- ========== HEADER ========== -->
-  <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<section class="v3-hero">
+  <h1>Every tool you need.<br><em>One beautiful hub.</em></h1>
+  <p>204 free tools for PDF, images, text, code and more — running privately in your browser. No sign-up, ever.</p>
+  <div class="v3-search">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <input type="text" id="v3-search" placeholder="Search 204 tools..." aria-label="Search tools">
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="image-tools/index.html">Image Tools</a><a href="pdf-tools/index.html">PDF Tools</a><a href="text-tools/index.html">Text & Writing</a><a href="seo-tools/index.html">SEO Tools</a><a href="calculator-tools/index.html">Calculators</a><a href="binary-tools/index.html">Binary Tools</a><a href="code-format-tools/index.html">Code & Formatters</a><a href="doc-tools/index.html">Documents</a><a href="other-tools/index.html">Other Tools</a><a href="about-us.html">About Us</a><a href="contact-us.html">Contact Us</a></div>
-</header>
-
-  <!-- ========== MOBILE NAVIGATION ========== -->
-  <div class="mobile-nav" id="mobile-nav">
-    <!-- Mobile categories will be populated by JavaScript or can be static -->
+  <div class="v3-stats">
+    <div><b>204</b><span>Free tools</span></div>
+    <div><b>11</b><span>Categories</span></div>
+    <div><b>100%</b><span>Private</span></div>
+    <div><b>0</b><span>Sign-ups</span></div>
   </div>
-
-  <!-- ========== MAIN CONTENT ========== -->
-  <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="main-content reveal-init" id="main-content">
-
-    <!-- Hero Section -->
-    <section class="hero-section" id="get-started">
-      <div class="container">
-        <h1 class="hero-title">Your Ultimate Free Online Tools Suite</h1>
-        <p class="hero-subtitle">178+ Professional Tools • 100% Free • No Registration Required</p>
-
-        <div class="hero-actions" style="margin-top: 2.5rem; display: flex; justify-content: center;">
-          <a href="#mega-menu-trigger" class="btn-explore"
-            onclick="document.getElementById('mega-menu-trigger').click()">
-            Explore Tools 🚀
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="tool-category-section flicker-prevention" id="features">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">
-            <span class="section-icon">🖼️</span>
-            Image Tools
-            <span class="section-subtitle">- Convert, Compress, Resize & Edit Images</span>
-          </h2>
-        </div>
-
-        <div class="tools-grid">
-          <a href="image-tools/conversion/png-jpg-converter.html" class="tool-card image">
-            <div class="tool-icon">📸</div>
-            <h3 class="tool-name">PNG ↔ JPG Converter</h3>
-            <p class="tool-desc">Batch conversion, quality control, transparent bg handling</p>
-            <span class="tool-badge">Popular</span>
-          </a>
-
-          <a href="image-tools/conversion/png-svg-converter.html" class="tool-card image">
-            <div class="tool-icon">📐</div>
-            <h3 class="tool-name">PNG ↔ SVG Converter</h3>
-            <p class="tool-desc">Auto-trace raster images to vector graphics</p>
-          </a>
-
-          <a href="image-tools/conversion/jpg-svg-converter.html" class="tool-card image">
-            <div class="tool-icon">✒️</div>
-            <h3 class="tool-name">JPG ↔ SVG Converter</h3>
-            <p class="tool-desc">Convert photos to scalable vectors</p>
-          </a>
-
-          <a href="image-tools/conversion/webp-png-converter.html" class="tool-card image">
-            <div class="tool-icon">🌐</div>
-            <h3 class="tool-name">WebP ↔ PNG Converter</h3>
-            <p class="tool-desc">Modern WebP format conversion with alpha support</p>
-          </a>
-
-          <a href="image-tools/conversion/webp-jpg-converter.html" class="tool-card image">
-            <div class="tool-icon">🖼️</div>
-            <h3 class="tool-name">WebP ↔ JPG Converter</h3>
-            <p class="tool-desc">Convert WebP to standard JPG format</p>
-          </a>
-
-          <a href="image-tools/conversion/svg-png-converter.html" class="tool-card image">
-            <div class="tool-icon">🎯</div>
-            <h3 class="tool-name">SVG ↔ PNG Converter</h3>
-            <p class="tool-desc">Rasterize SVG to PNG up to 8K resolution</p>
-          </a>
-
-          <a href="image-tools/conversion/svg-jpg-converter.html" class="tool-card image">
-            <div class="tool-icon">🖌️</div>
-            <h3 class="tool-name">SVG ↔ JPG Converter</h3>
-            <p class="tool-desc">Convert vector to JPG with background color</p>
-          </a>
-
-          <a href="image-tools/conversion/avif-jpg-converter.html" class="tool-card image">
-            <div class="tool-icon">⚡</div>
-            <h3 class="tool-name">AVIF ↔ JPG Converter</h3>
-            <p class="tool-desc">High-efficiency AVIF format conversion</p>
-          </a>
-
-          <a href="image-tools/conversion/heic-jpg-converter.html" class="tool-card image">
-            <div class="tool-icon">📱</div>
-            <h3 class="tool-name">HEIC ↔ JPG Converter</h3>
-            <p class="tool-desc">Convert iPhone/iPad photos to JPG</p>
-            <span class="tool-badge">New</span>
-          </a>
-
-          <a href="image-tools/conversion/jfif-png-converter.html" class="tool-card image">
-            <div class="tool-icon">🎞️</div>
-            <h3 class="tool-name">JFIF ↔ PNG Converter</h3>
-            <p class="tool-desc">Legacy JFIF format conversion</p>
-          </a>
-
-          <a href="image-tools/conversion/tiff-jpg-converter.html" class="tool-card image">
-            <div class="tool-icon">🖨️</div>
-            <h3 class="tool-name">TIFF ↔ JPG Converter</h3>
-            <p class="tool-desc">Convert professional TIFF to JPG</p>
-          </a>
-
-          <a href="image-tools/conversion/bmp-png-converter.html" class="tool-card image">
-            <div class="tool-icon">💾</div>
-            <h3 class="tool-name">BMP ↔ PNG Converter</h3>
-            <p class="tool-desc">Lossless BMP to PNG conversion</p>
-          </a>
-
-          <a href="image-tools/conversion/ico-png-converter.html" class="tool-card image">
-            <div class="tool-icon">⭐</div>
-            <h3 class="tool-name">ICO ↔ PNG Converter</h3>
-            <p class="tool-desc">Create favicons or convert icons to PNG</p>
-          </a>
-
-          <a href="image-tools/conversion/batch-converter.html" class="tool-card image">
-            <div class="tool-icon">📑</div>
-            <h3 class="tool-name">Batch Image Converter</h3>
-            <p class="tool-desc">Convert hundreds of images simultaneously</p>
-            <span class="tool-badge">Pro</span>
-          </a>
-
-          <a href="image-tools/compression/image-compressor.html" class="tool-card image">
-            <div class="tool-icon">🗜️</div>
-            <h3 class="tool-name">Image Compressor</h3>
-            <p class="tool-desc">General purpose compressor with quality slider</p>
-            <span class="tool-badge">Trending</span>
-          </a>
-
-          <a href="image-tools/resize-crop/image-resizer.html" class="tool-card image">
-            <div class="tool-icon">📏</div>
-            <h3 class="tool-name">Image Resizer</h3>
-            <p class="tool-desc">Resize by pixels, percentage, or inches</p>
-          </a>
-
-          <a href="image-tools/resize-crop/crop-image.html" class="tool-card image">
-            <div class="tool-icon">✂️</div>
-            <h3 class="tool-name">Crop Image</h3>
-            <p class="tool-desc">Rectangular, circular & aspect ratio crop</p>
-          </a>
-
-          <a href="image-tools/resize-crop/bulk-resizer.html" class="tool-card image">
-            <div class="tool-icon">📚</div>
-            <h3 class="tool-name">Bulk Resizer</h3>
-            <p class="tool-desc">Resize hundreds of images at once</p>
-          </a>
-
-          <a href="image-tools/resize-crop/canvas-extender.html" class="tool-card image">
-            <div class="tool-icon">🔳</div>
-            <h3 class="tool-name">Canvas Extender</h3>
-            <p class="tool-desc">Add padding or border to images</p>
-          </a>
-
-          <a href="image-tools/resize-crop/image-merger.html" class="tool-card image">
-            <div class="tool-icon">🧩</div>
-            <h3 class="tool-name">Image Merger</h3>
-            <p class="tool-desc">Combine multiple images into one</p>
-          </a>
-
-          <a href="image-tools/resize-crop/image-splitter.html" class="tool-card image">
-            <div class="tool-icon">🏁</div>
-            <h3 class="tool-name">Image Splitter</h3>
-            <p class="tool-desc">Slice images for Instagram or web</p>
-          </a>
-
-          <a href="image-tools/editing/watermark-adder.html" class="tool-card image">
-            <div class="tool-icon">©️</div>
-            <h3 class="tool-name">Watermark Adder</h3>
-            <p class="tool-desc">Add text or image logos to photos</p>
-          </a>
-
-          <a href="image-tools/editing/filters-effects.html" class="tool-card image">
-            <div class="tool-icon">✨</div>
-            <h3 class="tool-name">Filters & Effects</h3>
-            <p class="tool-desc">Instagram-like filters & adjustments</p>
-          </a>
-
-          <a href="image-tools/editing/color-corrector.html" class="tool-card image">
-            <div class="tool-icon">🌈</div>
-            <h3 class="tool-name">Color Corrector</h3>
-            <p class="tool-desc">Fix brightness, contrast, hue & saturation</p>
-          </a>
-
-          <a href="image-tools/editing/noise-reducer.html" class="tool-card image">
-            <div class="tool-icon">🧹</div>
-            <h3 class="tool-name">Noise Reducer</h3>
-            <p class="tool-desc">Smoothen grainy low-light photos</p>
-          </a>
-
-          <a href="image-tools/editing/sharpness-tool.html" class="tool-card image">
-            <div class="tool-icon">💎</div>
-            <h3 class="tool-name">Sharpness Tool</h3>
-            <p class="tool-desc">Enhance details and edge clarity</p>
-          </a>
-
-          <a href="image-tools/utilities/image-to-text.html" class="tool-card image">
-            <div class="tool-icon">🔍</div>
-            <h3 class="tool-name">Image to Text (OCR)</h3>
-            <p class="tool-desc">Extract editable text from images</p>
-            <span class="tool-badge">Premium</span>
-          </a>
-
-          <a href="image-tools/utilities/exif-viewer.html" class="tool-card image">
-            <div class="tool-icon">🆔</div>
-            <h3 class="tool-name">EXIF Viewer/Remover</h3>
-            <p class="tool-desc">View map data & cleaner privacy</p>
-          </a>
-
-          <a href="image-tools/utilities/color-palette.html" class="tool-card image">
-            <div class="tool-icon">🎨</div>
-            <h3 class="tool-name">Color Palette</h3>
-            <p class="tool-desc">Generate color schemes from images</p>
-          </a>
-
-          <a href="image-tools/utilities/duplicate-finder.html" class="tool-card image">
-            <div class="tool-icon">👯</div>
-            <h3 class="tool-name">Duplicate Finder</h3>
-            <p class="tool-desc">Find visual duplicates in a folder</p>
-          </a>
-
-          <a href="image-tools/utilities/metadata-editor.html" class="tool-card image">
-            <div class="tool-icon">📝</div>
-            <h3 class="tool-name">Metadata Editor</h3>
-            <p class="tool-desc">Edit copyright & author info</p>
-          </a>
-
-          <a href="image-tools/utilities/image-compare.html" class="tool-card image">
-            <div class="tool-icon">⚖️</div>
-            <h3 class="tool-name">Image Compare</h3>
-            <p class="tool-desc">Compare two images side-by-side</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="tool-category-section flicker-prevention" id="seo-tools">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">
-            <span class="section-icon">📈</span>
-            SEO Tools
-            <span class="section-subtitle">- Optimize Your Website</span>
-          </h2>
-        </div>
-
-        <div class="tools-grid">
-          <a href="seo-tools/schema-generator.html" class="tool-card seo">
-            <div class="tool-icon">🏗️</div>
-            <h3 class="tool-name">Schema Generator</h3>
-            <p class="tool-desc">Create JSON-LD structured data</p>
-          </a>
-
-          <a href="seo-tools/robots-txt-generator.html" class="tool-card seo">
-            <div class="tool-icon">🤖</div>
-            <h3 class="tool-name">Robots.txt Generator</h3>
-            <p class="tool-desc">Generate robots.txt files</p>
-          </a>
-
-          <a href="seo-tools/sitemap-generator.html" class="tool-card seo">
-            <div class="tool-icon">🗺️</div>
-            <h3 class="tool-name">Sitemap Generator</h3>
-            <p class="tool-desc">Create XML sitemaps</p>
-          </a>
-
-          <a href="seo-tools/canonical-tag-generator.html" class="tool-card seo">
-            <div class="tool-icon">🔗</div>
-            <h3 class="tool-name">Canonical Tag Generator</h3>
-            <p class="tool-desc">Prevent duplicate content</p>
-          </a>
-
-          <a href="seo-tools/meta-robots-generator.html" class="tool-card seo">
-            <div class="tool-icon">🛑</div>
-            <h3 class="tool-name">Meta Robots Tags</h3>
-            <p class="tool-desc">Control crawler indexing</p>
-          </a>
-
-          <a href="seo-tools/meta-tag-generator.html" class="tool-card seo">
-            <div class="tool-icon">🏷️</div>
-            <h3 class="tool-name">Meta Tag Generator</h3>
-            <p class="tool-desc">Generate SEO meta tags</p>
-            <span class="tool-badge">Popular</span>
-          </a>
-
-          <a href="seo-tools/meta-title-checker.html" class="tool-card seo">
-            <div class="tool-icon">📏</div>
-            <h3 class="tool-name">Meta Title Checker</h3>
-            <p class="tool-desc">Check title pixel width</p>
-          </a>
-
-          <a href="seo-tools/meta-description-checker.html" class="tool-card seo">
-            <div class="tool-icon">📝</div>
-            <h3 class="tool-name">Meta Description Check</h3>
-            <p class="tool-desc">Optimize descriptions</p>
-          </a>
-
-          <a href="seo-tools/open-graph-generator.html" class="tool-card seo">
-            <div class="tool-icon">📢</div>
-            <h3 class="tool-name">Open Graph Generator</h3>
-            <p class="tool-desc">Social media meta tags</p>
-          </a>
-
-          <a href="seo-tools/alt-text-generator.html" class="tool-card seo">
-            <div class="tool-icon">🖼️</div>
-            <h3 class="tool-name">Alt Text Generator</h3>
-            <p class="tool-desc">Generate image alt text</p>
-          </a>
-
-          <a href="seo-tools/keyword-density-checker.html" class="tool-card seo">
-            <div class="tool-icon">🎯</div>
-            <h3 class="tool-name">Keyword Density</h3>
-            <p class="tool-desc">Check keyword usage %</p>
-          </a>
-
-          <a href="seo-tools/keyword-frequency-counter.html" class="tool-card seo">
-            <div class="tool-icon">📊</div>
-            <h3 class="tool-name">Keyword Frequency</h3>
-            <p class="tool-desc">Count keyword matches</p>
-          </a>
-
-          <a href="seo-tools/word-counter.html" class="tool-card seo">
-            <div class="tool-icon">🔢</div>
-            <h3 class="tool-name">SEO Word Counter</h3>
-            <p class="tool-desc">Words, chars & reading time</p>
-          </a>
-
-          <a href="seo-tools/stop-words-remover.html" class="tool-card seo">
-            <div class="tool-icon">🧹</div>
-            <h3 class="tool-name">Stop Words Remover</h3>
-            <p class="tool-desc">Clean text for analysis</p>
-          </a>
-
-          <a href="seo-tools/readability-checker.html" class="tool-card seo">
-            <div class="tool-icon">📖</div>
-            <h3 class="tool-name">Readability Checker</h3>
-            <p class="tool-desc">Flesch-Kincaid score</p>
-          </a>
-
-          <a href="seo-tools/keyword-case-converter.html" class="tool-card seo">
-            <div class="tool-icon">🔡</div>
-            <h3 class="tool-name">Case Converter</h3>
-            <p class="tool-desc">Change text casing</p>
-          </a>
-
-          <a href="seo-tools/heading-extractor.html" class="tool-card seo">
-            <div class="tool-icon">🔝</div>
-            <h3 class="tool-name">Heading Extractor</h3>
-            <p class="tool-desc">Analyze H1-H6 tags</p>
-          </a>
-
-          <a href="seo-tools/seo-url-checker.html" class="tool-card seo">
-            <div class="tool-icon">🌍</div>
-            <h3 class="tool-name">SEO URL Checker</h3>
-            <p class="tool-desc">Validate URL structure</p>
-          </a>
-
-          <a href="seo-tools/slug-generator.html" class="tool-card seo">
-            <div class="tool-icon">🐌</div>
-            <h3 class="tool-name">Slug Generator</h3>
-            <p class="tool-desc">Create clean URL slugs</p>
-          </a>
-
-          <a href="seo-tools/internal-link-counter.html" class="tool-card seo">
-            <div class="tool-icon">⚓</div>
-            <h3 class="tool-name">Internal Link Counter</h3>
-            <p class="tool-desc">Count internal links</p>
-          </a>
-
-          <a href="seo-tools/external-link-counter.html" class="tool-card seo">
-            <div class="tool-icon">🚀</div>
-            <h3 class="tool-name">External Link Counter</h3>
-            <p class="tool-desc">Count outbound links</p>
-          </a>
-
-          <a href="seo-tools/seo-checklist.html" class="tool-card seo">
-            <div class="tool-icon">🛡️</div>
-            <h3 class="tool-name">SEO Checklist</h3>
-            <p class="tool-desc">Complete SEO audit</p>
-            <span class="tool-badge">Essential</span>
-          </a>
-
-          <a href="seo-tools/website-speed-test.html" class="tool-card seo">
-            <div class="tool-icon">⚡</div>
-            <h3 class="tool-name">Website Speed Test</h3>
-            <p class="tool-desc">Analyze Core Web Vitals & Speed</p>
-            <span class="tool-badge">New</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="tool-category-section flicker-prevention">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">
-            <span class="section-icon">📂</span>
-            Document Tools
-            <span class="section-subtitle">- Handle Office Files</span>
-          </h2>
-        </div>
-
-        <div class="tools-grid">
-          <a href="doc-tools/cv-builder.html" class="tool-card doc">
-            <div class="tool-icon">🎓</div>
-            <h3 class="tool-name">CVPro AI Builder</h3>
-            <p class="tool-desc">Create stunning ATS-optimized resumes with smart templates</p>
-            <span class="tool-badge">✨ Featured</span>
-          </a>
-
-          <a href="doc-tools/word-viewer.html" class="tool-card doc">
-            <div class="tool-icon">📘</div>
-            <h3 class="tool-name">Word Viewer</h3>
-            <p class="tool-desc">Open DOCX with track changes & comments</p>
-            <span class="tool-badge">Popular</span>
-          </a>
-
-          <a href="doc-tools/excel-viewer.html" class="tool-card doc">
-            <div class="tool-icon">📗</div>
-            <h3 class="tool-name">Excel Viewer</h3>
-            <p class="tool-desc">View spreadsheets with charts & formulas</p>
-            <span class="tool-badge">New</span>
-          </a>
-
-          <a href="doc-tools/csv-viewer.html" class="tool-card doc">
-            <div class="tool-icon">📑</div>
-            <h3 class="tool-name">CSV Viewer</h3>
-            <p class="tool-desc">View CSV files with charts & data inspection</p>
-            <span class="tool-badge">New</span>
-          </a>
-
-          <a href="doc-tools/text-viewer.html" class="tool-card doc">
-            <div class="tool-icon">👁️</div>
-            <h3 class="tool-name">Text File Viewer</h3>
-            <p class="tool-desc">Syntax highlighting for 20+ languages</p>
-          </a>
-
-          <a href="doc-tools/online-notepad.html" class="tool-card doc">
-            <div class="tool-icon">📝</div>
-            <h3 class="tool-name">Online Notepad</h3>
-            <p class="tool-desc">Distraction-free text editor with auto-save</p>
-          </a>
-
-          <a href="doc-tools/excel-editor.html" class="tool-card doc">
-            <div class="tool-icon">📊</div>
-            <h3 class="tool-name">Excel Editor</h3>
-            <p class="tool-desc">Edit with formulas & version history</p>
-          </a>
-
-          <a href="doc-tools/document-signer.html" class="tool-card doc">
-            <div class="tool-icon">✒️</div>
-            <h3 class="tool-name">Document Signer</h3>
-            <p class="tool-desc">Multi-signature, QR signing, audit trail</p>
-            <span class="tool-badge">Pro</span>
-          </a>
-
-          <a href="doc-tools/document-scanner.html" class="tool-card doc">
-            <div class="tool-icon">🔍</div>
-            <h3 class="tool-name">Document Scanner</h3>
-            <p class="tool-desc">OCR text extraction & auto-crop</p>
-            <span class="tool-badge">Premium</span>
-          </a>
-
-          <a href="doc-tools/document-compressor.html" class="tool-card doc">
-            <div class="tool-icon">📉</div>
-            <h3 class="tool-name">Document Compressor</h3>
-            <p class="tool-desc">Batch compression with password protection</p>
-          </a>
-
-          <a href="doc-tools/document-merger.html" class="tool-card doc">
-            <div class="tool-icon">🧩</div>
-            <h3 class="tool-name">Document Merger</h3>
-            <p class="tool-desc">Drag-drop reorder, auto page numbers</p>
-          </a>
-
-          <a href="doc-tools/document-compare.html" class="tool-card doc">
-            <div class="tool-icon">⚖️</div>
-            <h3 class="tool-name">Document Compare</h3>
-            <p class="tool-desc">Word-by-word diff, side-by-side view</p>
-          </a>
-
-          <a href="doc-tools/document-repair.html" class="tool-card doc">
-            <div class="tool-icon">🩹</div>
-            <h3 class="tool-name">Document Repair</h3>
-            <p class="tool-desc">Auto-repair & content recovery</p>
-          </a>
-        </div>
-      </div>
-    </section>
-    <section class="tool-category-section flicker-prevention" id="text-tools">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">
-            <span class="section-icon">📝</span>
-            Text & Writing
-            <span class="section-subtitle">- Write Better & Faster</span>
-          </h2>
-        </div>
-
-        <div class="tools-grid">
-          <a href="text-tools/text-case-changer.html" class="tool-card text">
-            <div class="tool-icon">🔡</div>
-            <h3 class="tool-name">Text Case Changer</h3>
-            <p class="tool-desc">Convert text between different cases</p>
-          </a>
-
-          <a href="text-tools/paraphrasing-tool.html" class="tool-card text">
-            <div class="tool-icon">✍️</div>
-            <h3 class="tool-name">Paraphrasing Tool</h3>
-            <p class="tool-desc">Rewrite text while keeping meaning</p>
-          </a>
-
-          <a href="text-tools/rewriter-tool.html" class="tool-card text">
-            <div class="tool-icon">🔄</div>
-            <h3 class="tool-name">Rewriter Tool</h3>
-            <p class="tool-desc">Advanced text rewriting utility</p>
-          </a>
-
-          <a href="text-tools/paragraph-rephraser.html" class="tool-card text">
-            <div class="tool-icon">📄</div>
-            <h3 class="tool-name">Paragraph Rephraser</h3>
-            <p class="tool-desc">Rephrase entire paragraphs instantly</p>
-          </a>
-
-          <a href="text-tools/sentence-checker.html" class="tool-card text">
-            <div class="tool-icon">🧐</div>
-            <h3 class="tool-name">Sentence Checker</h3>
-            <p class="tool-desc">Check sentences for errors</p>
-          </a>
-
-          <a href="text-tools/spell-checker.html" class="tool-card text">
-            <div class="tool-icon">📖</div>
-            <h3 class="tool-name">Spell Checker</h3>
-            <p class="tool-desc">Correct spelling mistakes automatically</p>
-          </a>
-
-          <a href="text-tools/invisible-character.html" class="tool-card text">
-            <div class="tool-icon">👻</div>
-            <h3 class="tool-name">Invisible Character Tool</h3>
-            <p class="tool-desc">Generate invisible text characters</p>
-          </a>
-
-          <a href="text-tools/sentence-counter.html" class="tool-card text">
-            <div class="tool-icon">🔢</div>
-            <h3 class="tool-name">Sentence Counter</h3>
-            <p class="tool-desc">Count the number of sentences</p>
-          </a>
-
-          <a href="text-tools/small-text-generator.html" class="tool-card text">
-            <div class="tool-icon">🤏</div>
-            <h3 class="tool-name">Small Text Generator</h3>
-            <p class="tool-desc">Generate superscript & subscript text</p>
-          </a>
-
-          <a href="text-tools/text-summarizer.html" class="tool-card text">
-            <div class="tool-icon">💡</div>
-            <h3 class="tool-name">Text Summarizer</h3>
-            <p class="tool-desc">Summarize long articles into key points</p>
-          </a>
-
-          <a href="text-tools/reverse-text-generator.html" class="tool-card text">
-            <div class="tool-icon">⬅️</div>
-            <h3 class="tool-name">Reverse Text Generator</h3>
-            <p class="tool-desc">Flip text backwards or upside down</p>
-          </a>
-
-          <a href="text-tools/bold-text-generator.html" class="tool-card text">
-            <div class="tool-icon">🅰️</div>
-            <h3 class="tool-name">Bold Text Generator</h3>
-            <p class="tool-desc">Convert normal text to bold unicode</p>
-          </a>
-
-          <a href="text-tools/small-caps-generator.html" class="tool-card text">
-            <div class="tool-icon">🏷️</div>
-            <h3 class="tool-name">Small Caps Generator</h3>
-            <p class="tool-desc">Convert text to small capital letters</p>
-          </a>
-
-          <a href="text-tools/upside-down-text.html" class="tool-card text">
-            <div class="tool-icon">🙃</div>
-            <h3 class="tool-name">Upside Down Text</h3>
-            <p class="tool-desc">Flip text upside down instantly</p>
-          </a>
-
-          <a href="text-tools/line-tools.html" class="tool-card text">
-            <div class="tool-icon">📏</div>
-            <h3 class="tool-name">Line Tools</h3>
-            <p class="tool-desc">Shuffle, sort, and duplicate lines</p>
-          </a>
-
-          <a href="text-tools/word-changer.html" class="tool-card text">
-            <div class="tool-icon">🔁</div>
-            <h3 class="tool-name">Word Changer</h3>
-            <p class="tool-desc">Replace words with synonyms</p>
-          </a>
-
-          <a href="text-tools/character-counter.html" class="tool-card text">
-            <div class="tool-icon">📊</div>
-            <h3 class="tool-name">Character Counter</h3>
-            <p class="tool-desc">Count characters, words, and lines</p>
-          </a>
-
-          <a href="text-tools/text-comparator.html" class="tool-card text">
-            <div class="tool-icon">⚖️</div>
-            <h3 class="tool-name">Text Comparator</h3>
-            <p class="tool-desc">Compare two texts for differences</p>
-          </a>
-
-          <a href="text-tools/text-cleaner.html" class="tool-card text">
-            <div class="tool-icon">🧹</div>
-            <h3 class="tool-name">Text Cleaner</h3>
-            <p class="tool-desc">Remove extra spaces and formatting</p>
-          </a>
-
-          <a href="text-tools/text-formatter.html" class="tool-card text">
-            <div class="tool-icon">✨</div>
-            <h3 class="tool-name">Text Formatter</h3>
-            <p class="tool-desc">Format text case and spacing</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="tool-category-section flicker-prevention" id="pdf-tools">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">
-            <span class="section-icon">📕</span>
-            PDF Tools
-            <span class="section-subtitle">- Premium PDF Processing Suite (35 Tools)</span>
-          </h2>
-        </div>
-
-        <div class="tools-grid">
-          <a href="pdf-tools/compress-pdf.html" class="tool-card pdf">
-            <div class="tool-icon">🗜️</div>
-            <h3 class="tool-name">Compress PDF</h3>
-            <p class="tool-desc">Optimize PDF size without losing quality</p>
-            <span class="tool-badge">Popular</span>
-          </a>
-          <a href="pdf-tools/compress-pdf-50kb.html" class="tool-card pdf">
-            <div class="tool-icon">🎈</div>
-            <h3 class="tool-name">Compress PDF to 50KB</h3>
-            <p class="tool-desc">Aggressive compression for small limits</p>
-          </a>
-          <a href="pdf-tools/compress-pdf-100kb.html" class="tool-card pdf">
-            <div class="tool-icon">🍃</div>
-            <h3 class="tool-name">Compress PDF to 100KB</h3>
-            <p class="tool-desc">Balanced compression to 100KB</p>
-          </a>
-          <a href="pdf-tools/compress-pdf-150kb.html" class="tool-card pdf">
-            <div class="tool-icon">📉</div>
-            <h3 class="tool-name">Compress PDF to 150KB</h3>
-            <p class="tool-desc">Custom size reduction</p>
-          </a>
-          <a href="pdf-tools/compress-pdf-200kb.html" class="tool-card pdf">
-            <div class="tool-icon">📦</div>
-            <h3 class="tool-name">Compress PDF to 200KB</h3>
-            <p class="tool-desc">High quality threshold optimization</p>
-          </a>
-          <a href="pdf-tools/resize-pdf-200kb.html" class="tool-card pdf">
-            <div class="tool-icon">📐</div>
-            <h3 class="tool-name">Resize PDF to 200KB</h3>
-            <p class="tool-desc">Iterative resizing to exact limit</p>
-          </a>
-          <a href="pdf-tools/compress-pdf-300kb.html" class="tool-card pdf">
-            <div class="tool-icon">📧</div>
-            <h3 class="tool-name">Compress PDF to 300KB</h3>
-            <p class="tool-desc">Optimized for email attachments</p>
-          </a>
-          <a href="pdf-tools/compress-pdf-500kb.html" class="tool-card pdf">
-            <div class="tool-icon">💼</div>
-            <h3 class="tool-name">Compress PDF to 500KB</h3>
-            <p class="tool-desc">Standard business optimization</p>
-          </a>
-          <a href="pdf-tools/compress-pdf-1mb.html" class="tool-card pdf">
-            <div class="tool-icon">💎</div>
-            <h3 class="tool-name">Compress PDF to 1MB</h3>
-            <p class="tool-desc">Retain maximum visual fidelity</p>
-          </a>
-          <a href="pdf-tools/compress-pdf-2mb.html" class="tool-card pdf">
-            <div class="tool-icon">👔</div>
-            <h3 class="tool-name">Compress PDF to 2MB</h3>
-            <p class="tool-desc">Professional quality preservation</p>
-          </a>
-
-          <a href="pdf-tools/word-to-pdf.html" class="tool-card pdf">
-            <div class="tool-icon">📝</div>
-            <h3 class="tool-name">Word to PDF</h3>
-            <p class="tool-desc">Convert DOCX to high-quality PDF</p>
-          </a>
-          <a href="pdf-tools/jpg-to-pdf.html" class="tool-card pdf">
-            <div class="tool-icon">🖼️</div>
-            <h3 class="tool-name">JPG to PDF</h3>
-            <p class="tool-desc">Convert images to PDF sequence</p>
-          </a>
-          <a href="pdf-tools/ppt-to-pdf.html" class="tool-card pdf">
-            <div class="tool-icon">📽️</div>
-            <h3 class="tool-name">PowerPoint to PDF</h3>
-            <p class="tool-desc">Slides to PDF with notes</p>
-          </a>
-          <a href="pdf-tools/excel-to-pdf.html" class="tool-card pdf">
-            <div class="tool-icon">📊</div>
-            <h3 class="tool-name">Excel to PDF</h3>
-            <p class="tool-desc">Convert spreadsheets to PDF</p>
-          </a>
-          <a href="pdf-tools/gif-to-pdf.html" class="tool-card pdf">
-            <div class="tool-icon">🎞️</div>
-            <h3 class="tool-name">GIF to PDF</h3>
-            <p class="tool-desc">Convert animated GIF to pages</p>
-          </a>
-          <a href="pdf-tools/bmp-to-pdf.html" class="tool-card pdf">
-            <div class="tool-icon">💾</div>
-            <h3 class="tool-name">BMP to PDF</h3>
-            <p class="tool-desc">Bitmap image to PDF converter</p>
-          </a>
-          <a href="pdf-tools/tiff-to-pdf.html" class="tool-card pdf">
-            <div class="tool-icon">📠</div>
-            <h3 class="tool-name">TIFF to PDF</h3>
-            <p class="tool-desc">Multi-page TIFF to PDF</p>
-          </a>
-          <a href="pdf-tools/png-to-pdf.html" class="tool-card pdf">
-            <div class="tool-icon">✨</div>
-            <h3 class="tool-name">PNG to PDF</h3>
-            <p class="tool-desc">Convert PNG with transparency</p>
-          </a>
-          <a href="pdf-tools/svg-to-pdf.html" class="tool-card pdf">
-            <div class="tool-icon">🎯</div>
-            <h3 class="tool-name">SVG to PDF</h3>
-            <p class="tool-desc">Vector SVG to PDF converter</p>
-          </a>
-
-          <a href="pdf-tools/pdf-to-word.html" class="tool-card pdf">
-            <div class="tool-icon">📘</div>
-            <h3 class="tool-name">PDF to Word</h3>
-            <p class="tool-desc">Convert PDF to editable DOCX</p>
-          </a>
-          <a href="pdf-tools/pdf-to-jpg.html" class="tool-card pdf">
-            <div class="tool-icon">📸</div>
-            <h3 class="tool-name">PDF to JPG</h3>
-            <p class="tool-desc">Extract pages as JPG images</p>
-          </a>
-          <a href="pdf-tools/pdf-to-bmp.html" class="tool-card pdf">
-            <div class="tool-icon">🎨</div>
-            <h3 class="tool-name">PDF to BMP</h3>
-            <p class="tool-desc">Convert pages to BMP format</p>
-          </a>
-          <a href="pdf-tools/pdf-to-tiff.html" class="tool-card pdf">
-            <div class="tool-icon">🖨️</div>
-            <h3 class="tool-name">PDF to TIFF</h3>
-            <p class="tool-desc">Save PDF as multi-page TIFF</p>
-          </a>
-          <a href="pdf-tools/pdf-to-svg.html" class="tool-card pdf">
-            <div class="tool-icon">📐</div>
-            <h3 class="tool-name">PDF to SVG</h3>
-            <p class="tool-desc">Convert PDF to scalable vectors</p>
-          </a>
-          <a href="pdf-tools/pdf-to-png.html" class="tool-card pdf">
-            <div class="tool-icon">🌈</div>
-            <h3 class="tool-name">PDF to PNG</h3>
-            <p class="tool-desc">High-res extraction to PNG</p>
-          </a>
-          <a href="pdf-tools/pdf-to-zip.html" class="tool-card pdf">
-            <div class="tool-icon">🤐</div>
-            <h3 class="tool-name">PDF to ZIP</h3>
-            <p class="tool-desc">Package PDF pages into ZIP</p>
-          </a>
-
-          <a href="pdf-tools/merge-pdf.html" class="tool-card pdf">
-            <div class="tool-icon">🖇️</div>
-            <h3 class="tool-name">Merge PDF</h3>
-            <p class="tool-desc">Combine multiple PDFs into one</p>
-          </a>
-          <a href="pdf-tools/split-pdf.html" class="tool-card pdf">
-            <div class="tool-icon">✂️</div>
-            <h3 class="tool-name">Split PDF</h3>
-            <p class="tool-desc">Split PDF into separate files</p>
-          </a>
-          <a href="pdf-tools/rotate-pdf.html" class="tool-card pdf">
-            <div class="tool-icon">🔄</div>
-            <h3 class="tool-name">Rotate PDF</h3>
-            <p class="tool-desc">Rotate specific PDF pages</p>
-          </a>
-          <a href="pdf-tools/delete-pdf-pages.html" class="tool-card pdf">
-            <div class="tool-icon">🗑️</div>
-            <h3 class="tool-name">Delete PDF Pages</h3>
-            <p class="tool-desc">Remove unwanted pages easily</p>
-          </a>
-          <a href="pdf-tools/pdf-page-remover.html" class="tool-card pdf">
-            <div class="tool-icon">❌</div>
-            <h3 class="tool-name">PDF Page Remover</h3>
-            <p class="tool-desc">Visual interface for page deletion</p>
-          </a>
-          <a href="pdf-tools/watermark-pdf.html" class="tool-card pdf">
-            <div class="tool-icon">🖋️</div>
-            <h3 class="tool-name">Watermark PDF</h3>
-            <p class="tool-desc">Add text or image stamps</p>
-          </a>
-
-          <a href="pdf-tools/lock-pdf.html" class="tool-card pdf">
-            <div class="tool-icon">🔒</div>
-            <h3 class="tool-name">Lock PDF</h3>
-            <p class="tool-desc">Add password & permissions</p>
-          </a>
-          <a href="pdf-tools/unlock-pdf.html" class="tool-card pdf">
-            <div class="tool-icon">🔓</div>
-            <h3 class="tool-name">Unlock PDF</h3>
-            <p class="tool-desc">Remove PDF restrictions</p>
-          </a>
-          <a href="pdf-tools/remove-pdf-password.html" class="tool-card pdf">
-            <div class="tool-icon">🔑</div>
-            <h3 class="tool-name">Remove PDF Password</h3>
-            <p class="tool-desc">Permanent password removal</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="tool-category-section flicker-prevention">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">
-            <span class="section-icon">🧮</span>
-            Calculators
-            <span class="section-subtitle">- Smart Calculations Made Easy</span>
-          </h2>
-        </div>
-
-        <div class="tools-grid">
-          <a href="calculator-tools/simple-calculator.html" class="tool-card calc">
-            <div class="tool-icon">🔢</div>
-            <h3 class="tool-name">Simple Calculator</h3>
-            <p class="tool-desc">Basic arithmetic operations</p>
-          </a>
-
-          <a href="calculator-tools/percentage-calculator.html" class="tool-card calc">
-            <div class="tool-icon">📉</div>
-            <h3 class="tool-name">Percentage Calculator</h3>
-            <p class="tool-desc">Calculate percentages easily</p>
-          </a>
-
-          <a href="calculator-tools/discount-calculator.html" class="tool-card calc">
-            <div class="tool-icon">🏷️</div>
-            <h3 class="tool-name">Discount Calculator</h3>
-            <p class="tool-desc">Calculate sale discounts</p>
-          </a>
-
-          <a href="calculator-tools/age-calculator.html" class="tool-card calc">
-            <div class="tool-icon">🎂</div>
-            <h3 class="tool-name">Age Calculator</h3>
-            <p class="tool-desc">Calculate your exact age</p>
-          </a>
-
-          <a href="calculator-tools/bmi-calculator.html" class="tool-card calc">
-            <div class="tool-icon">🏃</div>
-            <h3 class="tool-name">BMI Calculator</h3>
-            <p class="tool-desc">Calculate Body Mass Index</p>
-          </a>
-
-          <a href="calculator-tools/loan-emi-calculator.html" class="tool-card calc">
-            <div class="tool-icon">🏦</div>
-            <h3 class="tool-name">Loan EMI Calculator</h3>
-            <p class="tool-desc">Calculate monthly loan payments</p>
-          </a>
-
-          <a href="calculator-tools/interest-calculator.html" class="tool-card calc">
-            <div class="tool-icon">💎</div>
-            <h3 class="tool-name">Interest Calculator</h3>
-            <p class="tool-desc">Simple & compound interest</p>
-          </a>
-
-          <a href="calculator-tools/currency-converter.html" class="tool-card calc">
-            <div class="tool-icon">💱</div>
-            <h3 class="tool-name">Currency Converter</h3>
-            <p class="tool-desc">Convert world currencies</p>
-          </a>
-
-          <a href="calculator-tools/unit-converter.html" class="tool-card calc">
-            <div class="tool-icon">⚖️</div>
-            <h3 class="tool-name">Unit Converter</h3>
-            <p class="tool-desc">Convert length, weight & more</p>
-          </a>
-
-          <a href="calculator-tools/date-difference-calculator.html" class="tool-card calc">
-            <div class="tool-icon">📅</div>
-            <h3 class="tool-name">Date Difference Calculator</h3>
-            <p class="tool-desc">Calculate days between dates</p>
-          </a>
-
-          <a href="calculator-tools/mortgage-calculator.html" class="tool-card calc">
-            <div class="tool-icon">🏠</div>
-            <h3 class="tool-name">Mortgage Calculator</h3>
-            <p class="tool-desc">Estimate mortgage payments</p>
-          </a>
-
-          <a href="calculator-tools/investment-calculator.html" class="tool-card calc">
-            <div class="tool-icon">💹</div>
-            <h3 class="tool-name">Investment Calculator</h3>
-            <p class="tool-desc">Calculate return on investment</p>
-          </a>
-
-          <a href="calculator-tools/retirement-calculator.html" class="tool-card calc">
-            <div class="tool-icon">🏖️</div>
-            <h3 class="tool-name">Retirement Calculator</h3>
-            <p class="tool-desc">Plan your retirement savings</p>
-          </a>
-
-          <a href="calculator-tools/tax-calculator.html" class="tool-card calc">
-            <div class="tool-icon">🧾</div>
-            <h3 class="tool-name">Tax Calculator</h3>
-            <p class="tool-desc">Estimate your taxes</p>
-          </a>
-
-          <a href="calculator-tools/gpa-calculator.html" class="tool-card calc">
-            <div class="tool-icon">🎓</div>
-            <h3 class="tool-name">GPA Calculator</h3>
-            <p class="tool-desc">Calculate Grade Point Average</p>
-          </a>
-
-          <a href="calculator-tools/calorie-calculator.html" class="tool-card calc">
-            <div class="tool-icon">🍎</div>
-            <h3 class="tool-name">Calorie Calculator</h3>
-            <p class="tool-desc">Daily calorie needs estimator</p>
-          </a>
-
-          <a href="calculator-tools/time-calculator.html" class="tool-card calc">
-            <div class="tool-icon">⏳</div>
-            <h3 class="tool-name">Time Calculator</h3>
-            <p class="tool-desc">Add or subtract time values</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="tool-category-section flicker-prevention">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">
-            <span class="section-icon">💻</span>
-            Code & Formatters
-          </h2>
-        </div>
-
-        <div class="tools-grid">
-          <a href="code-format-tools/minifiers/html-minifier.html" class="tool-card code">
-            <div class="tool-icon">📉</div>
-            <h3 class="tool-name">HTML Minifier</h3>
-            <p class="tool-desc">Compress HTML code for faster loading</p>
-            <span class="tool-badge">Popular</span>
-          </a>
-
-          <a href="code-format-tools/minifiers/html-viewer.html" class="tool-card code">
-            <div class="tool-icon">🖥️</div>
-            <h3 class="tool-name">HTML Live Viewer</h3>
-            <p class="tool-desc">View and test your HTML code with instant live preview</p>
-          </a>
-
-          <a href="code-format-tools/minifiers/css-minifier.html" class="tool-card code">
-            <div class="tool-icon">🎨</div>
-            <h3 class="tool-name">CSS Minifier</h3>
-            <p class="tool-desc">Optimize your stylesheets instantly</p>
-          </a>
-
-          <a href="code-format-tools/minifiers/javascript-minifier.html" class="tool-card code">
-            <div class="tool-icon">⚡</div>
-            <h3 class="tool-name">JS Minifier</h3>
-            <p class="tool-desc">Compress scripts for web performance</p>
-          </a>
-
-          <a href="code-format-tools/formatters/json-formatter.html" class="tool-card code">
-            <div class="tool-icon">💎</div>
-            <h3 class="tool-name">JSON Formatter</h3>
-            <p class="tool-desc">Validate and prettify JSON data</p>
-            <span class="tool-badge">Essential</span>
-          </a>
-
-          <a href="code-format-tools/formatters/sql-formatter.html" class="tool-card code">
-            <div class="tool-icon">🗄️</div>
-            <h3 class="tool-name">SQL Formatter</h3>
-            <p class="tool-desc">Format SQL queries for readability</p>
-          </a>
-
-          <a href="code-format-tools/viewers/json-viewer.html" class="tool-card code">
-            <div class="tool-icon">🌳</div>
-            <h3 class="tool-name">JSON Viewer</h3>
-            <p class="tool-desc">Interactive tree view for JSON structures</p>
-          </a>
-
-          <a href="code-format-tools/encoders/base64-encoder-decoder.html" class="tool-card code">
-            <div class="tool-icon">🔐</div>
-            <h3 class="tool-name">Base64 Encode/Decode</h3>
-            <p class="tool-desc">Securely encode or decode your data</p>
-          </a>
-
-          <a href="code-format-tools/code-utilities/regular-expression-tester.html" class="tool-card code">
-            <div class="tool-icon">🧪</div>
-            <h3 class="tool-name">Regex Tester</h3>
-            <p class="tool-desc">Test regular expressions in real-time</p>
-          </a>
-
-          <a href="code-format-tools/formatters/python-formatter.html" class="tool-card code">
-            <div class="tool-icon">🐍</div>
-            <h3 class="tool-name">Python Formatter</h3>
-            <p class="tool-desc">Format and beautify Python code</p>
-          </a>
-
-          <a href="code-format-tools/validators/css-validator.html" class="tool-card code">
-            <div class="tool-icon">🛡️</div>
-            <h3 class="tool-name">CSS Validator</h3>
-            <p class="tool-desc">Check for syntax errors in CSS</p>
-          </a>
-
-          <a href="code-format-tools/validators/json-validator.html" class="tool-card code">
-            <div class="tool-icon">✅</div>
-            <h3 class="tool-name">JSON Validator</h3>
-            <p class="tool-desc">Validate JSON structure and syntax</p>
-          </a>
-
-          <a href="code-format-tools/minifiers/universal-code-compressor.html" class="tool-card code">
-            <div class="tool-icon">📦</div>
-            <h3 class="tool-name">Universal Compressor</h3>
-            <p class="tool-desc">All-in-one minifier for any language</p>
-          </a>
-
-          <a href="code-format-tools/formatters/html-formatter.html" class="tool-card code">
-            <div class="tool-icon">🪄</div>
-            <h3 class="tool-name">HTML Formatter</h3>
-            <p class="tool-desc">Beautify and indent HTML code</p>
-          </a>
-
-          <a href="code-format-tools/formatters/javascript-beautifier.html" class="tool-card code">
-            <div class="tool-icon">✨</div>
-            <h3 class="tool-name">JS Beautifier</h3>
-            <p class="tool-desc">Clean and format JavaScript files</p>
-          </a>
-
-          <a href="code-format-tools/formatters/css-beautifier.html" class="tool-card code">
-            <div class="tool-icon">💅</div>
-            <h3 class="tool-name">CSS Beautifier</h3>
-            <p class="tool-desc">Unminify and style CSS code</p>
-          </a>
-
-          <a href="code-format-tools/formatters/xml-formatter.html" class="tool-card code">
-            <div class="tool-icon">📄</div>
-            <h3 class="tool-name">XML Formatter</h3>
-            <p class="tool-desc">Format XML data structures</p>
-          </a>
-
-          <a href="code-format-tools/validators/code-quality-checker.html" class="tool-card code">
-            <div class="tool-icon">🔎</div>
-            <h3 class="tool-name">Code Quality Checker</h3>
-            <p class="tool-desc">Audit code for best practices</p>
-          </a>
-
-          <a href="code-format-tools/encoders/url-encoder-decoder.html" class="tool-card code">
-            <div class="tool-icon">🔗</div>
-            <h3 class="tool-name">URL Encoder/Decoder</h3>
-            <p class="tool-desc">Encode URLs for safe transmission</p>
-          </a>
-
-          <a href="code-format-tools/code-utilities/code-diff-viewer.html" class="tool-card code">
-            <div class="tool-icon">⚖️</div>
-            <h3 class="tool-name">Code Diff Viewer</h3>
-            <p class="tool-desc">Compare code changes side-by-side</p>
-          </a>
-
-          <a href="code-format-tools/code-utilities/syntax-highlighter.html" class="tool-card code">
-            <div class="tool-icon">🌈</div>
-            <h3 class="tool-name">Syntax Highlighter</h3>
-            <p class="tool-desc">Highlight code for presentation</p>
-          </a>
-
-          <a href="code-format-tools/code-utilities/code-obfuscator.html" class="tool-card code">
-            <div class="tool-icon">🕵️</div>
-            <h3 class="tool-name">Code Obfuscator</h3>
-            <p class="tool-desc">Protect JS code from theft</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="tool-category-section" id="binary-tools">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">
-            <span class="section-icon">🔢</span>
-            Binary Tools
-            <span class="section-subtitle">- Binary, HEX, ASCII & Decimal Converters</span>
-          </h2>
-        </div>
-
-        <div class="tools-grid">
-          <a href="binary-tools/binary-to-text.html" class="tool-card binary">
-            <div class="tool-icon">🔡</div>
-            <h3 class="tool-name">Binary To Text</h3>
-            <p class="tool-desc">Decode binary code into readable text</p>
-            <span class="tool-badge">Popular</span>
-          </a>
-
-          <a href="binary-tools/text-to-binary.html" class="tool-card binary">
-            <div class="tool-icon">🔢</div>
-            <h3 class="tool-name">Text to Binary</h3>
-            <p class="tool-desc">Convert plain text to binary 0s and 1s</p>
-          </a>
-
-          <a href="binary-tools/binary-to-hex.html" class="tool-card binary">
-            <div class="tool-icon">💠</div>
-            <h3 class="tool-name">Binary To HEX</h3>
-            <p class="tool-desc">Convert binary numbers to hexadecimal</p>
-          </a>
-
-          <a href="binary-tools/hex-to-binary.html" class="tool-card binary">
-            <div class="tool-icon">📟</div>
-            <h3 class="tool-name">HEX To Binary</h3>
-            <p class="tool-desc">Base-16 to base-2 conversion</p>
-          </a>
-
-          <a href="binary-tools/binary-to-decimal.html" class="tool-card binary">
-            <div class="tool-icon">➕</div>
-            <h3 class="tool-name">Binary To Decimal</h3>
-            <p class="tool-desc">Convert binary bits to decimal numbers</p>
-          </a>
-
-          <a href="binary-tools/decimal-to-binary.html" class="tool-card binary">
-            <div class="tool-icon">⚙️</div>
-            <h3 class="tool-name">Decimal To Binary</h3>
-            <p class="tool-desc">Decimal to base-2 representation</p>
-          </a>
-
-          <a href="binary-tools/hex-to-text.html" class="tool-card binary">
-            <div class="tool-icon">📜</div>
-            <h3 class="tool-name">HEX To TEXT</h3>
-            <p class="tool-desc">Decode hexadecimal back to text</p>
-          </a>
-
-          <a href="binary-tools/text-to-hex.html" class="tool-card binary">
-            <div class="tool-icon">🖍️</div>
-            <h3 class="tool-name">Text to HEX</h3>
-            <p class="tool-desc">Convert text string to base-16</p>
-          </a>
-
-          <a href="binary-tools/ascii-to-binary.html" class="tool-card binary">
-            <div class="tool-icon">💻</div>
-            <h3 class="tool-name">ASCII To Binary</h3>
-            <p class="tool-desc">Convert ASCII values to binary bits</p>
-          </a>
-
-          <a href="binary-tools/binary-to-ascii.html" class="tool-card binary">
-            <div class="tool-icon">🅰️</div>
-            <h3 class="tool-name">Binary To ASCII</h3>
-            <p class="tool-desc">Binary bits to ASCII representation</p>
-          </a>
-
-          <a href="binary-tools/decimal-to-hex.html" class="tool-card binary">
-            <div class="tool-icon">🎲</div>
-            <h3 class="tool-name">Decimal To HEX</h3>
-            <p class="tool-desc">Convert decimal to hexadecimal</p>
-          </a>
-
-          <a href="binary-tools/hex-to-decimal.html" class="tool-card binary">
-            <div class="tool-icon">🏛️</div>
-            <h3 class="tool-name">HEX To Decimal</h3>
-            <p class="tool-desc">Hexadecimal to base-10 conversion</p>
-          </a>
-
-          <a href="binary-tools/ascii-to-text.html" class="tool-card binary">
-            <div class="tool-icon">📝</div>
-            <h3 class="tool-name">ASCII To Text</h3>
-            <p class="tool-desc">Convert ASCII values to plain text</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- Other Tools Section -->
-    <section class="tool-category-section" id="other-tools">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">
-            <span class="section-icon">⚒️</span>
-            Other Tools
-            <span class="section-subtitle">- Identity & Random Generators</span>
-          </h2>
-        </div>
-
-        <div class="tools-grid">
-          <a href="other-tools/random-name-generator.html" class="tool-card other">
-            <div class="tool-icon">👤</div>
-            <h3 class="tool-name">Random Name Generator</h3>
-            <p class="tool-desc">Generate multi-cultural names with identity presets</p>
-            <span class="tool-badge">Popular</span>
-          </a>
-
-          <a href="other-tools/random-id-generator.html" class="tool-card other">
-            <div class="tool-icon">🆔</div>
-            <h3 class="tool-name">Random ID Card Generator</h3>
-            <p class="tool-desc">Virtual IDs with photos and QR codes</p>
-          </a>
-
-          <a href="other-tools/fake-address-generator.html" class="tool-card other">
-            <div class="tool-icon">🏠</div>
-            <h3 class="tool-name">Fake Address Generator</h3>
-            <p class="tool-desc">Realistic addresses for any country</p>
-          </a>
-
-          <a href="other-tools/fake-number-generator.html" class="tool-card other">
-            <div class="tool-icon">📞</div>
-            <h3 class="tool-name">Fake Number Generator</h3>
-            <p class="tool-desc">Valid-format phone numbers globally</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- Trending Now Section -->
-    <section class="trending-section">
-      <div class="container">
-        <div class="section-banner">
-          <h2 class="banner-title">
-            <span class="banner-icon">🔥</span>
-            Trending Now - Most Used This Week
-          </h2>
-        </div>
-
-        <div class="trending-list">
-          <a href="seo-tools/meta-tag-generator.html" class="trending-item">
-            <span class="trending-rank">1.</span>
-            <span class="trending-name">SEO Meta Tag Generator</span>
-          </a>
-          <a href="seo-tools/schema-generator.html" class="trending-item">
-            <span class="trending-rank">2.</span>
-            <span class="trending-name">Schema.org Generator</span>
-          </a>
-          <a href="calculator-tools/bmi-calculator.html" class="trending-item">
-            <span class="trending-rank">3.</span>
-            <span class="trending-name">BMI Calculator</span>
-          </a>
-          <a href="code-format-tools/formatters/html-formatter.html" class="trending-item">
-            <span class="trending-rank">4.</span>
-            <span class="trending-name">HTML Formatter</span>
-          </a>
-          <a href="calculator-tools/currency-converter.html" class="trending-item">
-            <span class="trending-rank">5.</span>
-            <span class="trending-name">Currency Converter</span>
-          </a>
-          <a href="image-tools/compression/image-compressor.html" class="trending-item">
-            <span class="trending-rank">6.</span>
-            <span class="trending-name">Image Compressor</span>
-          </a>
-          <a href="text-tools/paraphrasing-tool.html" class="trending-item">
-            <span class="trending-rank">7.</span>
-            <span class="trending-name">Text Paraphrase Tool</span>
-          </a>
-          <a href="code-format-tools/formatters/json-formatter.html" class="trending-item">
-            <span class="trending-rank">8.</span>
-            <span class="trending-name">JSON Formatter</span>
-          </a>
-          <a href="calculator-tools/age-calculator.html" class="trending-item">
-            <span class="trending-rank">9.</span>
-            <span class="trending-name">Age Calculator</span>
-          </a>
-          <a href="image-tools/conversion/png-jpg-converter.html" class="trending-item">
-            <span class="trending-rank">10.</span>
-            <span class="trending-name">PNG to JPG Converter</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features-section">
-      <div class="container">
-        <h2 class="features-title">🚀 Why Choose TOOLSHUB?</h2>
-
-        <div class="features-grid">
-          <div class="feature-card">
-            <span class="feature-icon">🔒</span>
-            <h3 class="feature-title">100% Private</h3>
-            <p class="feature-desc">All 137+ tools process in your browser. Zero data upload to servers. Your files stay
-              on your device.</p>
-          </div>
-
-          <div class="feature-card">
-            <span class="feature-icon">💯</span>
-            <h3 class="feature-title">Completely Free</h3>
-            <p class="feature-desc">No watermarks, no limits, no ads. Use all tools unlimited times without any cost.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <span class="feature-icon">⚡</span>
-            <h3 class="feature-title">Instant Results</h3>
-            <p class="feature-desc">No waiting, no processing queues. Get instant results with client-side processing.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <span class="feature-icon">📱</span>
-            <h3 class="feature-title">Works Everywhere</h3>
-            <p class="feature-desc">Fully responsive design works on desktop, mobile, tablet, and all browsers.</p>
-          </div>
-
-          <div class="feature-card">
-            <span class="feature-icon">🎨</span>
-            <h3 class="feature-title">Professional Quality</h3>
-            <p class="feature-desc">Industry-grade tools with advanced features matching paid alternatives.</p>
-          </div>
-
-          <div class="feature-card">
-            <span class="feature-icon">🔄</span>
-            <h3 class="feature-title">Regular Updates</h3>
-            <p class="feature-desc">New tools added weekly. Features improved based on user feedback.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials-section">
-      <div class="container">
-        <h2 class="testimonials-title">💬 What Our Users Say</h2>
-
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <div class="testimonial-quote">"</div>
-            <p class="testimonial-text">Toolshub saved my business $500/month on paid tools. The SEO and image tools are
-              fantastic! I use them daily for my design work.</p>
-            <div class="testimonial-author">Alex Johnson</div>
-            <div class="testimonial-role">Small Business Owner</div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-quote">"</div>
-            <p class="testimonial-text">As a web developer, I use the code formatters daily. Best free alternative to
-              paid tools. The HTML and JSON formatters are lifesavers!</p>
-            <div class="testimonial-author">Sarah Chen</div>
-            <div class="testimonial-role">Web Developer</div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-quote">"</div>
-            <p class="testimonial-text">The SEO toolkit helped improve our website traffic by 40%. Incredible value for
-              free! The meta tag generator is particularly useful.</p>
-            <div class="testimonial-author">Mark Williams</div>
-            <div class="testimonial-role">Digital Marketer</div>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- Newsletter Section -->
-      <section class="newsletter-section">
-        <div class="container">
-          <div class="newsletter-container">
-            <div class="newsletter-icon">📰</div>
-            <h2 class="newsletter-title">Stay Updated on New Tools</h2>
-            <p class="newsletter-desc">Get notified when we add new tools and features</p>
-
-            <form class="newsletter-form" id="newsletter-form">
-              <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
-              <button type="submit" class="newsletter-btn">Subscribe Now</button>
-            </form>
-
-            <div class="newsletter-features">
-              <span class="newsletter-feature">No spam, unsubscribe anytime</span>
-              <span class="newsletter-feature">Weekly tool highlights</span>
-              <span class="newsletter-feature">Exclusive tips & tutorials</span>
-              <span class="newsletter-feature">Beta access to new tools</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-  </main>
-
-  <!-- ========== FOOTER ========== -->
-  <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="seo-tools/word-counter.html">Word Counter</a></li><li><a href="code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="image-tools/index.html">Image Tools</a></li><li><a href="pdf-tools/index.html">PDF Tools</a></li><li><a href="text-tools/index.html">Text & Writing</a></li><li><a href="seo-tools/index.html">SEO Tools</a></li><li><a href="calculator-tools/index.html">Calculators</a></li><li><a href="index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+</section>
+
+<div class="v3-wrap" id="tools">
+<section class="v3-sec" id="binary-tools">
+  <div class="v3-sec-head"><h2>Binary Tools</h2><span>14 tools</span><span class="count">14</span></div>
+  <div class="v3-grid">
+    <a class="v3-tool-card" href="binary-tools/ascii-to-binary.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>ASCII to Binary Converter</h3><p>Convert ASCII values to binary code instantly. Free, secure, client-side ASCII to binary converter.</p></a>
+    <a class="v3-tool-card" href="binary-tools/ascii-to-text.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>ASCII to Text Converter</h3><p>Convert ASCII numeric values to plain text instantly. Free, secure, client-side ASCII to text decode</p></a>
+    <a class="v3-tool-card" href="binary-tools/binary-to-ascii.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Binary to ASCII Converter</h3><p>Convert binary code to ASCII format instantly. Free, secure, client-side binary to ASCII converter.</p></a>
+    <a class="v3-tool-card" href="binary-tools/binary-to-decimal.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Binary to Decimal Converter</h3><p>Convert binary numbers to decimal format instantly. Free, secure, client-side binary to decimal conv</p></a>
+    <a class="v3-tool-card" href="binary-tools/binary-to-hex.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Binary to HEX Converter</h3><p>Convert binary code to hexadecimal format easily. Secure, client-side binary to HEX converter.</p></a>
+    <a class="v3-tool-card" href="binary-tools/binary-to-text.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Binary to Text Converter</h3><p>Convert binary code (0s and 1s) to plain text instantly. Free, secure, client-side binary to text de</p></a>
+    <a class="v3-tool-card" href="binary-tools/decimal-to-binary.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Decimal to Binary Converter</h3><p>Convert decimal numbers to binary format instantly. Free, secure, client-side decimal to binary conv</p></a>
+    <a class="v3-tool-card" href="binary-tools/decimal-to-hex.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Decimal to HEX Converter</h3><p>Convert decimal numbers to hexadecimal format instantly. Free, secure, client-side decimal to HEX co</p></a>
+    <a class="v3-tool-card" href="binary-tools/hex-to-binary.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>HEX to Binary Converter</h3><p>Convert hexadecimal code to binary format instantly. Free, secure, client-side HEX to binary convert</p></a>
+    <a class="v3-tool-card" href="binary-tools/hex-to-decimal.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>HEX to Decimal Converter</h3><p>Convert hexadecimal numbers to decimal format instantly. Free, secure, client-side HEX to decimal co</p></a>
+    <a class="v3-tool-card" href="binary-tools/hex-to-text.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>HEX to Text Converter</h3><p>Convert hexadecimal code to plain text instantly. Free, secure, client-side HEX to text decoder.</p></a>
+    <a class="v3-tool-card" href="binary-tools/text-to-ascii.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Text to ASCII Converter</h3><p>Convert plain text to ASCII values instantly. Free, secure, client-side text to ASCII converter.</p></a>
+    <a class="v3-tool-card" href="binary-tools/text-to-binary.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Text to Binary Converter</h3><p>Convert plain text to binary code (0s and 1s) instantly. Free, secure, client-side text to binary co</p></a>
+    <a class="v3-tool-card" href="binary-tools/text-to-hex.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Text to HEX Converter</h3><p>Convert plain text to hexadecimal code instantly. Free, secure, client-side text to HEX converter.</p></a>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="about-us.html">About</a><a href="contact-us.html">Contact</a><a href="sitemap.xml">Sitemap</a></div>
-    </div>
+</section>
+<section class="v3-sec" id="calculator-tools">
+  <div class="v3-sec-head"><h2>Calculators</h2><span>17 tools</span><span class="count">17</span></div>
+  <div class="v3-grid">
+    <a class="v3-tool-card" href="calculator-tools/age-calculator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>High-End Age & Life Intelligence</h3><p>Premium age calculator with exact precision, life expectancy modeling, and historical context. Disco</p></a>
+    <a class="v3-tool-card" href="calculator-tools/bmi-calculator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>High-End BMI & Body Intelligence</h3><p>Premium BMI calculator with Body Fat % (US Navy Method) and BMR estimation. Professional-grade healt</p></a>
+    <a class="v3-tool-card" href="calculator-tools/currency-converter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>High-End Currency & FX Intelligence</h3><p>Premium currency converter with historical charts, travel optimized tables, and offline support. Pro</p></a>
+    <a class="v3-tool-card" href="calculator-tools/date-difference-calculator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>High-End Date & Time Intelligence</h3><p>Premium date calculator with business days, holiday exclusion, and countdown timelines. Professional</p></a>
+    <a class="v3-tool-card" href="calculator-tools/discount-calculator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>High-End Discount & Shopping Calculator</h3><p>Premium discount calculator with stacked coupons, deal comparison, and sales tax modeling. Optimize </p></a>
+    <a class="v3-tool-card" href="calculator-tools/gpa-calculator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>High-End GPA & Academic Intelligence</h3><p>Premium GPA calculator with grade forecasting, weighted analysis, and cumulative tracking. Optimize </p></a>
+    <a class="v3-tool-card" href="calculator-tools/interest-calculator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>High-End Interest & Wealth Intelligence</h3><p>Premium interest calculator with compounding frequency analysis, inflation-adjusted returns, and tax</p></a>
+    <a class="v3-tool-card" href="calculator-tools/loan-emi-calculator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>High-End Loan & Debt Intelligence</h3><p>Premium loan EMI calculator with amortization schedules, early payoff simulations, and debt freedom </p></a>
+    <a class="v3-tool-card" href="calculator-tools/calorie-calculator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>High-End Metabolic & Nutrition Intelligence</h3><p>Premium calorie calculator with BMR/TDEE modeling, macro-nutrient distribution planning, and perform</p></a>
+    <a class="v3-tool-card" href="calculator-tools/mortgage-calculator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>High-End Mortgage & Real Estate Intelligence</h3><p>Premium mortgage calculator with refinancing break-even, tax benefit estimates, and PMI modeling. Pr</p></a>
+    <a class="v3-tool-card" href="calculator-tools/percentage-calculator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>High-End Percentage & Profit Calculator</h3><p>Premium percentage calculator with batch processing, profit/loss analysis, and tax modeling. Fully o</p></a>
+    <a class="v3-tool-card" href="calculator-tools/retirement-calculator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>High-End Retirement & Longevity Intelligence</h3><p>Premium retirement planner with withdrawal simulations, inflation-adjusted corpus requirements, and </p></a>
+    <a class="v3-tool-card" href="calculator-tools/simple-calculator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>High-End Scientific & Engineering Calculator</h3><p>Premium scientific and engineering calculator with expression parsing, precision control, and export</p></a>
+    <a class="v3-tool-card" href="calculator-tools/tax-calculator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>High-End Tax & Wealth Intelligence</h3><p>Premium tax calculator with income brackets, marginal rates, and sales tax comparisons. Professional</p></a>
+    <a class="v3-tool-card" href="calculator-tools/time-calculator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>High-End Temporal & Duration Intelligence</h3><p>Premium time calculator with duration accumulation, decimal conversion, and shift/work-log modeling.</p></a>
+    <a class="v3-tool-card" href="calculator-tools/unit-converter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>High-End Unit & Engineering Intelligence</h3><p>Premium unit converter with engineering units, batch conversion, and high-precision scientific stand</p></a>
+    <a class="v3-tool-card" href="calculator-tools/investment-calculator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>High-End Wealth & Investment Intelligence</h3><p>Premium investment calculator with SIP step-up analysis, CAGR modeling, and inflation-adjusted wealt</p></a>
   </div>
+</section>
+<section class="v3-sec" id="code-format-tools">
+  <div class="v3-sec-head"><h2>Code Tools</h2><span>22 tools</span><span class="count">22</span></div>
+  <div class="v3-grid">
+    <a class="v3-tool-card" href="code-format-tools/encoders/base64-encoder-decoder.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Base64 Encoder / Decoder - Data Conversion</h3><p>Free, pro Base64 encoder and decoder. Convert text to base64 and vice versa 100% client-side.</p></a>
+    <a class="v3-tool-card" href="code-format-tools/formatters/css-beautifier.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>CSS Beautifier - Prettify & Format Stylesheets</h3><p>Free, pro CSS beautifier. Clean up messy stylesheets, fix indentation, and organize CSS properties 1</p></a>
+    <a class="v3-tool-card" href="code-format-tools/minifiers/css-minifier.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>CSS Minifier - Compress & Optimize CSS</h3><p>Free, pro CSS minifier. Compress CSS code, remove comments, and collapse whitespace 100% client-side</p></a>
+    <a class="v3-tool-card" href="code-format-tools/validators/css-validator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>CSS Validator - Syntax & Quality Checker</h3><p>Free, pro CSS validator. Check your stylesheets for syntax errors, missing semicolons, and bracket m</p></a>
+    <a class="v3-tool-card" href="code-format-tools/code-utilities/code-diff-viewer.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Code Diff Viewer - Side-by-Side Comparison</h3><p>Free, pro code diff viewer. Compare two code snippets for differences, track changes, and audit revi</p></a>
+    <a class="v3-tool-card" href="code-format-tools/code-utilities/code-obfuscator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Code Obfuscator - Protect & Scramble JS</h3><p>Free, pro code obfuscator. Protect your JavaScript code by making it unreadable to humans while rema</p></a>
+    <a class="v3-tool-card" href="code-format-tools/validators/code-quality-checker.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Code Quality Checker - Audit & Optimize Code</h3><p>Free, pro code quality checker. Audit your JavaScript and CSS for best practices, complexity, and co</p></a>
+    <a class="v3-tool-card" href="code-format-tools/formatters/html-formatter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>HTML Formatter - Prettify & Clean HTML</h3><p>Free, pro HTML formatter. Beautify messy HTML code, fix indentation, and improve readability 100% cl</p></a>
+    <a class="v3-tool-card" href="code-format-tools/minifiers/html-minifier.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>HTML Minifier - Compress & Optimize HTML</h3><p>Free, pro HTML minifier. Compress HTML code, remove comments, and collapse whitespace 100% client-si</p></a>
+    <a class="v3-tool-card" href="code-format-tools/formatters/javascript-beautifier.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>JS Beautifier - Prettify & Format JavaScript</h3><p>Free, pro JavaScript beautifier. Prettify messy JS code, fix indentation, and improve script readabi</p></a>
+    <a class="v3-tool-card" href="code-format-tools/formatters/json-formatter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>JSON Formatter - Validate & Prettify JSON</h3><p>Free, pro JSON formatter. Beautify, validate, and minify JSON data instantly 100% client-side.</p></a>
+    <a class="v3-tool-card" href="code-format-tools/validators/json-validator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>JSON Validator - Strict Syntax & Quality Check</h3><p>Free, pro JSON validator. Strict syntax checking for JSON files, catch errors, and verify RFC compli</p></a>
+    <a class="v3-tool-card" href="code-format-tools/viewers/json-viewer.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>JSON Viewer - Interactive Tree Map</h3><p>Free, pro JSON viewer. Visualize JSON data in a collapsible tree format, search keys, and validate s</p></a>
+    <a class="v3-tool-card" href="code-format-tools/minifiers/javascript-minifier.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>JavaScript Minifier - Compress & Optimize JS</h3><p>Free, pro JS minifier. Compress JavaScript code, remove comments, and collapse whitespace 100% clien</p></a>
+    <a class="v3-tool-card" href="code-format-tools/formatters/python-formatter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Python Formatter - Clean & Format Python Code</h3><p>Free, pro Python formatter. Prettify messy Python code, fix indentation, and improve script readabil</p></a>
+    <a class="v3-tool-card" href="code-format-tools/code-utilities/regular-expression-tester.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Regex Tester - Real-time Regular Expression Testing</h3><p>Free, pro Regex tester. Test regular expressions in real-time with full support for JavaScript regex</p></a>
+    <a class="v3-tool-card" href="code-format-tools/formatters/sql-formatter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>SQL Formatter - Prettify & Optimize SQL Queries</h3><p>Free, pro SQL formatter. Beautify and minify SQL queries for PostgreSQL, MySQL, SQL Server, and more</p></a>
+    <a class="v3-tool-card" href="code-format-tools/code-utilities/syntax-highlighter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Syntax Highlighter - Beautify Code Snippets</h3><p>Free, pro syntax highlighter. Beautify your code snippets for blogs, documentation, and presentation</p></a>
+    <a class="v3-tool-card" href="code-format-tools/encoders/url-encoder-decoder.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>URL Encoder / Decoder - Percent Encoding</h3><p>Free, pro URL encoder and decoder. Convert URLs to percent-encoded format and vice-versa 100% client</p></a>
+    <a class="v3-tool-card" href="code-format-tools/minifiers/universal-code-compressor.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Universal Code Compressor - All-in-One Minifier</h3><p>Free, pro code compressor. Minify HTML, CSS, and JS with a single click using our intelligent All-in</p></a>
+    <a class="v3-tool-card" href="code-format-tools/minifiers/html-viewer.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Visual Builder - Professional Edition</h3><p></p></a>
+    <a class="v3-tool-card" href="code-format-tools/formatters/xml-formatter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>XML Formatter - Prettify & Validate XML</h3><p>Free, pro XML formatter. Beautify messy XML data, fix indentation, and validate syntax 100% client-s</p></a>
+  </div>
+</section>
+<section class="v3-sec" id="code-tools">
+  <div class="v3-sec-head"><h2>Code Tools</h2><span>21 tools</span><span class="count">21</span></div>
+  <div class="v3-grid">
+    <a class="v3-tool-card" href="code-tools/all-in-one-code-compressor.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>All In One Code Compressor - Code Tools</h3><p>Free, pro code compressor. Minify HTML, CSS, and JS with a single click using our intelligent All-in</p></a>
+    <a class="v3-tool-card" href="code-tools/base64-encoder-decoder.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Base64 Encoder Decoder - Code Tools</h3><p>Free, pro Base64 encoder and decoder. Convert text to base64 and vice versa 100% client-side.</p></a>
+    <a class="v3-tool-card" href="code-tools/code-diff-viewer.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Code Diff Viewer - Code Tools</h3><p>Free, pro code diff viewer. Compare two code snippets for differences, track changes, and audit revi</p></a>
+    <a class="v3-tool-card" href="code-tools/code-obfuscator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Code Obfuscator - Code Tools</h3><p>Free, pro code obfuscator. Protect your JavaScript code by making it unreadable to humans while rema</p></a>
+    <a class="v3-tool-card" href="code-tools/code-quality-checker.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Code Quality Checker - Code Tools</h3><p>Free, pro code quality checker. Audit your JavaScript and CSS for best practices, complexity, and co</p></a>
+    <a class="v3-tool-card" href="code-tools/css-minifier.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Css Minifier - Code Tools</h3><p>Free, pro CSS minifier. Compress CSS code, remove comments, and collapse whitespace 100% client-side</p></a>
+    <a class="v3-tool-card" href="code-tools/css-validator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Css Validator - Code Tools</h3><p>Free, pro CSS validator. Check your stylesheets for syntax errors, missing semicolons, and bracket m</p></a>
+    <a class="v3-tool-card" href="code-tools/html-formatter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Html Formatter - Code Tools</h3><p>Free, pro HTML formatter. Beautify messy HTML code, fix indentation, and improve readability 100% cl</p></a>
+    <a class="v3-tool-card" href="code-tools/html-minifier.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Html Minifier - Code Tools</h3><p>Free, pro HTML minifier. Compress HTML code, remove comments, and collapse whitespace 100% client-si</p></a>
+    <a class="v3-tool-card" href="code-tools/html-viewer.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Html Viewer - Code Tools</h3><p></p></a>
+    <a class="v3-tool-card" href="code-tools/javascript-beautifier.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Javascript Beautifier - Code Tools</h3><p>Free, pro JavaScript beautifier. Prettify messy JS code, fix indentation, and improve script readabi</p></a>
+    <a class="v3-tool-card" href="code-tools/javascript-minifier.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Javascript Minifier - Code Tools</h3><p>Free, pro JS minifier. Compress JavaScript code, remove comments, and collapse whitespace 100% clien</p></a>
+    <a class="v3-tool-card" href="code-tools/json-formatter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Json Formatter - Code Tools</h3><p>Free, pro JSON formatter. Beautify, validate, and minify JSON data instantly 100% client-side.</p></a>
+    <a class="v3-tool-card" href="code-tools/json-validator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Json Validator - Code Tools</h3><p>Free, pro JSON validator. Strict syntax checking for JSON files, catch errors, and verify RFC compli</p></a>
+    <a class="v3-tool-card" href="code-tools/json-viewer.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Json Viewer - Code Tools</h3><p>Free, pro JSON viewer. Visualize JSON data in a collapsible tree format, search keys, and validate s</p></a>
+    <a class="v3-tool-card" href="code-tools/python-formatter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Python Formatter - Code Tools</h3><p>Free, pro Python formatter. Prettify messy Python code, fix indentation, and improve script readabil</p></a>
+    <a class="v3-tool-card" href="code-tools/regular-expression-tester.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Regular Expression Tester - Code Tools</h3><p>Free, pro Regex tester. Test regular expressions in real-time with full support for JavaScript regex</p></a>
+    <a class="v3-tool-card" href="code-tools/sql-formatter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Sql Formatter - Code Tools</h3><p>Free, pro SQL formatter. Beautify and minify SQL queries for PostgreSQL, MySQL, SQL Server, and more</p></a>
+    <a class="v3-tool-card" href="code-tools/syntax-highlighter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Syntax Highlighter - Code Tools</h3><p>Free, pro syntax highlighter. Beautify your code snippets for blogs, documentation, and presentation</p></a>
+    <a class="v3-tool-card" href="code-tools/url-encoder-decoder.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Url Encoder Decoder - Code Tools</h3><p>Free, pro URL encoder and decoder. Convert URLs to percent-encoded format and vice-versa 100% client</p></a>
+    <a class="v3-tool-card" href="code-tools/xml-formatter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Xml Formatter - Code Tools</h3><p>Free, pro XML formatter. Beautify messy XML data, fix indentation, and validate syntax 100% client-s</p></a>
+  </div>
+</section>
+<section class="v3-sec" id="doc-tools">
+  <div class="v3-sec-head"><h2>Documents</h2><span>13 tools</span><span class="count">13</span></div>
+  <div class="v3-grid">
+    <a class="v3-tool-card" href="doc-tools/online-notepad.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Advanced Notepad Pro</h3><p></p></a>
+    <a class="v3-tool-card" href="doc-tools/csv-viewer.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>CSV Viewer - View CSV Files Online</h3><p>Free online CSV Viewer - View CSV files with charts, sort logic, and data inspection. 100% client-si</p></a>
+    <a class="v3-tool-card" href="doc-tools/cv-builder.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>CVPro AI - Professional CV Builder</h3><p>CVPro AI - Professional CV/Resume Builder. Create stunning resumes with templates, ATS optimization,</p></a>
+    <a class="v3-tool-card" href="doc-tools/document-compare.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Document Compare - Compare Files Online</h3><p>Free online Document Compare - Compare two documents side-by-side or in unified view with word-by-wo</p></a>
+    <a class="v3-tool-card" href="doc-tools/document-compressor.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Document Compressor - Reduce File Size</h3><p>Free online Document Compressor - Reduce file size of PDF and Office documents with lossless compres</p></a>
+    <a class="v3-tool-card" href="doc-tools/document-merger.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Document Merger - Combine Files Online</h3><p>Free online Document Merger - Combine multiple PDF and Office documents into a single file. 100% pri</p></a>
+    <a class="v3-tool-card" href="doc-tools/document-repair.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Document Repair - Recover Corrupted Files</h3><p>Free online Document Repair - Analyze and fix corrupted PDF, Word, and Excel files. Recover text and</p></a>
+    <a class="v3-tool-card" href="doc-tools/document-scanner.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Document Scanner - Scan & OCR Online</h3><p>Free online Document Scanner - Scan documents using camera or upload, apply filters, crop, and OCR t</p></a>
+    <a class="v3-tool-card" href="doc-tools/document-signer.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Document Signer - Sign Documents Online</h3><p>Free online Document Signer - Sign PDF and document files with digital signatures, hand-drawn marks,</p></a>
+    <a class="v3-tool-card" href="doc-tools/excel-editor.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Excel Editor - Edit Spreadsheets Online</h3><p>Free online Excel Editor - Edit XLSX spreadsheets with formulas, cell commenting, multi-sheet suppor</p></a>
+    <a class="v3-tool-card" href="doc-tools/excel-viewer.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Excel Viewer - View Spreadsheets Online</h3><p>Free online Excel Viewer - View XLSX spreadsheets with charts, formulas, freeze panes, and CSV expor</p></a>
+    <a class="v3-tool-card" href="doc-tools/text-viewer.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Text File Viewer - Open TXT Files</h3><p>Free online Text File Viewer - View TXT files with syntax highlighting for 20+ languages, line numbe</p></a>
+    <a class="v3-tool-card" href="doc-tools/word-viewer.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Word Viewer - Open DOCX Files Online</h3><p>Free online Word Viewer - Open DOCX files with track changes, comments, TOC navigation, and reading </p></a>
+  </div>
+</section>
+<section class="v3-sec" id="googlea7a1eec695030bde.html">
+  <div class="v3-sec-head"><h2>googlea7a1eec695030bde.html</h2><span>1 tools</span><span class="count">1</span></div>
+  <div class="v3-grid">
+    <a class="v3-tool-card" href="googlea7a1eec695030bde.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>googlea7a1eec695030bde.html</h3><p>Free online tool.</p></a>
+  </div>
+</section>
+<section class="v3-sec" id="image-tools">
+  <div class="v3-sec-head"><h2>Image Tools</h2><span>33 tools</span><span class="count">33</span></div>
+  <div class="v3-grid">
+    <a class="v3-tool-card" href="image-tools/conversion/avif-jpg-converter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>AVIF ↔ JPG Converter - Modern Image Format Tool</h3><p>Convert AVIF to JPG/PNG or JPG/PNG to AVIF. High-efficiency conversion with quality control. Batch p</p></a>
+    <a class="v3-tool-card" href="image-tools/conversion/bmp-png-converter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>BMP ↔ PNG Converter - Bitmap Tools</h3><p>Convert BMP to PNG or PNG to BMP. Supports batch conversion, transparency handling, and high quality</p></a>
+    <a class="v3-tool-card" href="image-tools/conversion/batch-converter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Batch Image Converter - Universal Multi-Format</h3><p>Ultimate Batch Image Converter. Convert hundreds of images between PNG, JPG, WebP, AVIF, and SVG in </p></a>
+    <a class="v3-tool-card" href="image-tools/resize-crop/bulk-resizer.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Bulk Resizer - Multi-Size Generator</h3><p>Batch Image Resizer. Generate multiple sizes from one image instantly. Templates for iOS icons, Andr</p></a>
+    <a class="v3-tool-card" href="image-tools/resize-crop/canvas-extender.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Canvas Extender - Smart Fill & Padding</h3><p>Extend Image Canvas. Add padding to images with solid color, blur, mirror, or stretch fill options. </p></a>
+    <a class="v3-tool-card" href="image-tools/editing/color-corrector.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Color Corrector - Professional Photo Adjustments</h3><p>Professional Image Color Corrector. Adjust exposure, brightness, contrast, saturation, and hue with </p></a>
+    <a class="v3-tool-card" href="image-tools/utilities/color-palette.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Color Palette Generator - Extract Design Colors</h3><p>Professional Image Color Palette Generator. Extract dominant colors from photos, check WCAG accessib</p></a>
+    <a class="v3-tool-card" href="image-tools/resize-crop/crop-image.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Crop Image - Free Online Photo Cropper</h3><p>Free Online Image Cropper. Crop photos with precise aspect ratios, circle crop, rotation, and flip t</p></a>
+    <a class="v3-tool-card" href="image-tools/utilities/duplicate-finder.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Duplicate Image Finder - Clean Up Photos</h3><p>Find and remove duplicate images online. Advanced visual similarity detection (dHash) finds exact ma</p></a>
+    <a class="v3-tool-card" href="image-tools/utilities/exif-viewer.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>EXIF Viewer & Metadata Remover</h3><p>Free Online EXIF Viewer and Metadata Remover. View camera settings, GPS location, and privacy detail</p></a>
+    <a class="v3-tool-card" href="image-tools/editing/filters-effects.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Filters & Effects - Professional Image Enhancer</h3><p>Apply 20+ professional image filters and effects online. Batch process multiple photos with vintage,</p></a>
+    <a class="v3-tool-card" href="image-tools/conversion/heic-jpg-converter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>HEIC to JPG Converter - iPhone Photo Converter</h3><p>Convert HEIC (iPhone/iPad) photos to JPG/JPEG or PNG. Batch converter with quality control and priva</p></a>
+    <a class="v3-tool-card" href="image-tools/conversion/ico-png-converter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>ICO ↔ PNG Converter - Favicon Generator</h3><p>Convert PNG to ICO and ICO to PNG. Create multi-size favicons (16x16 up to 256x256). Extract icons f</p></a>
+    <a class="v3-tool-card" href="image-tools/utilities/image-compare.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Image Compare Tool - Side-by-Side & Pixel Diff</h3><p>Professional Image Comparison Tool. Compare two images side-by-side or with a slider. Analyze pixel </p></a>
+    <a class="v3-tool-card" href="image-tools/compression/image-compressor.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Image Compressor - Quality, Target Size & Lossless</h3><p>Ultimate Image Compressor. Compress images by quality, target file size (e.g. 50KB, 200KB), or lossl</p></a>
+    <a class="v3-tool-card" href="image-tools/resize-crop/image-merger.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Image Merger - Grid & Strip Combiner</h3><p>Professional Image Merger. Combine multiple images into a grid, strip, or collage with custom spacin</p></a>
+    <a class="v3-tool-card" href="image-tools/resize-crop/image-resizer.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Image Resizer - Convert to CM, MM, Inch</h3><p>Advanced Image Resizer. Resize by Pixels, Percentage, Centimeters, Millimeters, or Inches. Set DPI f</p></a>
+    <a class="v3-tool-card" href="image-tools/resize-crop/image-splitter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Image Splitter - Grid & Tile Cutter</h3><p>Professional Image Splitter. Split images into grids, tiles, or equal slices for social media carous</p></a>
+    <a class="v3-tool-card" href="image-tools/utilities/image-to-text.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Image to Text (OCR) - Extract Text from Photos</h3><p>Free Online Image to Text (OCR) Converter. Extract text from images, documents, and photos in 100+ l</p></a>
+    <a class="v3-tool-card" href="image-tools/conversion/jfif-png-converter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>JFIF to PNG/JPG Converter</h3><p>Convert JFIF to PNG or JPG. Batch convert JFIF files to standard image formats.</p></a>
+    <a class="v3-tool-card" href="image-tools/conversion/jpg-svg-converter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>JPG to SVG Converter - Photo Vectorizer</h3><p>Convert JPG photos to SVG vectors. Features Edge Detection control, Noise Reduction, Color Quantizat</p></a>
+    <a class="v3-tool-card" href="image-tools/utilities/metadata-editor.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Metadata Editor - Edit Photo EXIF & Copyright</h3><p>Professional Image Metadata Editor. Edit EXIF, IPTC, and Photographer details for JPEGs. Batch apply</p></a>
+    <a class="v3-tool-card" href="image-tools/editing/noise-reducer.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Noise Reducer - Grain Removal & Detail Preservation</h3><p>Professional Image Noise Reducer. Remove grain and noise from photos while preserving details using </p></a>
+    <a class="v3-tool-card" href="image-tools/conversion/png-svg-converter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>PNG to SVG Converter - Vectorize Images</h3><p>Convert PNG images to SVG vectors client-side. Features auto-tracing, detail control, color reductio</p></a>
+    <a class="v3-tool-card" href="image-tools/conversion/png-jpg-converter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>PNG ↔ JPG Converter - Advanced Batch Converter</h3><p>Advanced PNG to JPG and JPG to PNG Converter. Features batch processing, DPI control (72-600), custo</p></a>
+    <a class="v3-tool-card" href="image-tools/resize-crop/photo-resizer.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Photo Resizer - Resize & Watermark</h3><p>Free Photo Resizer. Resize photos with social media presets for Instagram, Facebook, Twitter. Add wa</p></a>
+    <a class="v3-tool-card" href="image-tools/conversion/svg-jpg-converter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>SVG to JPG Converter - Social Ready Export</h3><p>Convert SVG vectors to JPG images. Includes social media size presets, padding controls, background </p></a>
+    <a class="v3-tool-card" href="image-tools/conversion/svg-png-converter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>SVG ↔ PNG Converter - High Resolution Export</h3><p>Convert SVG to PNG or PNG to SVG. Set custom resolution (up to 8K), DPI, and handle transparency. Ba</p></a>
+    <a class="v3-tool-card" href="image-tools/editing/sharpness-tool.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Sharpness Tool - Professional Image Enhancement</h3><p>Professional Image Sharpening Tool. Enhance clarity and details with Unsharp Mask and smart edge-awa</p></a>
+    <a class="v3-tool-card" href="image-tools/conversion/tiff-jpg-converter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>TIFF to JPG Converter - Multi-page Support</h3><p>Convert TIFF images to JPG or PNG. Supports multi-page TIFFs, batch processing, and high-quality con</p></a>
+    <a class="v3-tool-card" href="image-tools/editing/watermark-adder.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Watermark Adder - Batch Image Watermarking</h3><p>Add Text or Image Watermark to photos online. Batch process multiple images, custom positioning, tra</p></a>
+    <a class="v3-tool-card" href="image-tools/conversion/webp-jpg-converter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>WebP ↔ JPG Converter - Lossy & Lossless Conversion</h3><p>Convert WebP to JPG and JPG to WebP. Features transparency flattening, quality control, batch proces</p></a>
+    <a class="v3-tool-card" href="image-tools/conversion/webp-png-converter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>WebP ↔ PNG Converter - Batch & Transparency Support</h3><p>Convert WebP to PNG and PNG to WebP. Preserves alpha transparency. Supports batch processing and ZIP</p></a>
+  </div>
+</section>
+<section class="v3-sec" id="other-tools">
+  <div class="v3-sec-head"><h2>Other Tools</h2><span>4 tools</span><span class="count">4</span></div>
+  <div class="v3-grid">
+    <a class="v3-tool-card" href="other-tools/fake-address-generator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Fake Address Generator</h3><p></p></a>
+    <a class="v3-tool-card" href="other-tools/fake-number-generator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Fake Number Generator</h3><p></p></a>
+    <a class="v3-tool-card" href="other-tools/random-id-generator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Random ID Card Generator</h3><p></p></a>
+    <a class="v3-tool-card" href="other-tools/random-name-generator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Random Name Generator</h3><p></p></a>
+  </div>
+</section>
+<section class="v3-sec" id="pdf-tools">
+  <div class="v3-sec-head"><h2>PDF Tools</h2><span>36 tools</span><span class="count">36</span></div>
+  <div class="v3-grid">
+    <a class="v3-tool-card" href="pdf-tools/bmp-to-pdf.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>BMP to PDF - Convert Bitmap Images to PDF</h3><p>Convert BMP images to PDF. High-fidelity conversion, multiple arrangement options, and batch process</p></a>
+    <a class="v3-tool-card" href="pdf-tools/compress-pdf.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Compress PDF - Reduce PDF File Size Online</h3><p>Intelligently compress PDF files. AI-powered optimization, quality preview, and batch processing. 10</p></a>
+    <a class="v3-tool-card" href="pdf-tools/compress-pdf-100kb.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Compress PDF to 100KB - Balanced Size Reduction</h3><p>Compress your PDF to 100KB reliably. Intelligent compression for text and images. 100% secure, clien</p></a>
+    <a class="v3-tool-card" href="pdf-tools/compress-pdf-50kb.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Compress PDF to 50KB - Absolute Size Optimization</h3><p>Shrink your PDF to exactly 50KB or less. Aggressive optimization algorithms and quality control. 100</p></a>
+    <a class="v3-tool-card" href="pdf-tools/compress-pdf-150kb.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Compress PDF to [SIZE] - TOOLSHUB</h3><p></p></a>
+    <a class="v3-tool-card" href="pdf-tools/compress-pdf-1mb.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Compress PDF to [SIZE] - TOOLSHUB</h3><p></p></a>
+    <a class="v3-tool-card" href="pdf-tools/compress-pdf-200kb.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Compress PDF to [SIZE] - TOOLSHUB</h3><p></p></a>
+    <a class="v3-tool-card" href="pdf-tools/compress-pdf-2mb.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Compress PDF to [SIZE] - TOOLSHUB</h3><p></p></a>
+    <a class="v3-tool-card" href="pdf-tools/compress-pdf-300kb.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Compress PDF to [SIZE] - TOOLSHUB</h3><p></p></a>
+    <a class="v3-tool-card" href="pdf-tools/compress-pdf-500kb.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Compress PDF to [SIZE] - TOOLSHUB</h3><p></p></a>
+    <a class="v3-tool-card" href="pdf-tools/delete-pdf-pages.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Delete PDF Pages - Remove Unwanted Content Online</h3><p>Remove pages from your PDF instantly. Pattern-based deletion, blank page detection, and visual selec</p></a>
+    <a class="v3-tool-card" href="pdf-tools/excel-to-pdf.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Excel to PDF - Convert Spreadsheets to PDF Online</h3><p>Convert Excel workbooks to high-quality PDF. Sheet selection, print area respect, and perfect layout</p></a>
+    <a class="v3-tool-card" href="pdf-tools/gif-to-pdf.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>GIF to PDF - Convert Animations to PDF Online</h3><p>Convert animated GIFs to PDF. Single page or multi-page frame sequences. Smart frame extraction and </p></a>
+    <a class="v3-tool-card" href="pdf-tools/jpg-to-pdf.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>JPG to PDF - Convert Images to PDF Online</h3><p>Convert JPG images to PDF. Smart arrangement, multiple compression options, and batch conversion. 10</p></a>
+    <a class="v3-tool-card" href="pdf-tools/lock-pdf.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Lock PDF - Password Protect & Set Permissions</h3><p>Secure your PDF files. Set 12+ permission levels, passwords, and time-based access. 100% secure, loc</p></a>
+    <a class="v3-tool-card" href="pdf-tools/merge-pdf.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Merge PDF - Combine PDF Files Online</h3><p>Merge multiple PDF files into one. Smart reordering, preserve bookmarks, and high-quality merging. 1</p></a>
+    <a class="v3-tool-card" href="pdf-tools/pdf-page-remover.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>PDF Page Remover - Visual Page Deletion Online</h3><p>A purely visual way to remove pages from your PDF. Drag pages out or click to delete. 100% secure, b</p></a>
+    <a class="v3-tool-card" href="pdf-tools/pdf-to-bmp.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>PDF to BMP - Extract Pages as BMP Images Online</h3><p>Convert PDF pages to BMP images. Batch extraction, high fidelity, and instant conversion. 100% secur</p></a>
+    <a class="v3-tool-card" href="pdf-tools/pdf-to-excel.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>PDF to Excel - Convert PDF to XLSX Online</h3><p>Convert PDF tables and data to editable Excel spreadsheets. High-precision data extraction and cell </p></a>
+    <a class="v3-tool-card" href="pdf-tools/pdf-to-jpg.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>PDF to JPG - Extract Pages as Images Online</h3><p>Convert PDF pages to JPG images. Batch extraction, custom DPI resolution, and instant conversion. 10</p></a>
+    <a class="v3-tool-card" href="pdf-tools/pdf-to-png.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>PDF to JPG - Extract Pages as Images Online</h3><p>Convert PDF pages to JPG images. Batch extraction, custom DPI resolution, and instant conversion. 10</p></a>
+    <a class="v3-tool-card" href="pdf-tools/pdf-to-svg.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>PDF to SVG - Extract Pages as Vector Graphics Online</h3><p>Convert PDF pages to scalable SVG vector graphics. Batch extraction, perfect scaling, and instant co</p></a>
+    <a class="v3-tool-card" href="pdf-tools/pdf-to-tiff.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>PDF to TIFF - Extract Pages as TIFF Images Online</h3><p>Convert PDF pages to high-resolution TIFF images. Batch extraction, lossless quality, and instant co</p></a>
+    <a class="v3-tool-card" href="pdf-tools/pdf-to-word.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>PDF to Word - Convert PDF to DOCX Online</h3><p>Convert PDF back to editable Word documents. High-fidelity format retention and built-in OCR for sca</p></a>
+    <a class="v3-tool-card" href="pdf-tools/pdf-to-zip.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>PDF to ZIP - Package Documents Safely Online</h3><p>Convert PDF documents to encrypted ZIP archives. Smart packaging, multi-level compression, and batch</p></a>
+    <a class="v3-tool-card" href="pdf-tools/png-to-pdf.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>PNG to PDF - Convert Images to PDF Online</h3><p>Convert PNG images to PDF. Smart arrangement, multiple compression options, and batch conversion. 10</p></a>
+    <a class="v3-tool-card" href="pdf-tools/ppt-to-pdf.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>PowerPoint to PDF - Convert PPTX to PDF Online</h3><p>Convert PowerPoint presentations to PDF. Animation to page sequences, presenter notes inclusion, and</p></a>
+    <a class="v3-tool-card" href="pdf-tools/remove-pdf-password.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Remove Password From PDF - Stripper Tool Online</h3><p>Strips passwords from PDF files permanently. Safe, secure, and fast client-side processing. No files</p></a>
+    <a class="v3-tool-card" href="pdf-tools/resize-pdf-200kb.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Resize PDF to 200KB - Exact Limit Optimization</h3><p>Resize and optimize your PDF to exactly 200KB using multi-pass iterative compression. 100% secure.</p></a>
+    <a class="v3-tool-card" href="pdf-tools/rotate-pdf.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Rotate PDF - Change Page Orientation Online</h3><p>Rotate PDF pages instantly. AI-powered orientation detection and selective page rotation. 100% secur</p></a>
+    <a class="v3-tool-card" href="pdf-tools/svg-to-pdf.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>SVG to PDF - Convert Vector Images to PDF</h3><p>Convert SVG vector images to PDF. Exact scaling, multiple arrangement options, and batch conversion.</p></a>
+    <a class="v3-tool-card" href="pdf-tools/split-pdf.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Split PDF - Extract Pages or Split by Content</h3><p>Split your PDF files into multiple documents. Content-based splitting, size-based division, and simp</p></a>
+    <a class="v3-tool-card" href="pdf-tools/tiff-to-pdf.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>TIFF to PDF - Convert TIFF Images to PDF</h3><p>Convert TIFF images to PDF. Multi-page support, high-resolution conversion, and batch processing. 10</p></a>
+    <a class="v3-tool-card" href="pdf-tools/unlock-pdf.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Unlock PDF - Remove Password & Restrictions</h3><p>Unlock password protected PDFs. Recover permissions and decrypt files instantly. 100% secure, browse</p></a>
+    <a class="v3-tool-card" href="pdf-tools/watermark-pdf.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Watermark PDF - Add Text or Images to PDF</h3><p>Add watermarks to your PDF files. Dynamic user data, smart placement, and batch processing. 100% sec</p></a>
+    <a class="v3-tool-card" href="pdf-tools/word-to-pdf.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Word to PDF - Convert DOCX to PDF Online</h3><p>Convert Word documents to high-quality PDF. Perfect formatting, hyperlink preservation, and fast con</p></a>
+  </div>
+</section>
+<section class="v3-sec" id="seo-tools">
+  <div class="v3-sec-head"><h2>SEO Tools</h2><span>23 tools</span><span class="count">23</span></div>
+  <div class="v3-grid">
+    <a class="v3-tool-card" href="seo-tools/alt-text-generator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Advanced Alt Text Generator</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/meta-description-checker.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Advanced Meta Description Checker</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/meta-robots-generator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Advanced Meta Robots Generator</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/meta-tag-generator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Advanced Meta Tag Generator</h3><p>${desc}</p></a>
+    <a class="v3-tool-card" href="seo-tools/meta-title-checker.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Advanced Meta Title Checker</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/open-graph-generator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Advanced Open Graph Generator</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/robots-txt-generator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Advanced Robots.txt Generator</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/schema-generator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Advanced Schema.org Generator</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/sitemap-generator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Advanced Sitemap Generator</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/canonical-tag-generator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Canonical Tag Generator</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/seo-checklist.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Comprehensive SEO Checklist</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/external-link-counter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>External Link Counter</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/heading-extractor.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Heading Extractor</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/internal-link-counter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Internal Link Counter</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/keyword-case-converter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Keyword Case Converter</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/keyword-density-checker.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Keyword Density Checker</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/keyword-frequency-counter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Keyword Frequency Counter</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/readability-checker.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Readability Checker</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/seo-url-checker.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>SEO URL Checker</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/word-counter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>SEO Word Counter</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/slug-generator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Slug Generator</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/stop-words-remover.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Stop Words Remover</h3><p>Free online tool.</p></a>
+    <a class="v3-tool-card" href="seo-tools/website-speed-test.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Website Speed Meter Pro</h3><p>Free online tool.</p></a>
+  </div>
+</section>
+<section class="v3-sec" id="text-tools">
+  <div class="v3-sec-head"><h2>Text Tools</h2><span>20 tools</span><span class="count">20</span></div>
+  <div class="v3-grid">
+    <a class="v3-tool-card" href="text-tools/bold-text-generator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Bold Text Generator - Unicode Bold Text</h3><p>Free online Bold Text Generator - Create 𝗕𝗼𝗹𝗱 unicode text for social media, bios, and posts. Works </p></a>
+    <a class="v3-tool-card" href="text-tools/character-counter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Character Counter - Word & Letter Counter</h3><p>Free online Character Counter - Count characters, words, sentences, paragraphs, and estimate reading</p></a>
+    <a class="v3-tool-card" href="text-tools/invisible-character.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Invisible Character Tool</h3><p></p></a>
+    <a class="v3-tool-card" href="text-tools/line-tools.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Line Tools</h3><p></p></a>
+    <a class="v3-tool-card" href="text-tools/paragraph-rephraser.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Paragraph Rephraser</h3><p></p></a>
+    <a class="v3-tool-card" href="text-tools/paraphrasing-tool.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Paraphrasing Tool</h3><p></p></a>
+    <a class="v3-tool-card" href="text-tools/reverse-text-generator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Reverse Text Generator</h3><p></p></a>
+    <a class="v3-tool-card" href="text-tools/rewriter-tool.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Rewriter Tool</h3><p></p></a>
+    <a class="v3-tool-card" href="text-tools/sentence-checker.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Sentence Checker</h3><p></p></a>
+    <a class="v3-tool-card" href="text-tools/sentence-counter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Sentence Counter</h3><p></p></a>
+    <a class="v3-tool-card" href="text-tools/small-caps-generator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Small Caps Generator</h3><p></p></a>
+    <a class="v3-tool-card" href="text-tools/small-text-generator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Small Text Generator</h3><p></p></a>
+    <a class="v3-tool-card" href="text-tools/spell-checker.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Spell Checker</h3><p></p></a>
+    <a class="v3-tool-card" href="text-tools/text-case-changer.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Text Case Changer - Convert Text Case Online</h3><p>Free online Text Case Changer - Convert text to UPPERCASE, lowercase, Title Case, Sentence case, cam</p></a>
+    <a class="v3-tool-card" href="text-tools/text-cleaner.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Text Cleaner</h3><p></p></a>
+    <a class="v3-tool-card" href="text-tools/text-comparator.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Text Comparator</h3><p></p></a>
+    <a class="v3-tool-card" href="text-tools/text-formatter.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Text Formatter</h3><p></p></a>
+    <a class="v3-tool-card" href="text-tools/text-summarizer.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Text Summarizer</h3><p></p></a>
+    <a class="v3-tool-card" href="text-tools/upside-down-text.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Upside Down Text</h3><p></p></a>
+    <a class="v3-tool-card" href="text-tools/word-changer.html"><span class="arr"><i class="fa-solid fa-arrow-up-right"></i></span><h3>Word Changer</h3><p></p></a>
+  </div>
+</section>
+</div>
+
+<section class="v3-cta">
+  <h2>Can't find what you need?</h2>
+  <p>Tell us — we build the most requested tools first.</p>
+  <a href="contact-us.html" class="btn btn-dark">Request a Tool</a>
+</section>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>204 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="#tools">All 204 tools</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="about-us.html">About</a></li><li><a href="contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+  </div>
+  <div class="ft-bot"><span>© 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-
-  <!-- Scroll to Top Button -->
-  <button class="scroll-top-btn" id="scroll-top-btn" aria-label="Scroll to top">↑</button>
-
-  <!-- Scripts -->
-  <script src="scripts/tools-data.js"></script>
-  <script src="image-tools/js/shared/theme.js"></script>
-  <script src="scripts/main.js"></script>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
-  <script src="image-tools/js/th-interactions.js"></script>
+<script src="image-tools/js/v3.js"></script>
 </body>
-
 </html>

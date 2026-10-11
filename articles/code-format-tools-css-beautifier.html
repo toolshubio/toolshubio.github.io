@@ -1,0 +1,105 @@
+<article class="tool-article">
+<h2>CSS Beautifier — Turn Minified CSS Into Readable Code</h2>
+
+<p>Every production website ships CSS that looks like it was written by a machine having a bad day: ten thousand characters on a single line, no spaces, no mercy. That's minified CSS — great for load times, miserable for humans. The first time I needed to debug a styling issue on a live site, I opened the stylesheet in DevTools and found one endless line of compressed rules. A CSS beautifier reverses that: it takes the minified wall of text and expands it back into properly indented, line-broken, human-readable CSS you can actually edit.</p>
+
+<h3>What a CSS Beautifier Does</h3>
+
+<p>Beautifying (also called unminifying or pretty-printing) reformats CSS without changing what it does. The tool parses your stylesheet and applies consistent formatting: each selector on its own line, an opening brace, every declaration on its own indented line, and a closing brace. Comments are preserved and placed on their own lines. The output behaves <em>exactly</em> like the input — this is purely a whitespace-and-layout transformation, not an optimizer. It won't merge duplicate rules, rename classes, or rewrite your properties.</p>
+
+<p>It's the mirror image of a <strong>CSS minifier</strong>. Minifiers strip whitespace and comments to shrink files for production (typically 20–35% smaller on hand-written CSS). Beautifiers restore readability for development. The healthy workflow uses both: beautify to edit and debug, minify to ship.</p>
+
+<h3>Before and After</h3>
+
+<p>Here's what the transformation looks like on a small example:</p>
+
+<p><strong>Before (minified):</strong></p>
+<p><code>body{margin:0;padding:0;color:#333;background-color:#fff}h1{text-align:center;font-size:2rem}p{margin:1rem 0}</code></p>
+
+<p><strong>After (beautified):</strong></p>
+<pre><code>body {
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fff;
+}
+h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+p {
+    margin: 1rem 0;
+}</code></pre>
+
+<p>Same stylesheet, same behavior — but now you can see the structure: three rule sets, each declaration on its own line, ready to edit. On a real-world minified file with hundreds of rules, the difference is between "impossible" and "fine."</p>
+
+<h3>How to Use the CSS Beautifier</h3>
+
+<p>Paste, set your indent, beautify, copy. The tool shows input/output stats so you can see the size change.</p>
+
+<p><strong>Step 1 — Paste your CSS.</strong> Drop minified or messy CSS into the input panel. It handles full stylesheets of any size, including <code>@media</code> queries, <code>@keyframes</code>, and nested rules.</p>
+
+<p><strong>Step 2 — Choose your indent.</strong> Set the indent size (2 or 4 spaces are the common choices) or use tabs — match whatever your project or team uses so the output drops straight into your codebase without reformatting.</p>
+
+<p><strong>Step 3 — Beautify.</strong> The tool parses the stylesheet and outputs the formatted version instantly. The statistics show the before/after size: beautified CSS is always larger (all that whitespace), which is expected and fine for development.</p>
+
+<p><strong>Step 4 — Edit, then copy or download.</strong> Make your changes in the readable output, then copy it back to your project — or run it through a minifier again before deploying to production.</p>
+
+<h3>When to Beautify Your CSS</h3>
+
+<p><strong>Debugging production styles:</strong> the number-one use case. A layout breaks on the live site, you open the minified stylesheet, and nothing is findable. Beautify it first, then search for the selector — debugging readable code is an order of magnitude faster.</p>
+
+<p><strong>Editing third-party CSS:</strong> themes, frameworks, and plugins ship minified. Before overriding or extending their styles, beautify a copy so you understand the selector structure and specificity you're working against.</p>
+
+<p><strong>Learning from real sites:</strong> viewing a well-designed site's source is a legitimate way to learn CSS technique — but only after beautifying, since the minified original teaches nothing.</p>
+
+<p><strong>Cleaning up rushed code:</strong> CSS written in a hurry accumulates inconsistent indentation and collapsed lines. One pass through the beautifier normalizes everything, which also makes the next code review painless.</p>
+
+<h3>Who Uses a CSS Beautifier?</h3>
+
+<p><strong>Front-end developers</strong> debug and edit stylesheets daily — beautifying minified production CSS is routine maintenance.</p>
+
+<p><strong>WordPress and theme customizers</strong> work with third-party theme stylesheets that arrive minified and need readable copies for customization.</p>
+
+<p><strong>Students</strong> study real-world CSS from live sites, learning layout technique from beautified production code.</p>
+
+<p><strong>Code reviewers</strong> ask for beautified diffs — reviewing a one-line minified change is meaningless, while the formatted version shows exactly what moved.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant beautification</strong> — minified CSS expanded to readable format in milliseconds.</li>
+<li><strong>Adjustable indentation</strong> — set indent size and choose spaces or tabs to match your project.</li>
+<li><strong>Full CSS support</strong> — media queries, keyframes, nested rules, and comments handled correctly.</li>
+<li><strong>Before/after statistics</strong> — see input and output sizes at a glance.</li>
+<li><strong>Copy and download</strong> — grab the formatted stylesheet in one click.</li>
+<li><strong>Safe transformation</strong> — formatting only; selectors, properties, and values untouched.</li>
+<li><strong>Private and free</strong> — everything runs in your browser; your stylesheets never leave your device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is the difference between beautifying and minifying CSS?</h4>
+<p>They're opposites. Minifying removes whitespace and comments to shrink files for production. Beautifying (unminifying) restores indentation and line breaks for human readability. Neither changes what the CSS does.</p>
+
+<h4>Will beautifying change how my CSS works?</h4>
+<p>No. The tool only reformats whitespace and line breaks — selectors, properties, values, and comments are preserved exactly. The output behaves identically to the input.</p>
+
+<h4>Can it handle large stylesheets?</h4>
+<p>Yes — the tool processes CSS files of any size, including complex stylesheets with media queries, keyframes, and nested rules.</p>
+
+<h4>What indent style should I choose?</h4>
+<p>Match your project's convention: 2 spaces is common in modern codebases, 4 spaces in others, tabs in some. Consistency with your existing code matters more than the specific choice.</p>
+
+<h4>Why is the beautified file bigger?</h4>
+<p>All the added indentation and line breaks take space — that's expected. Beautified CSS is for development and debugging; minify again before deploying to production.</p>
+
+<h4>Does it fix CSS errors?</h4>
+<p>It formats, not fixes. Beautified code makes errors easier to <em>spot</em> — a missing brace or misplaced declaration becomes visible in the structure — but it won't correct invalid CSS.</p>
+
+<h4>Is my CSS uploaded anywhere?</h4>
+<p>No. Beautification runs entirely in your browser — your stylesheet is never sent to a server, logged, or stored.</p>
+
+<h4>Is this CSS beautifier free?</h4>
+<p>Yes — free, unlimited, no account required.</p>
+</article>

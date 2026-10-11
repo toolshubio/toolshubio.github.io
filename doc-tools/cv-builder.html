@@ -1,70 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CVPro AI - Professional CV/Resume Builder. Create stunning resumes with templates, ATS optimization, and multiple export formats.">
-    <title>CVPro AI - Professional CV Builder | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../image-tools/css/global.css">
-    <link rel="stylesheet" href="../image-tools/css/components.css">
-    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CVPro AI - Professional CV Builder | TOOLSHUB</title>
+<meta name="description" content="CVPro AI - Professional CV/Resume Builder. Create stunning resumes with templates, ATS optimization, and multiple export formats.">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../image-tools/css/v3-design.css">
 <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-  <link rel="stylesheet" href="../image-tools/css/th-header-footer.css">
-</head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
-  </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../image-tools/index.html">Image Tools</a><a href="../pdf-tools/index.html">PDF Tools</a><a href="../text-tools/index.html">Text & Writing</a><a href="../seo-tools/index.html">SEO Tools</a><a href="../calculator-tools/index.html">Calculators</a><a href="../binary-tools/index.html">Binary Tools</a><a href="../code-format-tools/index.html">Code & Formatters</a><a href="../doc-tools/index.html">Documents</a><a href="../other-tools/index.html">Other Tools</a><a href="../about-us.html">About Us</a><a href="../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a> &gt;
-                <a href="index.html">Documents</a> &gt;
-                <span>📄 CVPro AI - Professional CV Builder</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">📄 CVPro AI - Professional CV Builder</h1>
-                <p class="tool-description">CVPro AI - Professional CV/Resume Builder. Create stunning resumes with templates, ATS optimization, and multiple export formats.</p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
-<main class="tool-main">
-<div class="container">
 
+<style>
+/* ---- v3 tool workspace chrome: original tool UI, v3 styling ---- */
+.ws-dropzone{border:2px dashed #c7d2fe;border-radius:16px;padding:52px 32px;text-align:center;background:#fafaff;transition:.2s;cursor:pointer}
+.ws-dropzone:hover,.ws-dropzone.dragover{border-color:#4f46e5;background:#eef2ff}
+.dz-icon{width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;display:grid;place-items:center;font-size:1.9rem;margin:0 auto 18px}
+.doc-upload-title{font-size:1.3rem;font-weight:700;letter-spacing:-.02em;margin-bottom:10px}
+.doc-upload-subtitle{color:#3f3f46;margin-bottom:22px;font-size:.95rem}
+.doc-upload-formats{color:#71717a;font-size:.82rem;margin-top:16px}
+.ws-body input[type="text"],.ws-body input[type="number"],.ws-body input[type="password"],.ws-body select,.ws-body textarea:not(.ws-textarea),.doc-settings-select,.cv-form-input,.cv-form-select,.cv-form-textarea,.form-control,.formula-input{width:100%;border:1.5px solid #e4e4e7;border-radius:12px;padding:11px 14px;font-size:.92rem;font-family:Inter,system-ui,sans-serif;background:#fff;color:#0a0a0b;outline:none;transition:.2s}
+.ws-body input:focus,.ws-body select:focus,.ws-body textarea:focus{border-color:#4f46e5;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+input[type="range"],.doc-settings-slider{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:99px;background:#e4e4e7;outline:none;padding:0;border:none}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:#4f46e5;cursor:pointer}
+input[type="checkbox"]{width:18px;height:18px;accent-color:#4f46e5}
+.doc-settings-panel{background:#fafafa;border:1px solid #e4e4e7;border-radius:16px;padding:26px;margin-top:24px}
+.doc-settings-title{font-weight:700;font-size:.95rem;margin-bottom:18px}
+.doc-settings-group{margin-bottom:14px}
+.doc-settings-label{display:block;font-size:.82rem;font-weight:600;color:#3f3f46;margin-bottom:8px}
+.doc-settings-toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;font-size:.9rem}
+.doc-toggle-switch,.toggle-switch,.toggle-slider{width:44px;height:24px;border-radius:99px;background:#d4d4d8;position:relative;cursor:pointer;transition:.2s;flex-shrink:0}
+.doc-toggle-switch::after,.toggle-switch::after,.toggle-slider::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.doc-toggle-switch.active,.toggle-switch.active,.toggle-slider.active,.toggle-switch.on{background:#4f46e5}
+.doc-toggle-switch.active::after,.toggle-switch.active::after,.toggle-slider.active::after{left:23px}
+.doc-preview-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.doc-toolbar-divider{width:1px;height:24px;background:#e4e4e7}
+.doc-action-bar{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.doc-stats-bar{display:grid;gap:12px;background:#fff;border:1px solid #e4e4e7;border-radius:12px;padding:18px;margin-top:16px}
+.doc-stat-item{text-align:center}
+.doc-stat-value,.stat-value{display:block;font-size:1.6rem;font-weight:700;letter-spacing:-.02em}
+.doc-stat-label{font-size:.72rem;color:#71717a;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+.spreadsheet-wrapper{overflow:auto;border:1px solid #e4e4e7;border-radius:12px;max-height:440px;margin-top:16px;background:#fff}
+.spreadsheet-table{border-collapse:collapse;font-size:.85rem;min-width:100%}
+.spreadsheet-table th,.spreadsheet-table td{border:1px solid #e4e4e7;padding:8px 12px;white-space:nowrap}
+.spreadsheet-table thead th{background:#f4f4f5;font-weight:600;position:sticky;top:0;cursor:pointer;z-index:1}
+.spreadsheet-table td.cell-selected{background:#eef2ff}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.compare-pane{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden;background:#fff}
+.pane-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #f4f4f5;background:#fafafa}
+.pane-content{min-height:240px;padding:24px}
+.compare-placeholder{border:2px dashed #d4d4d8;border-radius:12px;padding:52px 20px;text-align:center;color:#71717a;cursor:pointer;transition:.2s}
+.compare-placeholder:hover{border-color:#4f46e5;background:#fafaff}
+.doc-main-area{margin-bottom:8px}
+.doc-preview-area{margin-top:16px}
+.doc-tool-container{display:flex;flex-direction:column;gap:8px}
+.modal{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.5);align-items:center;justify-content:center}
+.modal.open,.modal.show{display:flex}
+.modal-content{background:#fff;border-radius:20px;max-width:580px;width:calc(100% - 40px);max-height:86vh;overflow:auto;box-shadow:0 24px 64px -12px rgba(0,0,0,.3)}
+.modal-header,.modal-footer{padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.modal-title{font-size:1.05rem;font-weight:700}
+.modal-body{padding:0 24px 24px}
+.filter-btn,.format-option{border:1.5px solid #e4e4e7;background:#fff;border-radius:12px;padding:10px 18px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:Inter,system-ui,sans-serif;transition:.15s}
+.filter-btn.active,.format-option.selected,.format-option.active{border-color:#4f46e5;background:#eef2ff;color:#4f46e5}
+.merger-list,.file-list{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.option-label{font-size:.85rem;font-weight:600;color:#3f3f46}
+.scanner-viewport{position:relative;border:1px solid #e4e4e7;border-radius:16px;overflow:hidden;background:#111;min-height:280px;display:grid;place-items:center;color:#71717a}
+.scan-overlay{position:absolute;inset:0;pointer-events:none}
+.scanning-line{position:absolute;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#4f46e5,transparent);animation:scanline 2s linear infinite}
+@keyframes scanline{0%{top:0}100%{top:100%}}
+.image-preview-container img{max-width:100%;border-radius:12px;display:block}
+.signature-canvas-wrapper{border:1.5px solid #e4e4e7;border-radius:12px;background:#fff;overflow:hidden}
+.signature-canvas-wrapper canvas{max-width:100%;display:block;touch-action:none}
+.pages-strip{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.editor-toolbar{display:flex;flex-wrap:wrap;gap:6px;padding:12px;border:1px solid #e4e4e7;border-bottom:none;border-radius:16px 16px 0 0;background:#fafafa}
+.toolbar-group{display:flex;gap:2px;padding-right:8px;margin-right:6px;border-right:1px solid #e4e4e7}
+.toolbar-group:last-child{border-right:none}
+.icon-btn{min-width:34px;height:34px;border:none;background:transparent;border-radius:8px;cursor:pointer;color:#3f3f46;font-size:.9rem;display:inline-flex;align-items:center;justify-content:center}
+.icon-btn:hover,.icon-btn.active{background:#e4e4e7}
+.editor-area{min-height:320px;border:1px solid #e4e4e7;border-radius:0 0 16px 16px;padding:20px;background:#fff;outline:none;font-size:1rem;line-height:1.7}
+.status-bar{display:flex;gap:20px;flex-wrap:wrap;margin-top:14px;font-size:.82rem;color:#71717a}
+.notepad-container{background:#fff;border:1px solid #e4e4e7;border-radius:16px}
+.notepad-header{display:flex;align-items:center;gap:10px;padding:14px 20px;border-bottom:1px solid #f4f4f5;font-weight:700}
+.panel-section{padding:16px 0;border-top:1px solid #f4f4f5}
+.panel-title{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#71717a;margin-bottom:10px}
+.editor-main{display:flex;gap:20px}
+.side-panel{width:280px;flex-shrink:0}
+.saving-badge{font-size:.75rem;color:#22c55e;font-weight:600}
+.color-palette{display:flex;gap:8px;flex-wrap:wrap}
+.color-option,.cv-color-option{width:36px;height:36px;border-radius:50%;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 1px #e4e4e7}
+.color-option.selected,.cv-color-option.selected{box-shadow:0 0 0 2px #4f46e5}
+.theme-options{display:flex;gap:10px;flex-wrap:wrap}
+.theme-option{border:1.5px solid #e4e4e7;border-radius:12px;padding:10px 16px;cursor:pointer;font-size:.85rem;font-weight:600}
+.theme-option.active{border-color:#4f46e5;background:#eef2ff}
+.code-editor{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden;background:#fff}
+.code-header{display:flex;align-items:center;gap:8px;padding:10px 16px;background:#f4f4f5;font-size:.82rem;font-weight:600}
+.code-body{display:flex}
+.line-numbers{padding:16px 12px;background:#fafafa;color:#a1a1aa;font-size:.85rem;text-align:right;user-select:none;font-family:monospace}
+.code-content{flex:1;padding:16px;font-size:.9rem;font-family:monospace;white-space:pre;overflow:auto}
+.cv-form-section{background:#fff;border:1px solid #e4e4e7;border-radius:16px;margin-bottom:16px;overflow:hidden}
+.cv-section-header{padding:18px 24px;cursor:pointer;display:flex;align-items:center;justify-content:space-between}
+.cv-section-title{font-size:1rem;font-weight:700}
+.cv-section-content{padding:4px 24px 24px}
+.cv-form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cv-form-group{margin-bottom:14px}
+.cv-form-label{display:block;font-size:.82rem;font-weight:600;margin-bottom:6px;color:#3f3f46}
+.cv-wizard-steps{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.cv-wizard-step{display:flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid #e4e4e7;border-radius:99px;font-size:.85rem;font-weight:600;background:#fff}
+.cv-wizard-step.active{background:#0a0a0b;color:#fff;border-color:#0a0a0b}
+.cv-wizard-step-number{width:26px;height:26px;border-radius:50%;background:#e4e4e7;display:grid;place-items:center;font-size:.75rem;font-weight:700}
+.cv-wizard-step.active .cv-wizard-step-number{background:#4f46e5;color:#fff}
+.cv-industry-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+.cv-industry-card{border:1.5px solid #e4e4e7;border-radius:14px;padding:22px 12px;text-align:center;cursor:pointer;transition:.15s;background:#fff}
+.cv-industry-card:hover{border-color:#c7d2fe}
+.cv-industry-card.selected{border-color:#4f46e5;background:#eef2ff}
+.cv-industry-icon{font-size:1.6rem;margin-bottom:10px}
+.cv-industry-name{font-size:.85rem;font-weight:600}
+.cv-input-methods{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.cv-input-card{border:1.5px solid #e4e4e7;border-radius:14px;padding:22px;cursor:pointer;transition:.15s;background:#fff}
+.cv-input-card:hover{border-color:#4f46e5;transform:translateY(-2px)}
+.cv-input-icon{font-size:1.5rem;margin-bottom:10px}
+.cv-input-title{font-weight:700;margin-bottom:6px}
+.cv-input-desc{font-size:.85rem;color:#71717a}
+.cv-export-options{display:flex;gap:12px;flex-wrap:wrap}
+.cv-export-btn{display:flex;align-items:center;gap:10px;border:1.5px solid #e4e4e7;border-radius:14px;padding:16px 20px;background:#fff;cursor:pointer;font-weight:600;font-size:.9rem;transition:.15s}
+.cv-export-btn:hover{border-color:#4f46e5}
+.cv-color-schemes{display:flex;gap:10px;flex-wrap:wrap}
+.cv-template-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.cv-preview-container{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden;background:#fff;padding:24px}
+.cv-ats-meter{height:10px;border-radius:99px;background:#f4f4f5;overflow:hidden;margin:10px 0}
+.cv-ats-fill{height:100%;background:linear-gradient(90deg,#4f46e5,#7c3aed);border-radius:99px;transition:.5s}
+.cv-progress{height:8px;border-radius:99px;background:#f4f4f5;overflow:hidden;margin:12px 0}
+.cv-progress-fill,.cv-progress-bar{height:100%;background:linear-gradient(90deg,#4f46e5,#7c3aed)}
+.cv-add-entry-btn,.cv-entry-list,.cv-step-panel{margin-top:14px}
+.cv-tool-card{border:1px solid #e4e4e7;border-radius:14px;overflow:hidden;background:#fff}
+.cv-tool-header{padding:16px 20px;display:flex;align-items:center;gap:12px}
+.cv-tool-icon{width:40px;height:40px;border-radius:12px;background:#eef2ff;color:#4f46e5;display:grid;place-items:center}
+.cv-tool-title{font-weight:700}
+.cv-tool-content{padding:0 20px 20px}
+.cv-photo-placeholder{width:110px;height:110px;border-radius:50%;background:#f4f4f5;display:grid;place-items:center;color:#a1a1aa;font-size:2rem;margin:0 auto 12px}
+.repair-status-box,.ocr-result,.compress-info{border:1px solid #e4e4e7;border-radius:12px;padding:18px;background:#fafafa;margin-top:16px;font-size:.92rem}
+.format-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+.format-section{margin-bottom:18px}
+.section-title{font-weight:700;margin-bottom:10px}
+.quick-actions{display:flex;gap:10px;flex-wrap:wrap}
+.quick-action-btn,.account-btns button{border:1px solid #e4e4e7;background:#fff;border-radius:10px;padding:9px 16px;font-size:.85rem;font-weight:600;cursor:pointer}
+.quick-action-btn:hover{border-color:#4f46e5}
+.filename{font-weight:600;font-size:.9rem}
+.dots{display:flex;gap:6px}
+.dot{width:10px;height:10px;border-radius:50%;background:#d4d4d8}
+.dot.red{background:#ef4444}.dot.yellow{background:#eab308}.dot.green{background:#22c55e}
+.toc-sidebar{background:#fafafa;border:1px solid #e4e4e7;border-radius:12px;padding:16px;font-size:.88rem}
+#toc-list{list-style:none;margin:0}
+#toc-list li{padding:6px 0;cursor:pointer}
+#toc-list li:hover{color:#4f46e5}
+#word-content{background:#fff;border:1px solid #e4e4e7;border-radius:12px;padding:32px;min-height:300px;line-height:1.8}
+.doc-preview-content{margin-top:8px}
+.chart-modal canvas{max-width:100%}
+.size-box{text-align:center;padding:14px;border:1px solid #e4e4e7;border-radius:12px;background:#fff}
+.size-label{font-size:.75rem;color:#71717a;text-transform:uppercase;letter-spacing:.05em}
+.size-value{font-size:1.4rem;font-weight:700}
+@media(max-width:700px){.compare-grid,.cv-form-row,.editor-main{grid-template-columns:1fr;flex-direction:column}.side-panel{width:100%}.ws-dropzone{padding:36px 20px}}
+</style>
+
+</head>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../index.html#tools">All Tools</a><a href="../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../index.html#tools">Explore Tools</a></div>
+</div></header>
+
+<nav class="crumbs"><a href="../index.html">Home</a> &nbsp;/&nbsp; <span>CV Builder</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">Document Tools</span>
+  <h1>Build your CV, <em>beautifully.</em></h1>
+  <p>CVPro AI - Professional CV/Resume Builder. Create stunning resumes with templates, ATS optimization, and multiple export formats.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
+  </div>
+</section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>CV Builder</b><span>v3.0 &middot; local</span></div>
+  <div class="ws-body">
+<div class="container">
 <div class="account-btns" id="auth-section">
-<button class="cv-btn cv-btn-secondary" onclick="toggleAuthModal()">Login / Sign Up</button>
+<button class="btn btn-light cv-btn cv-btn-secondary tu-btn tu-btn-ghost" onclick="toggleAuthModal()">Login / Sign Up</button>
 </div>
-<div class="doc-hero">
-<h1 class="doc-hero-title">📄 CVPro AI - Professional CV Builder</h1>
-<p class="doc-hero-subtitle">Create stunning, ATS-optimized resumes with smart templates. Multi-language
-                    support including English &amp; Urdu.</p>
-</div>
+
 <!-- Progress Bar -->
 <div class="cv-progress">
 <div class="cv-progress-bar">
@@ -114,7 +243,7 @@
 </div>
 <div id="upload-zone" style="display:none; margin-top:1.5rem;">
 <input accept=".pdf,.docx,image/*" hidden="" id="file-upload" type="file"/>
-<button class="cv-btn cv-btn-secondary" onclick="document.getElementById('file-upload').click()">📁 Choose File</button>
+<button class="btn btn-light cv-btn cv-btn-secondary tu-btn tu-btn-ghost" onclick="document.getElementById('file-upload').click()"><i class="fa-solid fa-folder-open"></i> Choose File</button>
 <div id="upload-status" style="margin-top:1rem; color:var(--text-secondary);"></div>
 </div>
 <div id="paste-zone" style="display:none; margin-top:1.5rem;">
@@ -131,7 +260,7 @@
 <div class="cv-photo-upload" style="margin-bottom:1.5rem;">
 <div class="cv-photo-preview" id="photo-preview"><span class="cv-photo-placeholder">👤</span></div>
 <input accept="image/*" hidden="" id="photo-upload" type="file"/>
-<button class="cv-btn cv-btn-secondary" onclick="document.getElementById('photo-upload').click()">📷 Upload Photo</button>
+<button class="btn btn-light cv-btn cv-btn-secondary tu-btn tu-btn-ghost" onclick="document.getElementById('photo-upload').click()"><i class="fa-solid fa-camera"></i> Upload Photo</button>
 </div>
 <div class="cv-form-row">
 <div class="cv-form-group"><label class="cv-form-label">Full Name *</label><input class="cv-form-input" id="cv-name" placeholder="John Doe" type="text"/></div>
@@ -150,7 +279,7 @@
 </div>
 <div class="cv-form-group">
 <label class="cv-form-label">Professional Summary
-                                    <button class="cv-ai-btn" onclick="suggestSummary()">✨ AI Suggest</button>
+                                    <button class="btn btn-light cv-ai-btn tu-btn tu-btn-ghost" onclick="suggestSummary()"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Suggest</button>
 </label>
 <textarea class="cv-form-textarea" id="cv-summary" placeholder="Brief professional summary highlighting your key strengths and career objectives..."></textarea>
 </div>
@@ -165,7 +294,7 @@
 </div>
 <div class="cv-section-content">
 <div class="cv-entry-list" id="experience-list"></div>
-<button class="cv-add-entry-btn" onclick="addExperience()">➕ Add Work Experience</button>
+<button class="btn btn-light cv-add-entry-btn tu-btn tu-btn-ghost" onclick="addExperience()"><i class="fa-solid fa-plus"></i> Add Work Experience</button>
 </div>
 </div>
 <div class="cv-form-section">
@@ -174,7 +303,7 @@
 </div>
 <div class="cv-section-content">
 <div class="cv-entry-list" id="education-list"></div>
-<button class="cv-add-entry-btn" onclick="addEducation()">➕ Add Education</button>
+<button class="btn btn-light cv-add-entry-btn tu-btn tu-btn-ghost" onclick="addEducation()"><i class="fa-solid fa-plus"></i> Add Education</button>
 </div>
 </div>
 <div class="cv-form-section">
@@ -183,7 +312,7 @@
 </div>
 <div class="cv-section-content">
 <div class="cv-entry-list" id="project-list"></div>
-<button class="cv-add-entry-btn" onclick="addProject()">➕ Add Project</button>
+<button class="btn btn-light cv-add-entry-btn tu-btn tu-btn-ghost" onclick="addProject()"><i class="fa-solid fa-plus"></i> Add Project</button>
 </div>
 </div>
 </div>
@@ -254,7 +383,7 @@
 </div>
 <div class="cv-section-content">
 <div class="cv-entry-list" id="language-list"></div>
-<button class="cv-add-entry-btn" onclick="addLanguage()">➕ Add Language</button>
+<button class="btn btn-light cv-add-entry-btn tu-btn tu-btn-ghost" onclick="addLanguage()"><i class="fa-solid fa-plus"></i> Add Language</button>
 </div>
 </div>
 <div class="cv-form-section">
@@ -271,7 +400,7 @@
 </div>
 <div class="cv-section-content">
 <div class="cv-entry-list" id="reference-list"></div>
-<button class="cv-add-entry-btn" onclick="addReference()">➕ Add Reference</button>
+<button class="btn btn-light cv-add-entry-btn tu-btn tu-btn-ghost" onclick="addReference()"><i class="fa-solid fa-plus"></i> Add Reference</button>
 </div>
 </div>
 </div>
@@ -308,11 +437,11 @@
 <div>
 <h2 style="margin-bottom:1rem;">📥 Export Your CV</h2>
 <div class="cv-export-options">
-<button class="cv-export-btn" onclick="exportCV('pdf')"><span class="cv-export-icon">📕</span><span class="cv-export-label">PDF</span></button>
-<button class="cv-export-btn" onclick="exportCV('html')"><span class="cv-export-icon">🌐</span><span class="cv-export-label">HTML</span></button>
-<button class="cv-export-btn" onclick="exportCV('txt')"><span class="cv-export-icon">📝</span><span class="cv-export-label">TXT</span></button>
-<button class="cv-export-btn" onclick="exportCV('json')"><span class="cv-export-icon">💾</span><span class="cv-export-label">JSON</span></button>
-<button class="cv-export-btn" onclick="shareCV()"><span class="cv-export-icon">🔗</span><span class="cv-export-label">Share
+<button class="cv-export-btn tu-btn tu-btn-ghost" onclick="exportCV('pdf')"><span class="cv-export-icon"><i class="fa-regular fa-file-pdf"></i></span><span class="cv-export-label">PDF</span></button>
+<button class="cv-export-btn tu-btn tu-btn-ghost" onclick="exportCV('html')"><span class="cv-export-icon"><i class="fa-brands fa-globe"></i></span><span class="cv-export-label">HTML</span></button>
+<button class="cv-export-btn tu-btn tu-btn-ghost" onclick="exportCV('txt')"><span class="cv-export-icon"><i class="fa-regular fa-file-lines"></i></span><span class="cv-export-label">TXT</span></button>
+<button class="cv-export-btn tu-btn tu-btn-ghost" onclick="exportCV('json')"><span class="cv-export-icon"><i class="fa-solid fa-floppy-disk"></i></span><span class="cv-export-label">JSON</span></button>
+<button class="cv-export-btn tu-btn tu-btn-ghost" onclick="shareCV()"><span class="cv-export-icon"><i class="fa-solid fa-share-nodes"></i></span><span class="cv-export-label">Share
                                         Link</span></button>
 </div>
 <div class="cv-advanced-tools">
@@ -328,7 +457,7 @@
 </div>
 <div class="cv-ats-score"><span>Score:</span><span id="ats-score">Calculating...</span></div>
 </div>
-<button class="cv-btn cv-btn-secondary" onclick="checkATS()" style="width:100%;margin-top:0.5rem;">🔍 Check ATS</button>
+<button class="btn btn-light cv-btn cv-btn-secondary tu-btn tu-btn-ghost" onclick="checkATS()" style="width:100%;margin-top:0.5rem;"><i class="fa-solid fa-magnifying-glass"></i> Check ATS</button>
 </div>
 </div>
 <div class="cv-tool-card">
@@ -339,7 +468,7 @@
 <p style="margin-bottom:0.75rem;">Generate a personal cover letter based on your
                                             CV.</p>
 <input class="cv-form-input" id="target-company" placeholder="Target Company" style="margin-bottom:0.5rem;" type="text"/>
-<button class="cv-btn cv-btn-secondary" onclick="generateCoverLetter()" style="width:100%;">✨ Generate Cover Letter</button>
+<button class="btn btn-light cv-btn cv-btn-secondary tu-btn tu-btn-ghost" onclick="generateCoverLetter()" style="width:100%;"><i class="fa-solid fa-wand-magic-sparkles"></i> Generate Cover Letter</button>
 </div>
 </div>
 <div class="cv-tool-card">
@@ -348,7 +477,7 @@
 </div>
 <div class="cv-tool-content">
 <p style="margin-bottom:0.75rem;">Keep multiple versions of your CV.</p>
-<button class="cv-btn cv-btn-secondary" onclick="saveCVVersion()" style="width:100%;">📥 Save Current Version</button>
+<button class="btn btn-light cv-btn cv-btn-secondary tu-btn tu-btn-ghost" onclick="saveCVVersion()" style="width:100%;"><i class="fa-solid fa-download"></i> Save Current Version</button>
 <div id="saved-versions-list" style="margin-top:1rem; font-size:0.8rem;"></div>
 </div>
 </div>
@@ -364,41 +493,44 @@
 </div>
 <!-- Navigation Buttons -->
 <div class="cv-actions">
-<button class="cv-btn cv-btn-secondary" id="prev-btn" onclick="navigateStep(-1)" style="display:none;">← Previous</button>
-<button class="cv-btn cv-btn-primary" id="next-btn" onclick="navigateStep(1)">Next Step →</button>
+<button class="btn btn-light cv-btn cv-btn-secondary tu-btn tu-btn-ghost" id="prev-btn" onclick="navigateStep(-1)" style="display:none;">← Previous</button>
+<button class="btn btn-dark cv-btn cv-btn-primary tu-btn tu-btn-primary" id="next-btn" onclick="navigateStep(1)">Next Step →</button>
 </div>
 </div>
 </div>
-</main>
-            </div>
-            <section class="seo-article" data-tool="cv-builder">
-<article class="tool-article">
-<h2>CV Builder — Free Online Resume Maker with ATS Score</h2>
+  </div>
+</div></div>
 
-<p>My first CV was a Word document with a table layout, two fonts, and a header image. It looked fine on my screen — and then I learned that the applicant tracking systems most companies use couldn't parse a word of it. My carefully designed resume was being read as gibberish by a robot before any human ever saw it. A good CV builder fixes both problems at once: it produces a clean, professional layout and keeps it machine-readable, with an ATS score telling you how parseable the result is. Fill in a form, watch the live preview, download a PDF — no design skills required.</p>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 &mdash; HOW IT WORKS</span><h2>Three steps, zero learning curve</h2></div>
+  <div class="steps">
+<div class="step"><div class="step-n">i.</div><h3>Fill in your details</h3><p>Work through the guided steps — contact info, experience, education and skills — at your own pace.</p></div><div class="step"><div class="step-n">ii.</div><h3>Polish with AI</h3><p>Let the built-in AI assistant improve bullet points and suggest stronger wording for your target role.</p></div><div class="step"><div class="step-n">iii.</div><h3>Export &amp; apply</h3><p>Preview your CV, pick a template, and export to PDF or DOCX, ready to send.</p></div>
+  </div>
+</section>
 
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>CV Builder — Free Online Resume Maker with ATS Score</h2>
+    <p class="deck">Beat the bots, impress the humans.</p>
+    <div class="article-meta">
+      <div class="avatar">C</div>
+      <div><b>TOOLSHUB Editorial</b><span>5 min read &middot; Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+<p class="lead">My first CV was a Word document with a table layout, two fonts, and a header image. It looked fine on my screen — and then I learned that the applicant tracking systems most companies use couldn't parse a word of it. My carefully designed resume was being read as gibberish by a robot before any human ever saw it. A good CV builder fixes both problems at once: it produces a clean, professional layout and keeps it machine-readable, with an ATS score telling you how parseable the result is. Fill in a form, watch the live preview, download a PDF — no design skills required.</p>
 <h3>What Is a CV Builder?</h3>
-
 <p>A CV builder is a guided form that turns your career details into a finished resume. Instead of fighting with margins and bullet alignment in a word processor, you fill in structured sections — personal details, professional summary, work experience, education, skills, languages — and the tool renders a polished, consistently formatted document with a live preview.</p>
-
 <p>The ATS angle is what separates a builder from a template download. Applicant Tracking Systems scan resumes before recruiters do, and they choke on multi-column layouts, graphics, tables, and unusual fonts. An ATS-friendly builder uses a clean single-column structure, standard section headings, and real selectable text, so the parser reads your experience in the right order. The live ATS score shows you, as you type, whether your CV is machine-readable — fix issues before you apply, not after a rejection.</p>
-
 <p>One reality check: no score guarantees an interview. ATS-friendliness gets your CV read correctly; getting shortlisted still depends on matching the job's keywords and having the right experience. The builder handles the format — you handle the content.</p>
-
 <h3>How to Use the CV Builder</h3>
-
 <p>Start with your personal details: name, job title, email, phone, location, and a LinkedIn URL. Then write a short professional summary — two to three lines on who you are and what you bring. Keep it specific: "5 years building payment APIs in Python" beats "hardworking team player" every time.</p>
-
 <p>Add your work experience in reverse-chronological order (newest first), with dates, company names, and bullet points describing what you actually did — quantified where possible. Then education, skills (split into hard and soft if the tool offers it), languages, and optional extras like hobbies or certifications. The live preview updates as you type, so you see the finished page taking shape.</p>
-
 <p>Customize the look: pick a color scheme, font, and density that fit your industry — conservative for finance and law, a touch of color for design and marketing. Choose your region setting if the tool offers one, since CV conventions differ (Gulf employers expect nationality and visa status; US employers don't). Watch the ATS score as you go, and when you're happy, download the PDF.</p>
-
 <p>My rule: build one master CV with everything, then duplicate and tailor it per application, mirroring keywords from the job description. A tailored CV with the employer's own vocabulary consistently outperforms a generic one — the ATS is literally matching words.</p>
-
 <h3>Writing Bullets That Get Read</h3>
-
 <p>Recruiters skim. These patterns make bullets work harder:</p>
-
 <table>
 <thead><tr><th>Weak</th><th>Strong</th><th>Why it works</th></tr></thead>
 <tbody>
@@ -408,13 +540,9 @@
 <tr><td>Knowledge of Excel</td><td>Automated monthly reporting in Excel, saving 10 hrs/month</td><td>Skill + impact</td></tr>
 </tbody>
 </table>
-
 <p>The formula is simple: strong verb, what you did, measurable result. Three to five bullets per role is plenty — your CV is a highlight reel, not a memoir. And keep everything truthful: background checks exist, and one inflated claim can sink an offer.</p>
-
 <h3>ATS-Friendly Checklist</h3>
-
 <p>Before you download, run through this list — it's what the ATS score is really measuring:</p>
-
 <ul>
 <li><strong>Single-column layout</strong> — multi-column designs scramble reading order for parsers.</li>
 <li><strong>Standard headings</strong> — "Work Experience," "Education," "Skills." Creative headings like "My Journey" confuse parsers.</li>
@@ -425,100 +553,70 @@
 <li><strong>No tables or text boxes</strong> — they break parsing order in many systems.</li>
 <li><strong>PDF with selectable text</strong> — a scanned-image PDF is as unreadable as a photo.</li>
 </ul>
-
 <h3>Who Uses a CV Builder?</h3>
-
 <p><strong>Freshers and graduates</strong> build their first professional CV without knowing design conventions — the guided sections teach structure while they fill it in.</p>
-
 <p><strong>Experienced professionals</strong> keep a master CV updated and spin off tailored versions per application, reusing the same data across roles and industries.</p>
-
 <p><strong>Career switchers</strong> reframe existing experience for a new field, leaning on the summary and skills sections to tell the new story.</p>
-
 <p><strong>International applicants</strong> use region settings to match local conventions — photo or no photo, personal details expected or omitted — without researching each market's norms from scratch.</p>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>Guided sections</strong> — personal details, summary, experience, education, skills, languages, hobbies.</li>
 <li><strong>Live ATS score</strong> — see machine-readability as you type and fix issues early.</li>
 <li><strong>Live preview</strong> — watch the finished CV take shape in real time.</li>
-<li><strong>Color schemes & fonts</strong> — professional themes matched to your industry.</li>
+<li><strong>Color schemes &amp; fonts</strong> — professional themes matched to your industry.</li>
 <li><strong>Density control</strong> — compact or spacious layout for one-page or two-page CVs.</li>
 <li><strong>Region-aware fields</strong> — conventions for different job markets.</li>
 <li><strong>PDF download</strong> — crisp, print-ready, ATS-safe output.</li>
 <li><strong>100% free</strong> — build and download without paywalls or watermarks.</li>
 </ul>
-
 <h3>Frequently Asked Questions</h3>
-
 <h4>Is this CV builder free?</h4>
 <p>Yes — build and download your CV with no paywall and no watermark.</p>
-
 <h4>What does the ATS score mean?</h4>
 <p>It rates how reliably applicant tracking systems can parse your CV — layout, headings, and text structure. Higher is better, but content and keyword match still decide shortlisting.</p>
-
 <h4>How long should my CV be?</h4>
 <p>One page for under 5 years of experience, two pages beyond that. Density control helps you fit without cramming.</p>
-
 <h4>Should I include a photo?</h4>
 <p>Depends on the market: expected in the Gulf and much of Asia and Europe, omitted in the US and UK. Use the region setting as your guide.</p>
-
 <h4>Can I make different CVs for different jobs?</h4>
 <p>Yes — keep a master CV and tailor copies per application, mirroring keywords from each job description.</p>
-
 <h4>What file format should I submit?</h4>
 <p>PDF with selectable text, unless the employer specifically asks for Word. Never submit a scanned image or a photo of your CV.</p>
-
 <h4>Is my personal data safe?</h4>
 <p>Your details are used only to render your CV. Never put bank details, passwords, or identity numbers on a CV.</p>
-
 <h4>Do I need an account?</h4>
 <p>You can build and download as a guest. An account lets you save and revisit your CVs later.</p>
-</article>
+    <h3>Frequently asked</h3>
+    <div class="faq">
+<div class="faq-item open"><div class="faq-q">Is the CV builder free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>Yes — build and export your CV free, with no account required.</div></div></div><div class="faq-item"><div class="faq-q">Will my CV pass ATS scans? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>The templates use standard headings and clean formatting that applicant tracking systems read reliably.</div></div></div><div class="faq-item"><div class="faq-q">Is my personal data uploaded anywhere? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>No. Everything you type stays on your device in your browser session.</div></div></div><div class="faq-item"><div class="faq-q">Which formats can I export to? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>Export polished resumes to PDF and DOCX in multiple professional templates.</div></div></div>
+    </div>
+  </div>
+</article></div>
+
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 &mdash; KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+<a class="rel" href="document-signer.html"><i class="fa-solid fa-pen-nib" style="color:#4f46e5"></i><h3>Document Signer</h3><p>Add electronic signatures to PDFs.</p></a>
+<a class="rel" href="online-notepad.html"><i class="fa-solid fa-note-sticky" style="color:#7c3aed"></i><h3>Online Notepad</h3><p>A notepad that saves your work automatically.</p></a>
+<a class="rel" href="word-viewer.html"><i class="fa-solid fa-file-word" style="color:#4f46e5"></i><h3>Word Viewer</h3><p>Open DOCX files without Microsoft Word.</p></a>
+<a class="rel" href="text-viewer.html"><i class="fa-solid fa-file-lines" style="color:#7c3aed"></i><h3>Text Viewer</h3><p>Read TXT files with syntax highlighting.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../image-tools/index.html">Image Tools</a></li><li><a href="../pdf-tools/index.html">PDF Tools</a></li><li><a href="../text-tools/index.html">Text & Writing</a></li><li><a href="../seo-tools/index.html">SEO Tools</a></li><li><a href="../calculator-tools/index.html">Calculators</a></li><li><a href="../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../index.html#tools">All 203 tools</a></li><li><a href="../pdf-tools/">PDF tools</a></li><li><a href="../image-tools/">Image tools</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../about-us.html">About</a><a href="../contact-us.html">Contact</a><a href="../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>&copy; 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+
 <script>
         // CV Builder Core Logic
         let currentStep = 1, totalSteps = 6, cvData = { skills: [], experience: [], education: [], languages: [], selectedTemplate: 'modern', selectedColor: '#667eea', selectedIndustry: '' };
@@ -599,16 +697,16 @@
 
         function initIndustry() { document.querySelectorAll('.cv-industry-card').forEach(c => { c.onclick = function () { document.querySelectorAll('.cv-industry-card').forEach(x => x.classList.remove('selected')); this.classList.add('selected'); cvData.selectedIndustry = this.dataset.industry; }; }); }
 
-        function addExperience() { const list = document.getElementById('experience-list'); const id = Date.now(); const html = `<div class="cv-entry-item" id="exp-${id}"><span class="cv-drag-handle">⋮⋮</span><button class="cv-entry-remove" onclick="removeEntry('exp-${id}')">×</button><div class="cv-form-row"><div class="cv-form-group"><label class="cv-form-label">Job Title</label><input type="text" class="cv-form-input exp-title" placeholder="Software Engineer"></div><div class="cv-form-group"><label class="cv-form-label">Company</label><input type="text" class="cv-form-input exp-company" placeholder="Google"></div></div><div class="cv-form-row"><div class="cv-form-group"><label class="cv-form-label">Start Date</label><input type="month" class="cv-form-input exp-start"></div><div class="cv-form-group"><label class="cv-form-label">End Date</label><input type="month" class="cv-form-input exp-end" placeholder="Present"></div></div><div class="cv-form-group"><label class="cv-form-label">Description</label><textarea class="cv-form-textarea exp-desc" placeholder="Key responsibilities and achievements..."></textarea></div><div class="cv-entry-actions" style="margin-top:0.5rem;"><button class="cv-ai-btn" onclick="suggestRoleAchievements(this)">✨ AI Suggest Tasks</button></div></div>`; list.insertAdjacentHTML('beforeend', html); }
+        function addExperience() { const list = document.getElementById('experience-list'); const id = Date.now(); const html = `<div class="cv-entry-item" id="exp-${id}"><span class="cv-drag-handle">⋮⋮</span><button class="cv-entry-remove" onclick="removeEntry('exp-${id}')"><i class="fa-solid fa-xmark"></i></button><div class="cv-form-row"><div class="cv-form-group"><label class="cv-form-label">Job Title</label><input type="text" class="cv-form-input exp-title" placeholder="Software Engineer"></div><div class="cv-form-group"><label class="cv-form-label">Company</label><input type="text" class="cv-form-input exp-company" placeholder="Google"></div></div><div class="cv-form-row"><div class="cv-form-group"><label class="cv-form-label">Start Date</label><input type="month" class="cv-form-input exp-start"></div><div class="cv-form-group"><label class="cv-form-label">End Date</label><input type="month" class="cv-form-input exp-end" placeholder="Present"></div></div><div class="cv-form-group"><label class="cv-form-label">Description</label><textarea class="cv-form-textarea exp-desc" placeholder="Key responsibilities and achievements..."></textarea></div><div class="cv-entry-actions" style="margin-top:0.5rem;"><button class="cv-ai-btn" onclick="suggestRoleAchievements(this)"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Suggest Tasks</button></div></div>`; list.insertAdjacentHTML('beforeend', html); }
 
-        function addEducation() { const list = document.getElementById('education-list'); const id = Date.now(); const html = `<div class="cv-entry-item" id="edu-${id}"><span class="cv-drag-handle">⋮⋮</span><button class="cv-entry-remove" onclick="removeEntry('edu-${id}')">×</button><div class="cv-form-row"><div class="cv-form-group"><label class="cv-form-label">Degree</label><input type="text" class="cv-form-input edu-degree" placeholder="Bachelor of Science"></div><div class="cv-form-group"><label class="cv-form-label">Institution</label><input type="text" class="cv-form-input edu-school" placeholder="MIT"></div></div><div class="cv-form-row"><div class="cv-form-group"><label class="cv-form-label">Year</label><input type="text" class="cv-form-input edu-year" placeholder="2020"></div><div class="cv-form-group"><label class="cv-form-label">Field of Study</label><input type="text" class="cv-form-input edu-field" placeholder="Computer Science"></div></div></div>`; list.insertAdjacentHTML('beforeend', html); }
+        function addEducation() { const list = document.getElementById('education-list'); const id = Date.now(); const html = `<div class="cv-entry-item" id="edu-${id}"><span class="cv-drag-handle">⋮⋮</span><button class="cv-entry-remove" onclick="removeEntry('edu-${id}')"><i class="fa-solid fa-xmark"></i></button><div class="cv-form-row"><div class="cv-form-group"><label class="cv-form-label">Degree</label><input type="text" class="cv-form-input edu-degree" placeholder="Bachelor of Science"></div><div class="cv-form-group"><label class="cv-form-label">Institution</label><input type="text" class="cv-form-input edu-school" placeholder="MIT"></div></div><div class="cv-form-row"><div class="cv-form-group"><label class="cv-form-label">Year</label><input type="text" class="cv-form-input edu-year" placeholder="2020"></div><div class="cv-form-group"><label class="cv-form-label">Field of Study</label><input type="text" class="cv-form-input edu-field" placeholder="Computer Science"></div></div></div>`; list.insertAdjacentHTML('beforeend', html); }
 
-        function addLanguage() { const list = document.getElementById('language-list'); const id = Date.now(); const html = `<div class="cv-entry-item" id="lang-${id}" style="padding:0.75rem;"><button class="cv-entry-remove" onclick="removeEntry('lang-${id}')">×</button><div class="cv-form-row"><div class="cv-form-group"><input type="text" class="cv-form-input lang-name" placeholder="Language"></div><div class="cv-form-group"><select class="cv-form-select lang-level"><option>Native</option><option>Fluent</option><option>Advanced</option><option>Intermediate</option><option>Basic</option></select></div></div></div>`; list.insertAdjacentHTML('beforeend', html); }
+        function addLanguage() { const list = document.getElementById('language-list'); const id = Date.now(); const html = `<div class="cv-entry-item" id="lang-${id}" style="padding:0.75rem;"><button class="cv-entry-remove" onclick="removeEntry('lang-${id}')"><i class="fa-solid fa-xmark"></i></button><div class="cv-form-row"><div class="cv-form-group"><input type="text" class="cv-form-input lang-name" placeholder="Language"></div><div class="cv-form-group"><select class="cv-form-select lang-level"><option>Native</option><option>Fluent</option><option>Advanced</option><option>Intermediate</option><option>Basic</option></select></div></div></div>`; list.insertAdjacentHTML('beforeend', html); }
 
         function addReference() {
             const list = document.getElementById('reference-list');
             const id = Date.now();
-            const html = `<div class="cv-entry-item" id="ref-${id}"><button class="cv-entry-remove" onclick="removeEntry('ref-${id}')">×</button><div class="cv-form-row"><div class="cv-form-group"><label class="cv-form-label">Reference Name</label><input type="text" class="cv-form-input ref-name" placeholder="Jane Doe"></div><div class="cv-form-group"><label class="cv-form-label">Title/Company</label><input type="text" class="cv-form-input ref-title" placeholder="Manager at Tech Corp"></div></div><div class="cv-form-group"><label class="cv-form-label">Contact Info (optional)</label><input type="text" class="cv-form-input ref-contact" placeholder="jane@example.com"></div></div>`;
+            const html = `<div class="cv-entry-item" id="ref-${id}"><button class="cv-entry-remove" onclick="removeEntry('ref-${id}')"><i class="fa-solid fa-xmark"></i></button><div class="cv-form-row"><div class="cv-form-group"><label class="cv-form-label">Reference Name</label><input type="text" class="cv-form-input ref-name" placeholder="Jane Doe"></div><div class="cv-form-group"><label class="cv-form-label">Title/Company</label><input type="text" class="cv-form-input ref-title" placeholder="Manager at Tech Corp"></div></div><div class="cv-form-group"><label class="cv-form-label">Contact Info (optional)</label><input type="text" class="cv-form-input ref-contact" placeholder="jane@example.com"></div></div>`;
             list.insertAdjacentHTML('beforeend', html);
         }
 
@@ -716,9 +814,9 @@
             modal.innerHTML = `<div class="cv-modal-content" style="text-align:center;">
                 <h2 style="margin-bottom:1.5rem;">User Account</h2>
                 <div style="display:flex; flex-direction:column; gap:1rem;">
-                    <button class="cv-btn cv-btn-secondary" onclick="login('Google')">🌐 Continue with Google</button>
-                    <button class="cv-btn cv-btn-secondary" onclick="login('LinkedIn')">💼 Continue with LinkedIn</button>
-                    <button class="cv-btn cv-btn-primary" onclick="login('Email')">✉️ Email Login</button>
+                    <button class="cv-btn cv-btn-secondary" onclick="login('Google')"><i class="fa-brands fa-google"></i> Continue with Google</button>
+                    <button class="cv-btn cv-btn-secondary" onclick="login('LinkedIn')"><i class="fa-brands fa-linkedin"></i> Continue with LinkedIn</button>
+                    <button class="cv-btn cv-btn-primary" onclick="login('Email')"><i class="fa-solid fa-envelope"></i> Email Login</button>
                 </div>
                 <hr style="margin:1.5rem 0; opacity:0.1;">
                 <button class="cv-btn cv-btn-secondary" onclick="this.parentElement.parentElement.remove()">Cancel</button>
@@ -793,8 +891,7 @@
                         try { return Array.from(sheet.cssRules).map(rule => rule.cssText).join(''); }
                         catch (e) { return ''; }
                     }).join('');
-                const blob = new Blob(['<!DOCTYPE html><html><head><meta charset="UTF-8"><style>' + css + '</style></head><body style="padding:40px;">' + preview.innerHTML + '  <script src="../image-tools/js/th-interactions.js"></script>
-</body></html>'], { type: 'text/html' });
+                const blob = new Blob(['<!DOCTYPE html><html><head><meta charset="UTF-8"><style>' + css + '</style></head><body style="padding:40px;">' + preview.innerHTML + '  <script src="../image-tools/js/th-interactions.js"><\/script>\n</body></html>'], { type: 'text/html' });
                 downloadBlob(blob, 'cv.html');
             } else if (fmt === 'txt') {
                 const text = preview.innerText;
@@ -823,7 +920,7 @@
         function addProject() {
             const list = document.getElementById('project-list');
             const id = Date.now();
-            const html = `<div class="cv-entry-item" id="project-${id}"><button class="cv-entry-remove" onclick="removeEntry('project-${id}')">×</button><div class="cv-form-group"><label class="cv-form-label">Project Title</label><input type="text" class="cv-form-input proj-title" placeholder="Portfolio Website"></div><div class="cv-form-group"><label class="cv-form-label">Link/URL</label><input type="url" class="cv-form-input proj-link" placeholder="github.com/username/repo"></div><div class="cv-form-group"><label class="cv-form-label">Description</label><textarea class="cv-form-textarea proj-desc" placeholder="Briefly describe the project and your role..."></textarea></div></div>`;
+            const html = `<div class="cv-entry-item" id="project-${id}"><button class="cv-entry-remove" onclick="removeEntry('project-${id}')"><i class="fa-solid fa-xmark"></i></button><div class="cv-form-group"><label class="cv-form-label">Project Title</label><input type="text" class="cv-form-input proj-title" placeholder="Portfolio Website"></div><div class="cv-form-group"><label class="cv-form-label">Link/URL</label><input type="url" class="cv-form-input proj-link" placeholder="github.com/username/repo"></div><div class="cv-form-group"><label class="cv-form-label">Description</label><textarea class="cv-form-textarea proj-desc" placeholder="Briefly describe the project and your role..."></textarea></div></div>`;
             list.insertAdjacentHTML('beforeend', html);
         }
 
@@ -875,5 +972,6 @@
 
         window.onload = () => { init(); renderSavedVersions(); };
     </script>
+<script src="../image-tools/js/v3.js"></script>
 </body>
 </html>

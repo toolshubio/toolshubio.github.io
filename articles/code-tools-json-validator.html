@@ -1,0 +1,98 @@
+<article class="tool-article">
+<h2>JSON Validator — Free Online JSON Syntax Checker</h2>
+
+<p>There is a special kind of frustration that comes from an API returning "400 Bad Request" with no explanation. I've been there more times than I care to admit, and the culprit is almost always the same: one tiny syntax problem in the JSON I sent — a missing comma, a stray quote, a trailing comma that JavaScript would forgive but JSON never does. A JSON validator answers one question fast: is this payload actually valid? Paste it in, click validate, and you get a clear yes — or the exact line and column where it breaks.</p>
+
+<h3>What Is a JSON Validator?</h3>
+
+<p>A JSON validator checks your data against the official JSON grammar (RFC 8259) and tells you whether it parses cleanly. It doesn't reformat anything or show you a tree view — those are the jobs of the formatter and viewer tools on this site. The validator's job is narrower and, in the right moment, more valuable: find the first thing that breaks parsing and point at it.</p>
+
+<p>That narrowness matters because error messages from raw parsers are famously unhelpful. "Unexpected token at position 847" is technically true and practically useless. A good validator translates it into something actionable: the offending line printed out, a caret under the exact character, and a plain-English reason — trailing comma, single quotes, unquoted key, unescaped line break.</p>
+
+<p>One thing to keep straight: a validator checks syntax only. A payload can be perfectly valid JSON and still violate your API's contract — wrong field names, missing required fields, wrong types. Catching those is the job of a JSON Schema validator, a different (and stricter) tool. Syntax first, semantics second.</p>
+
+<h3>How to Use the JSON Validator</h3>
+
+<p>Copy the JSON you need to check — a request body your API rejected, a response you saved from the network tab, a config file you hand-edited, a snippet pasted from a chat thread — and paste it into the input box at the top of the tool.</p>
+
+<p>Click Validate. Within a blink you'll see either a green "valid" confirmation or a detailed error report with the line number, column number, and a description of what went wrong. Fix the first reported problem and validate again — validators stop at the first violation, because errors after that point are usually just side effects of the first one.</p>
+
+<p>My routine when an API call fails: paste the exact body I sent into the validator before I touch anything else. Half the time the problem is in the payload, not my code, and this check takes five seconds. If it validates clean, then I know the bug lives elsewhere — authentication, headers, or the endpoint itself — and I don't waste an hour debugging the wrong layer.</p>
+
+<h3>The Rules Your JSON Must Follow</h3>
+
+<p>JSON is stricter than the JavaScript it resembles. These are the rules that trip people up:</p>
+
+<table>
+<thead><tr><th>Rule</th><th>Valid</th><th>Invalid</th></tr></thead>
+<tbody>
+<tr><td>Strings use double quotes</td><td><code>"hello"</code></td><td><code>'hello'</code></td></tr>
+<tr><td>Keys must be quoted</td><td><code>{"name": "x"}</code></td><td><code>{name: "x"}</code></td></tr>
+<tr><td>No trailing commas</td><td><code>[1, 2, 3]</code></td><td><code>[1, 2, 3,]</code></td></tr>
+<tr><td>No comments</td><td>—</td><td><code>// note</code> or <code>/* note */</code></td></tr>
+<tr><td>No undefined</td><td><code>null</code></td><td><code>undefined</code></td></tr>
+<tr><td>No leading zeros</td><td><code>0.5</code></td><td><code>00.5</code></td></tr>
+</tbody>
+</table>
+
+<p>Trailing commas are the classic gotcha for JavaScript developers, because they're perfectly legal in JS object literals — your linter might even require them — but they're illegal in JSON. Code copied straight from a script into a config file or API body breaks on exactly this point, and the validator is how you catch it in seconds instead of in production.</p>
+
+<h3>Reading an Error Report</h3>
+
+<p>Let's say you paste this in:</p>
+
+<p><code>{<br>&nbsp;&nbsp;"title": "Report",<br>&nbsp;&nbsp;"tags": ["a", "b",]<br>}</code></p>
+
+<p>The validator responds with something like: <strong>Invalid JSON — line 3, column 20: trailing comma before "]" is not allowed in JSON</strong>, with the offending line printed and a caret under the exact character. Remove that comma, re-validate, and you get the green light.</p>
+
+<p>A couple of subtler warnings worth knowing about: duplicate keys (parsers silently keep only the last value, so <code>{"a": 1, "a": 2}</code> quietly becomes <code>{"a": 2}</code> — legal but almost never what you intended) and very long numbers that lose precision in JavaScript's number format. The strictest validators flag both even though parsers accept them, because silent data loss is worse than a loud error.</p>
+
+<h3>When to Use the Validator</h3>
+
+<p><strong>Debugging rejected API calls.</strong> A 400 response usually means your request body is malformed. Validate the exact payload you sent before debugging your code.</p>
+
+<p><strong>Checking hand-edited config files.</strong> Package managers, build tools, and CI pipelines all read JSON configs. One bad edit can break a whole deploy — validate before you commit.</p>
+
+<p><strong>Auditing generated JSON.</strong> Code that builds JSON by string concatenation or templates is a factory for subtle syntax bugs. Run the output through the validator as a final check.</p>
+
+<p><strong>Cleaning pasted snippets.</strong> JSON copied from logs, tickets, docs, or chat threads often arrives with smart quotes, trailing commas, or comments mixed in. The validator finds each problem so you can clean it up.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant verdict</strong> — valid or invalid in one click, no waiting.</li>
+<li><strong>Precise error location</strong> — line and column numbers plus a plain-English explanation.</li>
+<li><strong>Duplicate-key warnings</strong> — flags keys that would silently lose data.</li>
+<li><strong>Large payload support</strong> — handles big API responses and nested structures.</li>
+<li><strong>100% free</strong> — no account, no usage limits.</li>
+<li><strong>Private by design</strong> — validation runs in your browser; nothing is uploaded.</li>
+<li><strong>Copy and download</strong> — grab validated JSON for your clipboard or save it as a <code>.json</code> file.</li>
+<li><strong>Pairs with the formatter</strong> — once valid, send it to the JSON formatter on this site for readable output.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this JSON validator free?</h4>
+<p>Yes — free, no signup, no limits on how many payloads you validate.</p>
+
+<h4>How do I check if my JSON is valid?</h4>
+<p>Paste it into the input box and click Validate. You'll get a valid confirmation or a detailed error with line and column numbers.</p>
+
+<h4>What's the difference between the validator and the formatter?</h4>
+<p>The validator answers one question: is it valid, and if not, why? The formatter assumes valid input and makes it readable. Use the validator on suspicious payloads first, then the formatter once they pass.</p>
+
+<h4>Can valid JSON still be wrong for my API?</h4>
+<p>Yes. The validator checks syntax, not your API's contract — field names, required fields, and types need a JSON Schema validator.</p>
+
+<h4>Why does my JavaScript object fail validation?</h4>
+<p>JavaScript allows trailing commas, single quotes, comments, and unquoted keys — JSON allows none of these. Convert to strict JSON first.</p>
+
+<h4>Does it fix my JSON automatically?</h4>
+<p>No — it points at the exact problem so you can fix it yourself. One error at a time, starting with the first.</p>
+
+<h4>Is my data sent to a server?</h4>
+<p>No. All validation happens locally in your browser, so private payloads stay private.</p>
+
+<h4>What does "unexpected token" mean?</h4>
+<p>The parser found a character where the grammar doesn't allow one — usually a misplaced quote, bracket, or comma. The validator's line and column tell you exactly where to look.</p>
+</article>

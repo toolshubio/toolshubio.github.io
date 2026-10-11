@@ -1,0 +1,97 @@
+<article class="tool-article">
+<h2>CSS Validator — Check Your Stylesheets for Errors</h2>
+
+<p>CSS fails silently, and that is what makes it dangerous. Write <code>colr: red</code> instead of <code>color: red</code> and the browser does not complain — it just ignores the declaration and moves on, leaving you staring at unstyled text wondering what happened. I have lost entire afternoons to typos a machine could have caught in a second. A CSS validator scans your stylesheet and reports the problems: syntax errors, misspelled properties, invalid values, unclosed braces — each with a line number so you can jump straight to it.</p>
+
+<h3>What Is a CSS Validator?</h3>
+
+<p>A validator checks your CSS against the official rules of the language. Browsers are forgiving by design: when they hit a declaration they do not understand, they skip it and keep going. That forgiveness is great for backward compatibility and terrible for debugging, because nothing tells you which line broke.</p>
+
+<p>The validator fills that gap. It parses your stylesheet the way a strict referee would: every property name checked against the known list, every value checked against what that property accepts, every brace matched, every semicolon in place. The result is a report split by severity — errors that will definitely break styling, warnings about risky or deprecated usage, and informational notes.</p>
+
+<p>It is worth knowing what validation is not. A validator checks syntax and standards compliance, not taste. It will not tell you your layout is ugly or your color contrast fails accessibility — those need different tools. It answers one question well: is this CSS written correctly?</p>
+
+<h3>How to Use the CSS Validator</h3>
+
+<p>Paste your CSS into the input box — a full stylesheet, a section of one, or the output of a Sass/Less compiler. Click validate. The tool processes it instantly (many validate live as you type) and shows a status: green for clean, yellow for warnings, red for errors.</p>
+
+<p>Each issue comes with a line and column number plus a plain-language description. Click an error to jump to that line in the editor. Fix the problems, re-validate, and repeat until the report is clean. Then copy the corrected CSS back into your project.</p>
+
+<p>My habit: validate before every deploy, and always after editing CSS by hand late in the day. The five minutes it takes has never once been wasted.</p>
+
+<h3>Common CSS Errors It Catches</h3>
+
+<table>
+<thead><tr><th>Error</th><th>Example</th><th>What Happens</th></tr></thead>
+<tbody>
+<tr><td>Unclosed brace</td><td><code>.header { color: blue;</code> (no <code>}</code>)</td><td>Swallows all following rules into the broken block</td></tr>
+<tr><td>Missing semicolon</td><td><code>color: red\nbackground: blue;</code></td><td>Second declaration ignored or misread</td></tr>
+<tr><td>Typo in property</td><td><code>colr: red;</code></td><td>Declaration silently dropped by the browser</td></tr>
+<tr><td>Empty value</td><td><code>margin: ;</code></td><td>Invalid — declaration ignored</td></tr>
+<tr><td>Invalid unit</td><td><code>width: 100;</code> (no unit)</td><td>Ignored — lengths need px, em, rem, etc.</td></tr>
+<tr><td>Bad <code>calc()</code></td><td><code>calc(100%-20px)</code></td><td>Invalid — spaces required around operators</td></tr>
+<tr><td>Unknown property</td><td><code>font-color: red;</code></td><td>No such property — probably meant <code>color</code></td></tr>
+</tbody>
+</table>
+
+<p>The unclosed brace is the nastiest of the bunch. One missing <code>}</code> can swallow every rule after it, and the symptoms — half the page unstyled — look nothing like the cause. When a big chunk of styling vanishes at once, check your braces first.</p>
+
+<h3>Validation vs Linting vs Formatting</h3>
+
+<p>Three tools, three jobs. A <strong>formatter</strong> (beautifier) rearranges whitespace so the code is readable — it changes nothing about correctness. A <strong>linter</strong> enforces style conventions and catches common mistakes quickly, often inside your editor as you type. A <strong>validator</strong> checks the code against the CSS specification itself: is this property real, is this value legal, is the structure sound?</p>
+
+<p>In practice they layer nicely. Format for readability, lint for consistency while writing, validate before shipping. The validator is the final gate — the one that catches the typo your linter's rule set did not cover.</p>
+
+<h3>Who Uses CSS Validators?</h3>
+
+<p><strong>Front-end developers</strong> validate stylesheets the way backend developers run tests: as a matter of routine. It is especially valuable when inheriting someone else's CSS, where a quick validation pass reveals how much of the file is actually broken.</p>
+
+<p><strong>Freelancers</strong> validate before client delivery. A clean validation report is quiet evidence of professional work — and it prevents the "the site looks wrong on my computer" support ticket.</p>
+
+<p><strong>Students</strong> learning CSS get something a textbook cannot give: immediate, specific feedback on every mistake. The line numbers teach faster than any error-hunting exercise.</p>
+
+<p><strong>QA testers</strong> run validation when a layout bug appears. If the CSS is clean, the bug is in the logic or the markup; if it is not, they have found the cause without touching code.</p>
+
+<h3>Tips for Cleaner Stylesheets</h3>
+
+<p>Validate early and often — catching a typo the moment you type it beats hunting it across a 2,000-line file later. Take warnings seriously but not literally: a warning about a modern property like <code>oklch()</code> or <code>dvh</code> units may just mean the validator's database is older than the CSS spec, so check before "fixing" valid code. Keep your CSS organized with consistent formatting so that when the validator points at line 847, you can actually find line 847. And remember that validation complements testing, not replaces it — valid CSS can still look wrong if the design logic is off, so always check the rendered page too.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant validation</strong> — errors and warnings appear as you paste or type.</li>
+<li><strong>Line and column numbers</strong> — every issue pinned to its exact location.</li>
+<li><strong>Severity levels</strong> — errors, warnings, and info clearly separated.</li>
+<li><strong>Modern CSS support</strong> — custom properties, <code>@layer</code>, <code>@container</code>, modern color functions recognized.</li>
+<li><strong>Property database</strong> — checks against 200+ valid CSS properties.</li>
+<li><strong>Shorthand validation</strong> — transition, animation, border, and background checked properly.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
+<li><strong>100% free</strong> — no signup, no limits, works on any device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this CSS validator free?</h4>
+<p>Yes — completely free, no account needed, and no limits on how much CSS you can validate.</p>
+
+<h4>Why does my CSS look broken but the browser shows no error?</h4>
+<p>Browsers silently ignore invalid declarations instead of reporting them. A validator surfaces those silent failures with exact line numbers.</p>
+
+<h4>What is the difference between an error and a warning?</h4>
+<p>Errors are definite problems — broken syntax, unknown properties — that will break styling. Warnings are risky or deprecated usage worth reviewing but not necessarily wrong.</p>
+
+<h4>Does it support modern CSS like grid and custom properties?</h4>
+<p>Yes. Modern validators recognize custom properties, <code>@supports</code>, <code>@layer</code>, <code>@container</code>, new color functions, and viewport units like <code>dvh</code> without false positives.</p>
+
+<h4>Can it validate Sass or Less files?</h4>
+<p>Validate the compiled CSS output, not the preprocessor source — validators check standard CSS syntax.</p>
+
+<h4>Is my CSS data secure?</h4>
+<p>Yes. Validation happens entirely in your browser — your stylesheets never leave your device or touch a server.</p>
+
+<h4>Will validation fix my layout?</h4>
+<p>It finds the syntax mistakes that break layouts, but it cannot fix design logic. Always verify the rendered page visually after fixing errors.</p>
+
+<h4>Is CSS validity a Google ranking factor?</h4>
+<p>Not directly. But valid CSS renders consistently and performs better, which improves the user experience metrics that do matter for rankings.</p>
+</article>

@@ -1,0 +1,85 @@
+<article class="tool-article">
+<h2>Website Speed Test — Free Core Web Vitals Checker</h2>
+
+<p>I once watched a client lose a third of their checkout traffic after adding a chat widget and two tracking scripts. Nothing looked different — the page just took four seconds to become usable instead of one. A website speed test would have caught it the day it shipped. Enter a URL, get your load time plus the three Core Web Vitals Google uses as ranking signals, and see exactly what is slowing the page down.</p>
+
+<h3>What Is a Website Speed Test?</h3>
+
+<p>A speed test loads your page the way a visitor's browser would and measures what matters: how fast the main content appears, how quickly the page responds to input, and how stable the layout is while loading. The headline metrics are Google's <strong>Core Web Vitals</strong>: <strong>LCP (Largest Contentful Paint)</strong> — how fast the largest visible element renders; <strong>INP (Interaction to Next Paint)</strong> — how responsive the page feels during clicks and taps; and <strong>CLS (Cumulative Layout Shift)</strong> — how much the layout jumps around while loading. Google uses all three as ranking signals.</p>
+
+<p>Good tests report two kinds of data. <strong>Field data</strong> comes from real Chrome users over the past 28 days (the Chrome User Experience Report) — this is what Google actually ranks on. <strong>Lab data</strong> comes from a controlled simulated test — useful for diagnosing problems on new or low-traffic pages where field data does not exist yet. The best free tools (PageSpeed Insights at pagespeed.web.dev) show both, for mobile and desktop separately, plus a list of specific fixes with estimated time savings.</p>
+
+<h3>How to Use the Website Speed Test</h3>
+
+<p>Running the test is easy; reading it correctly is the skill.</p>
+
+<p>Enter your page's full URL and run the test — it takes 10–30 seconds. Check the <strong>mobile</strong> tab first: Google uses mobile-first indexing, and mobile scores are almost always worse than desktop. Look at the Core Web Vitals assessment badge — Pass or Fail — then the individual numbers: LCP should be 2.5 seconds or under, INP 200 milliseconds or under, CLS 0.1 or under.</p>
+
+<p>Then read the diagnostics below the scores. The tool lists specific opportunities — unoptimized images, unused JavaScript, render-blocking resources, missing text compression — each with an estimated savings. Work the list in order of impact, not ease: a 2-second image fix beats five 50-millisecond script tweaks. After each round of fixes, re-run the test to confirm the improvement in lab data.</p>
+
+<p>For the real verdict, check Google Search Console's Core Web Vitals report (Experience section) a few weeks later. It shows field data across your URLs, grouped by issue — that is the measurement that actually moves rankings, and it updates over a rolling 28-day window.</p>
+
+<h3>The Three Core Web Vitals, Plainly</h3>
+
+<table>
+<thead><tr><th>Metric</th><th>What it measures</th><th>Good</th><th>Needs work</th><th>Poor</th></tr></thead>
+<tbody>
+<tr><td><strong>LCP</strong> — Largest Contentful Paint</td><td>When the main content becomes visible</td><td>≤ 2.5s</td><td>2.5–4.0s</td><td>&gt; 4.0s</td></tr>
+<tr><td><strong>INP</strong> — Interaction to Next Paint</td><td>How fast the page responds to clicks/taps</td><td>≤ 200ms</td><td>200–500ms</td><td>&gt; 500ms</td></tr>
+<tr><td><strong>CLS</strong> — Cumulative Layout Shift</td><td>How much the layout jumps while loading</td><td>≤ 0.1</td><td>0.1–0.25</td><td>&gt; 0.25</td></tr>
+</tbody>
+</table>
+
+<p>The common fixes map neatly to metrics: LCP is usually images (compress them, convert to WebP, never lazy-load the hero) and slow servers (TTFB — time to first byte — is often a hosting problem). INP is usually heavy JavaScript — defer non-essential scripts and audit plugins. CLS is usually images without width/height attributes and ads or widgets loading without reserved space. Fix in the order LCP → INP → CLS and you will cover the biggest ranking impact first.</p>
+
+<h3>Who Uses Website Speed Tests?</h3>
+
+<p><strong>Site owners</strong> run them to find out why traffic or conversions dipped — speed regressions are silent killers.</p>
+
+<p><strong>Developers</strong> use them at every deploy, catching the chat widget or tracking script that tanks performance before it ships.</p>
+
+<p><strong>E-commerce managers</strong> test product and checkout pages, where every extra second of load time measurably costs sales.</p>
+
+<p><strong>Bloggers</strong> check their themes and plugins — a bloated theme is the most common speed problem on WordPress.</p>
+
+<p><strong>SEOs</strong> include speed in every technical audit, since Core Web Vitals are a direct ranking signal and clients understand "your site is slow" better than most findings.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Core Web Vitals scores</strong> — LCP, INP, and CLS with pass/fail thresholds.</li>
+<li><strong>Mobile and desktop tests</strong> — separate scores for each, since they differ wildly.</li>
+<li><strong>Field + lab data</strong> — real-user metrics alongside controlled diagnostics.</li>
+<li><strong>Actionable opportunities</strong> — specific fixes ranked by estimated time savings.</li>
+<li><strong>Performance, SEO, accessibility scores</strong> — the full Lighthouse picture in one run.</li>
+<li><strong>Waterfall analysis</strong> — see exactly which resource blocks what.</li>
+<li><strong>100% free</strong> — Google's own tools cost nothing and need no signup.</li>
+<li><strong>Repeatable</strong> — re-run after every fix to verify the gain.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is a good website speed?</h4>
+<p>Aim for LCP under 2.5 seconds, INP under 200 milliseconds, and CLS under 0.1. Those are Google's "Good" thresholds for Core Web Vitals — the band where speed stops costing you rankings.</p>
+
+<h4>Does page speed affect SEO?</h4>
+<p>Yes — Core Web Vitals are a direct Google ranking signal. Beyond that, slow pages lose visitors before they convert: speed affects both rankings and revenue.</p>
+
+<h4>What is the difference between field data and lab data?</h4>
+<p>Field data comes from real Chrome users over 28 days and determines your ranking signal. Lab data comes from a controlled instant test and is best for diagnosing problems. Fix using lab data; judge using field data.</p>
+
+<h4>Why is my mobile score worse than desktop?</h4>
+<p>Phones have slower processors, slower networks, and smaller screens — the test simulates a mid-range device on a mobile connection. Since Google ranks on mobile experience, the mobile score is the one that matters.</p>
+
+<h4>What is TTFB?</h4>
+<p>Time To First Byte — how long your server takes to start responding. It is mostly a hosting problem, not a code problem. A slow TTFB on shared hosting often means an overloaded server.</p>
+
+<h4>Will the test work on a new site with no traffic?</h4>
+<p>Lab data works immediately — you get a full diagnostic. Field data appears once enough real Chrome users visit, which can take weeks on a new site. Use lab data until then.</p>
+
+<h4>Why did the test fail for my site?</h4>
+<p>Usually the URL is unreachable: the site blocks crawlers, requires a login, is not publicly reachable, or is extremely slow to respond. Double-check the full URL and try again.</p>
+
+<h4>Is this speed test free?</h4>
+<p>Yes — Google's PageSpeed Insights is free with no signup, and most third-party speed tools offer free tiers.</p>
+</article>

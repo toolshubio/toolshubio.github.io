@@ -1,0 +1,112 @@
+<article class="tool-article">
+<h2>Robots.txt Generator — Free Online Crawler Rules Builder</h2>
+
+<p>Robots.txt is a file of about ten lines that can take your entire site out of Google if you get one slash wrong. I have seen a single misplaced <code>Disallow: /</code> on a production site cost a business its traffic for weeks before anyone noticed. A robots.txt generator builds the file for you through a simple form — user-agents, allowed and blocked paths, sitemap reference — so the syntax is always valid and the foot-guns are removed.</p>
+
+<h3>What Is a Robots.txt Generator?</h3>
+
+<p>Every well-behaved crawler — Googlebot, Bingbot, and now the AI crawlers like GPTBot — checks a file at the root of your domain (<code>yourdomain.com/robots.txt</code>) before fetching pages. That file tells crawlers which parts of the site they may request and which they should leave alone. The generator is a visual tool that writes this file for you: pick a default policy, list the directories to block, add your sitemap URL, optionally set per-bot rules, and copy the finished text.</p>
+
+<p>The critical concept most beginners get wrong: robots.txt is a <strong>crawl directive, not an indexing directive</strong>. Blocking a URL keeps crawlers from fetching it, but the URL can still appear in search results if other pages link to it — Google will list it without a description. If a page must truly stay out of the index, you need a <code>noindex</code> meta robots tag on a crawlable page, not a robots.txt block. The file's real job is managing crawl budget: keeping bots out of admin paths, faceted search URLs, internal endpoints, and duplicate parameter URLs that waste their time and your server's.</p>
+
+<p>Modern generators also cover the AI crawlers — GPTBot, ChatGPT-User, ClaudeBot, Google-Extended, CCBot, PerplexityBot — with one-click block options, which matters now that training and retrieval bots crawl aggressively.</p>
+
+<h3>How to Use the Robots.txt Generator</h3>
+
+<p>Building the file takes a few minutes, and the steps are the same for any site.</p>
+
+<p>Start by setting the default policy for all robots: allowed or refused by default. Most live sites allow everything and then carve out exceptions. Next, list the directories and files to block, one path per line, each starting with a forward slash and ending with one for directories — <code>/wp-admin/</code>, <code>/checkout/</code>, <code>/api/</code> are the classics. Add your sitemap URL so crawlers can discover your pages efficiently; you can list more than one sitemap.</p>
+
+<p>Then set per-bot rules if needed. The common case: give Googlebot full access while blocking aggressive AI crawlers, or allow image bots while refusing a scraper. Some tools let you set a crawl-delay in seconds for bots hitting the server too hard — note that Google ignores crawl-delay, but Bing and others honor it.</p>
+
+<p>Copy or download the finished file and upload it to the root of your domain, so it answers at <code>yourdomain.com/robots.txt</code>. In WordPress, you can paste it via an SEO plugin's file editor (Yoast and Rank Math both have one) instead of FTP. Finally, test it: Search Console's robots.txt tester and Google's rich results tools will confirm the file parses and the paths you expect are actually blocked.</p>
+
+<h3>The Directives, Explained</h3>
+
+<table>
+<thead><tr><th>Directive</th><th>What it does</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td><code>User-agent</code></td><td>Which crawler the rules apply to</td><td><code>User-agent: Googlebot</code></td></tr>
+<tr><td><code>Disallow</code></td><td>Block a path from crawling</td><td><code>Disallow: /wp-admin/</code></td></tr>
+<tr><td><code>Allow</code></td><td>Permit a path inside a blocked area</td><td><code>Allow: /wp-admin/admin-ajax.php</code></td></tr>
+<tr><td><code>Sitemap</code></td><td>Point to your XML sitemap</td><td><code>Sitemap: https://example.com/sitemap.xml</code></td></tr>
+<tr><td><code>Crawl-delay</code></td><td>Seconds between crawler requests</td><td><code>Crawl-delay: 10</code></td></tr>
+</tbody>
+</table>
+
+<h3>Example: A Generated File</h3>
+
+<p>Here is what the generator produces for a typical WordPress site, with AI crawlers blocked:</p>
+
+<p>
+<code>User-agent: *</code><br>
+<code>Disallow: /wp-admin/</code><br>
+<code>Disallow: /wp-includes/</code><br>
+<code>Allow: /wp-admin/admin-ajax.php</code><br>
+<code>User-agent: GPTBot</code><br>
+<code>Disallow: /</code><br>
+<code>User-agent: CCBot</code><br>
+<code>Disallow: /</code><br>
+<code>Sitemap: https://www.example.com/sitemap.xml</code>
+</p>
+
+<p>And the single most dangerous file on the internet, which the generator's presets help you avoid shipping by accident:</p>
+
+<p>
+<code>User-agent: *</code><br>
+<code>Disallow: /</code>
+</p>
+
+<p>That blocks every crawler from everything — correct during staging, catastrophic on a live site. If your traffic ever drops to zero overnight, checking robots.txt is the first thing to do.</p>
+
+<h3>Who Uses Robots.txt Generators?</h3>
+
+<p><strong>Web developers</strong> generate the file at every launch — it is part of the go-live checklist alongside the sitemap.</p>
+
+<p><strong>Bloggers and site owners</strong> use it to block admin paths, tag archives, and internal search pages that create duplicate content.</p>
+
+<p><strong>E-commerce managers</strong> block cart, checkout, account, and faceted-filter URLs that multiply crawlable pages without adding value.</p>
+
+<p><strong>SEOs</strong> use it during audits to fix crawl-budget waste, and during migrations to keep staging sites out of the index.</p>
+
+<p><strong>Privacy-conscious publishers</strong> use the AI-crawler blocks to decide which training and retrieval bots may fetch their content.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Visual rule builder</strong> — checkboxes and dropdowns instead of hand-typed syntax.</li>
+<li><strong>Quick presets</strong> — allow-all, block-all, WordPress, Shopify templates to start from.</li>
+<li><strong>Per-bot rules</strong> — Googlebot, Bingbot, and 15+ crawlers configurable individually.</li>
+<li><strong>One-click AI crawler block</strong> — GPTBot, ClaudeBot, CCBot, Google-Extended, and more.</li>
+<li><strong>Sitemap integration</strong> — sitemap URL appended in the correct position.</li>
+<li><strong>Syntax validation</strong> — the output is always correctly formatted.</li>
+<li><strong>100% free</strong> — no signup, unlimited files.</li>
+<li><strong>Private by design</strong> — everything generated in your browser; nothing uploaded.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Where does robots.txt go?</h4>
+<p>In the root of your domain, so it answers at yourdomain.com/robots.txt. It does not work anywhere else — crawlers only check that exact location.</p>
+
+<h4>Will blocking a page in robots.txt remove it from Google?</h4>
+<p>No — that is the most common misconception. Robots.txt blocks crawling, not indexing; a blocked URL can still appear in results if other pages link to it. Use a noindex meta tag on a crawlable page to keep it out of the index.</p>
+
+<h4>What is crawl-delay?</h4>
+<p>The number of seconds a crawler should wait between requests. It helps when aggressive bots hammer your server. Note that Google ignores it — it mainly affects Bing, Yandex, and smaller crawlers.</p>
+
+<h4>Should I block AI crawlers?</h4>
+<p>It depends on your goals. Blocking GPTBot and friends keeps your content out of AI training data and retrieval systems; allowing them may get your content cited by AI answers. Decide deliberately — the generator makes either choice one click.</p>
+
+<h4>Do I need robots.txt if my site is small?</h4>
+<p>It is still good practice. Even a small site has admin paths and parameter URLs you would rather crawlers skip, and the sitemap reference helps discovery. It takes two minutes.</p>
+
+<h4>Is this generator free?</h4>
+<p>Yes — completely free, no account needed, unlimited files.</p>
+
+<h4>Can a bad robots.txt hurt my site?</h4>
+<p>Absolutely. A stray <code>Disallow: /</code> blocks all crawling and will tank your indexed pages. Always test the file in Search Console after deploying.</p>
+
+<h4>What is the difference between robots.txt and the meta robots tag?</h4>
+<p>Robots.txt controls crawling across paths at the domain level; the meta robots tag controls indexing of a single page. For noindex to work, the page must be crawlable — so do not block it in robots.txt at the same time.</p>
+</article>

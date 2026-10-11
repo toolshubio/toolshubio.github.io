@@ -1,0 +1,130 @@
+/* ===================================
+   TOOLSHUB — Beautiful Single-Page Overrides
+   Transforms legacy tool inner elements into
+   the beautiful unified design (no HTML rewrite)
+   =================================== */
+
+/* ---------- Beautiful inputs ---------- */
+.calc-input,.seo-input,.form-input,.slider-input,.cv-form-input,
+.form-control,input.calc-input,select.calc-input{
+  width:100%;border:1.5px solid #e6eaf2;border-radius:12px;
+  padding:14px 16px;font-size:.96rem;font-family:'Inter',system-ui,sans-serif;
+  outline:none;transition:border-color .2s,box-shadow .2s;
+  background:#fbfcfe;color:#0f172a;
+}
+.calc-input:focus,.seo-input:focus,.form-input:focus,.slider-input:focus,
+.cv-form-input:focus,.form-control:focus{
+  border-color:#6366f1;box-shadow:0 0 0 4px rgba(99,102,241,.12);background:#fff;
+}
+textarea.calc-input,textarea.seo-input,textarea.form-input{
+  min-height:140px;resize:vertical;line-height:1.7;
+}
+
+/* ---------- Beautiful labels ---------- */
+.input-label,.form-label{
+  display:block;font-size:.86rem;font-weight:600;color:#0f172a;margin-bottom:9px;
+}
+
+/* ---------- Input groups & grids ---------- */
+.input-group{margin-bottom:18px}
+.input-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+
+/* ---------- Beautiful panels / cards ---------- */
+.glass-panel,.control-panel,.settings-panel,.stats-panel{
+  background:#fff;border:1px solid #e6eaf2;border-radius:18px;
+  padding:26px;margin-bottom:20px;
+  box-shadow:0 8px 30px -14px rgba(99,102,241,.15);
+}
+.panel-title{font-family:'Space Grotesk',sans-serif;font-size:1.08rem;
+  letter-spacing:-.01em;margin-bottom:16px;color:#0f172a}
+
+/* ---------- Beautiful tabs ---------- */
+.calc-tabs,.tool-tabs{
+  display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap;
+  background:#f1f5f9;border-radius:14px;padding:6px;
+}
+.calc-tab,.tool-tab{
+  padding:11px 22px;border-radius:10px;font-weight:600;font-size:.9rem;
+  cursor:pointer;border:none;background:transparent;color:#64748b;
+  font-family:inherit;transition:.2s;
+}
+.calc-tab:hover,.tool-tab:hover{color:#0f172a}
+.calc-tab.active,.tool-tab.active{
+  background:#fff;color:#6366f1;
+  box-shadow:0 4px 14px -4px rgba(99,102,241,.3);
+}
+
+/* ---------- Beautiful result displays ---------- */
+.result-highlight{
+  background:linear-gradient(135deg,#eef2ff,#f5f3ff);
+  border:1.5px solid #dfe3ff;border-radius:14px;
+  padding:20px;text-align:center;
+  font-family:'Space Grotesk',sans-serif;font-size:1.8rem;font-weight:700;
+  background-clip:padding-box;
+}
+.result-highlight,.result-highlight *{
+  background:linear-gradient(120deg,#6366f1,#d946ef);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.result-card,.output-display,.results-container{
+  background:#f8fafc;border:1.5px dashed #e6eaf2;border-radius:14px;
+  padding:22px;margin-top:16px;
+}
+
+/* ---------- Range sliders ---------- */
+input[type="range"].slider-input{
+  -webkit-appearance:none;appearance:none;height:8px;border-radius:99px;
+  background:linear-gradient(90deg,#6366f1,#d946ef);outline:none;padding:0;border:none;
+}
+input[type="range"].slider-input::-webkit-slider-thumb{
+  -webkit-appearance:none;width:24px;height:24px;border-radius:50%;
+  background:#fff;border:3px solid #6366f1;cursor:pointer;
+  box-shadow:0 4px 12px rgba(99,102,241,.4);
+}
+input[type="range"].slider-input::-moz-range-thumb{
+  width:22px;height:22px;border-radius:50%;background:#fff;
+  border:3px solid #6366f1;cursor:pointer;
+}
+
+/* ---------- Checkboxes & radios ---------- */
+.tu-ws-body input[type="checkbox"],.tu-ws-body input[type="radio"]{
+  appearance:none;width:22px;height:22px;border:2px solid #cbd5e1;
+  border-radius:7px;cursor:pointer;position:relative;transition:.2s;
+  background:#fff;vertical-align:middle;flex-shrink:0;
+}
+.tu-ws-body input[type="radio"]{border-radius:50%}
+.tu-ws-body input[type="checkbox"]:checked,
+.tu-ws-body input[type="radio"]:checked{
+  background:linear-gradient(135deg,#6366f1,#8b5cf6);border-color:#6366f1;
+}
+.tu-ws-body input[type="checkbox"]:checked::after{
+  content:"✓";position:absolute;inset:0;display:grid;
+  place-items:center;color:#fff;font-size:.78rem;font-weight:700;
+}
+.tu-ws-body input[type="radio"]:checked::after{
+  content:"";position:absolute;inset:5px;border-radius:50%;background:#fff;
+}
+
+/* ---------- Utility spacing ---------- */
+.mb-8{margin-bottom:2rem}.mb-6{margin-bottom:1.5rem}.mb-4{margin-bottom:1rem}
+.p-6{padding:1.5rem}.flex{display:flex}.gap-2{gap:.5rem}
+.w-32{width:8rem}
+
+/* ---------- Dark mode ---------- */
+[data-theme="dark"] .calc-input,[data-theme="dark"] .seo-input,
+[data-theme="dark"] .form-input,[data-theme="dark"] .slider-input,
+[data-theme="dark"] .cv-form-input,[data-theme="dark"] .form-control{
+  background:#101016;border-color:#2c2c38;color:#f5f5f5;
+}
+[data-theme="dark"] .input-label,[data-theme="dark"] .panel-title{color:#f5f5f5}
+[data-theme="dark"] .glass-panel,[data-theme="dark"] .control-panel,
+[data-theme="dark"] .settings-panel,[data-theme="dark"] .stats-panel{
+  background:#1a1a22;border-color:#2c2c38;
+}
+[data-theme="dark"] .calc-tabs,[data-theme="dark"] .tool-tabs{background:#14141b}
+[data-theme="dark"] .calc-tab,[data-theme="dark"] .tool-tab{color:#9090a0}
+[data-theme="dark"] .calc-tab.active,[data-theme="dark"] .tool-tab.active{
+  background:#22222e;color:#a5b4fc;
+}
+[data-theme="dark"] .result-card,[data-theme="dark"] .output-display,
+[data-theme="dark"] .results-container{background:#101016;border-color:#2c2c38}

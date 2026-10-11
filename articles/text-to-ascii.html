@@ -1,0 +1,104 @@
+<article class="tool-article">
+<h2>Text to ASCII Converter — Free Online Text Encoder</h2>
+
+<p>I was once writing a parser that needed the numeric codes behind a string, and typing out ASCII values by hand lasted about three characters before I gave up. A text to ASCII converter does that lookup for you: paste any text and each character comes back as its decimal code — H becomes 72, e becomes 101, and a space becomes 32. Instant, free, and running entirely in your browser.</p>
+
+<h3>What Is a Text to ASCII Converter?</h3>
+
+<p>ASCII is the standard chart mapping 128 common characters to numbers 0–127. Every letter you type is one of those numbers under the hood: capital letters live at 65–90, lowercase at 97–122, digits at 48–57, and punctuation is scattered through the rest. This tool reads your text character by character and prints the number behind each one.</p>
+
+<p>It is the reverse of decoding. Programmers use these codes when building encoders, when debugging string handling, or when a protocol demands numeric character values instead of text. Students meet it in the same computer science classes that teach binary — the ASCII chart is the bridge between letters and numbers, and this tool is the fast lane across it.</p>
+
+<p>What I appreciate is the flexibility of the output. Decimal codes (72 101 108 108 111) are the default, but good tools also offer hex (48 65 6C 6C 6F) and binary (01001000 01100101) views of the same text — three encodings of one message, side by side.</p>
+
+<h3>How to Use the Text to ASCII Converter</h3>
+
+<p>Type or paste your text into the input box. Click Convert and each character appears as its decimal ASCII code, usually separated by spaces. Copy the list to your clipboard or download it as a text file for your code, homework, or puzzle.</p>
+
+<p>If you are learning, try encoding your own name first — watching familiar letters turn into numbers makes the chart feel concrete. Developers debugging byte-level issues often encode just the suspicious substring to compare against the bytes their program actually produced; a mismatch between expected and actual codes pinpoints the bug fast.</p>
+
+<p>One habit worth building: watch for invisible characters. A trailing space (32) or newline (10) at the end of your input will show up as an extra code, and spotting it here explains a surprising number of "why doesn't this string match" mysteries.</p>
+
+<h3>How Text to ASCII Conversion Works</h3>
+
+<p>One lookup per character — the simplest pipeline in the converter family.</p>
+
+<p><strong>Step 1 — Read each character.</strong> The tool walks through your text one character at a time, including spaces, punctuation, and line breaks.</p>
+
+<p><strong>Step 2 — Chart lookup.</strong> Each character is replaced by its ASCII decimal value: H → 72, e → 101, l → 108, o → 111, space → 32.</p>
+
+<p><strong>Step 3 — Join with separators.</strong> The codes are joined with spaces (or commas, or newlines — your choice) so each number stays distinct.</p>
+
+<p>Worked example — encode "Hi!": H → 72, i → 105, ! → 33 → output "72 105 33". Encoding a whole paragraph takes milliseconds; the tool also handles the reverse check — decode your output with an ASCII-to-text converter and your original text should come back exactly.</p>
+
+<h3>Common Text to ASCII Examples</h3>
+
+<p>The codes I look up most often, in one place:</p>
+
+<table>
+<thead><tr><th>Character</th><th>Decimal</th><th>Hex</th><th>Binary</th></tr></thead>
+<tbody>
+<tr><td>A</td><td>65</td><td><code>41</code></td><td><code>01000001</code></td></tr>
+<tr><td>a</td><td>97</td><td><code>61</code></td><td><code>01100001</code></td></tr>
+<tr><td>0</td><td>48</td><td><code>30</code></td><td><code>00110000</code></td></tr>
+<tr><td>9</td><td>57</td><td><code>39</code></td><td><code>00111001</code></td></tr>
+<tr><td>Space</td><td>32</td><td><code>20</code></td><td><code>00100000</code></td></tr>
+<tr><td>!</td><td>33</td><td><code>21</code></td><td><code>00100001</code></td></tr>
+<tr><td>@</td><td>64</td><td><code>40</code></td><td><code>01000000</code></td></tr>
+<tr><td>.</td><td>46</td><td><code>2E</code></td><td><code>00101110</code></td></tr>
+</tbody>
+</table>
+
+<p>Words to try: "Cat" → 67 97 116; "OK" → 79 75; "123" → 49 50 51 (note: the digits encode as characters, not as the numbers 1, 2, 3). Paste any output into the ASCII-to-text tool to verify the round trip.</p>
+
+<h3>Who Uses Text to ASCII Converters?</h3>
+
+<p><strong>Programmers</strong> generate numeric character codes for encoders, parsers, and protocol implementations, and debug string-handling bugs by comparing expected versus actual codes.</p>
+
+<p><strong>Students</strong> in computer science courses practice character encodings, checking homework answers without hand-looking-up dozens of characters.</p>
+
+<p><strong>Cybersecurity learners</strong> encode messages for CTF challenges and decode them again, where this tool is half of the round trip.</p>
+
+<p><strong>Embedded engineers</strong> convert text labels to numeric codes for firmware that stores strings as byte arrays.</p>
+
+<p><strong>Puzzle makers</strong> hide messages as number sequences for escape rooms and ARGs, where solvers use the reverse tool just as often.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant encoding</strong> — long texts convert in milliseconds.</li>
+<li><strong>100% free</strong> — no signup, no subscription, no limits.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
+<li><strong>Multiple output formats</strong> — decimal, hex, and binary views of the same text.</li>
+<li><strong>Extended ASCII support</strong> — codes 128–255 for accented Latin characters.</li>
+<li><strong>Separator options</strong> — spaces, commas, or one code per line.</li>
+<li><strong>Copy and download</strong> — one click to copy or save the result.</li>
+<li><strong>Works everywhere</strong> — any modern browser on desktop or mobile.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this text to ASCII converter free?</h4>
+<p>Yes — free, no account, no limits.</p>
+
+<h4>What is the ASCII code for A?</h4>
+<p>65. Lowercase a is 97, the digit 0 is 48, and a space is 32.</p>
+
+<h4>What is the difference between text to ASCII and text to binary?</h4>
+<p>Text to ASCII gives decimal codes (72 101); text to binary gives the 8-bit binary form (01001000 01100101). Same characters, different number bases.</p>
+
+<h4>Why does "1" encode as 49, not 1?</h4>
+<p>The tool encodes the character "1" (ASCII 49), not the number 1. Text digits and numeric values are different things.</p>
+
+<h4>Can I encode emoji or non-English text?</h4>
+<p>Standard ASCII covers codes 0–127 (extendable to 255). Emoji and other scripts need UTF-8 encoding, which produces multi-byte sequences.</p>
+
+<h4>Is my data secure?</h4>
+<p>Yes. Encoding happens entirely in your browser — your text never leaves your device.</p>
+
+<h4>How do I convert the codes back to text?</h4>
+<p>Use the matching ASCII-to-text tool: paste the decimal codes and decode each through the chart.</p>
+
+<h4>What is the ASCII code for a newline?</h4>
+<p>10 (line feed). Windows line endings use the pair 13, 10.</p>
+</article>

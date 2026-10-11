@@ -1,0 +1,98 @@
+<article class="tool-article">
+<h2>Code Quality Checker — Get a Scored Report on Your Code</h2>
+
+<p>The scariest code review comment is not "this is wrong" — it is "this works, but…" followed by a list of things you should have caught yourself. I started running quality checks on my own code before reviews after one too many of those. A code quality checker does not just list issues; it scores your code across multiple dimensions — complexity, naming, error handling, documentation — and hands you an actionable report. It is like a code review you can run at 2 AM without bothering anyone.</p>
+
+<h3>What Does a Quality Score Tell You?</h3>
+
+<p>A good checker evaluates four things. <strong>Complexity</strong>: how many decision points (ifs, loops, ternaries) each function contains — high complexity means hard to test and risky to change. <strong>Naming conventions</strong>: are variables camelCase, classes PascalCase, constants UPPER_SNAKE_CASE, and are names actually descriptive? <strong>Error handling</strong>: async functions without try-catch, empty catch blocks, swallowed errors. <strong>Documentation coverage</strong>: what percentage of functions and classes have proper doc comments.</p>
+
+<p>Each area gets a score, combined into an overall quality rating — often 0–100, sometimes a letter grade or a health label (Excellent, Good, Needs Improvement, Poor). The number itself matters less than the trend: is this week's code scoring better than last week's? A declining score is an early warning that technical debt is accumulating.</p>
+
+<p>Crucially, the report includes before/after examples for common issues. It does not just say "function too complex" — it shows you how to split it. That teaching aspect is what separates a quality checker from a bare linter.</p>
+
+<h3>How to Use the Code Quality Checker</h3>
+
+<p>Paste your code or upload the file, select the language, and run the analysis. Within seconds you get the scored report: an overall score, per-category breakdowns, and a list of flagged issues ordered by impact. Each issue explains what is wrong, why it matters, and usually how to fix it.</p>
+
+<p>Start with the highest-impact items — the complexity warnings and error-handling gaps that represent real risk. Naming and documentation issues come next; they matter for maintainability but will not crash anything. Fix, re-run, and watch the score climb. I treat it like a game: every refactoring session should end with a higher number than it started with.</p>
+
+<p>For teams, the real power is in CI integration. Set a minimum quality gate — say, no new code below a score of 70 — and the pipeline enforces it automatically. Reviews stop being about style and start being about design.</p>
+
+<h3>The Four Quality Dimensions</h3>
+
+<table>
+<thead><tr><th>Dimension</th><th>What It Measures</th><th>Red Flags</th></tr></thead>
+<tbody>
+<tr><td>Complexity</td><td>Decision points per function (cyclomatic complexity)</td><td>Functions over 10 branches, nesting deeper than 4 levels</td></tr>
+<tr><td>Naming</td><td>Convention adherence and descriptiveness</td><td>Single-letter names, <code>data2</code>, inconsistent casing</td></tr>
+<tr><td>Error handling</td><td>Try-catch coverage, empty handlers</td><td>Async without try-catch, bare <code>except:</code>, swallowed errors</td></tr>
+<tr><td>Documentation</td><td>Doc comment coverage on functions/classes</td><td>Public APIs with no docs, cryptic uncommented logic</td></tr>
+</tbody>
+</table>
+
+<p>Complexity deserves special attention because it is the best predictor of bugs. A function with 3 branches is easy to test exhaustively; one with 15 is not, and the untested paths are where production incidents hide. When the checker flags complexity, splitting the function is almost always the right call.</p>
+
+<h3>Quality Scores in Practice</h3>
+
+<p>Use the score as a trend, not a verdict. A legacy module scoring 55 is not a crisis if it is stable and rarely touched — rewriting it for the number would introduce more risk than the score suggests. What matters is direction: new code should score well, and refactored code should score better than what it replaced.</p>
+
+<p>Common-sense thresholds: above 90 is excellent, ship it. 75–90 is good with minor suggestions worth addressing when convenient. 50–75 means real issues that should be fixed before merging. Below 50, or any critical-severity finding, means the code needs rework — it is cheaper now than after deployment.</p>
+
+<p>One caution: do not game the metric. Renaming variables to satisfy a naming rule while leaving a 200-line function intact improves the score without improving the code. The score serves the code, not the other way around.</p>
+
+<h3>Who Uses Quality Checkers?</h3>
+
+<p><strong>Team leads</strong> use quality gates in CI to keep standards consistent across contributors of varying experience. The checker enforces the rules nobody wants to argue about in reviews.</p>
+
+<p><strong>Solo developers</strong> get the reviewer they lack. The scored report is objective feedback on code nobody else will read.</p>
+
+<p><strong>Freelancers</strong> attach quality reports to deliveries as evidence of craftsmanship — a 92/100 report next to the invoice makes a quiet argument for the rate.</p>
+
+<p><strong>Students and bootcamp learners</strong> get structured feedback that scales: the same detailed review for every assignment, instantly.</p>
+
+<p><strong>Open-source maintainers</strong> gate pull requests on quality scores, keeping the codebase healthy regardless of who contributes.</p>
+
+<h3>Tips for Improving Your Score</h3>
+
+<p>Split long functions before anything else — complexity reduction improves testability, readability, and the score all at once. Name things like the next reader is a stranger (because it might be you in six months). Handle errors explicitly: every async call deserves a try-catch, every catch block deserves to do something meaningful. Document public functions and anything non-obvious; a one-line doc comment costs seconds and saves hours. Finally, configure the rules to your project once — agreed thresholds beat endless style debates.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Overall quality score</strong> — 0–100 rating combining all dimensions.</li>
+<li><strong>Four-dimension analysis</strong> — complexity, naming, error handling, documentation.</li>
+<li><strong>Before/after examples</strong> — concrete fixes for common issues.</li>
+<li><strong>Severity-ranked findings</strong> — critical issues surfaced first.</li>
+<li><strong>Multi-language support</strong> — JavaScript, Python, Java, and more.</li>
+<li><strong>Exportable reports</strong> — text, JSON, or Markdown for CI and sharing.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
+<li><strong>100% free</strong> — no signup, no limits, works on any device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this code quality checker free?</h4>
+<p>Yes — completely free, no account needed, and no limits on how much code you can analyze.</p>
+
+<h4>What does the quality score mean?</h4>
+<p>A 0–100 rating combining complexity, naming, error handling, and documentation. Use it as a trend indicator — improving scores mean improving code — not as an absolute grade.</p>
+
+<h4>What is cyclomatic complexity?</h4>
+<p>The number of independent paths through a function, counted from decision points (ifs, loops, ternaries, logical operators). Lower is better; above 10 per function is a common warning threshold.</p>
+
+<h4>Can a high score guarantee bug-free code?</h4>
+<p>No. Quality analysis finds structural problems, not logic errors. Combine it with tests and careful review for real confidence.</p>
+
+<h4>Should I fix every flagged issue?</h4>
+<p>Fix critical and high-severity issues. Treat the rest as guidance — context matters, and some rules do not fit every project. Configure thresholds to match your team's standards.</p>
+
+<h4>How is this different from a linter?</h4>
+<p>A linter checks style and simple mistakes quickly. A quality checker adds scoring, complexity metrics, documentation coverage, and actionable improvement guidance.</p>
+
+<h4>Is my code data secure?</h4>
+<p>Yes. Analysis happens entirely in your browser — your code never leaves your device or touches a server.</p>
+
+<h4>Can I use this in my CI pipeline?</h4>
+<p>Quality gates work best automated: set a minimum score for new code and let the pipeline enforce it. The online tool is ideal for quick checks and learning; CI integration handles enforcement.</p>
+</article>

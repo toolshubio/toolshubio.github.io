@@ -1,0 +1,94 @@
+<article class="tool-article">
+<h2>Compress PDF to 1MB — Keep Big Documents Under the Limit</h2>
+
+<p>I once had to submit six months of bank statements to a lender, and the portal stared back at me with a firm "maximum 1 MB per file." The original PDFs were a combined 14 MB — high-resolution scans of printed statements. Zipping them barely helped, and printing them to PDF again lost the text layer I needed. A compress PDF to 1MB tool was the fix: it squeezed each statement under the cap while keeping every figure and line of small print legible. If your documents keep bouncing off a 1 MB ceiling, this is the tool built for exactly that.</p>
+
+<h3>Why 1MB Is the Line Most Portals Draw</h3>
+
+<p>One megabyte is the most common file-size ceiling I run into, and there is a reason. For portal operators, 1 MB per document is the compromise between legibility and server load: small enough that thousands of simultaneous uploads do not choke their systems, large enough that a multi-page document still reads clearly. Adobe's own guidance on PDF compression names upload limits as the first reason people compress — job applications, bids, tenders, pitches, and government forms routinely refuse anything heavier.</p>
+
+<p>Email pushes you the same way. Gmail and Outlook cap attachments at about 25 MB total, which sounds generous until you attach four statements, a contract, and a tax return — then you are suddenly over, and re-exporting each file one by one is a chore nobody has time for.</p>
+
+<p>There is also a less obvious reason to target 1 MB: everything gets faster. Smaller PDFs open quicker, download quicker, and render quicker in browser viewers. When a bank officer or hiring manager opens your file on a phone, a 1 MB document appears almost instantly while the 15 MB original stutters through its pages.</p>
+
+<h3>How Target-Size Compression Reaches 1MB</h3>
+
+<p>Getting a 10 MB PDF to 1 MB sounds aggressive, but for the documents people usually submit, it is routine. The math works because scanned pages are wildly inefficient: a phone photo of a page at full resolution can be 3 MB, while the same page at 150 DPI — still perfectly readable — is 150 KB. Twenty such pages drop from 60 MB to 3 MB on resolution alone, and quality tuning takes it the rest of the way.</p>
+
+<p><strong>Step 1 — Downsample.</strong> Images are reduced from print resolution (300+ DPI) to screen resolution (100–150 DPI). On statements and contracts, you cannot see the difference, because these pages contain text and simple graphics, not photography.</p>
+
+<p><strong>Step 2 — Re-encode images.</strong> Scanned pages get recompressed with JPEG-style encoding tuned for document content, which is far more efficient than the raw capture format.</p>
+
+<p><strong>Step 3 — Clean overhead.</strong> Duplicate fonts, embedded previews, metadata, and save-history layers are stripped out. Multi-page PDFs from scanners accumulate surprising amounts of this invisible weight.</p>
+
+<p><strong>Step 4 — Iterate to target.</strong> The tool compresses, measures, and adjusts in small steps until the file lands under 1 MB, stopping at the highest quality that fits.</p>
+
+<p>What I like about this approach is that text-heavy documents — statements, contracts, tax forms — compress beautifully at 1 MB. The numbers stay crisp because text is vector data, and only the background scans get squeezed.</p>
+
+<h3>How to Use the Compress PDF to 1MB Tool</h3>
+
+<p>Drag your PDF into the tool or click to browse. You will see the current size displayed — that gap between "14 MB" and "under 1 MB" tells you how aggressive the pass needs to be. Pick the 1 MB target, start compression, and check the result.</p>
+
+<p>My verification ritual: download the compressed file and scroll through it quickly, stopping at the densest pages — the ones with small tables or footnotes. On financial documents, zoom into a page of figures and confirm the digits are unambiguous. Then check that the page count matches the original. If anything looks off, compress once more at a gentler setting and re-check; iterating is free and takes seconds.</p>
+
+<p>One practical note for very large originals: if your file is 50+ MB (some banks export bloated scans), run a first pass and see where you land. The tool handles large inputs locally, so there is no upload limit to worry about — but a quick glance at the result quality is always wise before you submit it somewhere official.</p>
+
+<h3>Documents That Fit Best Under 1MB</h3>
+
+<table>
+<thead><tr><th>Document</th><th>Typical original size</th><th>After compression</th></tr></thead>
+<tbody>
+<tr><td>6-month bank statement (scanned)</td><td>8–15 MB</td><td>Under 1 MB, figures crisp</td></tr>
+<tr><td>Signed contract (10–20 pages)</td><td>5–12 MB</td><td>Under 1 MB, signatures legible</td></tr>
+<tr><td>Tax return with schedules</td><td>6–20 MB</td><td>Under 1 MB, small print readable</td></tr>
+<tr><td>Resume + certificate pack</td><td>3–8 MB</td><td>300–900 KB, photos intact</td></tr>
+<tr><td>Medical report with scans</td><td>10–25 MB</td><td>Under 1 MB (check scan clarity first)</td></tr>
+</tbody>
+</table>
+
+<p>The pattern is clear: text-heavy, multi-page documents are ideal candidates. Anything where the value is in the words and numbers — not in photographic detail — compresses down to 1 MB with room to spare.</p>
+
+<h3>Who Uses 1MB Compression?</h3>
+
+<p><strong>Loan and mortgage applicants</strong> submitting statements, pay slips, and tax documents to lenders whose portals cap each file at 1 MB.</p>
+
+<p><strong>Job seekers</strong> uploading resume-plus-portfolio packs to application systems. A compressed bundle attaches to emails without tripping the 25 MB provider limits even alongside other files.</p>
+
+<p><strong>Freelancers and consultants</strong> sending contracts and invoices. Clients open a 900 KB file instantly; the 12 MB original makes them wait and wonder.</p>
+
+<p><strong>Anyone filing taxes or insurance claims</strong> — these documents are long, scanned, and always too big. Compressing each to 1 MB keeps the whole submission tidy.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Exact 1MB target</strong> — iterative quality tuning lands the file under the cap at the best possible quality.</li>
+<li><strong>Multi-page friendly</strong> — built for long documents like statements and contracts, not just single pages.</li>
+<li><strong>Text stays razor-sharp</strong> — figures, footnotes, and fine print survive compression intact.</li>
+<li><strong>100% client-side</strong> — sensitive financial documents never leave your browser.</li>
+<li><strong>No server upload limits</strong> — large originals open instantly with no waiting.</li>
+<li><strong>Free, no signup, no watermark</strong> — compress as many files as you need.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Will a 1MB PDF still be readable?</h4>
+<p>Yes — for text-heavy documents like statements and contracts, 1 MB is plenty. Text and numbers stay sharp; only photographs show mild softness. Always zoom into your densest page to confirm.</p>
+
+<h4>How long does it take?</h4>
+<p>Usually seconds. Because the tool runs locally in your browser, there is no upload step — even a 20 MB original starts processing immediately.</p>
+
+<h4>Is it safe for bank statements and tax documents?</h4>
+<p>Yes. Everything happens in your browser; the file is never uploaded, stored, or scanned by anyone.</p>
+
+<h4>What if the file is still over 1MB after one pass?</h4>
+<p>Run it again at a stronger level, or split a very long document into parts and compress each. Most files land under the cap in one or two passes.</p>
+
+<h4>Does compression remove pages or links?</h4>
+<p>No. Page count, order, hyperlinks, and form fields are preserved — only image data and hidden overhead shrink.</p>
+
+<h4>Can I compress several files at once for email?</h4>
+<p>Compress each file to 1 MB and they will comfortably fit under the 25 MB attachment limits that Gmail and Outlook enforce.</p>
+
+<h4>Is this really free?</h4>
+<p>Completely free — no account, no payment, no watermark, and no limit on how many PDFs you compress.</p>
+</article>

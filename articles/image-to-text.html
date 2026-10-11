@@ -1,0 +1,88 @@
+<article class="tool-article">
+<h2>Image to Text — Free Online OCR Text Extractor</h2>
+
+<p>I have retyped text from images more times than I care to admit — a receipt for expenses, a whiteboard after a meeting, a paragraph from a scanned contract, a friend's handwritten recipe photographed at an angle. Every time, the same thought: a computer should be able to read this. It can. OCR (optical character recognition) converts the text inside pictures into editable, copyable characters. This free tool extracts text from your images in seconds — screenshots, scans, photos, even handwriting — with no signup and no software to install.</p>
+
+<h3>What Is Image to Text Conversion?</h3>
+
+<p>Image to text is exactly what it sounds like: software reads the words in a picture and hands them back as real text you can copy, edit, and search. The technology is OCR — optical character recognition — and it has quietly become excellent. Modern engines like Tesseract handle printed text at high accuracy, manage multiple languages, and make a respectable attempt at handwriting and low-quality images.</p>
+
+<p>The process has a simple shape. The tool analyzes your image, detects where text regions are, recognizes the characters in each region, and reconstructs the reading order. Better tools show you confidence scores per word and let you see an overlay of detected text areas, so you can spot the shaky parts before trusting the output.</p>
+
+<p>What surprised me early on: the biggest accuracy factor is not the OCR engine, it is the image. A sharp, straight, high-contrast photo converts almost perfectly; a tilted, glary, low-res one produces creative fiction. Garbage in, poetry out — just not the poetry you wanted.</p>
+
+<h3>How to Extract Text From an Image</h3>
+
+<p><strong>Step 1 — Upload your image.</strong> Drag and drop or click to select. JPG, PNG, GIF, TIFF, BMP, WebP, and even scanned PDFs are commonly supported. You can also paste an image straight from your clipboard.</p>
+
+<p><strong>Step 2 — Select the language.</strong> Choose the language of the text in the image — English, Spanish, French, German, and dozens more. Matching the language improves accuracy noticeably, especially for accented characters.</p>
+
+<p><strong>Step 3 — Extract.</strong> Click the convert button and watch the progress bar. Processing takes seconds; client-side tools do it in your browser, server-based ones return results just as fast.</p>
+
+<p><strong>Step 4 — Copy or download.</strong> The extracted text appears in an editable box — fix any misreads on the spot, then copy to your clipboard or download as TXT or JSON.</p>
+
+<p>Habit worth building: proofread the output against the image before using it. OCR is 98% right, which means 2% wrong — and the wrong 2% is always in the number you needed most.</p>
+
+<h3>What OCR Handles Well — and What Trips It Up</h3>
+
+<table>
+<thead><tr><th>Input type</th><th>Accuracy</th><th>Tips</th></tr></thead>
+<tbody>
+<tr><td>Clean screenshots</td><td>Excellent</td><td>Straight text, high contrast — near perfect</td></tr>
+<tr><td>Scanned documents</td><td>Very good</td><td>300 DPI scans convert cleanly; deskew if tilted</td></tr>
+<tr><td>Phone photos of documents</td><td>Good</td><td>Straight-on angle, even lighting, no glare</td></tr>
+<tr><td>Receipts and invoices</td><td>Good</td><td>Flatten the paper; thermal-print fading hurts</td></tr>
+<tr><td>Handwriting</td><td>Variable</td><td>Neat writing works; cursive and scribbles struggle</td></tr>
+<tr><td>Low-res / blurry images</td><td>Poor</td><td><strong>Sharpen</strong> first or find a better source</td></tr>
+<tr><td>Text on complex backgrounds</td><td>Poor</td><td>Plain backgrounds convert far more reliably</td></tr>
+</tbody>
+</table>
+
+<h3>Who Extracts Text From Images?</h3>
+
+<p><strong>Students and researchers</strong> digitize book pages, lecture slides, and whiteboards into notes they can search and quote — the difference between a photo of a slide and usable study material.</p>
+
+<p><strong>Office workers</strong> convert receipts, invoices, business cards, and forms into editable text, killing the retyping tax on data entry.</p>
+
+<p><strong>Developers</strong> pull strings out of screenshots for documentation, parse scanned forms in pipelines, and use OCR overlays to verify UI text.</p>
+
+<p><strong>Accessibility advocates</strong> make text inside images readable by screen readers — converting a meme's caption or an infographic's labels into real text opens it to visually impaired users.</p>
+
+<h3>Practical Tips for Accurate OCR</h3>
+
+<ul>
+<li><strong>Use high-resolution images.</strong> Blurry or pixelated sources are the #1 accuracy killer — more pixels, better reads.</li>
+<li><strong>Straighten the shot.</strong> Tilted text confuses recognition; rotate skewed photos before extracting.</li>
+<li><strong>Maximize contrast.</strong> Dark text on a light background converts best — avoid busy or gradient backgrounds.</li>
+<li><strong>Match the language.</strong> Selecting the right recognition language fixes accented characters and odd spellings.</li>
+<li><strong>Preprocess rough images.</strong> Grayscale, contrast boost, and <strong>sharpening</strong> before OCR can rescue marginal photos.</li>
+<li><strong>Restrict to regions.</strong> If only part of the image has text, limiting OCR to that region reduces false reads from graphics.</li>
+<li><strong>Proofread numbers.</strong> OCR confuses 0/O, 1/l, 5/S — verify digits in prices, dates, and codes against the source.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this image to text tool free?</h4>
+<p>Yes — completely free, no signup, no subscription, no hidden charges.</p>
+
+<h4>How accurate is OCR?</h4>
+<p>On clean, high-resolution printed text: excellent, often near-perfect. On phone photos: good with proper lighting and angle. On handwriting and blurry images: variable — always proofread the output.</p>
+
+<h4>Can it read handwriting?</h4>
+<p>It makes a genuine attempt and handles neat handwriting reasonably, but cursive and scribbles remain hard. Treat handwritten output as a draft to correct, not a finished transcript.</p>
+
+<h4>What languages are supported?</h4>
+<p>Most tools support 13–20+ languages including English, Spanish, French, German, Russian, and Korean. Select the matching language before extracting for best accuracy.</p>
+
+<h4>Are my images uploaded to a server?</h4>
+<p>Client-side tools process everything in your browser — nothing leaves your device. Some tools are server-based; check whether yours stores uploads (privacy-focused ones do not).</p>
+
+<h4>Can I extract text from a scanned PDF?</h4>
+<p>Yes. Most OCR tools accept PDFs (often up to 50 pages), processing each page and joining the results into one combined output you can download as TXT.</p>
+
+<h4>Why is my extracted text full of errors?</h4>
+<p>The usual causes: low resolution, tilted text, poor contrast, complex backgrounds, or the wrong language selected. Fix the image (straighten, brighten, <strong>sharpen</strong>) and try again.</p>
+
+<h4>What is the difference between OCR and just copying text?</h4>
+<p>Text in an image is pixels, not characters — there is nothing to copy. OCR recognizes the shapes and converts them into real, editable, searchable text. That is the whole job.</p>
+</article>

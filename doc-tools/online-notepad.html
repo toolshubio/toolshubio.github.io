@@ -1,59 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <title>Advanced Notepad Pro | Rich Text Editor</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../image-tools/css/global.css">
-    <link rel="stylesheet" href="../image-tools/css/components.css">
-    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Notepad Pro | Rich Text Editor</title>
+<meta name="description" content="Free online notepad with rich text editing, autosave, and one-click export — everything runs in your browser.">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../image-tools/css/v3-design.css">
 
 
-  <link rel="stylesheet" href="../image-tools/css/th-header-footer.css">
+<style>
+/* ---- v3 tool workspace chrome: original tool UI, v3 styling ---- */
+.ws-dropzone{border:2px dashed #c7d2fe;border-radius:16px;padding:52px 32px;text-align:center;background:#fafaff;transition:.2s;cursor:pointer}
+.ws-dropzone:hover,.ws-dropzone.dragover{border-color:#4f46e5;background:#eef2ff}
+.dz-icon{width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;display:grid;place-items:center;font-size:1.9rem;margin:0 auto 18px}
+.doc-upload-title{font-size:1.3rem;font-weight:700;letter-spacing:-.02em;margin-bottom:10px}
+.doc-upload-subtitle{color:#3f3f46;margin-bottom:22px;font-size:.95rem}
+.doc-upload-formats{color:#71717a;font-size:.82rem;margin-top:16px}
+.ws-body input[type="text"],.ws-body input[type="number"],.ws-body input[type="password"],.ws-body select,.ws-body textarea:not(.ws-textarea),.doc-settings-select,.cv-form-input,.cv-form-select,.cv-form-textarea,.form-control,.formula-input{width:100%;border:1.5px solid #e4e4e7;border-radius:12px;padding:11px 14px;font-size:.92rem;font-family:Inter,system-ui,sans-serif;background:#fff;color:#0a0a0b;outline:none;transition:.2s}
+.ws-body input:focus,.ws-body select:focus,.ws-body textarea:focus{border-color:#4f46e5;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+input[type="range"],.doc-settings-slider{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:99px;background:#e4e4e7;outline:none;padding:0;border:none}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:#4f46e5;cursor:pointer}
+input[type="checkbox"]{width:18px;height:18px;accent-color:#4f46e5}
+.doc-settings-panel{background:#fafafa;border:1px solid #e4e4e7;border-radius:16px;padding:26px;margin-top:24px}
+.doc-settings-title{font-weight:700;font-size:.95rem;margin-bottom:18px}
+.doc-settings-group{margin-bottom:14px}
+.doc-settings-label{display:block;font-size:.82rem;font-weight:600;color:#3f3f46;margin-bottom:8px}
+.doc-settings-toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;font-size:.9rem}
+.doc-toggle-switch,.toggle-switch,.toggle-slider{width:44px;height:24px;border-radius:99px;background:#d4d4d8;position:relative;cursor:pointer;transition:.2s;flex-shrink:0}
+.doc-toggle-switch::after,.toggle-switch::after,.toggle-slider::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.doc-toggle-switch.active,.toggle-switch.active,.toggle-slider.active,.toggle-switch.on{background:#4f46e5}
+.doc-toggle-switch.active::after,.toggle-switch.active::after,.toggle-slider.active::after{left:23px}
+.doc-preview-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.doc-toolbar-divider{width:1px;height:24px;background:#e4e4e7}
+.doc-action-bar{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.doc-stats-bar{display:grid;gap:12px;background:#fff;border:1px solid #e4e4e7;border-radius:12px;padding:18px;margin-top:16px}
+.doc-stat-item{text-align:center}
+.doc-stat-value,.stat-value{display:block;font-size:1.6rem;font-weight:700;letter-spacing:-.02em}
+.doc-stat-label{font-size:.72rem;color:#71717a;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+.spreadsheet-wrapper{overflow:auto;border:1px solid #e4e4e7;border-radius:12px;max-height:440px;margin-top:16px;background:#fff}
+.spreadsheet-table{border-collapse:collapse;font-size:.85rem;min-width:100%}
+.spreadsheet-table th,.spreadsheet-table td{border:1px solid #e4e4e7;padding:8px 12px;white-space:nowrap}
+.spreadsheet-table thead th{background:#f4f4f5;font-weight:600;position:sticky;top:0;cursor:pointer;z-index:1}
+.spreadsheet-table td.cell-selected{background:#eef2ff}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.compare-pane{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden;background:#fff}
+.pane-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #f4f4f5;background:#fafafa}
+.pane-content{min-height:240px;padding:24px}
+.compare-placeholder{border:2px dashed #d4d4d8;border-radius:12px;padding:52px 20px;text-align:center;color:#71717a;cursor:pointer;transition:.2s}
+.compare-placeholder:hover{border-color:#4f46e5;background:#fafaff}
+.doc-main-area{margin-bottom:8px}
+.doc-preview-area{margin-top:16px}
+.doc-tool-container{display:flex;flex-direction:column;gap:8px}
+.modal{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.5);align-items:center;justify-content:center}
+.modal.open,.modal.show{display:flex}
+.modal-content{background:#fff;border-radius:20px;max-width:580px;width:calc(100% - 40px);max-height:86vh;overflow:auto;box-shadow:0 24px 64px -12px rgba(0,0,0,.3)}
+.modal-header,.modal-footer{padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.modal-title{font-size:1.05rem;font-weight:700}
+.modal-body{padding:0 24px 24px}
+.filter-btn,.format-option{border:1.5px solid #e4e4e7;background:#fff;border-radius:12px;padding:10px 18px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:Inter,system-ui,sans-serif;transition:.15s}
+.filter-btn.active,.format-option.selected,.format-option.active{border-color:#4f46e5;background:#eef2ff;color:#4f46e5}
+.merger-list,.file-list{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.option-label{font-size:.85rem;font-weight:600;color:#3f3f46}
+.scanner-viewport{position:relative;border:1px solid #e4e4e7;border-radius:16px;overflow:hidden;background:#111;min-height:280px;display:grid;place-items:center;color:#71717a}
+.scan-overlay{position:absolute;inset:0;pointer-events:none}
+.scanning-line{position:absolute;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#4f46e5,transparent);animation:scanline 2s linear infinite}
+@keyframes scanline{0%{top:0}100%{top:100%}}
+.image-preview-container img{max-width:100%;border-radius:12px;display:block}
+.signature-canvas-wrapper{border:1.5px solid #e4e4e7;border-radius:12px;background:#fff;overflow:hidden}
+.signature-canvas-wrapper canvas{max-width:100%;display:block;touch-action:none}
+.pages-strip{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.editor-toolbar{display:flex;flex-wrap:wrap;gap:6px;padding:12px;border:1px solid #e4e4e7;border-bottom:none;border-radius:16px 16px 0 0;background:#fafafa}
+.toolbar-group{display:flex;gap:2px;padding-right:8px;margin-right:6px;border-right:1px solid #e4e4e7}
+.toolbar-group:last-child{border-right:none}
+.icon-btn{min-width:34px;height:34px;border:none;background:transparent;border-radius:8px;cursor:pointer;color:#3f3f46;font-size:.9rem;display:inline-flex;align-items:center;justify-content:center}
+.icon-btn:hover,.icon-btn.active{background:#e4e4e7}
+.editor-area{min-height:320px;border:1px solid #e4e4e7;border-radius:0 0 16px 16px;padding:20px;background:#fff;outline:none;font-size:1rem;line-height:1.7}
+.status-bar{display:flex;gap:20px;flex-wrap:wrap;margin-top:14px;font-size:.82rem;color:#71717a}
+.notepad-container{background:#fff;border:1px solid #e4e4e7;border-radius:16px}
+.notepad-header{display:flex;align-items:center;gap:10px;padding:14px 20px;border-bottom:1px solid #f4f4f5;font-weight:700}
+.panel-section{padding:16px 0;border-top:1px solid #f4f4f5}
+.panel-title{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#71717a;margin-bottom:10px}
+.editor-main{display:flex;gap:20px}
+.side-panel{width:280px;flex-shrink:0}
+.saving-badge{font-size:.75rem;color:#22c55e;font-weight:600}
+.color-palette{display:flex;gap:8px;flex-wrap:wrap}
+.color-option,.cv-color-option{width:36px;height:36px;border-radius:50%;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 1px #e4e4e7}
+.color-option.selected,.cv-color-option.selected{box-shadow:0 0 0 2px #4f46e5}
+.theme-options{display:flex;gap:10px;flex-wrap:wrap}
+.theme-option{border:1.5px solid #e4e4e7;border-radius:12px;padding:10px 16px;cursor:pointer;font-size:.85rem;font-weight:600}
+.theme-option.active{border-color:#4f46e5;background:#eef2ff}
+.code-editor{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden;background:#fff}
+.code-header{display:flex;align-items:center;gap:8px;padding:10px 16px;background:#f4f4f5;font-size:.82rem;font-weight:600}
+.code-body{display:flex}
+.line-numbers{padding:16px 12px;background:#fafafa;color:#a1a1aa;font-size:.85rem;text-align:right;user-select:none;font-family:monospace}
+.code-content{flex:1;padding:16px;font-size:.9rem;font-family:monospace;white-space:pre;overflow:auto}
+.cv-form-section{background:#fff;border:1px solid #e4e4e7;border-radius:16px;margin-bottom:16px;overflow:hidden}
+.cv-section-header{padding:18px 24px;cursor:pointer;display:flex;align-items:center;justify-content:space-between}
+.cv-section-title{font-size:1rem;font-weight:700}
+.cv-section-content{padding:4px 24px 24px}
+.cv-form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cv-form-group{margin-bottom:14px}
+.cv-form-label{display:block;font-size:.82rem;font-weight:600;margin-bottom:6px;color:#3f3f46}
+.cv-wizard-steps{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.cv-wizard-step{display:flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid #e4e4e7;border-radius:99px;font-size:.85rem;font-weight:600;background:#fff}
+.cv-wizard-step.active{background:#0a0a0b;color:#fff;border-color:#0a0a0b}
+.cv-wizard-step-number{width:26px;height:26px;border-radius:50%;background:#e4e4e7;display:grid;place-items:center;font-size:.75rem;font-weight:700}
+.cv-wizard-step.active .cv-wizard-step-number{background:#4f46e5;color:#fff}
+.cv-industry-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+.cv-industry-card{border:1.5px solid #e4e4e7;border-radius:14px;padding:22px 12px;text-align:center;cursor:pointer;transition:.15s;background:#fff}
+.cv-industry-card:hover{border-color:#c7d2fe}
+.cv-industry-card.selected{border-color:#4f46e5;background:#eef2ff}
+.cv-industry-icon{font-size:1.6rem;margin-bottom:10px}
+.cv-industry-name{font-size:.85rem;font-weight:600}
+.cv-input-methods{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.cv-input-card{border:1.5px solid #e4e4e7;border-radius:14px;padding:22px;cursor:pointer;transition:.15s;background:#fff}
+.cv-input-card:hover{border-color:#4f46e5;transform:translateY(-2px)}
+.cv-input-icon{font-size:1.5rem;margin-bottom:10px}
+.cv-input-title{font-weight:700;margin-bottom:6px}
+.cv-input-desc{font-size:.85rem;color:#71717a}
+.cv-export-options{display:flex;gap:12px;flex-wrap:wrap}
+.cv-export-btn{display:flex;align-items:center;gap:10px;border:1.5px solid #e4e4e7;border-radius:14px;padding:16px 20px;background:#fff;cursor:pointer;font-weight:600;font-size:.9rem;transition:.15s}
+.cv-export-btn:hover{border-color:#4f46e5}
+.cv-color-schemes{display:flex;gap:10px;flex-wrap:wrap}
+.cv-template-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.cv-preview-container{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden;background:#fff;padding:24px}
+.cv-ats-meter{height:10px;border-radius:99px;background:#f4f4f5;overflow:hidden;margin:10px 0}
+.cv-ats-fill{height:100%;background:linear-gradient(90deg,#4f46e5,#7c3aed);border-radius:99px;transition:.5s}
+.cv-progress{height:8px;border-radius:99px;background:#f4f4f5;overflow:hidden;margin:12px 0}
+.cv-progress-fill,.cv-progress-bar{height:100%;background:linear-gradient(90deg,#4f46e5,#7c3aed)}
+.cv-add-entry-btn,.cv-entry-list,.cv-step-panel{margin-top:14px}
+.cv-tool-card{border:1px solid #e4e4e7;border-radius:14px;overflow:hidden;background:#fff}
+.cv-tool-header{padding:16px 20px;display:flex;align-items:center;gap:12px}
+.cv-tool-icon{width:40px;height:40px;border-radius:12px;background:#eef2ff;color:#4f46e5;display:grid;place-items:center}
+.cv-tool-title{font-weight:700}
+.cv-tool-content{padding:0 20px 20px}
+.cv-photo-placeholder{width:110px;height:110px;border-radius:50%;background:#f4f4f5;display:grid;place-items:center;color:#a1a1aa;font-size:2rem;margin:0 auto 12px}
+.repair-status-box,.ocr-result,.compress-info{border:1px solid #e4e4e7;border-radius:12px;padding:18px;background:#fafafa;margin-top:16px;font-size:.92rem}
+.format-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+.format-section{margin-bottom:18px}
+.section-title{font-weight:700;margin-bottom:10px}
+.quick-actions{display:flex;gap:10px;flex-wrap:wrap}
+.quick-action-btn,.account-btns button{border:1px solid #e4e4e7;background:#fff;border-radius:10px;padding:9px 16px;font-size:.85rem;font-weight:600;cursor:pointer}
+.quick-action-btn:hover{border-color:#4f46e5}
+.filename{font-weight:600;font-size:.9rem}
+.dots{display:flex;gap:6px}
+.dot{width:10px;height:10px;border-radius:50%;background:#d4d4d8}
+.dot.red{background:#ef4444}.dot.yellow{background:#eab308}.dot.green{background:#22c55e}
+.toc-sidebar{background:#fafafa;border:1px solid #e4e4e7;border-radius:12px;padding:16px;font-size:.88rem}
+#toc-list{list-style:none;margin:0}
+#toc-list li{padding:6px 0;cursor:pointer}
+#toc-list li:hover{color:#4f46e5}
+#word-content{background:#fff;border:1px solid #e4e4e7;border-radius:12px;padding:32px;min-height:300px;line-height:1.8}
+.doc-preview-content{margin-top:8px}
+.chart-modal canvas{max-width:100%}
+.size-box{text-align:center;padding:14px;border:1px solid #e4e4e7;border-radius:12px;background:#fff}
+.size-label{font-size:.75rem;color:#71717a;text-transform:uppercase;letter-spacing:.05em}
+.size-value{font-size:1.4rem;font-weight:700}
+@media(max-width:700px){.compare-grid,.cv-form-row,.editor-main{grid-template-columns:1fr;flex-direction:column}.side-panel{width:100%}.ws-dropzone{padding:36px 20px}}
+</style>
+
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../index.html#tools">All Tools</a><a href="../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../index.html#tools">Explore Tools</a></div>
+</div></header>
+
+<nav class="crumbs"><a href="../index.html">Home</a> &nbsp;/&nbsp; <span>Online Notepad</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">Document Tools</span>
+  <h1>A notepad that <em>does more.</em></h1>
+  <p>Free online notepad with rich text editing, autosave, and one-click export — everything runs in your browser.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../image-tools/index.html">Image Tools</a><a href="../pdf-tools/index.html">PDF Tools</a><a href="../text-tools/index.html">Text & Writing</a><a href="../seo-tools/index.html">SEO Tools</a><a href="../calculator-tools/index.html">Calculators</a><a href="../binary-tools/index.html">Binary Tools</a><a href="../code-format-tools/index.html">Code & Formatters</a><a href="../doc-tools/index.html">Documents</a><a href="../other-tools/index.html">Other Tools</a><a href="../about-us.html">About Us</a><a href="../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a> &gt;
-                <a href="index.html">Documents</a> &gt;
-                <span>Advanced Notepad Pro</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">Advanced Notepad Pro</h1>
-                <p class="tool-description"></p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
+</section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>Online Notepad</b><span>v3.0 &middot; local</span></div>
+  <div class="ws-body">
+<div class="tu-ws-body">
 <div class="notepad-container">
 <!-- Header -->
 <div class="notepad-header">
@@ -67,11 +202,11 @@
 </div>
 </div>
 <div class="header-actions">
-<button class="btn btn-primary" id="newNoteBtn">
+<button class="btn btn-dark btn-primary tu-btn tu-btn-primary" id="newNoteBtn">
 <i class="fas fa-plus"></i>
 <span>New</span>
 </button>
-<button class="panel-toggle" id="panelToggle">
+<button class="btn btn-light panel-toggle tu-btn tu-btn-ghost" id="panelToggle">
 <i class="fas fa-sliders-h"></i>
 </button>
 </div>
@@ -80,61 +215,61 @@
 <div class="toolbar" id="toolbar">
 <!-- File Operations (Open File Removed) -->
 <div class="toolbar-group">
-<button class="btn btn-success" id="saveBtn" title="Save">
+<button class="btn btn-dark btn-success tu-btn tu-btn-primary" id="saveBtn" title="Save">
 <i class="fas fa-save"></i>
 <span>Save</span>
 </button>
-<button class="btn btn-warning" id="exportBtn" title="Export">
+<button class="btn btn-light btn-warning tu-btn tu-btn-ghost" id="exportBtn" title="Export">
 <i class="fas fa-download"></i>
 <span>Export</span>
 </button>
-<button class="btn btn-primary" id="printBtn" title="Print">
+<button class="btn btn-dark btn-primary tu-btn tu-btn-primary" id="printBtn" title="Print">
 <i class="fas fa-print"></i>
 <span>Print</span>
 </button>
 </div>
 <!-- Basic Formatting -->
 <div class="toolbar-group">
-<button class="btn icon-btn" id="boldBtn" title="Bold (Ctrl+B)">
+<button class="btn icon-btn tu-btn tu-btn-ghost" id="boldBtn" title="Bold (Ctrl+B)">
 <i class="fas fa-bold"></i>
 </button>
-<button class="btn icon-btn" id="italicBtn" title="Italic (Ctrl+I)">
+<button class="btn icon-btn tu-btn tu-btn-ghost" id="italicBtn" title="Italic (Ctrl+I)">
 <i class="fas fa-italic"></i>
 </button>
-<button class="btn icon-btn" id="underlineBtn" title="Underline (Ctrl+U)">
+<button class="btn icon-btn tu-btn tu-btn-ghost" id="underlineBtn" title="Underline (Ctrl+U)">
 <i class="fas fa-underline"></i>
 </button>
-<button class="btn icon-btn" id="strikeBtn" title="Strikethrough">
+<button class="btn icon-btn tu-btn tu-btn-ghost" id="strikeBtn" title="Strikethrough">
 <i class="fas fa-strikethrough"></i>
 </button>
 </div>
 <!-- Text Alignment -->
 <div class="toolbar-group">
-<button class="btn icon-btn" id="alignLeftBtn" title="Align Left">
+<button class="btn icon-btn tu-btn tu-btn-ghost" id="alignLeftBtn" title="Align Left">
 <i class="fas fa-align-left"></i>
 </button>
-<button class="btn icon-btn" id="alignCenterBtn" title="Align Center">
+<button class="btn icon-btn tu-btn tu-btn-ghost" id="alignCenterBtn" title="Align Center">
 <i class="fas fa-align-center"></i>
 </button>
-<button class="btn icon-btn" id="alignRightBtn" title="Align Right">
+<button class="btn icon-btn tu-btn tu-btn-ghost" id="alignRightBtn" title="Align Right">
 <i class="fas fa-align-right"></i>
 </button>
-<button class="btn icon-btn" id="justifyBtn" title="Justify Text">
+<button class="btn icon-btn tu-btn tu-btn-ghost" id="justifyBtn" title="Justify Text">
 <i class="fas fa-align-justify"></i>
 </button>
 </div>
 <!-- Lists -->
 <div class="toolbar-group">
-<button class="btn icon-btn" id="bulletListBtn" title="Bulleted List">
+<button class="btn icon-btn tu-btn tu-btn-ghost" id="bulletListBtn" title="Bulleted List">
 <i class="fas fa-list-ul"></i>
 </button>
-<button class="btn icon-btn" id="numberListBtn" title="Numbered List">
+<button class="btn icon-btn tu-btn tu-btn-ghost" id="numberListBtn" title="Numbered List">
 <i class="fas fa-list-ol"></i>
 </button>
-<button class="btn icon-btn" id="indentBtn" title="Increase Indent">
+<button class="btn icon-btn tu-btn tu-btn-ghost" id="indentBtn" title="Increase Indent">
 <i class="fas fa-indent"></i>
 </button>
-<button class="btn icon-btn" id="outdentBtn" title="Decrease Indent">
+<button class="btn icon-btn tu-btn tu-btn-ghost" id="outdentBtn" title="Decrease Indent">
 <i class="fas fa-outdent"></i>
 </button>
 </div>
@@ -174,56 +309,56 @@
 </div>
 <!-- Colors -->
 <div class="toolbar-group">
-<button class="btn" id="textColorBtn" title="Text Color">
+<button class="btn btn-light tu-btn tu-btn-ghost" id="textColorBtn" title="Text Color">
 <i class="fas fa-font"></i>
 <span>Color</span>
 </button>
-<button class="btn" id="highlightColorBtn" title="Highlight Color">
+<button class="btn btn-light tu-btn tu-btn-ghost" id="highlightColorBtn" title="Highlight Color">
 <i class="fas fa-highlighter"></i>
 <span>Highlight</span>
 </button>
 </div>
 <!-- Insert Features -->
 <div class="toolbar-group">
-<button class="btn" id="insertImageBtn" title="Insert Image">
+<button class="btn btn-light tu-btn tu-btn-ghost" id="insertImageBtn" title="Insert Image">
 <i class="fas fa-image"></i>
 <span>Image</span>
 </button>
-<button class="btn" id="insertLinkBtn" title="Insert Link">
+<button class="btn btn-light tu-btn tu-btn-ghost" id="insertLinkBtn" title="Insert Link">
 <i class="fas fa-link"></i>
 <span>Link</span>
 </button>
-<button class="btn" id="insertTableBtn" title="Insert Table">
+<button class="btn btn-light tu-btn tu-btn-ghost" id="insertTableBtn" title="Insert Table">
 <i class="fas fa-table"></i>
 <span>Table</span>
 </button>
 </div>
 <!-- Advanced Tools -->
 <div class="toolbar-group">
-<button class="btn" id="findBtn" title="Find (Ctrl+F)">
+<button class="btn btn-light tu-btn tu-btn-ghost" id="findBtn" title="Find (Ctrl+F)">
 <i class="fas fa-search"></i>
 <span>Find</span>
 </button>
-<button class="btn" id="replaceBtn" title="Replace (Ctrl+H)">
+<button class="btn btn-light tu-btn tu-btn-ghost" id="replaceBtn" title="Replace (Ctrl+H)">
 <i class="fas fa-exchange-alt"></i>
 <span>Replace</span>
 </button>
-<button class="btn" id="wordCountBtn" title="Word Count">
+<button class="btn btn-light tu-btn tu-btn-ghost" id="wordCountBtn" title="Word Count">
 <i class="fas fa-calculator"></i>
 <span>Count</span>
 </button>
 </div>
 <!-- View Options -->
 <div class="toolbar-group">
-<button class="btn" id="themeBtn" title="Change Theme">
+<button class="btn btn-light tu-btn tu-btn-ghost" id="themeBtn" title="Change Theme">
 <i class="fas fa-palette"></i>
 <span>Theme</span>
 </button>
-<button class="btn" id="fullscreenBtn" title="Fullscreen">
+<button class="btn btn-light tu-btn tu-btn-ghost" id="fullscreenBtn" title="Fullscreen">
 <i class="fas fa-expand"></i>
 <span>Fullscreen</span>
 </button>
-<button class="btn" id="spellCheckBtn" title="Spell Check">
+<button class="btn btn-light tu-btn tu-btn-ghost" id="spellCheckBtn" title="Spell Check">
 <i class="fas fa-spell-check"></i>
 <span>Spell</span>
 </button>
@@ -353,7 +488,7 @@
 <div class="no-image">No image selected</div>
 </div>
 <input class="form-control" id="imageUrl" placeholder="Enter image URL" type="url"/>
-<button class="btn btn-primary" id="insertImageFromUrl" style="width: 100%; margin-top: 8px;">
+<button class="btn btn-dark btn-primary tu-btn tu-btn-primary" id="insertImageFromUrl" style="width: 100%; margin-top: 8px;">
 <i class="fas fa-plus"></i> Insert Image
                                 </button>
 </div>
@@ -367,16 +502,16 @@
 <span>Quick Actions</span>
 </div>
 <div class="quick-actions">
-<button class="quick-action-btn" id="insertDateBtn">
+<button class="quick-action-btn tu-btn tu-btn-ghost" id="insertDateBtn">
 <i class="fas fa-calendar"></i> Insert Date
                         </button>
-<button class="quick-action-btn" id="insertTimeBtn">
+<button class="quick-action-btn tu-btn tu-btn-ghost" id="insertTimeBtn">
 <i class="fas fa-clock"></i> Insert Time
                         </button>
-<button class="quick-action-btn" id="clearFormatBtn">
+<button class="quick-action-btn tu-btn tu-btn-ghost" id="clearFormatBtn">
 <i class="fas fa-eraser"></i> Clear Format
                         </button>
-<button class="quick-action-btn" id="copyAllBtn">
+<button class="quick-action-btn tu-btn tu-btn-ghost" id="copyAllBtn">
 <i class="fas fa-copy"></i> Copy All
                         </button>
 </div>
@@ -494,8 +629,8 @@
 </div>
 </div>
 <div class="modal-footer">
-<button class="btn" id="cancelImageBtn">Cancel</button>
-<button class="btn btn-primary" id="insertImageBtnModal">Insert Image</button>
+<button class="btn btn-light tu-btn tu-btn-ghost" id="cancelImageBtn">Cancel</button>
+<button class="btn btn-dark btn-primary tu-btn tu-btn-primary" id="insertImageBtnModal">Insert Image</button>
 </div>
 </div>
 </div>
@@ -523,8 +658,8 @@
 </div>
 </div>
 <div class="modal-footer">
-<button class="btn" id="cancelLinkBtn">Cancel</button>
-<button class="btn btn-primary" id="insertLinkBtnModal">Insert Link</button>
+<button class="btn btn-light tu-btn tu-btn-ghost" id="cancelLinkBtn">Cancel</button>
+<button class="btn btn-dark btn-primary tu-btn tu-btn-primary" id="insertLinkBtnModal">Insert Link</button>
 </div>
 </div>
 </div>
@@ -572,8 +707,8 @@
 </div>
 </div>
 <div class="modal-footer">
-<button class="btn" id="cancelTableBtn">Cancel</button>
-<button class="btn btn-primary" id="insertTableBtnModal">Insert Table</button>
+<button class="btn btn-light tu-btn tu-btn-ghost" id="cancelTableBtn">Cancel</button>
+<button class="btn btn-dark btn-primary tu-btn tu-btn-primary" id="insertTableBtnModal">Insert Table</button>
 </div>
 </div>
 </div>
@@ -601,12 +736,12 @@
 </div>
 </div>
 <div class="modal-footer">
-<button class="btn" id="cancelThemeBtn">Cancel</button>
-<button class="btn btn-primary" id="applyThemeBtn">Apply Theme</button>
+<button class="btn btn-light tu-btn tu-btn-ghost" id="cancelThemeBtn">Cancel</button>
+<button class="btn btn-dark btn-primary tu-btn tu-btn-primary" id="applyThemeBtn">Apply Theme</button>
 </div>
 </div>
 </div>
- Find & Replace Modal 
+ Find &amp; Replace Modal 
 <div class="modal" id="findModalDialog">
 <div class="modal-content">
 <div class="modal-header">
@@ -634,10 +769,10 @@
 </div>
 </div>
 <div class="modal-footer">
-<button class="btn" id="cancelFindBtn">Cancel</button>
-<button class="btn" id="findNextBtnModal">Find Next</button>
-<button class="btn btn-warning" id="replaceBtnModal">Replace</button>
-<button class="btn btn-primary" id="replaceAllBtnModal">Replace All</button>
+<button class="btn btn-light tu-btn tu-btn-ghost" id="cancelFindBtn">Cancel</button>
+<button class="btn btn-light tu-btn tu-btn-ghost" id="findNextBtnModal">Find Next</button>
+<button class="btn btn-light btn-warning tu-btn tu-btn-ghost" id="replaceBtnModal">Replace</button>
+<button class="btn btn-dark btn-primary tu-btn tu-btn-primary" id="replaceAllBtnModal">Replace All</button>
 </div>
 </div>
 </div>
@@ -655,67 +790,67 @@
 <div class="form-group">
 <label>Export Format:</label>
 <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
-<button class="btn" data-format="html">
+<button class="btn btn-light tu-btn tu-btn-ghost" data-format="html">
 <i class="fas fa-code"></i> HTML
                         </button>
-<button class="btn" data-format="txt">
+<button class="btn btn-light tu-btn tu-btn-ghost" data-format="txt">
 <i class="fas fa-file-alt"></i> TXT
                         </button>
-<button class="btn" data-format="pdf">
+<button class="btn btn-light tu-btn tu-btn-ghost" data-format="pdf">
 <i class="fas fa-file-pdf"></i> PDF
                         </button>
-<button class="btn" data-format="doc">
+<button class="btn btn-light tu-btn tu-btn-ghost" data-format="doc">
 <i class="fas fa-file-word"></i> DOC
                         </button>
-<button class="btn" data-format="md">
+<button class="btn btn-light tu-btn tu-btn-ghost" data-format="md">
 <i class="fab fa-markdown"></i> Markdown
                         </button>
 </div>
 </div>
 </div>
 <div class="modal-footer">
-<button class="btn" id="cancelExportBtn">Cancel</button>
-<button class="btn btn-primary" id="confirmExportBtn">Export</button>
+<button class="btn btn-light tu-btn tu-btn-ghost" id="cancelExportBtn">Cancel</button>
+<button class="btn btn-dark btn-primary tu-btn tu-btn-primary" id="confirmExportBtn">Export</button>
 </div>
 </div>
-</div>
-            </div>
-            <section class="seo-article" data-tool="online-notepad">
-<article class="tool-article">
-<h2>Online Notepad — A Free Notepad That Saves Your Work Automatically</h2>
+</div></div>
+  </div>
+</div></div>
 
-<p>I used to keep my notes in whatever app happened to be open — sticky notes on the desktop, a half-finished doc in Google Drive, once even the URL bar. Then I lost an hour of meeting notes when my laptop battery died mid-sentence, and I switched to a different habit. An online notepad is exactly what it sounds like: a plain text editor that lives in your browser. No install, no account, no save button anxiety. You open the page, you type, and your words are there when you come back.</p>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 &mdash; HOW IT WORKS</span><h2>Three steps, zero learning curve</h2></div>
+  <div class="steps">
+<div class="step"><div class="step-n">i.</div><h3>Start typing</h3><p>Your notes open in a rich editor — type freely, nothing to set up.</p></div><div class="step"><div class="step-n">ii.</div><h3>Format with the toolbar</h3><p>Bold, italics, lists, tables, colors and alignment are all one click away.</p></div><div class="step"><div class="step-n">iii.</div><h3>Save or export</h3><p>Notes auto-save in your browser; export to file or print when you&#x27;re done.</p></div>
+  </div>
+</section>
 
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>Online Notepad — A Free Notepad That Saves Your Work Automatically</h2>
+    <p class="deck">A notepad that remembers everything.</p>
+    <div class="article-meta">
+      <div class="avatar">O</div>
+      <div><b>TOOLSHUB Editorial</b><span>5 min read &middot; Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+<p class="lead">I used to keep my notes in whatever app happened to be open — sticky notes on the desktop, a half-finished doc in Google Drive, once even the URL bar. Then I lost an hour of meeting notes when my laptop battery died mid-sentence, and I switched to a different habit. An online notepad is exactly what it sounds like: a plain text editor that lives in your browser. No install, no account, no save button anxiety. You open the page, you type, and your words are there when you come back.</p>
 <h3>What Is an Online Notepad?</h3>
-
 <p>At its simplest, it is a blank page that remembers. Unlike a desktop app that ties your notes to one machine, a browser-based notepad works on anything with a modern browser — a borrowed laptop, a library computer, your phone on the train. The best ones store your text locally in the browser using localStorage, which means the content never travels to a server. Refresh the tab, close the browser, lose your Wi-Fi — the words stay put.</p>
-
 <p>People confuse online notepads with word processors, but they are different tools for different jobs. A word processor is built for documents: formatting, images, page layouts, print styles. A notepad is built for speed: capture the thought before it leaves. I use mine for quick drafts, to-do lists, pasted error logs, temporary code snippets, and outlines I will reshape later somewhere fancier. The absence of formatting is the feature, not a flaw.</p>
-
 <h3>How to Use the Online Notepad</h3>
-
 <p>There is genuinely almost nothing to learn. Click into the editor area and start typing or paste text from anywhere else. Most online notepads save continuously as you write — every second or so, a copy lands in your browser's local storage, and a small "Saved" indicator confirms it.</p>
-
 <p>The workflow I rely on is simple:</p>
-
 <p><strong>Step 1 — Write freely.</strong> Type your note, list, draft, or paste content. Formatting tools like bold, lists, and headings are there if you want them; plain text is fine too.</p>
-
 <p><strong>Step 2 — Let autosave do its job.</strong> You do not need to press anything. Close the tab and your text waits for you next time.</p>
-
 <p><strong>Step 3 — Export when you need a file.</strong> Most notepads offer TXT export (and sometimes PDF, Markdown, or Word), a one-click copy button, and print. Download anything important as a file if you ever plan to clear your browser data — clearing site data wipes local storage along with it.</p>
-
 <p>One small habit worth building: for anything that matters, export a .txt backup. Local autosave is a safety net, not an archive.</p>
-
 <h3>How Autosave and Local Storage Work</h3>
-
 <p>The magic behind autosave is an HTML5 feature called localStorage — a small storage area your browser reserves per website, usually 5–10 MB, which is enormous for text. Every time you pause typing, the editor serializes your content and writes it there. Because it is local to your device and browser, nothing is uploaded, nothing is synced anywhere, and nothing appears on anyone else's screen.</p>
-
 <p>That privacy model has a flip side worth understanding. Since notes live in one browser on one device, they will not follow you to your phone. If you use incognito or private mode, the data evaporates when the window closes. And if you clear cookies and site data, the notes go with them. Some notepads add optional cloud sync with a free account for exactly this reason; others stay deliberately offline-first. Choose based on what your notes are worth.</p>
-
 <h3>Everyday Uses for an Online Notepad</h3>
-
 <p>The list is longer than it sounds:</p>
-
 <ul>
 <li><strong>Meeting notes and agendas</strong> — open the tab before the call starts; no app launch delay.</li>
 <li><strong>To-do lists and reminders</strong> — faster than any task manager for a quick brain dump.</li>
@@ -724,11 +859,8 @@
 <li><strong>Temporary data</strong> — tracking numbers, confirmation codes, phone numbers you need for five minutes.</li>
 <li><strong>Journaling</strong> — a private page that asks for nothing, which is why people keep coming back.</li>
 </ul>
-
 <p>Students lean on notepads for lecture notes and assignment word counts; writers use them for first drafts they later move into publishing tools; professionals keep a tab pinned for daily logs. The common thread is the same: zero friction between thinking and writing.</p>
-
 <h3>Key Features to Look For</h3>
-
 <table>
 <thead><tr><th>Feature</th><th>Why It Matters</th></tr></thead>
 <tbody>
@@ -743,85 +875,58 @@
 <tr><td>Keyboard shortcuts</td><td>Ctrl+N for new, Ctrl+S to export, Ctrl+F to find</td></tr>
 </tbody>
 </table>
-
 <p>Privacy is the feature most people underestimate: with local-only storage, the notepad never sees your content. That makes it a reasonable place even for sensitive drafts you would hesitate to paste into a cloud tool.</p>
-
 <h3>Online Notepad vs Desktop Notes Apps</h3>
-
 <p><strong>Desktop apps</strong> like Notepad (Windows) or Notes (Mac) are tied to the operating system. They are fast and reliable, but your notes stay on that machine unless you wire up sync yourself. Microsoft WordPad, the classic built-in word editor, was removed from Windows 11 in version 24H2 (October 2024), which pushed a lot of people toward browser alternatives.</p>
-
 <p><strong>Online notepads</strong> trade that OS lock-in for universality: any browser, any OS, any device, no install. The autosave-to-localStorage model means the experience is nearly identical to desktop — the main difference is where the file lives (the browser's storage rather than your documents folder). For people who hop between machines, the browser version wins. For long, formatted documents, a proper editor still has its place.</p>
-
 <h3>Frequently Asked Questions</h3>
-
 <h4>Is this online notepad free?</h4>
 <p>Yes — completely free, no account, no signup, no usage limits.</p>
-
 <h4>Does it save my notes automatically?</h4>
 <p>Yes. Your text is saved locally in your browser every second as you type, and restored automatically when you return.</p>
-
 <h4>Where are my notes stored?</h4>
 <p>Only in your current browser on your current device, via localStorage. They are never uploaded to any server.</p>
-
 <h4>Will I lose my notes if I clear my browser data?</h4>
 <p>Yes — clearing cookies and site data removes locally stored notes. Export important notes as .txt files for backup.</p>
-
 <h4>Can I access my notes on another device?</h4>
 <p>Not with local-only storage. Copy text over, or use the export feature to move it to another machine.</p>
-
 <h4>Is my content private?</h4>
 <p>Yes. Since everything stays in your browser, the notepad service itself never receives your text.</p>
-
 <h4>Can I count words in my note?</h4>
 <p>Yes — live word, character, and line counts are shown while you write.</p>
-
 <h4>Does it work offline?</h4>
 <p>Once the page is loaded, writing and autosave work fine without an internet connection.</p>
-</article>
+    <h3>Frequently asked</h3>
+    <div class="faq">
+<div class="faq-item open"><div class="faq-q">Is the notepad free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>Yes — completely free with no account and no limits.</div></div></div><div class="faq-item"><div class="faq-q">Where are my notes stored? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>In your own browser's local storage — they persist between visits on this device.</div></div></div><div class="faq-item"><div class="faq-q">Can anyone else see my notes? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>No. Notes never leave your device; nothing is sent to a server.</div></div></div><div class="faq-item"><div class="faq-q">Can I export my notes? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>Yes — export to file, copy everything to the clipboard, or print directly.</div></div></div>
+    </div>
+  </div>
+</article></div>
+
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 &mdash; KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+<a class="rel" href="text-viewer.html"><i class="fa-solid fa-file-lines" style="color:#4f46e5"></i><h3>Text Viewer</h3><p>Read TXT files with syntax highlighting.</p></a>
+<a class="rel" href="word-viewer.html"><i class="fa-solid fa-file-word" style="color:#7c3aed"></i><h3>Word Viewer</h3><p>Open DOCX files without Microsoft Word.</p></a>
+<a class="rel" href="cv-builder.html"><i class="fa-solid fa-id-card" style="color:#4f46e5"></i><h3>CV Builder</h3><p>Create a job-winning resume.</p></a>
+<a class="rel" href="document-compare.html"><i class="fa-solid fa-code-compare" style="color:#7c3aed"></i><h3>Document Compare</h3><p>Spot differences between two documents.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../image-tools/index.html">Image Tools</a></li><li><a href="../pdf-tools/index.html">PDF Tools</a></li><li><a href="../text-tools/index.html">Text & Writing</a></li><li><a href="../seo-tools/index.html">SEO Tools</a></li><li><a href="../calculator-tools/index.html">Calculators</a></li><li><a href="../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../index.html#tools">All 203 tools</a></li><li><a href="../pdf-tools/">PDF tools</a></li><li><a href="../image-tools/">Image tools</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../about-us.html">About</a><a href="../contact-us.html">Contact</a><a href="../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>&copy; 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+
 <script>
         // DOM Elements
         const editor = document.getElementById('editor');
@@ -2024,7 +2129,7 @@
                     alert(`Exporting as PDF: ${fileName}.pdf\n\nIn a real application, this would generate a PDF file.`);
                     break;
                 case 'html':
-                    exportContent = `<!DOCTYPE html><html><head><title>${fileName}</title><meta charset="UTF-8"><style>body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; } img { max-width: 100%; } table { border-collapse: collapse; width: 100%; } th, td { border: 1px solid #ddd; padding: 8px; text-align: left; } th { background: #667eea; color: white; } tr:nth-child(even) { background: #f9f9f9; }</style></head><body>${content}  <script src="../image-tools/js/th-interactions.js"></script>
+                    exportContent = `<!DOCTYPE html><html><head><title>${fileName}</title><meta charset="UTF-8"><style>body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; } img { max-width: 100%; } table { border-collapse: collapse; width: 100%; } th, td { border: 1px solid #ddd; padding: 8px; text-align: left; } th { background: #667eea; color: white; } tr:nth-child(even) { background: #f9f9f9; }</style></head><body>${content}  <script src="../image-tools/js/th-interactions.js"><\/script>
 </body></html>`;
                     blob = new Blob([exportContent], { type: 'text/html' });
                     mimeType = 'text/html';
@@ -2224,5 +2329,6 @@
         // Initialize the application
         init();
     </script>
+<script src="../image-tools/js/v3.js"></script>
 </body>
 </html>

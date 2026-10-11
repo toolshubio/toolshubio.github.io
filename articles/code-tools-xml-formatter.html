@@ -1,0 +1,100 @@
+<article class="tool-article">
+<h2>XML Formatter — Free Online XML Beautifier & Validator</h2>
+
+<p>XML refuses to die. It's in the SOAP APIs at my clients' enterprises, in Android manifests, in Maven's pom.xml, in SVG files, in RSS feeds — and it almost always arrives as one unreadable line. I once spent an entire morning hunting a misconfigured deployment, only to discover the culprit was a single mistyped attribute buried in a minified web.config. An XML formatter would have shown me the structure in seconds. Paste your XML in, get properly indented, validated markup out, and spot the problem with your eyes instead of your patience.</p>
+
+<h3>What Is an XML Formatter?</h3>
+
+<p>An XML formatter takes your markup — minified, inconsistently indented, or just ugly — and re-prints it with consistent structure: one element per line, nested children indented under their parents, attributes neatly placed. Like every formatter on this site, it changes presentation, not meaning; the document's data stays identical.</p>
+
+<p>Good formatters also validate as they format, because XML is strict: every opening tag needs its closing tag, attribute values need quotes, and special characters like <code>&lt;</code> must be escaped or wrapped in CDATA sections. A formatter that parses properly will flag an unclosed tag or a mismatched element with a line number instead of producing scrambled output.</p>
+
+<p>A few things formatters handle carefully: CDATA sections (preserved untouched, since their contents are literal text), the XML declaration (<code>&lt;?xml version="1.0"?&gt;</code>) at the top, processing instructions, comments, and namespaces like <code>xmlns:soap</code> on enterprise documents. If your tool mangles any of these, it's the tool's bug, not your XML's.</p>
+
+<h3>How to Use the XML Formatter</h3>
+
+<p>Copy your XML from wherever it lives — a SOAP response, a config file, an SVG graphic, a database export — and paste it into the input box at the top of the tool. Include the full document, from the XML declaration through the root closing tag.</p>
+
+<p>Choose your indentation: 2 spaces is the compact web standard, 4 spaces reads better on deeply nested enterprise documents. Click Format, and the beautified markup appears in the output area with syntax highlighting — tags, attributes, values, and comments color-coded so the hierarchy is scannable at a glance.</p>
+
+<p>If the XML is invalid, you'll get an error report with the line number instead of output. Fix the reported problem — usually an unclosed tag or an unescaped ampersand — and format again. Going the other direction, the Minify option strips whitespace back out for production files where size matters.</p>
+
+<p>Copy the result to your clipboard or download it as an <code>.xml</code> file. My routine with config files: format, review the structure, make my edit in the formatted version, validate once more, then deploy. The two extra minutes have saved me from more than one broken deploy.</p>
+
+<h3>Before and After Example</h3>
+
+<p>A typical minified API response fragment:</p>
+
+<p><strong>Input (minified):</strong></p>
+<p><code>&lt;catalog&gt;&lt;book id="bk101"&gt;&lt;author&gt;Gambardella, Matthew&lt;/author&gt;&lt;title&gt;XML Developer's Guide&lt;/title&gt;&lt;price&gt;44.95&lt;/price&gt;&lt;/book&gt;&lt;/catalog&gt;</code></p>
+
+<p><strong>Output (formatted, 2-space indent):</strong></p>
+<p><code>&lt;catalog&gt;<br>&nbsp;&nbsp;&lt;book id="bk101"&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;author&gt;Gambardella, Matthew&lt;/author&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;XML Developer's Guide&lt;/title&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;price&gt;44.95&lt;/price&gt;<br>&nbsp;&nbsp;&lt;/book&gt;<br>&lt;/catalog&gt;</code></p>
+
+<p>Now the nesting is honest: the book element contains three children, and the <code>id</code> attribute sits visibly on the book tag. On a real document with hundreds of elements, this is the difference between auditing the structure and guessing at it.</p>
+
+<h3>Where Formatted XML Matters Most</h3>
+
+<table>
+<thead><tr><th>Use case</th><th>Example files</th><th>Why format</th></tr></thead>
+<tbody>
+<tr><td>SOAP / enterprise APIs</td><td>SOAP envelopes, WSDL</td><td>Debug request/response payloads</td></tr>
+<tr><td>Config files</td><td>web.config, pom.xml, AndroidManifest.xml</td><td>Review settings before deployment</td></tr>
+<tr><td>Data exchange</td><td>EDI documents, import feeds</td><td>Validate structure before importing</td></tr>
+<tr><td>Graphics</td><td>SVG files</td><td>Edit shapes and attributes by hand</td></tr>
+<tr><td>Syndication</td><td>RSS / Atom feeds</td><td>Inspect feed structure and troubleshoot</td></tr>
+<tr><td>Office documents</td><td>DOCX internals (it's zipped XML)</td><td>Recover or inspect document content</td></tr>
+</tbody>
+</table>
+
+<p>Config files deserve special emphasis: a formatted <code>pom.xml</code> or <code>AndroidManifest.xml</code> makes version-to-version comparisons possible. Diff two formatted configs and the actual change jumps out; diff two minified ones and you get one giant changed line that tells you nothing.</p>
+
+<h3>Who Uses an XML Formatter?</h3>
+
+<p><strong>Enterprise developers</strong> working with SOAP services format every request and response during integration. A readable envelope is how you confirm the service received what you intended to send.</p>
+
+<p><strong>DevOps engineers</strong> validate and review XML configs before deployment — one malformed tag in a deployment descriptor can take down an application server.</p>
+
+<p><strong>Data engineers</strong> inspect XML feeds and EDI documents during integration work, validating structure before data ever touches the pipeline.</p>
+
+<p><strong>Students</strong> learning XML get their first real look at document structure through a formatter — nesting, attributes, and namespaces become visible concepts instead of abstract ones.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant beautification</strong> — paste minified or messy XML, get readable output in one click.</li>
+<li><strong>Built-in validation</strong> — syntax errors reported with line numbers.</li>
+<li><strong>Minify mode</strong> — compress back to a single line for production.</li>
+<li><strong>Adjustable indentation</strong> — 2 or 4 spaces, matching your preference.</li>
+<li><strong>Syntax highlighting</strong> — tags, attributes, values, and comments color-coded.</li>
+<li><strong>CDATA & namespace safe</strong> — special sections and prefixed elements preserved correctly.</li>
+<li><strong>100% free</strong> — no account, handles multi-megabyte documents.</li>
+<li><strong>Private by design</strong> — everything runs in your browser; your documents never leave your device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this XML formatter free?</h4>
+<p>Yes — free, no signup, no limits on document size.</p>
+
+<h4>Does formatting change my XML data?</h4>
+<p>No. Only whitespace and indentation change; elements, attributes, and values stay identical.</p>
+
+<h4>Can it validate my XML?</h4>
+<p>Yes. Invalid XML — unclosed tags, mismatched elements, bad characters — produces an error report with the line number instead of output.</p>
+
+<h4>What about CDATA sections?</h4>
+<p>They're preserved untouched. CDATA contents are literal text, so the formatter doesn't touch what's inside.</p>
+
+<h4>Can I minify XML too?</h4>
+<p>Yes — minify mode strips all unnecessary whitespace into a single compact line for production files.</p>
+
+<h4>Which indent size should I use?</h4>
+<p>2 spaces for compact web documents, 4 spaces for deeply nested enterprise XML. Either is fine as long as you're consistent.</p>
+
+<h4>Why won't my XML format?</h4>
+<p>The usual causes: an unclosed tag, a mismatched open/close pair, an unescaped <code>&amp;</code> (write <code>&amp;amp;</code>), or a missing root element. The error report points at the line.</p>
+
+<h4>Is my document uploaded anywhere?</h4>
+<p>No. Formatting and validation happen entirely in your browser.</p>
+</article>

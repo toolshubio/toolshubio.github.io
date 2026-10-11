@@ -1,64 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <title>Comprehensive SEO Checklist | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../image-tools/css/global.css">
-    <link rel="stylesheet" href="../image-tools/css/components.css">
-    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comprehensive SEO Checklist | TOOLSHUB</title>
+<meta name="description" content="">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../image-tools/css/v3-design.css">
+<style>
+/* v3 compat — legacy tool markup mapped onto the v3 design system */
+:root{--border-color:#e4e4e7;--bg-tertiary:#f4f4f5;--bg-primary:#ffffff;--text-primary:#0a0a0b;--text-secondary:#3f3f46;--color-seo:#4f46e5}
+.ws-input,select.ws-input,textarea.ws-input{width:100%;border:1.5px solid #e4e4e7;border-radius:12px;padding:14px 16px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;outline:none;transition:.2s;background:#fff;color:#0a0a0b}
+.ws-input:focus{border-color:#4f46e5;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.ws-input::placeholder{color:#a1a1aa}
+.input-group{margin-bottom:20px}
+.input-label{display:block;font-weight:600;font-size:.92rem;margin-bottom:10px;color:#0a0a0b}
+.input-desc{font-size:.85rem;color:#71717a;margin-top:10px;line-height:1.6}
+.action-bar{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap}
+.output-section{margin-top:28px}
+.section-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.section-title{font-size:1.1rem;font-weight:700;letter-spacing:-.01em}
+.output-container{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden;background:#fff}
+.output-container table{width:100%;border-collapse:collapse;font-size:.94rem}
+.output-container th,.output-container td{padding:12px 16px;border-bottom:1px solid #f4f4f5;text-align:left}
+.output-code{font-family:monospace;font-size:.9rem;background:#f4f4f5;border:1px solid #e4e4e7;border-radius:12px;padding:16px;white-space:pre-wrap;word-break:break-all;color:#0a0a0b}
+.container,.tool-interface-container{max-width:100%}
+.schema-form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.mb-md{margin-bottom:16px}.mb-lg{margin-bottom:24px}.mb-sm{margin-bottom:8px}.mt-md{margin-top:16px}.mt-lg{margin-top:24px}.mt-sm{margin-top:8px}.text-center{text-align:center}
+.tab,.mode-btn,.device-tab,.preview-tab,.editor-tab,.nav-item{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;border:1px solid #e4e4e7;background:#fff;font-size:.88rem;font-weight:600;cursor:pointer;color:#3f3f46;transition:.15s;font-family:inherit}
+.tab:hover,.mode-btn:hover,.device-tab:hover,.preview-tab:hover,.editor-tab:hover,.nav-item:hover{border-color:#c7d2fe}
+.tab.active,.mode-btn.active,.device-tab.active,.preview-tab.active,.editor-tab.active,.nav-item.active{background:#0a0a0b;color:#fff;border-color:#0a0a0b}
+.btn-add-schema,.tu-btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;border:1px solid #e4e4e7;background:#fff;font-size:.85rem;font-weight:600;cursor:pointer;color:#3f3f46;transition:.15s;font-family:inherit}
+.btn-add-schema:hover,.tu-btn-ghost:hover{border-color:#c7d2fe;background:#eef2ff}
+.hidden{display:none!important}
+.selected{outline:2px solid #4f46e5;outline-offset:2px}
+.visual-card,.seo-card{border:1.5px solid #e4e4e7;border-radius:16px;padding:20px;cursor:pointer;transition:.15s;background:#fff}
+.visual-card:hover,.seo-card:hover{border-color:#c7d2fe}
+.option-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:24px}
+.card-icon{font-size:1.4rem;color:#4f46e5;display:block;margin-bottom:10px}
+.card-title{font-weight:700;margin-bottom:6px;color:#0a0a0b}
+.card-desc{font-size:.88rem;color:#71717a}
+.feature-card{border:1px solid #e4e4e7;border-radius:16px;padding:20px;background:#fff}
+.feature-title{font-size:.85rem;font-weight:600;color:#3f3f46;margin-bottom:8px}
+.feature-desc{font-size:.9rem;color:#71717a}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #f4f4f5;font-size:.92rem;color:#0a0a0b}
+.toggle-switch{position:relative;display:inline-block;width:48px;height:26px;flex:none}
+.toggle-switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;inset:0;background:#d4d4d8;border-radius:99px;transition:.2s;cursor:pointer}
+.slider:before{content:"";position:absolute;width:20px;height:20px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s}
+.toggle-switch input:checked+.slider{background:#4f46e5}
+.toggle-switch input:checked+.slider:before{transform:translateX(22px)}
+.checklist-item{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #e4e4e7;border-radius:12px;margin-bottom:10px;background:#fff;cursor:pointer;transition:.15s}
+.checklist-item:hover{border-color:#c7d2fe}
+.seo-result-item,.preview-box,#serpPreviewBox{border:1px solid #e4e4e7;border-radius:16px;padding:20px;background:#fff;margin-top:16px}
+.seo-url{color:#166534;font-size:.85rem}
+.seo-title{color:#1a0dab;font-size:1.1rem;margin:4px 0}
+.seo-desc{color:#3f3f46;font-size:.9rem}
+.status-badge{display:inline-block;padding:.5rem 1rem;border-radius:30px;font-weight:700}
+.bulk-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.bulk-table th,.bulk-table td{padding:10px 12px;border-bottom:1px solid #f4f4f5;text-align:left}
+.emotional-word{background:#fef3c7;padding:1px 4px;border-radius:4px}
+.power-word{background:#eef2ff;padding:1px 4px;border-radius:4px}
+.invalid,.duplicate-error{border-color:#ef4444!important}
+button.active:not(.nav-item):not(.tab):not(.mode-btn):not(.device-tab):not(.preview-tab):not(.editor-tab),a.active{box-shadow:inset 0 0 0 2px #4f46e5}
+.sim-row{display:flex;gap:10px;align-items:center;padding:8px 0;font-size:.9rem;color:#3f3f46}
+/* website speed test dashboard */
+.speed-dashboard{max-width:100%}
+.url-input-container{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.url-input-container .ws-input{flex:1;min-width:240px}
+.results-container,.history-section{margin-top:24px}
+.perf-header{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-bottom:20px}
+.vitals-summary{flex:1;min-width:240px}
+.gauge-wrapper{display:flex;gap:16px;flex-wrap:wrap}
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+.category-scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:20px 0}
+.screenshot-section,.audit-container{margin-top:28px}
+.audit-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:10px}
+.table-responsive{overflow-x:auto;border:1px solid #e4e4e7;border-radius:16px}
+.audit-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.audit-table th,.audit-table td{padding:12px 14px;border-bottom:1px solid #f4f4f5;text-align:left}
+.badge{display:inline-block;padding:4px 12px;border-radius:99px;font-size:.78rem;font-weight:700;background:#eef2ff;color:#4f46e5}
+.badge-secondary{background:#f4f4f5;color:#3f3f46}
+.analyze-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:14px;font-weight:600;font-size:.92rem;cursor:pointer;border:none;background:#0a0a0b;color:#fff;font-family:inherit;transition:.2s}
+.analyze-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -8px rgba(0,0,0,.3)}
+.loading-overlay{position:fixed;inset:0;background:rgba(255,255,255,.94);z-index:50;display:flex;align-items:center;justify-content:center}
+.progress-card{background:#fff;border:1px solid #e4e4e7;border-radius:20px;padding:36px;max-width:480px;width:90%;box-shadow:0 12px 40px -12px rgba(0,0,0,.12)}
+.p-bar{height:10px;background:#f4f4f5;border-radius:99px;overflow:hidden;margin:16px 0}
+.p-fill{height:100%;width:0;background:linear-gradient(135deg,#4f46e5,#7c3aed);border-radius:99px;transition:width .3s}
+.wst-step{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:.9rem;color:#3f3f46}
+.s-spin{width:16px;height:16px;border:2px solid #e4e4e7;border-top-color:#4f46e5;border-radius:50%;animation:spn .8s linear infinite;display:none;flex:none}
+@keyframes spn{to{transform:rotate(360deg)}}
+.error-board{border:1px solid #fecaca;background:#fef2f2;border-radius:16px;padding:28px;margin-top:20px}
+.screenshot-container{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden}
+.screenshot-img{max-width:100%;display:block}
+.data-source-badge{display:inline-block;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;background:#eef2ff;color:#4f46e5;margin-bottom:8px}
+/* aliases for markup injected by legacy JS at runtime */
+.seo-textarea{width:100%;min-height:160px;border:1.5px solid #e4e4e7;border-radius:16px;padding:22px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;line-height:1.8;resize:vertical;outline:none;transition:.2s;background:#fafafa;color:#0a0a0b}
+.seo-textarea:focus{border-color:#4f46e5;background:#fff;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.seo-textarea::placeholder{color:#a1a1aa}
+.seo-input,select.seo-input,.seo-select{width:100%;border:1.5px solid #e4e4e7;border-radius:12px;padding:14px 16px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;outline:none;transition:.2s;background:#fff;color:#0a0a0b}
+.seo-input:focus,.seo-select:focus{border-color:#4f46e5;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.seo-input::placeholder{color:#a1a1aa}
 
-
-  <link rel="stylesheet" href="../image-tools/css/th-header-footer.css">
+</style>
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../index.html#tools">All Tools</a><a href="../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../index.html#tools">Explore Tools</a></div>
+</div></header>
+<!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+<nav class="crumbs"><a href="../index.html">Home</a> &nbsp;/&nbsp; <span>Ultimate SEO Checklist</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">SEO Tools</span>
+  <h1>Ultimate <em>SEO Checklist</em></h1>
+  <p>Track your progress and ensure every page is perfectly optimized.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../image-tools/index.html">Image Tools</a><a href="../pdf-tools/index.html">PDF Tools</a><a href="../text-tools/index.html">Text & Writing</a><a href="../seo-tools/index.html">SEO Tools</a><a href="../calculator-tools/index.html">Calculators</a><a href="../binary-tools/index.html">Binary Tools</a><a href="../code-format-tools/index.html">Code & Formatters</a><a href="../doc-tools/index.html">Documents</a><a href="../other-tools/index.html">Other Tools</a><a href="../about-us.html">About Us</a><a href="../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a> &gt;
-                <a href="index.html">SEO Tools</a> &gt;
-                <span>Ultimate SEO Checklist</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">Ultimate SEO Checklist</h1>
-                <p class="tool-description"></p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
-<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
-<div class="container text-center">
-<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Ultimate SEO Checklist</h1>
-<p class="hero-subtitle">Track your progress and ensure every page is perfectly optimized.</p>
-</div>
 </section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>Ultimate SEO Checklist</b><span>v3.0 · local</span></div>
+  <div class="ws-body">
+
 <div class="container" style="display: grid; grid-template-columns: 1fr 300px; gap: 2rem;">
 <div class="tool-interface-container">
 <div id="checklistContainer">
@@ -79,38 +153,47 @@
 <p id="progressStats" style="color: var(--text-secondary);">0 of 0 tasks completed</p>
 </div>
 <div class="action-bar" style="flex-direction: column; gap: 0.5rem;">
-<button class="btn-secondary" onclick="saveProgress()" style="width: 100%;">Save
+<button class="btn-secondary btn btn-light tu-btn tu-btn-primary" onclick="saveProgress()" style="width: 100%;"><i class="fa-solid fa-floppy-disk"></i> Save
                             Progress</button>
-<button class="btn-secondary" onclick="resetProgress()" style="width: 100%; border-color: #f44336; color: #f44336;">Reset All</button>
+<button class="btn-secondary btn btn-light tu-btn tu-btn-ghost" onclick="resetProgress()" style="width: 100%; border-color: #f44336; color: #f44336;"><i class="fa-solid fa-rotate-right"></i> Reset All</button>
 </div>
 </div>
 </aside>
 </div>
-            </div>
-            <section class="seo-article" data-tool="seo-checklist">
-<article class="tool-article">
-<h2>SEO Checklist — Free On-Page & Technical Audit Tool</h2>
 
-<p>The worst SEO mistake is the one you never notice: a missing title tag, a blocked robots.txt, an image with no alt text, a canonical pointing at the wrong page. Any one of them can quietly cost you traffic for months. An SEO checklist tool runs the full health check in one go — paste a URL or work through the list, and it flags what is missing, what is broken, and what is fine, so nothing slips through.</p>
+  </div>
+</div></div>
 
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 — HOW IT WORKS</span><h2>Three steps, zero learning curve</h2></div>
+  <div class="steps">
+<div class="step"><div class="step-n">i.</div><h3>Work through the list</h3><p>Check off each on-page SEO task as you complete it.</p></div>
+<div class="step"><div class="step-n">ii.</div><h3>Save your progress</h3><p>Your checklist state is saved automatically in your browser.</p></div>
+<div class="step"><div class="step-n">iii.</div><h3>Ship with confidence</h3><p>Publish only when every item is green.</p></div>
+  </div>
+</section>
+
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>SEO Checklist — Free On-Page &amp; Technical Audit Tool</h2>
+    <p class="deck">The worst SEO mistake is the one you never notice: a missing title tag, a blocked robots.txt, an image with no alt text, a canonical pointing at the wrong page. Any one of them can quietly cost you traffic for months. An SEO checklist tool runs the full health check in one go — paste a URL or work through the list, and it flags what is missing, what is broken, and what is fine, so nothing slips through.</p>
+    <div class="article-meta">
+      <div class="avatar">T</div>
+      <div><b>TOOLSHUB Editorial</b><span>8 min read · Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+<p class="lead">The worst SEO mistake is the one you never notice: a missing title tag, a blocked robots.txt, an image with no alt text, a canonical pointing at the wrong page. Any one of them can quietly cost you traffic for months. An SEO checklist tool runs the full health check in one go — paste a URL or work through the list, and it flags what is missing, what is broken, and what is fine, so nothing slips through.</p>
 <h3>What Is an SEO Checklist Tool?</h3>
-
 <p>SEO breaks into two halves, and the checklist covers both. <strong>On-page SEO</strong> is everything about the page itself: title tag length and quality, meta description, heading structure (one H1, logical H2s), keyword usage, image alt text, internal links, and content depth. <strong>Technical SEO</strong> is everything around it: HTTPS, mobile-friendliness, page speed and Core Web Vitals, canonical URLs, robots.txt and sitemap.xml presence, structured data validity, indexation status, and broken links or images.</p>
-
 <p>A checklist tool automates the mechanical part of the audit. Point it at a page and it runs dozens of checks in seconds — meta tags, Open Graph and Twitter Cards, heading hierarchy, broken links and images, missing alt text, schema detection, canonical, robots, sitemap, performance signals, even accessibility issues like duplicate IDs and missing form labels. You get a scored report with passed checks, warnings, and critical issues, prioritized so you know what to fix first. It does not replace judgment — it replaces the three hours of manual clicking that used to come before the judgment.</p>
-
 <h3>How to Use the SEO Checklist Tool</h3>
-
 <p>My audit routine fits into about fifteen minutes per page.</p>
-
 <p>Start by running the URL through the checklist tool. Read the critical issues first — noindex tags, robots blocks, missing titles, broken canonicals — because one blocker can nullify everything else. Fix those before touching anything cosmetic. Then work through the warnings: a title slightly over length, a missing meta description, an image without alt text, a heading skipped from H1 to H3.</p>
-
 <p>Next, check the technical basics the tool verifies: HTTPS active, viewport configured for mobile, sitemap submitted, robots.txt valid. Run the Core Web Vitals section — a slow page quietly kills rankings, and the tool's performance hints (unoptimized images, render-blocking scripts, caching) point at the fixes.</p>
-
 <p>Finally, re-run the checklist after your fixes. The score going up is your confirmation, and the remaining warnings become your next session's work. I audit important pages monthly and run a full-site pass quarterly — plus an extra audit any time something big changes, like a redesign, a migration, or a sudden traffic drop.</p>
-
 <h3>The Core Checks, Grouped</h3>
-
 <table>
 <thead><tr><th>Category</th><th>What gets checked</th><th>Why it matters</th></tr></thead>
 <tbody>
@@ -123,21 +206,13 @@
 <tr><td>Performance</td><td>Core Web Vitals, caching, script weight</td><td>Direct ranking signal; conversions</td></tr>
 </tbody>
 </table>
-
 <h3>Who Uses SEO Checklist Tools?</h3>
-
 <p><strong>Bloggers and site owners</strong> run quick checks before publishing — catching a missing description takes ten seconds with a tool.</p>
-
 <p><strong>Freelance SEOs</strong> use checklist reports to walk clients through findings in plain language during onboarding.</p>
-
 <p><strong>Developers</strong> run them at launch to verify the technical basics — HTTPS, canonicals, sitemaps — before a site goes live.</p>
-
 <p><strong>E-commerce managers</strong> audit product templates in bulk, catching unoptimized images and thin descriptions before they cost conversions.</p>
-
 <p><strong>Startup founders</strong> use them to catch indexing regressions and performance drops as the product changes, without hiring an agency.</p>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>20+ checks in one run</strong> — on-page, technical, and performance in a single report.</li>
 <li><strong>Scored results</strong> — a grade (A+ to F) plus pass/warning/critical breakdown.</li>
@@ -148,77 +223,42 @@
 <li><strong>100% free</strong> — no signup on most tools.</li>
 <li><strong>Private and instant</strong> — results in seconds, right in the browser.</li>
 </ul>
+<h3>Frequently asked</h3>
+<div class="faq">
+<div class="faq-item open"><div class="faq-q">What does an SEO checklist check? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Typically 20+ items across on-page (titles, meta, headings, images, links), technical (HTTPS, canonicals, robots, sitemaps, schema), and performance (Core Web Vitals, caching). You get a scored report with prioritized fixes.</p></div></div>
+<div class="faq-item"><div class="faq-q">How often should I run an SEO audit? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>A quick health check monthly, a full audit quarterly, and an extra run after any big change — a redesign, migration, traffic drop, or Google update.</p></div></div>
+<div class="faq-item"><div class="faq-q">Can a free checklist replace paid audit tools? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>For single-page checks, yes — the mechanical checks are the same. Paid tools win on site-wide crawling at scale (thousands of URLs) and historical tracking.</p></div></div>
+<div class="faq-item"><div class="faq-q">What is the most common issue checklists find? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Missing or overlong title tags, missing meta descriptions, images without alt text, and broken internal links. All are quick fixes with real impact.</p></div></div>
+<div class="faq-item"><div class="faq-q">Does the tool change my website? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>No. It only reads and reports. You make the fixes yourself in your CMS or code.</p></div></div>
+<div class="faq-item"><div class="faq-q">Is this checklist tool free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — most online SEO checklist tools are free with no signup required.</p></div></div>
+<div class="faq-item"><div class="faq-q">What should I fix first? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Critical blockers first: noindex tags, robots blocks, missing titles, broken canonicals. One blocker can outweigh a dozen minor warnings.</p></div></div>
+<div class="faq-item"><div class="faq-q">Do I need to know SEO to use it? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>No. The reports are written for non-technical users — each finding explains what is wrong and why it matters, which is the point of the tool.</p></div></div>
+</div>
+  </div>
+</article></div>
 
-<h3>Frequently Asked Questions</h3>
-
-<h4>What does an SEO checklist check?</h4>
-<p>Typically 20+ items across on-page (titles, meta, headings, images, links), technical (HTTPS, canonicals, robots, sitemaps, schema), and performance (Core Web Vitals, caching). You get a scored report with prioritized fixes.</p>
-
-<h4>How often should I run an SEO audit?</h4>
-<p>A quick health check monthly, a full audit quarterly, and an extra run after any big change — a redesign, migration, traffic drop, or Google update.</p>
-
-<h4>Can a free checklist replace paid audit tools?</h4>
-<p>For single-page checks, yes — the mechanical checks are the same. Paid tools win on site-wide crawling at scale (thousands of URLs) and historical tracking.</p>
-
-<h4>What is the most common issue checklists find?</h4>
-<p>Missing or overlong title tags, missing meta descriptions, images without alt text, and broken internal links. All are quick fixes with real impact.</p>
-
-<h4>Does the tool change my website?</h4>
-<p>No. It only reads and reports. You make the fixes yourself in your CMS or code.</p>
-
-<h4>Is this checklist tool free?</h4>
-<p>Yes — most online SEO checklist tools are free with no signup required.</p>
-
-<h4>What should I fix first?</h4>
-<p>Critical blockers first: noindex tags, robots blocks, missing titles, broken canonicals. One blocker can outweigh a dozen minor warnings.</p>
-
-<h4>Do I need to know SEO to use it?</h4>
-<p>No. The reports are written for non-technical users — each finding explains what is wrong and why it matters, which is the point of the tool.</p>
-</article>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 — KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+<a class="rel" href="meta-tag-generator.html"><i class="fa-solid fa-tags" style="color:#4f46e5"></i><h3>Meta Tag Generator</h3><p>Generate and validate meta tags.</p></a>
+<a class="rel" href="robots-txt-generator.html"><i class="fa-solid fa-robot" style="color:#7c3aed"></i><h3>Robots.txt Generator</h3><p>Visual robots.txt rule builder.</p></a>
+<a class="rel" href="sitemap-generator.html"><i class="fa-solid fa-sitemap" style="color:#4f46e5"></i><h3>Sitemap Generator</h3><p>XML sitemaps with image and video.</p></a>
+<a class="rel" href="website-speed-test.html"><i class="fa-solid fa-gauge-high" style="color:#7c3aed"></i><h3>Website Speed Test</h3><p>Lighthouse speed analysis.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../image-tools/index.html">Image Tools</a></li><li><a href="../pdf-tools/index.html">PDF Tools</a></li><li><a href="../text-tools/index.html">Text & Writing</a></li><li><a href="../seo-tools/index.html">SEO Tools</a></li><li><a href="../calculator-tools/index.html">Calculators</a></li><li><a href="../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../index.html#tools">All 203 tools</a></li><li><a href="../index.html#seo-tools">SEO tools</a></li><li><a href="../index.html#image-tools">Image tools</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../about-us.html">About</a><a href="../contact-us.html">Contact</a><a href="../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>© 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script>
         const checklistData = {
             "Basic SEO": [
@@ -332,7 +372,6 @@
         // Init
         renderChecklist();
 
-    </script>
-  <script src="../image-tools/js/th-interactions.js"></script>
+    </script><script src="../image-tools/js/th-interactions.js"></script><script src="../image-tools/js/tu-unified.js"></script><script src="../image-tools/js/v3.js"></script>
 </body>
 </html>

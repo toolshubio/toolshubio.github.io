@@ -1,0 +1,93 @@
+<article class="tool-article">
+<h2>PDF to SVG Converter — Turn PDF Pages Into Scalable Vector Graphics</h2>
+
+<p>A designer friend once sent me a logo trapped inside a PDF brand-guideline document. She needed it as an SVG for a website — infinitely scalable, tiny file size, editable in Figma. Screenshotting it would have produced a blurry raster image; converting the PDF page to SVG gave her the actual vector paths, crisp at any size. A PDF to SVG converter extracts the vector content of your pages — text, shapes, lines, curves — into SVG files that scale forever without losing sharpness.</p>
+
+<h3>What Makes SVG Different From JPG and PNG</h3>
+
+<p>JPG and PNG are raster formats: grids of pixels. Enlarge them and they blur. SVG is vector: mathematical descriptions of shapes, lines, and text. Enlarge an SVG ten times and every edge stays razor sharp, because the image is redrawn from its geometry rather than stretched. For logos, icons, diagrams, and typography, this is transformative — one file serves a favicon and a billboard.</p>
+
+<p>SVGs are also tiny for the content they suit. A logo that is 2 MB as a PNG might be 20 KB as an SVG. And they are editable: open one in Illustrator, Figma, or even a text editor, and you can recolor shapes, adjust curves, and change text. Try that with a JPG.</p>
+
+<p>The honest caveat: SVG conversion only produces true vectors from vector content. If your PDF page is a scan — a photograph of a page — there are no vectors inside to extract, and the "SVG" will just be the raster image wrapped in an SVG container. It will work, but it will not scale magically. Vector PDFs (exported from Illustrator, InDesign, CAD, or Office apps) are where this tool shines.</p>
+
+<h3>How to Use the PDF to SVG Converter</h3>
+
+<p>Drop your PDF into the tool and select the pages you want — SVG conversion is usually a page-at-a-time or selected-pages affair, since each page becomes its own SVG file. Hit Convert and download the results.</p>
+
+<p>My check: open the SVG in a browser and zoom in hard — 400%, 800%. True vector content stays perfectly sharp at any zoom; if edges blur, the source page was raster and you have an embedded image, not vectors. Also open it in a vector editor if you plan to edit: text may come through as editable text or as outlined paths depending on the tool, and knowing which saves surprises later.</p>
+
+<p>For web use, run the SVG through an optimizer afterward if file size matters — converters sometimes emit verbose SVGs, and a quick optimization pass can halve the size with no visual change.</p>
+
+<h3>Vector vs. Raster: Know Your Source</h3>
+
+<table>
+<thead><tr><th>PDF source</th><th>SVG result</th><th>Scales infinitely?</th></tr></thead>
+<tbody>
+<tr><td>Exported from Illustrator/InDesign</td><td>True vectors — paths, shapes, text</td><td>Yes</td></tr>
+<tr><td>Exported from Word/PowerPoint</td><td>Mostly vector — shapes and text</td><td>Yes</td></tr>
+<tr><td>CAD / technical drawings</td><td>True vectors — lines and curves</td><td>Yes</td></tr>
+<tr><td>Scanned document</td><td>Raster image in an SVG wrapper</td><td>No</td></tr>
+<tr><td>Phone photo of a page</td><td>Raster image in an SVG wrapper</td><td>No</td></tr>
+</tbody>
+</table>
+
+<p>The rule is simple: vectors in, vectors out. If the PDF was born digital from design software, expect excellent SVGs. If it was born from a scanner, use PNG instead.</p>
+
+<h3>Common Uses for PDF-to-SVG Conversion</h3>
+
+<p><strong>Logo extraction.</strong> Pulling logos out of brand-guideline PDFs as editable, scalable SVGs for web and print use.</p>
+
+<p><strong>Web development.</strong> Converting PDF diagrams and icons into lightweight SVGs that scale crisply on retina displays and stay tiny.</p>
+
+<p><strong>Icon sets.</strong> Extracting icon pages from PDF asset sheets into individual SVG files for design systems.</p>
+
+<p><strong>Technical drawings.</strong> CAD-exported PDFs become SVGs that engineers can view, measure, and annotate in vector tools.</p>
+
+<p><strong>Print design.</strong> Moving vector artwork from a PDF into Illustrator or Inkscape for editing and repurposing.</p>
+
+<h3>Who Converts PDFs to SVG?</h3>
+
+<p><strong>Web developers</strong> needing crisp, lightweight graphics that scale on every screen.</p>
+
+<p><strong>Designers</strong> extracting and editing vector assets trapped in PDFs.</p>
+
+<p><strong>Marketing teams</strong> pulling logos from brand documents for campaigns.</p>
+
+<p><strong>Engineers</strong> working with vector drawings that need to stay precise at any zoom.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>True vector output</strong> — paths, shapes, and text extracted as editable SVG geometry.</li>
+<li><strong>Infinite scalability</strong> — sharp at favicon size and billboard size alike.</li>
+<li><strong>Tiny file sizes</strong> — vector SVGs are a fraction of equivalent raster images.</li>
+<li><strong>Page selection</strong> — convert the pages you need, each as its own SVG.</li>
+<li><strong>Editable results</strong> — open in Figma, Illustrator, or Inkscape and modify.</li>
+<li><strong>100% client-side</strong> — your documents never leave your browser.</li>
+<li><strong>Free, unlimited, no watermark</strong> — no signup, no payment, clean output.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Will my SVG scale without losing quality?</h4>
+<p>Yes, if the PDF contained vector content — shapes and text redraw perfectly at any size. Scanned pages become embedded raster images and will not scale.</p>
+
+<h4>Can I edit the SVG afterward?</h4>
+<p>Yes. Open it in any vector editor (Figma, Illustrator, Inkscape) to recolor, reshape, and retype. Text may arrive as editable text or outlined paths.</p>
+
+<h4>Why is my SVG blurry when zoomed?</h4>
+<p>The source page was raster (a scan or photo), so the SVG just wraps that image. True vectors never blur — check your PDF's origin.</p>
+
+<h4>Is SVG good for photographs?</h4>
+<p>No. SVG excels at logos, icons, diagrams, and text. Photographs should stay JPG or PNG.</p>
+
+<h4>Can I convert only one page?</h4>
+<p>Yes — select individual pages or a range; each becomes its own SVG file.</p>
+
+<h4>Is it safe for confidential documents?</h4>
+<p>With a client-side tool, yes — the file is processed in your browser and never uploaded anywhere.</p>
+
+<h4>Is it free?</h4>
+<p>Completely free — no signup, no limits, no watermark.</p>
+</article>

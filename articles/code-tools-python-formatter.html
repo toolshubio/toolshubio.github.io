@@ -1,0 +1,100 @@
+<article class="tool-article">
+<h2>Python Formatter — Free Online Python Code Beautifier</h2>
+
+<p>Python has one quirk that no other mainstream language shares: indentation isn't style, it's syntax. Get it wrong and your code doesn't just look bad — it breaks. I learned this debugging a data script where a single misaligned line silently moved a database write outside a loop, processing one row instead of ten thousand. A Python formatter cleans up indentation, spacing, and structure so your code is both readable and correct-looking. Paste your script in, get clean PEP 8-style formatting out, right in your browser.</p>
+
+<h3>What Is a Python Formatter?</h3>
+
+<p>A Python formatter (or beautifier) reorganizes your code according to the community's style conventions — most famously PEP 8, Python's official style guide. It fixes indentation depth, adds spaces around operators, trims trailing whitespace, normalizes quote usage, and sorts out inconsistent blank lines between functions and classes.</p>
+
+<p>The well-known names in this space are Black (the "uncompromising" opinionated formatter), autopep8, and YAPF from Google. Online formatters apply the same principles without requiring you to install anything — handy for a quick cleanup of a snippet before pasting it into a notebook, a tutorial, or a code review.</p>
+
+<p>One boundary to understand: a formatter adjusts layout, not logic. It won't fix a bug, rename a bad variable, or tell you that your algorithm is wrong. Think of it as a proofreader for punctuation, not an editor for ideas. Run your code to test it; format it to read it.</p>
+
+<h3>How to Use the Python Formatter</h3>
+
+<p>Copy your Python code — from a <code>.py</code> file, a Jupyter notebook cell, a tutorial, or a Stack Overflow answer you're testing — and paste it into the input box at the top of the tool.</p>
+
+<p>Choose your indentation size. Python's PEP 8 recommends 4 spaces, and nearly every professional codebase follows that; 2 spaces shows up in some projects, 8 in legacy ones. Match whatever your project uses — consistency with the surrounding code matters more than the number itself. Then click the Format button and the cleaned-up result appears in the output area.</p>
+
+<p>Copy the result to your clipboard or download it as a <code>.py</code> file. Before you trust it in production, run it: formatting only rearranges whitespace, so a quick execution confirms the logic survived intact. I make this a rule with any auto-formatted code — trust, but verify with the interpreter.</p>
+
+<p>If the tool reports a syntax error, take it seriously. Unlike JavaScript or CSS formatters, Python formatters can refuse input with unbalanced brackets or broken indentation, because in Python those are execution errors, not just style problems. Fix the syntax first, then format.</p>
+
+<h3>Before and After Example</h3>
+
+<p>Real-world messy Python usually looks like this — inconsistent spacing, ragged indentation, cramped operators:</p>
+
+<p><strong>Input (messy):</strong></p>
+<p><code>def get_users(    ):<br>users=[<br>{"id":1,   "name":"Alice","email":"alice@example.com"},<br>    {"id":2,"name":"Bob",   "email":"bob@example.com"},<br>]<br>return    users</code></p>
+
+<p><strong>Output (formatted, 4-space indent):</strong></p>
+<p><code>def get_users():<br>&nbsp;&nbsp;&nbsp;&nbsp;users = [<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"id": 1, "name": "Alice", "email": "alice@example.com"},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{"id": 2, "name": "Bob", "email": "bob@example.com"},<br>&nbsp;&nbsp;&nbsp;&nbsp;]<br>&nbsp;&nbsp;&nbsp;&nbsp;return users</code></p>
+
+<p>Same logic, but now the structure is honest: you can see at a glance that <code>return users</code> belongs inside the function and that both dictionaries are list items. When I review pull requests, this is the difference between scanning a diff in seconds and studying it for minutes.</p>
+
+<h3>Formatting Options Worth Knowing</h3>
+
+<table>
+<thead><tr><th>Option</th><th>What it does</th><th>Typical choice</th></tr></thead>
+<tbody>
+<tr><td>Indent size</td><td>Spaces per nesting level</td><td>4 spaces (PEP 8 standard)</td></tr>
+<tr><td>Tabs vs. spaces</td><td>Indentation character</td><td>Spaces — mixing tabs and spaces is a syntax error</td></tr>
+<tr><td>Line length</td><td>Target max characters per line</td><td>79 (PEP 8) or 88 (Black's default)</td></tr>
+<tr><td>Operator spacing</td><td><code>x=1</code> → <code>x = 1</code></td><td>Always on</td></tr>
+<tr><td>Trailing whitespace</td><td>Strips invisible spaces at line ends</td><td>Always on — they cause noisy diffs</td></tr>
+<tr><td>Blank lines</td><td>Spacing between functions/classes</td><td>2 lines between top-level defs (PEP 8)</td></tr>
+</tbody>
+</table>
+
+<p>The tabs-vs-spaces row deserves emphasis: Python 3 raises a <code>TabError</code> if a file mixes tabs and spaces for indentation. A formatter that normalizes everything to spaces quietly eliminates an entire class of infuriating, invisible bugs.</p>
+
+<h3>Who Uses a Python Formatter?</h3>
+
+<p><strong>Data scientists</strong> clean up notebook cells and analysis scripts before sharing them. A messy notebook is hard to review; a formatted one lets colleagues focus on the analysis instead of the layout.</p>
+
+<p><strong>Students</strong> submitting assignments get more forgiving graders with readable code — and, more importantly, they start internalizing good style by seeing it applied to their own work.</p>
+
+<p><strong>Back-end developers</strong> run formatters before code reviews so reviewers spend their attention on logic rather than nitpicking whitespace. Many teams enforce this automatically in CI pipelines.</p>
+
+<p><strong>Open-source contributors</strong> format patches to match a project's style guide before submitting. A patch that already looks like the codebase gets merged faster.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant formatting</strong> — paste code, click once, get clean output.</li>
+<li><strong>PEP 8-style output</strong> — indentation, spacing, and structure aligned with Python's style guide.</li>
+<li><strong>Adjustable indent size</strong> — 2 to 8 spaces, matching your project's convention.</li>
+<li><strong>Whitespace cleanup</strong> — trailing spaces trimmed, operators spaced, blank lines normalized.</li>
+<li><strong>Syntax error detection</strong> — broken code gets flagged instead of silently mangled.</li>
+<li><strong>100% free</strong> — no account, no limits.</li>
+<li><strong>Private by design</strong> — formatting runs in your browser; your code never leaves your device.</li>
+<li><strong>Copy and download</strong> — clipboard copy or save as a <code>.py</code> file.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this Python formatter free?</h4>
+<p>Yes — free, no signup, no usage limits.</p>
+
+<h4>Is the output PEP 8 compliant?</h4>
+<p>It follows PEP 8 conventions for indentation, spacing, and structure. For strict enforcement across a whole project, tools like Black or autopep8 in your CI pipeline are the next step.</p>
+
+<h4>Can it fix bugs in my code?</h4>
+<p>No — it only adjusts formatting. Logic errors, wrong variable names, and broken algorithms need you (and the interpreter) to fix.</p>
+
+<h4>Which indent size should I use?</h4>
+<p>4 spaces, per PEP 8 — that's what nearly every professional Python codebase uses.</p>
+
+<h4>Can I use tabs instead of spaces?</h4>
+<p>You shouldn't mix them — Python 3 raises a TabError. Stick with spaces, which is what the formatter produces.</p>
+
+<h4>Will formatting change how my code runs?</h4>
+<p>No, as long as the input is syntactically valid. Formatting only rearranges whitespace — but always run the result to confirm.</p>
+
+<h4>What if my code has a syntax error?</h4>
+<p>The formatter will report it rather than produce bad output. Fix the error first, then format again.</p>
+
+<h4>Is my code uploaded to a server?</h4>
+<p>No. All formatting happens locally in your browser.</p>
+</article>

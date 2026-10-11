@@ -1,59 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ultimate Batch Image Converter. Convert hundreds of images between PNG, JPG, WebP, AVIF, and SVG in one go. 100% private.">
-    <title>Batch Image Converter - Universal Multi-Format | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../../image-tools/css/global.css">
-    <link rel="stylesheet" href="../../image-tools/css/components.css">
-    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Batch Image Converter - Universal Multi-Format | TOOLSHUB</title>
+<meta name="description" content="Ultimate Batch Image Converter. Convert hundreds of images between PNG, JPG, WebP, AVIF, and SVG in one go. 100% private.">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../../image-tools/css/v3-design.css">
 
+<style>
+/* ---- TOOLSHUB v3 · image-tool workspace compatibility ---- */
+.ws-dropzone-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.dz-icon{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;display:grid;place-items:center;font-size:1.05rem;flex:none}
+.ws-dropzone-head>span:last-child{font-weight:600;font-size:.95rem;color:#3f3f46}
+.ws-dropzone{margin-bottom:8px}
+.tool-workspace{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:28px;align-items:start}
+.preview-area{min-width:0}.preview-area img{max-width:100%;height:auto}
+.control-panel{min-width:0}
+.control-section{margin-bottom:24px}.control-section:last-child{margin-bottom:0}
+.control-section-title{font-size:.95rem;font-weight:600;margin-bottom:14px;letter-spacing:-.01em}
+.control-group{margin-bottom:18px}.control-group:last-child{margin-bottom:0}
+.control-label{display:block;font-size:.85rem;font-weight:600;color:#3f3f46;margin-bottom:8px}
+.preset-buttons{display:flex;gap:8px;flex-wrap:wrap}
+.preset-btn,.mode-btn,.template-btn,.layout-btn{padding:10px 16px;border-radius:10px;border:1px solid #e4e4e7;background:#f4f4f5;font-family:'Inter',system-ui,sans-serif;font-size:.85rem;font-weight:500;cursor:pointer;color:#3f3f46;transition:.15s}
+.preset-btn:hover,.mode-btn:hover,.template-btn:hover,.layout-btn:hover{border-color:#c7d2fe}
+.preset-btn.active,.mode-btn.active,.template-btn.active,.layout-btn.active{background:#0a0a0b;color:#fff;border-color:#0a0a0b}
+.slider-input{width:100%;accent-color:#4f46e5}
+.form-select,.form-input{width:100%;padding:12px 14px;border:1.5px solid #e4e4e7;border-radius:12px;font-family:'Inter',system-ui,sans-serif;font-size:.92rem;background:#fafafa;color:#0a0a0b;outline:none}
+.form-select:focus,.form-input:focus{border-color:#4f46e5;background:#fff}
+.color-picker-wrapper{display:flex;gap:10px;align-items:center}
+.color-picker-wrapper input[type=color]{width:48px;height:44px;border:1px solid #e4e4e7;border-radius:10px;padding:4px;background:#fff;cursor:pointer}
+.toggle-control{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #f4f4f5}
+.toggle-label{font-size:.9rem;font-weight:500;color:#3f3f46}
+.toggle-switch{width:46px;height:26px;border-radius:99px;background:#e4e4e7;position:relative;cursor:pointer;transition:.2s;flex:none}
+.toggle-switch::after{content:"";position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.toggle-switch.active{background:#4f46e5}.toggle-switch.active::after{left:23px}
+.stats-display{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat-item{background:#fafafa;border:1px solid #e4e4e7;border-radius:12px;padding:14px;text-align:center}
+.stat-label{font-size:.72rem;color:#71717a;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+.stat-value{font-size:1.25rem;font-weight:700}.stat-value.highlight{color:#4f46e5}
+.badge{display:inline-block;font-size:.75rem;font-weight:600;background:#eef2ff;color:#4f46e5;padding:4px 10px;border-radius:99px}
+.badge-sm{font-size:.7rem}
+.tool-description{color:#3f3f46;font-size:.95rem;margin-bottom:20px}
+.checkbox-label{display:flex;align-items:center;gap:10px;font-size:.9rem;color:#3f3f46;cursor:pointer;padding:6px 0}
+.checkbox-label input{accent-color:#4f46e5;width:16px;height:16px}
+.adjust-group{margin-bottom:14px}
+.status-text{font-size:.85rem;color:#71717a;margin-top:12px}
+.stat-card{background:#fafafa;border:1px solid #e4e4e7;border-radius:12px;padding:16px}
+.stat-val{font-size:1.4rem;font-weight:700}
+.stat-lbl,.stat-row{font-size:.85rem;color:#71717a}
+.highlight{color:#4f46e5;font-weight:600}
+.progress-container{margin:16px 0}
+.progress-bar-bg{height:8px;background:#f4f4f5;border-radius:99px;overflow:hidden}
+.progress-bar-fill{height:100%;background:linear-gradient(135deg,#4f46e5,#7c3aed);border-radius:99px;transition:width .3s}
+.grid-inputs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.format-selector{display:flex;gap:8px;flex-wrap:wrap}
+.format-label{display:flex;align-items:center;gap:6px;font-size:.85rem;padding:8px 12px;border:1px solid #e4e4e7;border-radius:10px;cursor:pointer}
+.format-label input{accent-color:#4f46e5}
+.btn-primary{background:#0a0a0b;color:#fff}.btn-primary:hover{transform:translateY(-2px)}
+.btn-secondary{background:#f4f4f5;color:#0a0a0b;border:1px solid #e4e4e7}
+.btn-danger{background:#fee2e2;color:#b91c1c;border:1px solid #fecaca}
+.btn-premium-download{background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff}
+.btn-sm{padding:8px 16px;font-size:.82rem;border-radius:10px}
+.w-full{width:100%}.mt-2{margin-top:8px}.mt-3{margin-top:12px}.mt-4{margin-top:16px}.mb-2{margin-bottom:8px}.mb-3{margin-bottom:12px}
+.filter-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(90px,1fr));gap:10px}
+.filter-grid img,.filter-grid canvas{width:100%;border-radius:10px;cursor:pointer;border:2px solid transparent}
+.palette-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:10px}
+.compare-viewport{position:relative;overflow:hidden;border-radius:16px;border:1px solid #e4e4e7}
+.result-card{background:#fafafa;border:1px solid #e4e4e7;border-radius:16px;padding:20px;margin-top:16px}
+.ocr-results{background:#fafafa;border:1px solid #e4e4e7;border-radius:12px;padding:16px;margin-top:16px;white-space:pre-wrap}
+.meta-table{width:100%;border-collapse:collapse;font-size:.88rem}
+.meta-table td{padding:10px 12px;border-bottom:1px solid #f4f4f5}
+.meta-table tr td:first-child{font-weight:600;color:#3f3f46;width:40%}
+.img-container,.preview-container,.image-wrapper,.merge-canvas-wrapper{max-width:100%;overflow:auto;border-radius:16px}
+canvas{max-width:100%;height:auto}
+.hist-canvas{width:100%;height:120px}
+.privacy-alert{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:14px 16px;font-size:.88rem;color:#3f3f46;margin:16px 0}
+.code-preview{background:#0a0a0b;color:#e4e4e7;border-radius:12px;padding:16px;font-family:monospace;font-size:.82rem;overflow:auto}
+@media(max-width:900px){.tool-workspace{grid-template-columns:1fr}}
 
-  <link rel="stylesheet" href="../../image-tools/css/th-header-footer.css">
+</style>
+
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../../index.html#tools">All Tools</a><a href="../../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../../index.html#tools">Explore Tools</a></div>
+</div></header>
+
+<nav class="crumbs"><a href="../../index.html">Home</a> &nbsp;/&nbsp; <span>Universal Batch Converter</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">Image Tools</span>
+  <h1>Universal Batch <em>Converter</em></h1>
+  <p>The ultimate conversion logic. Select multiple input images and multiple output formats. We&amp;#x27;ll handle the rest.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> Private — runs in browser</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../../image-tools/index.html">Image Tools</a><a href="../../pdf-tools/index.html">PDF Tools</a><a href="../../text-tools/index.html">Text & Writing</a><a href="../../seo-tools/index.html">SEO Tools</a><a href="../../calculator-tools/index.html">Calculators</a><a href="../../binary-tools/index.html">Binary Tools</a><a href="../../code-format-tools/index.html">Code & Formatters</a><a href="../../doc-tools/index.html">Documents</a><a href="../../other-tools/index.html">Other Tools</a><a href="../../about-us.html">About Us</a><a href="../../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../../index.html">Home</a> &gt;
-                <a href="../index.html">Image Tools</a> &gt;
-                <span>🔄 Universal Batch Converter</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">🔄 Universal Batch Converter</h1>
-                <p class="tool-description">The ultimate conversion logic. Select multiple input images and multiple
-                    output formats. We'll handle the rest.</p>
-                <div class="tool-badges"><span class="badge badge-primary">Multi-Format Output</span><span class="badge badge-primary">High-Performance</span><span class="badge badge-secondary">Fast Download</span></div>
-            </div>
+</section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>Universal Batch Converter</b><span>v3.0 · local</span></div>
+  <div class="ws-body">
+    <div class="ws-dropzone-head"><span class="dz-icon"><i class="fa-solid fa-arrow-right-arrow-left"></i></span><span>Drop your images to get started</span></div>
+
+
             <div class="tool-workspace">
 <main class="tool-main">
 <div class="container">
@@ -116,9 +174,9 @@
 </div>
 </div>
 <div class="control-section">
-<button class="btn btn-primary w-full" disabled="" id="convert-btn"><span>🔄</span>
+<button class="btn btn-dark w-full tu-btn" disabled="" id="convert-btn"><span>🔄</span>
                             Convert</button>
-<button class="btn btn-secondary w-full mt-2" onclick="location.reload()"><span>🔄</span>
+<button class="btn btn-light w-full mt-2 tu-btn" onclick="location.reload()"><span>🔄</span>
                             Reset</button>
 </div>
 </aside>
@@ -126,11 +184,34 @@
 </div>
 </main>
             </div>
-            <section class="seo-article" data-tool="batch-converter">
-<article class="tool-article">
-<h2>Batch Converter — Convert Hundreds of Images in One Go</h2>
+            
+</div></div><section class="tu-section"><h2>How to use</h2><p class="tu-sub">Three quick steps — no sign-up, no software to install.</p>
+  </div>
+</div></div>
 
-<p>I once inherited a folder with 400 product photos — a mix of PNGs, BMPs, and TIFFs — that all needed to become web-ready JPGs before lunch. Converting them one at a time would have eaten my entire morning. Instead I dragged the whole folder into a batch converter, picked JPG, and had a ZIP of finished files in minutes. That is the entire point of batch conversion: the same settings, applied to every file, in a single pass.</p>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 — HOW IT WORKS</span><h2>Three steps, zero learning curve</h2></div>
+  <div class="steps">
+    <div class="step"><div class="step-n">i.</div><h3>Drop in multiple images</h3><p>Select several input images at once — different source formats are fine, the tool handles mixed batches.</p></div>
+    <div class="step"><div class="step-n">ii.</div><h3>Choose your targets</h3><p>Pick one or more output formats and set quality, sizing and naming options for the whole batch.</p></div>
+    <div class="step"><div class="step-n">iii.</div><h3>Convert everything</h3><p>One click processes every file through every chosen format. Download individually or grab the full set.</p></div>
+  </div>
+</section>
+
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>Batch Converter — Convert Hundreds of Images in One Go</h2>
+    <p class="deck">The ultimate conversion logic. Select multiple input images and multiple output formats. We&amp;#x27;ll handle the rest.</p>
+    <div class="article-meta">
+      <div class="avatar">T</div>
+      <div><b>TOOLSHUB Editorial</b><span>5 min read · Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+
+
+<p class="lead">I once inherited a folder with 400 product photos — a mix of PNGs, BMPs, and TIFFs — that all needed to become web-ready JPGs before lunch. Converting them one at a time would have eaten my entire morning. Instead I dragged the whole folder into a batch converter, picked JPG, and had a ZIP of finished files in minutes. That is the entire point of batch conversion: the same settings, applied to every file, in a single pass.</p>
 
 <h3>What Is a Batch Converter?</h3>
 
@@ -214,51 +295,38 @@
 
 <h4>Should I batch-convert my originals?</h4>
 <p>No. Always work on copies and keep your originals archived — especially before lossy conversion.</p>
-</article>
+
+    <h3>Frequently asked</h3>
+    <div class="faq">
+      <div class="faq-item open"><div class="faq-q">What does the batch converter do differently? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>Instead of converting one file to one format, it converts many files to many formats at once — e.g. 20 photos into JPG, WebP and PNG versions in a single run.</div></div>
+      <div class="faq-item"><div class="faq-q">Can inputs be different formats? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>Yes. Mixed batches (PNG, JPG, WebP, AVIF...) are supported; each file is converted to your chosen output formats.</div></div>
+      <div class="faq-item"><div class="faq-q">Is there a limit on batch size? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>The practical limit is your device&#x27;s memory and CPU. Dozens of typical photos process smoothly.</div></div>
+      <div class="faq-item"><div class="faq-q">Do my files get uploaded? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>No — everything is processed locally in your browser. Nothing leaves your device.</div></div>
+    </div>
+  </div>
+</article></div>
+
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 — KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+    <a class="rel" href="../../image-tools/compression/image-compressor.html"><i class="fa-solid fa-compress" style="color:#4f46e5"></i><h3>Image Compressor</h3><p>Ultimate Image Compressor. Compress images by quality, target file size (e.g. 50KB, 200KB), or lossless optimi…</p></a>
+    <a class="rel" href="../../image-tools/conversion/png-jpg-converter.html"><i class="fa-solid fa-arrow-right-arrow-left" style="color:#7c3aed"></i><h3>PNG ↔ JPG Converter</h3><p>Advanced PNG to JPG and JPG to PNG Converter. Features batch processing, DPI control (72-600), custom transpar…</p></a>
+    <a class="rel" href="../../image-tools/conversion/webp-png-converter.html"><i class="fa-solid fa-arrow-right-arrow-left" style="color:#4f46e5"></i><h3>WebP ↔ PNG Converter</h3><p>Convert WebP to PNG and PNG to WebP. Preserves alpha transparency. Supports batch processing and ZIP download.…</p></a>
+    <a class="rel" href="../../image-tools/resize-crop/bulk-resizer.html"><i class="fa-solid fa-expand" style="color:#7c3aed"></i><h3>Bulk Multi-Size Resizer</h3><p>Batch Image Resizer. Generate multiple sizes from one image instantly. Templates for iOS icons, Android assets…</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../../image-tools/index.html">Image Tools</a></li><li><a href="../../pdf-tools/index.html">PDF Tools</a></li><li><a href="../../text-tools/index.html">Text & Writing</a></li><li><a href="../../seo-tools/index.html">SEO Tools</a></li><li><a href="../../calculator-tools/index.html">Calculators</a></li><li><a href="../../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>204 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../../index.html#tools">All 204 tools</a></li><li><a href="../../index.html#image-tools">Image tools</a></li><li><a href="../../index.html#pdf-tools">PDF tools</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../../about-us.html">About</a></li><li><a href="../../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../../about-us.html">About</a><a href="../../contact-us.html">Contact</a><a href="../../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>© 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+
 <script src="../js/shared/unified-input.js"></script>
 <script src="../js/utils/image-loader.js"></script>
 <script>
@@ -389,6 +457,8 @@
 
         document.addEventListener('DOMContentLoaded', () => new BatchConverter());
     </script>
-  <script src="../../image-tools/js/th-interactions.js"></script>
+<script src="../../image-tools/js/th-interactions.js"></script>
+<script src="../../image-tools/js/tu-unified.js"></script>
+<script src="../../image-tools/js/v3.js"></script>
 </body>
 </html>

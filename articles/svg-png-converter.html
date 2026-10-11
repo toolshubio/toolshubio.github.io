@@ -1,0 +1,81 @@
+<article class="tool-article">
+<h2>SVG to PNG Converter — Export Vectors as Crisp Raster Images</h2>
+
+<p>Vectors are wonderful right up until the moment some system refuses them. I have lost count of how many times a CMS upload field, an email client, or a presentation tool has stared blankly at my SVG file. The fix takes ten seconds: an SVG to PNG converter rasterizes the vector into a PNG at whatever resolution I need. Transparency survives, edges stay razor-sharp, and the result opens absolutely everywhere.</p>
+
+<h3>What Happens During SVG to PNG Conversion</h3>
+
+<p>The conversion is called <strong>rasterization</strong>. The tool parses your SVG's XML — paths, shapes, gradients, clip paths, text — renders it onto a pixel grid at the resolution you choose, and encodes the result as PNG. Because PNG is lossless, the output preserves the render exactly: no compression artifacts on the flat colors and hard edges that vectors are famous for, and full alpha transparency carried over from the source.</p>
+
+<p>The core tradeoff is vector versus raster. SVG scales infinitely because it is code; PNG is a fixed grid of pixels. Converting locks the artwork into one resolution — which is fine for a deliverable, but means you should export at the largest size you might need and keep the SVG as your master.</p>
+
+<h3>Why Convert SVG to PNG?</h3>
+
+<ul>
+<li><strong>Systems that reject SVG</strong> — email clients, office suites, social platforms, and many CMS editors refuse vector files (sometimes for security reasons) but accept PNG.</li>
+<li><strong>Transparency preserved</strong> — unlike JPG, PNG keeps the SVG's transparent areas intact.</li>
+<li><strong>Fixed-size deliverables</strong> — app icons, favicons, thumbnails, and marketplace images need exact pixel dimensions.</li>
+<li><strong>Font independence</strong> — text is baked into pixels during conversion, so the file looks right even where the original fonts are missing.</li>
+<li><strong>Design handoffs</strong> — developers and clients who cannot open vector editors still get pixel-perfect assets.</li>
+</ul>
+
+<h3>Picking the Right Export Size</h3>
+
+<table>
+<thead><tr><th>Use Case</th><th>Suggested Size</th></tr></thead>
+<tbody>
+<tr><td>Favicon</td><td>16×16, 32×32, 48×48 (multiple)</td></tr>
+<tr><td>App icon (iOS/Android)</td><td>180×180, 192×192, 512×512</td></tr>
+<tr><td>Website logo (retina)</td><td>2× the display size</td></tr>
+<tr><td>Social media graphic</td><td>1080–2048 px wide</td></tr>
+<tr><td>Presentation</td><td>1920 px wide</td></tr>
+<tr><td>Print (300 DPI)</td><td>2480 px (A4) and up</td></tr>
+</tbody>
+</table>
+
+<p>Export larger than the immediate need. A 512-pixel icon downscales to a crisp 16-pixel favicon; the reverse is a blurry mess. Since rendering from vector costs nothing in quality, generosity here is free — the only cost is file size.</p>
+
+<h3>How to Convert SVG to PNG</h3>
+
+<p><strong>Step 1 — Upload or paste your SVG.</strong> Drop in the .svg file or paste the SVG markup directly.</p>
+
+<p><strong>Step 2 — Set the output size.</strong> Enter the width (or height); the aspect ratio locks automatically. Some tools render at 2× internally for sharper edges — a nice touch for small icons.</p>
+
+<p><strong>Step 3 — Convert and download.</strong> Check the preview: transparency where you expect it, text rendered correctly, edges clean. Download the PNG — or a ZIP when converting a whole icon set at once.</p>
+
+<h3>Tips for Clean Results</h3>
+
+<p><strong>Convert text to outlines first</strong> if the SVG uses unusual fonts. Rasterization bakes in whatever font the converter can access; outlines remove the variable entirely.</p>
+
+<p><strong>Watch the background.</strong> Some converters place the export on a white background by default. If your SVG relies on transparency, confirm the output actually has an alpha channel before shipping it.</p>
+
+<p><strong>Batch icon sets together.</strong> Exporting a logo at six sizes in one pass — and downloading a ZIP — beats six separate conversions.</p>
+
+<p><strong>Keep the SVG.</strong> The PNG is the delivery format; the SVG remains the editable, infinitely scalable source of truth.</p>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this SVG to PNG converter free?</h4>
+<p>Yes — free, no account, no watermark.</p>
+
+<h4>Does the PNG keep transparency?</h4>
+<p>Yes — PNG fully supports alpha transparency, so transparent areas in your SVG stay transparent.</p>
+
+<h4>What resolution should I export?</h4>
+<p>The largest you might need: 2× display size for web, 1920px+ for presentations, 2480px+ for print.</p>
+
+<h4>Will text render correctly?</h4>
+<p>Text is rasterized during conversion, so it appears exactly as designed — provided the converter can access the fonts. Convert text to outlines to be safe.</p>
+
+<h4>Can I set custom dimensions?</h4>
+<p>Yes — specify exact width/height, from tiny favicons to large print exports.</p>
+
+<h4>Can I batch-convert many SVGs?</h4>
+<p>Yes — upload a whole set and download the PNGs as a ZIP.</p>
+
+<h4>SVG to PNG or SVG to JPG — which should I choose?</h4>
+<p>PNG when you need transparency, sharp edges, or lossless quality. JPG when file size matters most and transparency is irrelevant.</p>
+
+<h4>Are my files uploaded to a server?</h4>
+<p>No — rasterization happens locally in your browser.</p>
+</article>

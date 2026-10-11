@@ -1,0 +1,98 @@
+<article class="tool-article">
+<h2>Document Compare — Free Online File Difference Checker</h2>
+
+<p>Someone sends you "contract_final_v2.docx" and you're holding "contract_final.docx." What changed? A comma? A clause? The payment terms? I once approved a revised agreement without spotting that the liability cap had quietly dropped by half — the change was one number on page nine, invisible to a skim. That's the entire case for a document compare tool: upload both versions, click compare, and every addition lights up green, every deletion red. Ten seconds instead of an hour of squinting.</p>
+
+<h3>What Is Document Compare?</h3>
+
+<p>A document compare tool (often called a diff tool) analyzes two versions of a document and highlights exactly what changed between them. It breaks both files into comparable units — lines, words, or characters — aligns the matching parts, and marks the differences: added text in green, removed text in red, modified sections flagged on both sides.</p>
+
+<p>The underlying technique is the same one behind code version control: a diff algorithm finds the longest matching sequences between the two texts and treats everything else as a change. That's why the output feels so precise — it's not guessing, it's computing the minimal set of edits that transforms version A into version B.</p>
+
+<p>This matters most when the change is small and the document is long. Human eyes are terrible at spotting a single altered word in forty pages; a diff tool is perfect at it. If you've ever played "spot the difference" with two drafts of anything — a contract, a manuscript, a policy document — this is the tool that ends the game.</p>
+
+<h3>How to Use Document Compare</h3>
+
+<p>Upload your original file on the left and the revised version on the right — order matters, since "added" and "removed" are relative to the original. You can also paste text directly into both panes if you're comparing drafts or snippets.</p>
+
+<p>Click Compare. The tool renders both documents side by side with synchronized scrolling, so the same section stays aligned on both panels as you scroll. Additions glow green on the revised side, deletions red on the original side. The stats bar summarizes the damage: how many words or lines were added and removed.</p>
+
+<p>Switch view styles to suit the job: side-by-side for reading context around each change, or a unified view that interleaves both versions into one stream. Toggle sync scrolling off if you want to inspect the two versions independently.</p>
+
+<p>My habit with contracts: run the compare, then read only the highlighted sections — green and red — ignoring everything unchanged. On a fifty-page agreement, that usually means reading two pages instead of fifty. Then I read those two pages very carefully.</p>
+
+<h3>Reading a Diff Report</h3>
+
+<table>
+<thead><tr><th>Highlight</th><th>Meaning</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td>Green (right side)</td><td>Added in the revised version</td><td>A new clause or inserted sentence</td></tr>
+<tr><td>Red (left side)</td><td>Removed from the original</td><td>A deleted paragraph or dropped word</td></tr>
+<tr><td>Green + red pair</td><td>Modified — removed and replaced</td><td>"30 days" changed to "45 days"</td></tr>
+<tr><td>No highlight</td><td>Unchanged in both versions</td><td>Everything else</td></tr>
+</tbody>
+</table>
+
+<p>The modified case is the one to watch: when a word is deleted and a similar word added in the same spot, the tool shows both highlights together. That's where the liability-cap-style changes hide — not in big green blocks, but in tiny red-green pairs inside otherwise identical sentences.</p>
+
+<h3>When Comparing Saves You</h3>
+
+<p><strong>Contracts and legal documents.</strong> Counterparties revise agreements constantly. Diffing each new version against the last is the only reliable way to catch every change — including the ones nobody mentioned in the cover email.</p>
+
+<p><strong>Manuscripts and drafts.</strong> Writers comparing revision rounds see exactly what an editor changed, which makes accepting or reverting edits a deliberate choice instead of a guess.</p>
+
+<p><strong>Policy and compliance documents.</strong> Regulated industries version their policies; comparing versions produces an auditable record of what changed and when.</p>
+
+<p><strong>Translations.</strong> When a document exists in two languages or a translation is updated, comparing the source versions confirms the translation was updated against the right revision.</p>
+
+<p><strong>Code and config files.</strong> Before deploying, diff the new config against the old one. One wrong value in a config file has caused more outages than most bugs.</p>
+
+<h3>Who Uses Document Compare?</h3>
+
+<p><strong>Lawyers and paralegals</strong> review redlined contracts — comparing versions is the core of the negotiation workflow.</p>
+
+<p><strong>Editors and publishers</strong> track author revisions across manuscript rounds without relying on tracked-changes markup surviving format conversions.</p>
+
+<p><strong>Compliance officers</strong> verify policy updates and maintain change records for auditors.</p>
+
+<p><strong>Students and researchers</strong> compare draft revisions of theses and papers, and check that feedback was actually incorporated.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Side-by-side comparison</strong> — original and revised aligned with synchronized scrolling.</li>
+<li><strong>Color-coded diffs</strong> — green for additions, red for deletions, at a glance.</li>
+<li><strong>Change statistics</strong> — counts of added and removed words or lines.</li>
+<li><strong>Multiple view styles</strong> — side-by-side or unified, whichever suits the document.</li>
+<li><strong>File upload or paste</strong> — compare full documents or pasted text snippets.</li>
+<li><strong>100% free</strong> — no account, no limits.</li>
+<li><strong>Private by design</strong> — comparison runs in your browser; your documents never leave your device.</li>
+<li><strong>Works everywhere</strong> — any modern browser, desktop or mobile.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this document compare tool free?</h4>
+<p>Yes — free, no signup, no limits on comparisons.</p>
+
+<h4>What do the green and red highlights mean?</h4>
+<p>Green marks text added in the revised version; red marks text removed from the original. A red-green pair in the same spot means the text was modified.</p>
+
+<h4>Which file goes on which side?</h4>
+<p>Original on the left, revised on the right. "Added" and "removed" are relative to the original, so swapping them flips the colors.</p>
+
+<h4>Can I compare pasted text instead of files?</h4>
+<p>Yes — paste directly into both panes for drafts, snippets, or anything you don't want to save as a file first.</p>
+
+<h4>What's the difference between side-by-side and unified view?</h4>
+<p>Side-by-side shows both versions in parallel columns; unified interleaves the changes into a single stream. Side-by-side is better for reading context, unified for scanning a long change list.</p>
+
+<h4>Can it compare PDFs or Word documents?</h4>
+<p>Upload your files and the tool extracts the text for comparison. For heavily formatted documents, comparing exported plain text gives the cleanest diff.</p>
+
+<h4>Does it show formatting changes like bold or italics?</h4>
+<p>This tool compares text content. Formatting-only changes (bold, font size) without text changes won't appear as differences.</p>
+
+<h4>Are my documents uploaded to a server?</h4>
+<p>No. The comparison runs entirely in your browser, so confidential contracts stay confidential.</p>
+</article>

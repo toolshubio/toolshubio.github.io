@@ -1,141 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free, pro SQL formatter. Beautify and minify SQL queries for PostgreSQL, MySQL, SQL Server, and more. 100% client-side.">
-    <title>SQL Formatter - Prettify & Optimize SQL Queries | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../../image-tools/css/global.css">
-    <link rel="stylesheet" href="../../image-tools/css/components.css">
-    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
-
-
-  <link rel="stylesheet" href="../../image-tools/css/th-header-footer.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SQL Formatter - Prettify &amp; Optimize SQL Queries | TOOLSHUB</title>
+<meta name="description" content="Free, pro SQL formatter. Beautify and minify SQL queries for PostgreSQL, MySQL, SQL Server, and more. 100% client-side.">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../../image-tools/css/v3-design.css">
+<style>.ws-textarea{font-family:ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,monospace}</style>
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../../index.html#tools">All Tools</a><a href="../../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../../index.html#tools">Explore Tools</a></div>
+</div></header>
+
+<nav class="crumbs"><a href="../../index.html">Home</a> &nbsp;/&nbsp; <a href="../../index.html#code-format-tools">Code &amp; Formatters</a> &nbsp;/&nbsp; <span>SQL Formatter</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">Code Tools</span>
+  <h1>SQL <em>Formatter.</em></h1>
+  <p>Transform messy monolithic SQL queries into readable, structured statements instantly.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../../image-tools/index.html">Image Tools</a><a href="../../pdf-tools/index.html">PDF Tools</a><a href="../../text-tools/index.html">Text & Writing</a><a href="../../seo-tools/index.html">SEO Tools</a><a href="../../calculator-tools/index.html">Calculators</a><a href="../../binary-tools/index.html">Binary Tools</a><a href="../../code-format-tools/index.html">Code & Formatters</a><a href="../../doc-tools/index.html">Documents</a><a href="../../other-tools/index.html">Other Tools</a><a href="../../about-us.html">About Us</a><a href="../../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../../index.html">Home</a> &gt;
-                <a href="../index.html">Code & Formatters</a> &gt;
-                <span>SQL Formatter</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">SQL Formatter</h1>
-                <p class="tool-description">Transform messy monolithic SQL queries into readable, structured statements
-                    instantly.</p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
+</section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>SQL Formatter</b><span>v3.0 · local</span></div>
+  <div class="ws-body">
+<div class="tool-workspace">
 <div class="tool-workspace">
 <div class="code-workspace">
 <div class="editor-container">
 <div class="editor-header">
 <span class="editor-title">Input Query</span>
-<button class="btn btn-sm btn-secondary" onclick="document.getElementById('input-code').value = ''; onInputChange()">Clear</button>
+<button class="btn btn-light" onclick="document.getElementById('input-code').value = ''; onInputChange()"><i class="fa-solid fa-eraser"></i> Clear</button>
 </div>
-<textarea class="code-area" id="input-code" oninput="onInputChange()" placeholder="SELECT * FROM users WHERE status = 'active'..."></textarea>
+<textarea class="ws-textarea" id="input-code" oninput="onInputChange()" placeholder="SELECT * FROM users WHERE status = 'active'..."></textarea>
 <div class="code-stats" id="input-stats"></div>
 </div>
 <div class="editor-container">
 <div class="editor-header">
 <span class="editor-title">Beautiful SQL</span>
-<button class="btn btn-sm btn-primary" onclick="CodeUI.copyToClipboard('output-code', this)">Copy Result</button>
+<button class="btn btn-light" onclick="CodeUI.copyToClipboard('output-code', this)"><i class="fa-solid fa-copy"></i> Copy Result</button>
 </div>
-<textarea class="code-area" id="output-code" placeholder="Structured SQL will appear here..." readonly=""></textarea>
+<textarea class="ws-textarea" id="output-code" placeholder="Structured SQL will appear here..." readonly=""></textarea>
 <div class="code-stats" id="output-stats"></div>
 </div>
 </div>
 <div class="action-bar">
-<button class="btn btn-primary btn-lg" onclick="formatSQL()"> Format SQL Query</button>
-<button class="btn btn-secondary btn-lg" onclick="minifySQL()"> Minify SQL</button>
-</div>
-<section class="tool-content mt-12">
-<div class="content-grid">
-<div class="main-text">
-<h2>The Art of Clean SQL</h2>
-<p>Reading a single-line query with 10 joins is a nightmare for any developer or DBA. Our
-                                SQL Formatter adds proper indentation, line breaks, and upper-casing to keywords like
-                                `SELECT`, `FROM`, `WHERE`, and `JOIN`, making complex logic transparent.</p>
-<h3>Supported Dialects</h3>
-<p>While standard SQL is the baseline, this tool works perfectly for:</p>
-<ul>
-<li>PostgreSQL &amp; MySQL</li>
-<li>T-SQL (SQL Server)</li>
-<li>PL/SQL (Oracle)</li>
-<li>SQLite &amp; MariaDB</li>
-</ul>
-</div>
-<div class="faq-section">
-<h3>Optimization Tips</h3>
-<div class="faq-item">
-<strong>Why minify SQL?</strong>
-<p>Minification is useful when embedding queries in environment variables or code
-                                    strings to keep your source files compact.</p>
+<button class="btn btn-dark" onclick="formatSQL()"><i class="fa-solid fa-wand-magic-sparkles"></i>  Format SQL Query</button>
+<button class="btn btn-dark" onclick="minifySQL()"><i class="fa-solid fa-compress"></i>  Minify SQL</button>
 </div>
 </div>
 </div>
-</section></div>
-            </div>
-            <section class="seo-article" data-tool="sql-formatter">
-<article class="tool-article">
-<h2>SQL Formatter — Clean Up Messy SQL Queries Online</h2>
+  </div>
+</div></div>
 
-<p>Every database I have ever worked with has produced at least one monster query — a 400-character single line spat out by an ORM, a logging plugin, or my own tired hands at 2 AM. I used to waste half an hour reformatting those by hand before I could even see what the query was doing. A SQL formatter takes that wall of text and turns it into something your eyes can actually scan: keywords capitalized, clauses on their own lines, subqueries nested where they belong. Paste it in, and the tool rebuilds the query's structure in milliseconds — nothing to install, nothing uploaded.</p>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 — HOW IT WORKS</span><h2>How to use</h2><p>Get results in three simple steps.</p></div>
+  <div class="steps">
+    <div class="step"><div class="step-n">i.</div><h3>Paste your query</h3><p>Drop messy SQL into the editor.</p></div>
+    <div class="step"><div class="step-n">ii.</div><h3>Format</h3><p>Keywords capitalized, clauses broken onto clean lines.</p></div>
+    <div class="step"><div class="step-n">iii.</div><h3>Copy &amp; run</h3><p>Copy the readable query into your DB client.</p></div>
+  </div>
+</section>
 
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>SQL Formatter — Clean Up Messy SQL Queries Online</h2>
+    <p class="deck">Free, pro SQL formatter. Beautify and minify SQL queries for PostgreSQL, MySQL, SQL Server, and more. 100% client-side.</p>
+    <div class="article-meta">
+      <div class="avatar">T</div>
+      <div><b>TOOLSHUB Editorial</b><span>7 min read · Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+    <p class="lead">Every database I have ever worked with has produced at least one monster query — a 400-character single line spat out by an ORM, a logging plugin, or my own tired hands at 2 AM. I used to waste half an hour reformatting those by hand before I could even see what the query was doing. A SQL formatter takes that wall of text and turns it into something your eyes can actually scan: keywords capitalized, clauses on their own lines, subqueries nested where they belong. Paste it in, and the tool rebuilds the query's structure in milliseconds — nothing to install, nothing uploaded.</p>
 <h3>What Is a SQL Formatter?</h3>
-
 <p>My first real encounter with one came during a code review. A teammate had written a query that worked fine but looked like someone had dropped a sentence into a blender — SELECT buried in the middle, joins and filters all running together. I could not spot the missing table alias until the formatter laid the whole thing out like a staircase.</p>
-
 <p>The idea is straightforward: formatting changes only the visual layout, never the logic. The database runs the formatted query exactly the same way it runs the original, because whitespace and line breaks are invisible to the SQL engine. What changes is how fast a human can spot a misplaced JOIN, a wrong GROUP BY column, or a WHERE clause that accidentally filters out everything.</p>
-
 <p>Good formatters also enforce house style automatically. Teams argue endlessly about uppercase vs lowercase keywords, two spaces vs four, commas at the start or end of lines. A formatter settles it: pick a style once, and every query that passes through comes out consistent. Code reviews stop being debates about indentation and go back to being about logic.</p>
-
 <h3>How to Use the SQL Formatter</h3>
-
 <p>The workflow is about as simple as the tool gets. Copy the query from wherever it lives — a terminal, a log file, an ORM debug panel, a database client. Paste it into the input box. If the tool offers a dialect dropdown, pick the database you are working with: PostgreSQL, MySQL, SQL Server, SQLite, and the rest parse some things differently, and matching the dialect keeps window functions and quoted identifiers formatting correctly.</p>
-
 <p>Then choose your style options. Most formatters let you set keyword casing (uppercase, lowercase, or untouched), the indent size, and where clauses break onto new lines. Hit the format button and the cleaned-up query appears in the output panel, usually with syntax highlighting so keywords and strings are easy to tell apart.</p>
-
 <p>From there, copy the result straight to your clipboard or download it as a .sql file. Some tools keep a short history of your last few queries in the browser, and keyboard shortcuts like Ctrl+Enter to format speed things up when you are cleaning queries one after another. My habit: format before pasting anything into documentation or a pull request — reviewers notice.</p>
-
 <h3>How SQL Formatting Works</h3>
-
 <p>Under the hood, the tool does not understand your query the way a database does — it does not execute anything. It runs the text through a tokenizer that breaks it into recognizable pieces: keywords (SELECT, FROM, WHERE), identifiers (table and column names), operators, string literals, numbers, and comments. Once the pieces are identified, the layout rules apply.</p>
-
 <p>The classic transformation looks like this. Before:</p>
-
-<code>select u.id,u.name,o.total from users u inner join orders o on u.id=o.user_id where u.status='active' and o.total>100 order by o.created_at desc limit 10;</code>
-
+<code>select u.id,u.name,o.total from users u inner join orders o on u.id=o.user_id where u.status='active' and o.total&gt;100 order by o.created_at desc limit 10;</code>
 <p>After formatting, each clause gets its own line and the indentation shows the nesting:</p>
-
 <pre><code>SELECT
   u.id,
   u.name,
@@ -147,13 +110,9 @@ WHERE u.status = 'active'
   AND o.total &gt; 100
 ORDER BY o.created_at DESC
 LIMIT 10;</code></pre>
-
 <p>Notice what happened: the join condition tucked itself under the JOIN, the AND moved under WHERE at one deeper level, and every selected column got its own line so the list is easy to scan. Long OR chains sometimes get rewritten to IN() lists by smarter formatters, and warnings can flag risky patterns like SELECT * or an UPDATE without a WHERE — though those are style hints, not validation.</p>
-
 <h3>Formatting Style Options Explained</h3>
-
 <p>The knobs you will find on most formatters matter more than they look. Here is what the common ones do:</p>
-
 <table>
 <thead><tr><th>Option</th><th>What It Controls</th><th>Typical Choice</th></tr></thead>
 <tbody>
@@ -165,29 +124,17 @@ LIMIT 10;</code></pre>
 <tr><td>AND/OR position</td><td>Operator at line start or line end</td><td>Line start (easier scanning)</td></tr>
 </tbody>
 </table>
-
 <p>There is no technically "correct" combination — Postgres parses uppercase and lowercase identically, so this is pure team culture. The only real mistake is having no convention at all. Pick one, save it in the tool's settings (most remember your preferences in the browser), and let consistency do its work.</p>
-
 <h3>Who Uses SQL Formatters?</h3>
-
 <p><strong>Database developers</strong> are the obvious crowd. When you write queries all day, formatting becomes muscle memory — and for the days it is not, the tool covers you. Stored procedures with three levels of nesting are the classic case where human formatting gives up and automation wins.</p>
-
 <p><strong>Backend developers</strong> meet the tool through ORMs. Django, Laravel, Hibernate — they all generate SQL that runs fine but reads terribly. When a slow-query log flags a problem, the first step is always the same: format the generated query so you can see what the ORM actually built.</p>
-
 <p><strong>Data analysts</strong> use formatters when inheriting someone else's reporting queries. A 200-line dashboard query written by a former coworker is far less intimidating once it is indented properly, and the nested CTEs stop hiding from you.</p>
-
 <p><strong>Students</strong> learning SQL get instant feedback. Hand-formatting a query teaches the grammar; using a formatter shows what idiomatic layout looks like, which speeds up the learning curve a lot.</p>
-
 <p><strong>Technical writers</strong> format queries before putting them in documentation or tutorials. Readers skim; a query on one line gets skipped, while the same query formatted properly actually gets read.</p>
-
 <h3>Tips for Getting the Most Out of It</h3>
-
 <p>Match the dialect to your database — MySQL backticks, SQL Server brackets, and Postgres dollar-quoting all format differently, and the wrong dialect can mangle identifiers. Keep your source queries in version control as written, and format at review time rather than treating the formatter's output as the source of truth. If the tool offers warnings (SELECT *, missing JOIN aliases, UPDATE without WHERE), leave them on; they catch the same mistakes a senior reviewer would.</p>
-
 <p>One more thing I learned the hard way: formatting is not validation. A formatter will happily produce beautiful, perfectly indented SQL that fails against your database because of a wrong column name. It fixes layout, not logic — always test against a real database before shipping.</p>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>Instant formatting</strong> — one click turns one-liners into readable queries.</li>
 <li><strong>Multiple dialects</strong> — PostgreSQL, MySQL, SQL Server, SQLite, BigQuery, and more.</li>
@@ -198,81 +145,37 @@ LIMIT 10;</code></pre>
 <li><strong>Copy and download</strong> — one click to clipboard or a .sql file.</li>
 <li><strong>100% free</strong> — no signup, no limits, works on any device.</li>
 </ul>
+<div class="faq"><div class="faq-item open"><div class="faq-q">Is this SQL formatter free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — completely free, no account needed, and no limits on how many queries you can format.</p></div></div><div class="faq-item"><div class="faq-q">Does formatting change how my query runs? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>No. Formatting only changes whitespace and layout. The database executes the formatted query exactly the same as the original.</p></div></div><div class="faq-item"><div class="faq-q">Which SQL dialects are supported? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Common ones include PostgreSQL, MySQL, SQL Server, SQLite, MariaDB, BigQuery, Redshift, and Snowflake. Select the dialect matching your database for best results.</p></div></div><div class="faq-item"><div class="faq-q">Should keywords be uppercase or lowercase? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>There is no technical difference — it is purely team style. Uppercase is the traditional DBA convention; lowercase is common in modern analytics teams. Pick one and stay consistent.</p></div></div><div class="faq-item"><div class="faq-q">Can I format stored procedures? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes, most formatters handle stored procedures, functions, CTEs, and nested subqueries, indenting each level correctly.</p></div></div><div class="faq-item"><div class="faq-q">Is my SQL data secure? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes. Formatting happens entirely in your browser — your queries never leave your device or touch a server.</p></div></div><div class="faq-item"><div class="faq-q">What if the formatter reports an error? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Check for unbalanced parentheses, unterminated string quotes, or a semicolon inside a string literal. Formatting works on text structure, so a malformed query confuses the tokenizer.</p></div></div><div class="faq-item"><div class="faq-q">Can the tool detect SQL errors? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Not really — formatting is not validation. Some tools warn about risky patterns (SELECT *, missing WHERE on UPDATE), but you should always test against your actual database.</p></div></div></div>
+  </div>
+</article></div>
 
-<h3>Frequently Asked Questions</h3>
-
-<h4>Is this SQL formatter free?</h4>
-<p>Yes — completely free, no account needed, and no limits on how many queries you can format.</p>
-
-<h4>Does formatting change how my query runs?</h4>
-<p>No. Formatting only changes whitespace and layout. The database executes the formatted query exactly the same as the original.</p>
-
-<h4>Which SQL dialects are supported?</h4>
-<p>Common ones include PostgreSQL, MySQL, SQL Server, SQLite, MariaDB, BigQuery, Redshift, and Snowflake. Select the dialect matching your database for best results.</p>
-
-<h4>Should keywords be uppercase or lowercase?</h4>
-<p>There is no technical difference — it is purely team style. Uppercase is the traditional DBA convention; lowercase is common in modern analytics teams. Pick one and stay consistent.</p>
-
-<h4>Can I format stored procedures?</h4>
-<p>Yes, most formatters handle stored procedures, functions, CTEs, and nested subqueries, indenting each level correctly.</p>
-
-<h4>Is my SQL data secure?</h4>
-<p>Yes. Formatting happens entirely in your browser — your queries never leave your device or touch a server.</p>
-
-<h4>What if the formatter reports an error?</h4>
-<p>Check for unbalanced parentheses, unterminated string quotes, or a semicolon inside a string literal. Formatting works on text structure, so a malformed query confuses the tokenizer.</p>
-
-<h4>Can the tool detect SQL errors?</h4>
-<p>Not really — formatting is not validation. Some tools warn about risky patterns (SELECT *, missing WHERE on UPDATE), but you should always test against your actual database.</p>
-</article>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 — KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+    <a class="rel" href="css-beautifier.html"><i class="fa-brands fa-css3-alt" style="color:#4f46e5"></i><h3>CSS Beautifier</h3><p>Restore organization and beauty to cluttered or minified CSS files instantly.</p></a>
+    <a class="rel" href="html-formatter.html"><i class="fa-brands fa-html5" style="color:#7c3aed"></i><h3>HTML Formatter</h3><p>Transform unreadable, minified, or messy HTML into a clean, well-indented structure.</p></a>
+    <a class="rel" href="javascript-beautifier.html"><i class="fa-brands fa-js" style="color:#4f46e5"></i><h3>JavaScript Beautifier</h3><p>Un-minify and format cryptic JavaScript code into clean, readable source code.</p></a>
+    <a class="rel" href="json-formatter.html"><i class="fa-solid fa-braces" style="color:#7c3aed"></i><h3>JSON Formatter</h3><p>Clean up, validate, and format your JSON data for better readability and debugging.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../../image-tools/index.html">Image Tools</a></li><li><a href="../../pdf-tools/index.html">PDF Tools</a></li><li><a href="../../text-tools/index.html">Text & Writing</a></li><li><a href="../../seo-tools/index.html">SEO Tools</a></li><li><a href="../../calculator-tools/index.html">Calculators</a></li><li><a href="../../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../../index.html#tools">All 203 tools</a></li><li><a href="../../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li><li><a href="../../code-format-tools/minifiers/css-minifier.html">CSS Minifier</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../../about-us.html">About</a></li><li><a href="../../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="../../about-us.html">About</a></li><li><a href="../../contact-us.html">Contact</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../../about-us.html">About</a><a href="../../contact-us.html">Contact</a><a href="../../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>© 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script src="../js/code-utils.js"></script>
 <script src="../js/code-ui.js"></script>
 <script>
-        CodeUI.init({ toolName: 'sql-formatter' });
+CodeUI.init({ toolName: 'sql-formatter' });
 
         function onInputChange() {
             const code = document.getElementById('input-code').value;
@@ -307,7 +210,7 @@ LIMIT 10;</code></pre>
             { icon: 'ðŸŽ¨', name: 'XML Formatter', desc: 'Prettify XML data', url: 'xml-formatter.html' },
             { icon: 'âœ…', name: 'JSON Validator', desc: 'Check JSON syntax', url: '../validators/json-validator.html' }
         ]);
-    </script>
-  <script src="../../image-tools/js/th-interactions.js"></script>
+</script>
+<script src="../../image-tools/js/v3.js"></script>
 </body>
 </html>

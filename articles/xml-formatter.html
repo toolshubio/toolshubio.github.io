@@ -1,0 +1,116 @@
+<article class="tool-article">
+<h2>XML Formatter — Beautify Minified XML Online</h2>
+
+<p>The first time I had to debug a SOAP API, the response came back as a single line — three thousand characters of XML with no breaks, no indentation, nothing my eyes could hold onto. I scrolled sideways for what felt like minutes before giving up and finding a formatter. An XML formatter takes that compressed string and unfolds it into a proper tree: each tag on its own line, nested elements indented, attributes lined up where you can read them. Paste the XML, click one button, and the structure reveals itself.</p>
+
+<h3>What Is an XML Formatter?</h3>
+
+<p>I think of it as the opposite of squinting. XML is designed to be both machine-readable and human-readable, but in practice servers strip every unnecessary byte before sending it. That is sensible for bandwidth — nobody wants to ship 40 KB of whitespace across the network — but it makes the payload useless for a person trying to find a wrong value three levels deep.</p>
+
+<p>The tool restores the human-readable shape without touching the data. Tags, attributes, text content, comments, namespaces — everything survives exactly as it was. Only the layout changes: line breaks between elements, consistent indentation per nesting level, and sensible wrapping for long attribute lists. Feed the formatted result back to any parser and it behaves identically, because XML does not care about indentation between elements.</p>
+
+<p>Most good formatters also double as validators. A formatter has to parse your XML to rebuild it, so the moment it hits a missing closing tag or an attribute without quotes, it can tell you exactly where the problem is — which makes the tool a fast first check before you hand a file to a stricter schema validator.</p>
+
+<h3>How to Use the XML Formatter</h3>
+
+<p>Copy the XML from wherever it came from: an API response, a config file, a database export, an RSS feed. Paste it into the input box. Many tools let you pick an indentation style — two spaces, four spaces, or a tab — so match whatever your team uses, because consistency across config files matters when you are diffing changes later.</p>
+
+<p>Click the format button (some tools format live as you paste, which I prefer when I am iterating). The beautified XML appears in the output panel, usually with syntax highlighting that separates tags from attributes from text content. From there, copy it to your clipboard or download it as an .xml file.</p>
+
+<p>If the tool reports an error instead of output, do not panic — that is the validator half doing its job. It will point at the line where the structure breaks, which is usually a missing closing tag or a badly nested element. Fix that spot and format again.</p>
+
+<h3>How XML Formatting Works</h3>
+
+<p>Formatting is really a two-step dance: parse, then print. First the tool runs your input through an XML parser, which builds a tree in memory — the root element at the top, children hanging below it, attributes attached to their elements, text nodes in between. If the parser chokes, you get an error with a line number instead of output.</p>
+
+<p>Once the tree exists, the printer walks it and writes each element on its own line, increasing the indentation by one level for every step deeper into the tree. Here is what the transformation looks like. Before:</p>
+
+<code>&lt;library&gt;&lt;book&gt;&lt;title&gt;Learning XML&lt;/title&gt;&lt;author&gt;John Smith&lt;/author&gt;&lt;price&gt;29.99&lt;/price&gt;&lt;/book&gt;&lt;/library&gt;</code>
+
+<p>After:</p>
+
+<pre><code>&lt;library&gt;
+  &lt;book&gt;
+    &lt;title&gt;Learning XML&lt;/title&gt;
+    &lt;author&gt;John Smith&lt;/author&gt;
+    &lt;price&gt;29.99&lt;/price&gt;
+  &lt;/book&gt;
+&lt;/library&gt;</code></pre>
+
+<p>Notice that the data did not change at all — only the whitespace between elements. The printer also has to be careful with mixed content (text and elements interleaved, like in a document with inline formatting) and with pre-like elements where whitespace is meaningful. A careless formatter can corrupt those; a good one leaves them alone.</p>
+
+<h3>XML Syntax Rules Worth Knowing</h3>
+
+<p>Formatting catches some errors, but knowing the basic rules helps you write XML that survives the first pass:</p>
+
+<table>
+<thead><tr><th>Rule</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td>One root element contains everything</td><td><code>&lt;catalog&gt;...&lt;/catalog&gt;</code></td></tr>
+<tr><td>Every opening tag needs a matching closing tag</td><td><code>&lt;price&gt;29.99&lt;/price&gt;</code></td></tr>
+<tr><td>Tags are case-sensitive</td><td><code>&lt;Title&gt;</code> and <code>&lt;title&gt;</code> are different</td></tr>
+<tr><td>Elements must nest properly, never overlap</td><td><code>&lt;a&gt;&lt;b&gt;&lt;/b&gt;&lt;/a&gt;</code> — never <code>&lt;a&gt;&lt;b&gt;&lt;/a&gt;&lt;/b&gt;</code></td></tr>
+<tr><td>Attribute values must be quoted</td><td><code>&lt;book lang="en"&gt;</code></td></tr>
+<tr><td>Every file starts with a declaration (recommended)</td><td><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code></td></tr>
+</tbody>
+</table>
+
+<p>Case sensitivity trips people up more than anything else. If your formatter complains about a mismatched tag, check whether you wrote <code>&lt;Item&gt;</code> in one place and <code>&lt;/item&gt;</code> in another — the parser sees two different elements.</p>
+
+<h3>Who Uses XML Formatters?</h3>
+
+<p><strong>Backend developers</strong> run into XML through SOAP APIs, SAML authentication, and legacy integrations that never migrated to JSON. When a third-party API returns an error payload, formatting it is the fastest way to find the actual error code.</p>
+
+<p><strong>System administrators</strong> deal with XML constantly: server configs, deployment descriptors, policy files. A config file that someone edited by hand and broke is much easier to repair when the structure is visible.</p>
+
+<p><strong>Data analysts</strong> use the tool when working with XML exports from databases or enterprise software. Formatting a sample of the export reveals the schema — which elements repeat, which are optional — before writing the parsing script.</p>
+
+<p><strong>QA testers</strong> format API responses to compare expected vs actual payloads. Side-by-side diffs of formatted XML show exactly which element changed between two runs.</p>
+
+<p><strong>Students</strong> learning markup languages use formatters to check their homework. Seeing proper nesting laid out visually teaches the tree structure faster than any textbook diagram.</p>
+
+<h3>Tips for Working With Formatted XML</h3>
+
+<p>Keep your minified originals separate from the formatted copies — formatting is a one-way convenience, and you want the production payload untouched. If you are debugging a large API response, format it once and save the file locally so you can search through it with your editor instead of re-pasting. And when a formatter flags an error, trust the line number it gives you; the real problem is almost always within a few lines of where the parser stopped, usually an unclosed tag or a stray ampersand that needed escaping.</p>
+
+<p>For very large files, expect a short delay — the parser still has to read every byte. If a file is too big for the browser tab, split it or use a desktop tool; but for the everyday sizes (config files, API responses, feeds), the online tool is instant.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant beautification</strong> — minified XML becomes a readable tree in one click.</li>
+<li><strong>Indentation choices</strong> — 2 spaces, 4 spaces, or tabs to match your project style.</li>
+<li><strong>Built-in validation</strong> — malformed XML gets flagged with a line number and a clear message.</li>
+<li><strong>Minify mode</strong> — strip whitespace back out when you need a compact payload.</li>
+<li><strong>Syntax highlighting</strong> — tags, attributes, and content shown in distinct colors.</li>
+<li><strong>Copy and download</strong> — clipboard copy or save as an .xml file.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
+<li><strong>100% free</strong> — no signup, no limits, works on desktop and mobile.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this XML formatter free?</h4>
+<p>Yes — completely free, no account needed, and no limits on how much XML you can format.</p>
+
+<h4>Will formatting change my data?</h4>
+<p>No. Formatting only adjusts whitespace between elements. Tags, attributes, text, and comments stay exactly as they were, and the XML parses identically.</p>
+
+<h4>What does "XML is not well-formed" mean?</h4>
+<p>It means the document breaks a basic syntax rule — usually a missing closing tag, improperly nested elements, or an unquoted attribute. The tool points to the line where the parser failed.</p>
+
+<h4>Can I minify XML with this tool too?</h4>
+<p>Yes. Most formatters include a minify option that strips whitespace and line breaks, producing a compact single-line payload for production use.</p>
+
+<h4>Are XML tags case-sensitive?</h4>
+<p>Yes. <code>&lt;Title&gt;</code> and <code>&lt;title&gt;</code> are two different elements in XML. Mismatched case between opening and closing tags is a common formatting error.</p>
+
+<h4>Is my XML data secure?</h4>
+<p>Yes. All formatting and validation happen locally in your browser — your XML never leaves your device.</p>
+
+<h4>Why does the formatter fail on my file?</h4>
+<p>Check for unclosed tags, overlapping elements, special characters like &amp; that need escaping, or multiple root elements. The error's line number shows where parsing stopped.</p>
+
+<h4>Can it handle very large XML files?</h4>
+<p>Everyday sizes — config files, API responses, RSS feeds — format instantly. Very large files may take a moment; if the browser struggles, split the file or use a desktop XML editor.</p>
+</article>

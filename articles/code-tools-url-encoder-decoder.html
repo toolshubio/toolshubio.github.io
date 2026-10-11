@@ -1,0 +1,104 @@
+<article class="tool-article">
+<h2>URL Encoder Decoder — Free Online Percent-Encoding Tool</h2>
+
+<p>I'll never forget the afternoon a client's "share this product" link broke for every user with an accent in their name. The URL contained "José," the receiving server saw garbage, and the page 404'd. The fix was one line — percent-encode the parameter — but it taught me something permanent: URLs only safely carry a limited set of characters, and everything else (spaces, ampersands, non-Latin letters) must be encoded before a link is safe to send. This tool does that conversion in both directions: encode messy text into URL-safe form, or decode a cryptic percent-encoded string back into readable text.</p>
+
+<h3>What Is URL Encoding?</h3>
+
+<p>URL encoding — also called percent-encoding — rewrites unsafe characters as a <code>%</code> followed by two hexadecimal digits. A space becomes <code>%20</code>, an ampersand becomes <code>%26</code>, a question mark becomes <code>%3F</code>. Non-ASCII characters like é or 中 are first converted to their UTF-8 bytes, and each byte gets its own <code>%XX</code> sequence.</p>
+
+<p>Why the fuss? Because certain characters have jobs in a URL. The <code>?</code> starts the query string, <code>&</code> separates parameters, <code>=</code> joins keys to values. If your search term itself contains an ampersand — say you're searching for "salt & pepper" — the raw <code>&</code> would be read as a parameter separator, splitting your search into two broken pieces. Encoding it as <code>%26</code> tells every browser and server: this is data, not structure.</p>
+
+<p>Decoding is the reverse trip: turning <code>hello%20world</code> back into <code>hello world</code> so you can read what a link actually contains — useful when you're debugging redirects, inspecting shared URLs, or auditing what parameters a page is passing around.</p>
+
+<h3>How to Use the URL Encoder Decoder</h3>
+
+<p>Paste your text or URL into the input box. If you're encoding, choose the right mode: <strong>component mode</strong> for a single value (a query parameter, a path segment), <strong>full URL mode</strong> for a complete address that's already structured. Click Encode or Decode, and the result appears in the output area, ready to copy.</p>
+
+<p>The mode choice is the one decision that matters. Component encoding escapes everything with a structural job — <code>?</code>, <code>=</code>, <code>&</code>, <code>/</code> all get encoded — because inside a single value, none of them are structure. Full-URL encoding preserves those characters so your address keeps working. Encoding a whole URL in component mode breaks it; encoding a parameter value in full-URL mode leaves dangerous characters raw.</p>
+
+<p>Use the Swap button to flip input and output when you're working back and forth — encode, check, decode, re-encode — which is exactly the rhythm of debugging a stubborn redirect chain.</p>
+
+<h3>Component vs. Full URL Encoding</h3>
+
+<p>This table shows the same input through both methods, so the difference is concrete:</p>
+
+<table>
+<thead><tr><th>Input</th><th>Component encoding</th><th>Full URL encoding</th></tr></thead>
+<tbody>
+<tr><td><code>hello world</code></td><td><code>hello%20world</code></td><td><code>hello%20world</code></td></tr>
+<tr><td><code>salt &amp; pepper</code></td><td><code>salt%20%26%20pepper</code></td><td><code>salt%20&amp;%20pepper</code></td></tr>
+<tr><td><code>https://example.com/a b?x=1</code></td><td><code>https%3A%2F%2Fexample.com%2Fa%20b%3Fx%3D1</code></td><td><code>https://example.com/a%20b?x=1</code></td></tr>
+<tr><td><code>café</code></td><td><code>caf%C3%A9</code></td><td><code>caf%C3%A9</code></td></tr>
+</tbody>
+</table>
+
+<p>Notice the pattern: component mode encodes the structural characters (<code>:</code>, <code>/</code>, <code>?</code>, <code>=</code>, <code>&</code>) while full-URL mode leaves them alone. The rule of thumb: encoding a value someone typed into a form or a search box? Component. Encoding a complete link you want to keep clickable? Full URL.</p>
+
+<p>One more encoding you'll meet: spaces as <code>+</code>. In HTML form submissions (<code>application/x-www-form-urlencoded</code>), spaces are traditionally written as plus signs rather than <code>%20</code>. Most decoders handle both, but if you're decoding form data and seeing literal plus signs, that's why — the tool's "treat + as space" option covers this case.</p>
+
+<h3>Common Encoded Characters Reference</h3>
+
+<table>
+<thead><tr><th>Character</th><th>Encoded</th><th>When you'll see it</th></tr></thead>
+<tbody>
+<tr><td>space</td><td><code>%20</code></td><td>Search terms, file names</td></tr>
+<tr><td><code>&amp;</code></td><td><code>%26</code></td><td>Inside a parameter value</td></tr>
+<tr><td><code>?</code></td><td><code>%3F</code></td><td>Inside a value, not as query starter</td></tr>
+<tr><td><code>=</code></td><td><code>%3D</code></td><td>Inside a value, not as key-value joiner</td></tr>
+<tr><td><code>/</code></td><td><code>%2F</code></td><td>Inside a path segment value</td></tr>
+<tr><td><code>#</code></td><td><code>%23</code></td><td>Hashtags in shared text</td></tr>
+<tr><td><code>%</code></td><td><code>%25</code></td><td>A literal percent sign in data</td></tr>
+<tr><td><code>+</code></td><td><code>%2B</code></td><td>Phone numbers, math expressions</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses a URL Encoder Decoder?</h3>
+
+<p><strong>Web developers</strong> encode query parameters before building API calls and decode opaque URLs while debugging. It's a daily-use utility in any shop that builds links programmatically.</p>
+
+<p><strong>Digital marketers</strong> encode UTM parameters and campaign URLs before pasting them into emails and ads, where a raw ampersand or space silently breaks tracking.</p>
+
+<p><strong>SEO specialists</strong> audit redirect chains and canonical URLs, decoding percent-encoded addresses to verify they point where intended.</p>
+
+<p><strong>QA testers</strong> verify that forms and search boxes handle special characters — typing "fish & chips" into a search and confirming the URL encodes correctly is a standard test case.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Two-way conversion</strong> — encode text to percent-encoding, decode it back.</li>
+<li><strong>Component & full-URL modes</strong> — the right method for values and for whole addresses.</li>
+<li><strong>UTF-8 aware</strong> — accented letters and non-Latin scripts encode correctly.</li>
+<li><strong>Instant results</strong> — output updates as you type or paste.</li>
+<li><strong>Swap, copy, clear</strong> — one-click actions for back-and-forth workflows.</li>
+<li><strong>100% free</strong> — no account, no limits.</li>
+<li><strong>Private by design</strong> — runs on your browser's native encoding functions; nothing is uploaded.</li>
+<li><strong>Works everywhere</strong> — any modern browser, desktop or mobile.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this URL encoder decoder free?</h4>
+<p>Yes — free, no signup, unlimited use.</p>
+
+<h4>What's the difference between encode component and encode full URL?</h4>
+<p>Component encoding escapes structural characters (<code>?</code>, <code>&amp;</code>, <code>=</code>, <code>/</code>) — use it for a single value. Full-URL encoding preserves them — use it for a complete address.</p>
+
+<h4>Why is there a %20 in my URL?</h4>
+<p>That's an encoded space. Spaces aren't allowed raw in URLs, so they're written as <code>%20</code> (or <code>+</code> in form data).</p>
+
+<h4>What does %26 mean?</h4>
+<p>An encoded ampersand (<code>&amp;</code>). It appears when the ampersand is data inside a value rather than a parameter separator.</p>
+
+<h4>Should I encode the whole URL or just the parameters?</h4>
+<p>Just the parameter values, with component encoding. Encoding a whole URL with component mode breaks its structure.</p>
+
+<h4>Is URL encoding the same as encryption?</h4>
+<p>No. Encoding only changes the representation so characters travel safely — anyone can decode it. It adds zero security.</p>
+
+<h4>Why do I see + instead of %20 sometimes?</h4>
+<p>HTML forms traditionally encode spaces as <code>+</code>. Both mean "space"; use the "treat + as space" option when decoding form data.</p>
+
+<h4>Is my data uploaded anywhere?</h4>
+<p>No. Encoding and decoding run entirely in your browser using its built-in functions.</p>
+</article>

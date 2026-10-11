@@ -1,99 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <title>Sentence Checker | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../image-tools/css/global.css">
-    <link rel="stylesheet" href="../image-tools/css/components.css">
-    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
-
-
-  <link rel="stylesheet" href="../image-tools/css/th-header-footer.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentence Checker | TOOLSHUB</title>
+<meta name="description" content="">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../image-tools/css/v3-design.css">
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../index.html#tools">All Tools</a><a href="../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../index.html#tools">Explore Tools</a></div>
+</div></header>
+<!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+
+<nav class="crumbs"><a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="index.html">Text Tools</a> &nbsp;/&nbsp; <span>Sentence Checker</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">Text Tools</span>
+  <h1>Sentence <em>Checker</em></h1>
+  <p>Check sentences for basic grammar issues.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> Private — runs in browser</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../image-tools/index.html">Image Tools</a><a href="../pdf-tools/index.html">PDF Tools</a><a href="../text-tools/index.html">Text & Writing</a><a href="../seo-tools/index.html">SEO Tools</a><a href="../calculator-tools/index.html">Calculators</a><a href="../binary-tools/index.html">Binary Tools</a><a href="../code-format-tools/index.html">Code & Formatters</a><a href="../doc-tools/index.html">Documents</a><a href="../other-tools/index.html">Other Tools</a><a href="../about-us.html">About Us</a><a href="../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a> &gt;
-                <a href="index.html">Text & Writing</a> &gt;
-                <span>✅ Sentence Checker</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">✅ Sentence Checker</h1>
-                <p class="tool-description">Check sentences for basic grammar issues.</p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
-<div class="tool-workspace">
+</section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>Sentence Checker</b><span>v3.0 &middot; local</span></div>
+  <div class="ws-body">
+
 <section class="input-section">
 <div class="section-header">
 <h2 class="section-title">📝 Input</h2>
 </div>
-<textarea class="text-area" id="input-text" placeholder="Enter sentences..."></textarea>
+<textarea class="text-area ws-textarea" id="input-text" placeholder="Enter sentences..."></textarea>
 </section>
 <section class="settings-panel">
-<button class="btn btn-primary" onclick="check()">🔍 Check</button>
+<button class="btn btn-primary tu-btn tu-btn-primary btn-dark" onclick="check()">🔍 Check</button>
 </section>
 <section class="output-section">
 <div class="section-header">
 <h2 class="section-title">📊 Results</h2>
 </div>
 <div id="results" style="padding:1rem;background:var(--bg-secondary);border-radius:var(--radius-md);"></div>
-<div class="stats-panel" style="margin-top:1rem;">
-<div class="stat-item"><span class="stat-label">Issues</span><span class="stat-value highlight" id="stat-issues">0</span></div>
+<div class="stats-panel stats" style="margin-top:1rem;">
+<div class="stat-item stat"><b class="stat-value highlight" id="stat-issues">0</b><span class="stat-label">Issues</span></div>
 </div>
 </section>
-</div>
-            </div>
-            <section class="seo-article" data-tool="sentence-checker">
-<article class="tool-article">
-<h2>Sentence Checker — Check Your Sentences for Grammar and Clarity</h2>
 
-<p>I once sent a client proposal with the sentence "We will delivery the project on time" in it. One wrong word, and I spent the next call subtly overcompensating. A sentence checker would have caught it in two seconds. Paste your sentence, and it flags grammar slips, spelling mistakes, punctuation errors, and awkward structure — then suggests fixes you can accept with a click. It is the cheapest proofreader you will ever hire.</p>
 
+  </div>
+</div></div>
+
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 &mdash; HOW IT WORKS</span><h2>Three steps, zero learning curve</h2></div>
+  <div class="steps">
+<div class="step"><div class="step-n">i.</div><h3>Paste your sentences</h3><p>Enter the text you want checked.</p></div>
+<div class="step"><div class="step-n">ii.</div><h3>Click Check</h3><p>The tool scans for common grammar and punctuation issues.</p></div>
+<div class="step"><div class="step-n">iii.</div><h3>Fix what it flags</h3><p>Review each flagged issue and correct your text.</p></div>
+  </div>
+</section>
+
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>Sentence Checker — Check Your Sentences for Grammar and Clarity</h2>
+    <p class="deck">Check sentences for basic grammar issues.</p>
+    <div class="article-meta">
+      <div class="avatar">T</div>
+      <div><b>TOOLSHUB Editorial</b><span>5 min read &middot; Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+<p class="lead">I once sent a client proposal with the sentence "We will delivery the project on time" in it. One wrong word, and I spent the next call subtly overcompensating. A sentence checker would have caught it in two seconds. Paste your sentence, and it flags grammar slips, spelling mistakes, punctuation errors, and awkward structure — then suggests fixes you can accept with a click. It is the cheapest proofreader you will ever hire.</p>
 <h3>What Is a Sentence Checker?</h3>
-
 <p>A sentence checker is an online tool that analyzes your writing one sentence at a time and points out what needs fixing. It looks at grammar (subject-verb agreement, tense consistency, article usage), spelling, punctuation (commas, apostrophes, end marks), and structure problems like run-on sentences and fragments. Some checkers also flag wordy phrasing and passive voice so your sentences read cleaner, not just correctly.</p>
-
 <p>The key difference from a spell checker: a spell checker only knows whether each word exists in a dictionary. A sentence checker understands how the words work together, so it catches "their going to the store" even though every word is spelled right.</p>
-
 <h3>How to Use the Sentence Checker</h3>
-
 <p>Paste or type your text into the box and run the check. Errors get underlined or highlighted; hover or click each one to see the suggested fix, then accept or ignore it. Copy the corrected text when you are done.</p>
-
 <p>Do not accept every suggestion blindly. Checkers are good at grammar rules and bad at context — they will flag a character's dialogue, a brand name, or an intentional stylistic choice. Your judgment is the final filter. I read each flagged sentence in full before clicking anything, and that habit has saved me from "corrections" that would have made things worse.</p>
-
 <h3>What a Sentence Checker Looks For</h3>
-
 <table>
 <thead><tr><th>Issue</th><th>Example</th><th>Fix</th></tr></thead>
 <tbody>
@@ -105,29 +99,17 @@
 <tr><td>Wordiness</td><td>"Due to the fact that"</td><td>"Because"</td></tr>
 </tbody>
 </table>
-
 <p>That fourth row is my favorite example of why punctuation checkers matter — one comma is the difference between dinner and a crime.</p>
-
 <h3>Sentence Checker vs Spell Checker vs Grammar Checker</h3>
-
 <p>A <strong>spell checker</strong> verifies individual words against a dictionary. Fast, but blind to context. A <strong>grammar checker</strong> analyzes full documents for grammatical rules and style. A <strong>sentence checker</strong> sits between them: it examines each sentence as a unit, catching the structural mistakes spell checkers miss without the heavy document-wide analysis of a full grammar suite.</p>
-
 <p>For quick work — an email, a caption, a single paragraph — a sentence checker is the fastest path to clean writing. For a thesis or a book chapter, pair it with a full grammar checker and a human proofread.</p>
-
 <h3>Who Benefits Most</h3>
-
 <p><strong>Students</strong> catch the errors that cost marks: agreement mistakes, comma splices, and fragments that slip past tired eyes at 1 a.m.</p>
-
 <p><strong>Non-native English speakers</strong> get instant feedback on articles, prepositions, and tense — the three things that trip up even advanced learners. Reviewing corrections is genuinely one of the fastest ways to improve.</p>
-
 <p><strong>Professionals</strong> polish emails, reports, and proposals before they reach a client or a boss. Clean sentences read as competence.</p>
-
 <p><strong>Writers and bloggers</strong> use it as a first editing pass, clearing mechanical errors so the real revision can focus on ideas and flow.</p>
-
 <p><strong>Job seekers</strong> run cover letters and resumes through it, because a typo in an application can end the conversation before it starts.</p>
-
 <h3>Tips for Getting Accurate Checks</h3>
-
 <ul>
 <li><strong>Check in sections.</strong> Long documents are easier to review accurately a few paragraphs at a time.</li>
 <li><strong>Read flagged sentences fully.</strong> The suggestion only makes sense in context — never accept blindly.</li>
@@ -136,9 +118,7 @@
 <li><strong>Watch proper nouns.</strong> Names, brands, and technical terms get flagged because they are not in the dictionary — ignore those.</li>
 <li><strong>Do a final read yourself.</strong> No checker catches everything. Your eyes are the last line of defense.</li>
 </ul>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>Instant analysis</strong> — paste text and see issues highlighted in seconds.</li>
 <li><strong>Grammar, spelling, and punctuation</strong> — all three checked together.</li>
@@ -147,80 +127,43 @@
 <li><strong>Private by design</strong> — checking runs in your browser; your text is not stored.</li>
 <li><strong>Works on any device</strong> — desktop, tablet, or phone, nothing to install.</li>
 </ul>
+<h3>Frequently asked</h3>
+<div class="faq">
+<div class="faq-item open"><div class="faq-q">What does the sentence checker look for? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>Basic issues: sentence capitalization, end punctuation, double spaces, and other common slip-ups.</div></div></div>
+<div class="faq-item"><div class="faq-q">Is it as powerful as Grammarly? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>No — this is a lightweight checker for basic issues, not an AI grammar engine. It is fast, free and private.</div></div></div>
+<div class="faq-item"><div class="faq-q">Which language does it check? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>It is designed for English text.</div></div></div>
+<div class="faq-item"><div class="faq-q">Is it free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>Yes — completely free.</div></div></div>
+</div>
+  </div>
+</article></div>
 
-<h3>Frequently Asked Questions</h3>
-
-<h4>Is this sentence checker free?</h4>
-<p>Yes. Open it in your browser, paste your text, and check as many sentences as you like — no account or payment needed.</p>
-
-<h4>What kinds of errors does it catch?</h4>
-<p>Grammar mistakes, spelling errors, punctuation problems, run-on sentences, fragments, and wordy phrasing, with a suggested fix for each.</p>
-
-<h4>Should I accept every suggestion?</h4>
-<p>No. Review each one in context. Checkers can misread names, dialogue, creative phrasing, and technical terms, so your judgment decides.</p>
-
-<h4>What is a run-on sentence?</h4>
-<p>Two or more independent clauses joined without proper punctuation or a conjunction, like "I ran I was late." Fix it with a period, a comma plus conjunction, or a semicolon.</p>
-
-<h4>Can it check long documents?</h4>
-<p>Yes, but checking in sections gives more accurate results and makes review manageable. Work through a few paragraphs at a time.</p>
-
-<h4>Does it work on mobile?</h4>
-<p>Yes. It runs in the browser, so it works on phones and tablets as well as computers.</p>
-
-<h4>Is my text stored anywhere?</h4>
-<p>No. The check happens in your browser and your text is never uploaded or saved.</p>
-
-<h4>Will it make my writing sound unnatural?</h4>
-<p>Only if you let it. Keep your own voice by reviewing suggestions critically and rejecting rewrites that flatten your style.</p>
-</article>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 &mdash; KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+<a class="rel" href="spell-checker.html"><i class="fa-solid fa-spell-check" style="color:#4f46e5"></i><h3>Spell Checker</h3><p>Catch common spelling mistakes.</p></a>
+<a class="rel" href="sentence-counter.html"><i class="fa-solid fa-hashtag" style="color:#7c3aed"></i><h3>Sentence Counter</h3><p>Count sentences smartly.</p></a>
+<a class="rel" href="text-cleaner.html"><i class="fa-solid fa-broom" style="color:#4f46e5"></i><h3>Text Cleaner</h3><p>Remove spaces, HTML and junk.</p></a>
+<a class="rel" href="paragraph-rephraser.html"><i class="fa-solid fa-paragraph" style="color:#7c3aed"></i><h3>Paragraph Rephraser</h3><p>Rephrase paragraphs with better flow.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../image-tools/index.html">Image Tools</a></li><li><a href="../pdf-tools/index.html">PDF Tools</a></li><li><a href="../text-tools/index.html">Text & Writing</a></li><li><a href="../seo-tools/index.html">SEO Tools</a></li><li><a href="../calculator-tools/index.html">Calculators</a></li><li><a href="../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../index.html#tools">All 203 tools</a></li><li><a href="index.html">Text tools</a></li><li><a href="../index.html#image-tools">Image tools</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../about-us.html">About</a><a href="../contact-us.html">Contact</a><a href="../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>&copy; 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script src="js/text-utils.js"></script>
 <script src="js/tool-ui.js"></script>
 <script>
+
         ToolUI.init({ toolName: 'sentence-checker' });
 
         function check() {
@@ -250,7 +193,8 @@
                 : '<span style="color:var(--success);">✓ No issues found!</span>';
             document.getElementById('stat-issues').textContent = issues.length;
         }
-    </script>
-  <script src="../image-tools/js/th-interactions.js"></script>
+    
+</script>
+<script src="../image-tools/js/v3.js"></script>
 </body>
 </html>

@@ -1,0 +1,97 @@
+<article class="tool-article">
+<h2>Canonical Tag Generator — Fix Duplicate Content With One Line of HTML</h2>
+
+<p>I once watched a client's blog lose half its traffic because the same article lived at four URLs — with and without www, with and without a trailing slash, plus a ?utm_campaign version Google had indexed separately. The fix was a single HTML tag. A canonical tag generator writes that tag for you: <code>&lt;link rel="canonical"&gt;</code>, telling search engines which URL is the real one when duplicates exist.</p>
+
+<h3>What Is a Canonical Tag?</h3>
+
+<p>Duplicate content is rarely about copying — it is about plumbing. E-commerce filters (?color=red&size=m), tracking parameters (?utm_source=newsletter), HTTP vs HTTPS, www vs non-www, and print-friendly versions all create multiple URLs showing the same content. To Google, each URL is a separate page competing with itself, splitting ranking signals across copies.</p>
+
+<p>The canonical tag resolves this. Placed in the page's <code>&lt;head&gt;</code>, it says: "of all the URLs showing this content, this one is the primary — consolidate everything here." It is a strong hint rather than a command; Google honors it in the vast majority of cases, provided your other signals (sitemaps, internal links, redirects) agree with it.</p>
+
+<p>A common misunderstanding: canonical tags do not redirect users. Visitors still land on whichever URL they clicked; the tag only guides search engines behind the scenes. For actually moving traffic, you want a 301 redirect — canonicals are for the cases where multiple URLs must legitimately keep working.</p>
+
+<h3>How to Use the Canonical Tag Generator</h3>
+
+<p>Paste the URL you want search engines to treat as primary — the clean version, no tracking parameters, HTTPS, your preferred www choice. The generator normalizes it (stripping UTM tags, fixing the protocol, handling trailing slashes) and outputs the ready-to-paste tag:</p>
+
+<p><code>&lt;link rel="canonical" href="https://example.com/your-page/" /&gt;</code></p>
+
+<p>Copy that line into the <code>&lt;head&gt;</code> section of every duplicate or variant page, pointing them all at the same primary URL. If you use WordPress, SEO plugins like Rank Math and Yoast have a canonical URL field per post — paste it there instead of editing code. Then verify in Google Search Console's URL Inspection tool that Google sees the tag.</p>
+
+<p>Include a self-referencing canonical on the primary page itself — the page pointing at its own URL. Google's own engineers recommend this; it guards against scrapers and parameter variants you have not thought of yet.</p>
+
+<h3>How Canonicalization Works</h3>
+
+<p>The mechanism is a negotiation between your signals and Google's judgment.</p>
+
+<p><strong>Step 1 — Tag placement.</strong> Each variant page carries the canonical tag in its HTML head (or, for non-HTML files like PDFs, in the HTTP Link header) naming the preferred URL.</p>
+
+<p><strong>Step 2 — Crawling.</strong> Googlebot fetches the variants, reads the tags, and groups the URLs into a duplicate cluster.</p>
+
+<p><strong>Step 3 — Signal consolidation.</strong> Ranking signals — links, relevance, freshness — from all cluster members are folded toward the canonical URL. This is the payoff: instead of four weak copies, you have one strong page.</p>
+
+<p><strong>Step 4 — Index selection.</strong> Google typically indexes the canonical URL and drops the variants from results. If your sitemap, internal links, or redirects contradict the tag, Google may pick a different canonical — consistency across signals is what makes the hint stick.</p>
+
+<p>Normalization is the generator's real value-add: absolute HTTPS URLs without tracking parameters get honored far more reliably than relative URLs or parameter-laden ones.</p>
+
+<h3>Canonical Tag Examples</h3>
+
+<table>
+<thead><tr><th>Situation</th><th>Canonical should point to</th></tr></thead>
+<tbody>
+<tr><td><code>example.com/page?utm_source=email</code></td><td><code>https://example.com/page</code></td></tr>
+<tr><td><code>www.example.com/page</code> and <code>example.com/page</code></td><td>Whichever version you standardized on</td></tr>
+<tr><td><code>example.com/page/</code> and <code>example.com/page</code></td><td>One consistent trailing-slash policy</td></tr>
+<tr><td>Syndicated article republished elsewhere</td><td>The original publisher's URL (cross-domain)</td></tr>
+<tr><td>PDF with an HTML equivalent</td><td>The HTML page, via HTTP Link header</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Canonical Tag Generators?</h3>
+
+<p><strong>SEO specialists</strong> audit sites for duplicate clusters and deploy canonicals as the standard fix.</p>
+
+<p><strong>E-commerce managers</strong> tame faceted navigation and filtered URLs that spawn thousands of duplicates.</p>
+
+<p><strong>Bloggers</strong> handle tag pages, archives, and syndicated content pointing back to originals.</p>
+
+<p><strong>Developers</strong> generate correct tags during builds instead of hand-writing them per template.</p>
+
+<p><strong>Content marketers</strong> protect original articles when partners republish them.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Free generation</strong> — no signup, instant output.</li>
+<li><strong>URL normalization</strong> — strips tracking params, forces HTTPS, fixes slashes.</li>
+<li><strong>Absolute URLs</strong> — the format Google honors most reliably.</li>
+<li><strong>HTTP header output</strong> — Link headers for PDFs and non-HTML files.</li>
+<li><strong>Cross-domain support</strong> — point at URLs on other domains for syndication.</li>
+<li><strong>Validation checks</strong> — flags common mistakes before you deploy.</li>
+<li><strong>Browser-based</strong> — nothing to install.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this canonical tag generator free?</h4>
+<p>Yes — free with no account required.</p>
+
+<h4>Where do I put the canonical tag?</h4>
+<p>Inside the <code>&lt;head&gt;</code> section of the page's HTML, on every variant page — each one pointing to the primary URL.</p>
+
+<h4>Should the primary page have a canonical tag too?</h4>
+<p>Yes — a self-referencing canonical (the page pointing to itself) is recommended even when no duplicates exist.</p>
+
+<h4>Canonical tag vs 301 redirect — which should I use?</h4>
+<p>Use 301s when old URLs should stop working (site moves, deleted pages). Use canonicals when variants must stay live (tracking params, filters, syndication).</p>
+
+<h4>Can I use relative URLs in canonical tags?</h4>
+<p>You can, but absolute URLs (full https:// address) are honored more reliably. Always generate absolute.</p>
+
+<h4>How long until Google respects my canonical?</h4>
+<p>Usually days to a few weeks after recrawling. Check the "Google-selected canonical" in Search Console's URL Inspection to confirm.</p>
+
+<h4>What if Google ignores my canonical tag?</h4>
+<p>Check for conflicting signals — sitemap URLs, internal links, and redirects should all agree with the tag. Mixed signals are the usual cause.</p>
+</article>

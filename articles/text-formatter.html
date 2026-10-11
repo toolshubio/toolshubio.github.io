@@ -1,0 +1,102 @@
+<article class="tool-article">
+<h2>Text Formatter — Pretty-Print or Minify JSON Instantly</h2>
+
+<p>I debugged an API integration once by staring at a single 40,000-character line of JSON, scrolling sideways like a maniac looking for one missing bracket. Ten seconds in a formatter — with proper indentation and line breaks — and the problem was obvious. A text formatter takes cramped, unreadable structured text and lays it out cleanly, or does the reverse: compresses pretty text into a compact single line for production. Both directions matter, and both take one click.</p>
+
+<h3>What Is a Text Formatter?</h3>
+
+<p>A text formatter restructures text for readability or compactness. In its most common form, it pretty-prints JSON: taking minified or messy data and applying consistent indentation, line breaks, and spacing so the structure is visible at a glance. Flip to minify mode and it does the opposite — stripping all unnecessary whitespace to produce the smallest possible output for sending over a network or embedding in code.</p>
+
+<p>Formatting is about structure, not content. The data stays identical; only the presentation changes. That makes formatters safe to use freely — you cannot corrupt data by reformatting it, and most tools validate as they go, flagging syntax errors instead of silently mangling your input.</p>
+
+<h3>How to Use the Text Formatter</h3>
+
+<p>Paste your JSON into the input box, choose the JSON preset to pretty-print it or the Minify preset to compress it, and click Format. The result appears in the output area, ready to copy. If your input has a syntax error — a missing comma, an unclosed bracket — the tool will tell you instead of producing garbage, which is often the fastest way to find the mistake.</p>
+
+<h3>Format vs Minify: When to Use Each</h3>
+
+<table>
+<thead><tr><th>Mode</th><th>What It Does</th><th>Output Size</th><th>Use It When</th></tr></thead>
+<tbody>
+<tr><td>Pretty-print (JSON)</td><td>Adds indentation and line breaks</td><td>Larger</td><td>Reading, debugging, documenting</td></tr>
+<tr><td>Minify</td><td>Removes all unnecessary whitespace</td><td>Smaller</td><td>Production payloads, embedding in code</td></tr>
+</tbody>
+</table>
+
+<p>The workflow most developers settle into: minified data arrives from an API, they pretty-print it to understand and debug it, then minify their own payloads before sending them back. The formatter sits in the middle of that loop.</p>
+
+<h3>What Counts as Well-Formatted</h3>
+
+<p>Good formatting follows a few consistent rules. Each nesting level gets its own indentation — usually two or four spaces — so you can see parent-child relationships at a glance. Opening and closing brackets line up vertically. Arrays with multiple items get one item per line; short ones may stay inline. Keys and values separate cleanly with a space after each colon.</p>
+
+<p>Here is the same data both ways:</p>
+
+<table>
+<thead><tr><th>Minified</th><th>Pretty-printed</th></tr></thead>
+<tbody>
+<tr><td><code>{"name":"Ava","tags":["admin","editor"]}</code></td><td><code>{<br>&nbsp;&nbsp;"name": "Ava",<br>&nbsp;&nbsp;"tags": ["admin", "editor"]<br>}</code></td></tr>
+</tbody>
+</table>
+
+<p>Same data, wildly different reading experience. The minified version is 45 characters of wall; the formatted version shows its structure in a glance.</p>
+
+<h3>When Developers Reach for It</h3>
+
+<p><strong>Debugging API responses.</strong> The number-one use: paste a raw response, format it, and actually read what the server sent back.</p>
+
+<p><strong>Finding syntax errors.</strong> A formatter that validates will point at the exact spot where your JSON breaks — faster than eyeballing brackets.</p>
+
+<p><strong>Preparing payloads.</strong> Minify a request body before pasting it into code or a test tool to keep things compact.</p>
+
+<p><strong>Documenting data.</strong> Pretty-printed examples in documentation and bug reports are infinitely more readable than single-line blobs.</p>
+
+<p><strong>Comparing structures.</strong> Two formatted JSON blocks are easy to diff visually; two minified ones are not.</p>
+
+<h3>Tips for Clean Formatting</h3>
+
+<ul>
+<li><strong>Validate before trusting.</strong> If the formatter reports an error, fix the syntax first — the error location it gives you is usually exact.</li>
+<li><strong>Pick one indent style and stick with it.</strong> Two spaces or four — consistency across your project matters more than the choice.</li>
+<li><strong>Minify only for machines.</strong> Never commit minified JSON as your source of truth; keep the readable version and minify on deploy.</li>
+<li><strong>Watch trailing commas.</strong> Valid in JavaScript, invalid in strict JSON — a common reason pasted data fails validation.</li>
+<li><strong>Clean before formatting.</strong> Stray invisible characters from copy-paste can break parsing; a quick pass through a text cleaner helps.</li>
+</ul>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>One-click formatting</strong> — pretty-print or minify instantly.</li>
+<li><strong>Syntax validation</strong> — errors flagged with their location.</li>
+<li><strong>Safe by design</strong> — formatting never changes your data.</li>
+<li><strong>100% free</strong> — no signup, no limits.</li>
+<li><strong>Private by design</strong> — everything runs in your browser; API keys and payloads stay local.</li>
+<li><strong>One-click copy</strong> — take the result straight to your editor.</li>
+<li><strong>Works everywhere</strong> — desktop and mobile browsers.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What does a text formatter do?</h4>
+<p>It restructures structured text — typically JSON — for readability (pretty-print with indentation) or compactness (minify to a single line), without changing the data itself.</p>
+
+<h4>Is the text formatter free?</h4>
+<p>Yes. Format and minify as much text as you like, with no account required.</p>
+
+<h4>What is the difference between formatting and minifying?</h4>
+<p>Formatting adds indentation and line breaks so humans can read the structure; minifying removes all unnecessary whitespace so machines can transfer it efficiently.</p>
+
+<h4>Will formatting change my data?</h4>
+<p>No. Only whitespace and layout change. The keys, values, and structure stay exactly the same.</p>
+
+<h4>Why does it say my JSON is invalid?</h4>
+<p>Usually a missing comma, an unclosed bracket or quote, a trailing comma, or single quotes instead of double quotes. The error location points you to the problem.</p>
+
+<h4>Can I format other languages like XML or SQL?</h4>
+<p>This formatter focuses on JSON and minification. For other languages, use a dedicated formatter for that syntax.</p>
+
+<h4>Is my data uploaded to a server?</h4>
+<p>No. Formatting and validation happen locally in your browser, so API responses and payloads never leave your device.</p>
+
+<h4>Should I store minified or formatted JSON?</h4>
+<p>Store the formatted version as your source of truth — it is readable and diffable. Minify only when sending data over the network or embedding it where size matters.</p>
+</article>

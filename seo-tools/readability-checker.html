@@ -1,73 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <title>Readability Checker | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../image-tools/css/global.css">
-    <link rel="stylesheet" href="../image-tools/css/components.css">
-    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Readability Checker | TOOLSHUB</title>
+<meta name="description" content="">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../image-tools/css/v3-design.css">
+<style>
+/* v3 compat — legacy tool markup mapped onto the v3 design system */
+:root{--border-color:#e4e4e7;--bg-tertiary:#f4f4f5;--bg-primary:#ffffff;--text-primary:#0a0a0b;--text-secondary:#3f3f46;--color-seo:#4f46e5}
+.ws-input,select.ws-input,textarea.ws-input{width:100%;border:1.5px solid #e4e4e7;border-radius:12px;padding:14px 16px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;outline:none;transition:.2s;background:#fff;color:#0a0a0b}
+.ws-input:focus{border-color:#4f46e5;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.ws-input::placeholder{color:#a1a1aa}
+.input-group{margin-bottom:20px}
+.input-label{display:block;font-weight:600;font-size:.92rem;margin-bottom:10px;color:#0a0a0b}
+.input-desc{font-size:.85rem;color:#71717a;margin-top:10px;line-height:1.6}
+.action-bar{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap}
+.output-section{margin-top:28px}
+.section-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.section-title{font-size:1.1rem;font-weight:700;letter-spacing:-.01em}
+.output-container{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden;background:#fff}
+.output-container table{width:100%;border-collapse:collapse;font-size:.94rem}
+.output-container th,.output-container td{padding:12px 16px;border-bottom:1px solid #f4f4f5;text-align:left}
+.output-code{font-family:monospace;font-size:.9rem;background:#f4f4f5;border:1px solid #e4e4e7;border-radius:12px;padding:16px;white-space:pre-wrap;word-break:break-all;color:#0a0a0b}
+.container,.tool-interface-container{max-width:100%}
+.schema-form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.mb-md{margin-bottom:16px}.mb-lg{margin-bottom:24px}.mb-sm{margin-bottom:8px}.mt-md{margin-top:16px}.mt-lg{margin-top:24px}.mt-sm{margin-top:8px}.text-center{text-align:center}
+.tab,.mode-btn,.device-tab,.preview-tab,.editor-tab,.nav-item{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;border:1px solid #e4e4e7;background:#fff;font-size:.88rem;font-weight:600;cursor:pointer;color:#3f3f46;transition:.15s;font-family:inherit}
+.tab:hover,.mode-btn:hover,.device-tab:hover,.preview-tab:hover,.editor-tab:hover,.nav-item:hover{border-color:#c7d2fe}
+.tab.active,.mode-btn.active,.device-tab.active,.preview-tab.active,.editor-tab.active,.nav-item.active{background:#0a0a0b;color:#fff;border-color:#0a0a0b}
+.btn-add-schema,.tu-btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;border:1px solid #e4e4e7;background:#fff;font-size:.85rem;font-weight:600;cursor:pointer;color:#3f3f46;transition:.15s;font-family:inherit}
+.btn-add-schema:hover,.tu-btn-ghost:hover{border-color:#c7d2fe;background:#eef2ff}
+.hidden{display:none!important}
+.selected{outline:2px solid #4f46e5;outline-offset:2px}
+.visual-card,.seo-card{border:1.5px solid #e4e4e7;border-radius:16px;padding:20px;cursor:pointer;transition:.15s;background:#fff}
+.visual-card:hover,.seo-card:hover{border-color:#c7d2fe}
+.option-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:24px}
+.card-icon{font-size:1.4rem;color:#4f46e5;display:block;margin-bottom:10px}
+.card-title{font-weight:700;margin-bottom:6px;color:#0a0a0b}
+.card-desc{font-size:.88rem;color:#71717a}
+.feature-card{border:1px solid #e4e4e7;border-radius:16px;padding:20px;background:#fff}
+.feature-title{font-size:.85rem;font-weight:600;color:#3f3f46;margin-bottom:8px}
+.feature-desc{font-size:.9rem;color:#71717a}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #f4f4f5;font-size:.92rem;color:#0a0a0b}
+.toggle-switch{position:relative;display:inline-block;width:48px;height:26px;flex:none}
+.toggle-switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;inset:0;background:#d4d4d8;border-radius:99px;transition:.2s;cursor:pointer}
+.slider:before{content:"";position:absolute;width:20px;height:20px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s}
+.toggle-switch input:checked+.slider{background:#4f46e5}
+.toggle-switch input:checked+.slider:before{transform:translateX(22px)}
+.checklist-item{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #e4e4e7;border-radius:12px;margin-bottom:10px;background:#fff;cursor:pointer;transition:.15s}
+.checklist-item:hover{border-color:#c7d2fe}
+.seo-result-item,.preview-box,#serpPreviewBox{border:1px solid #e4e4e7;border-radius:16px;padding:20px;background:#fff;margin-top:16px}
+.seo-url{color:#166534;font-size:.85rem}
+.seo-title{color:#1a0dab;font-size:1.1rem;margin:4px 0}
+.seo-desc{color:#3f3f46;font-size:.9rem}
+.status-badge{display:inline-block;padding:.5rem 1rem;border-radius:30px;font-weight:700}
+.bulk-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.bulk-table th,.bulk-table td{padding:10px 12px;border-bottom:1px solid #f4f4f5;text-align:left}
+.emotional-word{background:#fef3c7;padding:1px 4px;border-radius:4px}
+.power-word{background:#eef2ff;padding:1px 4px;border-radius:4px}
+.invalid,.duplicate-error{border-color:#ef4444!important}
+button.active:not(.nav-item):not(.tab):not(.mode-btn):not(.device-tab):not(.preview-tab):not(.editor-tab),a.active{box-shadow:inset 0 0 0 2px #4f46e5}
+.sim-row{display:flex;gap:10px;align-items:center;padding:8px 0;font-size:.9rem;color:#3f3f46}
+/* website speed test dashboard */
+.speed-dashboard{max-width:100%}
+.url-input-container{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.url-input-container .ws-input{flex:1;min-width:240px}
+.results-container,.history-section{margin-top:24px}
+.perf-header{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-bottom:20px}
+.vitals-summary{flex:1;min-width:240px}
+.gauge-wrapper{display:flex;gap:16px;flex-wrap:wrap}
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+.category-scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:20px 0}
+.screenshot-section,.audit-container{margin-top:28px}
+.audit-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:10px}
+.table-responsive{overflow-x:auto;border:1px solid #e4e4e7;border-radius:16px}
+.audit-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.audit-table th,.audit-table td{padding:12px 14px;border-bottom:1px solid #f4f4f5;text-align:left}
+.badge{display:inline-block;padding:4px 12px;border-radius:99px;font-size:.78rem;font-weight:700;background:#eef2ff;color:#4f46e5}
+.badge-secondary{background:#f4f4f5;color:#3f3f46}
+.analyze-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:14px;font-weight:600;font-size:.92rem;cursor:pointer;border:none;background:#0a0a0b;color:#fff;font-family:inherit;transition:.2s}
+.analyze-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -8px rgba(0,0,0,.3)}
+.loading-overlay{position:fixed;inset:0;background:rgba(255,255,255,.94);z-index:50;display:flex;align-items:center;justify-content:center}
+.progress-card{background:#fff;border:1px solid #e4e4e7;border-radius:20px;padding:36px;max-width:480px;width:90%;box-shadow:0 12px 40px -12px rgba(0,0,0,.12)}
+.p-bar{height:10px;background:#f4f4f5;border-radius:99px;overflow:hidden;margin:16px 0}
+.p-fill{height:100%;width:0;background:linear-gradient(135deg,#4f46e5,#7c3aed);border-radius:99px;transition:width .3s}
+.wst-step{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:.9rem;color:#3f3f46}
+.s-spin{width:16px;height:16px;border:2px solid #e4e4e7;border-top-color:#4f46e5;border-radius:50%;animation:spn .8s linear infinite;display:none;flex:none}
+@keyframes spn{to{transform:rotate(360deg)}}
+.error-board{border:1px solid #fecaca;background:#fef2f2;border-radius:16px;padding:28px;margin-top:20px}
+.screenshot-container{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden}
+.screenshot-img{max-width:100%;display:block}
+.data-source-badge{display:inline-block;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;background:#eef2ff;color:#4f46e5;margin-bottom:8px}
+/* aliases for markup injected by legacy JS at runtime */
+.seo-textarea{width:100%;min-height:160px;border:1.5px solid #e4e4e7;border-radius:16px;padding:22px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;line-height:1.8;resize:vertical;outline:none;transition:.2s;background:#fafafa;color:#0a0a0b}
+.seo-textarea:focus{border-color:#4f46e5;background:#fff;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.seo-textarea::placeholder{color:#a1a1aa}
+.seo-input,select.seo-input,.seo-select{width:100%;border:1.5px solid #e4e4e7;border-radius:12px;padding:14px 16px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;outline:none;transition:.2s;background:#fff;color:#0a0a0b}
+.seo-input:focus,.seo-select:focus{border-color:#4f46e5;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.seo-input::placeholder{color:#a1a1aa}
 
-
-  <link rel="stylesheet" href="../image-tools/css/th-header-footer.css">
+</style>
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../index.html#tools">All Tools</a><a href="../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../index.html#tools">Explore Tools</a></div>
+</div></header>
+<!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+<nav class="crumbs"><a href="../index.html">Home</a> &nbsp;/&nbsp; <span>Readability Checker</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">SEO Tools</span>
+  <h1><em>Readability</em> Checker</h1>
+  <p>Score your content&#x27;s readability using the Flesch-Kincaid Ease formula.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../image-tools/index.html">Image Tools</a><a href="../pdf-tools/index.html">PDF Tools</a><a href="../text-tools/index.html">Text & Writing</a><a href="../seo-tools/index.html">SEO Tools</a><a href="../calculator-tools/index.html">Calculators</a><a href="../binary-tools/index.html">Binary Tools</a><a href="../code-format-tools/index.html">Code & Formatters</a><a href="../doc-tools/index.html">Documents</a><a href="../other-tools/index.html">Other Tools</a><a href="../about-us.html">About Us</a><a href="../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a> &gt;
-                <a href="index.html">SEO Tools</a> &gt;
-                <span>Readability Checker</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">Readability Checker</h1>
-                <p class="tool-description"></p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
-<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
-<div class="container text-center">
-<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Readability Checker</h1>
-<p class="hero-subtitle">Score your content's readability using the Flesch-Kincaid Ease formula.</p>
-</div>
 </section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>Readability Checker</b><span>v3.0 · local</span></div>
+  <div class="ws-body">
+
 <div class="container">
 <div class="tool-interface-container">
 <div class="input-group">
 <label class="input-label">Enter Text</label>
-<textarea class="seo-textarea" id="inputText" placeholder="Paste your text here..." style="min-height: 250px;"></textarea>
+<textarea class="seo-textarea ws-textarea" id="inputText" placeholder="Paste your text here..." style="min-height: 250px;"></textarea>
 </div>
 <div class="action-bar">
-<button class="btn-primary" onclick="checkReadability()">Check Score</button>
-<button class="btn-secondary" onclick="document.getElementById('inputText').value = ''; document.getElementById('resultsArea').style.display = 'none';">Reset</button>
+<button class="btn-primary btn btn-dark tu-btn tu-btn-primary" onclick="checkReadability()"><i class="fa-solid fa-gauge-high"></i> Check Score</button>
+<button class="btn-secondary btn btn-light tu-btn tu-btn-ghost" onclick="document.getElementById('inputText').value = ''; document.getElementById('resultsArea').style.display = 'none';"><i class="fa-solid fa-rotate-right"></i> Reset</button>
 </div>
 <div class="output-section" id="resultsArea" style="display: none;">
 <h3 class="section-title mb-md">Readability Score</h3>
@@ -79,18 +153,9 @@
 <p class="feature-desc" id="scoreDesc">Easy to read</p>
 </div>
 <div class="schema-form-grid mt-xl" style="max-width: 800px; margin-left: auto; margin-right: auto;">
-<div class="feature-card" style="padding: 1rem;">
-<h4 class="feature-title">Sentences</h4>
-<p class="stat-number" id="sentenceCount">0</p>
-</div>
-<div class="feature-card" style="padding: 1rem;">
-<h4 class="feature-title">Words</h4>
-<p class="stat-number" id="wordCount">0</p>
-</div>
-<div class="feature-card" style="padding: 1rem;">
-<h4 class="feature-title">Syllables</h4>
-<p class="stat-number" id="syllableCount">0</p>
-</div>
+<div class="stats"><div class="stat"><b id="sentenceCount">0</b><span>Sentences</span></div><div class="stat"><b id="wordCount">0</b><span>Words</span></div><div class="stat"><b id="syllableCount">0</b><span>Syllables</span></div></div>
+
+
 </div>
 <div class="bg-secondary p-md border-radius-md mt-lg" style="background: var(--bg-tertiary); padding: 1.5rem; border-radius: 12px; max-width: 800px; margin-left: auto; margin-right: auto;">
 <h4 class="mb-sm">About Flesch-Kincaid Score</h4>
@@ -107,31 +172,40 @@
 </div>
 </div>
 </div>
-            </div>
-            <section class="seo-article" data-tool="readability-checker">
-<article class="tool-article">
-<h2>Readability Checker — Free Flesch-Kincaid Score Online</h2>
 
-<p>A few years back I wrote a how-to guide I was genuinely proud of. It was accurate, well-structured, and thoroughly researched — and almost nobody finished it. The problem was not the content. My sentences averaged 28 words, my paragraphs were walls of clauses, and readers bounced before the good part. A readability checker would have flagged it in seconds. Paste your text, get a score that tells you how hard it is to read, and find the exact sentences that need splitting.</p>
+  </div>
+</div></div>
 
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 — HOW IT WORKS</span><h2>Three steps, zero learning curve</h2></div>
+  <div class="steps">
+<div class="step"><div class="step-n">i.</div><h3>Paste your content</h3><p>Drop in the article or page text.</p></div>
+<div class="step"><div class="step-n">ii.</div><h3>Check the score</h3><p>Click to compute the Flesch-Kincaid reading ease score.</p></div>
+<div class="step"><div class="step-n">iii.</div><h3>Simplify if needed</h3><p>Rewrite flagged sentences until the score fits your audience.</p></div>
+  </div>
+</section>
+
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>Readability Checker — Free Flesch-Kincaid Score Online</h2>
+    <p class="deck">A few years back I wrote a how-to guide I was genuinely proud of. It was accurate, well-structured, and thoroughly researched — and almost nobody finished it. The problem was not the content. My sentences averaged 28 words, my paragraphs were walls of clauses, and readers bounced before the good part. A readability checker would have flagged it in seconds. Paste your text, get a score that tells you how hard it is to read, and find the exact sentences that need splitting.</p>
+    <div class="article-meta">
+      <div class="avatar">T</div>
+      <div><b>TOOLSHUB Editorial</b><span>8 min read · Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+<p class="lead">A few years back I wrote a how-to guide I was genuinely proud of. It was accurate, well-structured, and thoroughly researched — and almost nobody finished it. The problem was not the content. My sentences averaged 28 words, my paragraphs were walls of clauses, and readers bounced before the good part. A readability checker would have flagged it in seconds. Paste your text, get a score that tells you how hard it is to read, and find the exact sentences that need splitting.</p>
 <h3>What Is a Readability Checker?</h3>
-
 <p>A readability checker measures how easy your writing is to read, using established formulas that count two things: how long your sentences are and how long your words are. Long sentences full of long words score as hard; short sentences with simple words score as easy. It is not a judge of quality — a dense academic paper can be excellent and still score as "very difficult." The score answers one practical question: how much effort does a reader need to get through this?</p>
-
 <p>The two classic formulas come from the 1940s and 1970s and are still the standard. <strong>Flesch Reading Ease</strong> (Rudolf Flesch, 1948) scores text from roughly 0 to 100, where higher means easier — 60–70 is "plain English," 90–100 is very easy, and below 30 is typically academic or legal writing. <strong>Flesch-Kincaid Grade Level</strong> (developed for the US Navy in 1975) converts the same measurements into a US school grade: a score of 8 means roughly 8th-grade reading difficulty. Many checkers also include the <strong>Gunning Fog Index</strong>, which estimates years of formal education needed to understand the text on first reading, and the <strong>SMOG index</strong>. Good tools highlight the actual sentences dragging your score down, which is far more useful than the number alone.</p>
-
 <h3>How to Use the Readability Checker</h3>
-
 <p>The process is fast, and I run it on drafts before anything goes live.</p>
-
 <p>Paste your text into the checker — most tools update the scores live as you type, up to tens of thousands of words per check. Read the headline numbers first: the Flesch Reading Ease score tells you the difficulty band, and the grade level tells you roughly who can read it comfortably. For general web content, most guides aim for a Flesch score of 60 or higher and a grade level of 8–10.</p>
-
 <p>Then look at the sentence breakdown. Good checkers highlight sentences over 25 words in yellow and over 35 in orange or red — these are your bottlenecks. Click through them one by one and split each at a natural joint: a conjunction, a relative clause, a parenthetical aside. Replace a few polysyllabic words with simpler alternatives where the meaning survives the swap.</p>
-
 <p>Re-check after editing. Watching the score climb as you split sentences is oddly satisfying, and it gives you an objective answer to "did this rewrite actually help?" instead of a gut feeling. When the score hits your target band, ship it — chasing a perfect 100 usually means dumbing the content down, which is not the goal.</p>
-
 <h3>What the Scores Mean</h3>
-
 <table>
 <thead><tr><th>Flesch Reading Ease</th><th>Band</th><th>Typical text</th></tr></thead>
 <tbody>
@@ -143,33 +217,19 @@
 <tr><td>0–30</td><td>Very difficult</td><td>Legal documents, scientific literature</td></tr>
 </tbody>
 </table>
-
 <p>Context matters: most popular fiction sits around grade 5–7, quality journalism around 8–10, and Hemingway's editor famously recommends the 8th-grade band as a baseline, described as the average adult reading level in the US. A technical manual for engineers can legitimately target grade 12 — the point is to match your audience, not to win a simplicity contest. Also note that these formulas are English-specific; they were built from English sentence and syllable patterns and do not transfer cleanly to other languages.</p>
-
 <h3>Before and After: A Real Fix</h3>
-
 <p>Here is the kind of sentence the checker flags — and what the fix looks like:</p>
-
 <p><strong>Before (34 words, flagged):</strong> "The implementation of the new content management system, which was originally scheduled for the second quarter of the fiscal year, has been delayed due to unforeseen compatibility issues with the existing database infrastructure."</p>
-
 <p><strong>After (three short sentences):</strong> "The new content management system is delayed. It was supposed to launch in Q2. Our current database is not compatible with it."</p>
-
 <p>Same information, roughly half the syllables per word, and the Flesch score jumps dramatically. Notice the fix did not remove any facts — it just removed the nesting. That is almost always the move: split first, simplify words second, cut filler third.</p>
-
 <h3>Who Uses Readability Checkers?</h3>
-
 <p><strong>Bloggers and content writers</strong> check drafts before publishing — a readability pass is the fastest edit that improves engagement.</p>
-
 <p><strong>Copywriters</strong> use scores to match client style guides that specify target grade levels for different audiences.</p>
-
 <p><strong>Teachers and students</strong> use the grade-level score to match reading material to students, or to check that an essay is not more convoluted than it needs to be.</p>
-
 <p><strong>UX writers and marketers</strong> check landing pages, emails, and product copy — dense copy on a signup page directly costs conversions.</p>
-
 <p><strong>Technical writers</strong> compare scores before and after simplifying documentation, proving the rewrite helped instead of guessing.</p>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>Flesch Reading Ease score</strong> — the classic 0–100 scale with plain-language bands.</li>
 <li><strong>Flesch-Kincaid Grade Level</strong> — approximate US school grade for the text.</li>
@@ -180,77 +240,42 @@
 <li><strong>100% free</strong> — no signup, no word-count limits that matter.</li>
 <li><strong>Private by design</strong> — everything runs in your browser; nothing is uploaded.</li>
 </ul>
+<h3>Frequently asked</h3>
+<div class="faq">
+<div class="faq-item open"><div class="faq-q">What is a good readability score? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>For general web content, aim for a Flesch Reading Ease of 60+ and a Flesch-Kincaid grade level of 8–10. Match the score to your audience: a specialist audience tolerates harder text; a general one does not.</p></div></div>
+<div class="faq-item"><div class="faq-q">Does readability affect SEO? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Indirectly. Google does not use Flesch scores as a ranking factor, but easier text keeps readers on the page longer and reduces bounces — engagement signals that do matter. Clear writing also earns more links.</p></div></div>
+<div class="faq-item"><div class="faq-q">Why do different checkers give different scores? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Syllable counting uses heuristics, not a dictionary, so implementations differ slightly. Scores usually agree within a few tenths — compare scores from the same tool rather than across tools.</p></div></div>
+<div class="faq-item"><div class="faq-q">Should I aim for a perfect score? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>No. Chasing 100 usually means oversimplifying. Use the score to find and fix the worst sentences, then stop when the text matches your audience.</p></div></div>
+<div class="faq-item"><div class="faq-q">Does the checker work for languages other than English? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>The Flesch formulas are English-specific and give misleading results for other languages. Use the tool for English text only.</p></div></div>
+<div class="faq-item"><div class="faq-q">Is this checker free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — completely free, no account needed.</p></div></div>
+<div class="faq-item"><div class="faq-q">Does my text get uploaded anywhere? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>No. The analysis happens entirely in your browser for full privacy.</p></div></div>
+<div class="faq-item"><div class="faq-q">What is the fastest way to improve a low score? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Split long sentences first — it has the biggest effect. Then replace unnecessarily long words, and finally cut filler phrases. Re-check after each pass.</p></div></div>
+</div>
+  </div>
+</article></div>
 
-<h3>Frequently Asked Questions</h3>
-
-<h4>What is a good readability score?</h4>
-<p>For general web content, aim for a Flesch Reading Ease of 60+ and a Flesch-Kincaid grade level of 8–10. Match the score to your audience: a specialist audience tolerates harder text; a general one does not.</p>
-
-<h4>Does readability affect SEO?</h4>
-<p>Indirectly. Google does not use Flesch scores as a ranking factor, but easier text keeps readers on the page longer and reduces bounces — engagement signals that do matter. Clear writing also earns more links.</p>
-
-<h4>Why do different checkers give different scores?</h4>
-<p>Syllable counting uses heuristics, not a dictionary, so implementations differ slightly. Scores usually agree within a few tenths — compare scores from the same tool rather than across tools.</p>
-
-<h4>Should I aim for a perfect score?</h4>
-<p>No. Chasing 100 usually means oversimplifying. Use the score to find and fix the worst sentences, then stop when the text matches your audience.</p>
-
-<h4>Does the checker work for languages other than English?</h4>
-<p>The Flesch formulas are English-specific and give misleading results for other languages. Use the tool for English text only.</p>
-
-<h4>Is this checker free?</h4>
-<p>Yes — completely free, no account needed.</p>
-
-<h4>Does my text get uploaded anywhere?</h4>
-<p>No. The analysis happens entirely in your browser for full privacy.</p>
-
-<h4>What is the fastest way to improve a low score?</h4>
-<p>Split long sentences first — it has the biggest effect. Then replace unnecessarily long words, and finally cut filler phrases. Re-check after each pass.</p>
-</article>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 — KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+<a class="rel" href="word-counter.html"><i class="fa-solid fa-file-lines" style="color:#4f46e5"></i><h3>Word Counter</h3><p>Count words and characters live.</p></a>
+<a class="rel" href="keyword-density-checker.html"><i class="fa-solid fa-chart-pie" style="color:#7c3aed"></i><h3>Keyword Density Checker</h3><p>Find top words and phrases.</p></a>
+<a class="rel" href="stop-words-remover.html"><i class="fa-solid fa-filter" style="color:#4f46e5"></i><h3>Stop Words Remover</h3><p>Strip stop words from text.</p></a>
+<a class="rel" href="seo-checklist.html"><i class="fa-solid fa-list-check" style="color:#7c3aed"></i><h3>SEO Checklist</h3><p>Track on-page SEO progress.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../image-tools/index.html">Image Tools</a></li><li><a href="../pdf-tools/index.html">PDF Tools</a></li><li><a href="../text-tools/index.html">Text & Writing</a></li><li><a href="../seo-tools/index.html">SEO Tools</a></li><li><a href="../calculator-tools/index.html">Calculators</a></li><li><a href="../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../index.html#tools">All 203 tools</a></li><li><a href="../index.html#seo-tools">SEO tools</a></li><li><a href="../index.html#image-tools">Image tools</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../about-us.html">About</a><a href="../contact-us.html">Contact</a><a href="../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>© 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script>
         function countSyllables(word) {
             word = word.toLowerCase();
@@ -306,7 +331,6 @@
 
             document.getElementById('resultsArea').style.display = 'block';
         }
-    </script>
-  <script src="../image-tools/js/th-interactions.js"></script>
+    </script><script src="../image-tools/js/th-interactions.js"></script><script src="../image-tools/js/tu-unified.js"></script><script src="../image-tools/js/v3.js"></script>
 </body>
 </html>

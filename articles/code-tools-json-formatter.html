@@ -1,0 +1,102 @@
+<article class="tool-article">
+<h2>JSON Formatter — Free Online JSON Beautifier & Validator</h2>
+
+<p>Most of my debugging sessions with APIs end the same way: I copy a response out of the network tab, and it's one enormous line — braces, brackets, quoted keys, all smashed together. Technically it's valid, but reading it is miserable. A JSON formatter takes that compact blob and lays it out with proper indentation and line breaks so you can actually see the structure. Paste the mess in, get readable JSON out, and while you're at it the tool validates the syntax and points at the exact line where something broke.</p>
+
+<h3>What Is a JSON Formatter?</h3>
+
+<p>JSON (JavaScript Object Notation) is the data format of the modern web — APIs, configuration files, and databases all speak it. It's designed to be human-readable, but in transit it usually isn't: servers send it minified, with every byte of whitespace removed, because that's what travels fastest.</p>
+
+<p>A formatter reverses that. It parses the JSON the same way your browser does, then re-prints it with each nested level on its own indented line. Keys, strings, numbers, booleans, and nulls get distinct highlighting, so a deeply nested API response stops looking like soup and starts looking like a document.</p>
+
+<p>The hidden bonus is validation. Formatting requires parsing, and parsing catches mistakes — a missing comma, a trailing comma, single quotes instead of double, an unquoted key. Good formatters report the exact line and column of the problem and move your cursor there, which beats staring at a 500-line payload wondering what's wrong.</p>
+
+<h3>How to Use the JSON Formatter</h3>
+
+<p>Copy your JSON from wherever it lives — an API response in your browser's dev tools, a <code>.json</code> file, a log file, a terminal — and paste it into the input box at the top of the tool.</p>
+
+<p>Pick your indent size (2 spaces is the most common in JavaScript projects, 4 spaces elsewhere, or tabs if that's your convention). Click the Format button and the pretty-printed result appears in the output area. If your payload is invalid, you'll see an error panel instead, with the line and position of the problem — fix it and format again.</p>
+
+<p>Need to go the other direction? The Minify option strips all whitespace back out, which is what you want before sending data to an API or storing it in a database. One formatter, two directions, no surprises.</p>
+
+<p>My usual habit: format first, read, then validate against what the API documentation says the response should look like. A quick glance at a formatted response often reveals the real bug — a field that's null when it shouldn't be, or an array that's empty — before I ever touch my own code.</p>
+
+<h3>Before and After Example</h3>
+
+<p>Here is a realistic API response — the kind of single-line payload every developer has cursed at — before and after formatting.</p>
+
+<p><strong>Input (minified):</strong></p>
+<p><code>{"id":4821,"name":"Lena Marsh","active":true,"roles":["editor","admin"],"address":{"city":"Austin","zip":"78701"}}</code></p>
+
+<p><strong>Output (formatted, 2-space indent):</strong></p>
+<p><code>{<br>&nbsp;&nbsp;"id": 4821,<br>&nbsp;&nbsp;"name": "Lena Marsh",<br>&nbsp;&nbsp;"active": true,<br>&nbsp;&nbsp;"roles": [<br>&nbsp;&nbsp;&nbsp;&nbsp;"editor",<br>&nbsp;&nbsp;&nbsp;&nbsp;"admin"<br>&nbsp;&nbsp;],<br>&nbsp;&nbsp;"address": {<br>&nbsp;&nbsp;&nbsp;&nbsp;"city": "Austin",<br>&nbsp;&nbsp;&nbsp;&nbsp;"zip": "78701"<br>&nbsp;&nbsp;}<br>}</code></p>
+
+<p>Now the nesting is obvious: the user object contains an array of roles and an address object. When a payload has fifty fields instead of five, that visual structure is the difference between finding the bug in a minute and finding it in twenty.</p>
+
+<h3>Common JSON Errors It Catches</h3>
+
+<p>Almost every validation error I see falls into one of these buckets:</p>
+
+<table>
+<thead><tr><th>Error</th><th>What's wrong</th><th>Fix</th></tr></thead>
+<tbody>
+<tr><td>Trailing comma</td><td><code>{"a": 1,}</code></td><td>Remove the comma after the last value</td></tr>
+<tr><td>Single quotes</td><td><code>{'a': 1}</code></td><td>JSON requires double quotes: <code>{"a": 1}</code></td></tr>
+<tr><td>Unquoted keys</td><td><code>{a: 1}</code></td><td>Quote every key: <code>{"a": 1}</code></td></tr>
+<tr><td>Missing comma</td><td><code>{"a": 1 "b": 2}</code></td><td>Add the comma between pairs</td></tr>
+<tr><td>Comments</td><td><code>{"a": 1 /* note */}</code></td><td>Standard JSON allows no comments — strip them</td></tr>
+<tr><td>NaN / Infinity</td><td><code>{"v": NaN}</code></td><td>Not valid JSON — use <code>null</code> instead</td></tr>
+</tbody>
+</table>
+
+<p>Trailing commas deserve a special mention because they bite JavaScript developers constantly — they're legal in JS objects but illegal in strict JSON, so code copied from a script file into a config file breaks silently until you validate it.</p>
+
+<h3>Who Uses a JSON Formatter?</h3>
+
+<p><strong>Back-end and front-end developers</strong> reach for it while debugging APIs. A formatted response makes it trivial to confirm the shape of the data matches what the documentation promised — or to spot where it diverged.</p>
+
+<p><strong>QA testers</strong> use it to verify API outputs against expected payloads. Comparing two formatted responses line by line is far more reliable than squinting at minified text.</p>
+
+<p><strong>Data analysts</strong> working with JSON exports from databases or analytics platforms format files before inspecting them, and minify them back down before feeding them into a pipeline.</p>
+
+<p><strong>Students</strong> learning web development get their first look at real API data through a formatter — a REST response becomes a teaching document the moment it's indented.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant formatting</strong> — paste minified or messy JSON, get readable output in one click.</li>
+<li><strong>Built-in validation</strong> — errors reported with exact line and column, cursor moved to the problem.</li>
+<li><strong>Minify mode</strong> — compress back to a single line for APIs and storage.</li>
+<li><strong>Adjustable indentation</strong> — 2 or 4 spaces or tabs, matching your project's style.</li>
+<li><strong>Syntax highlighting</strong> — keys, strings, numbers, booleans, and nulls color-coded.</li>
+<li><strong>100% free</strong> — no account, no limits on payload size.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; your data never leaves your machine.</li>
+<li><strong>Copy and download</strong> — clipboard copy or save the result as a <code>.json</code> file.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this JSON formatter free?</h4>
+<p>Yes — free with no signup and no limit on how much JSON you can format.</p>
+
+<h4>Can it validate my JSON?</h4>
+<p>Yes. Every format run validates first; invalid JSON shows the exact line and column of the error.</p>
+
+<h4>Can I minify JSON too?</h4>
+<p>Yes — switch to minify mode to strip all whitespace into a compact single line for production use.</p>
+
+<h4>What's the difference between the formatter and the validator on this site?</h4>
+<p>The formatter fixes layout and reports errors along the way; the validator focuses purely on checking correctness without reformatting. Use the formatter when you want to read the data, the validator when you just need a yes-or-no answer.</p>
+
+<h4>Why won't my JSON format?</h4>
+<p>The usual causes: a trailing comma, single-quoted strings, unquoted keys, or comments. The error panel tells you exactly where to look.</p>
+
+<h4>Is my data uploaded anywhere?</h4>
+<p>No. Formatting and validation happen entirely in your browser, so API keys and private data stay private.</p>
+
+<h4>Can it handle very large JSON files?</h4>
+<p>Yes — paste large payloads directly. For extremely large files, formatting may take a moment, but there's no hard cap.</p>
+
+<h4>Which indent size should I use?</h4>
+<p>2 spaces is the JavaScript convention; 4 spaces is common in Python and Java projects. Match whatever your codebase already uses.</p>
+</article>

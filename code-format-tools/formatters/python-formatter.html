@@ -1,129 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free, pro Python formatter. Prettify messy Python code, fix indentation, and improve script readability 100% client-side.">
-    <title>Python Formatter - Clean & Format Python Code | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../../image-tools/css/global.css">
-    <link rel="stylesheet" href="../../image-tools/css/components.css">
-    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
-
-
-  <link rel="stylesheet" href="../../image-tools/css/th-header-footer.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Formatter - Clean &amp; Format Python Code | TOOLSHUB</title>
+<meta name="description" content="Free, pro Python formatter. Prettify messy Python code, fix indentation, and improve script readability 100% client-side.">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../../image-tools/css/v3-design.css">
+<style>.ws-textarea{font-family:ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,monospace}</style>
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../../index.html#tools">All Tools</a><a href="../../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../../index.html#tools">Explore Tools</a></div>
+</div></header>
+
+<nav class="crumbs"><a href="../../index.html">Home</a> &nbsp;/&nbsp; <a href="../../index.html#code-format-tools">Code &amp; Formatters</a> &nbsp;/&nbsp; <span>Python Formatter</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">Code Tools</span>
+  <h1>Python <em>Formatter.</em></h1>
+  <p>Fix inconsistent indentation and whitespace in your Python scripts for PEP 8 compliance.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../../image-tools/index.html">Image Tools</a><a href="../../pdf-tools/index.html">PDF Tools</a><a href="../../text-tools/index.html">Text & Writing</a><a href="../../seo-tools/index.html">SEO Tools</a><a href="../../calculator-tools/index.html">Calculators</a><a href="../../binary-tools/index.html">Binary Tools</a><a href="../../code-format-tools/index.html">Code & Formatters</a><a href="../../doc-tools/index.html">Documents</a><a href="../../other-tools/index.html">Other Tools</a><a href="../../about-us.html">About Us</a><a href="../../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../../index.html">Home</a> &gt;
-                <a href="../index.html">Code & Formatters</a> &gt;
-                <span>Python Formatter</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">Python Formatter</h1>
-                <p class="tool-description">Fix inconsistent indentation and whitespace in your Python scripts for PEP 8
-                    compliance.</p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
+</section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>Python Formatter</b><span>v3.0 · local</span></div>
+  <div class="ws-body">
+<div class="tool-workspace">
 <div class="tool-workspace">
 <div class="code-workspace">
 <div class="editor-container">
 <div class="editor-header">
 <span class="editor-title">Source Script</span>
-<button class="btn btn-sm btn-secondary" onclick="document.getElementById('input-code').value = ''; onInputChange()">Clear</button>
+<button class="btn btn-light" onclick="document.getElementById('input-code').value = ''; onInputChange()"><i class="fa-solid fa-eraser"></i> Clear</button>
 </div>
-<textarea class="code-area" id="input-code" oninput="onInputChange()" placeholder="def my_func():\nprint('hello')\n..."></textarea>
+<textarea class="ws-textarea" id="input-code" oninput="onInputChange()" placeholder="def my_func():\nprint('hello')\n..."></textarea>
 <div class="code-stats" id="input-stats"></div>
 </div>
 <div class="editor-container">
 <div class="editor-header">
 <span class="editor-title">Beautiful Python</span>
-<button class="btn btn-sm btn-primary" onclick="CodeUI.copyToClipboard('output-code', this)">Copy Result</button>
+<button class="btn btn-light" onclick="CodeUI.copyToClipboard('output-code', this)"><i class="fa-solid fa-copy"></i> Copy Result</button>
 </div>
-<textarea class="code-area" id="output-code" placeholder="Formatted code will appear here..." readonly=""></textarea>
+<textarea class="ws-textarea" id="output-code" placeholder="Formatted code will appear here..." readonly=""></textarea>
 <div class="code-stats" id="output-stats"></div>
 </div>
 </div>
 <div class="action-bar">
-<button class="btn btn-primary btn-lg" onclick="format()"> Beautify Python</button>
-</div>
-<section class="tool-content mt-12">
-<div class="content-grid">
-<div class="main-text">
-<h2>Indentation in Python: A Priority</h2>
-<p>Unlike many other languages, Python uses indentation to define code blocks. A single
-                                missing space can lead to a `IndentationError` or logic bugs. Our formatter helps align
-                                your logic following PEP 8 best practices.</p>
-<h3>What we focus on:</h3>
-<ul>
-<li><strong>Block Alignment:</strong> Ensures `:` are followed by consistent indents.
-                                </li>
-<li><strong>Whitespace:</strong> Standardizes spaces around operators and function
-                                    definitions.</li>
-<li><strong>Readability:</strong> Balances horizontal and vertical space.</li>
-</ul>
+<button class="btn btn-dark" onclick="format()"><i class="fa-solid fa-wand-magic-sparkles"></i>  Beautify Python</button>
 </div>
 </div>
-</section>
+</div>
+
+
+
+
 <section class="related-tools mt-12">
 <h3 class="panel-title">Related Code Tools</h3>
 <div class="related-tools-grid" id="related-tools"></div>
 </section>
-</div>
-            </div>
-            <section class="seo-article" data-tool="python-formatter">
-<article class="tool-article">
-<h2>Python Formatter — Clean, PEP 8-Ready Python Code</h2>
+  </div>
+</div></div>
 
-<p>Python is the one language where messy formatting isn't just ugly — it's dangerous. I learned this debugging a script where a single mis-indented line silently changed which block it belonged to. No error, no warning, just wrong behavior. In most languages indentation is cosmetic; in Python it's syntax. A Python formatter enforces consistent, PEP 8-compliant style automatically: proper indentation, sensible line breaks, and spacing that follows the community standard — so the code means what it looks like it means.</p>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 — HOW IT WORKS</span><h2>How to use</h2><p>Get results in three simple steps.</p></div>
+  <div class="steps">
+    <div class="step"><div class="step-n">i.</div><h3>Paste Python code</h3><p>Drop your script into the editor.</p></div>
+    <div class="step"><div class="step-n">ii.</div><h3>Format</h3><p>Applies consistent PEP 8-style spacing and indentation.</p></div>
+    <div class="step"><div class="step-n">iii.</div><h3>Copy clean code</h3><p>Copy the formatted result back to your editor.</p></div>
+  </div>
+</section>
 
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>Python Formatter — Clean, PEP 8-Ready Python Code</h2>
+    <p class="deck">Free, pro Python formatter. Prettify messy Python code, fix indentation, and improve script readability 100% client-side.</p>
+    <div class="article-meta">
+      <div class="avatar">T</div>
+      <div><b>TOOLSHUB Editorial</b><span>5 min read · Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+    <p class="lead">Python is the one language where messy formatting isn't just ugly — it's dangerous. I learned this debugging a script where a single mis-indented line silently changed which block it belonged to. No error, no warning, just wrong behavior. In most languages indentation is cosmetic; in Python it's syntax. A Python formatter enforces consistent, PEP 8-compliant style automatically: proper indentation, sensible line breaks, and spacing that follows the community standard — so the code means what it looks like it means.</p>
 <h3>What a Python Formatter Does</h3>
-
 <p>The tool takes your Python source and rewrites its formatting to follow <strong>PEP 8</strong>, Python's official style guide: 4-space indentation, two blank lines between top-level definitions, one between methods, spaces around operators, and lines kept to a readable length. Like Black — the popular "uncompromising" Python formatter — it takes an opinionated approach: minimal configuration, one consistent output style, no debates about where the brace goes.</p>
-
 <p>Crucially, it only changes <em>formatting</em>, never logic. Your code runs exactly as before — just cleaner. It won't rename variables, restructure algorithms, or fix bugs. What it does is eliminate the entire category of "style" problems: inconsistent indentation, ragged spacing, and the formatting drift that accumulates when several people edit the same file.</p>
-
 <h3>Why Formatting Matters More in Python</h3>
-
 <p>In JavaScript or Java, indentation is a courtesy — the braces define the blocks. In Python, indentation <em>is</em> the block structure. Consider:</p>
-
 <pre><code>for user in users:
     process(user)
 notify_admin()</code></pre>
-
 <p>Is <code>notify_admin()</code> inside the loop or after it? The indentation decides — and if the file mixes tabs and spaces, or the indentation is ragged, the answer becomes ambiguous to humans even when the interpreter picks one. A formatter normalizes all of this to 4-space indentation, making the block structure unambiguous at a glance. That mis-indented line that cost me an afternoon? A formatter would have made the error visible the moment it was written.</p>
-
 <h3>Before and After</h3>
-
 <p><strong>Before (inconsistent style):</strong></p>
 <pre><code>def my_func( x,y ):
   result=x+y
@@ -133,7 +112,6 @@ notify_admin()</code></pre>
 class Greeter:
     def greet(self,name):
         print('Hello, '+name)</code></pre>
-
 <p><strong>After (formatted):</strong></p>
 <pre><code>def my_func(x, y):
     result = x + y
@@ -143,21 +121,13 @@ class Greeter:
 class Greeter:
     def greet(self, name):
         print('Hello, ' + name)</code></pre>
-
 <p>Same logic — but consistent 4-space indentation, spaces after commas and around operators, and proper blank lines between definitions. The code now reads the way the Python community expects.</p>
-
 <h3>How to Use the Python Formatter</h3>
-
 <p>Paste, format, copy. No configuration to argue about.</p>
-
 <p><strong>Step 1 — Paste your Python code.</strong> Drop messy, inconsistently styled, or hastily written Python into the input panel.</p>
-
 <p><strong>Step 2 — Format.</strong> The tool applies PEP 8-style formatting instantly: indentation normalized, spacing fixed, line breaks rationalized. The statistics show the before/after so you can see the scope of the cleanup.</p>
-
 <p><strong>Step 3 — Review and copy.</strong> Skim the output — formatting sometimes reveals logic issues (like that mis-indented line) that were invisible before. Copy the clean code back to your project or download it.</p>
-
 <h3>What Gets Fixed</h3>
-
 <table>
 <thead><tr><th>Issue</th><th>What the Formatter Does</th></tr></thead>
 <tbody>
@@ -169,21 +139,13 @@ class Greeter:
 <tr><td>Inconsistent spacing in definitions</td><td>Normalizes <code>def f( x,y )</code> → <code>def f(x, y)</code></td></tr>
 </tbody>
 </table>
-
 <p>What it deliberately <em>doesn't</em> do: rename anything, reorder imports (that's isort's job), remove unused code (that's autoflake's), or change your logic. Formatting is a safe, mechanical pass — which is exactly why you can run it on any file without fear.</p>
-
 <h3>Who Uses a Python Formatter?</h3>
-
 <p><strong>Python developers</strong> normalize code before commits and reviews — consistent style makes diffs about logic, not whitespace.</p>
-
 <p><strong>Data scientists</strong> clean up notebook-exported scripts and analysis code that was written fast and formatted never.</p>
-
 <p><strong>Students</strong> learn PEP 8 by example: paste messy code, see the correct style, and internalize the conventions.</p>
-
 <p><strong>Teams</strong> adopt a formatter as the shared standard, ending style debates permanently — the tool's output <em>is</em> the style guide.</p>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>PEP 8-compliant output</strong> — the community standard, applied automatically.</li>
 <li><strong>Opinionated formatting</strong> — one consistent style, no configuration debates (Black-style).</li>
@@ -194,81 +156,37 @@ class Greeter:
 <li><strong>Copy and download</strong> — clean code ready for your project.</li>
 <li><strong>Private and free</strong> — everything runs in your browser; your code never leaves your device.</li>
 </ul>
+<div class="faq"><div class="faq-item open"><div class="faq-q">What is PEP 8? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Python's official style guide: 4-space indentation, spacing conventions, line-length limits, and blank-line rules. Following it makes Python code consistent and readable across the entire community.</p></div></div><div class="faq-item"><div class="faq-q">Will formatting change what my code does? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>No. The formatter only changes whitespace, line breaks, and spacing — never logic, names, or structure. Your code runs exactly as before.</p></div></div><div class="faq-item"><div class="faq-q">How is this different from Black or autopep8? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Same goal, no installation. Black and autopep8 are command-line tools you install locally; this formatter applies the same PEP 8-style conventions instantly in your browser.</p></div></div><div class="faq-item"><div class="faq-q">Can it fix mixed tabs and spaces? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — that's one of its most valuable jobs. Mixed indentation is a real source of Python bugs, and the formatter normalizes everything to consistent 4-space indentation.</p></div></div><div class="faq-item"><div class="faq-q">Does it sort my imports or remove unused code? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>No — those are separate tools' jobs (isort for import sorting, autoflake for unused code). This formatter handles layout and style only, which keeps it safe to run on any file.</p></div></div><div class="faq-item"><div class="faq-q">Why 4 spaces instead of tabs? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>PEP 8 specifies 4 spaces per indentation level — it's the community standard, and consistent spaces avoid the ambiguity that mixed tabs and spaces create.</p></div></div><div class="faq-item"><div class="faq-q">Is my code uploaded anywhere? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>No. Formatting runs entirely in your browser — your Python code is never sent to a server, logged, or stored.</p></div></div><div class="faq-item"><div class="faq-q">Is this Python formatter free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — free, unlimited, no account required.</p></div></div></div>
+  </div>
+</article></div>
 
-<h3>Frequently Asked Questions</h3>
-
-<h4>What is PEP 8?</h4>
-<p>Python's official style guide: 4-space indentation, spacing conventions, line-length limits, and blank-line rules. Following it makes Python code consistent and readable across the entire community.</p>
-
-<h4>Will formatting change what my code does?</h4>
-<p>No. The formatter only changes whitespace, line breaks, and spacing — never logic, names, or structure. Your code runs exactly as before.</p>
-
-<h4>How is this different from Black or autopep8?</h4>
-<p>Same goal, no installation. Black and autopep8 are command-line tools you install locally; this formatter applies the same PEP 8-style conventions instantly in your browser.</p>
-
-<h4>Can it fix mixed tabs and spaces?</h4>
-<p>Yes — that's one of its most valuable jobs. Mixed indentation is a real source of Python bugs, and the formatter normalizes everything to consistent 4-space indentation.</p>
-
-<h4>Does it sort my imports or remove unused code?</h4>
-<p>No — those are separate tools' jobs (isort for import sorting, autoflake for unused code). This formatter handles layout and style only, which keeps it safe to run on any file.</p>
-
-<h4>Why 4 spaces instead of tabs?</h4>
-<p>PEP 8 specifies 4 spaces per indentation level — it's the community standard, and consistent spaces avoid the ambiguity that mixed tabs and spaces create.</p>
-
-<h4>Is my code uploaded anywhere?</h4>
-<p>No. Formatting runs entirely in your browser — your Python code is never sent to a server, logged, or stored.</p>
-
-<h4>Is this Python formatter free?</h4>
-<p>Yes — free, unlimited, no account required.</p>
-</article>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 — KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+    <a class="rel" href="css-beautifier.html"><i class="fa-brands fa-css3-alt" style="color:#4f46e5"></i><h3>CSS Beautifier</h3><p>Restore organization and beauty to cluttered or minified CSS files instantly.</p></a>
+    <a class="rel" href="html-formatter.html"><i class="fa-brands fa-html5" style="color:#7c3aed"></i><h3>HTML Formatter</h3><p>Transform unreadable, minified, or messy HTML into a clean, well-indented structure.</p></a>
+    <a class="rel" href="javascript-beautifier.html"><i class="fa-brands fa-js" style="color:#4f46e5"></i><h3>JavaScript Beautifier</h3><p>Un-minify and format cryptic JavaScript code into clean, readable source code.</p></a>
+    <a class="rel" href="json-formatter.html"><i class="fa-solid fa-braces" style="color:#7c3aed"></i><h3>JSON Formatter</h3><p>Clean up, validate, and format your JSON data for better readability and debugging.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../../image-tools/index.html">Image Tools</a></li><li><a href="../../pdf-tools/index.html">PDF Tools</a></li><li><a href="../../text-tools/index.html">Text & Writing</a></li><li><a href="../../seo-tools/index.html">SEO Tools</a></li><li><a href="../../calculator-tools/index.html">Calculators</a></li><li><a href="../../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../../index.html#tools">All 203 tools</a></li><li><a href="../../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li><li><a href="../../code-format-tools/minifiers/css-minifier.html">CSS Minifier</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../../about-us.html">About</a></li><li><a href="../../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="../../about-us.html">About</a></li><li><a href="../../contact-us.html">Contact</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../../about-us.html">About</a><a href="../../contact-us.html">Contact</a><a href="../../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>© 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script src="../js/code-utils.js"></script>
 <script src="../js/code-ui.js"></script>
 <script>
-        CodeUI.init({ toolName: 'python-formatter' });
+CodeUI.init({ toolName: 'python-formatter' });
 
         function onInputChange() {
             const code = document.getElementById('input-code').value;
@@ -310,7 +228,7 @@ class Greeter:
             { icon: 'ðŸŽ¨', name: 'SQL Formatter', desc: 'Prettify queries', url: 'sql-formatter.html' },
             { icon: 'âœ…', name: 'JSON Validator', desc: 'Check syntax', url: '../validators/json-validator.html' }
         ]);
-    </script>
-  <script src="../../image-tools/js/th-interactions.js"></script>
+</script>
+<script src="../../image-tools/js/v3.js"></script>
 </body>
 </html>

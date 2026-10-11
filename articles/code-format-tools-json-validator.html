@@ -1,0 +1,99 @@
+<article class="tool-article">
+<h2>JSON Validator — Check Your JSON for Syntax Errors</h2>
+
+<p>JSON is unforgiving. One trailing comma, one single-quoted string, one unclosed bracket — and the whole document refuses to parse. I have watched developers stare at a 400-error from an API for twenty minutes before realizing the payload had a comment in it. A JSON validator checks your data against the JSON specification and tells you exactly what is wrong and where: the line, the column, and a plain explanation. Paste it, click validate, fix it, move on.</p>
+
+<h3>What Is a JSON Validator?</h3>
+
+<p>A validator answers one question: does this text follow the JSON rules? Under the hood it does what <code>JSON.parse()</code> does in your browser — attempts to parse the document — but instead of just throwing a cryptic error, it translates the failure into something useful: "trailing comma at line 4, column 12" rather than "Unexpected token } in JSON at position 145."</p>
+
+<p>This matters because JSON's rules are stricter than they look. JavaScript developers get tripped up constantly: object literals allow single quotes, trailing commas, comments, and unquoted keys — JSON allows none of those. The format looks like JavaScript but behaves like a contract, and the validator is how you check the contract before the other side rejects it.</p>
+
+<p>Many validators also offer auto-fix for the classics: strip comments, remove trailing commas, convert single quotes to double, quote unquoted keys. One click repairs what would take five minutes of careful editing — though I always re-validate after auto-fixing, because I like to see the green checkmark myself.</p>
+
+<h3>How to Use the JSON Validator</h3>
+
+<p>Paste your JSON into the input box — an API response, a config file, a webhook payload, whatever needs checking. Many tools validate live as you type; for very large documents you may need to click the validate button. The result is binary: valid, or a list of errors.</p>
+
+<p>If errors appear, each one shows the line and column plus a snippet of the surrounding text, and many tools offer a "jump to error" button that moves your cursor straight there. Fix the issue, and the validator re-checks — keep going until the status flips to valid. Then copy the verified JSON or download it as a .json file, confident it will parse anywhere.</p>
+
+<p>The fastest workflow I know: validate before pasting JSON into code, before deploying config files, and before retrying a failed API call. Three seconds of validation prevents thirty minutes of debugging.</p>
+
+<h3>The Most Common JSON Errors</h3>
+
+<table>
+<thead><tr><th>Error</th><th>Invalid</th><th>Fixed</th></tr></thead>
+<tbody>
+<tr><td>Trailing comma</td><td><code>{"a": 1,}</code></td><td><code>{"a": 1}</code></td></tr>
+<tr><td>Single quotes</td><td><code>{'a': 1}</code></td><td><code>{"a": 1}</code></td></tr>
+<tr><td>Unquoted keys</td><td><code>{a: 1}</code></td><td><code>{"a": 1}</code></td></tr>
+<tr><td>Comments</td><td><code>{"a": 1 /* note */}</code></td><td><code>{"a": 1}</code></td></tr>
+<tr><td>Unclosed bracket</td><td><code>{"items": [1, 2, 3}</code></td><td><code>{"items": [1, 2, 3]}</code></td></tr>
+<tr><td>Missing comma</td><td><code>{"a": 1 "b": 2}</code></td><td><code>{"a": 1, "b": 2}</code></td></tr>
+<tr><td>Python literals</td><td><code>{"ok": True, "x": None}</code></td><td><code>{"ok": true, "x": null}</code></td></tr>
+</tbody>
+</table>
+
+<p>The trailing comma is the undisputed champion — it sneaks in when you copy a JavaScript object literal or when an editor auto-adds commas. The Python literals (<code>True</code>, <code>None</code>) catch people moving data between Python scripts and JSON APIs. And comments, however helpful to humans, are simply not part of the JSON specification.</p>
+
+<h3>Syntax Validation vs Schema Validation</h3>
+
+<p>An important distinction: syntax validation checks <em>form</em>, schema validation checks <em>meaning</em>. A syntax validator confirms the JSON is well-formed — brackets balanced, quotes correct, commas in place. A schema validator goes further: it checks that the data matches an expected structure — that <code>email</code> is present, that <code>age</code> is a number, that <code>status</code> is one of the allowed values.</p>
+
+<p>Use syntax validation constantly — it is the everyday check. Reach for schema validation when you are designing an API contract or accepting data from untrusted sources, where "valid JSON" is not enough and "the right shape" is what matters.</p>
+
+<h3>Who Uses JSON Validators?</h3>
+
+<p><strong>API developers</strong> validate request and response bodies while debugging integrations. A 400 error from an API almost always means malformed JSON, and the validator finds it in seconds.</p>
+
+<p><strong>DevOps engineers</strong> validate config files — package.json, CI pipelines, feature flags — before deploying. One bad config can take down a deploy; validation is cheap insurance.</p>
+
+<p><strong>Data analysts</strong> check JSON exports before feeding them into processing scripts. A malformed export that crashes a pipeline at 3 AM is a preventable incident.</p>
+
+<p><strong>QA testers</strong> validate webhook payloads and mock responses to confirm test data is well-formed before the test even runs.</p>
+
+<p><strong>Students</strong> learning APIs use the validator to understand why their fetch calls fail — the error messages teach the JSON rules faster than documentation.</p>
+
+<h3>Tips for Error-Free JSON</h3>
+
+<p>Always use double quotes for keys and strings — make it a reflex, not a decision. Never leave trailing commas; configure your editor to flag them. Keep comments out of JSON files entirely (put documentation in a README instead). When generating JSON from code, use a proper serializer (<code>JSON.stringify</code>, <code>json.dumps</code>) rather than building strings by hand — serializers never produce invalid JSON. And for large files, validate in chunks while building them up rather than writing 5,000 lines and validating once.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant validation</strong> — live checking as you type, with manual validate for large files.</li>
+<li><strong>Precise error locations</strong> — line, column, context snippet, and jump-to-error.</li>
+<li><strong>Auto-fix</strong> — one-click repair for trailing commas, comments, quotes, and unquoted keys.</li>
+<li><strong>Plain-language messages</strong> — errors explained in words, not parser jargon.</li>
+<li><strong>Format on valid</strong> — valid JSON shown pretty-printed and readable.</li>
+<li><strong>Copy and download</strong> — take the verified JSON as a .json file.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
+<li><strong>100% free</strong> — no signup, no limits, works on any device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this JSON validator free?</h4>
+<p>Yes — completely free, no account needed, and no limits on how much JSON you can validate.</p>
+
+<h4>Why is my JSON invalid when it looks fine?</h4>
+<p>The usual suspects: a trailing comma, single quotes instead of double, a comment, or an unquoted key. The validator's error location points straight at it.</p>
+
+<h4>Can JSON contain comments?</h4>
+<p>No. Comments are not part of the JSON specification. Remove them before validating or sending the data.</p>
+
+<h4>What is the difference between JSON and a JavaScript object?</h4>
+<p>JSON is a strict data format: double quotes required, no comments, no trailing commas, no functions. JavaScript object literals are more permissive. Code that works as a JS object may be invalid JSON.</p>
+
+<h4>What does "Unexpected token" mean?</h4>
+<p>The parser hit a character where it did not expect one — usually a misplaced comma, bracket, or quote. The line and column in the error message show where parsing broke down.</p>
+
+<h4>Can the tool fix my JSON automatically?</h4>
+<p>Yes, for common issues: trailing commas, comments, single quotes, unquoted keys, and Python-style literals can be repaired with one click. Always re-validate afterward.</p>
+
+<h4>Is my JSON data secure?</h4>
+<p>Yes. Validation happens entirely in your browser — your data never leaves your device or touches a server.</p>
+
+<h4>Does this check JSON Schema?</h4>
+<p>No — this validates syntax (is it well-formed JSON?). Schema validation (does it match an expected structure?) is a separate, more specialized check.</p>
+</article>

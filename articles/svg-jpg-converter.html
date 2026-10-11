@@ -1,0 +1,77 @@
+<article class="tool-article">
+<h2>SVG to JPG Converter — Turn Vector Graphics Into Universal Images</h2>
+
+<p>SVG is my favorite format for logos — until I need to email one to someone whose software has never heard of vector graphics. I hit this exact wall sending a logo to a print shop that only accepted JPG uploads. An SVG to JPG converter solves it: it renders (rasterizes) your vector artwork into a plain JPG at whatever resolution you choose, and suddenly the file works everywhere — email, social media, Word documents, ancient upload forms.</p>
+
+<h3>What Happens During SVG to JPG Conversion</h3>
+
+<p>The process is called <strong>rasterization</strong>: the converter reads your SVG's XML — the paths, shapes, fills, gradients, and text — renders it onto a pixel grid at your chosen resolution, and saves the result as a JPEG. Because SVG is resolution-independent, this is the one conversion direction where you get to <em>choose</em> your quality after the fact: export at 500 pixels for a thumbnail or 4000 pixels for print, from the same source, with zero loss of sharpness at render time.</p>
+
+<p>Two things change in the process. First, the output is a fixed pixel grid — the infinite scalability is gone, so export at the largest size you might need. Second, transparency disappears: JPG has no alpha channel, so any transparent areas are flattened onto a background color (usually white). If your SVG relies on transparency, SVG to PNG is the better conversion.</p>
+
+<h3>Why Convert SVG to JPG?</h3>
+
+<ul>
+<li><strong>Email and messaging</strong> — most email clients do not display SVG attachments; JPG renders inline everywhere.</li>
+<li><strong>Social media</strong> — platforms reject SVG uploads; JPG is the expected format.</li>
+<li><strong>Office documents</strong> — Word and PowerPoint handle JPGs far more reliably than SVGs.</li>
+<li><strong>Print workflows</strong> — many print services and older RIPs accept JPG, not vector files.</li>
+<li><strong>Legacy software</strong> — anything that predates SVG support needs pixels.</li>
+<li><strong>Thumbnails and previews</strong> — fixed-size JPGs are simpler for systems that just need a picture.</li>
+</ul>
+
+<h3>Choosing the Right Export Resolution</h3>
+
+<table>
+<thead><tr><th>Use Case</th><th>Suggested Width</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Social media post</td><td>1080–2048 px</td><td>Matches platform display sizes</td></tr>
+<tr><td>Website/blog image</td><td>1200–1600 px</td><td>Retina-friendly without bloat</td></tr>
+<tr><td>Email signature/logo</td><td>300–600 px</td><td>Small files, crisp enough</td></tr>
+<tr><td>Presentation slide</td><td>1920 px</td><td>Full-HD clarity</td></tr>
+<tr><td>Print (300 DPI)</td><td>2480 px (A4) / 3508 px (A3)</td><td>Export big — you cannot upscale later</td></tr>
+</tbody>
+</table>
+
+<p>The golden rule: <strong>export larger than you think you need.</strong> Downscaling a big JPG is harmless; upscaling a small one is blurry forever. Since the vector source renders perfectly at any size, there is no quality penalty for exporting generously — only file size, which you control with the JPG quality slider.</p>
+
+<h3>How to Convert SVG to JPG</h3>
+
+<p><strong>Step 1 — Upload or paste your SVG.</strong> Drop the .svg file in, or paste the SVG code directly — both work since SVG is just text.</p>
+
+<p><strong>Step 2 — Set resolution and background.</strong> Choose the output width (height follows the aspect ratio), pick a background color for transparent areas, and set JPG quality — 85–90 for most uses.</p>
+
+<p><strong>Step 3 — Convert and download.</strong> Preview the rasterized result, check that text rendered correctly (text is baked into pixels during conversion, so font issues show here), and download.</p>
+
+<p>One thing to verify: text in your SVG renders with the fonts available to the converter. If your SVG uses an unusual font, the output may substitute something else. Converting text to outlines in your vector editor before export eliminates the risk entirely.</p>
+
+<h3>SVG to JPG vs SVG to PNG</h3>
+
+<p>Choose <strong>JPG</strong> when the destination is photographic-style content, file size matters (email, web), and transparency is irrelevant — JPGs are much smaller. Choose <strong>PNG</strong> when you need transparency preserved, the graphic has sharp text or flat colors (JPG artifacts show on hard edges), or you will edit the file again later. Keep the original SVG either way — it remains your resolution-independent master, and the raster file is just a delivery copy.</p>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this SVG to JPG converter free?</h4>
+<p>Yes — free, no account, no watermark.</p>
+
+<h4>What resolution should I export at?</h4>
+<p>As large as you might ever need — 1920px for screens, 2480px+ for print. You can always downscale; you cannot upscale cleanly.</p>
+
+<h4>What happens to transparency?</h4>
+<p>JPG has no transparency, so transparent areas are filled with a background color (white by default). Use SVG to PNG if you need transparency.</p>
+
+<h4>Will text in my SVG render correctly?</h4>
+<p>Usually yes. If the SVG uses uncommon fonts, they may be substituted — converting text to outlines beforehand avoids this.</p>
+
+<h4>Does converting reduce quality?</h4>
+<p>The render itself is perfect at the chosen resolution. JPG compression is lossy, so use quality 85–90 to keep artifacts invisible.</p>
+
+<h4>Can I convert multiple SVGs at once?</h4>
+<p>Yes — batch conversion is supported, with results downloadable individually or as a ZIP.</p>
+
+<h4>Are my files uploaded to a server?</h4>
+<p>No — rasterization runs locally in your browser via the canvas API.</p>
+
+<h4>Should I keep the original SVG?</h4>
+<p>Absolutely. The SVG is your scalable master; the JPG is a fixed-resolution delivery copy for compatibility.</p>
+</article>

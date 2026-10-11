@@ -1,0 +1,97 @@
+<article class="tool-article">
+<h2>Text Comparator — Spot the Difference Between Two Texts</h2>
+
+<p>I once spent forty minutes reading two versions of a contract side by side, hunting for what changed — and still missed a swapped number in paragraph nine. Never again. A text comparator takes two blocks of text and highlights exactly what differs: additions in green, deletions in red, modifications marked precisely. What took me the better part of an hour now takes ten seconds, with zero chance of my eyes skipping the important bit.</p>
+
+<h3>What Is a Text Comparator?</h3>
+
+<p>A text comparator — also called a diff checker or text compare tool — analyzes two texts and shows you every difference between them. Paste the original on one side and the revised version on the other, and the tool marks added content, removed content, and changed sections with color-coded highlighting. Many tools work at multiple levels of detail: line-by-line for structure, word-by-word for prose, and character-by-character for precision.</p>
+
+<p>The classic color scheme is borrowed from programming: green for additions, red for deletions, and a neutral tone for unchanged text. Once you have seen a diff rendered this way, reading two documents manually feels like navigating without a map.</p>
+
+<h3>How to Use the Text Comparator</h3>
+
+<p>Paste your original text into the left panel and the changed version into the right panel. Choose your comparison mode — line, word, or character level — and click Compare (some tools update live as you type). Review the highlighted differences, then copy or export the result if you need to share it.</p>
+
+<p>For long documents, collapse or hide the unchanged sections so the view shows only what changed. That turns a 50-page comparison into a short list of actual edits, which is usually all anyone wants to see.</p>
+
+<h3>How Comparison Works</h3>
+
+<p>Under the hood, most comparators use an algorithm called Longest Common Subsequence (LCS). It finds the longest stretch of content the two texts share, then everything outside that shared backbone is classified: present only in the new text means added, present only in the old text means removed, and adjacent removals-plus-additions get paired up as modifications.</p>
+
+<p>The granularity you choose changes what you see. Line mode splits on newlines and is fastest for spotting moved or rewritten paragraphs. Word mode splits on spaces and shows exactly which words changed inside a sentence. Character mode goes finest — down to individual letters and punctuation — which is what you want when a single digit in a long number might be the whole story.</p>
+
+<h3>Comparison Modes Compared</h3>
+
+<table>
+<thead><tr><th>Mode</th><th>Compares By</th><th>Best For</th></tr></thead>
+<tbody>
+<tr><td>Line by line</td><td>Whole lines</td><td>Code, configs, logs, long documents</td></tr>
+<tr><td>Word by word</td><td>Individual words</td><td>Essays, articles, contracts</td></tr>
+<tr><td>Character by character</td><td>Single characters</td><td>Numbers, codes, precise edits</td></tr>
+<tr><td>Side-by-side view</td><td>Two panels</td><td>Reviewing both versions at once</td></tr>
+<tr><td>Unified view</td><td>Single merged panel</td><td>Scanning changes in reading order</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Text Comparators?</h3>
+
+<p><strong>Writers and editors</strong> review revisions without re-reading entire drafts — the diff shows exactly what the editor touched.</p>
+
+<p><strong>Developers</strong> compare code versions, config files, and API responses to find what changed between deployments.</p>
+
+<p><strong>Students</strong> check their paraphrased work against source material to confirm the wording is genuinely different.</p>
+
+<p><strong>Legal and business teams</strong> verify contract redlines, catching altered clauses, swapped figures, and quietly reworded terms.</p>
+
+<p><strong>Data analysts</strong> diff CSV exports and reports to spot changed values between runs.</p>
+
+<p><strong>Plagiarism checkers</strong> — informally — compare a suspicious passage against its suspected source to see how much was actually rewritten.</p>
+
+<h3>Tips for Accurate Comparisons</h3>
+
+<ul>
+<li><strong>Match the mode to the material.</strong> Word mode for prose, line mode for code, character mode when digits matter.</li>
+<li><strong>Normalize first.</strong> Trailing spaces and invisible characters create phantom differences — run both texts through a text cleaner before comparing.</li>
+<li><strong>Ignore what does not matter.</strong> Timestamps and IDs change every run; good tools let you set ignore rules so real changes stand out.</li>
+<li><strong>Collapse unchanged sections.</strong> In long documents, hiding the identical parts keeps your attention on the edits.</li>
+<li><strong>Compare the right versions.</strong> Label your inputs clearly — comparing v2 against v3 answers a different question than v1 against v3.</li>
+</ul>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant highlighting</strong> — differences appear the moment you compare.</li>
+<li><strong>Multiple granularities</strong> — line, word, and character-level diffs.</li>
+<li><strong>Side-by-side and unified views</strong> — read changes your way.</li>
+<li><strong>100% free</strong> — no signup, no limits.</li>
+<li><strong>Private by design</strong> — comparison runs in your browser; documents never leave your device.</li>
+<li><strong>Works everywhere</strong> — desktop and mobile browsers.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is a text comparator?</h4>
+<p>An online tool that compares two texts and highlights every difference — additions, deletions, and modifications — usually with color coding.</p>
+
+<h4>Is the text comparator free?</h4>
+<p>Yes. Paste both texts and compare as often as you like, with no account required.</p>
+
+<h4>How do I compare two documents?</h4>
+<p>Paste the original in the left panel and the revised version in the right, choose line, word, or character mode, and click Compare. Differences highlight automatically.</p>
+
+<h4>What do the colors mean?</h4>
+<p>Green marks added content, red marks removed content, and unchanged text stays neutral. Modified sections show both colors together.</p>
+
+<h4>Can it compare large files?</h4>
+<p>Yes — many comparators handle thousands of lines smoothly. Collapse unchanged sections to focus on the edits in very long documents.</p>
+
+<h4>Why does it show differences I did not make?</h4>
+<p>Usually invisible characters, trailing spaces, or line-ending changes. Clean both texts first and the phantom differences disappear.</p>
+
+<h4>Is my text uploaded to a server?</h4>
+<p>No. The comparison runs locally in your browser, so contracts, code, and drafts stay private on your device.</p>
+
+<h4>What is the difference between word and character mode?</h4>
+<p>Word mode highlights whole changed words — best for prose. Character mode highlights individual changed letters — best when a single digit or symbol might be the key change.</p>
+</article>

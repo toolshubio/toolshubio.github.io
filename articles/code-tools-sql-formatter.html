@@ -1,0 +1,99 @@
+<article class="tool-article">
+<h2>SQL Formatter — Free Online SQL Query Beautifier</h2>
+
+<p>There's a particular dread that comes with opening a SQL query someone copied out of a log file: 400 characters on one line, joins and subqueries and conditions all fused together, and you're supposed to figure out why it's slow. I've been the person who wrote that query too — ORM-generated SQL is machine food, not human food. A SQL formatter takes that compressed mess and lays it out the way you'd write it by hand: one clause per line, indented subqueries, aligned joins, consistent keyword casing. The query returns exactly the same results; you can finally read what it asks for.</p>
+
+<h3>What Is a SQL Formatter?</h3>
+
+<p>A SQL formatter parses your query the way the database engine does, then re-prints it with predictable structure: SELECT, FROM, WHERE, JOIN, GROUP BY, and ORDER BY each starting their own line, nested subqueries indented one level deeper, and keywords in consistent casing. Only whitespace and casing change — tables, columns, conditions, and logic stay untouched, so the query executes identically.</p>
+
+<p>Good formatters understand SQL dialects, and that matters more than it sounds. Backtick identifiers in MySQL, double-colon casts in PostgreSQL, TOP in T-SQL, LIMIT in MySQL — pick the right dialect and the parser handles your syntax correctly instead of guessing. Standard SQL covers most queries fine, but switch to your actual database when you use its special syntax.</p>
+
+<p>One thing it won't do: make your query faster. Formatting improves readability, not execution plans. For slow queries you still need EXPLAIN and indexes — but a formatted query is infinitely easier to analyze with EXPLAIN output side by side.</p>
+
+<h3>How to Use the SQL Formatter</h3>
+
+<p>Copy your SQL from wherever it lives — a database client like DBeaver or DataGrip, an ORM log, a migration script, a colleague's message — and paste it into the input box at the top of the tool.</p>
+
+<p>Pick your dialect (MySQL, PostgreSQL, SQL Server, Oracle, SQLite, or Standard SQL for the generic case). Choose keyword casing: UPPERCASE is the classic convention that makes SELECT and WHERE visually pop against table names, lowercase is the modern minimalist preference, and "preserve" keeps whatever you typed. Set your indent size — 2 or 4 spaces are the norms — then click Format.</p>
+
+<p>The beautified query appears in the output area. Copy it to your clipboard or download it as a <code>.sql</code> file. If you're embedding the query in application code or a config file, use the minify option instead: it strips comments and collapses everything to a single compact line.</p>
+
+<p>My habit: format before debugging, always. A five-table join that's one line long hides a bad join condition; the same query formatted shows each JOIN and its ON clause on its own line, and the mistake usually jumps out. I also format before pasting queries into documentation — future me is always grateful.</p>
+
+<h3>Before and After Example</h3>
+
+<p>A typical ORM-generated query, the kind that shows up in application logs:</p>
+
+<p><strong>Input (one line):</strong></p>
+<p><code>select u.id,u.name from users u left join orders o on o.user_id=u.id where u.active=1 order by u.name;</code></p>
+
+<p><strong>Output (formatted, uppercase keywords, 2-space indent):</strong></p>
+<p><code>SELECT<br>&nbsp;&nbsp;u.id,<br>&nbsp;&nbsp;u.name<br>FROM<br>&nbsp;&nbsp;users u<br>&nbsp;&nbsp;LEFT JOIN orders o ON o.user_id = u.id<br>WHERE<br>&nbsp;&nbsp;u.active = 1<br>ORDER BY<br>&nbsp;&nbsp;u.name;</code></p>
+
+<p>Same query, same results — but now the join structure is honest. On a real query with a CTE, three subqueries, and a window function, this transformation is the difference between understanding the query and just running it on faith.</p>
+
+<h3>Formatting Options Worth Knowing</h3>
+
+<table>
+<thead><tr><th>Option</th><th>Choices</th><th>My take</th></tr></thead>
+<tbody>
+<tr><td>Dialect</td><td>Standard SQL, MySQL, PostgreSQL, T-SQL, PL/SQL, SQLite, BigQuery…</td><td>Match your database; Standard SQL works for simple queries</td></tr>
+<tr><td>Keyword case</td><td>UPPERCASE, lowercase, preserve</td><td>UPPERCASE is the classic — keywords stand out from identifiers</td></tr>
+<tr><td>Indent size</td><td>2 spaces, 4 spaces, tabs</td><td>2 or 4 spaces; match your team's style</td></tr>
+<tr><td>Minify</td><td>Collapse to one line</td><td>For embedding queries in code or configs</td></tr>
+<tr><td>Blank lines</td><td>Between statements</td><td>Keep them in multi-statement scripts</td></tr>
+</tbody>
+</table>
+
+<p>The keyword-casing debate is worth a sentence: most SQL style guides recommend UPPERCASE because it creates a visual rhythm — keywords shout, identifiers whisper — and in a 200-line stored procedure that rhythm is what lets your eyes find the WHERE clause in two seconds. Some modern teams prefer lowercase for aesthetic reasons. Either is fine; mixing both is not.</p>
+
+<h3>Who Uses a SQL Formatter?</h3>
+
+<p><strong>Database administrators</strong> format queries before tuning them. Reading the execution plan next to a formatted query is how you spot the missing index or the accidental cross join.</p>
+
+<p><strong>Back-end developers</strong> clean up ORM-generated SQL when debugging data issues, and format hand-written queries before code review so teammates can actually review the logic.</p>
+
+<p><strong>Data analysts</strong> working with warehouse SQL (BigQuery, Snowflake, Redshift) format long analytical queries with CTEs — a five-CTE pipeline is unreadable until each block sits on its own indented section.</p>
+
+<p><strong>Students</strong> learning SQL get more from formatted examples. A textbook query printed with proper structure teaches the clause order (SELECT → FROM → WHERE → GROUP BY → HAVING → ORDER BY) visually.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant formatting</strong> — paste a query, get readable SQL in one click.</li>
+<li><strong>Multiple dialects</strong> — MySQL, PostgreSQL, SQL Server, Oracle, SQLite, BigQuery, and more.</li>
+<li><strong>Keyword casing control</strong> — UPPERCASE, lowercase, or preserve your original.</li>
+<li><strong>Adjustable indentation</strong> — 2 or 4 spaces or tabs.</li>
+<li><strong>Minify mode</strong> — collapse queries to a single line for embedding.</li>
+<li><strong>Subquery & CTE support</strong> — nested queries indented at each level.</li>
+<li><strong>100% free</strong> — no account, no limits on query length.</li>
+<li><strong>Private by design</strong> — runs in your browser; table names and business logic never leave your device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this SQL formatter free?</h4>
+<p>Yes — free, no signup, no limit on query size.</p>
+
+<h4>Does formatting change my query results?</h4>
+<p>No. Only whitespace, line breaks, and keyword casing change. The tables, columns, conditions, and logic are untouched — results are identical.</p>
+
+<h4>Which dialect should I choose?</h4>
+<p>Your database: MySQL for MySQL/MariaDB, PostgreSQL for Postgres, T-SQL for SQL Server, PL/SQL for Oracle. Standard SQL works for simple, portable queries.</p>
+
+<h4>Should keywords be uppercase or lowercase?</h4>
+<p>Most style guides recommend UPPERCASE so keywords stand out from table and column names. It's the default here, but lowercase works if your team prefers it.</p>
+
+<h4>Can it format stored procedures and CTEs?</h4>
+<p>Yes — multi-statement scripts, nested subqueries, JOINs, and WITH (CTE) blocks are all laid out with clear indentation.</p>
+
+<h4>Will it make my query run faster?</h4>
+<p>No — formatting affects readability, not performance. Use EXPLAIN and proper indexes for speed; use the formatter to understand what you're optimizing.</p>
+
+<h4>Can I minify SQL too?</h4>
+<p>Yes — minify mode strips comments and collapses the query to one compact line, useful for embedding in application code.</p>
+
+<h4>Is my query data safe?</h4>
+<p>Yes. Formatting happens entirely in your browser — your schema names and literal values are never uploaded.</p>
+</article>

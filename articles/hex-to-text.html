@@ -1,0 +1,107 @@
+<article class="tool-article">
+<h2>Hex to Text Converter — Free Online Hex Decoder</h2>
+
+<p>Packet captures, hex dumps, and firmware readouts all have one thing in common: the readable text is hiding inside, wearing a hexadecimal disguise. I have stared at enough Wireshark output to know that 48 65 6C 6C 6F looks like noise until someone tells you it spells "Hello." A hex to text converter does that telling — paste the hex, get the words back.</p>
+
+<h3>What Is a Hex to Text Converter?</h3>
+
+<p>Hexadecimal is base-16, and two hex digits make exactly one byte — the same byte that stores one ASCII character. So each pair of hex digits is one letter: 48 is 72 in decimal, which is H in ASCII. String the pairs together and a hex dump becomes a sentence. "48 65 6C 6C 6F 20 57 6F 72 6C 64" decodes to "Hello World."</p>
+
+<p>The converter handles the messy reality of hex input. Continuous strings (48656C6C6F), space-separated pairs (48 65 6C 6C 6F), and 0x-prefixed values (0x48 0x65) all decode the same way, because a good tool strips everything that is not a hex digit before it starts. Uppercase and lowercase letters are treated identically — 6C and 6c both decode to l.</p>
+
+<p>One thing worth knowing: modern text is usually UTF-8, which is backward compatible with ASCII for English. Accented characters and emoji appear as multi-byte sequences — é becomes C3 A9 — and a UTF-8-aware converter reassembles those sequences into the right characters instead of decoding each byte separately.</p>
+
+<h3>How to Use the Hex to Text Converter</h3>
+
+<p>Copy your hex string from the packet capture, hex editor, log file, or puzzle page. Paste it into the input box — formatting does not matter much, the tool normalizes it. Click Convert and the decoded text appears below.</p>
+
+<p>Copy the result to your clipboard or download it as a .txt file. If you are debugging a network capture, I recommend decoding in small chunks around the area you care about (HTTP headers, for instance) rather than dumping megabytes at once — the signal-to-noise ratio is much better. Students checking encoding homework can decode one word at a time and compare against their hand calculations.</p>
+
+<p>One habit worth building: when the output shows � or boxes, check your byte count. Hex-to-text needs complete pairs; an odd number of hex digits means a digit got lost somewhere upstream.</p>
+
+<h3>How Hex to Text Conversion Works</h3>
+
+<p>Three steps per byte — the same pipeline as binary-to-text, with a different starting point.</p>
+
+<p><strong>Step 1 — Clean and pair.</strong> All non-hex characters are stripped, then the remaining digits are split into pairs: 48656C6C6F → 48 65 6C 6C 6F.</p>
+
+<p><strong>Step 2 — Hex to decimal.</strong> Each pair converts from base-16 to decimal: 48 → 4×16+8 = 72; 65 → 6×16+5 = 101; 6C → 6×16+12 = 108.</p>
+
+<p><strong>Step 3 — Decimal to character.</strong> Each value is looked up in the ASCII/UTF-8 chart: 72 → H, 101 → e, 108 → l.</p>
+
+<p>Worked example — decode "50 6C 61 6E 74": pair up → 50 6C 61 6E 74; convert → 80, 108, 97, 110, 116; look up → P, l, a, n, t. The word is "Plant." A page of hex decodes in milliseconds; the same page by hand would take the better part of an hour.</p>
+
+<h3>Common Hex to Text Examples</h3>
+
+<p>Reference pairs I find myself decoding most often:</p>
+
+<table>
+<thead><tr><th>Hex</th><th>Decimal</th><th>Character</th></tr></thead>
+<tbody>
+<tr><td><code>41</code></td><td>65</td><td>A</td></tr>
+<tr><td><code>48</code></td><td>72</td><td>H</td></tr>
+<tr><td><code>61</code></td><td>97</td><td>a</td></tr>
+<tr><td><code>65</code></td><td>101</td><td>e</td></tr>
+<tr><td><code>30</code></td><td>48</td><td>0</td></tr>
+<tr><td><code>20</code></td><td>32</td><td>Space</td></tr>
+<tr><td><code>0A</code></td><td>10</td><td>Newline (LF)</td></tr>
+<tr><td><code>0D 0A</code></td><td>13, 10</td><td>Windows line ending</td></tr>
+<tr><td><code>21</code></td><td>33</td><td>!</td></tr>
+<tr><td><code>3C</code></td><td>60</td><td>&lt;</td></tr>
+<tr><td><code>3E</code></td><td>62</td><td>&gt;</td></tr>
+</tbody>
+</table>
+
+<p>Words to try: "43 61 74" → Cat; "48 65 6C 6C 6F" → Hello; "31 32 33" → 123. The 0A and 0D 0A entries are worth remembering — when a text file shows strange line breaks in a hex editor, these two pairs are usually the culprits.</p>
+
+<h3>Who Uses Hex to Text Converters?</h3>
+
+<p><strong>Developers</strong> decode hex dumps from debuggers and logging frameworks, where readable strings hide among raw bytes.</p>
+
+<p><strong>Network engineers</strong> read packet captures in tools like Wireshark, converting hex payloads to see HTTP headers and protocol text.</p>
+
+<p><strong>Cybersecurity analysts</strong> extract strings from binary files and decode hex-encoded payloads during malware analysis and CTF competitions.</p>
+
+<p><strong>Embedded engineers</strong> inspect firmware and EEPROM contents shown as hex, decoding text labels and configuration strings.</p>
+
+<p><strong>Students</strong> practice character encodings in computer science courses, using the tool to verify hand-decoded hex dumps.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant decoding</strong> — long hex dumps convert in milliseconds.</li>
+<li><strong>100% free</strong> — no signup, no subscription, no limits.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
+<li><strong>Flexible input</strong> — continuous, spaced, or 0x-prefixed hex, either case.</li>
+<li><strong>UTF-8 support</strong> — multi-byte sequences decode to emoji and international characters.</li>
+<li><strong>Helpful errors</strong> — odd digit counts and invalid characters are flagged clearly.</li>
+<li><strong>Copy and download</strong> — one click to copy or save the result.</li>
+<li><strong>Works everywhere</strong> — any modern browser on desktop or mobile.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this hex to text converter free?</h4>
+<p>Yes — free, no account, no limits.</p>
+
+<h4>What format should my hex be in?</h4>
+<p>Any of them: 48656C6C6F, 48 65 6C 6C 6F, or 0x48 0x65 0x6C 0x6C 0x6F all decode to Hello.</p>
+
+<h4>What does 48 65 6C 6C 6F mean?</h4>
+<p>It is "Hello" — each pair is one ASCII character: 48→H, 65→e, 6C→l, 6C→l, 6F→o.</p>
+
+<h4>Why am I getting an error about odd digits?</h4>
+<p>Hex-to-text needs complete pairs (each byte is two digits). An odd count means a digit is missing — check for a dropped character.</p>
+
+<h4>Does it handle emoji and non-English text?</h4>
+<p>Yes, in UTF-8 mode. Emoji and accented characters arrive as multi-byte sequences (like C3 A9 for é) and decode correctly.</p>
+
+<h4>What is the difference between hex to text and hex to ASCII?</h4>
+<p>None in practice — both decode hex byte pairs through the character chart into readable text.</p>
+
+<h4>Is my data secure?</h4>
+<p>Yes. Decoding happens entirely in your browser — your hex never leaves your device.</p>
+
+<h4>How do I convert text back to hex?</h4>
+<p>Use the matching text-to-hex tool, which encodes each character as its two-digit hex pair.</p>
+</article>

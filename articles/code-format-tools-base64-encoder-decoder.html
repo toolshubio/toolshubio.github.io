@@ -1,0 +1,99 @@
+<article class="tool-article">
+<h2>Base64 Encoder Decoder — Convert Text and Data to Base64</h2>
+
+<p>The first time I saw a Base64 string, I assumed it was encrypted. It looked like scrambled secrets — <code>SGVsbG8sIFdvcmxkIQ==</code> — and I treated it with the caution of a password. Then someone decoded it in front of me and it said "Hello, World!" I had been intimidated by plain text wearing a costume. Base64 is not encryption at all; it's a translation scheme that turns binary data into plain ASCII text so it can travel through systems that only speak text. This tool encodes and decodes it in both directions, instantly.</p>
+
+<h3>What Is Base64?</h3>
+
+<p>Many systems — email, JSON APIs, URLs, HTML attributes — were designed for text and choke on raw binary bytes. Base64 solves this by representing any binary data using only 64 safe ASCII characters: A–Z, a–z, 0–9, plus <code>+</code> and <code>/</code> (with <code>=</code> as padding). Three bytes of data become four Base64 characters, which is why encoded output is about 33% larger than the input.</p>
+
+<p>The classic example: "Hello, World!" encodes to <code>SGVsbG8sIFdvcmxkIQ==</code>. Decoding reverses it exactly — no information is lost, because this is a reversible <em>encoding</em>, not a one-way <em>hash</em> and not <em>encryption</em>. There is no key, no secret, no security: anyone who sees a Base64 string can decode it in seconds. Treating Base64 as protection is one of the most common security mistakes in web development.</p>
+
+<p>You'll meet Base64 in HTTP Basic authentication (<code>username:password</code> encoded in the Authorization header), data URLs that embed small images directly in HTML/CSS (<code>data:image/png;base64,...</code>), JWT tokens, email attachments (MIME), and API fields that need to carry binary payloads inside JSON.</p>
+
+<h3>How Base64 Encoding Works</h3>
+
+<p>The mechanics are straightforward once you see them. Take the input bytes and read them as a stream of bits. Regroup those bits into chunks of 6 (instead of 8), and map each 6-bit value (0–63) to the corresponding character in the 64-character alphabet. If the input length isn't a multiple of 3 bytes, <code>=</code> padding fills the output to a multiple of 4 characters.</p>
+
+<table>
+<thead><tr><th>Input</th><th>Base64 Output</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td><code>Hello, World!</code></td><td><code>SGVsbG8sIFdvcmxkIQ==</code></td><td>13 bytes → 20 chars (with padding)</td></tr>
+<tr><td><code>Hello World</code></td><td><code>SGVsbG8gV29ybGQ=</code></td><td>11 bytes → 16 chars</td></tr>
+<tr><td><code>user:pass123</code></td><td><code>dXNlcjpwYXNzMTIz</code></td><td>HTTP Basic auth format</td></tr>
+<tr><td><code>Man</code></td><td><code>TWFu</code></td><td>3 bytes → 4 chars, no padding needed</td></tr>
+</tbody>
+</table>
+
+<p>Two variants exist beyond standard Base64: <strong>Base64URL</strong> replaces <code>+</code> and <code>/</code> with <code>-</code> and <code>_</code> so the output is safe inside URLs and filenames (this is what JWTs use), and it often drops the padding. Decoding must match the variant that encoded the data — feed Base64URL into a standard decoder and you'll get garbage or errors.</p>
+
+<h3>How to Use the Base64 Encoder Decoder</h3>
+
+<p>Two boxes, two directions, no configuration needed for the common cases.</p>
+
+<p><strong>Step 1 — Paste your input.</strong> Put plain text in to encode, or a Base64 string in to decode. The tool also handles file input: encoding a file (an image, a PDF) produces its Base64 text representation.</p>
+
+<p><strong>Step 2 — Choose the direction.</strong> Encode converts text or file bytes into Base64; Decode converts a Base64 string back to the original text or bytes. The conversion runs as you type — no submit button.</p>
+
+<p><strong>Step 3 — Handle the output.</strong> Copy the encoded string for pasting into code, configs, or data URLs. When decoding, the result appears as readable text; if you decoded file data, download it to restore the original file byte-for-byte.</p>
+
+<p><strong>Step 4 — Round-trip to verify.</strong> Feed the output back as input in the opposite direction. If you get your original text back, the encoding is intact — a quick sanity check before embedding a data URL or shipping an auth header.</p>
+
+<h3>Common Uses of Base64</h3>
+
+<p><strong>Data URLs:</strong> embedding small images or fonts directly in HTML/CSS (<code>&lt;img src="data:image/png;base64,..."&gt;</code>) eliminates a network request — great for icons, terrible for large photos because of the 33% size inflation.</p>
+
+<p><strong>HTTP Basic Auth:</strong> the <code>Authorization: Basic &lt;base64&gt;</code> header carries <code>username:password</code>. It must always travel over HTTPS, since the "encoding" is trivially reversible.</p>
+
+<p><strong>APIs and JSON:</strong> binary payloads (file contents, cryptographic signatures, serialized objects) get Base64-encoded to fit inside JSON string fields.</p>
+
+<p><strong>Debugging:</strong> developers decode mysterious blobs in logs, tokens, and CTF challenges to see what's actually inside — which is exactly how I learned Base64 isn't encryption.</p>
+
+<h3>Who Uses a Base64 Encoder Decoder?</h3>
+
+<p><strong>Web developers</strong> build data URLs, debug auth headers, and inspect JWT payloads — the daily bread of API work.</p>
+
+<p><strong>Backend engineers</strong> encode binary data for JSON transport and decode incoming payloads during integration testing.</p>
+
+<p><strong>Security analysts and CTF players</strong> peel layered encodings (Base64 inside hex inside Base64…) to reveal hidden payloads.</p>
+
+<p><strong>Students</strong> learn how text encodings work by watching familiar strings transform and transform back.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Bidirectional conversion</strong> — encode text/files to Base64 and decode back, instantly.</li>
+<li><strong>Live conversion</strong> — output updates as you type, no buttons required.</li>
+<li><strong>File support</strong> — encode any file to Base64 text; decode back to the original file.</li>
+<li><strong>UTF-8 correct</strong> — non-ASCII characters (emoji, accented text) encode and decode properly.</li>
+<li><strong>Validation</strong> — clear errors on malformed Base64 instead of silent garbage.</li>
+<li><strong>Copy and download</strong> — one click to copy text output or save decoded files.</li>
+<li><strong>Private and free</strong> — everything runs in your browser; your data never leaves your device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is Base64 encryption?</h4>
+<p>No — and treating it as encryption is a genuine security mistake. Base64 is a reversible encoding with no key; anyone can decode it in seconds. It exists to make binary data safe for text-only channels, not to hide anything. For confidentiality, use real encryption.</p>
+
+<h4>Why is Base64 output larger than the input?</h4>
+<p>Three input bytes become four output characters, so encoded data is about 33% larger. Don't Base64-encode large files for storage — it's a transport format, not a compression format.</p>
+
+<h4>What is Base64URL and when do I need it?</h4>
+<p>A URL-safe variant that uses <code>-</code> and <code>_</code> instead of <code>+</code> and <code>/</code> (and usually drops padding). JWTs and URL parameters use it. Decode with the matching variant or you'll get errors.</p>
+
+<h4>How do I encode an image as Base64?</h4>
+<p>Use the file input: the tool reads the image bytes and produces the Base64 string, ready to embed as a data URL like <code>data:image/png;base64,...</code>.</p>
+
+<h4>Why did decoding give me garbage?</h4>
+<p>Either the input wasn't valid Base64 (check for typos or truncated strings), or it was encoded with a different variant (standard vs URL-safe). Strict decoders reject invalid characters rather than guessing.</p>
+
+<h4>Can I decode multiple times (nested encoding)?</h4>
+<p>Yes — feed the output back as input repeatedly. Data that's been encoded more than once (common in CTF challenges) peels one layer per decode round.</p>
+
+<h4>Is my data uploaded anywhere?</h4>
+<p>No. Encoding and decoding happen entirely in your browser — nothing is sent to any server.</p>
+
+<h4>Is this Base64 tool free?</h4>
+<p>Yes — free, unlimited, no account required.</p>
+</article>

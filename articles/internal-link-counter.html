@@ -1,0 +1,95 @@
+<article class="tool-article">
+<h2>Internal Link Counter — Measure the Links Holding Your Site Together</h2>
+
+<p>Google finds your pages by following links — and the links you control are the internal ones. I once audited a 400-article blog where the best content sat three clicks from nowhere, linked from exactly zero other posts. It might as well not have existed. An internal link counter shows how many links point within your site from any page, revealing orphaned content and the pages hoarding (or starving) link equity.</p>
+
+<h3>What Is an Internal Link Counter?</h3>
+
+<p>Internal links are links from one page of your site to another page of the same site. They do three jobs: they help visitors navigate, they tell Google which pages matter most (pages with many internal links get crawled more often), and they distribute ranking authority across your site. Counting them per page turns this abstract concept into actionable numbers.</p>
+
+<p>The counter scans a page and tallies links staying within the domain — separating them from external links, counting dofollow versus nofollow, and distinguishing unique destinations from repeats. Two numbers matter most: links <em>from</em> the page (outbound internal) and, on better tools, links <em>to</em> the page from across the site (inbound internal). A page with zero inbound internal links is an orphan — reachable only by direct URL or sitemap.</p>
+
+<p>There is a balance to strike. Too few internal links and pages go undiscovered; too many (hundreds of footer and sidebar links on every page) and each link passes less value while the page looks spammy. Most healthy content pages carry a handful to a few dozen meaningful in-content links.</p>
+
+<h3>How to Use the Internal Link Counter</h3>
+
+<p>Enter the page URL and run the count. Compare the internal total against the page's role: pillar and category pages should link out generously to their subtopics; individual articles should link up to their pillar and sideways to related posts. Then check the reverse — how many pages link <em>to</em> this one — using the tool's inbound data or your SEO plugin's link counter.</p>
+
+<p>The fixes write themselves once you see the numbers. Orphaned pages (zero inbound links) need links from related content — find them via site search for the topic and add contextual links. Over-linked utility pages (privacy policy linked from every footer, fine) versus under-linked money pages (your pricing page linked from one blog post in 2021) get rebalanced by editing the obvious source pages.</p>
+
+<p>Anchor text deserves a glance too. If fifty internal links all say "click here," you are wasting descriptive signals. Varied, natural anchor text telling readers (and Google) what the destination covers is the goal — no exact-match stuffing required.</p>
+
+<h3>How Internal Link Counting Works</h3>
+
+<p>The mechanics mirror external counting, pointed inward.</p>
+
+<p><strong>Step 1 — Page fetch.</strong> The tool retrieves the page's HTML, ideally rendered so JavaScript-inserted navigation links are included.</p>
+
+<p><strong>Step 2 — Link extraction.</strong> All anchor tags are collected with their href, rel attributes, and anchor text.</p>
+
+<p><strong>Step 3 — Domain matching.</strong> URLs resolving to the same domain (and usually its subdomains) are classified internal; the rest are external. Relative links like <code>/blog/post</code> resolve against the page URL automatically.</p>
+
+<p><strong>Step 4 — Analysis.</strong> The tool reports total internal links, unique internal destinations, dofollow/nofollow split, and anchor-text distribution. Site-wide tools additionally crawl multiple pages to compute inbound counts per URL.</p>
+
+<p>Template links (navigation, footer, sidebar) inflate raw totals — a page showing "212 internal links" may have only 8 in the actual content. Unique-destination counts and in-content filtering separate signal from template noise.</p>
+
+<h3>Reading Your Internal Link Report</h3>
+
+<table>
+<thead><tr><th>Metric</th><th>What it reveals</th><th>Action</th></tr></thead>
+<tbody>
+<tr><td>Inbound internal links: 0</td><td>Orphaned page</td><td>Add links from related content</td></tr>
+<tr><td>Inbound: very high</td><td>Important page (or template-linked)</td><td>Verify it's a page worth the authority</td></tr>
+<tr><td>Outbound: very low</td><td>Dead-end page</td><td>Link onward to related content</td></tr>
+<tr><td>Generic anchor text everywhere</td><td>Wasted descriptive signals</td><td>Rewrite anchors descriptively</td></tr>
+<tr><td>Links to 404 pages</td><td>Rot in your own house</td><td>Update or remove dead internal links</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Internal Link Counters?</h3>
+
+<p><strong>SEO specialists</strong> map site architecture and find orphaned or under-linked pages.</p>
+
+<p><strong>Bloggers</strong> keep new posts connected to related older content.</p>
+
+<p><strong>E-commerce managers</strong> ensure category and product pages link in a sensible hierarchy.</p>
+
+<p><strong>Content strategists</strong> build topic clusters with pillar pages at the center.</p>
+
+<p><strong>Site auditors</strong> verify link structure during migrations and redesigns.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Free page scans</strong> — no signup for single-URL checks.</li>
+<li><strong>Internal/external split</strong> — clean separation of link types.</li>
+<li><strong>Inbound link data</strong> — see what points to each page, not just out of it.</li>
+<li><strong>Dofollow/nofollow breakdown</strong> — authority flow visibility.</li>
+<li><strong>Anchor text listing</strong> — audit the words doing the linking.</li>
+<li><strong>CSV export</strong> — feed results into larger site audits.</li>
+<li><strong>Orphan detection</strong> — surface pages nothing links to.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this internal link counter free?</h4>
+<p>Yes — single-page scans are free with no account required.</p>
+
+<h4>How many internal links should a page have?</h4>
+<p>No fixed number. Aim for enough contextual links to guide readers and crawlers — typically a handful to a few dozen in content — without stuffing.</p>
+
+<h4>What is an orphan page?</h4>
+<p>A page with zero inbound internal links. It is hard for visitors to find and gets crawled rarely. Link to it from related content.</p>
+
+<h4>Do internal links pass ranking authority?</h4>
+<p>Yes. Internal links distribute authority across your site — which is why your most-linked pages tend to be your strongest.</p>
+
+<h4>Should I nofollow internal links?</h4>
+<p>Almost never. Nofollowing internal links wastes crawl budget mechanics and is rarely the right call — fix the link instead of hiding it.</p>
+
+<h4>Does anchor text matter for internal links?</h4>
+<p>Yes. Descriptive anchor text helps Google understand the destination page's topic. Keep it natural and varied.</p>
+
+<h4>Can I count links across my whole site?</h4>
+<p>Single-page tools scan one URL at a time. For site-wide inbound counts, use a crawler or an SEO plugin with a link index (like Yoast's text link counter).</p>
+</article>

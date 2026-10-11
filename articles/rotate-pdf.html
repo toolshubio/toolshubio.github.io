@@ -1,0 +1,93 @@
+<article class="tool-article">
+<h2>Rotate PDF — Fix Sideways and Upside-Down Pages for Free</h2>
+
+<p>Phone scans are the usual culprit. You photograph a document, the phone guesses the orientation wrong, and now page 3 of your expense report is sideways while page 7 is fully upside down. A PDF rotator fixes this in seconds: pick the pages, choose a direction, and download a document where everything reads the right way up.</p>
+
+<h3>What Is a PDF Rotator?</h3>
+
+<p>Every PDF page carries a rotation value — 0, 90, 180, or 270 degrees — that tells the viewer how to display it. A rotator simply changes that value (or re-renders the page content at the new angle) and saves the result. The text, images, and layout are untouched; only the orientation changes.</p>
+
+<p>There are two scopes worth understanding. <strong>Whole-document rotation</strong> turns every page the same direction — perfect when an entire scan came out sideways. <strong>Selective rotation</strong> lets you click individual page thumbnails and rotate just those — the fix for mixed documents where most pages are fine and three are rebels. Good tools show live thumbnails so you can see each page turn before committing.</p>
+
+<p>A subtle point: rotating is not the same as flipping. Rotation turns the page like a steering wheel (90° steps); flipping mirrors it like a reflection. If your scan is upside down, you want 180° rotation. If text reads backwards as in a mirror, that is a different problem no rotator will fix.</p>
+
+<h3>How to Use the Rotate PDF Tool</h3>
+
+<p>Upload your PDF and wait for the page thumbnails to render. Click the pages that need fixing — or select all if the whole document is off. Choose a direction: 90° clockwise, 90° counterclockwise, or 180°. The thumbnails update live; when everything reads correctly, click Apply or Save and download the fixed PDF.</p>
+
+<p>The most common fix pattern: scanned pages from a phone are usually 90° off in one consistent direction. Select all, rotate once, done. Mixed-orientation documents — common with batch scans of mixed paper sizes — need the page-by-page approach. Take the extra minute; it beats discovering a sideways page after you have already submitted the file.</p>
+
+<p>Keep the original until you have checked the download. Rotation tools apply changes permanently to the new file, and re-rotating a rotated file works fine, but it is simpler to start from the original if you make a mistake.</p>
+
+<h3>How PDF Rotation Works</h3>
+
+<p>The mechanism is lighter than most people expect.</p>
+
+<p><strong>Step 1 — Page inventory.</strong> The tool reads the PDF's page tree and renders a thumbnail of each page so you can see what you are working with.</p>
+
+<p><strong>Step 2 — Rotation assignment.</strong> Your clicks set a new rotation value per page. Internally this is stored as a <code>/Rotate</code> entry in the page dictionary — a number, not a re-rendering of content.</p>
+
+<p><strong>Step 3 — Saving.</strong> The tool writes a new PDF with the updated rotation values. Because the content streams are not re-encoded, this is fast and completely lossless — no quality change whatsoever.</p>
+
+<p>Some tools take a different approach and physically rotate the content (drawing it at the new angle). The visible result is identical. The metadata approach is preferable because it keeps file size stable and text fully selectable.</p>
+
+<h3>Common Rotation Fixes</h3>
+
+<table>
+<thead><tr><th>Problem</th><th>Fix</th></tr></thead>
+<tbody>
+<tr><td>Whole document sideways from phone scan</td><td>Select all pages, rotate 90° once</td></tr>
+<tr><td>One page upside down</td><td>Click that page, rotate 180°</td></tr>
+<tr><td>Mixed orientations in batch scan</td><td>Rotate pages individually via thumbnails</td></tr>
+<tr><td>Landscape table in portrait document</td><td>Rotate just that page 90° for readability</td></tr>
+<tr><td>PDF prints sideways</td><td>Rotate to match the printer's paper orientation</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses PDF Rotators?</h3>
+
+<p><strong>Students</strong> fix phone-scanned notes and assignments before submitting them.</p>
+
+<p><strong>Office workers</strong> straighten scanned contracts, receipts, and reports for filing.</p>
+
+<p><strong>Real estate agents</strong> correct sideways property photos and floor plans in listing packets.</p>
+
+<p><strong>Accountants</strong> normalize batch-scanned invoices so every page reads correctly.</p>
+
+<p><strong>Anyone with a scanner</strong> has met the sideways page — this is the thirty-second cure.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Free rotation</strong> — no signup, no watermark, no page limits on typical use.</li>
+<li><strong>Selective pages</strong> — rotate one page, several, or the whole document.</li>
+<li><strong>Live thumbnails</strong> — preview every page before applying.</li>
+<li><strong>Lossless</strong> — rotation changes metadata, not content; zero quality loss.</li>
+<li><strong>Fast</strong> — even large documents process in seconds.</li>
+<li><strong>Private</strong> — files encrypted in transit and deleted after processing.</li>
+<li><strong>Mobile-friendly</strong> — fix scans right on the phone that took them.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this PDF rotator free?</h4>
+<p>Yes — completely free with no account needed.</p>
+
+<h4>Will rotating reduce my PDF's quality?</h4>
+<p>No. Rotation updates a page's orientation metadata without re-encoding content, so quality is identical.</p>
+
+<h4>Can I rotate just some pages?</h4>
+<p>Yes. Click individual page thumbnails to select them, then rotate only those pages. Leave the selection empty (or select all) to rotate everything.</p>
+
+<h4>What's the difference between rotate and flip?</h4>
+<p>Rotate turns the page in 90° steps like a steering wheel. Flip mirrors it. For upside-down scans you want 180° rotation.</p>
+
+<h4>Why are my scanned pages sideways?</h4>
+<p>Phone cameras and scanners guess orientation from sensors that are often wrong — especially with documents photographed at an angle. Rotation corrects the guess.</p>
+
+<h4>Can I undo a rotation?</h4>
+<p>Yes — just rotate the pages back. Rotation is non-destructive, so rotating four times returns to the original.</p>
+
+<h4>Does rotation work on password-protected PDFs?</h4>
+<p>You will need to unlock the PDF first. Remove the password, then rotate.</p>
+</article>

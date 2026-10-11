@@ -1,0 +1,95 @@
+<article class="tool-article">
+<h2>Keyword Frequency Counter — See Exactly How Often Each Word Appears</h2>
+
+<p>I once edited a 2,000-word article where the writer had used the word "leverage" 31 times. Nobody noticed while writing — repetition is invisible to the author and glaring to everyone else. A keyword frequency counter makes the invisible visible: paste any text and get every word ranked by how often it appears, with counts and percentages. It is part SEO tool, part writing mirror.</p>
+
+<h3>What Is a Keyword Frequency Counter?</h3>
+
+<p>At its core, it counts: each unique word in your text, how many times it occurs, and what share of the total that represents. The output is a ranked table — most frequent first — that instantly shows which terms dominate your writing. SEO folks read it as a keyword distribution check; writers read it as a repetition audit; linguists read it as raw corpus data.</p>
+
+<p>Frequency and density are siblings, not twins. Frequency is the raw count ("coffee" appears 12 times); density is that count as a percentage of total words (12 in 600 words = 2%). Counters typically show both, because the count tells you what to edit and the percentage tells you whether it matters.</p>
+
+<p>The stop-word toggle is what makes the table useful. Without it, "the," "and," and "to" top every list and bury the interesting words. Filtering those function words surfaces the topical vocabulary — the nouns and verbs your piece is actually about — which is what you came to inspect.</p>
+
+<h3>How to Use the Keyword Frequency Counter</h3>
+
+<p>Paste your text into the analyzer — a draft, a published article, a competitor's page. Enable "ignore common words" and case-insensitive counting (so "Word" and "word" merge). Scan the top 20–50 rows: your target topics should rank highly, but no single term should tower absurdly over the rest.</p>
+
+<p>Two passes cover most use cases. <strong>Pass one: stuffing check.</strong> If your focus keyword sits at 4%+ while everything else is under 1%, rewrite the worst repetitions with pronouns and synonyms. <strong>Pass two: gap check.</strong> Paste a top-ranking competitor's text and compare tables — topical terms they use heavily that barely appear in yours are coverage gaps worth addressing in your own words.</p>
+
+<p>Writers get a bonus use: sort by frequency to find your crutch words. Everyone has them — "actually," "basically," "leverage," "robust." The counter finds yours in seconds, and a quick find-and-replace pass tightens the whole piece.</p>
+
+<h3>How Word Frequency Analysis Works</h3>
+
+<p>The pipeline is classic text analysis, fast enough to run as you type.</p>
+
+<p><strong>Step 1 — Tokenization.</strong> Text is split into word tokens using Unicode-aware boundaries — punctuation separated, accented characters and non-Latin scripts handled correctly, words lowercased for consistent counting.</p>
+
+<p><strong>Step 2 — Stop-word filtering.</strong> Optionally, common function words (the, a, and, is, of) are excluded so the table highlights meaningful terms. Minimum word length filters can further trim noise.</p>
+
+<p><strong>Step 3 — Counting and ranking.</strong> Each unique word's occurrences are tallied, percentages computed against the total, and the table sorted most-frequent first. Many tools also offer bigram/trigram modes for phrase-level analysis.</p>
+
+<p><strong>Step 4 — Presentation.</strong> Results render as a sortable table with counts, percentages, and often visual bars — plus export options (CSV) for deeper analysis in spreadsheets.</p>
+
+<p>Because analysis runs locally in the browser, even unpublished drafts and confidential documents stay private — nothing uploads anywhere.</p>
+
+<h3>What the Frequency Table Tells You</h3>
+
+<table>
+<thead><tr><th>Pattern in the table</th><th>Interpretation</th><th>Action</th></tr></thead>
+<tbody>
+<tr><td>Target keyword in top 5, ~1–2%</td><td>Healthy topical focus</td><td>None needed</td></tr>
+<tr><td>One term far above the rest</td><td>Overuse / possible stuffing</td><td>Vary with synonyms and pronouns</td></tr>
+<tr><td>Expected subtopic missing</td><td>Coverage gap</td><td>Add a section on it</td></tr>
+<tr><td>Filler words ranking high</td><td>Wordy writing</td><td>Tighten sentences, cut fillers</td></tr>
+<tr><td>Competitor's key terms absent in yours</td><td>Topical gap vs rivals</td><td>Cover the subtopic naturally</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Keyword Frequency Counters?</h3>
+
+<p><strong>SEO specialists</strong> audit content for keyword distribution and competitor gaps.</p>
+
+<p><strong>Writers and editors</strong> catch overused words and tighten prose.</p>
+
+<p><strong>Content marketers</strong> verify briefs' target terms appear naturally in delivered copy.</p>
+
+<p><strong>Students and researchers</strong> analyze texts for essays and linguistic study.</p>
+
+<p><strong>Data analysts</strong> get quick frequency stats on textual datasets without writing code.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Free analysis</strong> — no signup, no limits on typical texts.</li>
+<li><strong>Ranked frequency table</strong> — every word with count and percentage.</li>
+<li><strong>Stop-word filtering</strong> — surfaces meaningful terms.</li>
+<li><strong>Case-insensitive counting</strong> — "Word" and "word" counted together.</li>
+<li><strong>Phrase modes</strong> — bigram/trigram analysis for multi-word patterns.</li>
+<li><strong>CSV export</strong> — take the data into spreadsheets.</li>
+<li><strong>Private by design</strong> — runs locally; text never leaves your browser.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this keyword frequency counter free?</h4>
+<p>Yes — free with no account required.</p>
+
+<h4>What's the difference between frequency and density?</h4>
+<p>Frequency is the raw count of a word's occurrences; density is that count as a percentage of total words. The table shows both.</p>
+
+<h4>How is this different from a keyword density checker?</h4>
+<p>They overlap heavily. Frequency counters emphasize the full ranked word list (useful for writing audits); density checkers emphasize percentages against thresholds (useful for SEO checks). Many people use both views of the same data.</p>
+
+<h4>Should "the" and "and" top my list?</h4>
+<p>In raw counts, yes — they are the most common English words. Enable stop-word filtering to see your topical vocabulary instead.</p>
+
+<h4>Can it handle large documents?</h4>
+<p>Yes. Most tools process thousands of words instantly, and many handle full book chapters without breaking a sweat.</p>
+
+<h4>Does it work in languages other than English?</h4>
+<p>Unicode-aware counters handle accented characters and many scripts. Stop-word lists are usually English-focused, so filtering quality varies by language.</p>
+
+<h4>Is my text private?</h4>
+<p>Yes. Analysis runs entirely in your browser — your text is never uploaded to any server.</p>
+</article>

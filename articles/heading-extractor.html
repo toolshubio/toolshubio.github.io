@@ -1,0 +1,95 @@
+<article class="tool-article">
+<h2>Heading Extractor — Pull Every H1–H6 From Any Page in Seconds</h2>
+
+<p>When I take on a new SEO client, the first thing I do is extract the heading structure of their top ten pages. It takes two minutes and tells me more than an hour of reading would: skipped levels, three competing H1s, keyword-stuffed H2s. A heading extractor pulls every H1 through H6 tag from any URL and lays them out as a clean outline — the page's skeleton, minus the flesh.</p>
+
+<h3>What Is a Heading Extractor?</h3>
+
+<p>HTML headings (H1 for the main title, H2–H6 for progressively deeper subsections) are the structural backbone of a page. Search engines use them to understand topic hierarchy; screen readers use them as a navigation menu for blind users; readers use them to scan. A page's headings are effectively its table of contents.</p>
+
+<p>The extractor fetches a page's source, finds every heading tag in document order, and presents them indented by level — H1 at the top, H2s beneath it, H3s under their parents. Good tools go further: flagging structural errors like missing H1s, duplicate H1s, skipped levels (jumping from H2 to H4), empty headings, and absurdly long heading text.</p>
+
+<p>The competitor-analysis angle is where it gets powerful. Extract the headings of the top three ranking pages for your target keyword and you can see exactly how they structure the topic — which subtopics they cover, in what order, at what depth. That outline is a free content brief written by Google's winners.</p>
+
+<h3>How to Use the Heading Extractor</h3>
+
+<p>Paste the page URL and run the extraction. Read the outline top to bottom, asking three questions: is there exactly one H1 that states the page's topic? Do H2s break the topic into logical sections in a sensible order? Do deeper levels nest properly without skipping?</p>
+
+<p>Common fixes the outline reveals: multiple H1s (usually a logo or site title mistakenly marked up — demote extras to plain text or lower levels), skipped levels (an H4 sitting directly under an H2 — insert the missing H3 or renumber), and empty headings (often icon fonts or spacers abusing heading tags — remove the tags). Each fix is typically a thirty-second CMS edit once you know which tag to change.</p>
+
+<p>For competitor research, extract two or three top-ranking URLs side by side. List every H2 across them, merge duplicates, and note subtopics none of them cover well — that gap is your opening.</p>
+
+<h3>How Heading Extraction Works</h3>
+
+<p>The tool performs a focused parse of the page.</p>
+
+<p><strong>Step 1 — Page fetch.</strong> The URL is requested and the HTML source retrieved. Pages behind logins or paywalls return nothing — only public markup can be analyzed.</p>
+
+<p><strong>Step 2 — Heading parse.</strong> The HTML is scanned for <code>h1</code> through <code>h6</code> elements in document order. Text content is extracted with inner markup stripped, so <code>&lt;h2&gt;Best &lt;em&gt;laptops&lt;/em&gt;&lt;/h2&gt;</code> reports as "Best laptops".</p>
+
+<p><strong>Step 3 — Outline assembly.</strong> Headings are arranged by level into an indented tree, preserving their sequence. Counts per level are tallied (how many H2s, how many H3s).</p>
+
+<p><strong>Step 4 — Issue detection.</strong> The outline is checked against structural rules: exactly one H1 expected, no skipped levels, no empty headings, reasonable length limits. Violations are flagged with plain-language explanations.</p>
+
+<p>Note what extraction does not do: it cannot see headings injected by JavaScript after load unless the tool renders the page, and it cannot judge heading quality — only structure. "Amazing Deals!!!" passes every structural check while being terrible SEO.</p>
+
+<h3>Heading Structure Issues and Fixes</h3>
+
+<table>
+<thead><tr><th>Issue flagged</th><th>Why it matters</th><th>Fix</th></tr></thead>
+<tbody>
+<tr><td>Missing H1</td><td>Page has no declared main topic</td><td>Add one H1 stating the page topic</td></tr>
+<tr><td>Multiple H1s</td><td>Competing "main topics" confuse crawlers</td><td>Keep one; demote the rest</td></tr>
+<tr><td>Skipped level (H2 → H4)</td><td>Broken hierarchy hurts screen readers</td><td>Renumber to maintain sequence</td></tr>
+<tr><td>Empty heading</td><td>Announces nothing; usually tag abuse</td><td>Remove the heading tags</td></tr>
+<tr><td>Overly long heading</td><td>Unreadable in outlines and SERPs</td><td>Trim to a scannable phrase</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Heading Extractors?</h3>
+
+<p><strong>SEO specialists</strong> audit heading structure as a standard on-page check.</p>
+
+<p><strong>Content writers</strong> verify their drafts follow proper hierarchy before publishing.</p>
+
+<p><strong>Competitor analysts</strong> reverse-engineer top-ranking pages' topic coverage.</p>
+
+<p><strong>Web developers</strong> check templates to ensure themes output semantic markup.</p>
+
+<p><strong>Accessibility auditors</strong> validate heading navigation for screen-reader users.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Free extraction</strong> — no signup for single-URL scans.</li>
+<li><strong>Full H1–H6 capture</strong> — every heading level, in order.</li>
+<li><strong>Indented outline view</strong> — hierarchy visible at a glance.</li>
+<li><strong>Automatic issue flags</strong> — missing/duplicate H1s, skipped levels, empties.</li>
+<li><strong>Bulk URL support</strong> — extract from multiple pages at once on some tools.</li>
+<li><strong>Title + meta included</strong> — many extractors bundle these for context.</li>
+<li><strong>Fast</strong> — results in seconds for typical pages.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this heading extractor free?</h4>
+<p>Yes — single-page extractions are free with no account required.</p>
+
+<h4>Can I extract headings from a competitor's site?</h4>
+<p>Yes. Any public URL works — competitor heading analysis is one of the tool's main uses.</p>
+
+<h4>How many H1 tags should a page have?</h4>
+<p>One. A single H1 declaring the page's main topic is the long-standing best practice for both SEO and accessibility.</p>
+
+<h4>Does heading structure really affect rankings?</h4>
+<p>Indirectly but meaningfully. Clean hierarchy helps Google understand topical structure (improving snippet and long-tail wins) and is essential for screen-reader navigation.</p>
+
+<h4>Can it extract from pages behind a login?</h4>
+<p>No. The tool can only read publicly accessible HTML — logged-in or paywalled pages return nothing.</p>
+
+<h4>Should keywords go in headings?</h4>
+<p>Naturally, yes — headings should describe their sections accurately, and accurate descriptions include relevant terms. Forcing keywords into every heading reads badly and helps nothing.</p>
+
+<h4>What's a skipped heading level?</h4>
+<p>Jumping from H2 directly to H4 without an H3 in between. It breaks the logical outline; renumber so levels descend sequentially.</p>
+</article>

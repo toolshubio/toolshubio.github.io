@@ -1,0 +1,104 @@
+<article class="tool-article">
+<h2>Meta Robots Generator — Build Noindex, Nofollow & Crawler Tags</h2>
+
+<p>The first time I needed to hide a thank-you page from Google, I typed the robots meta tag from memory — and typed it wrong. The tag sat there silently doing nothing while the page showed up in search results for weeks. A meta robots generator removes that failure mode entirely: toggle the directives you want, copy the tag, paste it into your page head, and you never have to memorize the syntax again.</p>
+
+<h3>What Is a Meta Robots Generator?</h3>
+
+<p>Search engines send crawlers to read your pages, and the meta robots tag is how you give each individual page instructions about what to do with it. The tag sits in the <code>&lt;head&gt;</code> of your HTML and looks like this: <code>&lt;meta name="robots" content="noindex, nofollow"&gt;</code>.</p>
+
+<p>The generator is a small form tool that builds this tag for you. You pick a robot name (usually <code>robots</code> for all crawlers, or <code>googlebot</code> if you only want to instruct Google), toggle the directives — index or noindex, follow or nofollow, plus advanced ones like nosnippet or max-image-preview — and the tool assembles the correct syntax instantly. For non-HTML files like PDFs, the same directives can be delivered through an <code>X-Robots-Tag</code> HTTP header set at the server, and some generators produce that version too.</p>
+
+<p>It is worth understanding what this tag is not. It is different from robots.txt: robots.txt controls which paths crawlers may fetch at all, across the whole site, while the meta robots tag gives precise per-page instructions. A common beginner mistake is blocking a page in robots.txt and expecting noindex to work — if the crawler cannot fetch the page, it never sees the noindex directive. Per-page control lives in the tag, not the text file.</p>
+
+<h3>How to Use the Meta Robots Generator</h3>
+
+<p>Using the tool takes less than a minute, and the steps are the same every time.</p>
+
+<p>First, choose who the tag speaks to: all robots, or a specific crawler like Googlebot. Then toggle your directives. The two everyone reaches for are <strong>index/noindex</strong> (should this page appear in search results?) and <strong>follow/nofollow</strong> (should crawlers follow the links on it and pass signals through them?). If you need finer control, set advanced options like <strong>max-snippet</strong> (maximum characters Google may show in the result snippet), <strong>max-image-preview</strong> (none, standard, or large), or <strong>noarchive</strong> (do not offer a cached copy).</p>
+
+<p>The generator updates the tag live as you toggle. Click copy, then paste the tag into the <code>&lt;head&gt;</code> section of the page it applies to. Finally — and this is the step people skip — verify it worked. Open the page, view the source, and confirm the tag is present; then use Search Console's URL inspection or a meta robots checker to confirm Google reads the directive you intended.</p>
+
+<h3>Meta Robots Directives Explained</h3>
+
+<p>Each directive is a single instruction. The ones I see used most, with plain-language meanings:</p>
+
+<table>
+<thead><tr><th>Directive</th><th>Meaning</th><th>Typical use</th></tr></thead>
+<tbody>
+<tr><td><code>index</code></td><td>Allow the page in search results</td><td>Default for pages you want found</td></tr>
+<tr><td><code>noindex</code></td><td>Keep the page out of search results</td><td>Thank-you pages, admin areas, staging sites</td></tr>
+<tr><td><code>follow</code></td><td>Crawlers may follow links and pass signals</td><td>Default for normal content pages</td></tr>
+<tr><td><code>nofollow</code></td><td>Do not pass link signals through the page's links</td><td>Pages with untrusted or paid links</td></tr>
+<tr><td><code>noarchive</code></td><td>No cached-copy link in results</td><td>Content you do not want archived</td></tr>
+<tr><td><code>nosnippet</code></td><td>No text snippet shown in results</td><td>Private or sensitive listings</td></tr>
+<tr><td><code>max-snippet:[n]</code></td><td>Limit snippet to n characters</td><td>Tight control over result previews</td></tr>
+<tr><td><code>max-image-preview</code></td><td>none, standard, or large image preview</td><td>Control image display in results</td></tr>
+</tbody>
+</table>
+
+<p>A few of these combine, and the more restrictive rule wins when they conflict. <code>noindex, follow</code> is a classic pairing: the page itself stays out of results, but crawlers still follow its links and pass signals onward — useful for category pages you want crawled but not listed. Google applies the stricter directive when tags disagree, so when in doubt, the restrictive option is the one that takes effect.</p>
+
+<h3>Real Examples of Generated Tags</h3>
+
+<p>Here is what the generator produces for the most common jobs:</p>
+
+<p><strong>Keep a login page out of search:</strong> <code>&lt;meta name="robots" content="noindex, nofollow"&gt;</code> — neither the page nor its links should be touched by search engines.</p>
+
+<p><strong>Deindex a thank-you page but keep link equity flowing:</strong> <code>&lt;meta name="robots" content="noindex, follow"&gt;</code> — the page stays hidden from results while crawlers still follow its outgoing links.</p>
+
+<p><strong>Speak only to Google about snippets:</strong> <code>&lt;meta name="googlebot" content="nosnippet"&gt;</code> — targets one crawler and leaves the default index/follow in place.</p>
+
+<p><strong>Cap snippet length for news content:</strong> <code>&lt;meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"&gt;</code> — full snippets allowed with large image previews, common for articles chasing rich results.</p>
+
+<h3>Who Uses Meta Robots Generators?</h3>
+
+<p><strong>Developers</strong> reach for the generator when launching staging sites or locking down admin, dashboard, and account pages that must never appear in search.</p>
+
+<p><strong>SEOs</strong> use it during site audits and migrations, producing consistent noindex tags for batches of thin, duplicate, or filtered pages without hand-writing each one.</p>
+
+<p><strong>Bloggers</strong> use it on tag and archive pages that create duplicate-content noise, keeping the index focused on the posts that matter.</p>
+
+<p><strong>E-commerce managers</strong> apply it to faceted search and sort URLs — endless parameter combinations that multiply pages without adding value.</p>
+
+<p><strong>Webmasters</strong> maintaining membership or SaaS sites use it for thank-you, checkout, and internal search-result pages that should be reachable by users but invisible to Google.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>One-click directive toggles</strong> — index, noindex, follow, nofollow, and advanced options without typing syntax.</li>
+<li><strong>Correct syntax every time</strong> — no missing commas or misspelled directives.</li>
+<li><strong>Robot targeting</strong> — generate for all crawlers or specific ones like Googlebot.</li>
+<li><strong>X-Robots-Tag output</strong> — server-header version for PDFs and non-HTML files.</li>
+<li><strong>Live preview</strong> — the tag updates as you toggle, before you copy.</li>
+<li><strong>100% free</strong> — no signup, no limits.</li>
+<li><strong>Private by design</strong> — everything runs in your browser; nothing is uploaded.</li>
+<li><strong>Works everywhere</strong> — any modern browser on desktop or mobile.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is a meta robots tag?</h4>
+<p>An HTML tag in the page's head that tells search engines whether to index the page, follow its links, show snippets, or display image and video previews — instructions apply per page.</p>
+
+<h4>When should I use noindex?</h4>
+<p>Use noindex for pages users should reach but search engines should not list: thank-you pages, login and admin areas, staging sites, internal search results, and thin or duplicate content. The page must stay crawlable — never also block it in robots.txt, or the crawler will never see the noindex.</p>
+
+<h4>What is the difference between robots.txt and the meta robots tag?</h4>
+<p>robots.txt controls crawling across whole paths (what crawlers may fetch); the meta robots tag controls indexing of a single page (what search engines may show). For noindex to work, the page must be crawlable so the crawler can read the tag.</p>
+
+<h4>Can nofollow in the meta robots tag affect my rankings?</h4>
+<p>nofollow tells crawlers not to pass link signals through the page's links. It does not harm the page itself; it simply stops the page from distributing equity to its outbound links.</p>
+
+<h4>How do I verify the tag is working?</h4>
+<p>View the page source to confirm the tag is in the head, then use Search Console's URL inspection tool or an indexability checker to confirm how Google reads the directive.</p>
+
+<h4>Is this generator free?</h4>
+<p>Yes — completely free, no account needed, unlimited tags.</p>
+
+<h4>Does the tool change my website?</h4>
+<p>No. It only generates the tag text in your browser. You paste it into your page yourself.</p>
+
+<h4>Should I use noindex or delete the page?</h4>
+<p>If the page serves users (a login screen, a thank-you page), keep it and noindex it. If it serves nobody and has no links pointing to it, deletion plus a redirect is usually cleaner.</p>
+</article>

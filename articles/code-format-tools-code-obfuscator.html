@@ -1,0 +1,97 @@
+<article class="tool-article">
+<h2>Code Obfuscator — Protect Your JavaScript From Prying Eyes</h2>
+
+<p>Here is an uncomfortable truth about client-side code: anything your browser runs, anyone can read. The first time I opened DevTools on a site I'd built and saw my neatly commented functions sitting there in plain text — variable names, API endpoints, the works — I felt like I'd left the office door open. Minification helps a little, but minified code is still perfectly readable logic. A code obfuscator goes further: it scrambles your source into functionally identical code that is genuinely painful for a human to reverse-engineer.</p>
+
+<h3>What Code Obfuscation Is (and Isn't)</h3>
+
+<p>Obfuscation transforms how your code <em>looks</em> without changing what it <em>does</em>. The obfuscated output runs exactly like the original in any JavaScript engine — same behavior, same results — but the readable structure is gone: meaningful names become gibberish, strings get encrypted, and the control flow is rearranged into a maze.</p>
+
+<p>It is not the same as <strong>minification</strong>. Minification removes whitespace, shortens names, and strips comments to make files smaller — the logic stays obvious. Obfuscation's goal is different: make the logic hard to follow even after formatting. Think of minification as removing the labels from a map, and obfuscation as redrawing the map in a cipher. Many developers run both: minify for size, obfuscate for protection.</p>
+
+<p>And it is not encryption in the security sense. A determined expert with enough time can eventually untangle obfuscated code — no obfuscation is 100% irreversible. What it does is raise the cost of reverse engineering so high that casual copying, credential harvesting, and quick tampering stop being worth the effort.</p>
+
+<h3>How Obfuscation Techniques Work</h3>
+
+<p>The tool applies several transformations, each attacking a different readability cue:</p>
+
+<table>
+<thead><tr><th>Technique</th><th>What It Does</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td>Variable renaming</td><td>Meaningful names become short random strings</td><td><code>userBalance</code> → <code>_0x3f2a</code></td></tr>
+<tr><td>String encryption</td><td>Readable strings are encrypted and decoded at runtime</td><td><code>"admin-key"</code> → <code>decrypt("\x41\x5a…")</code></td></tr>
+<tr><td>Control flow flattening</td><td>Straight-line logic becomes a state machine with jumps</td><td><code>if/else</code> → switch-dispatch maze</td></tr>
+<tr><td>Dead code injection</td><td>Meaningless code is added that never executes</td><td>Fake branches that always evaluate false</td></tr>
+<tr><td>Debug protection</td><td>Detects and breaks developer-tool debugging</td><td>Anti-debugger traps on DevTools open</td></tr>
+</tbody>
+</table>
+
+<p>Applied together, these turn a clean 50-line function into several hundred lines of apparent chaos that still executes the original logic. The before/after stats in the tool show you the size trade-off directly: stronger protection settings produce larger files, which is why the options let you balance protection against file size.</p>
+
+<h3>How to Use the Code Obfuscator</h3>
+
+<p>Paste, configure, obfuscate, verify — the whole process takes under a minute.</p>
+
+<p><strong>Step 1 — Paste your JavaScript.</strong> Drop your source into the input panel. It handles modern syntax — arrow functions, template literals, classes, modules — so you don't need to pre-process anything.</p>
+
+<p><strong>Step 2 — Choose your protection level.</strong> Toggle the transformations: string encryption, dead code injection, control flow flattening, debug protection. Start with a medium preset and dial up only if the output size stays acceptable — heavy options like aggressive dead-code injection bloat the file noticeably.</p>
+
+<p><strong>Step 3 — Obfuscate.</strong> The tool transforms your code and shows the result alongside statistics: original size vs obfuscated size, so you can see exactly what the protection costs in bytes.</p>
+
+<p><strong>Step 4 — Verify it still works.</strong> This step matters: run the obfuscated output through your normal tests. Obfuscation preserves behavior, but verifying is cheap and skipping it is how production surprises happen. Copy or download the protected file when you're satisfied.</p>
+
+<h3>What Obfuscation Can and Can't Do</h3>
+
+<p><strong>It can</strong> deter casual copying of your client-side logic, hide API endpoints and keys from quick inspection (though keys in client code are never truly safe), slow down cheaters and bot authors targeting your web app, and protect proprietary algorithms from competitors doing a quick scan.</p>
+
+<p><strong>It can't</strong> make code impossible to reverse — a skilled analyst with time will get through. It doesn't protect against runtime attacks, and it adds a small performance overhead (usually under 5% with sensible settings, more with the heaviest transformations). It also shouldn't be your only protection: sensitive logic belongs on a server, secrets belong in environment variables, and obfuscation is one layer among several — alongside minification, source-map removal, and proper access controls.</p>
+
+<h3>Who Uses a Code Obfuscator?</h3>
+
+<p><strong>Web developers</strong> protect client-side business logic, pricing algorithms, and license checks before deploying to production.</p>
+
+<p><strong>Game and app developers</strong> slow down cheaters, bot authors, and cloners targeting browser-based games and web apps.</p>
+
+<p><strong>Agencies and freelancers</strong> ship client work with the source protected, so the delivered product can't be trivially copied or resold.</p>
+
+<p><strong>Security-conscious teams</strong> add it as a build-step layer — one more barrier between their code and anyone browsing it in DevTools.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Multiple obfuscation techniques</strong> — renaming, string encryption, control flow flattening, dead code injection, debug protection.</li>
+<li><strong>Adjustable protection levels</strong> — balance security against file size with presets and toggles.</li>
+<li><strong>Before/after statistics</strong> — see the exact size cost of each protection level.</li>
+<li><strong>Fully functional output</strong> — obfuscated code runs identically to the original.</li>
+<li><strong>Modern syntax support</strong> — ES6+, classes, modules, template literals.</li>
+<li><strong>Copy and download</strong> — grab the protected file in one click.</li>
+<li><strong>Private by design</strong> — obfuscation runs entirely in your browser; your code is never uploaded or stored.</li>
+<li><strong>Free, no signup</strong> — all features available with no account.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is obfuscated JavaScript still functional?</h4>
+<p>Yes. Obfuscation changes the code's appearance without altering its behavior — the output runs identically to the original in any JavaScript engine. Always test the output in your own environment to be sure.</p>
+
+<h4>What is the difference between obfuscation and minification?</h4>
+<p>Minification shrinks files by removing whitespace and shortening names; the logic stays readable. Obfuscation scrambles the logic itself — renaming, encrypting strings, flattening control flow — to resist reverse engineering.</p>
+
+<h4>Can obfuscated code be reversed?</h4>
+<p>No obfuscation is 100% irreversible, but quality obfuscation with string encryption and control-flow flattening makes reverse engineering extremely time-consuming — enough to deter casual copying and quick attacks.</p>
+
+<h4>Does obfuscation affect performance?</h4>
+<p>Slightly. With moderate settings the overhead is negligible (typically under 5%). Heavy options like aggressive dead code injection increase both file size and runtime cost.</p>
+
+<h4>Will it hide my API keys?</h4>
+<p>It makes them harder to spot, but keys embedded in client-side code are never truly safe. Store real secrets server-side; use obfuscation as one layer, not the whole strategy.</p>
+
+<h4>Is my code uploaded to a server?</h4>
+<p>No. All obfuscation runs locally in your browser — your source code is never sent, logged, or stored anywhere.</p>
+
+<h4>Does it work with frameworks like React or Vue?</h4>
+<p>Yes — it handles modern ES6+ syntax including JSX-transpiled output, classes, and modules. For build pipelines, the underlying engine also ships as an npm package with bundler plugins.</p>
+
+<h4>Is this code obfuscator free?</h4>
+<p>Yes — completely free, no account required, no usage limits.</p>
+</article>

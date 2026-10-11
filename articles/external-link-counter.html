@@ -1,0 +1,95 @@
+<article class="tool-article">
+<h2>External Link Counter — Audit Outbound Links on Any Page</h2>
+
+<p>During a site audit last year I found a client's "resources" page linking out to 87 external sites — half of them dead, a few redirected to spam domains the original owners had abandoned. Nobody had looked at that page in three years. An external link counter scans any URL and tells you exactly how many outbound links it has, where they point, and which are dofollow or nofollow — the raw data behind a proper link audit.</p>
+
+<h3>What Is an External Link Counter?</h3>
+
+<p>Every link on your page pointing to a different domain is an external (outbound) link. Search engines treat them as votes of confidence — and as potential liabilities. A page leaking dozens of outbound links dilutes the authority it passes internally, and links to dead or shady destinations actively hurt trust. Counting them is the first step to managing them.</p>
+
+<p>The counter fetches a page's HTML, extracts every <code>&lt;a&gt;</code> tag, and classifies each link: internal (same domain) versus external (different domain), dofollow versus nofollow, unique destinations versus repeats. The breakdown matters more than the total — ten links to one trusted source is a different story than ten links to ten random sites.</p>
+
+<p>Why count instead of just eyeballing? Because modern pages hide links everywhere: navigation menus, footers, sidebar widgets, author bios, embedded scripts. A typical blog post shows 5 visible content links and carries 60+ total once templates are included. You cannot audit what you cannot see.</p>
+
+<h3>How to Use the External Link Counter</h3>
+
+<p>Paste the page URL into the tool and run the scan. Review the totals: external count, internal count, dofollow/nofollow split, and the list of unique external domains. Click through the external destinations — or better, run them against a broken-link checker — and decide what stays.</p>
+
+<p>Healthy patterns to aim for: outbound links that are editorial (you chose them because they help the reader), a nofollow attribute on sponsored, affiliate, or user-generated links, and zero links to dead pages. Red flags: dozens of footer links to unrelated sites (a classic hacked-site symptom), affiliate links missing nofollow or sponsored attributes, and external links on pages that should be tightly focused, like checkout or signup flows.</p>
+
+<p>Re-run the counter quarterly on important pages. Link rot is constant — studies consistently find a meaningful share of web links die within a few years — and a page you audited in January can be linking to a domain parker by October.</p>
+
+<h3>How External Link Counting Works</h3>
+
+<p>The scan is a small, fast crawl of a single page.</p>
+
+<p><strong>Step 1 — Page fetch.</strong> The tool requests the URL like a browser and retrieves the HTML source. JavaScript-rendered links may be missed by simple fetchers; better tools render the page fully.</p>
+
+<p><strong>Step 2 — Link extraction.</strong> Every anchor tag's <code>href</code> is collected, along with its <code>rel</code> attribute (nofollow, sponsored, ugc) and anchor text.</p>
+
+<p><strong>Step 3 — Classification.</strong> Each URL's domain is compared against the page's domain. Same domain (including subdomains, depending on settings) counts as internal; everything else is external. Relative URLs resolve against the page address first.</p>
+
+<p><strong>Step 4 — Deduplication and reporting.</strong> Totals are computed two ways: all link instances (showing template repetition) and unique destinations (showing real outbound breadth). The report lists both.</p>
+
+<p>Dofollow/nofollow classification reads the <code>rel</code> attribute directly — nofollow, sponsored, and ugc all tell search engines not to pass ranking credit, which is exactly what you want on paid or untrusted links.</p>
+
+<h3>Reading Your External Link Report</h3>
+
+<table>
+<thead><tr><th>Metric</th><th>What it tells you</th><th>Healthy sign</th></tr></thead>
+<tbody>
+<tr><td>Total external links</td><td>Outbound link volume</td><td>Proportional to content length; no hard cap</td></tr>
+<tr><td>Unique external domains</td><td>How many sites you vouch for</td><td>Few, relevant, trustworthy</td></tr>
+<tr><td>Dofollow vs nofollow</td><td>Where ranking credit flows</td><td>Affiliate/sponsored links marked nofollow</td></tr>
+<tr><td>Repeated destinations</td><td>Template or over-linking</td><td>Intentional repeats only (e.g. citations)</td></tr>
+<tr><td>Dead destinations</td><td>Link rot</td><td>Zero — fix or remove promptly</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses External Link Counters?</h3>
+
+<p><strong>SEO specialists</strong> audit outbound link profiles during technical site reviews.</p>
+
+<p><strong>Content editors</strong> check articles before publishing to keep outbound links relevant and working.</p>
+
+<p><strong>Affiliate marketers</strong> verify their monetized links carry proper nofollow/sponsored attributes.</p>
+
+<p><strong>Site owners</strong> scan for hacked-footer links and other injected outbound spam.</p>
+
+<p><strong>Competitor analysts</strong> study rivals' outbound patterns to map their source and partner networks.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Free scans</strong> — no signup for single-page checks.</li>
+<li><strong>Internal vs external split</strong> — see the full link distribution.</li>
+<li><strong>Dofollow/nofollow breakdown</strong> — know where authority flows.</li>
+<li><strong>Unique destination list</strong> — every external domain, deduplicated.</li>
+<li><strong>Anchor text display</strong> — see the clickable text for each link.</li>
+<li><strong>CSV export</strong> — take the data into spreadsheets for bigger audits.</li>
+<li><strong>Fast results</strong> — single-page scans complete in seconds.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this external link counter free?</h4>
+<p>Yes — single-page scans are free with no account required.</p>
+
+<h4>How many external links should a page have?</h4>
+<p>There is no magic number. Relevance beats count — a 3,000-word guide with 15 good outbound links is healthier than a 300-word page with 15 random ones.</p>
+
+<h4>Do external links hurt my SEO?</h4>
+<p>No — linking to quality sources is normal and healthy. Problems come from excessive, irrelevant, or broken outbound links, and from paid links missing proper attributes.</p>
+
+<h4>What's the difference between nofollow and sponsored?</h4>
+<p>Both withhold ranking credit. Use <code>sponsored</code> for paid/affiliate links and <code>nofollow</code> for untrusted or general cases; <code>ugc</code> marks user-generated content.</p>
+
+<h4>Can it find broken external links?</h4>
+<p>Counters list destinations; pair the output with a broken-link checker (or a tool with status-code testing) to find dead ones.</p>
+
+<h4>Does it count links in navigation and footers?</h4>
+<p>Yes — the scan reads the full page HTML, including template links most people forget exist.</p>
+
+<h4>Can I check a competitor's page?</h4>
+<p>Yes. Any public URL can be scanned — it is a standard part of competitive link analysis.</p>
+</article>

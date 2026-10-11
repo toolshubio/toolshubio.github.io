@@ -1,0 +1,91 @@
+<article class="tool-article">
+<h2>EXIF Viewer — View Photo Metadata & Camera Details Online</h2>
+
+<p>Every photo your phone takes is carrying a secret dossier: the exact camera model, the lens, the shutter speed and aperture, the ISO, the precise GPS coordinates of where you stood, and the timestamp down to the second. You never typed any of it — your device wrote it into the file automatically. An EXIF viewer reads that hidden metadata and shows it to you in plain rows. Upload a JPEG, see everything the camera recorded, and — just as importantly — see what you might be sharing without realizing it.</p>
+
+<h3>What Is EXIF Data?</h3>
+
+<p>EXIF (Exchangeable Image File Format) is the metadata standard cameras and phones use to describe a photo. It lives inside the image file itself, in a dedicated APP1 marker segment, and it is organized into directories: the main IFD (camera and image info), the EXIF sub-IFD (exposure settings), and the GPS sub-IFD (location). A single photo can carry hundreds of hidden fields.</p>
+
+<p>The fields fall into recognizable groups. <strong>Camera info:</strong> make, model, lens, sometimes the body serial number. <strong>Exposure:</strong> shutter speed (1/500s), aperture (f/2.8), ISO, focal length and its 35mm equivalent, exposure bias. <strong>When and where:</strong> capture time and GPS latitude/longitude in decimal degrees, sometimes altitude. <strong>Image properties:</strong> pixel dimensions, color space, orientation. Beyond EXIF proper, files may carry IPTC (creator, copyright) and XMP (editing history, Lightroom presets) blocks too.</p>
+
+<p>Here is the part most people miss: this data travels with the file. Email the original to someone and they can see where it was taken. That is either useful or alarming, depending on what you intended to share.</p>
+
+<h3>How to View EXIF Data Online</h3>
+
+<p><strong>Step 1 — Upload the original photo.</strong> Drag and drop a JPEG (or TIFF, HEIC, RAW) into the viewer. This part matters: use the original file, not a screenshot or a social-media download — screenshots and re-saves strip metadata, and most platforms remove it on upload.</p>
+
+<p><strong>Step 2 — Read the table.</strong> Each row is one metadata tag with its decoded value. Rationals show as decimals, arrays as comma-joined lists. Start with the summary: camera, exposure, date, GPS.</p>
+
+<p><strong>Step 3 — Check the location.</strong> If GPS is present, an "Open in OpenStreetMap" link shows the decoded latitude/longitude on a map — the exact spot the photo was taken. This is the field to audit before sharing publicly.</p>
+
+<p><strong>Step 4 — Copy or export.</strong> Copy the key-value dump to your clipboard or download the full metadata as JSON for records, documentation, or a support ticket.</p>
+
+<p>Habit worth building: check metadata <em>before</em> posting anything from home. Your living room's GPS coordinates are not content.</p>
+
+<h3>What Your Photo Reveals — Field by Field</h3>
+
+<table>
+<thead><tr><th>Group</th><th>Fields</th><th>Why it matters</th></tr></thead>
+<tbody>
+<tr><td>Camera</td><td>Make, model, lens, serial number</td><td>Proves what shot the photo; serial aids theft recovery</td></tr>
+<tr><td>Exposure</td><td>Shutter, aperture, ISO, focal length</td><td>Learn settings from shots you like; copy presets</td></tr>
+<tr><td>GPS</td><td>Latitude, longitude, altitude, timestamp</td><td>Privacy risk — reveals exact location</td></tr>
+<tr><td>Date/time</td><td>Capture time, modification time</td><td>Verifies when a photo was taken</td></tr>
+<tr><td>Creator</td><td>Owner name, copyright, software</td><td>Attribution and editing history</td></tr>
+<tr><td>AI traces</td><td>C2PA credentials, generator tags</td><td>Indicates AI-generated or AI-edited origin</td></tr>
+</tbody>
+</table>
+
+<p>Newer files add another layer: Content Credentials (C2PA) — cryptographically signed origin records used by OpenAI, Adobe Firefly, Google, and Microsoft — plus AI-generation tags and even invisible watermarks. The metadata viewer is increasingly an origin-verification tool, not just a camera-settings readout.</p>
+
+<h3>Who Uses an EXIF Viewer?</h3>
+
+<p><strong>Photographers</strong> verify settings were applied correctly and study the exposure data of shots they like — the fastest way to learn is reading your own winners.</p>
+
+<p><strong>Journalists and fact-checkers</strong> verify when and where a photo was taken. Timestamps and GPS are the first line of image verification.</p>
+
+<p><strong>Privacy-conscious users</strong> audit photos for GPS data before sharing — the single most important use for most people, and the one most often skipped.</p>
+
+<p><strong>Photo editors</strong> confirm orientation, color space, and resolution before processing, and read Lightroom XMP data to copy develop presets from reference shots.</p>
+
+<p><strong>Developers</strong> inspect EXIF structure while building camera and gallery apps, and parse metadata programmatically with tools like ExifTool or Python's Pillow library.</p>
+
+<h3>Practical Tips for Working With Metadata</h3>
+
+<ul>
+<li><strong>Use originals.</strong> WhatsApp, Instagram, and most messengers strip EXIF on send — an empty result usually means the metadata was removed, not that the photo is fake.</li>
+<li><strong>Audit GPS before sharing.</strong> If a photo has location data you do not want public, strip it with a <strong>metadata editor</strong> or remover before posting.</li>
+<li><strong>Disable geotagging for sensitive shots.</strong> Your phone's camera settings can stop recording GPS — the cleanest privacy fix is never writing it.</li>
+<li><strong>Check serial numbers.</strong> A recorded body serial number is genuinely useful for insurance claims and stolen-camera recovery.</li>
+<li><strong>Export for documentation.</strong> Download the JSON dump when you need a paper trail — insurance, legal, or archival work.</li>
+<li><strong>Learn from the exposure trio.</strong> Shutter + aperture + ISO on a shot you love is a free photography lesson; save the good ones.</li>
+<li><strong>Pair it with a watermark.</strong> Metadata proves origin quietly; a visible watermark proves it loudly. Use both for professional work.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this EXIF viewer free?</h4>
+<p>Yes — completely free, no registration required.</p>
+
+<h4>What is EXIF data?</h4>
+<p>Hidden metadata your camera or phone writes into every photo: camera model, lens, exposure settings, capture time, and often GPS location. It lives inside the image file itself.</p>
+
+<h4>Why does my photo show no EXIF data?</h4>
+<p>The file was probably re-saved, screenshotted, or shared through an app that strips metadata (WhatsApp, Instagram, and most social platforms remove it). Upload the original file from the camera or phone.</p>
+
+<h4>Can I see where a photo was taken?</h4>
+<p>If the photo contains GPS data, yes — the viewer decodes the latitude/longitude and can open the exact location on a map. This is why auditing metadata before sharing matters.</p>
+
+<h4>Are my photos uploaded to a server?</h4>
+<p>Browser-based viewers parse the file locally via the File API — nothing is uploaded. (Server-based tools delete files after analysis; check each tool's policy.)</p>
+
+<h4>How do I remove EXIF data?</h4>
+<p>Use a metadata remover tool, or share through apps that strip it automatically (like WhatsApp). To change fields rather than delete them, use a metadata editor.</p>
+
+<h4>Can EXIF tell me if an image is AI-generated?</h4>
+<p>Increasingly, yes. Look for C2PA Content Credentials, IPTC digitalSourceType markers, and generator software tags — signed origin records from major AI tools show up in the metadata.</p>
+
+<h4>What is the difference between EXIF, IPTC, and XMP?</h4>
+<p>EXIF is camera-written capture data (settings, GPS). IPTC carries descriptive/creator info (copyright, captions). XMP holds editing history and extensible metadata (Lightroom presets). A full viewer reads all three.</p>
+</article>

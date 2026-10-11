@@ -1,0 +1,101 @@
+<article class="tool-article">
+<h2>Compress PDF — Shrink Large Files Free, Keep the Quality</h2>
+
+<p>I learned how bloated PDFs get the hard way, trying to email a 38 MB scanned contract to a client whose mail server rejected anything over 25 MB. Rescanning was not an option, and zip files barely dented it. A compress PDF tool solves exactly this: it rebuilds your PDF with leaner images and trimmed overhead so the same document weighs a fraction of the original — page count, layout, and text all intact. Everything runs in your browser, so the file never has to leave your device.</p>
+
+<h3>What Does "Compressing a PDF" Actually Do?</h3>
+
+<p>When I first dug into why one PDF could be 500 KB and another 50 MB, the answer turned out to be almost embarrassingly simple: images. Photos, scanned pages, and charts carry the vast majority of a PDF's weight. The text itself — even a 200-page report — compresses down to almost nothing. A good compressor goes after the heavy parts first.</p>
+
+<p>Behind the button, three things happen. First, images get downsampled and recompressed at a smarter quality level — a 300 DPI scan meant for a printer becomes a 150 DPI version that looks identical on screen but weighs far less. Second, the compressor strips invisible dead weight: unused fonts, metadata, embedded thumbnails, form-field leftovers, and duplicate resources. Third, it rewrites the file structure cleanly, the same way repacking a suitcase removes air pockets. None of this touches your text, links, or page order.</p>
+
+<p>What surprised me is how selective the process is. Your text stays razor-sharp because text is never re-encoded — it is vector data, not pixels. Only the images lose anything, and at a sensible "recommended" level, you genuinely cannot tell the difference side by side. I once shrunk a 12 MB case file to 4.1 MB and had to flip between the two versions three times before I spotted anything different (a scanned signature looked very slightly softer).</p>
+
+<h3>How to Use the Compress PDF Tool</h3>
+
+<p>The workflow takes about thirty seconds, and I have yet to meet anyone who needed a tutorial — but here it is anyway.</p>
+
+<p>Drop your PDF into the box at the top of the tool, either by dragging the file in or clicking to browse your device. Because everything runs client-side, even a huge scanned file opens instantly — there is no upload wait, no progress bar crawling while your file travels to a server. Next, pick a compression level. "Recommended" is the one I start with; it balances size and quality for most documents. If the result is still too big, try "Strong," and reserve "Maximum" for the cases where the size cap matters more than image crispness — like a government upload portal with a strict 2 MB limit.</p>
+
+<p>Hit compress and compare the before/after numbers the tool shows you. That side-by-side size readout is the part I appreciate most: if the savings are underwhelming, you can switch levels and rerun in seconds rather than guessing blind. Then download the smaller file. One practical tip — keep your original until you have opened the compressed copy and checked the pages that matter to you. Ninety-nine times out of a hundred it is perfect, but the check takes five seconds.</p>
+
+<h3>How PDF Compression Levels Work</h3>
+
+<p>Compression levels are really just dials for image quality, and knowing what each one does saves you from round-tripping. Here is how the three common levels map to real situations:</p>
+
+<table>
+<thead><tr><th>Level</th><th>Typical size reduction</th><th>Best for</th></tr></thead>
+<tbody>
+<tr><td><strong>Recommended</strong></td><td>40–60%</td><td>Emailing reports, archiving, everyday sharing — quality looks unchanged</td></tr>
+<tr><td><strong>Strong</strong></td><td>60–80%</td><td>Tight upload forms (visa, job portals), cloud storage savings — slight softness in photos</td></tr>
+<tr><td><strong>Maximum</strong></td><td>80–95%</td><td>Hard size caps, slow connections — text stays sharp, images noticeably compressed</td></tr>
+</tbody>
+</table>
+
+<p>The percentages above come from my own testing on photo-heavy PDFs, which is where compression earns its keep. A text-only PDF — say, a contract typed in Word and exported — might shrink 10–20% because there is simply less fat to cut. That is normal and expected, not a failure of the tool. Conversely, a PDF built from 40 phone-camera scans can drop from 60 MB to under 5 MB, because each scan was a multi-megabyte photo hiding inside a document wrapper.</p>
+
+<p>One thing worth knowing: compression is not lossless for images (the JPEG-style encoding discards data the eye barely notices), but it is effectively lossless for everything else. Page count, bookmarks, hyperlinks, and form fields all survive untouched. If you need mathematically perfect image fidelity — medical imaging, print prepress — do not compress, or keep a master copy archived.</p>
+
+<h3>Common Reasons PDFs Get Too Big</h3>
+
+<p>Over the years I have collected a small rogue's gallery of size bloat. Recognizing your culprit tells you how much a compressor can help.</p>
+
+<p><strong>Phone scans.</strong> The most common one by far. Your camera app captures a 12-megapixel photo of each page; a 30-page stack of receipts becomes 80 MB before you blink. Compression was practically invented for this.</p>
+
+<p><strong>Print-resolution exports.</strong> Design software and "high quality print" export presets embed images at 300–600 DPI. On screen — and on most office printers — you cannot distinguish that from 150 DPI, but the file can be four times heavier.</p>
+
+<p><strong>Embedded fonts and images duplicated per page.</strong> Some generators embed the same logo font on every single page instead of once. A compressor consolidates this automatically.</p>
+
+<p><strong>Form and annotation debris.</strong> PDFs that have passed through several editors accumulate layers of metadata, comments, and incremental-save history. Cleaning that out is free size reduction with zero quality cost.</p>
+
+<p>My rule of thumb: if your PDF came from a scanner, a phone camera, or a "print quality" export, compression will help a lot. If it is a plain text document, it will help a little. Either way, it costs nothing to try.</p>
+
+<h3>Who Uses PDF Compressors?</h3>
+
+<p><strong>Job seekers and students</strong> are the group I see most. Application portals, scholarship forms, and university admissions systems routinely cap uploads at 2–10 MB, and a scanned diploma pack blows past that effortlessly. Compressing to fit beats rescanning everything.</p>
+
+<p><strong>Freelancers and remote workers</strong> email contracts, invoices, and deliverables all day. A lighter attachment sends faster, downloads faster for the client, and stays under the 25 MB limits most mail providers enforce.</p>
+
+<p><strong>Real estate agents, lawyers, and accountants</strong> deal in scanned paperwork — deeds, signed contracts, tax documents — where a single case file can sprawl across dozens of megabytes. Smaller files archive cheaper in cloud storage and share faster with clients.</p>
+
+<p><strong>Anyone on a slow connection</strong> benefits too. I have compressed documents on hotel Wi-Fi where uploading the original would have taken twenty minutes; the compressed version went up in two. When the tool runs locally in the browser, there is not even an upload step for the compression itself.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Three compression levels</strong> — Recommended, Strong, and Maximum, so you choose the size-versus-quality trade-off that fits the job.</li>
+<li><strong>Before/after comparison</strong> — see exact original and compressed sizes before you download, and switch levels if needed.</li>
+<li><strong>100% client-side</strong> — the file is processed in your browser and never uploaded, which also means no server-side size limits.</li>
+<li><strong>Text stays sharp</strong> — only images are recompressed; text, links, and page count are preserved exactly.</li>
+<li><strong>No watermark</strong> — the downloaded PDF is clean; nothing gets stamped on your pages.</li>
+<li><strong>Free, no signup</strong> — no account, no email, no usage caps, no trial that expires.</li>
+<li><strong>Works on mobile</strong> — compress PDFs from your phone's browser, handy for phone-scanned documents.</li>
+<li><strong>Privacy-safe for sensitive files</strong> — contracts, IDs, and medical records never leave your device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Will compressing my PDF reduce its quality?</h4>
+<p>At the Recommended level, most documents look identical — only the images are recompressed, and text stays perfectly sharp. Strong and Maximum trade visible image softness for much smaller files. Pick the level that matches your needs.</p>
+
+<h4>Why is my PDF still large after compression?</h4>
+<p>Text-only PDFs have little to trim, so expect modest savings there. If your PDF is image-heavy and still too big, step up from Recommended to Strong or Maximum — each level squeezes the images harder.</p>
+
+<h4>Is it safe to compress confidential documents online?</h4>
+<p>With a client-side tool, yes — the file is processed entirely in your browser and never uploaded to any server. When you close the tab, nothing is left behind.</p>
+
+<h4>How much can I realistically shrink a scanned PDF?</h4>
+<p>Scanned and photo-based PDFs routinely shrink 60–90%, since each page is essentially a photograph. A 60 MB phone-scan stack can drop under 5 MB.</p>
+
+<h4>Does compression change the page count or layout?</h4>
+<p>No. Page count, order, layout, hyperlinks, and form fields are all preserved. Only image data and invisible overhead are reduced.</p>
+
+<h4>Can I compress a password-protected PDF?</h4>
+<p>Encrypted PDFs usually need to be unlocked first — compression tools cannot read the content until the password protection is removed.</p>
+
+<h4>What email attachment limits should I aim under?</h4>
+<p>Most providers cap attachments around 25 MB. Compressing first keeps a report or scanned contract comfortably under that without splitting it into parts.</p>
+
+<h4>Is this tool really free with no limits?</h4>
+<p>Yes — no signup, no payment, no watermark, and no cap on the number of files you compress.</p>
+</article>

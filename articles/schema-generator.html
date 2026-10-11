@@ -1,0 +1,109 @@
+<article class="tool-article">
+<h2>Schema Generator — Free JSON-LD Structured Data Builder</h2>
+
+<p>The first time I pasted schema markup into a page by hand, I missed a single comma. The JSON was invalid, Google's validator rejected it, and the rich results I was chasing never appeared. Schema — structured data that tells search engines what your page actually is — only works when the syntax is perfect, and hand-writing JSON-LD is where perfect goes to die. A schema generator builds it through a form instead: pick the type, fill in the fields, copy valid code.</p>
+
+<h3>What Is a Schema Generator?</h3>
+
+<p>Schema.org is a shared vocabulary (backed by Google, Bing, Yandex, and Yahoo) that lets you label your page's content in machine-readable form. The most common format is JSON-LD, a script block you paste into your page's head. When it is valid, Google can show <strong>rich results</strong>: star ratings on product pages, FAQ dropdowns, recipe cards with cook times, event dates, job listings, breadcrumbs. The generator is a tool that produces this markup without you writing JSON — you select a schema type like Article, FAQPage, Product, LocalBusiness, HowTo, Recipe, or Event, fill in a guided form, and get a paste-ready block.</p>
+
+<p>Two things every beginner should know. First, valid schema is not a ranking factor by itself — but rich results dramatically improve click-through rates, which is traffic. Second, the markup must match what is actually visible on the page. If your FAQPage schema lists questions that do not appear on the page, Google treats it as deceptive and can penalize the page. The generator writes correct code; honesty about the content is your job.</p>
+
+<h3>How to Use the Schema Generator</h3>
+
+<p>The workflow is the same regardless of type, and takes a few minutes.</p>
+
+<p>First, pick one primary schema type per page — the type that matches what the page is. A blog post gets Article (or BlogPosting), a recipe gets Recipe, a shop page gets LocalBusiness, a help page with Q&amp;A gets FAQPage. Fill in the form: for an article, that means headline, author name and URL, publish and modified dates, image, publisher name and logo, page URL, and description. For FAQPage, enter each question and answer pair — five to ten pairs is the sweet spot. For LocalBusiness, the name, address, phone, hours, and category.</p>
+
+<p>Copy the JSON-LD output and paste it into the <code>&lt;head&gt;</code> of your page (or into your SEO plugin's schema field — Rank Math and Yoast both have dedicated spots for custom schema). Then validate: run the page through Google's Rich Results Test and the Schema.org validator. The generator produces valid syntax, but validation confirms the required fields for that type are present and nothing got mangled in the paste.</p>
+
+<p>One pro habit: after validation, check the page a week later in Search Console's enhancements reports to see whether Google is actually picking up the rich results. Valid markup plus eligible content is what triggers them — the test only confirms the code.</p>
+
+<h3>Common Schema Types Compared</h3>
+
+<table>
+<thead><tr><th>Type</th><th>Best for</th><th>Rich result you can get</th></tr></thead>
+<tbody>
+<tr><td>Article / BlogPosting</td><td>Blog posts, news</td><td>Top stories carousel, enhanced listing</td></tr>
+<tr><td>FAQPage</td><td>Pages with Q&amp;A sections</td><td>Expandable FAQ in results (and AI citations)</td></tr>
+<tr><td>Product</td><td>E-commerce product pages</td><td>Price, availability, star ratings</td></tr>
+<tr><td>LocalBusiness</td><td>Physical shops, services</td><td>Knowledge panel, local pack details</td></tr>
+<tr><td>HowTo</td><td>Step-by-step guides</td><td>Step list with images and times</td></tr>
+<tr><td>Recipe</td><td>Cooking content</td><td>Cook time, ratings, ingredient card</td></tr>
+<tr><td>Event</td><td>Concerts, webinars, classes</td><td>Date, location, ticket info</td></tr>
+<tr><td>BreadcrumbList</td><td>Site navigation hierarchy</td><td>Breadcrumb trail in results</td></tr>
+</tbody>
+</table>
+
+<h3>Example: Generated FAQPage Markup</h3>
+
+<p>Here is what the generator produces for a two-question FAQ — exactly the shape that validates:</p>
+
+<p>
+<code>{</code><br>
+<code>&nbsp;&nbsp;"@context": "https://schema.org",</code><br>
+<code>&nbsp;&nbsp;"@type": "FAQPage",</code><br>
+<code>&nbsp;&nbsp;"mainEntity": [{</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;"@type": "Question",</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;"name": "How long does shipping take?",</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;"acceptedAnswer": {</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@type": "Answer",</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"text": "Orders ship within 2 business days and arrive in 5–7."</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;}</code><br>
+<code>&nbsp;&nbsp;}]</code><br>
+<code>}</code>
+</p>
+
+<p>Every pair follows the same Question/acceptedAnswer nesting. Hand-typing this across ten FAQs is where the comma errors happen; the generator repeats the structure flawlessly.</p>
+
+<h3>Who Uses Schema Generators?</h3>
+
+<p><strong>Bloggers</strong> add Article and FAQPage schema to posts — it is the fastest path to richer-looking listings.</p>
+
+<p><strong>E-commerce managers</strong> generate Product schema with price, availability, and ratings, since star ratings in results directly lift clicks.</p>
+
+<p><strong>Local businesses</strong> use LocalBusiness schema for address, hours, and phone — the data that feeds knowledge panels and map results.</p>
+
+<p><strong>Developers</strong> scaffold schema for templates (product pages, help centers) once, then let the CMS fill the fields dynamically.</p>
+
+<p><strong>Publishers</strong> use Recipe, HowTo, and Event types for the rich cards those content types earn in search.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Multiple schema types</strong> — Article, FAQ, Product, LocalBusiness, HowTo, Recipe, Event, and more.</li>
+<li><strong>Guided forms</strong> — fields match the selected type; required fields flagged as you type.</li>
+<li><strong>Valid JSON-LD output</strong> — correct syntax, commas, and nesting every time.</li>
+<li><strong>One-click copy</strong> — paste-ready block for your page head or SEO plugin.</li>
+<li><strong>Nested markup support</strong> — Organization, ratings, and breadcrumbs combined correctly.</li>
+<li><strong>100% free</strong> — no signup, no limits.</li>
+<li><strong>Private by design</strong> — everything runs in your browser; nothing is uploaded.</li>
+<li><strong>Works everywhere</strong> — any modern browser, nothing to install.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is schema markup?</h4>
+<p>Schema markup is structured data (a shared vocabulary from schema.org) added to a page in JSON-LD format. It tells search engines what your content is — an article, a product, a local business — so they can show rich results like star ratings, FAQs, and event dates.</p>
+
+<h4>Does schema improve rankings?</h4>
+<p>Not directly — it is not a ranking factor. But valid schema enables rich results, which raise click-through rates and bring more traffic at the same ranking position.</p>
+
+<h4>Which schema type should I use?</h4>
+<p>Pick the one type that matches the page's main content: Article for blog posts, Product for product pages, FAQPage for Q&amp;A sections, LocalBusiness for physical locations. One accurate primary type beats several vague ones.</p>
+
+<h4>How do I validate my schema?</h4>
+<p>Run the page through Google's Rich Results Test and the Schema.org validator. They confirm the JSON is valid and the required fields for your type are present.</p>
+
+<h4>Can schema hurt my site?</h4>
+<p>Yes, if the markup does not match visible page content. Marking up FAQs that are not on the page, or fake review ratings, is treated as deceptive and can lead to penalties. Only mark up what is really there.</p>
+
+<h4>Where do I paste the generated code?</h4>
+<p>Inside the <code>&lt;head&gt;</code> of your HTML, or in your SEO plugin's custom schema field (Rank Math, Yoast). For site-wide markup like Organization, it typically goes in the site header template.</p>
+
+<h4>Is this generator free?</h4>
+<p>Yes — completely free, no account needed.</p>
+
+<h4>Do I need JSON knowledge to use it?</h4>
+<p>No. The form handles the structure; you only fill in your content — titles, dates, addresses, questions and answers — and the tool builds the JSON-LD for you.</p>
+</article>

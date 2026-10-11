@@ -1,0 +1,106 @@
+<article class="tool-article">
+<h2>CSS Minifier — Cut Stylesheet Weight and Load Faster</h2>
+
+<p>Here is a number that changed how I think about stylesheets: on a typical WordPress site, minifying the CSS saves 25–40% of the file size and 0.2–0.5 seconds of load time. On a custom web app, it can be 30–50% and up to 0.8 seconds. Those fractions of a second decide whether a visitor stays or bounces, and they feed directly into Google's Core Web Vitals. A CSS minifier is the cheapest performance win on the web: paste your stylesheet, get a leaner version back, ship faster pages.</p>
+
+<h3>What Gets Stripped Out?</h3>
+
+<p>Your development CSS is full of things browsers ignore: indentation, line breaks, comments, spaces around colons and braces. A minifier removes all of it. Then it goes further with safe optimizations — the kind a human would never bother doing by hand:</p>
+
+<pre><code>/* Before: 312 bytes */
+.card {
+  background-color: #ffffff;
+  margin: 0px 0px 0px 0px;
+  padding: 10px 20px 10px 20px;
+  font-family: "Georgia", serif;
+}</code></pre>
+
+<code>.card{background-color:#fff;margin:0;padding:10px 20px;font-family:Georgia,serif}</code>
+
+<p>The color collapsed to shorthand, zero units vanished, the margin and padding merged into shorthand pairs, quotes dropped from the font name, and every byte of whitespace disappeared. Same rendering, roughly half the size. Across a full stylesheet, that compounds into the 20–50% savings the benchmarks consistently show.</p>
+
+<h3>Real-World Impact on Load Times</h3>
+
+<table>
+<thead><tr><th>Site Type</th><th>Typical CSS Reduction</th><th>Load Time Improvement</th></tr></thead>
+<tbody>
+<tr><td>WordPress site</td><td>25–40%</td><td>0.2–0.5 seconds</td></tr>
+<tr><td>Custom web app</td><td>30–50%</td><td>0.3–0.8 seconds</td></tr>
+<tr><td>Ecommerce site</td><td>20–35%</td><td>0.2–0.6 seconds</td></tr>
+</tbody>
+</table>
+
+<p>Those numbers matter because CSS is render-blocking — the browser waits for stylesheets before painting anything. Faster CSS delivery moves Largest Contentful Paint earlier, reduces render-blocking time (helping Interaction to Next Paint), and cuts the flashes of unstyled content behind Cumulative Layout Shift. Google uses all three as ranking signals, so when two pages are equally relevant, the faster one wins the tiebreak.</p>
+
+<p>And minification stacks. Minify the code (content level), then serve it with gzip or Brotli (transfer level), and a 200 KB stylesheet can travel at under 30 KB. Add browser caching with proper headers, and returning visitors skip the download entirely.</p>
+
+<h3>How to Deploy Minified CSS</h3>
+
+<p>Paste your CSS into the minifier — leave out any <code>&lt;style&gt;</code> tags — and click minify. Copy the output or download it, and save it as <code>styles.min.css</code> alongside your original <code>styles.css</code>. Update your HTML to reference the minified file:</p>
+
+<pre><code>&lt;!-- Before --&gt;
+&lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;!-- After --&gt;
+&lt;link rel="stylesheet" href="styles.min.css"&gt;</code></pre>
+
+<p>Load the page and verify it looks identical. Once confirmed in production, you can remove the unminified file from the server to avoid confusion — but keep it in version control, because the minified file is a build artifact you never edit by hand. For projects with regular deploys, automate this: Vite minifies CSS in production builds by default, webpack uses css-minimizer-webpack-plugin, and PostCSS users reach for cssnano.</p>
+
+<h3>Standard vs Aggressive Compression</h3>
+
+<p>Most minifiers offer two gears. <strong>Standard</strong> compression removes comments, whitespace, and line breaks — completely safe, always correct. <strong>Aggressive</strong> goes further: shortening zero values (<code>0px</code> to <code>0</code>), dropping leading zeros (<code>0.5</code> to <code>.5</code>), merging shorthand properties, and other micro-optimizations.</p>
+
+<p>For most projects, standard is the right choice — meaningful savings with zero risk. Aggressive mode earns its keep on large stylesheets where every byte counts, but verify the output visually: edge cases in complex selectors or <code>calc()</code> expressions are where aggressive tools occasionally stumble.</p>
+
+<h3>Who Benefits Most?</h3>
+
+<p><strong>WordPress site owners</strong> see some of the biggest wins because themes and page builders generate verbose CSS. Minifying the custom CSS from the customizer is a five-minute task with measurable results.</p>
+
+<p><strong>Ecommerce stores</strong> feel it in conversion rates — every 100 ms of load time nudges revenue, and stylesheets are often the easiest weight to cut.</p>
+
+<p><strong>Mobile-first developers</strong> care because their users are on slow connections where every kilobyte is felt. A 120 KB stylesheet instead of 200 KB is the difference between snappy and sluggish on 3G.</p>
+
+<p><strong>Agencies</strong> minify as a standard pre-launch checklist item, alongside image optimization and caching configuration.</p>
+
+<h3>Tips for Maximum Savings</h3>
+
+<p>Combine multiple CSS files into one before minifying — fewer HTTP requests plus smaller total size. Enable gzip or Brotli on your server; minification and transfer compression attack different layers and multiply. Set long cache headers with versioned filenames (<code>styles.v2.min.css</code>) so returning visitors never re-download. Consider extracting critical above-the-fold CSS and inlining it while the rest loads asynchronously. And always keep the readable source — minified CSS is disposable output, not something you maintain.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant minification</strong> — paste CSS, get compressed output immediately.</li>
+<li><strong>Standard and aggressive modes</strong> — safe defaults or maximum compression.</li>
+<li><strong>Size statistics</strong> — original vs minified size and percentage saved.</li>
+<li><strong>License comment preservation</strong> — <code>/*! … */</code> blocks kept intact.</li>
+<li><strong>Safe optimizations</strong> — <code>calc()</code>, strings, and URLs protected.</li>
+<li><strong>Copy and download</strong> — clipboard copy or save as a .css file.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
+<li><strong>100% free</strong> — no signup, no limits, works on any device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this CSS minifier free?</h4>
+<p>Yes — completely free, no account needed, and no limits on how much CSS you can minify.</p>
+
+<h4>How much smaller will my CSS get?</h4>
+<p>Typically 20–50% for well-formatted CSS with comments; heavily commented files can see 50–70%. Already-minified CSS sees minimal further reduction.</p>
+
+<h4>Will minification break my styles?</h4>
+<p>No — properly minified CSS renders identically. Browsers ignore the removed characters anyway. Always spot-check your site after minifying.</p>
+
+<h4>What is the difference between standard and aggressive compression?</h4>
+<p>Standard removes comments, whitespace, and line breaks safely. Aggressive adds micro-optimizations like zero-unit removal and shorthand merging for maximum savings.</p>
+
+<h4>Should I keep the uncompressed version?</h4>
+<p>Yes, always. Keep originals in version control for development; deploy only the minified version. Never edit minified CSS directly.</p>
+
+<h4>Does minified CSS help SEO?</h4>
+<p>Indirectly but really: smaller CSS loads faster, improving Core Web Vitals (LCP, INP, CLS), which Google uses as ranking signals.</p>
+
+<h4>Is my CSS data secure?</h4>
+<p>Yes. Minification happens entirely in your browser — your code never leaves your device or touches a server.</p>
+
+<h4>Do I still need gzip if I minify?</h4>
+<p>Yes — they are complementary. Minification shrinks the code; gzip/Brotli compresses the transfer. Use both for maximum savings.</p>
+</article>

@@ -1,0 +1,90 @@
+<article class="tool-article">
+<h2>Text Viewer — Open Any Text File Instantly in Your Browser</h2>
+
+<p>Last month a client sent me a log file to look at. It was 40 MB, and my machine at the time was a Chromebook — no heavy editor installed, no patience for waiting on one either. I dropped the file into a text viewer tab, and thirty seconds later I was searching through it like it was nothing. That is the whole pitch: a text viewer opens plain text files in your browser without uploading them anywhere, no matter what computer you are on.</p>
+
+<h3>What Is a Text Viewer?</h3>
+
+<p>A text viewer is a lightweight tool for reading the contents of text-based files. Drop in a .txt, .md, .json, .csv, .log, .xml, or any other plain-text file and the viewer renders it in a readable pane — often with line numbers, a search box, and controls for font size and wrapping. The file stays on your device the entire time; the browser reads it directly with the File API, so there is no upload, no wait for a server round trip, and no one else ever sees the content.</p>
+
+<p>This matters because plain text is everywhere. Configuration files, exported chat logs, database dumps, README files, subtitles (.srt), source code — they are all text under the hood. A dedicated viewer handles them gracefully where double-clicking the file might launch the wrong program, wrap everything into an unreadable wall, or choke on encoding quirks.</p>
+
+<h3>How to Use the Text Viewer</h3>
+
+<p>The workflow is almost comically short:</p>
+
+<p><strong>Step 1 — Open your file.</strong> Drag and drop it onto the viewer, or click to browse your device. You can also paste text directly if it came from a chat message or a terminal.</p>
+
+<p><strong>Step 2 — Read and navigate.</strong> Use the search box (Ctrl+F style) to jump to keywords, toggle line numbers for referencing exact positions, and turn word wrap on or off depending on whether you want to scan wrapped paragraphs or inspect exact line lengths.</p>
+
+<p><strong>Step 3 — Copy or export.</strong> Select what you need, copy it, or download the content. If the file was code or markup, some viewers offer light syntax coloring so structure is easier to follow.</p>
+
+<p>Because the file never leaves your device, there is no queue, no processing time, and no file-size anxiety beyond what your browser can comfortably hold in memory.</p>
+
+<h3>What Files Can a Text Viewer Open?</h3>
+
+<table>
+<thead><tr><th>Extension</th><th>What It Usually Is</th></tr></thead>
+<tbody>
+<tr><td>.txt</td><td>Plain text notes, documents, readmes</td></tr>
+<tr><td>.md / .markdown</td><td>Markdown documentation and notes</td></tr>
+<tr><td>.log</td><td>Application and server log files</td></tr>
+<tr><td>.csv</td><td>Spreadsheet data (read as raw text)</td></tr>
+<tr><td>.json / .xml / .yaml</td><td>Config and data files</td></tr>
+<tr><td>.srt / .vtt</td><td>Video subtitle files</td></tr>
+<tr><td>.js / .py / .html / .css</td><td>Source code (any language)</td></tr>
+<tr><td>.ini / .conf / .env</td><td>Configuration files</td></tr>
+</tbody>
+</table>
+
+<p>Essentially, if the file is human-readable text, the viewer will display it. Files with encoding headers like UTF-16 BOMs are handled automatically; legacy encodings (Latin-1, GBK) may render odd characters in rare cases, in which case a full editor with encoding selection is the fallback.</p>
+
+<h3>Text Viewer vs Text Editor</h3>
+
+<p>A viewer and an editor look similar but solve different problems. A <strong>viewer</strong> is read-first: it is optimized for opening, searching, and scanning files quickly, especially ones too large or awkward for a quick double-click. An <strong>editor</strong> is write-first: it is optimized for creating and changing text, with autosave, formatting, and export.</p>
+
+<p>In practice I use both. The viewer is my first stop when someone sends me a file I did not create — a server log, an exported dataset, a chat backup — because opening is instant and read-only, so there is no risk of accidentally modifying it. The editor is where I write. If you find yourself re-reading the same files repeatedly, a viewer with search and line numbers saves real minutes every session.</p>
+
+<h3>Who Uses Text Viewers?</h3>
+
+<p><strong>Developers</strong> open config files, logs, and code snippets constantly; a fast viewer beats launching an IDE for a two-minute look. <strong>Support and QA teams</strong> read error logs and crash reports, often on machines without developer tools installed. <strong>Students</strong> view downloaded datasets and assignment files. <strong>Anyone on a shared or borrowed computer</strong> gets a way to read a file without installing software or trusting a stranger's machine with an upload.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Drag-and-drop opening</strong> — drop any text file straight into the page.</li>
+<li><strong>Instant search</strong> — find keywords in large files with highlighted matches.</li>
+<li><strong>Line numbers</strong> — reference exact lines when discussing files with others.</li>
+<li><strong>Word wrap toggle</strong> — wrap long lines for prose, unwrap for data.</li>
+<li><strong>Font size control</strong> — readable on phones and projectors alike.</li>
+<li><strong>Private by design</strong> — files are read locally; nothing is uploaded or stored.</li>
+<li><strong>Multi-format support</strong> — txt, md, csv, json, xml, logs, subtitles, code.</li>
+<li><strong>Copy and download</strong> — extract selections or save the whole content.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this text viewer free?</h4>
+<p>Yes — free, with no account or installation required.</p>
+
+<h4>Are my files uploaded to a server?</h4>
+<p>No. Files are read directly in your browser using the File API and never leave your device.</p>
+
+<h4>What file types can I open?</h4>
+<p>Any plain-text format: .txt, .md, .log, .csv, .json, .xml, .srt, source code files, and more.</p>
+
+<h4>Can it open very large files?</h4>
+<p>Yes — viewers are built for this. A multi-megabyte log file opens quickly because there is no upload step; the practical limit is your device's memory.</p>
+
+<h4>Does it support different character encodings?</h4>
+<p>UTF-8 (including BOM) is handled automatically. Rare legacy encodings may display oddly.</p>
+
+<h4>What is the difference between a text viewer and a notepad?</h4>
+<p>A viewer is for reading and searching files you already have; a notepad is for writing and autosaving your own text.</p>
+
+<h4>Can I edit the file in the viewer?</h4>
+<p>The viewer is read-first. Use an editor or notepad tool when you need to change content.</p>
+
+<h4>Does it work on mobile?</h4>
+<p>Yes — modern browsers on phones and tablets can open text files the same way.</p>
+</article>

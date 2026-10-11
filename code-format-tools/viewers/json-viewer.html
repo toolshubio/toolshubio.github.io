@@ -1,73 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free, pro JSON viewer. Visualize JSON data in a collapsible tree format, search keys, and validate structure 100% client-side.">
-    <title>JSON Viewer - Interactive Tree Map | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../../image-tools/css/global.css">
-    <link rel="stylesheet" href="../../image-tools/css/components.css">
-    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
-
-
-  <link rel="stylesheet" href="../../image-tools/css/th-header-footer.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON Viewer - Interactive Tree Map | TOOLSHUB</title>
+<meta name="description" content="Free, pro JSON viewer. Visualize JSON data in a collapsible tree format, search keys, and validate structure 100% client-side.">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../../image-tools/css/v3-design.css">
+<style>.ws-textarea{font-family:ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,monospace}</style>
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../../index.html#tools">All Tools</a><a href="../../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../../index.html#tools">Explore Tools</a></div>
+</div></header>
+
+<nav class="crumbs"><a href="../../index.html">Home</a> &nbsp;/&nbsp; <a href="../../index.html#code-format-tools">Code &amp; Formatters</a> &nbsp;/&nbsp; <span>JSON Viewer</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">Code Tools</span>
+  <h1>JSON <em>Viewer.</em></h1>
+  <p>Explore complex JSON structures with an interactive, collapsible tree view.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../../image-tools/index.html">Image Tools</a><a href="../../pdf-tools/index.html">PDF Tools</a><a href="../../text-tools/index.html">Text & Writing</a><a href="../../seo-tools/index.html">SEO Tools</a><a href="../../calculator-tools/index.html">Calculators</a><a href="../../binary-tools/index.html">Binary Tools</a><a href="../../code-format-tools/index.html">Code & Formatters</a><a href="../../doc-tools/index.html">Documents</a><a href="../../other-tools/index.html">Other Tools</a><a href="../../about-us.html">About Us</a><a href="../../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../../index.html">Home</a> &gt;
-                <a href="../index.html">Code & Formatters</a> &gt;
-                <span>JSON Viewer</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">JSON Viewer</h1>
-                <p class="tool-description">Explore complex JSON structures with an interactive, collapsible tree view.</p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
+</section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>JSON Viewer</b><span>v3.0 · local</span></div>
+  <div class="ws-body">
+<div class="tool-workspace">
 <div class="tool-workspace">
 <div class="view-workspace">
 <div class="editor-container">
 <div class="editor-header">
 <span class="editor-title">Paste JSON</span>
-<button class="btn btn-sm btn-secondary" onclick="document.getElementById('input-code').value = ''; renderTree()">Clear</button>
+<button class="btn btn-light" onclick="document.getElementById('input-code').value = ''; renderTree()"><i class="fa-solid fa-eraser"></i> Clear</button>
 </div>
-<textarea class="code-area" id="input-code" oninput="renderTree()" placeholder='{"user": {"id": 123}}...'></textarea>
+<textarea class="ws-textarea" id="input-code" oninput="renderTree()" placeholder='{"user": {"id": 123}}...'></textarea>
 </div>
 <div class="tree-panel">
 <div class="editor-header" style="border-radius: 8px 8px 0 0;">
 <span class="editor-title">Interactive Tree</span>
 <div class="header-actions">
-<button class="btn btn-sm btn-secondary" onclick="expandAll()">Expand All</button>
-<button class="btn btn-sm btn-secondary" onclick="collapseAll()">Collapse All</button>
+<button class="btn btn-light" onclick="expandAll()">Expand All</button>
+<button class="btn btn-light" onclick="collapseAll()">Collapse All</button>
 </div>
 </div>
 <div class="tree-container" id="tree-container">
@@ -76,50 +60,41 @@
 </div>
 </div>
 </div>
-<section class="tool-content mt-12">
-<div class="content-grid">
-<div class="main-text">
-<h2>Visualize Large Data Structures</h2>
-<p>Reading flat JSON strings with hundreds of levels is a challenge. Our JSON Viewer turns
-                                static text into a dynamic navigation tool, allowing you to focus on specific nodes and
-                                verify data types visually.</p>
-<h3>Viewer Modes</h3>
-<ul>
-<li><strong>Collapsible Nodes:</strong> Click on arrows to hide/show entire clusters.
-                                </li>
-<li><strong>Syntax Coloring:</strong> Instant identification of strings, numbers, and
-                                    booleans.</li>
-<li><strong>Type Detection:</strong> Visual cues for Arrays vs. Objects.</li>
-</ul>
 </div>
 </div>
+  </div>
+</div></div>
+
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 — HOW IT WORKS</span><h2>How to use</h2><p>Get results in three simple steps.</p></div>
+  <div class="steps">
+    <div class="step"><div class="step-n">i.</div><h3>Paste JSON</h3><p>Drop raw JSON into the viewer.</p></div>
+    <div class="step"><div class="step-n">ii.</div><h3>Explore tree</h3><p>Expand/collapse nodes interactively.</p></div>
+    <div class="step"><div class="step-n">iii.</div><h3>Search &amp; copy</h3><p>Find keys and copy subtrees.</p></div>
+  </div>
 </section>
-</div>
-            </div>
-            <section class="seo-article" data-tool="json-viewer">
-<article class="tool-article">
-<h2>JSON Viewer — Explore JSON as a Collapsible Tree</h2>
 
-<p>An API response comes back and instead of clean structure you get one long line — nested brackets, commas, no spacing, three thousand characters wide. Technically it is valid JSON. Practically, it is unreadable. I used to count brackets by eye like some kind of monk before I discovered JSON viewers. Paste the blob in, and the tool lays it out as an expandable tree: objects you can open and close, arrays you can fold away, every value color-coded by type. Suddenly the data has a shape you can navigate.</p>
-
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>JSON Viewer — Explore JSON as a Collapsible Tree</h2>
+    <p class="deck">Free, pro JSON viewer. Visualize JSON data in a collapsible tree format, search keys, and validate structure 100% client-side.</p>
+    <div class="article-meta">
+      <div class="avatar">T</div>
+      <div><b>TOOLSHUB Editorial</b><span>6 min read · Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+    <p class="lead">An API response comes back and instead of clean structure you get one long line — nested brackets, commas, no spacing, three thousand characters wide. Technically it is valid JSON. Practically, it is unreadable. I used to count brackets by eye like some kind of monk before I discovered JSON viewers. Paste the blob in, and the tool lays it out as an expandable tree: objects you can open and close, arrays you can fold away, every value color-coded by type. Suddenly the data has a shape you can navigate.</p>
 <h3>What Is a JSON Viewer?</h3>
-
 <p>A JSON viewer renders raw JSON as an organized, navigable structure instead of a wall of text. The classic view is a tree: the root object at the top, its keys branching below, nested objects and arrays collapsible with a click. Long arrays fold down to a single line showing their length; deep nesting becomes a series of doors you open only when you need what is behind them.</p>
-
 <p>Many viewers offer more than the tree. A table view turns arrays of objects into sortable columns — perfect for scanning API records. A graph view draws the structure as connected nodes. And there is always the formatted text view for when you need the raw pretty-printed JSON to copy elsewhere.</p>
-
 <p>The viewer also validates as it parses. If your JSON has a syntax error, you get the error location instead of a tree — which makes the viewer a validator with a better reward for success.</p>
-
 <h3>How to Use the JSON Viewer</h3>
-
 <p>Paste your JSON into the editor, or drag and drop a .json file. The tree appears instantly — click any object or array to expand or collapse it. Use the search box to filter by key or value; matches get highlighted and their parent branches auto-expand so you can see them in context.</p>
-
 <p>Click any node to copy its path (like <code>user.address.city</code>) or its value — handy when you need to reference a deeply nested field in code. Toolbar buttons let you format, minify, or fix common errors without leaving the page. When you are done exploring, copy the formatted JSON or download it as a .json file.</p>
-
 <p>For large responses, resist the urge to expand everything. Collapse the branches you do not care about first, then drill into the one you do — the tree is a map, and maps work best when you zoom.</p>
-
 <h3>Tree View vs Table View vs Text View</h3>
-
 <table>
 <thead><tr><th>View Mode</th><th>Best For</th><th>What You Get</th></tr></thead>
 <tbody>
@@ -129,33 +104,19 @@
 <tr><td>Graph</td><td>Understanding relationships</td><td>Visual node map of the data structure</td></tr>
 </tbody>
 </table>
-
 <p>I switch between them constantly: tree to find the field, table to compare records across an array, text to copy the final snippet. Each view answers a different question about the same data.</p>
-
 <h3>Finding Data in Large JSON</h3>
-
 <p>The real power shows up with big payloads. A 2 MB API response is hopeless as text but manageable as a tree: search for the key name, and the viewer expands exactly the branches containing matches. JSONPath queries go further — an expression like <code>$.orders[*].total</code> extracts every order total in one shot, which beats scrolling through four hundred line items.</p>
-
 <p>Copy-path is the feature I use most. Click a deeply nested value, copy its path, paste it into your code — no more reconstructing <code>response.data.users[0].profile.address.city</code> from memory and getting an index wrong. The viewer writes the accessor for you.</p>
-
 <h3>Who Uses JSON Viewers?</h3>
-
 <p><strong>API developers</strong> inspect responses while debugging integrations. The tree reveals the actual structure — which fields exist, which are null, how deep the nesting goes — faster than any documentation.</p>
-
 <p><strong>Data analysts</strong> explore JSON exports before writing processing scripts. Seeing the shape of the data first means the script handles the real structure, not the assumed one.</p>
-
 <p><strong>QA testers</strong> compare expected vs actual payloads. Two trees side by side make differences obvious in a way raw text diffs do not.</p>
-
 <p><strong>Support staff</strong> troubleshooting integrations use viewers to read webhook payloads without needing a developer to translate.</p>
-
 <p><strong>Students</strong> learning about APIs paste responses into a viewer to understand what "JSON" actually looks like in the wild — the tree makes the abstract concrete.</p>
-
 <h3>Tips for Working With Big Payloads</h3>
-
 <p>Let the viewer do the navigating: search instead of scrolling, collapse instead of skimming. If the JSON is invalid, fix the syntax first — the tree cannot render what the parser cannot read, and the error message tells you where to look. For recurring exploration (the same API every day), save the formatted output locally so you are not re-pasting. And when you need a slice of the data rather than the whole thing, use JSONPath or copy just that branch instead of hauling the entire document into your editor.</p>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>Collapsible tree view</strong> — expand and collapse nested objects and arrays.</li>
 <li><strong>Table and graph views</strong> — see the same data as sortable columns or a node map.</li>
@@ -167,81 +128,37 @@
 <li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
 <li><strong>100% free</strong> — no signup, no limits, works on any device.</li>
 </ul>
+<div class="faq"><div class="faq-item open"><div class="faq-q">Is this JSON viewer free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — completely free, no account needed, and no limits on how much JSON you can explore.</p></div></div><div class="faq-item"><div class="faq-q">What is the difference between a JSON viewer and a formatter? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>A formatter pretty-prints JSON as indented text. A viewer goes further, rendering it as an interactive tree (plus table and graph views) that you can expand, search, and query.</p></div></div><div class="faq-item"><div class="faq-q">Can I view a JSON file, not just pasted text? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes. Drag and drop a .json file onto the tool, or use the upload option — the tree renders the same way.</p></div></div><div class="faq-item"><div class="faq-q">Why does the tree not appear? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>The JSON must be valid before it can be parsed into a tree. Check for quoted property names, correct comma placement, and balanced braces — the error message shows where parsing failed.</p></div></div><div class="faq-item"><div class="faq-q">Can I edit JSON in the viewer? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>You can edit the source text and the tree updates when the JSON is valid. For heavy editing, a dedicated JSON editor may suit you better.</p></div></div><div class="faq-item"><div class="faq-q">What is JSONPath? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>A query language for JSON, like XPath for XML. Expressions such as <code>$.users[*].email</code> extract matching values from anywhere in the document.</p></div></div><div class="faq-item"><div class="faq-q">Is my JSON data secure? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes. Parsing, validation, and tree rendering all happen locally in your browser — your data never leaves your device.</p></div></div><div class="faq-item"><div class="faq-q">Can it handle very large JSON files? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — viewers are built for this, using efficient rendering so big API responses stay navigable. Collapse branches you do not need and search instead of scrolling.</p></div></div></div>
+  </div>
+</article></div>
 
-<h3>Frequently Asked Questions</h3>
-
-<h4>Is this JSON viewer free?</h4>
-<p>Yes — completely free, no account needed, and no limits on how much JSON you can explore.</p>
-
-<h4>What is the difference between a JSON viewer and a formatter?</h4>
-<p>A formatter pretty-prints JSON as indented text. A viewer goes further, rendering it as an interactive tree (plus table and graph views) that you can expand, search, and query.</p>
-
-<h4>Can I view a JSON file, not just pasted text?</h4>
-<p>Yes. Drag and drop a .json file onto the tool, or use the upload option — the tree renders the same way.</p>
-
-<h4>Why does the tree not appear?</h4>
-<p>The JSON must be valid before it can be parsed into a tree. Check for quoted property names, correct comma placement, and balanced braces — the error message shows where parsing failed.</p>
-
-<h4>Can I edit JSON in the viewer?</h4>
-<p>You can edit the source text and the tree updates when the JSON is valid. For heavy editing, a dedicated JSON editor may suit you better.</p>
-
-<h4>What is JSONPath?</h4>
-<p>A query language for JSON, like XPath for XML. Expressions such as <code>$.users[*].email</code> extract matching values from anywhere in the document.</p>
-
-<h4>Is my JSON data secure?</h4>
-<p>Yes. Parsing, validation, and tree rendering all happen locally in your browser — your data never leaves your device.</p>
-
-<h4>Can it handle very large JSON files?</h4>
-<p>Yes — viewers are built for this, using efficient rendering so big API responses stay navigable. Collapse branches you do not need and search instead of scrolling.</p>
-</article>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 — KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+    <a class="rel" href="../code-utilities/code-diff-viewer.html"><i class="fa-solid fa-code-compare" style="color:#4f46e5"></i><h3>Code Diff Viewer</h3><p>Compare two versions of code to quickly identify what was added, removed, or modified.</p></a>
+    <a class="rel" href="../code-utilities/code-obfuscator.html"><i class="fa-solid fa-eye-slash" style="color:#7c3aed"></i><h3>Code Obfuscator</h3><p>Conceal your JavaScript logic to prevent easy reverse engineering and manual tampering.</p></a>
+    <a class="rel" href="../code-utilities/regular-expression-tester.html"><i class="fa-solid fa-asterisk" style="color:#4f46e5"></i><h3>Regex Tester</h3><p>Build and test regular expressions with real-time highlighting and match groups.</p></a>
+    <a class="rel" href="../code-utilities/syntax-highlighter.html"><i class="fa-solid fa-palette" style="color:#7c3aed"></i><h3>Syntax Highlighter</h3><p>Generate beautiful, color-coded snapshots of your source code for tutorials and documentat</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../../image-tools/index.html">Image Tools</a></li><li><a href="../../pdf-tools/index.html">PDF Tools</a></li><li><a href="../../text-tools/index.html">Text & Writing</a></li><li><a href="../../seo-tools/index.html">SEO Tools</a></li><li><a href="../../calculator-tools/index.html">Calculators</a></li><li><a href="../../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../../index.html#tools">All 203 tools</a></li><li><a href="../../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li><li><a href="../../code-format-tools/minifiers/css-minifier.html">CSS Minifier</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../../about-us.html">About</a></li><li><a href="../../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="../../about-us.html">About</a></li><li><a href="../../contact-us.html">Contact</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../../about-us.html">About</a><a href="../../contact-us.html">Contact</a><a href="../../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>© 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script src="../js/code-utils.js"></script>
 <script src="../js/code-ui.js"></script>
 <script>
-        CodeUI.init({ toolName: 'json-viewer' });
+CodeUI.init({ toolName: 'json-viewer' });
 
         function createTreeHTML(obj) {
             if (obj === null) return `<span class="null">null</span>`;
@@ -311,7 +228,7 @@
             { icon: 'âœ…', name: 'JSON Validator', desc: 'Syntax check', url: '../validators/json-validator.html' },
             { icon: 'ðŸ”¥', name: 'JS Minifier', desc: 'Optimize JS', url: '../minifiers/javascript-minifier.html' }
         ]);
-    </script>
-  <script src="../../image-tools/js/th-interactions.js"></script>
+</script>
+<script src="../../image-tools/js/v3.js"></script>
 </body>
 </html>

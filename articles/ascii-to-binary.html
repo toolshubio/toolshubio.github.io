@@ -1,0 +1,105 @@
+<article class="tool-article">
+<h2>ASCII to Binary Converter — Free Online Text Encoder</h2>
+
+<p>I once had to send a plain-text message through a channel that only accepted raw bits, and copying things by hand was hopeless. Every letter I typed was secretly a number the whole time — that is the quiet magic of ASCII — and an ASCII to binary converter is the shortcut that turns your typing into the strings of ones and zeros that computers actually store. Paste text in, get binary out, right in your browser with nothing to install and no account.</p>
+
+<h3>What Is an ASCII to Binary Converter?</h3>
+
+<p>ASCII (American Standard Code for Information Interchange) is the chart that assigns every English letter, digit, and punctuation mark a number between 0 and 127. Capital A is 65, lowercase z is 122, the digit 0 is 48, and a space is 32. Computers, which only understand on/off signals, keep each of those numbers as an 8-bit binary group — a byte. The converter is simply doing that chart lookup plus a number-base change, automatically.</p>
+
+<p>I like thinking of it as a two-step assembly line. First the tool reads each character you pasted and finds its ASCII decimal value. Then it writes that value in base-2, padded out to eight digits so every character takes exactly one byte. "Hi" becomes 01001000 01101001 — H is 72 in binary, i is 105 in binary. The space between the bytes is just for readability; most tools also accept a continuous stream.</p>
+
+<p>One thing that trips up students and puzzle solvers: the digit characters are not their face values. The text character "5" is ASCII 53, which encodes as 00110101 — not the binary for the number 5 (101). Text digits and real numbers live in different worlds, and this tool works in the text world.</p>
+
+<h3>How to Use the ASCII to Binary Converter</h3>
+
+<p>The workflow is refreshingly plain, which I appreciate when I am debugging a file encoding issue or checking a homework answer at midnight.</p>
+
+<p>Paste or type your text into the input box. Click Convert, and each character appears as an 8-bit binary group in the output area, usually separated by spaces. Copy the result straight to your clipboard or download it as a .txt file. If you are doing homework, try typing one character at a time and watch how punctuation and capital letters shift the codes — it makes the ASCII table stick far better than memorizing it.</p>
+
+<p>A habit worth building: before you encode a long string, decide whether you need 8-bit output. Most converters default to 8-bit groups (01000001), which play nicely with every binary-to-text decoder. Some offer a 7-bit mode (1000001) that matches the original ASCII standard more strictly. Either is fine as long as whatever reads your output agrees with your choice.</p>
+
+<h3>How ASCII to Binary Conversion Works</h3>
+
+<p>Underneath the button there are three mechanical steps, and knowing them makes the whole number-system topic feel less mysterious.</p>
+
+<p><strong>Step 1 — Character to decimal.</strong> Each character is looked up in the ASCII chart. A becomes 65, a becomes 97, 0 becomes 48.</p>
+
+<p><strong>Step 2 — Decimal to binary.</strong> That decimal value is converted to base-2 by repeatedly dividing by 2 and collecting remainders. Take 65: 65 ÷ 2 = 32 remainder 1, 32 ÷ 2 = 16 remainder 0, and so on down to 1. Reading the remainders backward gives 1000001.</p>
+
+<p><strong>Step 3 — Pad to 8 bits.</strong> A leading zero is added to make exactly eight digits: 01000001. Repeat for every character and join the bytes in order.</p>
+
+<p>Worked example for "Hi": H is ASCII 72 → binary 1001000 → padded 01001000. i is ASCII 105 → binary 1101001 → padded 01101001. Result: 01001000 01101001. A full sentence of a hundred characters takes the tool a fraction of a second; by hand it would take a careful half hour.</p>
+
+<h3>Common ASCII to Binary Examples</h3>
+
+<p>Keep this table open while you practice — I still glance at it when I want the codes for punctuation:</p>
+
+<table>
+<thead><tr><th>Character</th><th>ASCII Decimal</th><th>Binary (8-bit)</th></tr></thead>
+<tbody>
+<tr><td>A</td><td>65</td><td><code>01000001</code></td></tr>
+<tr><td>Z</td><td>90</td><td><code>01011010</code></td></tr>
+<tr><td>a</td><td>97</td><td><code>01100001</code></td></tr>
+<tr><td>z</td><td>122</td><td><code>01111010</code></td></tr>
+<tr><td>0</td><td>48</td><td><code>00110000</code></td></tr>
+<tr><td>9</td><td>57</td><td><code>00111001</code></td></tr>
+<tr><td>Space</td><td>32</td><td><code>00100000</code></td></tr>
+<tr><td>!</td><td>33</td><td><code>00100001</code></td></tr>
+<tr><td>?</td><td>63</td><td><code>00111111</code></td></tr>
+</tbody>
+</table>
+
+<p>Full words to test the tool with: "Cat" → <code>01000011 01100001 01110100</code>; "OK" → <code>01001111 01001011</code>; "123" → <code>00110001 00110010 00110011</code>. Paste any of these in reverse into a binary-to-text decoder and you will get your original word back — a nice round-trip check before you trust a longer string.</p>
+
+<h3>Who Uses ASCII to Binary Converters?</h3>
+
+<p><strong>Students</strong> in computer science courses use it to check homework on number systems and character encoding, where hand-converting a paragraph is slow and error-prone.</p>
+
+<p><strong>Developers</strong> reach for it when debugging file encodings, building text-transmission features, or preparing test data for parsers that speak in bytes.</p>
+
+<p><strong>Cybersecurity learners and CTF players</strong> encode messages into binary for challenges and decode them again, where this tool is half of the round trip.</p>
+
+<p><strong>Embedded engineers</strong> convert labels and sensor strings to binary when writing firmware, where every character must fit a fixed byte layout.</p>
+
+<p><strong>Puzzle makers</strong> hide secret messages in binary for escape rooms and ARG hunts, and solvers use the reverse direction just as often.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant encoding</strong> — long passages convert in milliseconds.</li>
+<li><strong>100% free</strong> — no signup, no usage caps, no watermarks.</li>
+<li><strong>Private by design</strong> — encoding runs locally in your browser; nothing is uploaded.</li>
+<li><strong>8-bit and 7-bit modes</strong> — match whatever format your project expects.</li>
+<li><strong>Flexible output</strong> — spaced bytes or continuous stream.</li>
+<li><strong>UTF-8 support</strong> — encode emoji and non-English characters as multi-byte sequences.</li>
+<li><strong>Copy and download</strong> — one click to copy or save the result.</li>
+<li><strong>Works everywhere</strong> — any modern browser on desktop or mobile.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this ASCII to binary converter free?</h4>
+<p>Yes — free with no account, no limits, and no sign-up.</p>
+
+<h4>What is the difference between ASCII to binary and text to binary?</h4>
+<p>They are the same operation for English text. "ASCII to binary" names the encoding standard explicitly; "text to binary" describes the same thing in everyday terms.</p>
+
+<h4>Why is the output 8 digits per character?</h4>
+<p>Each character is stored as one byte (8 bits). Padding to 8 keeps every character the same width, which is what decoders expect.</p>
+
+<h4>Can I encode emoji or non-English text?</h4>
+<p>Yes, with UTF-8 mode. Emoji and other scripts become multi-byte sequences — for example, é becomes two bytes — which a UTF-8 decoder will read back correctly.</p>
+
+<h4>What is the binary for the space character?</h4>
+<p>00100000 — ASCII 32.</p>
+
+<h4>How do I convert the binary back to text?</h4>
+<p>Use the matching binary-to-text tool: paste the bytes in groups of 8 and decode each through the ASCII table.</p>
+
+<h4>Is my data secure?</h4>
+<p>Yes. Everything happens inside your browser; your text never leaves your device.</p>
+
+<h4>Why does "5" encode as 00110101 instead of 101?</h4>
+<p>Because the tool encodes the character "5" (ASCII 53), not the number 5. Text digits and numeric values are different things.</p>
+</article>

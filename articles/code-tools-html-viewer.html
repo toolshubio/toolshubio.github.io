@@ -1,0 +1,107 @@
+<article class="tool-article">
+<h2>HTML Viewer — Preview and Test HTML in Your Browser</h2>
+
+<p>AI coding assistants now generate complete web pages in seconds — but generated code deserves the same skepticism as any stranger's code. Before I paste AI-written HTML into a project, I run it through a viewer: paste, look, click around, check for anything suspicious. An HTML viewer renders your markup in a sandboxed preview pane, showing you exactly what the code does without letting it touch your real browser. It is part prototyping tool, part safety net, and I use it more now than at any point in my career.</p>
+
+<h3>What Is an HTML Viewer?</h3>
+
+<p>An HTML viewer takes raw markup and renders it as a live web page inside your browser — no file saving, no local server. You paste code on one side; the rendered result appears on the other, updating as you type. Headings render as headings, forms as working forms, scripts execute, styles apply. What you see is what any browser would show.</p>
+
+<p>The key architectural detail: the preview runs in a sandboxed iframe, isolated from the rest of the page. Scripts in the previewed code cannot read the viewer's cookies, localStorage, or your other tabs. That sandbox is what makes it safe to preview code from untrusted sources — a snippet from a forum, an email template from a vendor, AI-generated markup you have not audited yet.</p>
+
+<p>Most viewers pair the render with a syntax-highlighted source view, so you see code and result simultaneously. Change a value, watch the page respond — the tightest feedback loop in front-end work.</p>
+
+<h3>How to Use the HTML Viewer</h3>
+
+<p>Paste your HTML into the code panel, including any inline <code>&lt;style&gt;</code> and <code>&lt;script&gt;</code> blocks. The preview renders immediately — live as you type, or on clicking a render button. Experiment freely: tweak colors, resize containers, rewrite copy, test interactions. Every change reflects instantly.</p>
+
+<p>Use the view toggles to switch between rendered output and highlighted source. Some viewers offer device-width presets — check your layout at mobile widths without resizing your browser. When the page looks right, copy the code out or download it as an .html file.</p>
+
+<p>For AI-generated code, my routine: preview first, read the source second, test interactions third. The preview catches visual problems; reading the source catches suspicious scripts; clicking everything catches broken behavior. Only then does the code earn a place in my project.</p>
+
+<h3>Previewing Safely: The Sandbox</h3>
+
+<table>
+<thead><tr><th>Sandbox Protection</th><th>What It Blocks</th><th>Why It Matters</th></tr></thead>
+<tbody>
+<tr><td>No same-origin access</td><td>Preview scripts reading viewer cookies/storage</td><td>Pasted code cannot steal your session</td></tr>
+<tr><td>Isolated execution</td><td>Scripts affecting the parent page</td><td>Malicious code stays contained</td></tr>
+<tr><td>Controlled popups</td><td>Unwanted windows and redirects</td><td>Annoying snippets cannot escape</td></tr>
+<tr><td>Local-only processing</td><td>Your code leaving the device</td><td>Proprietary snippets stay private</td></tr>
+</tbody>
+</table>
+
+<p>The sandbox does not make malicious code harmless to <em>run</em> — it makes it harmless to <em>you</em>. A crypto miner in the preview would still burn your CPU while the tab is open, so do not preview code you actively distrust without glancing at the source first. But for the everyday case — testing your own work, vendor templates, AI output — the isolation is exactly the right level of protection.</p>
+
+<h3>Common Preview Workflows</h3>
+
+<p><strong>Prototyping components.</strong> Build a pricing table, hero section, or form in isolation, where no existing stylesheet can interfere. When it looks right, move it into the project.</p>
+
+<p><strong>Debugging email templates.</strong> Email HTML is a dialect of nested tables and inline styles; the only way to know it renders correctly is to render it constantly while editing.</p>
+
+<p><strong>Auditing generated code.</strong> Paste AI or third-party HTML, preview the result, then read the source with fresh eyes — the preview tells you what it <em>does</em>, the source tells you what it <em>is</em>.</p>
+
+<p><strong>Teaching and demos.</strong> Show code and result side by side — students connect markup to output instantly, which beats any amount of explanation.</p>
+
+<p><strong>Testing responsive behavior.</strong> Resize the preview pane through mobile, tablet, and desktop widths to catch breakpoints that misbehave.</p>
+
+<h3>Viewer Limitations to Know</h3>
+
+<p>External resources do not resolve: relative paths like <code>images/logo.png</code> have no file system behind them, so use absolute URLs or inline assets as data URIs. Server-side code (PHP, template tags) will not execute — the viewer renders client-side HTML only. And very large documents can feel sluggish in the live-update mode; for those, prefer a render-on-demand button over per-keystroke updates.</p>
+
+<h3>Who Uses HTML Viewers?</h3>
+
+<p><strong>Developers</strong> prototype snippets and audit unfamiliar code — increasingly AI-generated — before integrating it.</p>
+
+<p><strong>Email developers</strong> live-preview templates throughout the build, catching rendering issues at the moment they are introduced.</p>
+
+<p><strong>Marketers and content creators</strong> preview embed codes, landing page sections, and newsletter HTML without developer help.</p>
+
+<p><strong>Teachers</strong> demonstrate HTML live in classrooms, with code and output visible simultaneously.</p>
+
+<p><strong>QA testers</strong> reproduce rendering bugs in isolation, confirming whether the markup or the surrounding application is at fault.</p>
+
+<h3>Tips for Effective Previewing</h3>
+
+<p>Inline your assets for faithful previews — relative paths are the number one cause of "it works in the viewer but not really" confusion. Test interactions, not just static appearance: click the buttons, submit the forms, trigger the scripts. Keep the source visible alongside the render when debugging; the visual gap between expectation and reality usually points at the exact broken tag. And treat the viewer as a sandbox, not a deployment target — build and verify there, then move finished code into your real project files.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Live rendering</strong> — preview updates the moment your code changes.</li>
+<li><strong>Sandboxed iframe</strong> — untrusted code cannot touch your browser or data.</li>
+<li><strong>Source + preview split</strong> — syntax-highlighted code beside the rendered page.</li>
+<li><strong>Full document support</strong> — HTML, inline CSS, JavaScript, and SVG.</li>
+<li><strong>Responsive testing</strong> — resize the preview to check mobile layouts.</li>
+<li><strong>No files or setup</strong> — works instantly on any device, nothing to install.</li>
+<li><strong>Copy and download</strong> — export finished code as an .html file.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
+<li><strong>100% free</strong> — no signup, no limits.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this HTML viewer free?</h4>
+<p>Yes — completely free, no account needed, and no limits on how much code you can preview.</p>
+
+<h4>Is it safe to preview code I do not trust?</h4>
+<p>Yes, for practical purposes. The preview runs sandboxed — scripts cannot access your cookies, storage, or other tabs. Glance at the source first for anything actively suspicious.</p>
+
+<h4>Will my JavaScript run in the preview?</h4>
+<p>Yes — scripts execute normally inside the sandbox. Buttons, alerts, animations, and DOM manipulation all work.</p>
+
+<h4>Why are my images or styles missing?</h4>
+<p>Relative paths do not resolve without a file system. Use absolute URLs or inline assets as data URIs for faithful previews.</p>
+
+<h4>Can I preview PHP or server-side code?</h4>
+<p>No — the viewer renders client-side HTML, CSS, and JavaScript only. Server code needs a real server environment.</p>
+
+<h4>Can I test mobile layouts?</h4>
+<p>Yes. Resize the preview pane or use device-width presets to see how your design responds at different screen sizes.</p>
+
+<h4>Is my code data secure?</h4>
+<p>Yes. Rendering happens entirely in your browser — your HTML never leaves your device or touches a server.</p>
+
+<h4>How is this different from just opening an HTML file?</h4>
+<p>No file needed, instant live updates as you type, and the sandbox isolates untrusted code — three things a plain file open cannot offer.</p>
+</article>

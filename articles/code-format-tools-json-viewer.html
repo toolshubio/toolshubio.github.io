@@ -1,0 +1,97 @@
+<article class="tool-article">
+<h2>JSON Viewer — Explore JSON as a Collapsible Tree</h2>
+
+<p>An API response comes back and instead of clean structure you get one long line — nested brackets, commas, no spacing, three thousand characters wide. Technically it is valid JSON. Practically, it is unreadable. I used to count brackets by eye like some kind of monk before I discovered JSON viewers. Paste the blob in, and the tool lays it out as an expandable tree: objects you can open and close, arrays you can fold away, every value color-coded by type. Suddenly the data has a shape you can navigate.</p>
+
+<h3>What Is a JSON Viewer?</h3>
+
+<p>A JSON viewer renders raw JSON as an organized, navigable structure instead of a wall of text. The classic view is a tree: the root object at the top, its keys branching below, nested objects and arrays collapsible with a click. Long arrays fold down to a single line showing their length; deep nesting becomes a series of doors you open only when you need what is behind them.</p>
+
+<p>Many viewers offer more than the tree. A table view turns arrays of objects into sortable columns — perfect for scanning API records. A graph view draws the structure as connected nodes. And there is always the formatted text view for when you need the raw pretty-printed JSON to copy elsewhere.</p>
+
+<p>The viewer also validates as it parses. If your JSON has a syntax error, you get the error location instead of a tree — which makes the viewer a validator with a better reward for success.</p>
+
+<h3>How to Use the JSON Viewer</h3>
+
+<p>Paste your JSON into the editor, or drag and drop a .json file. The tree appears instantly — click any object or array to expand or collapse it. Use the search box to filter by key or value; matches get highlighted and their parent branches auto-expand so you can see them in context.</p>
+
+<p>Click any node to copy its path (like <code>user.address.city</code>) or its value — handy when you need to reference a deeply nested field in code. Toolbar buttons let you format, minify, or fix common errors without leaving the page. When you are done exploring, copy the formatted JSON or download it as a .json file.</p>
+
+<p>For large responses, resist the urge to expand everything. Collapse the branches you do not care about first, then drill into the one you do — the tree is a map, and maps work best when you zoom.</p>
+
+<h3>Tree View vs Table View vs Text View</h3>
+
+<table>
+<thead><tr><th>View Mode</th><th>Best For</th><th>What You Get</th></tr></thead>
+<tbody>
+<tr><td>Tree</td><td>Exploring nested structure</td><td>Expandable/collapsible nodes, type colors, path copying</td></tr>
+<tr><td>Table</td><td>Arrays of similar objects</td><td>Sortable columns, row scanning, record comparison</td></tr>
+<tr><td>Text</td><td>Copying and editing</td><td>Pretty-printed JSON with syntax highlighting</td></tr>
+<tr><td>Graph</td><td>Understanding relationships</td><td>Visual node map of the data structure</td></tr>
+</tbody>
+</table>
+
+<p>I switch between them constantly: tree to find the field, table to compare records across an array, text to copy the final snippet. Each view answers a different question about the same data.</p>
+
+<h3>Finding Data in Large JSON</h3>
+
+<p>The real power shows up with big payloads. A 2 MB API response is hopeless as text but manageable as a tree: search for the key name, and the viewer expands exactly the branches containing matches. JSONPath queries go further — an expression like <code>$.orders[*].total</code> extracts every order total in one shot, which beats scrolling through four hundred line items.</p>
+
+<p>Copy-path is the feature I use most. Click a deeply nested value, copy its path, paste it into your code — no more reconstructing <code>response.data.users[0].profile.address.city</code> from memory and getting an index wrong. The viewer writes the accessor for you.</p>
+
+<h3>Who Uses JSON Viewers?</h3>
+
+<p><strong>API developers</strong> inspect responses while debugging integrations. The tree reveals the actual structure — which fields exist, which are null, how deep the nesting goes — faster than any documentation.</p>
+
+<p><strong>Data analysts</strong> explore JSON exports before writing processing scripts. Seeing the shape of the data first means the script handles the real structure, not the assumed one.</p>
+
+<p><strong>QA testers</strong> compare expected vs actual payloads. Two trees side by side make differences obvious in a way raw text diffs do not.</p>
+
+<p><strong>Support staff</strong> troubleshooting integrations use viewers to read webhook payloads without needing a developer to translate.</p>
+
+<p><strong>Students</strong> learning about APIs paste responses into a viewer to understand what "JSON" actually looks like in the wild — the tree makes the abstract concrete.</p>
+
+<h3>Tips for Working With Big Payloads</h3>
+
+<p>Let the viewer do the navigating: search instead of scrolling, collapse instead of skimming. If the JSON is invalid, fix the syntax first — the tree cannot render what the parser cannot read, and the error message tells you where to look. For recurring exploration (the same API every day), save the formatted output locally so you are not re-pasting. And when you need a slice of the data rather than the whole thing, use JSONPath or copy just that branch instead of hauling the entire document into your editor.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Collapsible tree view</strong> — expand and collapse nested objects and arrays.</li>
+<li><strong>Table and graph views</strong> — see the same data as sortable columns or a node map.</li>
+<li><strong>Real-time search</strong> — filter by key or value with matches highlighted.</li>
+<li><strong>Copy path or value</strong> — grab accessors and data from any node with one click.</li>
+<li><strong>JSONPath queries</strong> — extract exactly the values you need from large documents.</li>
+<li><strong>Type highlighting</strong> — strings, numbers, booleans, and nulls color-coded.</li>
+<li><strong>Built-in validation</strong> — syntax errors flagged with locations before rendering.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
+<li><strong>100% free</strong> — no signup, no limits, works on any device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this JSON viewer free?</h4>
+<p>Yes — completely free, no account needed, and no limits on how much JSON you can explore.</p>
+
+<h4>What is the difference between a JSON viewer and a formatter?</h4>
+<p>A formatter pretty-prints JSON as indented text. A viewer goes further, rendering it as an interactive tree (plus table and graph views) that you can expand, search, and query.</p>
+
+<h4>Can I view a JSON file, not just pasted text?</h4>
+<p>Yes. Drag and drop a .json file onto the tool, or use the upload option — the tree renders the same way.</p>
+
+<h4>Why does the tree not appear?</h4>
+<p>The JSON must be valid before it can be parsed into a tree. Check for quoted property names, correct comma placement, and balanced braces — the error message shows where parsing failed.</p>
+
+<h4>Can I edit JSON in the viewer?</h4>
+<p>You can edit the source text and the tree updates when the JSON is valid. For heavy editing, a dedicated JSON editor may suit you better.</p>
+
+<h4>What is JSONPath?</h4>
+<p>A query language for JSON, like XPath for XML. Expressions such as <code>$.users[*].email</code> extract matching values from anywhere in the document.</p>
+
+<h4>Is my JSON data secure?</h4>
+<p>Yes. Parsing, validation, and tree rendering all happen locally in your browser — your data never leaves your device.</p>
+
+<h4>Can it handle very large JSON files?</h4>
+<p>Yes — viewers are built for this, using efficient rendering so big API responses stay navigable. Collapse branches you do not need and search instead of scrolling.</p>
+</article>

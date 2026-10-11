@@ -1,66 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Advanced Website Speed Meter - Get Lab & Field performance data, Core Web Vitals, and technical SEO insights using Google's official infrastructure.">
-    <title>Website Speed Meter Pro | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../image-tools/css/global.css">
-    <link rel="stylesheet" href="../image-tools/css/components.css">
-    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Speed Meter Pro | TOOLSHUB</title>
+<meta name="description" content="Advanced Website Speed Meter - Get Lab &amp; Field performance data, Core Web Vitals, and technical SEO insights using Google&#x27;s official infrastructure.">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../image-tools/css/v3-design.css">
+<style>
+/* v3 compat — legacy tool markup mapped onto the v3 design system */
+:root{--border-color:#e4e4e7;--bg-tertiary:#f4f4f5;--bg-primary:#ffffff;--text-primary:#0a0a0b;--text-secondary:#3f3f46;--color-seo:#4f46e5}
+.ws-input,select.ws-input,textarea.ws-input{width:100%;border:1.5px solid #e4e4e7;border-radius:12px;padding:14px 16px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;outline:none;transition:.2s;background:#fff;color:#0a0a0b}
+.ws-input:focus{border-color:#4f46e5;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.ws-input::placeholder{color:#a1a1aa}
+.input-group{margin-bottom:20px}
+.input-label{display:block;font-weight:600;font-size:.92rem;margin-bottom:10px;color:#0a0a0b}
+.input-desc{font-size:.85rem;color:#71717a;margin-top:10px;line-height:1.6}
+.action-bar{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap}
+.output-section{margin-top:28px}
+.section-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.section-title{font-size:1.1rem;font-weight:700;letter-spacing:-.01em}
+.output-container{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden;background:#fff}
+.output-container table{width:100%;border-collapse:collapse;font-size:.94rem}
+.output-container th,.output-container td{padding:12px 16px;border-bottom:1px solid #f4f4f5;text-align:left}
+.output-code{font-family:monospace;font-size:.9rem;background:#f4f4f5;border:1px solid #e4e4e7;border-radius:12px;padding:16px;white-space:pre-wrap;word-break:break-all;color:#0a0a0b}
+.container,.tool-interface-container{max-width:100%}
+.schema-form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.mb-md{margin-bottom:16px}.mb-lg{margin-bottom:24px}.mb-sm{margin-bottom:8px}.mt-md{margin-top:16px}.mt-lg{margin-top:24px}.mt-sm{margin-top:8px}.text-center{text-align:center}
+.tab,.mode-btn,.device-tab,.preview-tab,.editor-tab,.nav-item{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;border:1px solid #e4e4e7;background:#fff;font-size:.88rem;font-weight:600;cursor:pointer;color:#3f3f46;transition:.15s;font-family:inherit}
+.tab:hover,.mode-btn:hover,.device-tab:hover,.preview-tab:hover,.editor-tab:hover,.nav-item:hover{border-color:#c7d2fe}
+.tab.active,.mode-btn.active,.device-tab.active,.preview-tab.active,.editor-tab.active,.nav-item.active{background:#0a0a0b;color:#fff;border-color:#0a0a0b}
+.btn-add-schema,.tu-btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;border:1px solid #e4e4e7;background:#fff;font-size:.85rem;font-weight:600;cursor:pointer;color:#3f3f46;transition:.15s;font-family:inherit}
+.btn-add-schema:hover,.tu-btn-ghost:hover{border-color:#c7d2fe;background:#eef2ff}
+.hidden{display:none!important}
+.selected{outline:2px solid #4f46e5;outline-offset:2px}
+.visual-card,.seo-card{border:1.5px solid #e4e4e7;border-radius:16px;padding:20px;cursor:pointer;transition:.15s;background:#fff}
+.visual-card:hover,.seo-card:hover{border-color:#c7d2fe}
+.option-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:24px}
+.card-icon{font-size:1.4rem;color:#4f46e5;display:block;margin-bottom:10px}
+.card-title{font-weight:700;margin-bottom:6px;color:#0a0a0b}
+.card-desc{font-size:.88rem;color:#71717a}
+.feature-card{border:1px solid #e4e4e7;border-radius:16px;padding:20px;background:#fff}
+.feature-title{font-size:.85rem;font-weight:600;color:#3f3f46;margin-bottom:8px}
+.feature-desc{font-size:.9rem;color:#71717a}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #f4f4f5;font-size:.92rem;color:#0a0a0b}
+.toggle-switch{position:relative;display:inline-block;width:48px;height:26px;flex:none}
+.toggle-switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;inset:0;background:#d4d4d8;border-radius:99px;transition:.2s;cursor:pointer}
+.slider:before{content:"";position:absolute;width:20px;height:20px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s}
+.toggle-switch input:checked+.slider{background:#4f46e5}
+.toggle-switch input:checked+.slider:before{transform:translateX(22px)}
+.checklist-item{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #e4e4e7;border-radius:12px;margin-bottom:10px;background:#fff;cursor:pointer;transition:.15s}
+.checklist-item:hover{border-color:#c7d2fe}
+.seo-result-item,.preview-box,#serpPreviewBox{border:1px solid #e4e4e7;border-radius:16px;padding:20px;background:#fff;margin-top:16px}
+.seo-url{color:#166534;font-size:.85rem}
+.seo-title{color:#1a0dab;font-size:1.1rem;margin:4px 0}
+.seo-desc{color:#3f3f46;font-size:.9rem}
+.status-badge{display:inline-block;padding:.5rem 1rem;border-radius:30px;font-weight:700}
+.bulk-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.bulk-table th,.bulk-table td{padding:10px 12px;border-bottom:1px solid #f4f4f5;text-align:left}
+.emotional-word{background:#fef3c7;padding:1px 4px;border-radius:4px}
+.power-word{background:#eef2ff;padding:1px 4px;border-radius:4px}
+.invalid,.duplicate-error{border-color:#ef4444!important}
+button.active:not(.nav-item):not(.tab):not(.mode-btn):not(.device-tab):not(.preview-tab):not(.editor-tab),a.active{box-shadow:inset 0 0 0 2px #4f46e5}
+.sim-row{display:flex;gap:10px;align-items:center;padding:8px 0;font-size:.9rem;color:#3f3f46}
+/* website speed test dashboard */
+.speed-dashboard{max-width:100%}
+.url-input-container{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.url-input-container .ws-input{flex:1;min-width:240px}
+.results-container,.history-section{margin-top:24px}
+.perf-header{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-bottom:20px}
+.vitals-summary{flex:1;min-width:240px}
+.gauge-wrapper{display:flex;gap:16px;flex-wrap:wrap}
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+.category-scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:20px 0}
+.screenshot-section,.audit-container{margin-top:28px}
+.audit-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:10px}
+.table-responsive{overflow-x:auto;border:1px solid #e4e4e7;border-radius:16px}
+.audit-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.audit-table th,.audit-table td{padding:12px 14px;border-bottom:1px solid #f4f4f5;text-align:left}
+.badge{display:inline-block;padding:4px 12px;border-radius:99px;font-size:.78rem;font-weight:700;background:#eef2ff;color:#4f46e5}
+.badge-secondary{background:#f4f4f5;color:#3f3f46}
+.analyze-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:14px;font-weight:600;font-size:.92rem;cursor:pointer;border:none;background:#0a0a0b;color:#fff;font-family:inherit;transition:.2s}
+.analyze-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -8px rgba(0,0,0,.3)}
+.loading-overlay{position:fixed;inset:0;background:rgba(255,255,255,.94);z-index:50;display:flex;align-items:center;justify-content:center}
+.progress-card{background:#fff;border:1px solid #e4e4e7;border-radius:20px;padding:36px;max-width:480px;width:90%;box-shadow:0 12px 40px -12px rgba(0,0,0,.12)}
+.p-bar{height:10px;background:#f4f4f5;border-radius:99px;overflow:hidden;margin:16px 0}
+.p-fill{height:100%;width:0;background:linear-gradient(135deg,#4f46e5,#7c3aed);border-radius:99px;transition:width .3s}
+.wst-step{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:.9rem;color:#3f3f46}
+.s-spin{width:16px;height:16px;border:2px solid #e4e4e7;border-top-color:#4f46e5;border-radius:50%;animation:spn .8s linear infinite;display:none;flex:none}
+@keyframes spn{to{transform:rotate(360deg)}}
+.error-board{border:1px solid #fecaca;background:#fef2f2;border-radius:16px;padding:28px;margin-top:20px}
+.screenshot-container{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden}
+.screenshot-img{max-width:100%;display:block}
+.data-source-badge{display:inline-block;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;background:#eef2ff;color:#4f46e5;margin-bottom:8px}
+/* aliases for markup injected by legacy JS at runtime */
+.seo-textarea{width:100%;min-height:160px;border:1.5px solid #e4e4e7;border-radius:16px;padding:22px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;line-height:1.8;resize:vertical;outline:none;transition:.2s;background:#fafafa;color:#0a0a0b}
+.seo-textarea:focus{border-color:#4f46e5;background:#fff;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.seo-textarea::placeholder{color:#a1a1aa}
+.seo-input,select.seo-input,.seo-select{width:100%;border:1.5px solid #e4e4e7;border-radius:12px;padding:14px 16px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;outline:none;transition:.2s;background:#fff;color:#0a0a0b}
+.seo-input:focus,.seo-select:focus{border-color:#4f46e5;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.seo-input::placeholder{color:#a1a1aa}
 
-
-  <link rel="stylesheet" href="../image-tools/css/th-header-footer.css">
+</style>
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../index.html#tools">All Tools</a><a href="../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../index.html#tools">Explore Tools</a></div>
+</div></header>
+<!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+<nav class="crumbs"><a href="../index.html">Home</a> &nbsp;/&nbsp; <span>Website Speed Meter Pro</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">SEO Tools</span>
+  <h1>Website <em>Speed</em> Meter Pro</h1>
+  <p>High-fidelity performance analysis using the Google Lighthouse engine and real-user data (CrUX).</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../image-tools/index.html">Image Tools</a><a href="../pdf-tools/index.html">PDF Tools</a><a href="../text-tools/index.html">Text & Writing</a><a href="../seo-tools/index.html">SEO Tools</a><a href="../calculator-tools/index.html">Calculators</a><a href="../binary-tools/index.html">Binary Tools</a><a href="../code-format-tools/index.html">Code & Formatters</a><a href="../doc-tools/index.html">Documents</a><a href="../other-tools/index.html">Other Tools</a><a href="../about-us.html">About Us</a><a href="../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a> &gt;
-                <a href="index.html">SEO Tools</a> &gt;
-                <span>Website Speed Meter Pro</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">Website Speed Meter Pro</h1>
-                <p class="tool-description">Advanced Website Speed Meter - Get Lab & Field performance data, Core Web Vitals, and technical SEO insights using Google's official infrastructure.</p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
-<main class="tool-main" style="margin-top: 100px;">
+</section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>Website Speed Meter Pro</b><span>v3.0 · local</span></div>
+  <div class="ws-body">
+
+<main class="tool-main">
 <div class="container">
 <!-- Manual breadcrumb removed as shared script is now used -->
-<div class="doc-hero">
-<h1 class="doc-hero-title">Website Speed Meter Pro</h1>
-<p class="doc-hero-subtitle">High-fidelity performance analysis using Google Lighthouse Engine and real
-                    user data (CruX).</p>
-</div>
 <div class="speed-dashboard">
 <!-- Input Panel -->
 <div class="url-input-container">
@@ -68,18 +143,18 @@
 <span class="url-icon">🌐</span>
 <input autocomplete="url" class="url-input" id="url-input" placeholder="https://example.com" required="" type="url"/>
 </div>
-<button class="analyze-btn" id="analyze-btn">
-<span>🚀</span> Analyze Speed
+<button class="analyze-btn tu-btn tu-btn-primary" id="analyze-btn">
+<i class="fa-solid fa-gauge-high"></i> Analyze Speed
                     </button>
-<button class="analyze-btn" id="print-btn" style="background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-color); display: none;">
-<span>🖨️</span> Report
+<button class="analyze-btn tu-btn tu-btn-ghost" id="print-btn" style="background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-color); display: none;">
+<i class="fa-solid fa-print"></i> Report
                     </button>
 </div>
 <!-- Results Panel -->
 <div class="results-container" id="results-area">
 <div class="device-tabs">
-<button class="device-tab active" data-strategy="mobile">📱 Mobile</button>
-<button class="device-tab" data-strategy="desktop">💻 Desktop</button>
+<button class="device-tab active tu-btn tu-btn-ghost" data-strategy="mobile"><i class="fa-solid fa-mobile-screen"></i> Mobile</button>
+<button class="device-tab tu-btn tu-btn-ghost" data-strategy="desktop"><i class="fa-solid fa-desktop"></i> Desktop</button>
 </div>
 <div id="dynamic-content">
 <!-- Success or Error UI injected here -->
@@ -104,19 +179,19 @@
 <div class="p-fill" id="p-fill"></div>
 </div>
 <div class="step-log">
-<div class="step" id="step-0">
+<div class="wst-step" id="step-0">
 <div class="s-spin"></div><span class="s-check">✅</span><span class="s-cross">❌</span> Handshaking
                     with PageSpeed API...
                 </div>
-<div class="step" id="step-1">
+<div class="wst-step" id="step-1">
 <div class="s-spin"></div><span class="s-check">✅</span><span class="s-cross">❌</span> Mobile Audit
                     (Strategy: Mobile)
                 </div>
-<div class="step" id="step-2">
+<div class="wst-step" id="step-2">
 <div class="s-spin"></div><span class="s-check">✅</span><span class="s-cross">❌</span> Desktop Audit
                     (Strategy: Desktop)
                 </div>
-<div class="step" id="step-3">
+<div class="wst-step" id="step-3">
 <div class="s-spin"></div><span class="s-check">✅</span><span class="s-cross">❌</span> Finalizing
                     Detailed Report...
                 </div>
@@ -203,40 +278,49 @@
                 or the server is unresponsive.
             </p>
 <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-<button class="analyze-btn" onclick="location.reload()" style="background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-color);">
-                    Try New URL
+<button class="analyze-btn tu-btn tu-btn-ghost" onclick="location.reload()" style="background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-color);">
+<i class="fa-solid fa-rotate-right"></i> Try New URL
                 </button>
-<button class="analyze-btn" id="retry-light-btn" onclick="retryLight()" style="background: var(--color-seo); color: white;">
-                    🚀 Try Light Audit (Fast)
+<button class="analyze-btn tu-btn tu-btn-ghost" id="retry-light-btn" onclick="retryLight()" style="background: var(--color-seo); color: white;">
+<i class="fa-solid fa-bolt"></i> Try Light Audit (Fast)
                 </button>
 </div>
 </div>
 </template>
-            </div>
-            <section class="seo-article" data-tool="website-speed-test">
-<article class="tool-article">
-<h2>Website Speed Test — Free Core Web Vitals Checker</h2>
 
-<p>I once watched a client lose a third of their checkout traffic after adding a chat widget and two tracking scripts. Nothing looked different — the page just took four seconds to become usable instead of one. A website speed test would have caught it the day it shipped. Enter a URL, get your load time plus the three Core Web Vitals Google uses as ranking signals, and see exactly what is slowing the page down.</p>
+  </div>
+</div></div>
 
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 — HOW IT WORKS</span><h2>Three steps, zero learning curve</h2></div>
+  <div class="steps">
+<div class="step"><div class="step-n">i.</div><h3>Enter your URL</h3><p>Paste the page URL you want to test.</p></div>
+<div class="step"><div class="step-n">ii.</div><h3>Run the audit</h3><p>The tool runs Lighthouse for mobile and desktop plus real-user CrUX data.</p></div>
+<div class="step"><div class="step-n">iii.</div><h3>Fix what matters</h3><p>Work through the opportunities ranked by speed impact.</p></div>
+  </div>
+</section>
+
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>Website Speed Test — Free Core Web Vitals Checker</h2>
+    <p class="deck">I once watched a client lose a third of their checkout traffic after adding a chat widget and two tracking scripts. Nothing looked different — the page just took four seconds to become usable instead of one. A website speed test would have caught it the day it shipped. Enter a URL, get your load time plus the three Core Web Vitals Google uses as ranking signals, and see exactly what is slowing the page down.</p>
+    <div class="article-meta">
+      <div class="avatar">T</div>
+      <div><b>TOOLSHUB Editorial</b><span>8 min read · Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+<p class="lead">I once watched a client lose a third of their checkout traffic after adding a chat widget and two tracking scripts. Nothing looked different — the page just took four seconds to become usable instead of one. A website speed test would have caught it the day it shipped. Enter a URL, get your load time plus the three Core Web Vitals Google uses as ranking signals, and see exactly what is slowing the page down.</p>
 <h3>What Is a Website Speed Test?</h3>
-
 <p>A speed test loads your page the way a visitor's browser would and measures what matters: how fast the main content appears, how quickly the page responds to input, and how stable the layout is while loading. The headline metrics are Google's <strong>Core Web Vitals</strong>: <strong>LCP (Largest Contentful Paint)</strong> — how fast the largest visible element renders; <strong>INP (Interaction to Next Paint)</strong> — how responsive the page feels during clicks and taps; and <strong>CLS (Cumulative Layout Shift)</strong> — how much the layout jumps around while loading. Google uses all three as ranking signals.</p>
-
 <p>Good tests report two kinds of data. <strong>Field data</strong> comes from real Chrome users over the past 28 days (the Chrome User Experience Report) — this is what Google actually ranks on. <strong>Lab data</strong> comes from a controlled simulated test — useful for diagnosing problems on new or low-traffic pages where field data does not exist yet. The best free tools (PageSpeed Insights at pagespeed.web.dev) show both, for mobile and desktop separately, plus a list of specific fixes with estimated time savings.</p>
-
 <h3>How to Use the Website Speed Test</h3>
-
 <p>Running the test is easy; reading it correctly is the skill.</p>
-
 <p>Enter your page's full URL and run the test — it takes 10–30 seconds. Check the <strong>mobile</strong> tab first: Google uses mobile-first indexing, and mobile scores are almost always worse than desktop. Look at the Core Web Vitals assessment badge — Pass or Fail — then the individual numbers: LCP should be 2.5 seconds or under, INP 200 milliseconds or under, CLS 0.1 or under.</p>
-
 <p>Then read the diagnostics below the scores. The tool lists specific opportunities — unoptimized images, unused JavaScript, render-blocking resources, missing text compression — each with an estimated savings. Work the list in order of impact, not ease: a 2-second image fix beats five 50-millisecond script tweaks. After each round of fixes, re-run the test to confirm the improvement in lab data.</p>
-
 <p>For the real verdict, check Google Search Console's Core Web Vitals report (Experience section) a few weeks later. It shows field data across your URLs, grouped by issue — that is the measurement that actually moves rankings, and it updates over a rolling 28-day window.</p>
-
 <h3>The Three Core Web Vitals, Plainly</h3>
-
 <table>
 <thead><tr><th>Metric</th><th>What it measures</th><th>Good</th><th>Needs work</th><th>Poor</th></tr></thead>
 <tbody>
@@ -245,23 +329,14 @@
 <tr><td><strong>CLS</strong> — Cumulative Layout Shift</td><td>How much the layout jumps while loading</td><td>≤ 0.1</td><td>0.1–0.25</td><td>&gt; 0.25</td></tr>
 </tbody>
 </table>
-
 <p>The common fixes map neatly to metrics: LCP is usually images (compress them, convert to WebP, never lazy-load the hero) and slow servers (TTFB — time to first byte — is often a hosting problem). INP is usually heavy JavaScript — defer non-essential scripts and audit plugins. CLS is usually images without width/height attributes and ads or widgets loading without reserved space. Fix in the order LCP → INP → CLS and you will cover the biggest ranking impact first.</p>
-
 <h3>Who Uses Website Speed Tests?</h3>
-
 <p><strong>Site owners</strong> run them to find out why traffic or conversions dipped — speed regressions are silent killers.</p>
-
 <p><strong>Developers</strong> use them at every deploy, catching the chat widget or tracking script that tanks performance before it ships.</p>
-
 <p><strong>E-commerce managers</strong> test product and checkout pages, where every extra second of load time measurably costs sales.</p>
-
 <p><strong>Bloggers</strong> check their themes and plugins — a bloated theme is the most common speed problem on WordPress.</p>
-
 <p><strong>SEOs</strong> include speed in every technical audit, since Core Web Vitals are a direct ranking signal and clients understand "your site is slow" better than most findings.</p>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>Core Web Vitals scores</strong> — LCP, INP, and CLS with pass/fail thresholds.</li>
 <li><strong>Mobile and desktop tests</strong> — separate scores for each, since they differ wildly.</li>
@@ -272,77 +347,42 @@
 <li><strong>100% free</strong> — Google's own tools cost nothing and need no signup.</li>
 <li><strong>Repeatable</strong> — re-run after every fix to verify the gain.</li>
 </ul>
+<h3>Frequently asked</h3>
+<div class="faq">
+<div class="faq-item open"><div class="faq-q">What is a good website speed? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Aim for LCP under 2.5 seconds, INP under 200 milliseconds, and CLS under 0.1. Those are Google's "Good" thresholds for Core Web Vitals — the band where speed stops costing you rankings.</p></div></div>
+<div class="faq-item"><div class="faq-q">Does page speed affect SEO? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — Core Web Vitals are a direct Google ranking signal. Beyond that, slow pages lose visitors before they convert: speed affects both rankings and revenue.</p></div></div>
+<div class="faq-item"><div class="faq-q">What is the difference between field data and lab data? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Field data comes from real Chrome users over 28 days and determines your ranking signal. Lab data comes from a controlled instant test and is best for diagnosing problems. Fix using lab data; judge using field data.</p></div></div>
+<div class="faq-item"><div class="faq-q">Why is my mobile score worse than desktop? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Phones have slower processors, slower networks, and smaller screens — the test simulates a mid-range device on a mobile connection. Since Google ranks on mobile experience, the mobile score is the one that matters.</p></div></div>
+<div class="faq-item"><div class="faq-q">What is TTFB? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Time To First Byte — how long your server takes to start responding. It is mostly a hosting problem, not a code problem. A slow TTFB on shared hosting often means an overloaded server.</p></div></div>
+<div class="faq-item"><div class="faq-q">Will the test work on a new site with no traffic? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Lab data works immediately — you get a full diagnostic. Field data appears once enough real Chrome users visit, which can take weeks on a new site. Use lab data until then.</p></div></div>
+<div class="faq-item"><div class="faq-q">Why did the test fail for my site? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Usually the URL is unreachable: the site blocks crawlers, requires a login, is not publicly reachable, or is extremely slow to respond. Double-check the full URL and try again.</p></div></div>
+<div class="faq-item"><div class="faq-q">Is this speed test free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — Google's PageSpeed Insights is free with no signup, and most third-party speed tools offer free tiers.</p></div></div>
+</div>
+  </div>
+</article></div>
 
-<h3>Frequently Asked Questions</h3>
-
-<h4>What is a good website speed?</h4>
-<p>Aim for LCP under 2.5 seconds, INP under 200 milliseconds, and CLS under 0.1. Those are Google's "Good" thresholds for Core Web Vitals — the band where speed stops costing you rankings.</p>
-
-<h4>Does page speed affect SEO?</h4>
-<p>Yes — Core Web Vitals are a direct Google ranking signal. Beyond that, slow pages lose visitors before they convert: speed affects both rankings and revenue.</p>
-
-<h4>What is the difference between field data and lab data?</h4>
-<p>Field data comes from real Chrome users over 28 days and determines your ranking signal. Lab data comes from a controlled instant test and is best for diagnosing problems. Fix using lab data; judge using field data.</p>
-
-<h4>Why is my mobile score worse than desktop?</h4>
-<p>Phones have slower processors, slower networks, and smaller screens — the test simulates a mid-range device on a mobile connection. Since Google ranks on mobile experience, the mobile score is the one that matters.</p>
-
-<h4>What is TTFB?</h4>
-<p>Time To First Byte — how long your server takes to start responding. It is mostly a hosting problem, not a code problem. A slow TTFB on shared hosting often means an overloaded server.</p>
-
-<h4>Will the test work on a new site with no traffic?</h4>
-<p>Lab data works immediately — you get a full diagnostic. Field data appears once enough real Chrome users visit, which can take weeks on a new site. Use lab data until then.</p>
-
-<h4>Why did the test fail for my site?</h4>
-<p>Usually the URL is unreachable: the site blocks crawlers, requires a login, is not publicly reachable, or is extremely slow to respond. Double-check the full URL and try again.</p>
-
-<h4>Is this speed test free?</h4>
-<p>Yes — Google's PageSpeed Insights is free with no signup, and most third-party speed tools offer free tiers.</p>
-</article>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 — KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+<a class="rel" href="seo-checklist.html"><i class="fa-solid fa-list-check" style="color:#4f46e5"></i><h3>SEO Checklist</h3><p>Track on-page SEO progress.</p></a>
+<a class="rel" href="seo-url-checker.html"><i class="fa-solid fa-link" style="color:#7c3aed"></i><h3>SEO URL Checker</h3><p>Validate SEO-friendly URLs.</p></a>
+<a class="rel" href="meta-tag-generator.html"><i class="fa-solid fa-tags" style="color:#4f46e5"></i><h3>Meta Tag Generator</h3><p>Generate and validate meta tags.</p></a>
+<a class="rel" href="robots-txt-generator.html"><i class="fa-solid fa-robot" style="color:#7c3aed"></i><h3>Robots.txt Generator</h3><p>Visual robots.txt rule builder.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../image-tools/index.html">Image Tools</a></li><li><a href="../pdf-tools/index.html">PDF Tools</a></li><li><a href="../text-tools/index.html">Text & Writing</a></li><li><a href="../seo-tools/index.html">SEO Tools</a></li><li><a href="../calculator-tools/index.html">Calculators</a></li><li><a href="../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../index.html#tools">All 203 tools</a></li><li><a href="../index.html#seo-tools">SEO tools</a></li><li><a href="../index.html#image-tools">Image tools</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../about-us.html">About</a><a href="../contact-us.html">Contact</a><a href="../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>© 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script>
         const API_KEY = 'AIzaSyBKfScKJX1T2POTmF--IHcRbGtG8reqJQo';
         const ENDPOINT = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
@@ -874,7 +914,6 @@
             return m[id] || "Run an in-depth audit on PageSpeed Insights for detailed technical instructions.";
         }
 
-    </script>
-  <script src="../image-tools/js/th-interactions.js"></script>
+    </script><script src="../image-tools/js/th-interactions.js"></script><script src="../image-tools/js/tu-unified.js"></script><script src="../image-tools/js/v3.js"></script>
 </body>
 </html>

@@ -1,0 +1,92 @@
+<article class="tool-article">
+<h2>HTML Formatter — Clean Up Messy Markup Instantly</h2>
+
+<p>HTML has a way of losing its shape. You copy a snippet from a tutorial, paste it into your project, and suddenly your carefully indented file has a block of markup with no line breaks and three levels of nesting flattened into one line. Or you open "view source" on a production page and find the entire document on a single line — minified for speed, unreadable for humans. An HTML formatter restores the structure: proper indentation, one element per line, nesting you can actually see. It's the fastest way to make markup readable again.</p>
+
+<h3>What an HTML Formatter Does</h3>
+
+<p>The tool parses your HTML and re-renders it with consistent formatting: each opening tag on its own line, children indented one level deeper than their parents, closing tags aligned with their openers. The document's <em>hierarchy</em> — which was always there logically — becomes visible physically.</p>
+
+<p>Consider this collapsed fragment:</p>
+
+<p><code>&lt;div class="card"&gt;&lt;h2&gt;Title&lt;/h2&gt;&lt;p&gt;Some text here.&lt;/p&gt;&lt;/div&gt;</code></p>
+
+<p>After formatting:</p>
+
+<pre><code>&lt;div class="card"&gt;
+    &lt;h2&gt;Title&lt;/h2&gt;
+    &lt;p&gt;Some text here.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<p>Same markup, same rendering in the browser — but now the parent-child relationship is obvious at a glance. On a real page with hundreds of nested elements, that visibility is the difference between understanding the layout and guessing at it.</p>
+
+<h3>How to Use the HTML Formatter</h3>
+
+<p>Paste, set indentation, format, copy. Four steps, a few seconds.</p>
+
+<p><strong>Step 1 — Paste your HTML.</strong> Drop messy, minified, or single-line markup into the input panel. You can also upload an <code>.html</code> file directly instead of pasting.</p>
+
+<p><strong>Step 2 — Choose your indentation.</strong> Pick 2 spaces, 4 spaces, or tabs to match your project's style. Consistency matters more than the choice itself — formatted code that matches your codebase drops in without friction.</p>
+
+<p><strong>Step 3 — Format.</strong> The tool parses the markup and outputs the indented version instantly. The statistics show line and character counts before and after, so you can see the transformation's scale.</p>
+
+<p><strong>Step 4 — Copy or download.</strong> Grab the formatted markup for your file or editor. If the output reveals structural problems — a missing closing tag, incorrect nesting — fix them in the readable version, which is precisely what formatting is for.</p>
+
+<h3>Why Formatting Finds Bugs</h3>
+
+<p>This is the formatter's hidden superpower: it doesn't just prettify, it <em>diagnoses</em>. When indentation reflects nesting, structural mistakes become visually obvious:</p>
+
+<p><strong>Missing closing tags</strong> show up as indentation that never returns to its level — a <code>&lt;div&gt;</code> whose children keep indenting deeper with no dedent is screaming that something wasn't closed.</p>
+
+<p><strong>Incorrect nesting</strong> — like a <code>&lt;p&gt;</code> wrapping a <code>&lt;div&gt;</code> — stands out immediately in formatted code, where the hierarchy violation is visible rather than buried in a tag soup.</p>
+
+<p><strong>Legacy cleanup</strong> becomes manageable: old HTML files that have been edited by five people over ten years lose all structure. One formatting pass modernizes the whole file, making the next edit — and the next code review — dramatically easier. Teams also use formatters to enforce consistent style, which quietly reduces merge conflicts in shared files.</p>
+
+<h3>Who Uses an HTML Formatter?</h3>
+
+<p><strong>Front-end developers</strong> format markup daily — cleaning pasted snippets, debugging page structure, and normalizing files before commits.</p>
+
+<p><strong>Email developers</strong> work with table-based HTML that arrives as dense single-line code; formatting is the first step before any edit.</p>
+
+<p><strong>Students</strong> learn document structure faster when the nesting is visible — formatted HTML teaches hierarchy in a way collapsed markup can't.</p>
+
+<p><strong>CMS and template editors</strong> paste content into systems that mangle formatting, then re-format the output to keep templates maintainable.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant formatting</strong> — messy or minified HTML restructured in milliseconds.</li>
+<li><strong>Customizable indentation</strong> — 2 spaces, 4 spaces, or tabs to match your project.</li>
+<li><strong>File upload</strong> — format whole <code>.html</code> files, not just pasted snippets.</li>
+<li><strong>Before/after statistics</strong> — line and character counts showing the transformation.</li>
+<li><strong>Copy and download</strong> — formatted markup ready for your editor.</li>
+<li><strong>Structure-revealing output</strong> — missing tags and bad nesting become visible.</li>
+<li><strong>Private and free</strong> — everything runs in your browser; your markup never leaves your device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is the difference between an HTML formatter and a beautifier?</h4>
+<p>They're the same thing — both terms describe reformatting HTML with proper indentation and line breaks for readability.</p>
+
+<h4>Will formatting change how my page looks?</h4>
+<p>No. Formatting only changes whitespace and line breaks in the source. Browsers collapse insignificant whitespace, so the rendered page is identical.</p>
+
+<h4>Can it format minified HTML?</h4>
+<p>Yes — that's one of its main jobs. Single-line minified markup gets expanded into properly indented, readable structure.</p>
+
+<h4>Does it validate my HTML?</h4>
+<p>Formatting reveals structural problems (unclosed tags, bad nesting) visually, but it's not a full validator. For strict validation, run the formatted output through an HTML validator.</p>
+
+<h4>What indentation should I use?</h4>
+<p>Match your project: 2 spaces is common in modern codebases, 4 spaces in others. The default 4-space setting is a safe starting point.</p>
+
+<h4>Can I format large HTML files?</h4>
+<p>Yes — the tool handles substantial documents (100KB+) in the browser. For extremely large files, consider formatting in sections.</p>
+
+<h4>Is my HTML uploaded to a server?</h4>
+<p>No. All formatting happens locally in your browser — your code is never sent, stored, or logged.</p>
+
+<h4>Is this HTML formatter free?</h4>
+<p>Yes — free, unlimited, no account required.</p>
+</article>

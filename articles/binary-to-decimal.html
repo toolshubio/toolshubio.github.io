@@ -1,0 +1,105 @@
+<article class="tool-article">
+<h2>Binary to Decimal Converter — Free Online Base Converter</h2>
+
+<p>Binary numbers look intimidating until you realize they are just counting with two fingers instead of ten. I have lost count of the times I needed to read a binary value — a subnet mask, a register setting, a homework problem — and wanted the plain decimal answer without doing powers of two on scrap paper. A binary to decimal converter does that arithmetic instantly: paste the bits, get the number.</p>
+
+<h3>What Is a Binary to Decimal Converter?</h3>
+
+<p>Binary is the base-2 number system: every position is a power of 2, and each digit (a bit) is either 0 or 1. Decimal is our everyday base-10 system. Converting means figuring out what a string of bits is worth in ordinary numbers. The bit on the far right is worth 1 (2⁰), the next 2 (2¹), then 4 (2²), 8 (2³), and so on — each 1-bit adds its position's value, each 0-bit adds nothing.</p>
+
+<p>So 1010 is 1×8 + 0×4 + 1×2 + 0×1 = 10. And 11111111 — eight ones — is 255, which network engineers will recognize instantly as a full subnet-mask octet. The converter multiplies each digit by its power of two and sums the results, the same math you would do by hand, without the hand.</p>
+
+<p>What surprised me when I first learned this is how much of computing quietly depends on it. IP addresses, file permissions, memory addresses, pixel colors — binary and hex are the machine's native tongue, and decimal is the human translation.</p>
+
+<h3>How to Use the Binary to Decimal Converter</h3>
+
+<p>Type or paste your binary number into the input box. Click Convert, and the decimal equivalent appears immediately — many tools update live as you type, which I find useful when experimenting with bit patterns and watching how each flipped bit changes the value.</p>
+
+<p>Copy the result to your clipboard or use it straight in your calculation. If you are a student, try converting small numbers by hand first (1101 = 13 is a classic), then verify with the tool; the instant feedback cements the positional-value idea far better than a textbook table. For longer strings, leading zeros are harmless — 0001010 converts to 10 just like 1010 does, since they add nothing to the sum.</p>
+
+<p>One habit worth building: read binary right to left when double-checking. The rightmost bit is the least significant, worth just 1, and powers grow leftward. Mixing up the direction is the most common manual-conversion mistake I see.</p>
+
+<h3>How Binary to Decimal Conversion Works</h3>
+
+<p>The math is one formula applied once per bit, and knowing it makes debugging conversions — and passing exams — much easier.</p>
+
+<p><strong>The positional formula.</strong> For a binary number with bits b₀…bₙ (counting from the right, starting at 0): decimal = b₀×2⁰ + b₁×2¹ + b₂×2² + … + bₙ×2ⁿ.</p>
+
+<p><strong>Worked example — 110101.</strong> Write the place values under the bits: positions 5→0 give 32, 16, 8, 4, 2, 1. Multiply: 1×32 + 1×16 + 0×8 + 1×4 + 0×2 + 1×1 = 32 + 16 + 4 + 1 = 53.</p>
+
+<p><strong>Worked example — 10101010.</strong> Place values 128, 64, 32, 16, 8, 4, 2, 1. Only the 1-bits count: 128 + 32 + 8 + 2 = 170. This is the bit pattern network admins see in a subnet mask octet, and 170 is much easier to say than "one-oh-one-oh..."</p>
+
+<p>A handy shortcut: memorize the place values up to 2⁷ (128, 64, 32, 16, 8, 4, 2, 1). Any 8-bit number becomes a quick mental addition, which is exactly how old-school programmers read bytes at a glance.</p>
+
+<h3>Common Binary to Decimal Examples</h3>
+
+<p>A reference table — I suggest checking a few against the tool to build trust in the pattern:</p>
+
+<table>
+<thead><tr><th>Binary</th><th>Calculation</th><th>Decimal</th></tr></thead>
+<tbody>
+<tr><td><code>0</code></td><td>0</td><td>0</td></tr>
+<tr><td><code>1</code></td><td>1</td><td>1</td></tr>
+<tr><td><code>10</code></td><td>2</td><td>2</td></tr>
+<tr><td><code>101</code></td><td>4 + 1</td><td>5</td></tr>
+<tr><td><code>1010</code></td><td>8 + 2</td><td>10</td></tr>
+<tr><td><code>1111</code></td><td>8 + 4 + 2 + 1</td><td>15</td></tr>
+<tr><td><code>10000</code></td><td>16</td><td>16</td></tr>
+<tr><td><code>1100100</code></td><td>64 + 32 + 4</td><td>100</td></tr>
+<tr><td><code>11111111</code></td><td>128 + 64 + 32 + 16 + 8 + 4 + 2 + 1</td><td>255</td></tr>
+</tbody>
+</table>
+
+<p>Notice the milestones: every power of two is a 1 followed by zeros (1000 = 8), and strings of all ones are one less than the next power (1111 = 15). Spotting those two patterns lets you read common binary values almost instantly.</p>
+
+<h3>Who Uses Binary to Decimal Converters?</h3>
+
+<p><strong>Students</strong> in computer science and digital electronics courses verify homework answers on number systems, where one mis-added power of two ruins the whole problem.</p>
+
+<p><strong>Programmers</strong> convert bitmasks, flags, and permission values while debugging — reading 0b1101 as "13" is faster than counting positions each time.</p>
+
+<p><strong>Network engineers</strong> translate subnet masks and binary IP octets into decimal dotted notation daily; 11111111 → 255 is muscle memory, but longer masks are not.</p>
+
+<p><strong>Embedded engineers</strong> interpret register settings and hardware status bytes, where each bit means something and the decimal value is the quick summary.</p>
+
+<p><strong>Teachers</strong> generate answer keys for number-system worksheets, where a tool that never mis-adds is worth its weight in gold.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant conversion</strong> — results appear as you type, even for long bit strings.</li>
+<li><strong>100% free</strong> — no signup, no subscription, no limits.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
+<li><strong>Handles any length</strong> — from 4-bit nibbles to 64-bit values.</li>
+<li><strong>Step-by-step breakdown</strong> — shows each bit's contribution for learning.</li>
+<li><strong>Leading zeros accepted</strong> — 0001010 converts exactly like 1010.</li>
+<li><strong>Copy with one click</strong> — grab the decimal result instantly.</li>
+<li><strong>Works everywhere</strong> — any modern browser on desktop or mobile.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this binary to decimal converter free?</h4>
+<p>Yes — free, no account, no limits.</p>
+
+<h4>How do I convert binary to decimal manually?</h4>
+<p>Multiply each bit by its power of 2 (starting from 2⁰ on the right) and add the results. For example, 1010 = 8 + 2 = 10.</p>
+
+<h4>Do leading zeros change the result?</h4>
+<p>No. 0001010 and 1010 both equal 10 — leading zeros add zero to the sum.</p>
+
+<h4>What is the decimal value of 11111111?</h4>
+<p>255 — the maximum value of one byte, and a full subnet-mask octet.</p>
+
+<h4>Can I convert very long binary numbers?</h4>
+<p>Yes. Good tools handle 32-bit, 64-bit, and longer strings without losing precision.</p>
+
+<h4>Why does the tool reject my input?</h4>
+<p>Binary accepts only 0 and 1. Letters, spaces in the middle, or digits like 2 are invalid.</p>
+
+<h4>Is my data secure?</h4>
+<p>Yes. Conversion happens entirely in your browser — your numbers never leave your device.</p>
+
+<h4>What is the difference between binary to decimal and binary to ASCII?</h4>
+<p>Binary to decimal gives you the numeric value (01000001 → 65). Binary to ASCII goes one step further and maps that value to a character (65 → A).</p>
+</article>

@@ -1,59 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free, pro Regex tester. Test regular expressions in real-time with full support for JavaScript regex engine 100% client-side.">
-    <title>Regex Tester - Real-time Regular Expression Testing | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../../image-tools/css/global.css">
-    <link rel="stylesheet" href="../../image-tools/css/components.css">
-    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
-
-
-  <link rel="stylesheet" href="../../image-tools/css/th-header-footer.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regex Tester - Real-time Regular Expression Testing | TOOLSHUB</title>
+<meta name="description" content="Free, pro Regex tester. Test regular expressions in real-time with full support for JavaScript regex engine 100% client-side.">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../../image-tools/css/v3-design.css">
+<style>.ws-textarea{font-family:ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,monospace}</style>
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../../index.html#tools">All Tools</a><a href="../../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../../index.html#tools">Explore Tools</a></div>
+</div></header>
+
+<nav class="crumbs"><a href="../../index.html">Home</a> &nbsp;/&nbsp; <a href="../../index.html#code-format-tools">Code &amp; Formatters</a> &nbsp;/&nbsp; <span>Regex Tester</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">Code Tools</span>
+  <h1>Regex <em>Tester.</em></h1>
+  <p>Build and test regular expressions with real-time highlighting and match groups.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../../image-tools/index.html">Image Tools</a><a href="../../pdf-tools/index.html">PDF Tools</a><a href="../../text-tools/index.html">Text & Writing</a><a href="../../seo-tools/index.html">SEO Tools</a><a href="../../calculator-tools/index.html">Calculators</a><a href="../../binary-tools/index.html">Binary Tools</a><a href="../../code-format-tools/index.html">Code & Formatters</a><a href="../../doc-tools/index.html">Documents</a><a href="../../other-tools/index.html">Other Tools</a><a href="../../about-us.html">About Us</a><a href="../../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../../index.html">Home</a> &gt;
-                <a href="../index.html">Code & Formatters</a> &gt;
-                <span>Regex Tester</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">Regex Tester</h1>
-                <p class="tool-description">Build and test regular expressions with real-time highlighting and match
-                    groups.</p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
+</section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>Regex Tester</b><span>v3.0 · local</span></div>
+  <div class="ws-body">
+<div class="tool-workspace">
 <div class="regex-header">
 <div class="regex-input-row">
 <span style="font-size: 1.5rem; color: var(--text-tertiary);">/</span>
@@ -66,11 +49,11 @@
 <div class="editor-container">
 <div class="editor-header">
 <span class="editor-title">Test String</span>
-<button class="btn btn-sm btn-secondary" onclick="loadSample()">Sample</button>
+<button class="btn btn-light" onclick="loadSample()">Sample</button>
 </div>
 <div id="highlight-overlay" style="position: absolute; pointer-events: none; padding: var(--space-4); white-space: pre-wrap; font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; line-height: 1.6; color: transparent; width: 100%;">
 </div>
-<textarea class="code-area" id="test-string" oninput="testRegex()" placeholder="Paste text here to test against your regex..."></textarea>
+<textarea class="ws-textarea" id="test-string" oninput="testRegex()" placeholder="Paste text here to test against your regex..."></textarea>
 </div>
 <div class="validator-results mt-6" id="results-panel">
 <h3 class="panel-title" id="match-count">0 Matches Found</h3>
@@ -88,39 +71,44 @@
 <div class="cheat-card"><code>$</code> End of line</div>
 </section>
 </div>
-            </div>
-            <section class="seo-article" data-tool="regular-expression-tester">
-<article class="tool-article">
-<h2>Regular Expression Tester — Test Your Regex Patterns Live</h2>
+</div>
+  </div>
+</div></div>
 
-<p>Regular expressions have a special talent for looking correct and being wrong. I once shipped an email validation pattern that rejected every address with a plus sign in it — <code>name+tag@example.com</code> — and didn't find out until users complained. The pattern looked fine to my eyes; it just didn't match reality. A regex tester closes that gap: you type the pattern, paste real test data, and watch the matches light up in real time. Wrong assumptions surface in seconds instead of in production.</p>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 — HOW IT WORKS</span><h2>How to use</h2><p>Get results in three simple steps.</p></div>
+  <div class="steps">
+    <div class="step"><div class="step-n">i.</div><h3>Write your regex</h3><p>Enter the pattern to test.</p></div>
+    <div class="step"><div class="step-n">ii.</div><h3>Add test text</h3><p>Paste sample strings.</p></div>
+    <div class="step"><div class="step-n">iii.</div><h3>See matches live</h3><p>Highlights update as you type.</p></div>
+  </div>
+</section>
 
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>Regular Expression Tester — Test Your Regex Patterns Live</h2>
+    <p class="deck">Free, pro Regex tester. Test regular expressions in real-time with full support for JavaScript regex engine 100% client-side.</p>
+    <div class="article-meta">
+      <div class="avatar">T</div>
+      <div><b>TOOLSHUB Editorial</b><span>6 min read · Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+    <p class="lead">Regular expressions have a special talent for looking correct and being wrong. I once shipped an email validation pattern that rejected every address with a plus sign in it — <code>name+tag@example.com</code> — and didn't find out until users complained. The pattern looked fine to my eyes; it just didn't match reality. A regex tester closes that gap: you type the pattern, paste real test data, and watch the matches light up in real time. Wrong assumptions surface in seconds instead of in production.</p>
 <h3>What Is a Regular Expression?</h3>
-
 <p>A regular expression (regex) is a search pattern written in a compact mini-language. Instead of searching for one literal string, you describe a <em>shape</em> of text: "three digits, then a dash, then four digits" or "anything that looks like an email address." Nearly every programming language supports them, and they power input validation, search-and-replace, data extraction, and log analysis.</p>
-
 <p>The classic example is email validation:</p>
-
 <p><code>^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$</code></p>
-
 <p>Reading it piece by piece: <code>^</code> anchors to the start, <code>[a-zA-Z0-9._%+-]+</code> matches one or more username characters, <code>@</code> is literal, <code>[a-zA-Z0-9.-]+</code> matches the domain, <code>\.</code> is a literal dot, <code>[a-zA-Z]{2,}</code> requires a 2+ letter extension, and <code>$</code> anchors to the end. Test it against <code>test@example.com</code> (matches), <code>invalid-email@</code> (no match), and <code>user.name@domain.co</code> (matches) — and you immediately see whether your pattern behaves.</p>
-
 <h3>How to Use the Regex Tester</h3>
-
 <p>Three boxes, instant feedback. The workflow mirrors how regex101 and similar tools work, stripped to the essentials.</p>
-
 <p><strong>Step 1 — Enter your pattern.</strong> Type the regex into the pattern field. If your pattern uses special behaviors, set the <strong>flags</strong>: <code>g</code> for global (find all matches, not just the first), <code>i</code> for case-insensitive, <code>m</code> for multiline (^ and $ match per line), <code>s</code> so <code>.</code> matches newlines too.</p>
-
 <p><strong>Step 2 — Paste your test string.</strong> Use real data, not idealized data: actual log lines, real user inputs, the messy CSV you're parsing. The tool highlights every match directly in the text as you type.</p>
-
 <p><strong>Step 3 — Read the match list.</strong> Below the highlighting, the results panel lists each match with its position and any captured groups. The <strong>match count</strong> tells you at a glance whether you're matching too much or too little.</p>
-
 <p><strong>Step 4 — Iterate.</strong> This is the real workflow: adjust the pattern, watch the highlights change, add an edge case to the test string, adjust again. A pattern is done when it matches everything it should and nothing it shouldn't — including the weird inputs.</p>
-
 <h3>Common Regex Tokens</h3>
-
 <p>Most patterns are built from a small set of pieces. Keep this table nearby while you work:</p>
-
 <table>
 <thead><tr><th>Token</th><th>Meaning</th><th>Example</th></tr></thead>
 <tbody>
@@ -134,28 +122,17 @@
 <tr><td><code>[abc]</code></td><td>Any one of these characters</td><td><code>[aeiou]</code> matches a vowel</td></tr>
 <tr><td><code>( )</code></td><td>Capture group</td><td><code>(\d+)-(\d+)</code> captures both parts</td></tr>
 <tr><td><code>|</code></td><td>Alternation (or)</td><td><code>cat|dog</code> matches either</td></tr>
-</table>
-
+</tbody></table>
 <p>Two warnings from experience: <code>.</code> and <code>*</code> are greedy by default — <code>.*</code> will swallow far more than you expect, so prefer specific character classes like <code>[^"]*</code>. And always anchor with <code>^</code> and <code>$</code> when validating whole inputs, or a partial match will pass validation it shouldn't.</p>
-
 <h3>Reading the Results</h3>
-
 <p>The highlight overlay is your fastest feedback: matched text lights up directly in your test string, so over-matching shows up as too much color and under-matching as too little. The <strong>match list</strong> gives precision — each match's text, its start/end position, and the contents of every capture group. Groups are how you extract data: a pattern like <code>(\d{4})-(\d{2})-(\d{2})</code> against <code>2026-10-11</code> captures year, month, and day separately, ready to use in code.</p>
-
 <p>When a pattern misbehaves, the usual suspects are: missing anchors (matches substrings you didn't intend), greedy quantifiers (matching across boundaries), unescaped special characters (a literal <code>.</code> written as <code>.</code> matches <em>anything</em>), and flag mistakes (forgetting <code>i</code> for case-insensitive input). Fix one thing at a time and watch the highlights update.</p>
-
 <h3>Who Uses a Regex Tester?</h3>
-
 <p><strong>Developers</strong> build and debug validation patterns for forms, parsers, and APIs — testing against real inputs before the pattern ships.</p>
-
 <p><strong>Data analysts</strong> extract structured pieces from messy text: dates from logs, prices from descriptions, IDs from filenames.</p>
-
 <p><strong>QA engineers</strong> verify that validation accepts valid input and rejects invalid input, including the edge cases developers forget.</p>
-
 <p><strong>Students</strong> learn regex by experimenting — changing one token and watching the matches move is faster than any tutorial.</p>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>Real-time match highlighting</strong> — matches light up in your test string as you type.</li>
 <li><strong>Match list with positions</strong> — every match, its location, and captured groups.</li>
@@ -165,81 +142,37 @@
 <li><strong>Token reference</strong> — common patterns and syntax at hand while you build.</li>
 <li><strong>Private and free</strong> — everything runs in your browser; patterns and test data never leave your device.</li>
 </ul>
+<div class="faq"><div class="faq-item open"><div class="faq-q">What is a regular expression? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>A search pattern that describes the shape of text rather than literal characters — used for validation, search-and-replace, extraction, and log analysis in nearly every programming language.</p></div></div><div class="faq-item"><div class="faq-q">How do I test if my regex works? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Enter the pattern, paste real test data, and check the highlighted matches. A pattern is correct when it matches everything it should and nothing it shouldn't — test edge cases, not just the happy path.</p></div></div><div class="faq-item"><div class="faq-q">What do the flags g, i, m, and s mean? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p><code>g</code> finds all matches instead of stopping at the first; <code>i</code> ignores case; <code>m</code> makes ^ and $ work per line; <code>s</code> lets <code>.</code> match newlines.</p></div></div><div class="faq-item"><div class="faq-q">Why is my pattern matching too much? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Usually greedy quantifiers (<code>.*</code> swallowing everything) or missing anchors. Try specific character classes like <code>[^"]*</code> instead of <code>.*</code>, and anchor with <code>^</code> and <code>$</code> for whole-input validation.</p></div></div><div class="faq-item"><div class="faq-q">How do I validate an email address? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>A common pattern is <code>^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$</code>. Test it against valid and invalid addresses — including plus-addressed ones like <code>name+tag@example.com</code>.</p></div></div><div class="faq-item"><div class="faq-q">What are capture groups? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Parenthesized parts of a pattern that extract matched substrings separately. <code>(\d{4})-(\d{2})-(\d{2})</code> on <code>2026-10-11</code> captures the year, month, and day as three usable values.</p></div></div><div class="faq-item"><div class="faq-q">Does regex syntax differ between languages? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Mostly it's consistent (JavaScript, Python, PHP share the core syntax), but advanced features vary by flavor. Test with the flavor you deploy to — subtle differences in lookbehind and named groups exist.</p></div></div><div class="faq-item"><div class="faq-q">Is this regex tester free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — free, no signup, and your patterns and test data stay in your browser.</p></div></div></div>
+  </div>
+</article></div>
 
-<h3>Frequently Asked Questions</h3>
-
-<h4>What is a regular expression?</h4>
-<p>A search pattern that describes the shape of text rather than literal characters — used for validation, search-and-replace, extraction, and log analysis in nearly every programming language.</p>
-
-<h4>How do I test if my regex works?</h4>
-<p>Enter the pattern, paste real test data, and check the highlighted matches. A pattern is correct when it matches everything it should and nothing it shouldn't — test edge cases, not just the happy path.</p>
-
-<h4>What do the flags g, i, m, and s mean?</h4>
-<p><code>g</code> finds all matches instead of stopping at the first; <code>i</code> ignores case; <code>m</code> makes ^ and $ work per line; <code>s</code> lets <code>.</code> match newlines.</p>
-
-<h4>Why is my pattern matching too much?</h4>
-<p>Usually greedy quantifiers (<code>.*</code> swallowing everything) or missing anchors. Try specific character classes like <code>[^"]*</code> instead of <code>.*</code>, and anchor with <code>^</code> and <code>$</code> for whole-input validation.</p>
-
-<h4>How do I validate an email address?</h4>
-<p>A common pattern is <code>^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$</code>. Test it against valid and invalid addresses — including plus-addressed ones like <code>name+tag@example.com</code>.</p>
-
-<h4>What are capture groups?</h4>
-<p>Parenthesized parts of a pattern that extract matched substrings separately. <code>(\d{4})-(\d{2})-(\d{2})</code> on <code>2026-10-11</code> captures the year, month, and day as three usable values.</p>
-
-<h4>Does regex syntax differ between languages?</h4>
-<p>Mostly it's consistent (JavaScript, Python, PHP share the core syntax), but advanced features vary by flavor. Test with the flavor you deploy to — subtle differences in lookbehind and named groups exist.</p>
-
-<h4>Is this regex tester free?</h4>
-<p>Yes — free, no signup, and your patterns and test data stay in your browser.</p>
-</article>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 — KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+    <a class="rel" href="code-diff-viewer.html"><i class="fa-solid fa-code-compare" style="color:#4f46e5"></i><h3>Code Diff Viewer</h3><p>Compare two versions of code to quickly identify what was added, removed, or modified.</p></a>
+    <a class="rel" href="code-obfuscator.html"><i class="fa-solid fa-eye-slash" style="color:#7c3aed"></i><h3>Code Obfuscator</h3><p>Conceal your JavaScript logic to prevent easy reverse engineering and manual tampering.</p></a>
+    <a class="rel" href="syntax-highlighter.html"><i class="fa-solid fa-palette" style="color:#4f46e5"></i><h3>Syntax Highlighter</h3><p>Generate beautiful, color-coded snapshots of your source code for tutorials and documentat</p></a>
+    <a class="rel" href="../encoders/base64-encoder-decoder.html"><i class="fa-solid fa-key" style="color:#7c3aed"></i><h3>Base64 Encoder / Decoder</h3><p>Convert text string or binary data into Base64 format and decode it back instantly.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../../image-tools/index.html">Image Tools</a></li><li><a href="../../pdf-tools/index.html">PDF Tools</a></li><li><a href="../../text-tools/index.html">Text & Writing</a></li><li><a href="../../seo-tools/index.html">SEO Tools</a></li><li><a href="../../calculator-tools/index.html">Calculators</a></li><li><a href="../../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../../index.html#tools">All 203 tools</a></li><li><a href="../../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li><li><a href="../../code-format-tools/minifiers/css-minifier.html">CSS Minifier</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../../about-us.html">About</a></li><li><a href="../../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="../../about-us.html">About</a></li><li><a href="../../contact-us.html">Contact</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../../about-us.html">About</a><a href="../../contact-us.html">Contact</a><a href="../../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>© 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script src="../js/code-utils.js"></script>
 <script src="../js/code-ui.js"></script>
 <script>
-        CodeUI.init({ toolName: 'regex-tester' });
+CodeUI.init({ toolName: 'regex-tester' });
 
         function testRegex() {
             const pattern = document.getElementById('regex-pattern').value;
@@ -284,7 +217,7 @@
             { icon: 'ðŸ”¥', name: 'JS Minifier', desc: 'Shrink code', url: '../minifiers/javascript-minifier.html' },
             { icon: 'ðŸ”', name: 'Base64 Tool', desc: 'Encode data', url: '../encoders/base64-encoder-decoder.html' }
         ]);
-    </script>
-  <script src="../../image-tools/js/th-interactions.js"></script>
+</script>
+<script src="../../image-tools/js/v3.js"></script>
 </body>
 </html>

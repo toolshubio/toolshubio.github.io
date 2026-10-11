@@ -1,0 +1,97 @@
+<article class="tool-article">
+<h2>Sitemap Generator — Free XML Sitemap Builder Online</h2>
+
+<p>When I launched a new site with 40 pages and no sitemap, Google took three weeks to find half of them. The same site, with a sitemap submitted to Search Console, had new pages appearing within days. An XML sitemap generator builds that file for you: enter your site's URL, let the tool crawl it or paste your URL list, and download a standards-compliant sitemap.xml ready to submit.</p>
+
+<h3>What Is a Sitemap Generator?</h3>
+
+<p>An XML sitemap is a file (usually at <code>yourdomain.com/sitemap.xml</code>) that lists every URL on your site you want search engines to crawl, with metadata about each: when it was last updated (<code>lastmod</code>), how often it changes (<code>changefreq</code>), and its relative priority. Instead of relying purely on internal links to find your pages, Google gets a clean list — a discovery shortcut.</p>
+
+<p>The generator creates this file automatically. You give it your domain (or upload a list of URLs), it crawls your site up to a page limit — free tools typically cover 100 to 500 pages per run — and produces valid XML you can download, upload to your site root, and submit in Search Console. Sitemaps become essential for sites with deep page structures, sites that publish frequently, e-commerce stores with thousands of product pages, multilingual sites with hreflang, and any site recovering from indexing problems. One honest note: sitemap inclusion supports discovery, but it does not guarantee a page will be crawled or indexed.</p>
+
+<h3>How to Use the Sitemap Generator</h3>
+
+<p>The process is short, and most of it is waiting for the crawl.</p>
+
+<p>Enter your website's URL into the generator and choose your crawl settings — depth and max pages. Some tools also accept a CSV with one URL per row, which is faster for large sites where you already know the URLs. Click generate and let it crawl; for a small site this takes under a minute.</p>
+
+<p>Review the results before downloading. A good generator reports which URLs were included and which were excluded, with warnings. Exclude anything that should not be there: duplicate alternatives, redirecting URLs, error pages, and anything marked noindex. The sitemap should contain only preferred, canonical URLs — redirecting and non-canonical URLs should be left out so the file points to final pages only.</p>
+
+<p>Download the XML file, upload it to your site's root directory (so it answers at <code>yourdomain.com/sitemap.xml</code>), and submit it in Google Search Console under Sitemaps. Remove old or invalid sitemaps while you are there. Then regenerate and resubmit whenever you add significant new content — or better, let a plugin handle it automatically.</p>
+
+<h3>What Goes in the File</h3>
+
+<table>
+<thead><tr><th>Element</th><th>What it means</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td><code>&lt;loc&gt;</code></td><td>The page's full canonical URL</td><td>https://example.com/about</td></tr>
+<tr><td><code>&lt;lastmod&gt;</code></td><td>Date the page last changed</td><td>2026-10-01</td></tr>
+<tr><td><code>&lt;changefreq&gt;</code></td><td>How often it typically changes</td><td>weekly, monthly, yearly</td></tr>
+<tr><td><code>&lt;priority&gt;</code></td><td>Relative importance, 0.0–1.0</td><td>1.00 for homepage, 0.80 for key pages</td></tr>
+</tbody>
+</table>
+
+<p>A minimal valid entry looks like this:</p>
+
+<p>
+<code>&lt;url&gt;</code><br>
+<code>&nbsp;&nbsp;&lt;loc&gt;https://www.example.com/about&lt;/loc&gt;</code><br>
+<code>&nbsp;&nbsp;&lt;lastmod&gt;2026-10-05&lt;/lastmod&gt;</code><br>
+<code>&nbsp;&nbsp;&lt;changefreq&gt;monthly&lt;/changefreq&gt;</code><br>
+<code>&nbsp;&nbsp;&lt;priority&gt;0.80&lt;/priority&gt;</code><br>
+<code>&lt;/url&gt;</code>
+</p>
+
+<p>The generator writes all of this for you — no XML knowledge needed. Keep the file under 50,000 URLs and 50MB uncompressed; larger sites split into multiple sitemaps with a sitemap index file.</p>
+
+<h3>Who Uses Sitemap Generators?</h3>
+
+<p><strong>Site owners launching new sites</strong> use them to get pages discovered fast instead of waiting weeks for natural crawling.</p>
+
+<p><strong>Bloggers</strong> regenerate sitemaps after publishing bursts, so new posts enter the crawl queue immediately.</p>
+
+<p><strong>E-commerce managers</strong> use them for product catalogs where new items need to be found quickly to sell.</p>
+
+<p><strong>Developers</strong> use them for static sites and custom builds where no CMS auto-generates a sitemap.</p>
+
+<p><strong>SEOs</strong> use the included/excluded URL reports as a mini audit — the crawl reveals redirect chains, errors, and noindex pages worth fixing.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Automatic site crawling</strong> — enter a domain, get every discovered URL listed.</li>
+<li><strong>Manual URL input</strong> — paste or upload a CSV list for full control.</li>
+<li><strong>Standards-compliant XML</strong> — valid output Google and Bing accept.</li>
+<li><strong>Exclusion reporting</strong> — see which URLs were left out and why.</li>
+<li><strong>Respects robots.txt</strong> — blocked paths excluded automatically.</li>
+<li><strong>Image and hreflang support</strong> — on advanced tools, for rich and multilingual sites.</li>
+<li><strong>100% free</strong> — no signup on most tools (page limits apply).</li>
+<li><strong>Copy or download</strong> — take the file straight to your site root.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is an XML sitemap?</h4>
+<p>A file at your site's root listing every URL you want search engines to crawl, with metadata like last-modified dates and change frequency. It helps Google discover and crawl your pages efficiently.</p>
+
+<h4>Does a sitemap guarantee indexing?</h4>
+<p>No. It helps discovery, but Google still decides what to crawl and index. Think of it as handing over a map — the crawler still chooses the route.</p>
+
+<h4>Which URLs should I include?</h4>
+<p>Only preferred, canonical URLs you want indexed. Exclude duplicates, redirects, error pages, and noindex pages — a clean sitemap is a useful sitemap.</p>
+
+<h4>Where do I put the sitemap file?</h4>
+<p>In your site's root directory, so it answers at yourdomain.com/sitemap.xml. Then submit that URL in Google Search Console under Sitemaps.</p>
+
+<h4>How often should I update my sitemap?</h4>
+<p>Regenerate whenever you add or remove significant pages. WordPress SEO plugins do this automatically; static sites need a manual regenerate or a build-step generator.</p>
+
+<h4>What is the URL limit for a sitemap?</h4>
+<p>50,000 URLs and 50MB uncompressed per file. Larger sites use multiple sitemaps listed in a sitemap index file.</p>
+
+<h4>Do I need a sitemap if my site is small?</h4>
+<p>It is still good practice — it costs nothing and speeds up discovery. Small sites benefit most when pages are new and have few inbound links.</p>
+
+<h4>Is this generator free?</h4>
+<p>Yes — most online generators are free for small sites (typically up to 100–500 pages per run) with no signup required.</p>
+</article>

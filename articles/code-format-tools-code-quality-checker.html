@@ -1,0 +1,104 @@
+<article class="tool-article">
+<h2>Code Quality Checker — Analyze Your Code Online</h2>
+
+<p>I have a rule I learned the expensive way: never trust code you wrote after midnight. The second rule, learned slightly less expensively, is that a second pair of eyes — even automated ones — catches things tired eyes miss. A code quality checker scans your source code and reports the problems: bugs waiting to happen, style violations, overly complex functions, security red flags. Paste your code, get a report, fix what matters. It takes seconds and it has saved me from shipping embarrassing mistakes more than once.</p>
+
+<h3>What Is a Code Quality Checker?</h3>
+
+<p>At its core, this is static analysis: the tool reads your code without running it and looks for patterns known to cause trouble. That includes the obvious (syntax errors, unused variables) and the subtle (a function with 40 branches that nobody can reason about, a mutable default argument shared across calls, an <code>except</code> block that swallows every error silently).</p>
+
+<p>Think of it as the difference between spell-check and an editor. A compiler tells you whether the code runs; a quality checker tells you whether it is good. It measures things like cyclomatic complexity (how many independent paths run through a function), flags code smells (duplicated logic, god classes, magic numbers), and checks your style against conventions like PEP 8 for Python or standard ESLint rules for JavaScript.</p>
+
+<p>The output is a prioritized list: errors that will break things, warnings about likely bugs, and style notes. You do not have to fix everything — the point is seeing the list and making informed choices about what matters for this code.</p>
+
+<h3>How to Use the Code Quality Checker</h3>
+
+<p>Paste your code into the input box and select the language — Python, JavaScript, TypeScript, Java, Go, and others are commonly supported. Click analyze. Within seconds you get a report: issues grouped by severity, each with a line number, a rule name, and an explanation of why it matters.</p>
+
+<p>Work through the report top-down. Errors first — those are real bugs or guaranteed crashes. Then warnings: unused imports, shadowed variables, overly broad exception handling. Style suggestions come last; they matter for team code and open-source contributions, less for a personal script.</p>
+
+<p>My workflow: run the checker before every commit on code I am unsure about, and always before a pull request. It takes ten seconds and it means reviewers spend their time on logic instead of pointing out that I left a <code>console.log</code> in.</p>
+
+<h3>What the Checker Looks For</h3>
+
+<table>
+<thead><tr><th>Category</th><th>Example Issue</th><th>Why It Matters</th></tr></thead>
+<tbody>
+<tr><td>Bugs</td><td>Mutable default argument <code>def f(x=[])</code></td><td>Shared across calls — causes spooky state leaks</td></tr>
+<tr><td>Bugs</td><td>Bare <code>except:</code> catching everything</td><td>Hides real errors, including keyboard interrupts</td></tr>
+<tr><td>Complexity</td><td>Function with 50+ lines or 10+ branches</td><td>Untestable, unreadable, risky to change</td></tr>
+<tr><td>Style</td><td>Unused imports, wrong naming conventions</td><td>Clutter that slows down every reader</td></tr>
+<tr><td>Security</td><td>Hardcoded passwords, <code>eval()</code> on user input</td><td>Direct vulnerabilities</td></tr>
+<tr><td>Maintainability</td><td>Duplicated blocks, magic numbers</td><td>Every fix has to be made twice</td></tr>
+</tbody>
+</table>
+
+<p>Some checkers also score your code — a single number summarizing overall health. Treat the score as a trend indicator, not a grade: what matters is whether this week's code scores better than last week's, not whether you hit an arbitrary 95.</p>
+
+<h3>Quality Checking vs Linting vs Testing</h3>
+
+<p>These get confused constantly, so here is the separation:</p>
+
+<ul>
+<li><strong>Linter</strong> — fast, narrow, style-focused. Catches unused variables, formatting violations, and simple mistakes. Runs in milliseconds; lives in your editor.</li>
+<li><strong>Code quality checker</strong> — broader and deeper. Measures complexity, finds code smells, flags structural problems like god classes and deep nesting. The report you read before a review.</li>
+<li><strong>Tests</strong> — actually run the code and verify behavior. No amount of static analysis replaces a test that proves the feature works.</li>
+</ul>
+
+<p>They are layers, not alternatives. Lint while you type, check quality before you commit, test before you ship. Skipping the middle layer is how 200-line functions survive into production.</p>
+
+<h3>Who Uses Code Quality Checkers?</h3>
+
+<p><strong>Solo developers</strong> use them as the reviewer they do not have. When nobody else reads your code, the checker is the only thing standing between you and your worst habits.</p>
+
+<p><strong>Teams</strong> run quality checks in CI pipelines so every pull request arrives pre-screened. Reviewers focus on architecture and logic instead of style nits.</p>
+
+<p><strong>Students</strong> learning to program get feedback that a busy teacher cannot always give: why this function is too long, what that warning means, how professionals structure the same logic.</p>
+
+<p><strong>Freelancers</strong> run checks before delivering client work. Clean reports are quiet proof of craftsmanship — and they prevent the awkward "why does this break" call a month later.</p>
+
+<p><strong>Open-source maintainers</strong> use them to keep contributions consistent. A quality gate on pull requests means the codebase stays healthy no matter who contributes.</p>
+
+<h3>Tips for Acting on the Report</h3>
+
+<p>Fix errors, consider warnings, and treat style notes as team decisions — not every suggestion fits every project, and blindly obeying a linter can make code worse. Pay special attention to complexity warnings: a function flagged for too many branches is telling you it needs to be split, and splitting it now is ten times cheaper than debugging it later. If the checker supports configuration, tune the rules to your project once and stop arguing about them forever. And never use a clean report as proof the code is correct — quality tools find structural problems, not logic errors. Only tests and careful reading do that.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant analysis</strong> — paste code, get a full report in seconds.</li>
+<li><strong>Multi-language support</strong> — Python, JavaScript, TypeScript, Java, Go, and more.</li>
+<li><strong>Severity grouping</strong> — errors, warnings, and style notes clearly separated.</li>
+<li><strong>Complexity metrics</strong> — function length, nesting depth, branch counts measured.</li>
+<li><strong>Security scanning</strong> — flags hardcoded secrets and dangerous patterns.</li>
+<li><strong>Line-level detail</strong> — every issue pinned to an exact line with an explanation.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
+<li><strong>100% free</strong> — no signup, no limits, works on any device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this code quality checker free?</h4>
+<p>Yes — completely free, no account needed, and no limits on how much code you can analyze.</p>
+
+<h4>Which programming languages are supported?</h4>
+<p>Common ones include Python, JavaScript, TypeScript, Java, Go, PHP, Ruby, and more. Select your language before analyzing for accurate results.</p>
+
+<h4>Will it find all bugs in my code?</h4>
+<p>No. Static analysis finds structural problems and known bad patterns, but not logic errors — code that runs fine but does the wrong thing. You still need tests and careful review.</p>
+
+<h4>What is the difference between this and a linter?</h4>
+<p>A linter is fast and narrow (style, simple mistakes). A quality checker goes deeper: complexity metrics, code smells, structural issues, and security patterns.</p>
+
+<h4>Should I fix every issue it reports?</h4>
+<p>Fix all errors. Consider warnings case by case. Treat style suggestions as team conventions — not every rule fits every project.</p>
+
+<h4>What does "cyclomatic complexity" mean?</h4>
+<p>It counts the independent paths through a function — every if, loop, and case adds one. High complexity means hard-to-test, hard-to-understand code that should be split up.</p>
+
+<h4>Is my code data secure?</h4>
+<p>Yes. Analysis happens entirely in your browser — your code never leaves your device or touches a server.</p>
+
+<h4>Can it replace code review?</h4>
+<p>No — it complements review. The checker catches mechanical problems so human reviewers can spend their time on design, logic, and architecture.</p>
+</article>

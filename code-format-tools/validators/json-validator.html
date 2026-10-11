@@ -1,74 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free, pro JSON validator. Strict syntax checking for JSON files, catch errors, and verify RFC compliance 100% client-side.">
-    <title>JSON Validator - Strict Syntax & Quality Check | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../../image-tools/css/global.css">
-    <link rel="stylesheet" href="../../image-tools/css/components.css">
-    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
-
-
-  <link rel="stylesheet" href="../../image-tools/css/th-header-footer.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JSON Validator - Strict Syntax &amp; Quality Check | TOOLSHUB</title>
+<meta name="description" content="Free, pro JSON validator. Strict syntax checking for JSON files, catch errors, and verify RFC compliance 100% client-side.">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../../image-tools/css/v3-design.css">
+<style>.ws-textarea{font-family:ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,monospace}</style>
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../../index.html#tools">All Tools</a><a href="../../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../../index.html#tools">Explore Tools</a></div>
+</div></header>
+
+<nav class="crumbs"><a href="../../index.html">Home</a> &nbsp;/&nbsp; <a href="../../index.html#code-format-tools">Code &amp; Formatters</a> &nbsp;/&nbsp; <span>JSON Validator</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">Code Tools</span>
+  <h1>JSON <em>Validator.</em></h1>
+  <p>Strictly validate your JSON data against RFC 8259 specifications with detailed error tracking.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../../image-tools/index.html">Image Tools</a><a href="../../pdf-tools/index.html">PDF Tools</a><a href="../../text-tools/index.html">Text & Writing</a><a href="../../seo-tools/index.html">SEO Tools</a><a href="../../calculator-tools/index.html">Calculators</a><a href="../../binary-tools/index.html">Binary Tools</a><a href="../../code-format-tools/index.html">Code & Formatters</a><a href="../../doc-tools/index.html">Documents</a><a href="../../other-tools/index.html">Other Tools</a><a href="../../about-us.html">About Us</a><a href="../../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../../index.html">Home</a> &gt;
-                <a href="../index.html">Code & Formatters</a> &gt;
-                <span>JSON Validator</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">JSON Validator</h1>
-                <p class="tool-description">Strictly validate your JSON data against RFC 8259 specifications with
-                    detailed error tracking.</p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
+</section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>JSON Validator</b><span>v3.0 · local</span></div>
+  <div class="ws-body">
+<div class="tool-workspace">
 <div class="tool-workspace">
 <div class="editor-container">
 <div class="editor-header">
 <span class="editor-title">JSON Data to Audit</span>
 <div class="header-actions">
-<button class="btn btn-sm btn-secondary" onclick="document.getElementById('input-code').value = ''; validate()">Clear</button>
-<button class="btn btn-sm btn-secondary" onclick="loadInvalidSample()">Load Error
+<button class="btn btn-light" onclick="document.getElementById('input-code').value = ''; validate()"><i class="fa-solid fa-eraser"></i> Clear</button>
+<button class="btn btn-light" onclick="loadInvalidSample()">Load Error
                                 Sample</button>
 </div>
 </div>
-<textarea class="code-area" id="input-code" oninput="onInputChange()" placeholder='{"key": "value"}...'></textarea>
+<textarea class="ws-textarea" id="input-code" oninput="onInputChange()" placeholder='{"key": "value"}...'></textarea>
 <div class="code-stats" id="input-stats"></div>
 </div>
 <div class="action-bar" style="margin-top: var(--space-6);">
-<button class="btn btn-primary btn-lg" onclick="validate()"> Run Strict Validation</button>
+<button class="btn btn-dark" onclick="validate()"><i class="fa-solid fa-check-double"></i>  Run Strict Validation</button>
 </div>
 <div id="status-panel" style="display: none;">
 <div class="validator-status" id="status-card">
@@ -77,50 +60,41 @@
 <div class="error-details" id="error-box" style="display: none;"></div>
 </div>
 </div>
-<section class="tool-content mt-12">
-<div class="content-grid">
-<div class="main-text">
-<h2>The Importance of Valid JSON</h2>
-<p>JSON is an unforgiving format. A single missing quote or a trailing comma can cause
-                                entire applications to crash. Our validator doesn't just check if the code "works"â€”it
-                                verifies that it follows strict standards required by enterprise APIs.</p>
-<h3>What this tool catches:</h3>
-<ul>
-<li><strong>Trailing Commas:</strong> Forbidden in standard JSON.</li>
-<li><strong>Single Quotes:</strong> JSON requires double quotes for keys and strings.
-                                </li>
-<li><strong>Unquoted Keys:</strong> All keys must be wrapped in double quotes.</li>
-<li><strong>Encoding Issues:</strong> Detection of invalid escape characters.</li>
-</ul>
 </div>
 </div>
+  </div>
+</div></div>
+
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 — HOW IT WORKS</span><h2>How to use</h2><p>Get results in three simple steps.</p></div>
+  <div class="steps">
+    <div class="step"><div class="step-n">i.</div><h3>Paste JSON</h3><p>Drop your JSON into the editor.</p></div>
+    <div class="step"><div class="step-n">ii.</div><h3>Validate</h3><p>Instant syntax check with precise error locations.</p></div>
+    <div class="step"><div class="step-n">iii.</div><h3>Fix &amp; re-check</h3><p>Correct errors and validate again.</p></div>
+  </div>
 </section>
-</div>
-            </div>
-            <section class="seo-article" data-tool="json-validator">
-<article class="tool-article">
-<h2>JSON Validator — Check Your JSON for Syntax Errors</h2>
 
-<p>JSON is unforgiving. One trailing comma, one single-quoted string, one unclosed bracket — and the whole document refuses to parse. I have watched developers stare at a 400-error from an API for twenty minutes before realizing the payload had a comment in it. A JSON validator checks your data against the JSON specification and tells you exactly what is wrong and where: the line, the column, and a plain explanation. Paste it, click validate, fix it, move on.</p>
-
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>JSON Validator — Check Your JSON for Syntax Errors</h2>
+    <p class="deck">Free, pro JSON validator. Strict syntax checking for JSON files, catch errors, and verify RFC compliance 100% client-side.</p>
+    <div class="article-meta">
+      <div class="avatar">T</div>
+      <div><b>TOOLSHUB Editorial</b><span>6 min read · Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+    <p class="lead">JSON is unforgiving. One trailing comma, one single-quoted string, one unclosed bracket — and the whole document refuses to parse. I have watched developers stare at a 400-error from an API for twenty minutes before realizing the payload had a comment in it. A JSON validator checks your data against the JSON specification and tells you exactly what is wrong and where: the line, the column, and a plain explanation. Paste it, click validate, fix it, move on.</p>
 <h3>What Is a JSON Validator?</h3>
-
 <p>A validator answers one question: does this text follow the JSON rules? Under the hood it does what <code>JSON.parse()</code> does in your browser — attempts to parse the document — but instead of just throwing a cryptic error, it translates the failure into something useful: "trailing comma at line 4, column 12" rather than "Unexpected token } in JSON at position 145."</p>
-
 <p>This matters because JSON's rules are stricter than they look. JavaScript developers get tripped up constantly: object literals allow single quotes, trailing commas, comments, and unquoted keys — JSON allows none of those. The format looks like JavaScript but behaves like a contract, and the validator is how you check the contract before the other side rejects it.</p>
-
 <p>Many validators also offer auto-fix for the classics: strip comments, remove trailing commas, convert single quotes to double, quote unquoted keys. One click repairs what would take five minutes of careful editing — though I always re-validate after auto-fixing, because I like to see the green checkmark myself.</p>
-
 <h3>How to Use the JSON Validator</h3>
-
 <p>Paste your JSON into the input box — an API response, a config file, a webhook payload, whatever needs checking. Many tools validate live as you type; for very large documents you may need to click the validate button. The result is binary: valid, or a list of errors.</p>
-
 <p>If errors appear, each one shows the line and column plus a snippet of the surrounding text, and many tools offer a "jump to error" button that moves your cursor straight there. Fix the issue, and the validator re-checks — keep going until the status flips to valid. Then copy the verified JSON or download it as a .json file, confident it will parse anywhere.</p>
-
 <p>The fastest workflow I know: validate before pasting JSON into code, before deploying config files, and before retrying a failed API call. Three seconds of validation prevents thirty minutes of debugging.</p>
-
 <h3>The Most Common JSON Errors</h3>
-
 <table>
 <thead><tr><th>Error</th><th>Invalid</th><th>Fixed</th></tr></thead>
 <tbody>
@@ -133,33 +107,19 @@
 <tr><td>Python literals</td><td><code>{"ok": True, "x": None}</code></td><td><code>{"ok": true, "x": null}</code></td></tr>
 </tbody>
 </table>
-
 <p>The trailing comma is the undisputed champion — it sneaks in when you copy a JavaScript object literal or when an editor auto-adds commas. The Python literals (<code>True</code>, <code>None</code>) catch people moving data between Python scripts and JSON APIs. And comments, however helpful to humans, are simply not part of the JSON specification.</p>
-
 <h3>Syntax Validation vs Schema Validation</h3>
-
 <p>An important distinction: syntax validation checks <em>form</em>, schema validation checks <em>meaning</em>. A syntax validator confirms the JSON is well-formed — brackets balanced, quotes correct, commas in place. A schema validator goes further: it checks that the data matches an expected structure — that <code>email</code> is present, that <code>age</code> is a number, that <code>status</code> is one of the allowed values.</p>
-
 <p>Use syntax validation constantly — it is the everyday check. Reach for schema validation when you are designing an API contract or accepting data from untrusted sources, where "valid JSON" is not enough and "the right shape" is what matters.</p>
-
 <h3>Who Uses JSON Validators?</h3>
-
 <p><strong>API developers</strong> validate request and response bodies while debugging integrations. A 400 error from an API almost always means malformed JSON, and the validator finds it in seconds.</p>
-
 <p><strong>DevOps engineers</strong> validate config files — package.json, CI pipelines, feature flags — before deploying. One bad config can take down a deploy; validation is cheap insurance.</p>
-
 <p><strong>Data analysts</strong> check JSON exports before feeding them into processing scripts. A malformed export that crashes a pipeline at 3 AM is a preventable incident.</p>
-
 <p><strong>QA testers</strong> validate webhook payloads and mock responses to confirm test data is well-formed before the test even runs.</p>
-
 <p><strong>Students</strong> learning APIs use the validator to understand why their fetch calls fail — the error messages teach the JSON rules faster than documentation.</p>
-
 <h3>Tips for Error-Free JSON</h3>
-
 <p>Always use double quotes for keys and strings — make it a reflex, not a decision. Never leave trailing commas; configure your editor to flag them. Keep comments out of JSON files entirely (put documentation in a README instead). When generating JSON from code, use a proper serializer (<code>JSON.stringify</code>, <code>json.dumps</code>) rather than building strings by hand — serializers never produce invalid JSON. And for large files, validate in chunks while building them up rather than writing 5,000 lines and validating once.</p>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>Instant validation</strong> — live checking as you type, with manual validate for large files.</li>
 <li><strong>Precise error locations</strong> — line, column, context snippet, and jump-to-error.</li>
@@ -170,81 +130,37 @@
 <li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
 <li><strong>100% free</strong> — no signup, no limits, works on any device.</li>
 </ul>
+<div class="faq"><div class="faq-item open"><div class="faq-q">Is this JSON validator free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — completely free, no account needed, and no limits on how much JSON you can validate.</p></div></div><div class="faq-item"><div class="faq-q">Why is my JSON invalid when it looks fine? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>The usual suspects: a trailing comma, single quotes instead of double, a comment, or an unquoted key. The validator's error location points straight at it.</p></div></div><div class="faq-item"><div class="faq-q">Can JSON contain comments? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>No. Comments are not part of the JSON specification. Remove them before validating or sending the data.</p></div></div><div class="faq-item"><div class="faq-q">What is the difference between JSON and a JavaScript object? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>JSON is a strict data format: double quotes required, no comments, no trailing commas, no functions. JavaScript object literals are more permissive. Code that works as a JS object may be invalid JSON.</p></div></div><div class="faq-item"><div class="faq-q">What does "Unexpected token" mean? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>The parser hit a character where it did not expect one — usually a misplaced comma, bracket, or quote. The line and column in the error message show where parsing broke down.</p></div></div><div class="faq-item"><div class="faq-q">Can the tool fix my JSON automatically? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes, for common issues: trailing commas, comments, single quotes, unquoted keys, and Python-style literals can be repaired with one click. Always re-validate afterward.</p></div></div><div class="faq-item"><div class="faq-q">Is my JSON data secure? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes. Validation happens entirely in your browser — your data never leaves your device or touches a server.</p></div></div><div class="faq-item"><div class="faq-q">Does this check JSON Schema? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>No — this validates syntax (is it well-formed JSON?). Schema validation (does it match an expected structure?) is a separate, more specialized check.</p></div></div></div>
+  </div>
+</article></div>
 
-<h3>Frequently Asked Questions</h3>
-
-<h4>Is this JSON validator free?</h4>
-<p>Yes — completely free, no account needed, and no limits on how much JSON you can validate.</p>
-
-<h4>Why is my JSON invalid when it looks fine?</h4>
-<p>The usual suspects: a trailing comma, single quotes instead of double, a comment, or an unquoted key. The validator's error location points straight at it.</p>
-
-<h4>Can JSON contain comments?</h4>
-<p>No. Comments are not part of the JSON specification. Remove them before validating or sending the data.</p>
-
-<h4>What is the difference between JSON and a JavaScript object?</h4>
-<p>JSON is a strict data format: double quotes required, no comments, no trailing commas, no functions. JavaScript object literals are more permissive. Code that works as a JS object may be invalid JSON.</p>
-
-<h4>What does "Unexpected token" mean?</h4>
-<p>The parser hit a character where it did not expect one — usually a misplaced comma, bracket, or quote. The line and column in the error message show where parsing broke down.</p>
-
-<h4>Can the tool fix my JSON automatically?</h4>
-<p>Yes, for common issues: trailing commas, comments, single quotes, unquoted keys, and Python-style literals can be repaired with one click. Always re-validate afterward.</p>
-
-<h4>Is my JSON data secure?</h4>
-<p>Yes. Validation happens entirely in your browser — your data never leaves your device or touches a server.</p>
-
-<h4>Does this check JSON Schema?</h4>
-<p>No — this validates syntax (is it well-formed JSON?). Schema validation (does it match an expected structure?) is a separate, more specialized check.</p>
-</article>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 — KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+    <a class="rel" href="code-quality-checker.html"><i class="fa-solid fa-clipboard-check" style="color:#4f46e5"></i><h3>Code Quality Checker</h3><p>Instantly audit your source code for complexity, style violations, and potential performan</p></a>
+    <a class="rel" href="css-validator.html"><i class="fa-brands fa-css3-alt" style="color:#7c3aed"></i><h3>CSS Validator</h3><p>Audit your CSS for syntax errors, browser compatibility issues, and best practices.</p></a>
+    <a class="rel" href="../code-utilities/code-diff-viewer.html"><i class="fa-solid fa-code-compare" style="color:#4f46e5"></i><h3>Code Diff Viewer</h3><p>Compare two versions of code to quickly identify what was added, removed, or modified.</p></a>
+    <a class="rel" href="../code-utilities/code-obfuscator.html"><i class="fa-solid fa-eye-slash" style="color:#7c3aed"></i><h3>Code Obfuscator</h3><p>Conceal your JavaScript logic to prevent easy reverse engineering and manual tampering.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../../image-tools/index.html">Image Tools</a></li><li><a href="../../pdf-tools/index.html">PDF Tools</a></li><li><a href="../../text-tools/index.html">Text & Writing</a></li><li><a href="../../seo-tools/index.html">SEO Tools</a></li><li><a href="../../calculator-tools/index.html">Calculators</a></li><li><a href="../../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../../index.html#tools">All 203 tools</a></li><li><a href="../../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li><li><a href="../../code-format-tools/minifiers/css-minifier.html">CSS Minifier</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../../about-us.html">About</a></li><li><a href="../../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="../../about-us.html">About</a></li><li><a href="../../contact-us.html">Contact</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../../about-us.html">About</a><a href="../../contact-us.html">Contact</a><a href="../../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>© 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script src="../js/code-utils.js"></script>
 <script src="../js/code-ui.js"></script>
 <script>
-        CodeUI.init({ toolName: 'json-validator' });
+CodeUI.init({ toolName: 'json-validator' });
 
         function onInputChange() {
             const code = document.getElementById('input-code').value;
@@ -292,7 +208,7 @@
             { icon: 'ðŸ‘ï¸', name: 'JSON Viewer', desc: 'Interactive tree view', url: '../viewers/json-viewer.html' },
             { icon: 'âœ…', name: 'CSS Validator', desc: 'Check style syntax', url: 'css-validator.html' }
         ]);
-    </script>
-  <script src="../../image-tools/js/th-interactions.js"></script>
+</script>
+<script src="../../image-tools/js/v3.js"></script>
 </body>
 </html>

@@ -1,0 +1,93 @@
+<article class="tool-article">
+<h2>Bulk Resizer — Resize Hundreds of Images at Once, Free</h2>
+
+<p>I once spent an entire afternoon resizing 200 product photos one by one before a store launch. Drag, resize, save, repeat. By photo forty I was making mistakes; by photo hundred I was questioning my career choices. A bulk resizer does that same afternoon's work in about thirty seconds: you drop in a folder of images, set the target dimensions once, and download everything resized. This free tool processes it all in your browser — no uploads, no accounts, no watermarks on the output.</p>
+
+<h3>What Is a Bulk Image Resizer?</h3>
+
+<p>It is exactly what the name says: a resizer that works on many images at once instead of one at a time. You choose resize settings — exact pixel dimensions, a percentage, or a target file size — and the tool applies them to every image in your batch. The results download individually or as a single ZIP file.</p>
+
+<p>When I first looked at these tools, I assumed "bulk" meant slower, queued processing on some distant server. The better ones flipped that: because everything runs locally in your browser via the Canvas API, a batch of images resizes in seconds without touching a server at all. No bandwidth spent uploading, no queue, no deleted-after-24-hours privacy policy to read. Your files never leave your device.</p>
+
+<p>The companion features matter too. Good bulk tools let you set output format (JPG, PNG, WebP), quality levels, and rename files with patterns like <code>product-001.jpg</code> — the boring details that turn a pile of exports into a usable set.</p>
+
+<h3>How to Batch Resize Images Online</h3>
+
+<p><strong>Step 1 — Upload your images.</strong> Drag and drop a batch into the tool. JPG, PNG, and WebP are supported. There is no arbitrary file limit and no sign-up form standing in the way — drop, configure, download.</p>
+
+<p><strong>Step 2 — Choose your resize settings.</strong> Three ways to size: exact dimensions (width × height), a percentage of the original, or a target file size. Social presets are worth a look if you are prepping for specific platforms — Instagram, marketplace listings, and web thumbnails all have their own expected sizes.</p>
+
+<p><strong>Step 3 — Lock the aspect ratio.</strong> This is the setting people forget and then regret. Without the ratio locked, a batch of mixed photos gets stretched and squashed. Keep it locked unless you genuinely want every image at identical pixel dimensions (in which case, cropping is the honest approach — see the <strong>crop</strong> tool).</p>
+
+<p><strong>Step 4 — Download everything.</strong> Save files individually or grab the whole batch as one ZIP. Some tools also offer direct folder download via the browser's File System Access API.</p>
+
+<p>Habit worth building: check one result at full size before downloading the batch. If your settings are off — wrong orientation, quality too low — you want to catch it on photo one, not photo two hundred.</p>
+
+<h3>Resize Settings That Actually Matter</h3>
+
+<p>Not every option deserves your attention. These do:</p>
+
+<table>
+<thead><tr><th>Setting</th><th>What it does</th><th>My take</th></tr></thead>
+<tbody>
+<tr><td>Exact dimensions</td><td>Sets width/height in pixels</td><td>Best when a platform demands specific sizes</td></tr>
+<tr><td>Percentage</td><td>Scales each image by a ratio</td><td>Fastest for uniform shrinkage of mixed originals</td></tr>
+<tr><td>Aspect ratio lock</td><td>Preserves width:height proportion</td><td>Keep it on — always, unless cropping deliberately</td></tr>
+<tr><td>Output format</td><td>JPG, PNG, or WebP</td><td>WebP at ~80% quality is the size-vs-clarity sweet spot for web</td></tr>
+<tr><td>Quality slider</td><td>Compression level for lossy formats</td><td>80% is the practical default; 90%+ for portfolio work</td></tr>
+<tr><td>Batch rename pattern</td><td>Names outputs like product-001</td><td>Use it — future-you will thank present-you</td></tr>
+</tbody>
+</table>
+
+<p>One surprise from competitor research: resizing to smaller dimensions can occasionally <em>increase</em> file size if the settings produce highly detailed output at a generous quality level. If that happens, switch the output to WebP and drop quality to 80% or below.</p>
+
+<h3>Who Needs Bulk Resizing?</h3>
+
+<p><strong>E-commerce sellers</strong> are the classic users. A Shopify store with uniform product thumbnails looks professional; a store where every image is a different size looks abandoned. Bulk resizing plus a quick <strong>sharpness pass</strong> is the standard product-photo workflow.</p>
+
+<p><strong>Frontend developers</strong> resize and convert image assets for Core Web Vitals — lighter, correctly-sized images are one of the cheapest performance wins on a page. Batch output to WebP while you are at it.</p>
+
+<p><strong>Photographers</strong> preparing galleries for client review shrink hundreds of full-resolution originals into preview-friendly sizes. Nobody wants to wait for fifty 25MB files to load in a proofing gallery.</p>
+
+<p><strong>Content creators</strong> make platform variants — one shoot becomes Instagram squares, story verticals, and blog hero images. Bulk tools with preset dimensions make this a single pass.</p>
+
+<p><strong>Students and office teams</strong> shrink photo sets for email attachments, presentations, and reports. A 200-slide deck with raw phone photos is a file everyone hates; resized images fix it.</p>
+
+<h3>Practical Tips for Cleaner Batches</h3>
+
+<ul>
+<li><strong>Work from copies.</strong> Resizing is one-way — shrinking destroys pixels you cannot get back. Batch from a copy of your originals.</li>
+<li><strong>Upscale with caution.</strong> Enlarging small images creates softness and blockiness; pair with sharpening or an AI upscaler if you must go bigger.</li>
+<li><strong>Mind the formats.</strong> Mixed JPG/PNG batches can export uniformly — pick one output format for consistency.</li>
+<li><strong>Watch orientation.</strong> Phone photos carry EXIF orientation flags; good tools respect them, but verify one portrait shot before trusting the batch.</li>
+<li><strong>Rename on export.</strong> Sequential naming (<code>gallery-001</code> …) beats forty files all called "resized".</li>
+<li><strong>Test one file first.</strong> Run a single image through your settings, check size and quality, then unleash the full batch.</li>
+<li><strong>Combine with compression.</strong> Resizing plus a light <strong>image compressor</strong> pass is how you hit web performance targets.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is the bulk resizer really free?</h4>
+<p>Yes — 100% free, no sign-up, no watermarks on output, no limits on the number of images.</p>
+
+<h4>How many images can I resize at once?</h4>
+<p>There is no hard cap; tools like this have been tested with 200+ images. Performance depends on your device — large batches on a phone may take longer than on a desktop.</p>
+
+<h4>Are my images uploaded anywhere?</h4>
+<p>No. All processing happens locally in your browser. A neat way to prove it: load the page, disconnect from the internet, and use the tool — it still works.</p>
+
+<h4>Will resizing reduce image quality?</h4>
+<p>Shrinking inevitably discards pixels, but at sensible quality settings (WebP ~80%) the visible difference is nil. Avoid upscaling, which is where quality visibly breaks down.</p>
+
+<h4>What formats are supported?</h4>
+<p>JPG, JPEG, PNG, and WebP for input, with output to JPG, PNG, or WebP plus adjustable quality.</p>
+
+<h4>Can I resize to a target file size instead of dimensions?</h4>
+<p>Yes — percentage, exact dimensions, and target file size are the three standard modes. File-size mode is handy when an upload form caps attachments at, say, 2MB.</p>
+
+<h4>Does it keep the original filenames?</h4>
+<p>You choose: keep originals, or apply a rename pattern with sequential numbering. For big batches, patterned renaming keeps everything sortable.</p>
+
+<h4>What is the difference between bulk resizer and a single image resizer?</h4>
+<p>Same math, different throughput. A bulk resizer applies identical settings across many files at once and exports them together — hours of repetitive work compressed into one pass.</p>
+</article>

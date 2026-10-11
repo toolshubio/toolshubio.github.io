@@ -1,0 +1,75 @@
+<article class="tool-article">
+<h2>ICO to PNG Converter — Extract Icon Images as Standard PNGs</h2>
+
+<p>I was rebuilding a client's website once and needed their logo — but all I had was the favicon.ico file sitting in their site's root folder. No source art, no designer on call. An ICO to PNG converter cracked it open in seconds: out came crisp PNG versions of the icon at every size the file contained. If you have ever wondered what is actually inside an .ico file, this is the tool that shows you.</p>
+
+<h3>What Is an ICO File?</h3>
+
+<p>ICO is Microsoft's icon format, and it is stranger than most image formats. A single .ico file is a container that can hold multiple versions of the same image at different sizes — 16×16, 32×32, 48×48, 256×256, and more — plus multiple color depths, all bundled together. Windows picks the right size for each context: tiny in the taskbar, medium on the desktop, large in Explorer's extra-large view. The format also powers website favicons (that little icon in your browser tab).</p>
+
+<p>That container design is exactly why ICO files are awkward outside Windows. Most image editors, design tools, CMS platforms, and mobile apps cannot open .ico files at all. The image data is perfectly good — it is just locked in a box nothing else knows how to open.</p>
+
+<h3>Why Convert ICO to PNG?</h3>
+
+<ul>
+<li><strong>Universal compatibility</strong> — PNG opens in every editor, browser, and design tool; ICO barely opens outside Windows.</li>
+<li><strong>Editing</strong> — convert first, then crop, recolor, or composite the icon as a normal PNG layer.</li>
+<li><strong>Recovering artwork</strong> — extract a favicon or app icon when the source files are lost.</li>
+<li><strong>Web and print use</strong> — reuse icon graphics in presentations, documents, and mockups.</li>
+<li><strong>Archiving</strong> — PNG is a lossless, standardized format; safer long-term than a niche container.</li>
+</ul>
+
+<h3>How to Convert ICO to PNG</h3>
+
+<p><strong>Step 1 — Upload the ICO file.</strong> Drag and drop your .ico file or click to browse. Some converters also accept a URL — paste a site's favicon address (usually domain.com/favicon.ico) to extract it directly.</p>
+
+<p><strong>Step 2 — Extract.</strong> The converter reads the container, finds the images inside (often extracting the highest-resolution version, or every size as separate files), and outputs standard PNGs. Transparency is fully preserved — 32-bit ICOs carry a proper alpha channel, so the PNG keeps the icon's transparent regions instead of a white box.</p>
+
+<p><strong>Step 3 — Download.</strong> Grab the PNG you need. When the ICO held multiple sizes, you may get several files — pick the largest for editing, the smallest for reference.</p>
+
+<h3>Common ICO Sizes and What They Are For</h3>
+
+<table>
+<thead><tr><th>Size</th><th>Typical Use</th></tr></thead>
+<tbody>
+<tr><td>16×16</td><td>Browser tabs, menus, taskbar</td></tr>
+<tr><td>32×32</td><td>Desktop icons, high-DPI taskbar</td></tr>
+<tr><td>48×48</td><td>Windows Explorer views</td></tr>
+<tr><td>180×180</td><td>Apple Touch Icon (iOS home screen)</td></tr>
+<tr><td>192×192 / 512×512</td><td>Android icons, PWA manifests</td></tr>
+<tr><td>256×256</td><td>Large views, best extraction source</td></tr>
+</tbody>
+</table>
+
+<p>A practical tip: always work from the largest extracted size. A 256×256 PNG downscales cleanly to anything; a 16×16 upscaled to anything is a blurry mess. If your ICO only contains small sizes, the PNGs will be small too — conversion cannot invent detail that was never there.</p>
+
+<h3>Going the Other Way: Favicon Best Practices</h3>
+
+<p>Since ICO's main job is favicons, it is worth knowing the modern setup. Browsers today accept PNG favicons directly, but ICO remains the safest bet for legacy compatibility (older Internet Explorer versions especially). The current best practice: ship <strong>both</strong> — favicon.ico in the site root for legacy browsers, plus 180×180 and 192×192 PNGs for iOS and Android. Start from a square source image at 256×256 or larger; at 16×16 only the simplest shapes stay recognizable, so test your design tiny before finalizing.</p>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this ICO to PNG converter free?</h4>
+<p>Yes — free, no account, no watermarks.</p>
+
+<h4>What is an ICO file?</h4>
+<p>Microsoft's icon format: a container holding multiple sizes of the same image (16×16 up to 256×256), used for Windows icons and website favicons.</p>
+
+<h4>Will I get multiple PNGs from one ICO?</h4>
+<p>Often yes — converters typically extract each embedded size as a separate PNG, or at least the highest-resolution one.</p>
+
+<h4>Is transparency preserved?</h4>
+<p>Yes. 32-bit ICO files carry full alpha transparency, and it transfers to the PNG intact.</p>
+
+<h4>Can I convert a website's favicon to PNG?</h4>
+<p>Yes — paste the favicon URL (usually domain.com/favicon.ico) into a converter that supports URL input, and it extracts the icon as PNG.</p>
+
+<h4>Can I convert multiple ICO files at once?</h4>
+<p>Yes — batch conversion is supported on most tools.</p>
+
+<h4>Are my files uploaded to a server?</h4>
+<p>No — the conversion runs locally in your browser.</p>
+
+<h4>Can I make an ICO from a PNG instead?</h4>
+<p>Yes — that is the reverse workflow (PNG to ICO), used when creating favicons from logo artwork.</p>
+</article>

@@ -1,0 +1,89 @@
+<article class="tool-article">
+<h2>Color Palette — Extract a Color Palette From Any Image, Free</h2>
+
+<p>You see a photo with a color scheme you love — the warm dusk tones in a travel shot, the exact blue in a competitor's logo, the muted greens of a product photo — and you want those colors in your own project. Eyeballing hex codes never quite lands. A color palette extractor analyzes the image and pulls out its dominant colors as ready-to-use swatches with hex, RGB, and HSL values. Upload the image, get the palette, copy what you need — free, in seconds, in your browser.</p>
+
+<h3>What Is a Color Palette Extractor?</h3>
+
+<p>It is a tool that turns any picture into a usable set of colors. Under the hood, the technique is called <strong>color quantization</strong>: the tool samples pixels from a downscaled copy of your image, groups similar colors into clusters, and surfaces the dominant ones ranked by visual weight. Each swatch earns its place — no filler shades.</p>
+
+<p>Designers call it many names: image color picker, dominant color extractor, photo color scheme generator, color grabber. Whatever the name, the output is the same — a balanced palette you can drop into a design system, brand guide, CSS file, or mood board instead of guessing.</p>
+
+<p>When I first used one, what struck me was how it removed arguments. Two people can debate "which blue is in that photo" forever; the extractor just shows you the data. For teams, that is worth more than the time saved.</p>
+
+<h3>How to Extract Colors From an Image</h3>
+
+<p><strong>Step 1 — Upload your image.</strong> Drag and drop, click to browse, or paste straight from your clipboard. JPG, PNG, GIF, WebP, and BMP all work.</p>
+
+<p><strong>Step 2 — Set the color count.</strong> Choose how many swatches you want — anywhere from 2 to 12 or even 30 depending on the tool. Start with 6–8 for a balanced palette; go lower for focused UI themes, higher for illustration work. A diversity setting can force more visually distinct shades instead of near-identical neighbors.</p>
+
+<p><strong>Step 3 — Review and copy.</strong> Click any swatch to copy its hex code instantly; most tools also show RGB, HSL, and sometimes OKLCH or Lab values. Lock favorites and re-extract if you want a different mix.</p>
+
+<p><strong>Step 4 — Export.</strong> Download the palette in the format your workflow expects: CSS variables, Tailwind config, JSON tokens, SVG strip, PNG swatches, or professional formats like Adobe .aco/.ase, Procreate .swatches, and GIMP .gpl.</p>
+
+<p>Habit worth building: ignore-white and transparent-background options. Product photos on white backgrounds will otherwise hand you five shades of off-white as your "palette."</p>
+
+<h3>What You Can Do With an Extracted Palette</h3>
+
+<table>
+<thead><tr><th>Use case</th><th>How the palette helps</th></tr></thead>
+<tbody>
+<tr><td>Brand identity</td><td>Build a color system from an existing logo or photography</td></tr>
+<tr><td>Web design</td><td>Match UI colors to artwork; export as CSS variables</td></tr>
+<tr><td>Social content</td><td>Keep thumbnails and posts visually consistent</td></tr>
+<tr><td>Illustration</td><td>Keep new artwork consistent with existing visuals</td></tr>
+<tr><td>Mood boards</td><td>Generate gradients and backgrounds from a mood image</td></tr>
+<tr><td>Accessibility</td><td>Run WCAG contrast checks before committing colors to production</td></tr>
+</tbody>
+</table>
+
+<p>The accessibility angle deserves emphasis: some extractors include built-in contrast checks per swatch, so you can verify text legibility on a color before it ships. A beautiful palette that fails contrast is a liability — check early.</p>
+
+<h3>Who Extracts Color Palettes?</h3>
+
+<p><strong>Designers</strong> pull palettes from client logos, reference photos, and mood images to ground new work in colors that already exist in the brand world.</p>
+
+<p><strong>Developers</strong> convert extracted colors into design tokens — CSS custom properties, Tailwind configs, JSON — and wire them straight into a codebase.</p>
+
+<p><strong>Content creators</strong> keep thumbnails, channel art, and merch visually consistent by sampling from their own best-performing images.</p>
+
+<p><strong>Marketers</strong> build campaign palettes from product photography so ads, landing pages, and social posts share one coherent color story.</p>
+
+<h3>Practical Tips for Better Palettes</h3>
+
+<ul>
+<li><strong>Pick images with clear color stories.</strong> A sunset photo yields a gorgeous palette; a cluttered screenshot yields mud.</li>
+<li><strong>Exclude backgrounds.</strong> Use the ignore-white/transparent option so backdrops do not dominate the swatches.</li>
+<li><strong>Nudge toward brand colors.</strong> Extracted colors are editable — shift a swatch slightly toward your existing brand before exporting.</li>
+<li><strong>Test at real sizes.</strong> A color that sings as a swatch can overwhelm as a full background — mock it in context.</li>
+<li><strong>Check contrast.</strong> Run swatches through a WCAG checker before using them for text or UI elements.</li>
+<li><strong>Export, do not screenshot.</strong> Copy the actual hex values or export tokens — eyeballing from a screenshot reintroduces the guessing you just eliminated.</li>
+<li><strong>Sample multiple images.</strong> One photo gives a palette; three photos from the same shoot give a system.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is the color palette extractor free?</h4>
+<p>Yes — completely free, no account required.</p>
+
+<h4>How are the palette colors chosen?</h4>
+<p>The tool samples pixels from a downscaled copy of your image, groups similar colors (color quantization), and ranks the most prominent, visually distinct clusters for a clean, usable palette.</p>
+
+<h4>What formats can I export to?</h4>
+<p>CSS variables, Tailwind config, JSON tokens, CSV, SVG strips, and PNG swatches — plus professional formats like Adobe .aco/.ase, Procreate .swatches, GIMP .gpl, and Clip Studio Paint .cls.</p>
+
+<h4>Are my images uploaded to a server?</h4>
+<p>No. All color analysis happens locally in your browser — nothing is uploaded, stored, or seen by anyone else.</p>
+
+<h4>How many colors should I extract?</h4>
+<p>Start with 6–8 for a balanced palette. Use fewer (3–4) for focused UI themes, more (10–12+) for illustration or mood-board work. You can re-extract with different counts freely.</p>
+
+<h4>Can I copy hex and RGB values?</h4>
+<p>Yes — click any swatch to copy its hex code instantly, with RGB, HSL, and sometimes OKLCH/Lab values shown alongside.</p>
+
+<h4>My palette is all whites and grays — what went wrong?</h4>
+<p>The tool sampled your background. Enable the ignore-white or ignore-transparent option and re-extract — the real colors will surface.</p>
+
+<h4>Can I use extracted colors commercially?</h4>
+<p>Colors themselves are not copyrightable — extracting a palette from an image is fine. Just make sure you have rights to the source image if you are reproducing it beyond its colors.</p>
+</article>

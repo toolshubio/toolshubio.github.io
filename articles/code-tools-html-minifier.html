@@ -1,0 +1,113 @@
+<article class="tool-article">
+<h2>HTML Minifier — Slim Down Markup for Production</h2>
+
+<p>Gmail clips any email whose HTML exceeds 102 KB — it shows a truncated message with a "view entire message" link most subscribers never click. I discovered this the painful way, watching a carefully designed newsletter get chopped in half. The fix was not redesigning the email; it was minifying the HTML, which cut it by nearly a third and slid safely under the limit. That is the thing about HTML minification: it is invisible work with very visible consequences — faster pages, lower bandwidth bills, emails that actually arrive whole.</p>
+
+<h3>What Minification Removes</h3>
+
+<p>Minification deletes everything the browser does not need to render the page: comments, indentation, line breaks, extra spaces between tags. Then the careful tools go further — collapsing boolean attributes (<code>disabled="disabled"</code> to <code>disabled</code>), dropping redundant attributes HTML5 does not require, removing optional closing tags like <code>&lt;/li&gt;</code> and <code>&lt;/p&gt;</code> where safe, and minifying any CSS and JavaScript inside <code>&lt;style&gt;</code> and <code>&lt;script&gt;</code> blocks.</p>
+
+<p>A full document transforms like this. Before:</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Welcome&lt;/h1&gt;
+    &lt;p&gt;This is my site.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<p>After:</p>
+
+<code>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;My Website&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;Welcome&lt;/h1&gt;&lt;p&gt;This is my site.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</code>
+
+<p>Identical rendering, fewer bytes. On real pages the savings run 10–30% — a 50 KB file typically drops to around 35 KB. Modest per page, significant at scale.</p>
+
+<h3>The Email Case: Beating the 102 KB Clip</h3>
+
+<p>Email is where HTML minification stops being optional. Gmail clips messages over 102 KB of HTML; Yahoo and other clients have their own thresholds. Visual email builders generate notoriously verbose code — nested tables, inline styles on every element, comments everywhere — and it is easy to cross the limit without realizing it.</p>
+
+<table>
+<thead><tr><th>Email HTML Size</th><th>What Happens</th><th>Fix</th></tr></thead>
+<tbody>
+<tr><td>Under 102 KB</td><td>Full message delivered and displayed</td><td>None needed</td></tr>
+<tr><td>102–130 KB</td><td>Gmail clips with "view entire message"</td><td>Minify — usually enough</td></tr>
+<tr><td>Over 130 KB</td><td>Clipped everywhere, slow on mobile</td><td>Minify + trim content</td></tr>
+</tbody>
+</table>
+
+<p>Minification typically recovers 10–30% — often exactly the margin between clipped and delivered. It removes whitespace between tags, indentation, comments, and redundant attribute quotes without touching content, images, or links. The email looks identical; it just arrives in a smaller, safer package.</p>
+
+<h3>Minification in the Performance Stack</h3>
+
+<p>HTML minification is one layer of a stack, and it works best combined with the others. Minify the HTML (smaller document), minify the CSS and JS (smaller assets), enable gzip or Brotli on the server (compressed transfer), leverage browser caching (skip repeat downloads), and optimize images (usually the biggest win of all). Together, these routinely cut total load times by 2–3 seconds.</p>
+
+<p>For HTML specifically, the gains show up in Time to First Byte and the early render: the browser receives the document sooner and starts building the page sooner. Studies consistently show that even small delays hurt — a 2-second delay can increase bounce rates substantially — so shaving bytes off the very first resource pays disproportionate dividends.</p>
+
+<p>Modern build tools automate all of this: Webpack, Vite, and Parcel minify HTML as part of the production build. The online minifier covers everything outside a pipeline — static pages, email templates, landing pages, CMS output.</p>
+
+<h3>What Good Minifiers Protect</h3>
+
+<p>Aggressive byte-removal has danger zones, and quality tools know them. Content inside <code>&lt;pre&gt;</code> and <code>&lt;textarea&gt;</code> keeps its whitespace — it is meaningful there. <code>&lt;script&gt;</code> and <code>&lt;style&gt;</code> blocks get minified with language-aware rules, not blunt whitespace stripping. Conditional comments (still used in email HTML for Outlook) are preserved. And whitespace between inline elements is handled carefully, because removing it can visually join words that should be separated.</p>
+
+<p>If a minified page ever renders wrong, these protected zones are the first place to look — and the fix is usually switching to a less aggressive setting rather than abandoning minification.</p>
+
+<h3>Who Minifies HTML?</h3>
+
+<p><strong>Email developers</strong> minify every template as a matter of survival — the 102 KB clipping threshold makes it non-negotiable.</p>
+
+<p><strong>Web developers</strong> minify landing pages and static sites before deploy, especially anything without a build pipeline doing it automatically.</p>
+
+<p><strong>SEO specialists</strong> include it in page-speed audits as a quick, safe win that improves Core Web Vitals.</p>
+
+<p><strong>WordPress site owners</strong> minify to counteract the verbose markup page builders generate.</p>
+
+<p><strong>High-traffic site operators</strong> minify because bandwidth is money — 20% off every page view adds up fast on a CDN bill.</p>
+
+<h3>Tips for Production Use</h3>
+
+<p>Minify as the last step before deploy, never during development — you need readable HTML while you work. Keep originals in version control; minified output is disposable. Test the minified page in a real browser, clicking through interactive elements, because that is where edge cases surface. For email, always send a test to Gmail specifically and check for clipping. And automate it if you deploy regularly — a build plugin beats manual minification every time, because humans forget and pipelines do not.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant minification</strong> — paste HTML, get compressed markup in seconds.</li>
+<li><strong>Comment removal</strong> — developer comments stripped, conditional comments preserved.</li>
+<li><strong>Inline asset minification</strong> — embedded CSS and JS compressed too.</li>
+<li><strong>Protected elements</strong> — <code>&lt;pre&gt;</code>, <code>&lt;textarea&gt;</code>, and scripts handled safely.</li>
+<li><strong>Compression statistics</strong> — original vs minified size and percentage saved.</li>
+<li><strong>Configurable aggression</strong> — safe defaults with optional deeper compression.</li>
+<li><strong>Copy and download</strong> — clipboard copy or save as an .html file.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
+<li><strong>100% free</strong> — no signup, no limits, works on any device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this HTML minifier free?</h4>
+<p>Yes — completely free, no account needed, and no limits on how much HTML you can minify.</p>
+
+<h4>Will minification break my page or email?</h4>
+<p>It should not — only unnecessary characters are removed. Test in a browser (and in Gmail, for emails) before deploying, especially interactive elements.</p>
+
+<h4>How does minification help with Gmail clipping?</h4>
+<p>Gmail clips emails over 102 KB of HTML. Minification typically cuts 10–30%, often enough to bring a clipped email back under the threshold so the full message displays.</p>
+
+<h4>Can I reverse minification?</h4>
+<p>Partially — a formatter restores indentation, but comments are gone permanently. Always keep your original source.</p>
+
+<h4>Does it minify the CSS and JavaScript inside my HTML?</h4>
+<p>Yes — <code>&lt;style&gt;</code> and <code>&lt;script&gt;</code> blocks are compressed with language-aware rules. Separate .css/.js files need their own minifiers.</p>
+
+<h4>How much smaller will my HTML get?</h4>
+<p>Typically 10–30%. Verbose template or builder output saves the most; already-tight hand-written HTML saves less.</p>
+
+<h4>Is my HTML data secure?</h4>
+<p>Yes. Minification happens entirely in your browser — your code never leaves your device or touches a server.</p>
+
+<h4>Should I minify manually or automate it?</h4>
+<p>Automate for regular deploys (Webpack, Vite, Parcel, or a CMS plugin). Use the online tool for one-offs: static pages, email templates, and quick fixes.</p>
+</article>

@@ -1,0 +1,120 @@
+<article class="tool-article">
+<h2>Python Formatter — Clean, PEP 8-Ready Python Code</h2>
+
+<p>Python is the one language where messy formatting isn't just ugly — it's dangerous. I learned this debugging a script where a single mis-indented line silently changed which block it belonged to. No error, no warning, just wrong behavior. In most languages indentation is cosmetic; in Python it's syntax. A Python formatter enforces consistent, PEP 8-compliant style automatically: proper indentation, sensible line breaks, and spacing that follows the community standard — so the code means what it looks like it means.</p>
+
+<h3>What a Python Formatter Does</h3>
+
+<p>The tool takes your Python source and rewrites its formatting to follow <strong>PEP 8</strong>, Python's official style guide: 4-space indentation, two blank lines between top-level definitions, one between methods, spaces around operators, and lines kept to a readable length. Like Black — the popular "uncompromising" Python formatter — it takes an opinionated approach: minimal configuration, one consistent output style, no debates about where the brace goes.</p>
+
+<p>Crucially, it only changes <em>formatting</em>, never logic. Your code runs exactly as before — just cleaner. It won't rename variables, restructure algorithms, or fix bugs. What it does is eliminate the entire category of "style" problems: inconsistent indentation, ragged spacing, and the formatting drift that accumulates when several people edit the same file.</p>
+
+<h3>Why Formatting Matters More in Python</h3>
+
+<p>In JavaScript or Java, indentation is a courtesy — the braces define the blocks. In Python, indentation <em>is</em> the block structure. Consider:</p>
+
+<pre><code>for user in users:
+    process(user)
+notify_admin()</code></pre>
+
+<p>Is <code>notify_admin()</code> inside the loop or after it? The indentation decides — and if the file mixes tabs and spaces, or the indentation is ragged, the answer becomes ambiguous to humans even when the interpreter picks one. A formatter normalizes all of this to 4-space indentation, making the block structure unambiguous at a glance. That mis-indented line that cost me an afternoon? A formatter would have made the error visible the moment it was written.</p>
+
+<h3>Before and After</h3>
+
+<p><strong>Before (inconsistent style):</strong></p>
+<pre><code>def my_func( x,y ):
+  result=x+y
+  return result
+
+
+class Greeter:
+    def greet(self,name):
+        print('Hello, '+name)</code></pre>
+
+<p><strong>After (formatted):</strong></p>
+<pre><code>def my_func(x, y):
+    result = x + y
+    return result
+
+
+class Greeter:
+    def greet(self, name):
+        print('Hello, ' + name)</code></pre>
+
+<p>Same logic — but consistent 4-space indentation, spaces after commas and around operators, and proper blank lines between definitions. The code now reads the way the Python community expects.</p>
+
+<h3>How to Use the Python Formatter</h3>
+
+<p>Paste, format, copy. No configuration to argue about.</p>
+
+<p><strong>Step 1 — Paste your Python code.</strong> Drop messy, inconsistently styled, or hastily written Python into the input panel.</p>
+
+<p><strong>Step 2 — Format.</strong> The tool applies PEP 8-style formatting instantly: indentation normalized, spacing fixed, line breaks rationalized. The statistics show the before/after so you can see the scope of the cleanup.</p>
+
+<p><strong>Step 3 — Review and copy.</strong> Skim the output — formatting sometimes reveals logic issues (like that mis-indented line) that were invisible before. Copy the clean code back to your project or download it.</p>
+
+<h3>What Gets Fixed</h3>
+
+<table>
+<thead><tr><th>Issue</th><th>What the Formatter Does</th></tr></thead>
+<tbody>
+<tr><td>Mixed tabs and spaces</td><td>Normalizes everything to 4-space indentation</td></tr>
+<tr><td>Inconsistent indent depth</td><td>Aligns blocks to proper nesting levels</td></tr>
+<tr><td>Missing spaces</td><td>Adds spaces around operators and after commas (<code>x+y</code> → <code>x + y</code>)</td></tr>
+<tr><td>Ragged blank lines</td><td>Two blank lines between top-level definitions, one between methods</td></tr>
+<tr><td>Overlong lines</td><td>Wraps lines exceeding the readable length sensibly</td></tr>
+<tr><td>Inconsistent spacing in definitions</td><td>Normalizes <code>def f( x,y )</code> → <code>def f(x, y)</code></td></tr>
+</tbody>
+</table>
+
+<p>What it deliberately <em>doesn't</em> do: rename anything, reorder imports (that's isort's job), remove unused code (that's autoflake's), or change your logic. Formatting is a safe, mechanical pass — which is exactly why you can run it on any file without fear.</p>
+
+<h3>Who Uses a Python Formatter?</h3>
+
+<p><strong>Python developers</strong> normalize code before commits and reviews — consistent style makes diffs about logic, not whitespace.</p>
+
+<p><strong>Data scientists</strong> clean up notebook-exported scripts and analysis code that was written fast and formatted never.</p>
+
+<p><strong>Students</strong> learn PEP 8 by example: paste messy code, see the correct style, and internalize the conventions.</p>
+
+<p><strong>Teams</strong> adopt a formatter as the shared standard, ending style debates permanently — the tool's output <em>is</em> the style guide.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>PEP 8-compliant output</strong> — the community standard, applied automatically.</li>
+<li><strong>Opinionated formatting</strong> — one consistent style, no configuration debates (Black-style).</li>
+<li><strong>Indentation normalization</strong> — tabs, mixed, or ragged indents unified to 4 spaces.</li>
+<li><strong>Instant results</strong> — paste and format in milliseconds.</li>
+<li><strong>Before/after statistics</strong> — see the scope of every cleanup.</li>
+<li><strong>Logic-preserving</strong> — formatting only; your code runs exactly as before.</li>
+<li><strong>Copy and download</strong> — clean code ready for your project.</li>
+<li><strong>Private and free</strong> — everything runs in your browser; your code never leaves your device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is PEP 8?</h4>
+<p>Python's official style guide: 4-space indentation, spacing conventions, line-length limits, and blank-line rules. Following it makes Python code consistent and readable across the entire community.</p>
+
+<h4>Will formatting change what my code does?</h4>
+<p>No. The formatter only changes whitespace, line breaks, and spacing — never logic, names, or structure. Your code runs exactly as before.</p>
+
+<h4>How is this different from Black or autopep8?</h4>
+<p>Same goal, no installation. Black and autopep8 are command-line tools you install locally; this formatter applies the same PEP 8-style conventions instantly in your browser.</p>
+
+<h4>Can it fix mixed tabs and spaces?</h4>
+<p>Yes — that's one of its most valuable jobs. Mixed indentation is a real source of Python bugs, and the formatter normalizes everything to consistent 4-space indentation.</p>
+
+<h4>Does it sort my imports or remove unused code?</h4>
+<p>No — those are separate tools' jobs (isort for import sorting, autoflake for unused code). This formatter handles layout and style only, which keeps it safe to run on any file.</p>
+
+<h4>Why 4 spaces instead of tabs?</h4>
+<p>PEP 8 specifies 4 spaces per indentation level — it's the community standard, and consistent spaces avoid the ambiguity that mixed tabs and spaces create.</p>
+
+<h4>Is my code uploaded anywhere?</h4>
+<p>No. Formatting runs entirely in your browser — your Python code is never sent to a server, logged, or stored.</p>
+
+<h4>Is this Python formatter free?</h4>
+<p>Yes — free, unlimited, no account required.</p>
+</article>

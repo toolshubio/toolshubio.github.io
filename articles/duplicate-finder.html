@@ -1,0 +1,89 @@
+<article class="tool-article">
+<h2>Duplicate Finder — Find and Remove Duplicate Photos Online</h2>
+
+<p>My photo library hit 40,000 files last year, and I am fairly certain I have photographed the same sunset at least six times across three phones. Duplicates creep in everywhere: burst-mode near-identicals, the original plus the edited copy, the full-size file plus the smaller version emailed to family, the same image imported twice after a phone migration. A duplicate finder scans your collection, flags the copies — and the near-copies — and lets you decide what stays. Reclaim the disk space, shrink your backups, and finally trust that your library has one of each.</p>
+
+<h3>What Is a Duplicate Photo Finder?</h3>
+
+<p>It is a tool that identifies repeated images in your collection. But "duplicate" has layers, and this is where the tool earns its keep. Bit-by-bit identical files are the easy case — any hash comparison catches those. The interesting cases are the ones that are <em>almost</em> the same: one photo resized, one cropped, one color-corrected, one saved as PNG while the other is JPG, or burst-mode shots that differ by a blink.</p>
+
+<p>Good finders solve this with visual similarity analysis. Instead of comparing raw bytes, they examine the image content and compute a similarity percentage — two photos at 90%+ similar are worth a serious look. You set the confidence threshold: 98% for near-identicals only, lower when you want to catch the edited variants too.</p>
+
+<p>The review step matters as much as the scan. The better tools display matches side by side with their similarity score, mark which file they consider the original, and let you delete, move, or keep each one deliberately. Mass auto-deletion is how people lose photos they wanted.</p>
+
+<h3>How to Find Duplicate Photos</h3>
+
+<p><strong>Step 1 — Point the tool at your folders.</strong> Drag your photo folders into the scanner. It works on local drives, external drives, and NAS storage — wherever the copies are hiding.</p>
+
+<p><strong>Step 2 — Set your sensitivity.</strong> Choose a similarity threshold. Start strict (95–98%) to catch true near-duplicates with minimal noise; loosen it later if you also want resized and edited variants grouped.</p>
+
+<p><strong>Step 3 — Run the scan.</strong> The tool indexes every image and compares them pairwise. A library of several thousand photos can take several minutes — the comparison work is real, and tools that use all your CPU cores finish noticeably faster.</p>
+
+<p><strong>Step 4 — Review matches side by side.</strong> This is the important human step. Look at each pair with its similarity percentage, decide which version to keep (usually the largest, highest-quality original), and mark the rest.</p>
+
+<p><strong>Step 5 — Delete or move.</strong> Send duplicates to trash rather than permanent deletion on the first pass. If nothing breaks after a week, empty the trash.</p>
+
+<p>Habit worth building: back up before you purge. Duplicates you delete today are photos you cannot recover tomorrow — a fresh backup makes the whole operation risk-free.</p>
+
+<h3>Types of Duplicates Worth Knowing</h3>
+
+<table>
+<thead><tr><th>Type</th><th>Example</th><th>Detection method</th></tr></thead>
+<tbody>
+<tr><td>Exact duplicates</td><td>Same file imported twice</td><td>Byte hash — instant, certain</td></tr>
+<tr><td>Resized copies</td><td>Original + emailed smaller version</td><td>Visual similarity — high match</td></tr>
+<tr><td>Edited variants</td><td>Original + cropped or color-corrected</td><td>Visual similarity — medium-high</td></tr>
+<tr><td>Format conversions</td><td>JPG original + PNG export</td><td>Visual similarity — high match</td></tr>
+<tr><td>Burst near-identicals</td><td>Multi-shot sequences</td><td>Visual similarity — pick the best frame</td></tr>
+<tr><td>False positives</td><td>Two similar-but-different sunsets</td><td>Human review — the essential step</td></tr>
+</tbody>
+</table>
+
+<h3>Who Needs a Duplicate Finder?</h3>
+
+<p><strong>Photographers</strong> accumulate the worst duplicates — burst sequences, RAW plus JPEG pairs, edited exports alongside originals. Periodic purges keep libraries manageable and backups fast.</p>
+
+<p><strong>Families</strong> end up with the same photos on multiple phones, cloud accounts, and shared albums after every holiday and migration. One scan finds them all.</p>
+
+<p><strong>Designers and marketers</strong> collect asset folders full of logo_v2_final_FINAL.png. Deduplicating the asset library is the unglamorous work that makes the glamorous work faster.</p>
+
+<p><strong>Website owners</strong> benefit too — duplicate images on a server waste storage and can even confuse image SEO. An <strong>image compare</strong> pass over the media library pays for itself.</p>
+
+<h3>Practical Tips for Safe Deduplication</h3>
+
+<ul>
+<li><strong>Back up first.</strong> A full backup before any purge turns mistakes from disasters into annoyances.</li>
+<li><strong>Keep the best copy.</strong> When a group matches, keep the largest, highest-quality original — usually the unedited full-resolution file.</li>
+<li><strong>Review, do not auto-delete.</strong> Similarity percentages are guidance, not verdicts. Two 92%-similar photos might be the two frames you actually want.</li>
+<li><strong>Trash, do not shred.</strong> Use safe deletion to the recycle bin/Trash on the first pass; empty it after a week of no regrets.</li>
+<li><strong>Start strict, then loosen.</strong> Run at 98% first for the obvious cases; run again at 90% only if you want the edited variants grouped too.</li>
+<li><strong>Scan one folder at a time.</strong> Smaller scans finish faster and are easier to review carefully than one giant library scan.</li>
+<li><strong>Watch for rotated copies.</strong> Some finders miss 90°-rotated duplicates — check the rotation handling if your library has phone photos.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is the duplicate finder free?</h4>
+<p>Yes — free with no paid tiers gating the core scanning. The best-known options are free and open-source.</p>
+
+<h4>What counts as a duplicate?</h4>
+<p>Bit-by-bit identical files are certain duplicates. Visual similarity analysis also catches resized, cropped, recolored, and format-converted versions, plus burst-mode near-identicals — with a similarity percentage so you can judge.</p>
+
+<h4>Will it find photos that were resized or edited?</h4>
+<p>Yes — that is the difference between a photo finder and a plain file hasher. Content-based matching groups images that look the same even after resizing, cropping, light edits, or format changes.</p>
+
+<h4>Is it safe to delete duplicates automatically?</h4>
+<p>No — review first. Always back up, keep the highest-quality original from each group, and send deletions to trash rather than permanent erase. Similarity scores guide; you decide.</p>
+
+<h4>How long does a scan take?</h4>
+<p>It depends on library size and your hardware — a few thousand photos can take several minutes. Tools that use all CPU cores scan noticeably faster.</p>
+
+<h4>Can it scan external drives and network storage?</h4>
+<p>Yes. Point the scanner at external drives, USB sticks, or NAS folders the same way as local folders.</p>
+
+<h4>What about false positives?</h4>
+<p>They happen — two similar-but-different photos can score high. That is why side-by-side review with similarity percentages exists. When in doubt, keep both.</p>
+
+<h4>Does finding duplicates help with storage?</h4>
+<p>Significantly. Photo libraries commonly hold 5–15% duplicates; removing them reclaims disk space and shrinks every future backup.</p>
+</article>

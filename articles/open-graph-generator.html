@@ -1,0 +1,111 @@
+<article class="tool-article">
+<h2>Open Graph Generator — Free Social Preview Meta Tags</h2>
+
+<p>A friend once launched a course page and shared the link on LinkedIn. The preview showed a random sidebar image, no description, and a title pulled from somewhere in the navigation. It looked broken — because, as far as social platforms were concerned, it was. An Open Graph generator builds the meta tags that control exactly how your link looks when shared on Facebook, LinkedIn, WhatsApp, Slack, and X. Fill in a form, copy the tags, paste them in your head section, and your previews come out clean every time.</p>
+
+<h3>What Is an Open Graph Generator?</h3>
+
+<p>Open Graph is a protocol Facebook created in 2010 that lets any page declare how it should appear when shared: its title, description, image, URL, and content type. When someone pastes your link into Facebook, LinkedIn, WhatsApp, Discord, or Slack, the platform reads your page's <code>og:</code> meta tags and builds the preview card from them. Without those tags, each platform guesses — and the guesses are often wrong.</p>
+
+<p>The generator turns that guessing into a form. You enter your <code>og:title</code> (keep it under about 60 characters), <code>og:description</code> (around 150–200 characters works well for social), <code>og:url</code> (the canonical absolute URL), <code>og:image</code> (the preview image — 1200×630 pixels is the recommended size), and <code>og:type</code> (usually "website" for regular pages). It outputs a ready-to-paste block, often with matching Twitter Card tags (<code>twitter:card</code>, <code>twitter:title</code>, and so on) included, since X reads its own tag set. The best generators also render live previews showing your link the way each platform would display it, so you spot a bad image crop before your audience does.</p>
+
+<h3>How to Use the Open Graph Generator</h3>
+
+<p>The whole job takes a few minutes, and I run it on every important page.</p>
+
+<p>First, pick the page type — Website, Article, Product, or Video — since this sets <code>og:type</code> and can add type-specific properties. For an article, that means <code>article:published_time</code> and author; for a product, price and currency. Then fill in the core fields: title, description, canonical URL, and image URL. Set the image dimensions (default 1200×630) so platforms do not have to probe the image themselves, and add <code>og:site_name</code> plus your locale (e.g. en_US) for completeness.</p>
+
+<p>Check the platform previews. The generator renders mock cards for Facebook, X, LinkedIn, and often Slack or Discord — look at the image crop, read the description at a glance, and confirm the title is not truncated. If anything looks off, adjust and watch the previews update.</p>
+
+<p>Then click copy and paste the tag block into your page's <code>&lt;head&gt;</code>. One detail that bites people: use absolute image URLs (<code>https://…</code>), never relative paths, and keep the image under about 5MB so crawlers do not give up on it.</p>
+
+<p>Finally, validate. Run the URL through Facebook's Sharing Debugger to clear the cached preview and re-scrape, and use X's Card Validator for the Twitter side. Platforms cache aggressively — without the debugger step, your followers may keep seeing the old broken preview for days.</p>
+
+<h3>The Key Tags, Explained</h3>
+
+<table>
+<thead><tr><th>Tag</th><th>What it controls</th><th>Good practice</th></tr></thead>
+<tbody>
+<tr><td><code>og:title</code></td><td>The headline on the shared card</td><td>Under ~60 chars; often matches your SEO title</td></tr>
+<tr><td><code>og:description</code></td><td>The summary text on the card</td><td>150–200 chars; a hook, not a keyword dump</td></tr>
+<tr><td><code>og:image</code></td><td>The preview image</td><td>1200×630 px, absolute HTTPS URL, under 5MB</td></tr>
+<tr><td><code>og:url</code></td><td>The canonical link address</td><td>Absolute URL matching your canonical tag</td></tr>
+<tr><td><code>og:type</code></td><td>Content type (website, article…)</td><td>"website" for pages; "article" for posts</td></tr>
+<tr><td><code>og:site_name</code></td><td>Your site's name on the card</td><td>Short brand name</td></tr>
+<tr><td><code>twitter:card</code></td><td>The X card layout</td><td>summary_large_image for the big image card</td></tr>
+</tbody>
+</table>
+
+<p>Two common mistakes I see constantly: missing <code>og:image</code> (the card renders as plain text, which kills click-through), and relative image URLs that the platform cannot resolve. The generator defaults guard against both, but double-check after pasting.</p>
+
+<h3>Example: A Generated Block</h3>
+
+<p>Here is what the tool produces for a typical article page:</p>
+
+<p>
+<code>&lt;!-- Open Graph / Facebook --&gt;</code><br>
+<code>&lt;meta property="og:type" content="article"&gt;</code><br>
+<code>&lt;meta property="og:title" content="How to Sharpen a Kitchen Knife at Home"&gt;</code><br>
+<code>&lt;meta property="og:description" content="Three simple methods, the tools that actually matter, and the mistakes that ruin a blade — a practical guide for home cooks."&gt;</code><br>
+<code>&lt;meta property="og:image" content="https://example.com/images/knife-sharpening.jpg"&gt;</code><br>
+<code>&lt;meta property="og:image:width" content="1200"&gt;</code><br>
+<code>&lt;meta property="og:image:height" content="630"&gt;</code><br>
+<code>&lt;meta property="og:url" content="https://example.com/sharpen-kitchen-knife"&gt;</code><br>
+<code>&lt;meta property="og:site_name" content="Example Kitchen"&gt;</code><br>
+<code>&lt;!-- Twitter / X Card --&gt;</code><br>
+<code>&lt;meta name="twitter:card" content="summary_large_image"&gt;</code><br>
+<code>&lt;meta name="twitter:title" content="How to Sharpen a Kitchen Knife at Home"&gt;</code><br>
+<code>&lt;meta name="twitter:description" content="Three simple methods, the tools that actually matter..."&gt;</code>
+</p>
+
+<h3>Who Uses Open Graph Generators?</h3>
+
+<p><strong>Bloggers</strong> use them so every post shares with a proper image and hook instead of a random crop — the preview card is free distribution.</p>
+
+<p><strong>Marketers</strong> control how campaign landing pages appear when shared, A/B testing descriptions and images for social click-through.</p>
+
+<p><strong>E-commerce managers</strong> generate product-type tags with price and currency, so shared products show up richly on social feeds.</p>
+
+<p><strong>Developers</strong> scaffold the social tags for every new template alongside the core SEO tags, rather than hand-writing them each time.</p>
+
+<p><strong>News publishers</strong> use article-type tags with publish times so stories surface correctly in social and news surfaces.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Complete OG tag block</strong> — title, description, image, URL, type, site name, locale.</li>
+<li><strong>Twitter Card tags included</strong> — matching X preview tags generated alongside.</li>
+<li><strong>Live multi-platform previews</strong> — see Facebook, X, LinkedIn, and messaging-app cards as you type.</li>
+<li><strong>Page-type variants</strong> — article, product, and video properties added automatically.</li>
+<li><strong>Image dimension fields</strong> — width and height tags so platforms render instantly.</li>
+<li><strong>One-click copy</strong> — the whole block, ready for your page head.</li>
+<li><strong>100% free</strong> — no signup, no limits.</li>
+<li><strong>Private by design</strong> — everything runs in your browser; nothing is uploaded.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is Open Graph?</h4>
+<p>Open Graph is a protocol (created by Facebook in 2010) that lets a web page declare how it should appear when shared — its title, description, image, and URL. Social platforms read these <code>og:</code> meta tags to build link preview cards.</p>
+
+<h4>What size should my og:image be?</h4>
+<p>1200×630 pixels is the recommended size. Use an absolute HTTPS URL and keep the file under about 5MB so platform crawlers fetch it reliably.</p>
+
+<h4>Why does my shared link show the wrong preview?</h4>
+<p>Social platforms cache previews aggressively. After fixing your tags, run the URL through Facebook's Sharing Debugger (and X's Card Validator) to clear the cache and force a re-scrape.</p>
+
+<h4>Do I need Twitter Card tags if I have Open Graph?</h4>
+<p>Mostly yes for X. X can fall back to Open Graph tags, but explicit <code>twitter:card</code> tags — especially <code>summary_large_image</code> — give you reliable control over the big image card format.</p>
+
+<h4>Does og:description need to differ from the meta description?</h4>
+<p>Not necessarily. The generator defaults it to your SEO description, which is fine. Use a different one only if the social share should read differently — punchier, more conversational — than the search listing.</p>
+
+<h4>Is this generator free?</h4>
+<p>Yes — completely free, no account needed.</p>
+
+<h4>Where do I paste the generated tags?</h4>
+<p>Inside the <code>&lt;head&gt;</code> section of your HTML. In WordPress, SEO plugins can manage Open Graph tags for you, but the generator gives you exact control for static sites and custom builds.</p>
+
+<h4>Can I use a relative URL for og:image?</h4>
+<p>No — always use the absolute URL starting with https://. Platform crawlers cannot resolve relative paths, and the image will silently fail to load.</p>
+</article>

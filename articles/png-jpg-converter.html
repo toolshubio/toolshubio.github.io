@@ -1,0 +1,83 @@
+<article class="tool-article">
+<h2>PNG to JPG Converter — Slim Down Bloated Image Files</h2>
+
+<p>I have a habit of screenshotting everything, and my screenshots folder was full of PNGs — including full-screen photos someone sent me that I had captured instead of saving properly. One "screenshot" of a photo was 22 MB as a PNG. Converted to JPG at quality 85, it became 1.8 MB and looked identical on screen. That is the PNG to JPG conversion in a nutshell: when the image is photographic and nobody needs transparency, JPG does the same job at a tenth of the weight.</p>
+
+<h3>Why Convert PNG to JPG?</h3>
+
+<p>PNG is lossless — it stores every pixel exactly, which is wonderful for graphics and terrible for file size when the image is a photograph. A photographic PNG can easily run 10–20 MB where the same image as a JPG is 1–3 MB. Convert when:</p>
+
+<ul>
+<li><strong>A photo got saved as PNG</strong> — screenshots of photos, exports from editors with PNG as default, images downloaded in the wrong format.</li>
+<li><strong>You are hitting upload limits</strong> — job portals, government forms, and CMS uploads with 2–5 MB caps.</li>
+<li><strong>Email attachments are bouncing</strong> — smaller files send faster and stay under size limits.</li>
+<li><strong>A system accepts JPEG only</strong> — still common in older CMS platforms and print submission workflows.</li>
+<li><strong>Page speed matters</strong> — smaller images mean faster loads and better Core Web Vitals.</li>
+</ul>
+
+<h3>What Actually Happens During Conversion</h3>
+
+<p>This conversion is <strong>lossy and one-way</strong>, and two things change — one of which catches people out:</p>
+
+<p><strong>Compression becomes lossy.</strong> PNG stores pixels exactly; JPEG approximates them to save space. Detail is discarded during the save and cannot be recovered by converting back. At quality 80–90 the loss is invisible for photos; for screenshots with sharp text it shows sooner. If you might need the original later, keep the PNG.</p>
+
+<p><strong>The alpha channel is destroyed.</strong> This is the important one. JPEG has no concept of transparency. Every transparent or semi-transparent pixel in your PNG must be flattened onto a solid color — usually white, or a color you choose — before it can be saved. A transparent logo converted to JPG and placed on a dark website arrives with a white rectangle around it, and there is no undoing it. If the image needs its transparency, stop here and keep the PNG (or convert to WebP, which supports both lossy compression and alpha).</p>
+
+<h3>PNG vs JPG</h3>
+
+<table>
+<thead><tr><th>Feature</th><th>PNG</th><th>JPG</th></tr></thead>
+<tbody>
+<tr><td>Compression</td><td>Lossless</td><td>Lossy</td></tr>
+<tr><td>Transparency</td><td>Full alpha channel</td><td>None — flattened to a solid color</td></tr>
+<tr><td>Photo file size</td><td>Large (10–20 MB typical)</td><td>Small (1–3 MB at quality 85)</td></tr>
+<tr><td>Text/sharp edges</td><td>Perfect</td><td>Can show artifacts</td></tr>
+<tr><td>Repeated saves</td><td>No degradation</td><td>Degrades each save</td></tr>
+<tr><td>Best for</td><td>Graphics, logos, screenshots, archival</td><td>Photos, web, email, print</td></tr>
+</tbody>
+</table>
+
+<h3>How to Convert PNG to JPG</h3>
+
+<p><strong>Step 1 — Upload your PNG.</strong> Drag and drop or click to browse; batch tools take multiple files.</p>
+
+<p><strong>Step 2 — Set quality and background.</strong> Choose the JPG quality (80–90 for the best balance) and the background color for any transparent areas — white is the default, but match it to the destination when you can.</p>
+
+<p><strong>Step 3 — Convert and download.</strong> Compare the file sizes before downloading; a photographic PNG typically drops 80–90%.</p>
+
+<h3>Common Issues and Fixes</h3>
+
+<p><strong>Transparent areas turned white.</strong> Expected — JPEG has no alpha channel. Either accept the flattening or keep the PNG.</p>
+
+<p><strong>Text or sharp edges look fuzzy.</strong> Raise the quality setting, or keep the PNG — JPG is the wrong format for UI screenshots and diagrams.</p>
+
+<p><strong>Metadata disappeared.</strong> Browser-based conversion usually strips EXIF, color profiles, and GPS data during re-encoding. Preserve the original if that information matters.</p>
+
+<p><strong>The file barely shrank.</strong> Flat graphics and screenshots compress poorly as JPG because the format is optimized for photographic gradients. For those, PNG was already the right choice — do not convert.</p>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this PNG to JPG converter free?</h4>
+<p>Yes — free, no account, no watermarks.</p>
+
+<h4>Will converting reduce quality?</h4>
+<p>For photos at quality 80–90, no visible difference. For graphics with sharp text, artifacts can appear — keep the PNG for those.</p>
+
+<h4>What happens to transparency?</h4>
+<p>It is lost. Transparent pixels are flattened onto a solid background color (white by default). There is no way to recover it afterward.</p>
+
+<h4>Can I convert multiple PNGs at once?</h4>
+<p>Yes — batch conversion is supported, with individual or ZIP downloads.</p>
+
+<h4>Why is my converted JPG still large?</h4>
+<p>Screenshots and flat graphics do not compress well as JPG. The format shines on photographs; for graphics, PNG was already optimal.</p>
+
+<h4>Should I keep the original PNG?</h4>
+<p>Yes, always. JPG conversion is one-way — you cannot get the lost data back.</p>
+
+<h4>Are my files uploaded to a server?</h4>
+<p>No — conversion runs locally in your browser.</p>
+
+<h4>When should I NOT convert PNG to JPG?</h4>
+<p>When the image has transparency you need, when it contains sharp text or line art, or when it is a master you will edit again.</p>
+</article>

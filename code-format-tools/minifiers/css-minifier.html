@@ -1,119 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free, pro CSS minifier. Compress CSS code, remove comments, and collapse whitespace 100% client-side.">
-    <title>CSS Minifier - Compress & Optimize CSS | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../../image-tools/css/global.css">
-    <link rel="stylesheet" href="../../image-tools/css/components.css">
-    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
-
-
-  <link rel="stylesheet" href="../../image-tools/css/th-header-footer.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Minifier - Compress &amp; Optimize CSS | TOOLSHUB</title>
+<meta name="description" content="Free, pro CSS minifier. Compress CSS code, remove comments, and collapse whitespace 100% client-side.">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../../image-tools/css/v3-design.css">
+<style>.ws-textarea{font-family:ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,monospace}</style>
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../../index.html#tools">All Tools</a><a href="../../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../../index.html#tools">Explore Tools</a></div>
+</div></header>
+
+<nav class="crumbs"><a href="../../index.html">Home</a> &nbsp;/&nbsp; <a href="../../index.html#code-format-tools">Code &amp; Formatters</a> &nbsp;/&nbsp; <span>CSS Minifier</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">Code Tools</span>
+  <h1>CSS <em>Minifier.</em></h1>
+  <p>Optimize your stylesheets for performance by removing unnecessary space and comments.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../../image-tools/index.html">Image Tools</a><a href="../../pdf-tools/index.html">PDF Tools</a><a href="../../text-tools/index.html">Text & Writing</a><a href="../../seo-tools/index.html">SEO Tools</a><a href="../../calculator-tools/index.html">Calculators</a><a href="../../binary-tools/index.html">Binary Tools</a><a href="../../code-format-tools/index.html">Code & Formatters</a><a href="../../doc-tools/index.html">Documents</a><a href="../../other-tools/index.html">Other Tools</a><a href="../../about-us.html">About Us</a><a href="../../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../../index.html">Home</a> &gt;
-                <a href="../index.html">Code & Formatters</a> &gt;
-                <span>🔥 CSS Minifier</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">🔥 CSS Minifier</h1>
-                <p class="tool-description">Optimize your stylesheets for performance by removing unnecessary space and
-                    comments.</p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
+</section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>CSS Minifier</b><span>v3.0 · local</span></div>
+  <div class="ws-body">
+<div class="tool-workspace">
 <div class="tool-workspace">
 <div class="code-workspace">
 <div class="editor-container">
 <div class="editor-header">
 <span class="editor-title">Source CSS</span>
-<button class="btn btn-sm btn-secondary" onclick="document.getElementById('input-code').value = ''; onInputChange()">Clear</button>
+<button class="btn btn-light" onclick="document.getElementById('input-code').value = ''; onInputChange()"><i class="fa-solid fa-eraser"></i> Clear</button>
 </div>
-<textarea class="code-area" id="input-code" oninput="onInputChange()" placeholder="Paste your CSS here..."></textarea>
+<textarea class="ws-textarea" id="input-code" oninput="onInputChange()" placeholder="Paste your CSS here..."></textarea>
 <div class="code-stats" id="input-stats"></div>
 </div>
 <div class="editor-container">
 <div class="editor-header">
 <span class="editor-title">Minified Output</span>
-<button class="btn btn-sm btn-primary" onclick="CodeUI.copyToClipboard('output-code', this)">Copy Result</button>
+<button class="btn btn-light" onclick="CodeUI.copyToClipboard('output-code', this)"><i class="fa-solid fa-copy"></i> Copy Result</button>
 </div>
-<textarea class="code-area" id="output-code" placeholder="Output will appear here..." readonly=""></textarea>
+<textarea class="ws-textarea" id="output-code" placeholder="Output will appear here..." readonly=""></textarea>
 <div class="code-stats" id="output-stats"></div>
 </div>
 </div>
 <div class="action-bar">
-<button class="btn btn-primary btn-lg" onclick="minify()">Optimize CSS Now</button>
-</div>
-<section class="tool-content mt-12">
-<div class="content-grid">
-<div class="main-text">
-<h2>The Power of Low-Latency CSS</h2>
-<p>Cascading Style Sheets (CSS) can grow large quickly. A minified CSS file ensures that the
-                                browser spends less time downloading and parsing styles, which directly impacts the
-                                speed at which your page becomes visually complete.</p>
-<h3>What we remove:</h3>
-<ul>
-<li>Multi-line comments (`/* ... */`)</li>
-<li>Extra line breaks and indentation</li>
-<li>Redundant spaces around colons and curly braces</li>
-</ul>
-</div>
-<div class="faq-section">
-<h3>FAQ</h3>
-<div class="faq-item">
-<strong>Can I un-minify it later?</strong>
-<p>Yes, you can use our <strong>CSS Beautifier</strong> tool to restore readability,
-                                    though comments cannot be recovered once removed.</p>
+<button class="btn btn-dark" onclick="minify()"><i class="fa-solid fa-compress"></i> Optimize CSS Now</button>
 </div>
 </div>
 </div>
+  </div>
+</div></div>
+
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 — HOW IT WORKS</span><h2>How to use</h2><p>Get results in three simple steps.</p></div>
+  <div class="steps">
+    <div class="step"><div class="step-n">i.</div><h3>Paste your CSS</h3><p>Drop your stylesheet into the editor.</p></div>
+    <div class="step"><div class="step-n">ii.</div><h3>Minify</h3><p>Strips whitespace, comments and shrinks everything.</p></div>
+    <div class="step"><div class="step-n">iii.</div><h3>Copy &amp; deploy</h3><p>Copy the tiny CSS into production.</p></div>
+  </div>
 </section>
-</div>
-            </div>
-            <section class="seo-article" data-tool="css-minifier">
-<article class="tool-article">
-<h2>CSS Minifier — Shrink Your Stylesheets for Faster Pages</h2>
 
-<p>I once inherited a project where the main stylesheet was 4,200 lines, carefully indented, full of helpful comments — and shipped to every visitor exactly like that. Nobody had ever minified it. Running it through a minifier cut the file nearly in half, and the site visibly loaded faster on a slow connection. A CSS minifier strips out everything the browser does not need to render your styles: the whitespace, the line breaks, the comments, the redundant values. Your selectors and properties survive untouched; the file just gets dramatically smaller.</p>
-
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>CSS Minifier — Shrink Your Stylesheets for Faster Pages</h2>
+    <p class="deck">Free, pro CSS minifier. Compress CSS code, remove comments, and collapse whitespace 100% client-side.</p>
+    <div class="article-meta">
+      <div class="avatar">T</div>
+      <div><b>TOOLSHUB Editorial</b><span>7 min read · Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+    <p class="lead">I once inherited a project where the main stylesheet was 4,200 lines, carefully indented, full of helpful comments — and shipped to every visitor exactly like that. Nobody had ever minified it. Running it through a minifier cut the file nearly in half, and the site visibly loaded faster on a slow connection. A CSS minifier strips out everything the browser does not need to render your styles: the whitespace, the line breaks, the comments, the redundant values. Your selectors and properties survive untouched; the file just gets dramatically smaller.</p>
 <h3>What Is a CSS Minifier?</h3>
-
 <p>Think of it as the production version of your stylesheet. While you are writing CSS, you want readability: one rule per line, generous indentation, comments marking each section. The browser wants the opposite — a compact stream of characters it can parse as fast as possible. A minifier converts the first into the second automatically.</p>
-
 <p>Here is a small example of what it does. Before:</p>
-
 <pre><code>/* Header styles */
 .header {
   background-color: #ffffff;
@@ -121,27 +95,16 @@
   margin: 0 0 0 0;
   font-family: "Arial", sans-serif;
 }</code></pre>
-
 <p>After:</p>
-
 <code>.header{background-color:#fff;padding:0 20px;margin:0;font-family:Arial,sans-serif}</code>
-
 <p>Same styles, same rendering, noticeably fewer bytes. The color #ffffff became #fff, the zero-pixel values lost their units, the margin collapsed from four zeros to one, and every comment and line break vanished. Multiply those savings across hundreds of rules and you get the 20–50% reduction most minifiers deliver.</p>
-
 <p>One distinction worth making: minifiers remove characters from the source code itself, while compression like gzip or Brotli squeezes the file during network transfer. They work at different levels and stack — minify first, then let the server compress, and a 200 KB stylesheet can travel at well under 30 KB.</p>
-
 <h3>How to Use the CSS Minifier</h3>
-
 <p>Paste your CSS into the input box — do not include the <code>&lt;style&gt;</code> tags if you are copying from an HTML file; the tool wants pure CSS. Click the minify button (some tools work live as you paste). The compressed result appears in the output panel, usually with the size before and after so you can see the savings.</p>
-
 <p>Copy the output to your clipboard or download it as a .css file. Then the important part: replace your production stylesheet with the minified version, but keep your original file as the source of truth. Never edit the minified file directly — it is unreadable by design. The workflow is always source in version control, minified version generated at build or deploy time.</p>
-
 <p>Before calling it done, load the site and check it visually. Minification is safe in principle, but verifying takes ten seconds and saves embarrassment if something subtle went wrong.</p>
-
 <h3>What Gets Removed During Minification</h3>
-
 <p>A good minifier does more than delete spaces. Here is the full hit list:</p>
-
 <table>
 <thead><tr><th>Optimization</th><th>Example Before</th><th>Example After</th></tr></thead>
 <tbody>
@@ -154,47 +117,28 @@
 <tr><td>Shorthand merging</td><td><code>margin-top:10px; margin-right:20px;…</code></td><td><code>margin:10px 20px</code></td></tr>
 </tbody>
 </table>
-
 <p>One thing most minifiers deliberately keep: license comments. A comment starting with <code>/*! … */</code> is treated as legally required and preserved. If your open-source license requires attribution in the file, wrap it that way before minifying.</p>
-
 <p>There are places a naive minifier can break things, and good ones know to stay away from them: whitespace inside strings, the math inside <code>calc()</code> expressions (where spaces around operators are required), and quoted URLs. If you ever see a layout break after minifying, those are the first suspects.</p>
-
 <h3>Minifier vs Compressor vs Uglifier</h3>
-
 <p>People use these words interchangeably, but they mean different things:</p>
-
 <ul>
 <li><strong>Minifier</strong> — removes whitespace, comments, and redundant characters. Safe: selectors and properties are preserved exactly. This is what you want.</li>
 <li><strong>Compressor</strong> — applies network-level compression (gzip/Brotli) when the file travels from server to browser. Complements minification.</li>
 <li><strong>Uglifier</strong> — goes further, renaming classes and variables to shorter names. More aggressive, and risky for projects that generate class names dynamically (CSS-in-JS, for example).</li>
 </ul>
-
 <p>For nearly every project, conservative minification is the sweet spot: meaningful savings with zero functional risk. Save the aggressive rewriting for build pipelines you fully control.</p>
-
 <h3>Why File Size Actually Matters</h3>
-
 <p>CSS is render-blocking: the browser will not paint the page until it has downloaded and parsed your stylesheets. On a fast connection the difference between 200 KB and 120 KB is invisible, but on mobile networks it shows up directly in Largest Contentful Paint — one of the Core Web Vitals Google uses in ranking. Every 100 ms of load time nudges conversion rates, and stylesheet weight is one of the cheapest things to fix.</p>
-
 <p>At scale it is also a money question. Serving millions of page views, a 30 KB saving per stylesheet turns into real CDN bandwidth savings every month. Minification takes thirty seconds and costs nothing; there is no good reason to ship unminified CSS to production.</p>
-
 <h3>Who Uses CSS Minifiers?</h3>
-
 <p><strong>Front-end developers</strong> are the core audience. Whether you hand-write CSS or generate it from a preprocessor, the last step before deploy is always minification — and for quick one-off pages without a build pipeline, the online tool is faster than setting one up.</p>
-
 <p><strong>Freelancers and agencies</strong> use it when handing over projects. The client gets a lean production build; the developer keeps the readable source for future maintenance.</p>
-
 <p><strong>Bloggers and site owners</strong> on platforms like WordPress use it to slim down custom CSS added through the customizer. Pasted snippets from tutorials often carry verbose formatting that minifies well.</p>
-
 <p><strong>Email developers</strong> work under brutal size constraints — some email clients mangle long files — so minifying inline styles is standard practice there.</p>
-
 <p><strong>Students</strong> learning web development use the minifier backwards: they minify their own CSS and then run a beautifier on someone else's production stylesheet to study how real sites are built.</p>
-
 <h3>Tips for Safe Minification</h3>
-
 <p>Always keep the source file. Minified CSS is a build artifact, not something you edit — keep <code>styles.css</code> in version control and generate <code>styles.min.css</code> from it. Test the site visually after minifying; DevTools lets you inspect the applied rules to confirm nothing got dropped. If you debug production issues, generate a source map alongside the minified file so the browser can show you the original line numbers. And combine minification with gzip or Brotli on the server — they attack different layers and the savings multiply.</p>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>Instant minification</strong> — paste CSS, get a compressed result immediately.</li>
 <li><strong>Size statistics</strong> — see original vs minified size and the percentage saved.</li>
@@ -205,81 +149,37 @@
 <li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
 <li><strong>100% free</strong> — no signup, no limits, works on any device.</li>
 </ul>
+<div class="faq"><div class="faq-item open"><div class="faq-q">Is this CSS minifier free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — completely free, no account needed, and no limits on how much CSS you can minify.</p></div></div><div class="faq-item"><div class="faq-q">Will minification change how my site looks? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>No. Minification only removes characters the browser does not need. Rendering is identical — always spot-check your site after minifying, but changes in appearance should never happen.</p></div></div><div class="faq-item"><div class="faq-q">How much smaller will my CSS get? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Typically 20–50%, depending on how much whitespace, comments, and redundant values the original contains. Combined with gzip or Brotli, total transfer savings are much larger.</p></div></div><div class="faq-item"><div class="faq-q">Can I reverse minification to get my original CSS back? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Not exactly. A beautifier can restore indentation and line breaks, but comments are gone for good. This is why you always keep the original source file.</p></div></div><div class="faq-item"><div class="faq-q">What is the difference between minifying and gzipping? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Minification removes unnecessary characters from the code itself; gzip compresses the file during network transfer. They are complementary — use both for maximum savings.</p></div></div><div class="faq-item"><div class="faq-q">Is my CSS data secure? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes. Minification happens entirely in your browser — your code never leaves your device or touches a server.</p></div></div><div class="faq-item"><div class="faq-q">Why did my layout break after minifying? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Check <code>calc()</code> expressions (spaces around operators are required), whitespace inside strings, and quoted URLs. A good minifier avoids these, but aggressive tools can damage them — test and use a conservative minifier.</p></div></div><div class="faq-item"><div class="faq-q">Should I minify CSS manually or use a build tool? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>For production workflows with regular deploys, automate it in your build (Vite, webpack, or PostCSS with cssnano). For one-off files, quick fixes, or projects without a build step, the online tool is faster.</p></div></div></div>
+  </div>
+</article></div>
 
-<h3>Frequently Asked Questions</h3>
-
-<h4>Is this CSS minifier free?</h4>
-<p>Yes — completely free, no account needed, and no limits on how much CSS you can minify.</p>
-
-<h4>Will minification change how my site looks?</h4>
-<p>No. Minification only removes characters the browser does not need. Rendering is identical — always spot-check your site after minifying, but changes in appearance should never happen.</p>
-
-<h4>How much smaller will my CSS get?</h4>
-<p>Typically 20–50%, depending on how much whitespace, comments, and redundant values the original contains. Combined with gzip or Brotli, total transfer savings are much larger.</p>
-
-<h4>Can I reverse minification to get my original CSS back?</h4>
-<p>Not exactly. A beautifier can restore indentation and line breaks, but comments are gone for good. This is why you always keep the original source file.</p>
-
-<h4>What is the difference between minifying and gzipping?</h4>
-<p>Minification removes unnecessary characters from the code itself; gzip compresses the file during network transfer. They are complementary — use both for maximum savings.</p>
-
-<h4>Is my CSS data secure?</h4>
-<p>Yes. Minification happens entirely in your browser — your code never leaves your device or touches a server.</p>
-
-<h4>Why did my layout break after minifying?</h4>
-<p>Check <code>calc()</code> expressions (spaces around operators are required), whitespace inside strings, and quoted URLs. A good minifier avoids these, but aggressive tools can damage them — test and use a conservative minifier.</p>
-
-<h4>Should I minify CSS manually or use a build tool?</h4>
-<p>For production workflows with regular deploys, automate it in your build (Vite, webpack, or PostCSS with cssnano). For one-off files, quick fixes, or projects without a build step, the online tool is faster.</p>
-</article>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 — KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+    <a class="rel" href="html-minifier.html"><i class="fa-brands fa-html5" style="color:#4f46e5"></i><h3>HTML Minifier</h3><p>Compress your HTML code by removing comments, whitespace, and redundant characters.</p></a>
+    <a class="rel" href="html-viewer.html"><i class="fa-brands fa-html5" style="color:#7c3aed"></i><h3>Visual Builder - Professional Edition</h3><p></p></a>
+    <a class="rel" href="javascript-minifier.html"><i class="fa-brands fa-js" style="color:#4f46e5"></i><h3>JavaScript Minifier</h3><p>Shrink your JavaScript files by stripping out human-readable characters without changing f</p></a>
+    <a class="rel" href="universal-code-compressor.html"><i class="fa-solid fa-compress" style="color:#7c3aed"></i><h3>All-in-One Compressor</h3><p>One tool to minify them all. Automatically detects language and applies the most efficient</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../../image-tools/index.html">Image Tools</a></li><li><a href="../../pdf-tools/index.html">PDF Tools</a></li><li><a href="../../text-tools/index.html">Text & Writing</a></li><li><a href="../../seo-tools/index.html">SEO Tools</a></li><li><a href="../../calculator-tools/index.html">Calculators</a></li><li><a href="../../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../../index.html#tools">All 203 tools</a></li><li><a href="../../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li><li><a href="../../code-format-tools/minifiers/css-minifier.html">CSS Minifier</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../../about-us.html">About</a></li><li><a href="../../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="../../about-us.html">About</a></li><li><a href="../../contact-us.html">Contact</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../../about-us.html">About</a><a href="../../contact-us.html">Contact</a><a href="../../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>© 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script src="../js/code-utils.js"></script>
 <script src="../js/code-ui.js"></script>
 <script>
-        CodeUI.init({ toolName: 'css-minifier' });
+CodeUI.init({ toolName: 'css-minifier' });
 
         function onInputChange() {
             const code = document.getElementById('input-code').value;
@@ -299,7 +199,7 @@
             { icon: '✅', name: 'CSS Validator', desc: 'Check syntax errors', url: '../validators/css-validator.html' },
             { icon: '🔥', name: 'HTML Minifier', desc: 'Optimize HTML code', url: 'html-minifier.html' }
         ]);
-    </script>
-  <script src="../../image-tools/js/th-interactions.js"></script>
+</script>
+<script src="../../image-tools/js/v3.js"></script>
 </body>
 </html>

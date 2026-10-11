@@ -1,0 +1,111 @@
+<article class="tool-article">
+<h2>Meta Tag Generator — Build Your Full SEO Head Block Online</h2>
+
+<p>Hand-writing the head section of a web page is one of those jobs that looks trivial until you forget a closing quote, misplace a comma in the robots directive, or ship an Open Graph image tag without the width and height. I have debugged all of these at 1 a.m. A meta tag generator takes a simple form — page title, description, URL, a few toggles — and outputs a complete, valid block of meta tags you can paste straight into your page.</p>
+
+<h3>What Is a Meta Tag Generator?</h3>
+
+<p>The <code>&lt;head&gt;</code> of an HTML page carries invisible instructions that decide how your page appears in search results and when shared on social media. The core set every page needs: the <strong>title tag</strong> (the blue clickable headline in results), the <strong>meta description</strong> (the summary underneath), the <strong>canonical URL</strong> (which address is the official one, preventing duplicate-content confusion), the <strong>robots directive</strong> (index/follow instructions for crawlers), the <strong>viewport</strong> setting (how the page scales on phones), and the character set.</p>
+
+<p>Beyond that, modern pages need <strong>Open Graph tags</strong> (<code>og:title</code>, <code>og:description</code>, <code>og:image</code>, <code>og:url</code>, <code>og:type</code>) for Facebook, LinkedIn, WhatsApp, and Slack previews, and <strong>Twitter Card tags</strong> for the X preview. That is a dozen or more lines of exact syntax. The generator builds all of it from one form — you fill in plain text, tick the boxes for which tag groups you want, and it assembles the code with correct attributes, escaping, and ordering. Most good ones also count your title and description characters live, so the SEO tags fit search-result limits while you write them.</p>
+
+<h3>How to Use the Meta Tag Generator</h3>
+
+<p>I treat it as a four-step routine, and it takes a couple of minutes per page.</p>
+
+<p>Start with the basic SEO tags: page title, meta description, canonical URL, author name, and the robots directive. A live checklist helps — title filled, title within 30–60 characters, description filled and within roughly 70–155 characters, canonical URL set. Watch the character counters as you type; titles past about 60 characters get truncated in results, and descriptions past 160 lose their ending.</p>
+
+<p>Next, decide on Open Graph and Twitter Card tags. The generator pre-fills <code>og:title</code> and <code>og:description</code> from your SEO fields, which is the right default — you only need different values if the social share should read differently from the search listing. Set your preview image (1200×630 pixels is the widely recommended size), the page URL, and <code>og:type</code> (usually "website" for regular pages). For Twitter, <code>summary_large_image</code> is the common card choice.</p>
+
+<p>Then copy the generated block and paste it into the <code>&lt;head&gt;</code> section of your page, before any stylesheets or scripts. If you are using WordPress, most people paste these one by one into an SEO plugin instead — but the generator is still the fastest way to get the exact syntax right.</p>
+
+<p>Finally, verify. View the page source to confirm every tag landed, run the URL through Facebook's Sharing Debugger to clear the cached preview, and check the snippet in a SERP preview. Generators write correct code, but the paste step is where mistakes sneak in.</p>
+
+<h3>What a Generated Block Looks Like</h3>
+
+<p>Here is a typical output for a standard article page — this is exactly the shape a good generator produces:</p>
+
+<p>
+<code>&lt;meta charset="UTF-8"&gt;</code><br>
+<code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code><br>
+<code>&lt;title&gt;My Awesome Page&lt;/title&gt;</code><br>
+<code>&lt;meta name="description" content="A short, compelling description of what this page is about (120-160 chars)."&gt;</code><br>
+<code>&lt;meta name="robots" content="index, follow"&gt;</code><br>
+<code>&lt;link rel="canonical" href="https://example.com/my-page"&gt;</code><br>
+<code>&lt;!-- Open Graph (Facebook, LinkedIn, WhatsApp) --&gt;</code><br>
+<code>&lt;meta property="og:title" content="My Awesome Page"&gt;</code><br>
+<code>&lt;meta property="og:description" content="A short, compelling description..."&gt;</code><br>
+<code>&lt;meta property="og:image" content="https://example.com/preview.jpg"&gt;</code><br>
+<code>&lt;meta property="og:url" content="https://example.com/my-page"&gt;</code><br>
+<code>&lt;meta property="og:type" content="website"&gt;</code><br>
+<code>&lt;!-- Twitter / X Card --&gt;</code><br>
+<code>&lt;meta name="twitter:card" content="summary_large_image"&gt;</code><br>
+<code>&lt;meta name="twitter:title" content="My Awesome Page"&gt;</code><br>
+<code>&lt;meta name="twitter:description" content="A short, compelling description..."&gt;</code>
+</p>
+
+<p>Notice the details the generator handles for you: <code>property</code> for Open Graph versus <code>name</code> for standard and Twitter tags, the canonical as a <code>link</code> element rather than a meta tag, and the exact attribute spelling Google expects. Hand-typing this is where errors hide; copying it is not.</p>
+
+<h3>Tag Groups Compared</h3>
+
+<table>
+<thead><tr><th>Group</th><th>Purpose</th><th>Key tags</th><th>What goes wrong without them</th></tr></thead>
+<tbody>
+<tr><td>Core SEO</td><td>Search result appearance</td><td>title, description, canonical, robots</td><td>Truncated or missing snippets; duplicate-content confusion</td></tr>
+<tr><td>Open Graph</td><td>Social link previews</td><td>og:title, og:description, og:image, og:url</td><td>Broken or generic previews on Facebook, LinkedIn, WhatsApp</td></tr>
+<tr><td>Twitter Card</td><td>X link previews</td><td>twitter:card, twitter:title, twitter:image</td><td>Small text-only cards instead of large image cards</td></tr>
+<tr><td>Technical</td><td>Rendering &amp; mobile</td><td>charset, viewport, lang</td><td>Mojibake characters; unusable mobile layout</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Meta Tag Generators?</h3>
+
+<p><strong>Web developers</strong> use them to scaffold the head of every new template — faster than typing and safer than copying from memory.</p>
+
+<p><strong>Bloggers and small site owners</strong> without SEO plugins generate tags per post, especially on static sites and hand-coded pages.</p>
+
+<p><strong>Freelancers</strong> deliver generated tag blocks to clients as part of a launch checklist, which reads far more professionally than "add some meta tags."</p>
+
+<p><strong>Marketers</strong> use the Open Graph and Twitter Card output to control how campaign landing pages look when shared, since the preview image often decides whether a link gets clicked.</p>
+
+<p><strong>Students</strong> learning HTML use the generator alongside their code to see what a correct head section looks like before they can write one from scratch.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Complete tag block</strong> — core SEO, Open Graph, Twitter Card, and technical tags from one form.</li>
+<li><strong>Live character counters</strong> — title and description lengths tracked against search-result limits.</li>
+<li><strong>Self-checking checklist</strong> — ticks off as each requirement is met, so nothing ships half-done.</li>
+<li><strong>One-click copy</strong> — the whole block, ready to paste into your page head.</li>
+<li><strong>Correct syntax guaranteed</strong> — proper attributes, escaping, and ordering every time.</li>
+<li><strong>100% free</strong> — no signup, no limits on how many pages you generate for.</li>
+<li><strong>Private by design</strong> — everything runs in your browser; nothing is uploaded.</li>
+<li><strong>Works everywhere</strong> — any modern browser, desktop or mobile.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What are meta tags?</h4>
+<p>Meta tags are snippets of HTML in a page's head that describe the page to search engines and social platforms. They control how your page appears in search results and link previews, though visitors never see them on the page itself.</p>
+
+<h4>Do I still need meta tags if I use an SEO plugin?</h4>
+<p>Usually not for the basics — plugins like Rank Math or Yoast generate title, description, and canonical tags from your post settings. The generator is most useful for static sites, hand-coded pages, or when you want to double-check exact syntax.</p>
+
+<h4>Does the keywords meta tag still matter?</h4>
+<p>Google ignores it entirely. Bing still gives it some weight, so generators include it as optional — but never rely on it for rankings.</p>
+
+<h4>What size should my Open Graph image be?</h4>
+<p>1200×630 pixels is the widely recommended size — it renders well on Facebook, LinkedIn, and most other platforms, and stays under typical file-size limits.</p>
+
+<h4>Why does my shared link show the wrong preview?</h4>
+<p>Social platforms cache link previews. After fixing your tags, run the URL through Facebook's Sharing Debugger (or the equivalent for X/LinkedIn) to clear the cache and re-scrape.</p>
+
+<h4>Where do I paste the generated tags?</h4>
+<p>Inside the <code>&lt;head&gt;</code> section of your HTML, ideally before stylesheets and scripts. In WordPress, add them via your SEO plugin or a header-insertion feature rather than editing theme files directly.</p>
+
+<h4>Is this generator free?</h4>
+<p>Yes — completely free, no account needed.</p>
+
+<h4>Will the generator fix my existing tags?</h4>
+<p>It generates a fresh, correct block — paste it over or alongside your existing tags, then remove the old duplicates. Two title tags or conflicting robots directives will confuse crawlers, so clean up after pasting.</p>
+</article>

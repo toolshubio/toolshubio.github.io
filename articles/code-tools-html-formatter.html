@@ -1,0 +1,106 @@
+<article class="tool-article">
+<h2>HTML Formatter — Beautify Messy HTML Into Readable Code</h2>
+
+<p>Every developer has opened view-source on a production site and found a single line of HTML stretching sideways into infinity. Or inherited a template where the indentation looks like it was decided by dice. I keep an HTML formatter bookmarked for exactly these moments: paste in the mess, get back clean markup with proper indentation, each nested element tucked one level deeper than its parent. It is the reverse of minification — instead of shrinking code for browsers, it expands code for humans.</p>
+
+<h3>What Is an HTML Formatter?</h3>
+
+<p>An HTML formatter (also called a beautifier or prettifier) takes compact or chaotic markup and restructures it for readability: one element per line, consistent indentation showing the nesting, attributes spaced sensibly. Nothing about the page changes — the browser builds the identical document tree — but the code becomes something a person can actually read, debug, and maintain.</p>
+
+<p>Before:</p>
+
+<code>&lt;div class="card"&gt;&lt;h2&gt;Title&lt;/h2&gt;&lt;p&gt;Some text here.&lt;/p&gt;&lt;/div&gt;</code>
+
+<p>After:</p>
+
+<pre><code>&lt;div class="card"&gt;
+  &lt;h2&gt;Title&lt;/h2&gt;
+  &lt;p&gt;Some text here.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<p>The transformation looks trivial on three lines. On three thousand lines of generated template output, it is the difference between "I can work with this" and "rewrite it from scratch." Formatting reveals structure — and structure is where bugs hide.</p>
+
+<h3>How to Use the HTML Formatter</h3>
+
+<p>Paste your HTML into the input box — a full document, a component, an email template, a minified API response, whatever needs untangling. Choose your indentation style: 2 spaces, 4 spaces, or a tab, matching your project's conventions. Some tools offer extras: wrap long lines at a set width, preserve or collapse extra blank lines, control how inline elements break.</p>
+
+<p>Click format. The beautified markup appears in the output panel, usually with syntax highlighting that separates tags, attributes, and text. Copy it to your clipboard or download it as an .html file. If the tool shows advisory warnings — unclosed tags, mismatched nesting — read them: the formatter is telling you about structural problems it worked around.</p>
+
+<p>One workflow I use constantly: format first, then read. Before debugging any unfamiliar HTML, run it through the formatter. Half the time the bug (a div closed in the wrong place, a missing list item) becomes visible the moment the indentation is correct.</p>
+
+<h3>Formatting Options Explained</h3>
+
+<table>
+<thead><tr><th>Option</th><th>What It Does</th><th>Typical Choice</th></tr></thead>
+<tbody>
+<tr><td>Indent style</td><td>Spaces or tabs per nesting level</td><td>2 spaces (modern default)</td></tr>
+<tr><td>Line wrapping</td><td>Break long lines at a character limit</td><td>80–120 characters</td></tr>
+<tr><td>Extra blank lines</td><td>Keep or collapse multiple empty lines</td><td>Collapse to one</td></tr>
+<tr><td>Inline elements</td><td>Whether <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code> break onto new lines</td><td>Keep inline (safer)</td></tr>
+<tr><td>Inner HTML indent</td><td>Indent content inside <code>&lt;head&gt;</code>/<code>&lt;body&gt;</code></td><td>Yes for readability</td></tr>
+</tbody>
+</table>
+
+<p>The inline-elements setting deserves care. Breaking an inline element like <code>&lt;a&gt;</code> onto its own line can introduce whitespace into the rendered text where none existed. Conservative formatters leave inline content alone — and that caution is a feature, not a limitation.</p>
+
+<h3>Formatting Broken HTML</h3>
+
+<p>Real-world HTML is often imperfect: a missing closing tag, mismatched nesting, an unfinished attribute quote — the normal state of work in progress. Good formatters use tolerant tokenizers that produce best-effort output instead of refusing to run. They reformat what is there and flag advisories about what looks wrong.</p>
+
+<p>But know the boundary: formatting is not validation. A formatter changes whitespace; it does not check whether your markup follows the rules, and it will not fix broken structure — it just makes the brokenness easier to see. After formatting suspicious HTML, run it through a validator or preview it in a viewer to confirm the structure is actually sound.</p>
+
+<h3>Who Uses HTML Formatters?</h3>
+
+<p><strong>Developers</strong> format minified third-party code to study or debug it, and clean up generated template output before committing it.</p>
+
+<p><strong>Designers-turned-coders</strong> working with exported HTML from design tools get readable markup they can actually edit.</p>
+
+<p><strong>QA testers</strong> format production HTML to inspect the structure behind a rendering bug — misnested elements show up immediately.</p>
+
+<p><strong>Students</strong> format their own assignments to check nesting, and format real websites' source to learn how professional markup is structured.</p>
+
+<p><strong>Content migrators</strong> cleaning up HTML pasted from Word or Google Docs use formatting as the first step before the real cleanup begins.</p>
+
+<h3>Tips for Readable Markup</h3>
+
+<p>Match the indent style to your project and never mix tabs and spaces — mixed indentation is how formatting wars start. Format before code review, not after; reviewers should read structure, not decode minified output. Do not commit formatted versions of files your build pipeline generates — format for reading, keep sources canonical. And when the formatter flags structural warnings, fix the HTML rather than ignoring them: the warnings are usually pointing at real bugs wearing an invisibility cloak.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant beautification</strong> — minified or messy HTML becomes readable in one click.</li>
+<li><strong>Indentation choices</strong> — 2/4/8 spaces or tabs to match your project.</li>
+<li><strong>Tolerant parsing</strong> — formats even incomplete or malformed HTML with advisories.</li>
+<li><strong>Syntax highlighting</strong> — tags, attributes, and content in distinct colors.</li>
+<li><strong>Smart inline handling</strong> — inline elements kept intact to avoid whitespace bugs.</li>
+<li><strong>Copy and download</strong> — clipboard copy or save as an .html file.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
+<li><strong>100% free</strong> — no signup, no limits, works on any device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this HTML formatter free?</h4>
+<p>Yes — completely free, no account needed, and no limits on how much HTML you can format.</p>
+
+<h4>Will formatting change how my page looks?</h4>
+<p>No. Formatting only changes whitespace and indentation in the source. The browser renders the identical page.</p>
+
+<h4>Can it format broken or incomplete HTML?</h4>
+<p>Yes — good formatters use tolerant parsing and produce best-effort output with advisory warnings. But formatting is not validation; check the structure afterward.</p>
+
+<h4>What is the difference between formatting and validating?</h4>
+<p>Formatting rearranges whitespace for readability. Validating checks whether the markup follows HTML rules. Format to read, validate to verify correctness.</p>
+
+<h4>Which indent style should I choose?</h4>
+<p>Match your project's existing convention — 2 spaces is the most common modern default. Consistency matters more than the specific choice.</p>
+
+<h4>Can I format just a snippet, not a whole page?</h4>
+<p>Yes. Paste any fragment — a component, a table, a form — and the formatter handles partial documents fine.</p>
+
+<h4>Is my HTML data secure?</h4>
+<p>Yes. Formatting happens entirely in your browser — your code never leaves your device or touches a server.</p>
+
+<h4>Should I commit formatted HTML?</h4>
+<p>Format your source files for readability, yes. Do not commit formatted versions of build-generated files — keep the pipeline's output as-is and format only when you need to read it.</p>
+</article>

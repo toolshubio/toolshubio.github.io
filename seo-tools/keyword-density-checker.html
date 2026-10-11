@@ -1,110 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <title>Keyword Density Checker | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../image-tools/css/global.css">
-    <link rel="stylesheet" href="../image-tools/css/components.css">
-    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keyword Density Checker | TOOLSHUB</title>
+<meta name="description" content="">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../image-tools/css/v3-design.css">
+<style>
+/* v3 compat — legacy tool markup mapped onto the v3 design system */
+:root{--border-color:#e4e4e7;--bg-tertiary:#f4f4f5;--bg-primary:#ffffff;--text-primary:#0a0a0b;--text-secondary:#3f3f46;--color-seo:#4f46e5}
+.ws-input,select.ws-input,textarea.ws-input{width:100%;border:1.5px solid #e4e4e7;border-radius:12px;padding:14px 16px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;outline:none;transition:.2s;background:#fff;color:#0a0a0b}
+.ws-input:focus{border-color:#4f46e5;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.ws-input::placeholder{color:#a1a1aa}
+.input-group{margin-bottom:20px}
+.input-label{display:block;font-weight:600;font-size:.92rem;margin-bottom:10px;color:#0a0a0b}
+.input-desc{font-size:.85rem;color:#71717a;margin-top:10px;line-height:1.6}
+.action-bar{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap}
+.output-section{margin-top:28px}
+.section-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.section-title{font-size:1.1rem;font-weight:700;letter-spacing:-.01em}
+.output-container{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden;background:#fff}
+.output-container table{width:100%;border-collapse:collapse;font-size:.94rem}
+.output-container th,.output-container td{padding:12px 16px;border-bottom:1px solid #f4f4f5;text-align:left}
+.output-code{font-family:monospace;font-size:.9rem;background:#f4f4f5;border:1px solid #e4e4e7;border-radius:12px;padding:16px;white-space:pre-wrap;word-break:break-all;color:#0a0a0b}
+.container,.tool-interface-container{max-width:100%}
+.schema-form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.mb-md{margin-bottom:16px}.mb-lg{margin-bottom:24px}.mb-sm{margin-bottom:8px}.mt-md{margin-top:16px}.mt-lg{margin-top:24px}.mt-sm{margin-top:8px}.text-center{text-align:center}
+.tab,.mode-btn,.device-tab,.preview-tab,.editor-tab,.nav-item{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;border:1px solid #e4e4e7;background:#fff;font-size:.88rem;font-weight:600;cursor:pointer;color:#3f3f46;transition:.15s;font-family:inherit}
+.tab:hover,.mode-btn:hover,.device-tab:hover,.preview-tab:hover,.editor-tab:hover,.nav-item:hover{border-color:#c7d2fe}
+.tab.active,.mode-btn.active,.device-tab.active,.preview-tab.active,.editor-tab.active,.nav-item.active{background:#0a0a0b;color:#fff;border-color:#0a0a0b}
+.btn-add-schema,.tu-btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;border:1px solid #e4e4e7;background:#fff;font-size:.85rem;font-weight:600;cursor:pointer;color:#3f3f46;transition:.15s;font-family:inherit}
+.btn-add-schema:hover,.tu-btn-ghost:hover{border-color:#c7d2fe;background:#eef2ff}
+.hidden{display:none!important}
+.selected{outline:2px solid #4f46e5;outline-offset:2px}
+.visual-card,.seo-card{border:1.5px solid #e4e4e7;border-radius:16px;padding:20px;cursor:pointer;transition:.15s;background:#fff}
+.visual-card:hover,.seo-card:hover{border-color:#c7d2fe}
+.option-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:24px}
+.card-icon{font-size:1.4rem;color:#4f46e5;display:block;margin-bottom:10px}
+.card-title{font-weight:700;margin-bottom:6px;color:#0a0a0b}
+.card-desc{font-size:.88rem;color:#71717a}
+.feature-card{border:1px solid #e4e4e7;border-radius:16px;padding:20px;background:#fff}
+.feature-title{font-size:.85rem;font-weight:600;color:#3f3f46;margin-bottom:8px}
+.feature-desc{font-size:.9rem;color:#71717a}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #f4f4f5;font-size:.92rem;color:#0a0a0b}
+.toggle-switch{position:relative;display:inline-block;width:48px;height:26px;flex:none}
+.toggle-switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;inset:0;background:#d4d4d8;border-radius:99px;transition:.2s;cursor:pointer}
+.slider:before{content:"";position:absolute;width:20px;height:20px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s}
+.toggle-switch input:checked+.slider{background:#4f46e5}
+.toggle-switch input:checked+.slider:before{transform:translateX(22px)}
+.checklist-item{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #e4e4e7;border-radius:12px;margin-bottom:10px;background:#fff;cursor:pointer;transition:.15s}
+.checklist-item:hover{border-color:#c7d2fe}
+.seo-result-item,.preview-box,#serpPreviewBox{border:1px solid #e4e4e7;border-radius:16px;padding:20px;background:#fff;margin-top:16px}
+.seo-url{color:#166534;font-size:.85rem}
+.seo-title{color:#1a0dab;font-size:1.1rem;margin:4px 0}
+.seo-desc{color:#3f3f46;font-size:.9rem}
+.status-badge{display:inline-block;padding:.5rem 1rem;border-radius:30px;font-weight:700}
+.bulk-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.bulk-table th,.bulk-table td{padding:10px 12px;border-bottom:1px solid #f4f4f5;text-align:left}
+.emotional-word{background:#fef3c7;padding:1px 4px;border-radius:4px}
+.power-word{background:#eef2ff;padding:1px 4px;border-radius:4px}
+.invalid,.duplicate-error{border-color:#ef4444!important}
+button.active:not(.nav-item):not(.tab):not(.mode-btn):not(.device-tab):not(.preview-tab):not(.editor-tab),a.active{box-shadow:inset 0 0 0 2px #4f46e5}
+.sim-row{display:flex;gap:10px;align-items:center;padding:8px 0;font-size:.9rem;color:#3f3f46}
+/* website speed test dashboard */
+.speed-dashboard{max-width:100%}
+.url-input-container{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.url-input-container .ws-input{flex:1;min-width:240px}
+.results-container,.history-section{margin-top:24px}
+.perf-header{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-bottom:20px}
+.vitals-summary{flex:1;min-width:240px}
+.gauge-wrapper{display:flex;gap:16px;flex-wrap:wrap}
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+.category-scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:20px 0}
+.screenshot-section,.audit-container{margin-top:28px}
+.audit-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:10px}
+.table-responsive{overflow-x:auto;border:1px solid #e4e4e7;border-radius:16px}
+.audit-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.audit-table th,.audit-table td{padding:12px 14px;border-bottom:1px solid #f4f4f5;text-align:left}
+.badge{display:inline-block;padding:4px 12px;border-radius:99px;font-size:.78rem;font-weight:700;background:#eef2ff;color:#4f46e5}
+.badge-secondary{background:#f4f4f5;color:#3f3f46}
+.analyze-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:14px;font-weight:600;font-size:.92rem;cursor:pointer;border:none;background:#0a0a0b;color:#fff;font-family:inherit;transition:.2s}
+.analyze-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -8px rgba(0,0,0,.3)}
+.loading-overlay{position:fixed;inset:0;background:rgba(255,255,255,.94);z-index:50;display:flex;align-items:center;justify-content:center}
+.progress-card{background:#fff;border:1px solid #e4e4e7;border-radius:20px;padding:36px;max-width:480px;width:90%;box-shadow:0 12px 40px -12px rgba(0,0,0,.12)}
+.p-bar{height:10px;background:#f4f4f5;border-radius:99px;overflow:hidden;margin:16px 0}
+.p-fill{height:100%;width:0;background:linear-gradient(135deg,#4f46e5,#7c3aed);border-radius:99px;transition:width .3s}
+.wst-step{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:.9rem;color:#3f3f46}
+.s-spin{width:16px;height:16px;border:2px solid #e4e4e7;border-top-color:#4f46e5;border-radius:50%;animation:spn .8s linear infinite;display:none;flex:none}
+@keyframes spn{to{transform:rotate(360deg)}}
+.error-board{border:1px solid #fecaca;background:#fef2f2;border-radius:16px;padding:28px;margin-top:20px}
+.screenshot-container{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden}
+.screenshot-img{max-width:100%;display:block}
+.data-source-badge{display:inline-block;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;background:#eef2ff;color:#4f46e5;margin-bottom:8px}
+/* aliases for markup injected by legacy JS at runtime */
+.seo-textarea{width:100%;min-height:160px;border:1.5px solid #e4e4e7;border-radius:16px;padding:22px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;line-height:1.8;resize:vertical;outline:none;transition:.2s;background:#fafafa;color:#0a0a0b}
+.seo-textarea:focus{border-color:#4f46e5;background:#fff;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.seo-textarea::placeholder{color:#a1a1aa}
+.seo-input,select.seo-input,.seo-select{width:100%;border:1.5px solid #e4e4e7;border-radius:12px;padding:14px 16px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;outline:none;transition:.2s;background:#fff;color:#0a0a0b}
+.seo-input:focus,.seo-select:focus{border-color:#4f46e5;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.seo-input::placeholder{color:#a1a1aa}
 
-
-  <link rel="stylesheet" href="../image-tools/css/th-header-footer.css">
+</style>
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../index.html#tools">All Tools</a><a href="../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../index.html#tools">Explore Tools</a></div>
+</div></header>
+<!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+<nav class="crumbs"><a href="../index.html">Home</a> &nbsp;/&nbsp; <span>Keyword Density Checker</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">SEO Tools</span>
+  <h1>Keyword <em>Density</em> Checker</h1>
+  <p>Analyze your content to find the most frequent words and phrases.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../image-tools/index.html">Image Tools</a><a href="../pdf-tools/index.html">PDF Tools</a><a href="../text-tools/index.html">Text & Writing</a><a href="../seo-tools/index.html">SEO Tools</a><a href="../calculator-tools/index.html">Calculators</a><a href="../binary-tools/index.html">Binary Tools</a><a href="../code-format-tools/index.html">Code & Formatters</a><a href="../doc-tools/index.html">Documents</a><a href="../other-tools/index.html">Other Tools</a><a href="../about-us.html">About Us</a><a href="../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a> &gt;
-                <a href="index.html">SEO Tools</a> &gt;
-                <span>Keyword Density Checker</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">Keyword Density Checker</h1>
-                <p class="tool-description"></p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
-<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
-<div class="container text-center">
-<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Keyword Density Checker</h1>
-<p class="hero-subtitle">Analyze your content to find the most frequent words and phrases.</p>
-</div>
 </section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>Keyword Density Checker</b><span>v3.0 · local</span></div>
+  <div class="ws-body">
+
 <div class="container">
 <div class="tool-interface-container">
 <div class="input-group">
 <label class="input-label">Enter Text or URL</label>
 <div style="display: flex; gap: 0.5rem; mb-md">
-<button class="btn-secondary active" id="modeText" onclick="setMode('text')">Text Input</button>
-<button class="btn-secondary" id="modeUrl" onclick="setMode('url')">URL Input
+<button class="btn-secondary btn btn-light active tu-btn tu-btn-ghost" id="modeText" onclick="setMode('text')"><i class="fa-solid fa-keyboard"></i> Text Input</button>
+<button class="btn-secondary btn btn-light tu-btn tu-btn-ghost" id="modeUrl" onclick="setMode('url')"><i class="fa-solid fa-link"></i> URL Input
                             (Simulation)</button>
 </div>
 <div class="mt-md" id="textInputArea">
-<textarea class="seo-textarea" id="inputText" placeholder="Paste your content here..." style="min-height: 300px;"></textarea>
+<textarea class="seo-textarea ws-textarea" id="inputText" placeholder="Paste your content here..." style="min-height: 300px;"></textarea>
 </div>
 <div class="mt-md" id="urlInputArea" style="display: none;">
-<input class="seo-input" disabled="" id="inputUrl" placeholder="https://example.com" type="url"/>
+<input class="seo-input ws-input" disabled="" id="inputUrl" placeholder="https://example.com" type="url"/>
 <p class="input-desc mt-sm">Note: Client-side URL fetching is restricted by CORS. Text input is
                             recommended for accuracy.</p>
 </div>
 </div>
 <div class="action-bar">
-<button class="btn-primary" onclick="analyzeDensity()">Analyze Content</button>
-<button class="btn-secondary" onclick="resetForm()">Reset</button>
+<button class="btn-primary btn btn-dark tu-btn tu-btn-primary" onclick="analyzeDensity()"><i class="fa-solid fa-magnifying-glass-chart"></i> Analyze Content</button>
+<button class="btn-secondary btn btn-light tu-btn tu-btn-ghost" onclick="resetForm()"><i class="fa-solid fa-rotate-right"></i> Reset</button>
 </div>
 <div class="output-section" id="resultsArea" style="display: none;">
 <div class="section-header">
 <h3 class="section-title">Analysis Results</h3>
 </div>
 <div class="schema-form-grid mb-lg">
-<div class="feature-card" style="padding: 1rem;">
-<h4 class="feature-title">Total Words</h4>
-<p class="stat-number" id="totalWords" style="font-size: 1.5rem;">0</p>
-</div>
-<div class="feature-card" style="padding: 1rem;">
-<h4 class="feature-title">Unique Words</h4>
-<p class="stat-number" id="uniqueWords" style="font-size: 1.5rem;">0</p>
-</div>
-<div class="feature-card" style="padding: 1rem;">
-<h4 class="feature-title">Top Keyword</h4>
-<p class="stat-number" id="topKeyword" style="font-size: 1.5rem;">-</p>
-</div>
+<div class="stats"><div class="stat"><b id="totalWords">0</b><span>Total Words</span></div><div class="stat"><b id="uniqueWords">0</b><span>Unique Words</span></div><div class="stat"><b id="topKeyword">-</b><span>Top Keyword</span></div></div>
+
+
 </div>
 <div style="margin-top: 2rem;">
 <h4 class="mb-md">Top Keywords</h4>
 <div style="display: flex; gap: 1rem; border-bottom: 1px solid var(--border-color); margin-bottom: 1rem;">
-<button class="nav-item active" onclick="showTab('1word', this)">One Word</button>
-<button class="nav-item" onclick="showTab('2word', this)">Two Words</button>
-<button class="nav-item" onclick="showTab('3word', this)">Three Words</button>
+<button class="nav-item active tu-btn tu-btn-ghost" onclick="showTab('1word', this)"><i class="fa-solid fa-list-ol"></i> One Word</button>
+<button class="nav-item tu-btn tu-btn-ghost" onclick="showTab('2word', this)"><i class="fa-solid fa-list-ol"></i> Two Words</button>
+<button class="nav-item tu-btn tu-btn-ghost" onclick="showTab('3word', this)"><i class="fa-solid fa-list-ol"></i> Three Words</button>
 </div>
 <div class="output-container" id="densityTableContainer" style="max-height: 600px;">
 <!-- Table injected here -->
@@ -113,45 +178,47 @@
 </div>
 </div>
 </div>
-            </div>
-            <section class="seo-article" data-tool="keyword-density-checker">
-<article class="tool-article">
-<h2>Keyword Density Checker — Spot Stuffing and Gaps Before You Publish</h2>
 
-<p>Early in my SEO days I "optimized" a page by repeating the target keyword 47 times in 800 words. It read like a robot wrote it — because, effectively, one had. A keyword density checker is the smoke alarm for that mistake: paste your draft, and it shows each word and phrase's frequency as a percentage, so you can see at a glance whether your writing sounds natural or stuffed.</p>
+  </div>
+</div></div>
 
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 — HOW IT WORKS</span><h2>Three steps, zero learning curve</h2></div>
+  <div class="steps">
+<div class="step"><div class="step-n">i.</div><h3>Add your content</h3><p>Paste text directly or enter a URL to analyze.</p></div>
+<div class="step"><div class="step-n">ii.</div><h3>Run the analysis</h3><p>Click Analyze to compute word and phrase frequencies.</p></div>
+<div class="step"><div class="step-n">iii.</div><h3>Review densities</h3><p>Check one, two, and three-word phrase densities for over-optimization.</p></div>
+  </div>
+</section>
+
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>Keyword Density Checker — Spot Stuffing and Gaps Before You Publish</h2>
+    <p class="deck">Early in my SEO days I "optimized" a page by repeating the target keyword 47 times in 800 words. It read like a robot wrote it — because, effectively, one had. A keyword density checker is the smoke alarm for that mistake: paste your draft, and it shows each word and phrase's frequency as a percentage, so you can see at a glance whether your writing sounds natural or stuffed.</p>
+    <div class="article-meta">
+      <div class="avatar">T</div>
+      <div><b>TOOLSHUB Editorial</b><span>8 min read · Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+<p class="lead">Early in my SEO days I "optimized" a page by repeating the target keyword 47 times in 800 words. It read like a robot wrote it — because, effectively, one had. A keyword density checker is the smoke alarm for that mistake: paste your draft, and it shows each word and phrase's frequency as a percentage, so you can see at a glance whether your writing sounds natural or stuffed.</p>
 <h3>What Is Keyword Density?</h3>
-
 <p>Keyword density is simple arithmetic: (times a keyword appears ÷ total words) × 100. A keyword appearing 5 times in 100 words has 5% density. The metric dates from an era when search engines counted repetitions crudely — modern Google does not use density as a ranking factor and publishes no ideal percentage.</p>
-
 <p>So why check it at all? As a sanity signal. Writing naturally about a topic almost always lands your main terms between roughly 0.5% and 2.5% without trying. When the checker shows one phrase towering at 8% while everything else sits under 1%, that is not optimization — it is a readability problem wearing an SEO costume. The number is the symptom; awkward prose is the disease.</p>
-
 <p>Good checkers analyze more than single words. Two-word and three-word phrases (bigrams and trigrams) reveal the long-tail patterns single-word counts miss — "coffee maker" behaving very differently from "coffee" and "maker" separately. That phrase-level view is where the real insights hide.</p>
-
 <h3>How to Use the Keyword Density Checker</h3>
-
 <p>Paste your draft text — or enter a live URL on tools that support it — and run the analysis. Review the top of the frequency table: your main topic terms should appear prominently but not dominantly. Anything above ~3% deserves a read-aloud test; anything important sitting near 0% may signal a topical gap.</p>
-
 <p>Work the results in this order: first fix stuffing (rewrite repeated phrases with synonyms and pronouns — your readers will thank you), then check coverage (are the subtopics your competitors cover represented in your phrase list?), then re-run to confirm the table looks balanced. One pass is usually enough; this is a smoke alarm, not a dashboard to watch daily.</p>
-
 <p>Toggle the stop-word filter on. Words like "the," "and," and "is" will otherwise dominate every table and bury the meaningful terms. Filtering them surfaces the topical vocabulary you actually came to inspect.</p>
-
 <h3>How Keyword Density Analysis Works</h3>
-
 <p>The analysis is straightforward text processing.</p>
-
 <p><strong>Step 1 — Tokenization.</strong> Your text is split into words (lowercased, punctuation stripped) and the total word count is established as the denominator.</p>
-
 <p><strong>Step 2 — Stop-word filtering.</strong> Common function words are optionally removed so the frequency table reflects topical terms rather than grammar.</p>
-
 <p><strong>Step 3 — N-gram counting.</strong> Single words, two-word phrases, and three-word phrases are each counted and ranked. Density is computed per phrase as count ÷ total words × 100.</p>
-
 <p><strong>Step 4 — Reporting.</strong> Results sort by frequency with density percentages, often with visual bars. Some tools flag phrases crossing warning thresholds or compare against a target keyword you specify.</p>
-
 <p>URL-based checkers add a fetch step: they pull the page's HTML and analyze only the body content, excluding navigation, footers, and markup — mirroring roughly what search engines evaluate.</p>
-
 <h3>Reading Your Density Report</h3>
-
 <table>
 <thead><tr><th>What you see</th><th>What it means</th><th>What to do</th></tr></thead>
 <tbody>
@@ -162,21 +229,13 @@
 <tr><td>Brand name dominating</td><td>Normal for branded content</td><td>Usually fine — context matters</td></tr>
 </tbody>
 </table>
-
 <h3>Who Uses Keyword Density Checkers?</h3>
-
 <p><strong>Content writers</strong> self-check drafts for natural keyword distribution before filing.</p>
-
 <p><strong>SEO specialists</strong> audit pages for over-optimization during site reviews.</p>
-
 <p><strong>Editors</strong> verify freelancer copy is not stuffed before publishing.</p>
-
 <p><strong>Competitor analysts</strong> study top-ranking pages' topical patterns for content briefs.</p>
-
 <p><strong>Students</strong> check essays for repetitive phrasing and vocabulary variety.</p>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>Free analysis</strong> — no signup for text-based checks.</li>
 <li><strong>1/2/3-word phrases</strong> — n-gram analysis beyond single words.</li>
@@ -186,74 +245,41 @@
 <li><strong>Target keyword tracking</strong> — monitor specific terms' density.</li>
 <li><strong>Private</strong> — browser-local analysis keeps drafts confidential.</li>
 </ul>
+<h3>Frequently asked</h3>
+<div class="faq">
+<div class="faq-item open"><div class="faq-q">Is this keyword density checker free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — free with no account required.</p></div></div>
+<div class="faq-item"><div class="faq-q">What is a good keyword density? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Google publishes no ideal number and does not use density as a ranking factor. Treat 1–3% as a sanity-check zone, not a target — natural writing lands there on its own.</p></div></div>
+<div class="faq-item"><div class="faq-q">Can high keyword density get me penalized? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>No fixed threshold triggers a penalty. Google judges keyword stuffing by how the page reads — if it sounds manipulated to a human, it is a problem regardless of the percentage.</p></div></div>
+<div class="faq-item"><div class="faq-q">Should I check single words or phrases? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Both. Single words show topical focus; 2- and 3-word phrases reveal the long-tail patterns that actually match search queries.</p></div></div>
+<div class="faq-item"><div class="faq-q">Why filter out stop words? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Words like "the" and "and" appear constantly in every text. Filtering them lets the frequency table show the topical vocabulary you are actually analyzing.</p></div></div>
+<div class="faq-item"><div class="faq-q">Can I check a competitor's page? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — URL-based checkers analyze any public page, making density comparison part of standard competitive research.</p></div></div>
+<div class="faq-item"><div class="faq-q">How often should I check density? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Once per draft, before publishing. It is a pre-flight check, not an ongoing metric to optimize.</p></div></div>
+</div>
+  </div>
+</article></div>
 
-<h3>Frequently Asked Questions</h3>
-
-<h4>Is this keyword density checker free?</h4>
-<p>Yes — free with no account required.</p>
-
-<h4>What is a good keyword density?</h4>
-<p>Google publishes no ideal number and does not use density as a ranking factor. Treat 1–3% as a sanity-check zone, not a target — natural writing lands there on its own.</p>
-
-<h4>Can high keyword density get me penalized?</h4>
-<p>No fixed threshold triggers a penalty. Google judges keyword stuffing by how the page reads — if it sounds manipulated to a human, it is a problem regardless of the percentage.</p>
-
-<h4>Should I check single words or phrases?</h4>
-<p>Both. Single words show topical focus; 2- and 3-word phrases reveal the long-tail patterns that actually match search queries.</p>
-
-<h4>Why filter out stop words?</h4>
-<p>Words like "the" and "and" appear constantly in every text. Filtering them lets the frequency table show the topical vocabulary you are actually analyzing.</p>
-
-<h4>Can I check a competitor's page?</h4>
-<p>Yes — URL-based checkers analyze any public page, making density comparison part of standard competitive research.</p>
-
-<h4>How often should I check density?</h4>
-<p>Once per draft, before publishing. It is a pre-flight check, not an ongoing metric to optimize.</p>
-</article>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 — KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+<a class="rel" href="keyword-frequency-counter.html"><i class="fa-solid fa-list-ol" style="color:#4f46e5"></i><h3>Keyword Frequency Counter</h3><p>Count exact keyword occurrences.</p></a>
+<a class="rel" href="readability-checker.html"><i class="fa-solid fa-book-open-reader" style="color:#7c3aed"></i><h3>Readability Checker</h3><p>Flesch-Kincaid readability scores.</p></a>
+<a class="rel" href="word-counter.html"><i class="fa-solid fa-file-lines" style="color:#4f46e5"></i><h3>Word Counter</h3><p>Count words and characters live.</p></a>
+<a class="rel" href="stop-words-remover.html"><i class="fa-solid fa-filter" style="color:#7c3aed"></i><h3>Stop Words Remover</h3><p>Strip stop words from text.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../image-tools/index.html">Image Tools</a></li><li><a href="../pdf-tools/index.html">PDF Tools</a></li><li><a href="../text-tools/index.html">Text & Writing</a></li><li><a href="../seo-tools/index.html">SEO Tools</a></li><li><a href="../calculator-tools/index.html">Calculators</a></li><li><a href="../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../index.html#tools">All 203 tools</a></li><li><a href="../index.html#seo-tools">SEO tools</a></li><li><a href="../index.html#image-tools">Image tools</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../about-us.html">About</a><a href="../contact-us.html">Contact</a><a href="../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>© 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script>
         const inputText = document.getElementById('inputText');
         const resultsArea = document.getElementById('resultsArea');
@@ -358,7 +384,6 @@
             inputText.value = '';
             resultsArea.style.display = 'none';
         }
-    </script>
-  <script src="../image-tools/js/th-interactions.js"></script>
+    </script><script src="../image-tools/js/th-interactions.js"></script><script src="../image-tools/js/tu-unified.js"></script><script src="../image-tools/js/v3.js"></script>
 </body>
 </html>

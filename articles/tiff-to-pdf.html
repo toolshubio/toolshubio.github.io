@@ -1,0 +1,95 @@
+<article class="tool-article">
+<h2>TIFF to PDF Converter — Archive Scans and Print Files as PDFs</h2>
+
+<p>TIFF files are the heavyweight champions of the image world — lossless, high-resolution, and enormous. A single scanned page can be 25MB. I once received a folder of TIFF scans so large it would not fit in an email, a cloud upload, or my patience. A TIFF to PDF converter wraps those images into PDF documents: same pixel quality, far easier to share, print, and archive.</p>
+
+<h3>What Is a TIFF to PDF Converter?</h3>
+
+<p>TIFF (Tagged Image File Format) is the standard for print production, archival scanning, and fax systems. It stores images with lossless compression (or none at all), supports multiple pages in one file, and preserves every pixel. The cost is size — TIFFs are routinely 10–50 times larger than an equivalent JPEG.</p>
+
+<p>Converting TIFF to PDF does not change the image data; it changes the container. Each TIFF page becomes a PDF page, and the image is embedded — often recompressed with an efficient lossless encoding — so the file shrinks while quality stays identical. A multi-page TIFF becomes a proper multi-page document instead of an awkward image file most programs open reluctantly.</p>
+
+<p>One TIFF quirk worth knowing: the format supports many compression schemes (LZW, ZIP, CCITT Group 4 for black-and-white scans, JPEG-in-TIFF), and not every viewer handles all of them. PDF normalizes this — whatever exotic compression the TIFF used, the PDF embeds it in a universally readable way.</p>
+
+<h3>How to Use the TIFF to PDF Converter</h3>
+
+<p>Upload your .tif or .tiff files — drag and drop, or browse from your device. Multi-page TIFFs convert into multi-page PDFs automatically, preserving page order. For multiple single-page TIFFs, arrange them in sequence before converting so they land on consecutive pages. Click Convert, then download.</p>
+
+<p>Check the page size setting. Scanned documents usually want A4 or Letter at the scan's original dimensions; "fit to page" keeps everything proportional without stretching. For archival scans, resist any quality-reduction option — the point of TIFF is fidelity, and the PDF container already saves space without touching pixels.</p>
+
+<p>If your TIFFs came from a fax or document scanner, they may be 1-bit black-and-white. These convert beautifully and produce tiny PDFs — the Group 4 compression they use is extremely efficient, and the converter preserves it.</p>
+
+<h3>How TIFF to PDF Conversion Works</h3>
+
+<p>The process respects the TIFF's structure page by page.</p>
+
+<p><strong>Step 1 — TIFF parsing.</strong> The tool reads the TIFF's directory structure, which lists every page (TIFFs can hold many) along with each page's dimensions, color depth, and compression scheme.</p>
+
+<p><strong>Step 2 — Image extraction.</strong> Each page's pixel data is decoded from its native compression — LZW, ZIP, Group 4, or uncompressed — into a standard raster the PDF writer understands.</p>
+
+<p><strong>Step 3 — Re-encoding.</strong> The pixels are re-embedded using PDF-native encodings: lossless Flate for color images, CCITT Group 4 for black-and-white scans. Quality is preserved bit-for-bit; only the wrapper changes.</p>
+
+<p><strong>Step 4 — Page assembly.</strong> Pages are laid out at their true physical dimensions (using the TIFF's DPI metadata) and assembled into the final PDF.</p>
+
+<p>DPI metadata matters more than people realize. A 300-DPI scan carries its physical size in the file; the converter uses it so the PDF page matches the original paper size. TIFFs missing DPI data may default to 72 DPI and come out looking oversized — setting the page size manually fixes it.</p>
+
+<h3>Common TIFF to PDF Scenarios</h3>
+
+<table>
+<thead><tr><th>Source</th><th>Typical result</th></tr></thead>
+<tbody>
+<tr><td>Multi-page archival scan</td><td>One PDF, pages in order, quality identical</td></tr>
+<tr><td>Fax received as TIFF</td><td>Tiny PDF — Group 4 scans compress extremely well</td></tr>
+<tr><td>Print-production artwork</td><td>High-resolution PDF ready for prepress workflows</td></tr>
+<tr><td>Folder of single-page scans</td><td>Combined multi-page document, sequenced by filename</td></tr>
+<tr><td>Old photo scans</td><td>Lossless PDF archive, much smaller than the TIFFs</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses TIFF to PDF Converters?</h3>
+
+<p><strong>Archivists and librarians</strong> convert historical scans into accessible, shareable PDF collections.</p>
+
+<p><strong>Print shops</strong> normalize client TIFF artwork into PDF for prepress pipelines.</p>
+
+<p><strong>Medical and legal offices</strong> turn TIFF-based fax and scan archives into searchable document sets.</p>
+
+<p><strong>Photographers</strong> package high-resolution TIFF exports into client-proof PDFs.</p>
+
+<p><strong>Anyone digitizing paper</strong> ends up with TIFFs from the scanner and PDFs for everything else — this is the bridge.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Free conversion</strong> — no signup, no watermark.</li>
+<li><strong>Multi-page support</strong> — TIFF page sequences become PDF page sequences.</li>
+<li><strong>Lossless quality</strong> — pixels preserved exactly as scanned.</li>
+<li><strong>Batch combining</strong> — merge many TIFFs into one document.</li>
+<li><strong>All compressions handled</strong> — LZW, ZIP, Group 4, uncompressed.</li>
+<li><strong>Secure processing</strong> — encrypted uploads, auto-deleted files.</li>
+<li><strong>Browser-based</strong> — no software to install.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this TIFF to PDF converter free?</h4>
+<p>Yes — free with no account required.</p>
+
+<h4>Will I lose image quality?</h4>
+<p>No. The conversion is lossless — every pixel is preserved. File size drops because PDF packaging is more efficient, not because data is discarded.</p>
+
+<h4>Can it handle multi-page TIFFs?</h4>
+<p>Yes. Each TIFF page becomes a PDF page in the same order automatically.</p>
+
+<h4>Why is my PDF page size wrong?</h4>
+<p>The TIFF may lack DPI metadata, so the converter guessed the physical size. Set the page size manually (A4, Letter) to correct it.</p>
+
+<h4>Is there a file size limit?</h4>
+<p>Free tools commonly accept uploads up to 100 MB. Very large archival TIFFs may need splitting into batches.</p>
+
+<h4>Can I convert the PDF back to TIFF?</h4>
+<p>Yes — PDF to image tools can extract pages back out as TIFF, PNG, or JPG whenever needed.</p>
+
+<h4>Does it work for black-and-white faxes?</h4>
+<p>Perfectly. 1-bit Group 4 scans convert to tiny, crisp PDFs — often just kilobytes per page.</p>
+</article>

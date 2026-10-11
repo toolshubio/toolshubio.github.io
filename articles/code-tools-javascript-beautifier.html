@@ -1,0 +1,106 @@
+<article class="tool-article">
+<h2>JavaScript Beautifier — Free Online JS Code Formatter</h2>
+
+<p>I have lost count of how many times I have opened a JavaScript file and found it crammed onto a single line — thousands of characters with no breaks, no indentation, nothing to hold onto. It usually comes from a library I downloaded, or from a previous developer who shipped minified code straight into the repo, or from me pasting a snippet out of a minified bundle in a hurry. A JavaScript beautifier takes that unreadable wall of code and reshapes it into something a human can actually read: proper line breaks, sensible indentation, braces where your eyes expect them. Paste the mess in, get clean formatting out, no install needed.</p>
+
+<h3>What Is a JavaScript Beautifier?</h3>
+
+<p>Think of it as the reverse of a minifier. Where a minifier strips everything a browser doesn't need (spaces, line breaks, comments) to shrink file size, a beautifier — sometimes called a formatter or unminifier — puts that structure back so your eyes can follow the logic. It works by parsing the code the way a browser engine does, recognizing functions, loops, and conditionals, then re-printing it with consistent rules.</p>
+
+<p>The thing I appreciate most is that beautifying never changes what the code does. It only changes whitespace and layout. Variable names, strings, and logic stay exactly as they were — which is why it's safe to run even on production scripts you need to understand quickly. If the output of the minifier on this site turned your file into one long line, this tool is the undo button.</p>
+
+<p>One detail beginners miss: a beautifier is not a validator. It will reformat code with missing semicolons and sloppy style happily, because its job is layout, not correctness. Pair it with a quick test in your browser console if you're unsure the original code actually runs.</p>
+
+<h3>How to Use the JavaScript Beautifier</h3>
+
+<p>The workflow takes about ten seconds. Copy your minified or badly formatted JavaScript — from a file, a <code>&lt;script&gt;</code> tag in your HTML, or the sources panel of your browser's dev tools — and paste it into the input box at the top of the tool.</p>
+
+<p>Set your indentation size (2 spaces is the most common convention in modern JavaScript projects; 4 spaces is the older standard). Then click the Beautify button and the formatted code appears in the output area. From there, copy it to your clipboard or save it as a <code>.js</code> file.</p>
+
+<p>If you're experimenting, use the sample button first. It loads a realistic snippet of messy code so you can see the before-and-after before touching your own file. I always do this when I inherit a script from someone else — it tells me instantly whether the tool's default style matches what I want to read.</p>
+
+<p>A habit worth building: if the original code has syntax errors — an unclosed brace, a stray parenthesis — the beautifier may produce odd output or refuse to parse. Fix the error first, then beautify. Also, don't beautify code you intend to ship to production; keep the minified version for deployment and the beautified version for reading. Small files get faster downloads, which is exactly what the minifier on this site is for.</p>
+
+<h3>Formatting Options Worth Knowing</h3>
+
+<p>Most good beautifiers give you a few dials to turn, and this tool follows that pattern.</p>
+
+<p><strong>Indent size.</strong> The number of spaces per nesting level. JavaScript style guides like Airbnb and Standard lean toward 2 spaces, while many older codebases use 4. Pick whichever matches the project you're working in, so the beautified code blends in rather than looking foreign.</p>
+
+<p><strong>Brace style.</strong> The two classic schools: "collapsed" (opening brace on the same line as the <code>if</code> or <code>function</code>) and "expanded" (opening brace on its own line). Collapsed is the dominant JavaScript convention — nearly every popular open-source project uses it — and expanded is common in C# and Java codebases. Neither is better; consistency with your team is what matters.</p>
+
+<p><strong>Preserve newlines.</strong> Some codebases deliberately leave big gaps between functions for visual breathing room. This option keeps those empty lines instead of collapsing everything to a uniform single gap. I leave it on when I'm reading unfamiliar code, since those gaps often mark the original author's mental sections.</p>
+
+<p>The table below shows how the same snippet changes with different brace styles:</p>
+
+<table>
+<thead><tr><th>Option</th><th>Example output</th></tr></thead>
+<tbody>
+<tr><td>Collapsed braces</td><td><code>function greet(name) { console.log("Hi, " + name); }</code></td></tr>
+<tr><td>Expanded braces</td><td><code>function greet(name)<br>{<br>&nbsp;&nbsp;console.log("Hi, " + name);<br>}</code></td></tr>
+<tr><td>2-space indent</td><td><code>if (ok) {<br>&nbsp;&nbsp;save();<br>}</code></td></tr>
+<tr><td>4-space indent</td><td><code>if (ok) {<br>&nbsp;&nbsp;&nbsp;&nbsp;save();<br>}</code></td></tr>
+</tbody>
+</table>
+
+<h3>Before and After Example</h3>
+
+<p>Here is a realistic chunk of minified code — the kind you get when you view-source a production site — and what the beautifier makes of it.</p>
+
+<p><strong>Input (minified):</strong></p>
+<p><code>function calc(a,b){var t=a+b;if(t>100){console.log("large:",t);}else{console.log("small:",t);}return t;}calc(40,70);</code></p>
+
+<p><strong>Output (beautified, 2-space indent, collapsed braces):</strong></p>
+<p><code>function calc(a, b) {<br>&nbsp;&nbsp;var t = a + b;<br>&nbsp;&nbsp;if (t &gt; 100) {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log("large:", t);<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log("small:", t);<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;return t;<br>}<br>calc(40, 70);</code></p>
+
+<p>Same logic, same behavior — but now I can trace it in seconds. That readability is also what makes debugging possible: line numbers in a stack trace only help if your code actually has lines. When I'm fixing a bug in someone else's script, beautifying is always step one before I even open the debugger.</p>
+
+<h3>Who Uses a JavaScript Beautifier?</h3>
+
+<p><strong>Front-end developers</strong> use it constantly — to read third-party libraries, to untangle code pasted from Stack Overflow, and to normalize style across files before a code review. A consistent brace style and indent size make pull requests far easier to review.</p>
+
+<p><strong>Students</strong> learning JavaScript get more from reading formatted code. A minified example from a tutorial becomes a teaching example once the structure is visible, and spotting the missing semicolon that broke a homework assignment is much easier with proper line breaks.</p>
+
+<p><strong>QA testers and support engineers</strong> beautify scripts from customer-reported issues. When a user pastes a broken snippet into a ticket, reformatting it is the fastest way to reproduce and isolate the problem.</p>
+
+<p><strong>Security researchers</strong> run beautifiers on obfuscated payloads. Malware and phishing kits hide their intent in compressed JavaScript, and a formatter is usually the first pass before deeper analysis — the equivalent of decoding a payload before reading it.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant formatting</strong> — paste messy code, get readable output in one click, even for long files.</li>
+<li><strong>100% free</strong> — no account, no limits, no watermark on your code.</li>
+<li><strong>Private by design</strong> — formatting runs in your browser; your source code is never uploaded.</li>
+<li><strong>Adjustable indent size</strong> — match the 2-space or 4-space convention of your project.</li>
+<li><strong>Brace style control</strong> — collapsed or expanded, whichever your team uses.</li>
+<li><strong>Newline preservation</strong> — keeps the blank-line spacing the original author intended.</li>
+<li><strong>Sample code</strong> — try a realistic example before formatting your own file.</li>
+<li><strong>Copy and download</strong> — send the result to your clipboard or save it as a <code>.js</code> file.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this JavaScript beautifier free?</h4>
+<p>Yes — free, no signup, and no limit on how much code you can format.</p>
+
+<h4>Does beautifying change how my code works?</h4>
+<p>No. Only whitespace and line breaks change. The logic, variable names, and behavior stay identical.</p>
+
+<h4>Can it format minified jQuery plugins?</h4>
+<p>Yes. Paste the minified plugin source and the tool restructures it into readable, indented code.</p>
+
+<h4>What is the difference between beautifying and minifying?</h4>
+<p>They are opposites: beautifying adds formatting for humans, minifying strips it for smaller downloads. Use the beautifier while developing and debugging, and the minifier when deploying.</p>
+
+<h4>Will it fix syntax errors in my code?</h4>
+<p>No — it only adjusts layout. If the code has an unclosed brace or bad syntax, fix that first, then beautify.</p>
+
+<h4>Which indent size should I choose?</h4>
+<p>Match your project: 2 spaces is the modern JavaScript standard (Airbnb, Standard.js), 4 spaces is common in older codebases.</p>
+
+<h4>Is my code uploaded to a server?</h4>
+<p>No. All formatting happens locally in your browser, so private or client code stays private.</p>
+
+<h4>Can I beautify code from a URL or file?</h4>
+<p>Paste the code directly into the input box. For a file, open it in any text editor, copy the contents, and paste.</p>
+</article>

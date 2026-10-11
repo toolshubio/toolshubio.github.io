@@ -1,0 +1,89 @@
+<article class="tool-article">
+<h2>Noise Reducer — Clean Grainy Photos Without the Blur</h2>
+
+<p>The best photo I took on a night hike is also the noisiest — shot at high ISO in near-darkness, it came out speckled with grain like an old television with bad reception. For years "noise reduction" meant one thing to me: a blur slider that traded grain for mush. Modern tools are far smarter. A noise reducer distinguishes actual image detail from random noise and removes the noise while keeping the sharpness, rescuing photos that used to be write-offs.</p>
+
+<h3>What Is Image Noise?</h3>
+
+<p>Image noise is the random speckling and grain that appears in photos, and it has physical causes. <strong>High ISO noise</strong> is the big one: raising your camera's sensitivity amplifies the signal — and the electronic noise along with it. <strong>Low-light noise</strong> follows for the same reason. <strong>Long exposures</strong> let heat build up on the sensor, adding hot pixels. <strong>Heavy JPEG compression</strong> creates blocky artifacts that read as noise. Old scanned film photos bring their own grain to the party.</p>
+
+<p>There are two flavors worth knowing. <strong>Luminance noise</strong> is grain-like brightness variation — the classic "sandy" look. <strong>Color (chroma) noise</strong> is worse: random blotches of red, green, and blue in areas that should be smooth, like night skies. Good reducers attack both, because color noise is far more distracting than luminance grain.</p>
+
+<h3>How Noise Reduction Works</h3>
+
+<p>Old-school noise reduction was essentially selective blurring: average each pixel with its neighbors and the random speckles cancel out — along with fine detail. Modern approaches are more surgical:</p>
+
+<p><strong>Traditional algorithms</strong> analyze local contrast to decide what is noise (random, low-structure) versus what is detail (edges, texture) and smooth only the former. A strength slider controls the aggression.</p>
+
+<p><strong>AI denoisers</strong> go further: trained on millions of image pairs, they learn what real texture looks like versus noise, and can reconstruct plausible detail where the noise destroyed it. This is why a modern phone's night mode looks impossibly clean — aggressive AI denoising plus multi-frame merging, all invisible to you.</p>
+
+<p>The universal tradeoff remains: push reduction too far and the photo turns waxy — skin looks plastic, foliage looks painted. The art is stopping before that point.</p>
+
+<h3>How to Reduce Noise in a Photo</h3>
+
+<p><strong>Step 1 — Upload your noisy photo.</strong> Drag and drop a JPG, PNG, or WebP. Noise reduction works on any of them.</p>
+
+<p><strong>Step 2 — Set the reduction strength.</strong> Start moderate. Preview at 100% zoom — noise lives in the fine detail, and you cannot judge it on a thumbnail.</p>
+
+<p><strong>Step 3 — Balance noise vs detail.</strong> Increase strength until the grain disappears, then back off one notch. If the tool separates luminance and color noise, kill the color noise aggressively (it is pure artifact) and be gentler with luminance (some grain looks natural, even film-like).</p>
+
+<p><strong>Step 4 — Sharpen lightly afterward.</strong> Denoising softens micro-contrast; a touch of sharpening or clarity restores bite without reintroducing grain.</p>
+
+<p><strong>Step 5 — Download.</strong> Compare against the original side by side before saving.</p>
+
+<h3>What Noise Reduction Can and Cannot Fix</h3>
+
+<table>
+<thead><tr><th>Problem</th><th>Can It Be Fixed?</th></tr></thead>
+<tbody>
+<tr><td>High-ISO grain</td><td>Yes — the primary use case</td></tr>
+<tr><td>Color blotches in skies/shadows</td><td>Yes — chroma reduction handles these well</td></tr>
+<tr><td>JPEG compression artifacts</td><td>Partially — blockiness softens but structure remains</td></tr>
+<tr><td>Motion blur / out of focus</td><td>No — that is missing information, not noise</td></tr>
+<tr><td>Extreme underexposure</td><td>Partially — lifting shadows amplifies noise further</td></tr>
+<tr><td>Scanned film grain</td><td>Yes — with care to preserve the film look if desired</td></tr>
+</tbody>
+</table>
+
+<h3>Tips for Best Results</h3>
+
+<p><strong>Judge at 100% zoom.</strong> Thumbnails hide noise; full-size exports reveal it. Always preview actual pixels.</p>
+
+<p><strong>Less is more.</strong> A photo with slight grain looks natural; a photo scrubbed to plastic looks processed. Err on the side of restraint.</p>
+
+<p><strong>Treat color noise first.</strong> It is the most objectionable kind and the safest to remove aggressively.</p>
+
+<p><strong>Reduce before enlarging.</strong> If you plan to upscale, denoise first — upscaling amplifies noise along with everything else.</p>
+
+<p><strong>Shoot to avoid it.</strong> The best noise reduction is prevention: lower ISO, steadier shots, and shooting RAW (which gives reducers far more data to work with than a compressed JPEG).</p>
+
+<h3>Who Needs a Noise Reducer?</h3>
+
+<p><strong>Night and event photographers</strong> live at high ISO — concerts, weddings, astrophotography. <strong>Phone photographers</strong> deal with small sensors that get noisy fast in dim light. <strong>Archivists</strong> clean up scanned film and old digital photos. <strong>Real estate and product shooters</strong> rescue dim interiors. Basically anyone who has ever taken a photo after sunset.</p>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this noise reducer free?</h4>
+<p>Yes — free, no account, no watermark.</p>
+
+<h4>What causes grainy photos?</h4>
+<p>Mainly high ISO settings and low light — the camera amplifies its sensor signal, and electronic noise gets amplified with it. Long exposures and heavy JPEG compression add more.</p>
+
+<h4>Will noise reduction blur my photo?</h4>
+<p>Old methods did. Modern reducers target noise specifically and preserve edges and detail — but pushing the strength too high still causes a waxy, over-smoothed look.</p>
+
+<h4>What is the difference between luminance and color noise?</h4>
+<p>Luminance noise is brightness grain (sandy texture); color noise is random red/green/blue blotches. Color noise is more distracting and safer to remove aggressively.</p>
+
+<h4>Can it fix a blurry photo?</h4>
+<p>No — blur is missing information, not noise. Denoising a blurry photo just gives you a cleaner blurry photo. Try a sharpness tool for mild softness instead.</p>
+
+<h4>Should I denoise before or after editing?</h4>
+<p>Denoise early — ideally right after exposure correction and before sharpening or upscaling, since those steps amplify whatever noise remains.</p>
+
+<h4>Are my photos uploaded to a server?</h4>
+<p>No — browser-based processing keeps everything on your device.</p>
+
+<h4>Can I batch-reduce noise on many photos?</h4>
+<p>Yes — photos shot in the same conditions (same ISO, same lighting) respond well to identical settings applied as a batch.</p>
+</article>

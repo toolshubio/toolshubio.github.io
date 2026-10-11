@@ -1,66 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Generate OG tags for Facebook, Twitter, LinkedIn, and Discord. Preview how your content looks across social media platforms. Support for Video OG tags.">
-    <title>Advanced Open Graph Generator | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../image-tools/css/global.css">
-    <link rel="stylesheet" href="../image-tools/css/components.css">
-    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Open Graph Generator | TOOLSHUB</title>
+<meta name="description" content="Generate OG tags for Facebook, Twitter, LinkedIn, and Discord. Preview how your content looks across social media platforms. Support for Video OG tags.">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../image-tools/css/v3-design.css">
+<style>
+/* v3 compat — legacy tool markup mapped onto the v3 design system */
+:root{--border-color:#e4e4e7;--bg-tertiary:#f4f4f5;--bg-primary:#ffffff;--text-primary:#0a0a0b;--text-secondary:#3f3f46;--color-seo:#4f46e5}
+.ws-input,select.ws-input,textarea.ws-input{width:100%;border:1.5px solid #e4e4e7;border-radius:12px;padding:14px 16px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;outline:none;transition:.2s;background:#fff;color:#0a0a0b}
+.ws-input:focus{border-color:#4f46e5;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.ws-input::placeholder{color:#a1a1aa}
+.input-group{margin-bottom:20px}
+.input-label{display:block;font-weight:600;font-size:.92rem;margin-bottom:10px;color:#0a0a0b}
+.input-desc{font-size:.85rem;color:#71717a;margin-top:10px;line-height:1.6}
+.action-bar{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap}
+.output-section{margin-top:28px}
+.section-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.section-title{font-size:1.1rem;font-weight:700;letter-spacing:-.01em}
+.output-container{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden;background:#fff}
+.output-container table{width:100%;border-collapse:collapse;font-size:.94rem}
+.output-container th,.output-container td{padding:12px 16px;border-bottom:1px solid #f4f4f5;text-align:left}
+.output-code{font-family:monospace;font-size:.9rem;background:#f4f4f5;border:1px solid #e4e4e7;border-radius:12px;padding:16px;white-space:pre-wrap;word-break:break-all;color:#0a0a0b}
+.container,.tool-interface-container{max-width:100%}
+.schema-form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.mb-md{margin-bottom:16px}.mb-lg{margin-bottom:24px}.mb-sm{margin-bottom:8px}.mt-md{margin-top:16px}.mt-lg{margin-top:24px}.mt-sm{margin-top:8px}.text-center{text-align:center}
+.tab,.mode-btn,.device-tab,.preview-tab,.editor-tab,.nav-item{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;border:1px solid #e4e4e7;background:#fff;font-size:.88rem;font-weight:600;cursor:pointer;color:#3f3f46;transition:.15s;font-family:inherit}
+.tab:hover,.mode-btn:hover,.device-tab:hover,.preview-tab:hover,.editor-tab:hover,.nav-item:hover{border-color:#c7d2fe}
+.tab.active,.mode-btn.active,.device-tab.active,.preview-tab.active,.editor-tab.active,.nav-item.active{background:#0a0a0b;color:#fff;border-color:#0a0a0b}
+.btn-add-schema,.tu-btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;border:1px solid #e4e4e7;background:#fff;font-size:.85rem;font-weight:600;cursor:pointer;color:#3f3f46;transition:.15s;font-family:inherit}
+.btn-add-schema:hover,.tu-btn-ghost:hover{border-color:#c7d2fe;background:#eef2ff}
+.hidden{display:none!important}
+.selected{outline:2px solid #4f46e5;outline-offset:2px}
+.visual-card,.seo-card{border:1.5px solid #e4e4e7;border-radius:16px;padding:20px;cursor:pointer;transition:.15s;background:#fff}
+.visual-card:hover,.seo-card:hover{border-color:#c7d2fe}
+.option-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:24px}
+.card-icon{font-size:1.4rem;color:#4f46e5;display:block;margin-bottom:10px}
+.card-title{font-weight:700;margin-bottom:6px;color:#0a0a0b}
+.card-desc{font-size:.88rem;color:#71717a}
+.feature-card{border:1px solid #e4e4e7;border-radius:16px;padding:20px;background:#fff}
+.feature-title{font-size:.85rem;font-weight:600;color:#3f3f46;margin-bottom:8px}
+.feature-desc{font-size:.9rem;color:#71717a}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #f4f4f5;font-size:.92rem;color:#0a0a0b}
+.toggle-switch{position:relative;display:inline-block;width:48px;height:26px;flex:none}
+.toggle-switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;inset:0;background:#d4d4d8;border-radius:99px;transition:.2s;cursor:pointer}
+.slider:before{content:"";position:absolute;width:20px;height:20px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s}
+.toggle-switch input:checked+.slider{background:#4f46e5}
+.toggle-switch input:checked+.slider:before{transform:translateX(22px)}
+.checklist-item{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #e4e4e7;border-radius:12px;margin-bottom:10px;background:#fff;cursor:pointer;transition:.15s}
+.checklist-item:hover{border-color:#c7d2fe}
+.seo-result-item,.preview-box,#serpPreviewBox{border:1px solid #e4e4e7;border-radius:16px;padding:20px;background:#fff;margin-top:16px}
+.seo-url{color:#166534;font-size:.85rem}
+.seo-title{color:#1a0dab;font-size:1.1rem;margin:4px 0}
+.seo-desc{color:#3f3f46;font-size:.9rem}
+.status-badge{display:inline-block;padding:.5rem 1rem;border-radius:30px;font-weight:700}
+.bulk-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.bulk-table th,.bulk-table td{padding:10px 12px;border-bottom:1px solid #f4f4f5;text-align:left}
+.emotional-word{background:#fef3c7;padding:1px 4px;border-radius:4px}
+.power-word{background:#eef2ff;padding:1px 4px;border-radius:4px}
+.invalid,.duplicate-error{border-color:#ef4444!important}
+button.active:not(.nav-item):not(.tab):not(.mode-btn):not(.device-tab):not(.preview-tab):not(.editor-tab),a.active{box-shadow:inset 0 0 0 2px #4f46e5}
+.sim-row{display:flex;gap:10px;align-items:center;padding:8px 0;font-size:.9rem;color:#3f3f46}
+/* website speed test dashboard */
+.speed-dashboard{max-width:100%}
+.url-input-container{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.url-input-container .ws-input{flex:1;min-width:240px}
+.results-container,.history-section{margin-top:24px}
+.perf-header{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-bottom:20px}
+.vitals-summary{flex:1;min-width:240px}
+.gauge-wrapper{display:flex;gap:16px;flex-wrap:wrap}
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+.category-scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:20px 0}
+.screenshot-section,.audit-container{margin-top:28px}
+.audit-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:10px}
+.table-responsive{overflow-x:auto;border:1px solid #e4e4e7;border-radius:16px}
+.audit-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.audit-table th,.audit-table td{padding:12px 14px;border-bottom:1px solid #f4f4f5;text-align:left}
+.badge{display:inline-block;padding:4px 12px;border-radius:99px;font-size:.78rem;font-weight:700;background:#eef2ff;color:#4f46e5}
+.badge-secondary{background:#f4f4f5;color:#3f3f46}
+.analyze-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:14px;font-weight:600;font-size:.92rem;cursor:pointer;border:none;background:#0a0a0b;color:#fff;font-family:inherit;transition:.2s}
+.analyze-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -8px rgba(0,0,0,.3)}
+.loading-overlay{position:fixed;inset:0;background:rgba(255,255,255,.94);z-index:50;display:flex;align-items:center;justify-content:center}
+.progress-card{background:#fff;border:1px solid #e4e4e7;border-radius:20px;padding:36px;max-width:480px;width:90%;box-shadow:0 12px 40px -12px rgba(0,0,0,.12)}
+.p-bar{height:10px;background:#f4f4f5;border-radius:99px;overflow:hidden;margin:16px 0}
+.p-fill{height:100%;width:0;background:linear-gradient(135deg,#4f46e5,#7c3aed);border-radius:99px;transition:width .3s}
+.wst-step{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:.9rem;color:#3f3f46}
+.s-spin{width:16px;height:16px;border:2px solid #e4e4e7;border-top-color:#4f46e5;border-radius:50%;animation:spn .8s linear infinite;display:none;flex:none}
+@keyframes spn{to{transform:rotate(360deg)}}
+.error-board{border:1px solid #fecaca;background:#fef2f2;border-radius:16px;padding:28px;margin-top:20px}
+.screenshot-container{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden}
+.screenshot-img{max-width:100%;display:block}
+.data-source-badge{display:inline-block;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;background:#eef2ff;color:#4f46e5;margin-bottom:8px}
+/* aliases for markup injected by legacy JS at runtime */
+.seo-textarea{width:100%;min-height:160px;border:1.5px solid #e4e4e7;border-radius:16px;padding:22px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;line-height:1.8;resize:vertical;outline:none;transition:.2s;background:#fafafa;color:#0a0a0b}
+.seo-textarea:focus{border-color:#4f46e5;background:#fff;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.seo-textarea::placeholder{color:#a1a1aa}
+.seo-input,select.seo-input,.seo-select{width:100%;border:1.5px solid #e4e4e7;border-radius:12px;padding:14px 16px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;outline:none;transition:.2s;background:#fff;color:#0a0a0b}
+.seo-input:focus,.seo-select:focus{border-color:#4f46e5;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.seo-input::placeholder{color:#a1a1aa}
 
-
-  <link rel="stylesheet" href="../image-tools/css/th-header-footer.css">
+</style>
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../index.html#tools">All Tools</a><a href="../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../index.html#tools">Explore Tools</a></div>
+</div></header>
+<!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+<nav class="crumbs"><a href="../index.html">Home</a> &nbsp;/&nbsp; <span>Advanced Open Graph Generator</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">SEO Tools</span>
+  <h1>Advanced <em>Open Graph</em> Generator</h1>
+  <p>Create optimized social cards for Facebook, Twitter, and Discord. Now with Video OG support.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../image-tools/index.html">Image Tools</a><a href="../pdf-tools/index.html">PDF Tools</a><a href="../text-tools/index.html">Text & Writing</a><a href="../seo-tools/index.html">SEO Tools</a><a href="../calculator-tools/index.html">Calculators</a><a href="../binary-tools/index.html">Binary Tools</a><a href="../code-format-tools/index.html">Code & Formatters</a><a href="../doc-tools/index.html">Documents</a><a href="../other-tools/index.html">Other Tools</a><a href="../about-us.html">About Us</a><a href="../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a> &gt;
-                <a href="index.html">SEO Tools</a> &gt;
-                <span>Advanced Open Graph Generator</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">Advanced Open Graph Generator</h1>
-                <p class="tool-description">Generate OG tags for Facebook, Twitter, LinkedIn, and Discord. Preview how your content looks across social media platforms. Support for Video OG tags.</p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
-<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
-<div class="container text-center">
-<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Advanced Open Graph Generator
-                </h1>
-<p class="hero-subtitle">Create optimized social cards for Facebook, Twitter, and Discord. Now with
-                    Video OG support.</p>
-</div>
 </section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>Advanced Open Graph Generator</b><span>v3.0 · local</span></div>
+  <div class="ws-body">
+
 <div class="container">
 <div class="tool-interface-container" style="max-width: 1200px; margin: 0 auto;">
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
@@ -70,20 +142,20 @@
                             Basic Info</h3>
 <div class="input-group">
 <label class="input-label">Title (og:title)</label>
-<input class="seo-input" id="ogTitle" oninput="updateAll()" placeholder="My Awesome Article" type="text"/>
+<input class="seo-input ws-input" id="ogTitle" oninput="updateAll()" placeholder="My Awesome Article" type="text"/>
 </div>
 <div class="input-group">
 <label class="input-label">Description (og:description)</label>
-<textarea class="seo-textarea" id="ogDesc" oninput="updateAll()" placeholder="Brief summary..." style="height: 100px;"></textarea>
+<textarea class="seo-textarea ws-textarea" id="ogDesc" oninput="updateAll()" placeholder="Brief summary..." style="height: 100px;"></textarea>
 </div>
 <div class="schema-form-grid">
 <div class="input-group">
 <label class="input-label">Site Name</label>
-<input class="seo-input" id="ogSite" oninput="updateAll()" placeholder="My Website" type="text"/>
+<input class="seo-input ws-input" id="ogSite" oninput="updateAll()" placeholder="My Website" type="text"/>
 </div>
 <div class="input-group">
 <label class="input-label">Type</label>
-<select class="seo-select" id="ogType" onchange="updateAll()">
+<select class="seo-select ws-input" id="ogType" onchange="updateAll()">
 <option value="website">Website</option>
 <option value="article">Article</option>
 <option value="video.movie">Video</option>
@@ -93,29 +165,29 @@
 </div>
 <div class="input-group">
 <label class="input-label">Canonical URL</label>
-<input class="seo-input" id="ogUrl" oninput="updateAll()" placeholder="https://example.com/page" type="url"/>
+<input class="seo-input ws-input" id="ogUrl" oninput="updateAll()" placeholder="https://example.com/page" type="url"/>
 </div>
 <div class="input-group">
 <label class="input-label">Image URL</label>
-<input class="seo-input" id="ogImage" oninput="updateAll()" placeholder="https://example.com/image.jpg" type="url"/>
+<input class="seo-input ws-input" id="ogImage" oninput="updateAll()" placeholder="https://example.com/image.jpg" type="url"/>
 <p class="input-desc">Recommended size: 1200x630 pixels</p>
 </div>
 <!-- Video Section -->
 <div style="margin-top: 1.5rem;">
-<button class="accordian-btn" onclick="toggleVideo()">?? Video Tags (Optional)</button>
+<button class="accordian-btn tu-btn tu-btn-ghost" onclick="toggleVideo()"><i class="fa-solid fa-video"></i> Video Tags (Optional)</button>
 <div class="hidden" id="videoSection" style="padding: 1rem; border: 1px solid var(--border-color); border-top: none; border-radius: 0 0 4px 4px;">
 <div class="input-group">
 <label class="input-label">Video URL (og:video)</label>
-<input class="seo-input" id="ogVideo" oninput="updateAll()" placeholder="https://example.com/video.mp4" type="url"/>
+<input class="seo-input ws-input" id="ogVideo" oninput="updateAll()" placeholder="https://example.com/video.mp4" type="url"/>
 </div>
 <div class="schema-form-grid">
 <div class="input-group">
 <label class="input-label">Width</label>
-<input class="seo-input" id="ogVidW" oninput="updateAll()" placeholder="1280" type="number"/>
+<input class="seo-input ws-input" id="ogVidW" oninput="updateAll()" placeholder="1280" type="number"/>
 </div>
 <div class="input-group">
 <label class="input-label">Height</label>
-<input class="seo-input" id="ogVidH" oninput="updateAll()" placeholder="720" type="number"/>
+<input class="seo-input ws-input" id="ogVidH" oninput="updateAll()" placeholder="720" type="number"/>
 </div>
 </div>
 </div>
@@ -164,7 +236,7 @@
 <div style="margin-top: 2rem;">
 <div class="section-header">
 <h3 class="section-title">Generated Meta Tags</h3>
-<button class="btn-secondary" onclick="copyCode()" style="font-size: 0.8rem; padding: 0.2rem 0.5rem;">Copy</button>
+<button class="btn-secondary btn btn-light tu-btn tu-btn-primary" onclick="copyCode()" style="font-size: 0.8rem; padding: 0.2rem 0.5rem;"><i class="fa-solid fa-copy"></i> Copy</button>
 </div>
 <div class="output-container">
 <pre class="output-code" id="outputCode" style="max-height: 250px;"></pre>
@@ -174,33 +246,41 @@
 </div>
 </div>
 </div>
-            </div>
-            <section class="seo-article" data-tool="open-graph-generator">
-<article class="tool-article">
-<h2>Open Graph Generator — Free Social Preview Meta Tags</h2>
 
-<p>A friend once launched a course page and shared the link on LinkedIn. The preview showed a random sidebar image, no description, and a title pulled from somewhere in the navigation. It looked broken — because, as far as social platforms were concerned, it was. An Open Graph generator builds the meta tags that control exactly how your link looks when shared on Facebook, LinkedIn, WhatsApp, Slack, and X. Fill in a form, copy the tags, paste them in your head section, and your previews come out clean every time.</p>
+  </div>
+</div></div>
 
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 — HOW IT WORKS</span><h2>Three steps, zero learning curve</h2></div>
+  <div class="steps">
+<div class="step"><div class="step-n">i.</div><h3>Fill in the details</h3><p>Enter title, description, image, and URL.</p></div>
+<div class="step"><div class="step-n">ii.</div><h3>Preview the card</h3><p>See how it renders on Facebook, X, and Discord.</p></div>
+<div class="step"><div class="step-n">iii.</div><h3>Copy the tags</h3><p>Paste the generated OG tags into your page &lt;head&gt;.</p></div>
+  </div>
+</section>
+
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>Open Graph Generator — Free Social Preview Meta Tags</h2>
+    <p class="deck">A friend once launched a course page and shared the link on LinkedIn. The preview showed a random sidebar image, no description, and a title pulled from somewhere in the navigation. It looked broken — because, as far as social platforms were concerned, it was. An Open Graph generator builds the meta tags that control exactly how your link looks when shared on Facebook, LinkedIn, WhatsApp, Slack, and X. Fill in a form, copy the tags, paste them in your head section, and your previews come out clean every time.</p>
+    <div class="article-meta">
+      <div class="avatar">T</div>
+      <div><b>TOOLSHUB Editorial</b><span>8 min read · Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+<p class="lead">A friend once launched a course page and shared the link on LinkedIn. The preview showed a random sidebar image, no description, and a title pulled from somewhere in the navigation. It looked broken — because, as far as social platforms were concerned, it was. An Open Graph generator builds the meta tags that control exactly how your link looks when shared on Facebook, LinkedIn, WhatsApp, Slack, and X. Fill in a form, copy the tags, paste them in your head section, and your previews come out clean every time.</p>
 <h3>What Is an Open Graph Generator?</h3>
-
 <p>Open Graph is a protocol Facebook created in 2010 that lets any page declare how it should appear when shared: its title, description, image, URL, and content type. When someone pastes your link into Facebook, LinkedIn, WhatsApp, Discord, or Slack, the platform reads your page's <code>og:</code> meta tags and builds the preview card from them. Without those tags, each platform guesses — and the guesses are often wrong.</p>
-
 <p>The generator turns that guessing into a form. You enter your <code>og:title</code> (keep it under about 60 characters), <code>og:description</code> (around 150–200 characters works well for social), <code>og:url</code> (the canonical absolute URL), <code>og:image</code> (the preview image — 1200×630 pixels is the recommended size), and <code>og:type</code> (usually "website" for regular pages). It outputs a ready-to-paste block, often with matching Twitter Card tags (<code>twitter:card</code>, <code>twitter:title</code>, and so on) included, since X reads its own tag set. The best generators also render live previews showing your link the way each platform would display it, so you spot a bad image crop before your audience does.</p>
-
 <h3>How to Use the Open Graph Generator</h3>
-
 <p>The whole job takes a few minutes, and I run it on every important page.</p>
-
 <p>First, pick the page type — Website, Article, Product, or Video — since this sets <code>og:type</code> and can add type-specific properties. For an article, that means <code>article:published_time</code> and author; for a product, price and currency. Then fill in the core fields: title, description, canonical URL, and image URL. Set the image dimensions (default 1200×630) so platforms do not have to probe the image themselves, and add <code>og:site_name</code> plus your locale (e.g. en_US) for completeness.</p>
-
 <p>Check the platform previews. The generator renders mock cards for Facebook, X, LinkedIn, and often Slack or Discord — look at the image crop, read the description at a glance, and confirm the title is not truncated. If anything looks off, adjust and watch the previews update.</p>
-
 <p>Then click copy and paste the tag block into your page's <code>&lt;head&gt;</code>. One detail that bites people: use absolute image URLs (<code>https://…</code>), never relative paths, and keep the image under about 5MB so crawlers do not give up on it.</p>
-
 <p>Finally, validate. Run the URL through Facebook's Sharing Debugger to clear the cached preview and re-scrape, and use X's Card Validator for the Twitter side. Platforms cache aggressively — without the debugger step, your followers may keep seeing the old broken preview for days.</p>
-
 <h3>The Key Tags, Explained</h3>
-
 <table>
 <thead><tr><th>Tag</th><th>What it controls</th><th>Good practice</th></tr></thead>
 <tbody>
@@ -213,43 +293,31 @@
 <tr><td><code>twitter:card</code></td><td>The X card layout</td><td>summary_large_image for the big image card</td></tr>
 </tbody>
 </table>
-
 <p>Two common mistakes I see constantly: missing <code>og:image</code> (the card renders as plain text, which kills click-through), and relative image URLs that the platform cannot resolve. The generator defaults guard against both, but double-check after pasting.</p>
-
 <h3>Example: A Generated Block</h3>
-
 <p>Here is what the tool produces for a typical article page:</p>
-
 <p>
-<code>&lt;!-- Open Graph / Facebook --&gt;</code><br>
-<code>&lt;meta property="og:type" content="article"&gt;</code><br>
-<code>&lt;meta property="og:title" content="How to Sharpen a Kitchen Knife at Home"&gt;</code><br>
-<code>&lt;meta property="og:description" content="Three simple methods, the tools that actually matter, and the mistakes that ruin a blade — a practical guide for home cooks."&gt;</code><br>
-<code>&lt;meta property="og:image" content="https://example.com/images/knife-sharpening.jpg"&gt;</code><br>
-<code>&lt;meta property="og:image:width" content="1200"&gt;</code><br>
-<code>&lt;meta property="og:image:height" content="630"&gt;</code><br>
-<code>&lt;meta property="og:url" content="https://example.com/sharpen-kitchen-knife"&gt;</code><br>
-<code>&lt;meta property="og:site_name" content="Example Kitchen"&gt;</code><br>
-<code>&lt;!-- Twitter / X Card --&gt;</code><br>
-<code>&lt;meta name="twitter:card" content="summary_large_image"&gt;</code><br>
-<code>&lt;meta name="twitter:title" content="How to Sharpen a Kitchen Knife at Home"&gt;</code><br>
+<code>&lt;!-- Open Graph / Facebook --&gt;</code><br/>
+<code>&lt;meta property="og:type" content="article"&gt;</code><br/>
+<code>&lt;meta property="og:title" content="How to Sharpen a Kitchen Knife at Home"&gt;</code><br/>
+<code>&lt;meta property="og:description" content="Three simple methods, the tools that actually matter, and the mistakes that ruin a blade — a practical guide for home cooks."&gt;</code><br/>
+<code>&lt;meta property="og:image" content="https://example.com/images/knife-sharpening.jpg"&gt;</code><br/>
+<code>&lt;meta property="og:image:width" content="1200"&gt;</code><br/>
+<code>&lt;meta property="og:image:height" content="630"&gt;</code><br/>
+<code>&lt;meta property="og:url" content="https://example.com/sharpen-kitchen-knife"&gt;</code><br/>
+<code>&lt;meta property="og:site_name" content="Example Kitchen"&gt;</code><br/>
+<code>&lt;!-- Twitter / X Card --&gt;</code><br/>
+<code>&lt;meta name="twitter:card" content="summary_large_image"&gt;</code><br/>
+<code>&lt;meta name="twitter:title" content="How to Sharpen a Kitchen Knife at Home"&gt;</code><br/>
 <code>&lt;meta name="twitter:description" content="Three simple methods, the tools that actually matter..."&gt;</code>
 </p>
-
 <h3>Who Uses Open Graph Generators?</h3>
-
 <p><strong>Bloggers</strong> use them so every post shares with a proper image and hook instead of a random crop — the preview card is free distribution.</p>
-
 <p><strong>Marketers</strong> control how campaign landing pages appear when shared, A/B testing descriptions and images for social click-through.</p>
-
 <p><strong>E-commerce managers</strong> generate product-type tags with price and currency, so shared products show up richly on social feeds.</p>
-
 <p><strong>Developers</strong> scaffold the social tags for every new template alongside the core SEO tags, rather than hand-writing them each time.</p>
-
 <p><strong>News publishers</strong> use article-type tags with publish times so stories surface correctly in social and news surfaces.</p>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>Complete OG tag block</strong> — title, description, image, URL, type, site name, locale.</li>
 <li><strong>Twitter Card tags included</strong> — matching X preview tags generated alongside.</li>
@@ -260,77 +328,42 @@
 <li><strong>100% free</strong> — no signup, no limits.</li>
 <li><strong>Private by design</strong> — everything runs in your browser; nothing is uploaded.</li>
 </ul>
+<h3>Frequently asked</h3>
+<div class="faq">
+<div class="faq-item open"><div class="faq-q">What is Open Graph? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Open Graph is a protocol (created by Facebook in 2010) that lets a web page declare how it should appear when shared — its title, description, image, and URL. Social platforms read these <code>og:</code> meta tags to build link preview cards.</p></div></div>
+<div class="faq-item"><div class="faq-q">What size should my og:image be? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>1200×630 pixels is the recommended size. Use an absolute HTTPS URL and keep the file under about 5MB so platform crawlers fetch it reliably.</p></div></div>
+<div class="faq-item"><div class="faq-q">Why does my shared link show the wrong preview? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Social platforms cache previews aggressively. After fixing your tags, run the URL through Facebook's Sharing Debugger (and X's Card Validator) to clear the cache and force a re-scrape.</p></div></div>
+<div class="faq-item"><div class="faq-q">Do I need Twitter Card tags if I have Open Graph? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Mostly yes for X. X can fall back to Open Graph tags, but explicit <code>twitter:card</code> tags — especially <code>summary_large_image</code> — give you reliable control over the big image card format.</p></div></div>
+<div class="faq-item"><div class="faq-q">Does og:description need to differ from the meta description? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Not necessarily. The generator defaults it to your SEO description, which is fine. Use a different one only if the social share should read differently — punchier, more conversational — than the search listing.</p></div></div>
+<div class="faq-item"><div class="faq-q">Is this generator free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — completely free, no account needed.</p></div></div>
+<div class="faq-item"><div class="faq-q">Where do I paste the generated tags? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Inside the <code>&lt;head&gt;</code> section of your HTML. In WordPress, SEO plugins can manage Open Graph tags for you, but the generator gives you exact control for static sites and custom builds.</p></div></div>
+<div class="faq-item"><div class="faq-q">Can I use a relative URL for og:image? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>No — always use the absolute URL starting with https://. Platform crawlers cannot resolve relative paths, and the image will silently fail to load.</p></div></div>
+</div>
+  </div>
+</article></div>
 
-<h3>Frequently Asked Questions</h3>
-
-<h4>What is Open Graph?</h4>
-<p>Open Graph is a protocol (created by Facebook in 2010) that lets a web page declare how it should appear when shared — its title, description, image, and URL. Social platforms read these <code>og:</code> meta tags to build link preview cards.</p>
-
-<h4>What size should my og:image be?</h4>
-<p>1200×630 pixels is the recommended size. Use an absolute HTTPS URL and keep the file under about 5MB so platform crawlers fetch it reliably.</p>
-
-<h4>Why does my shared link show the wrong preview?</h4>
-<p>Social platforms cache previews aggressively. After fixing your tags, run the URL through Facebook's Sharing Debugger (and X's Card Validator) to clear the cache and force a re-scrape.</p>
-
-<h4>Do I need Twitter Card tags if I have Open Graph?</h4>
-<p>Mostly yes for X. X can fall back to Open Graph tags, but explicit <code>twitter:card</code> tags — especially <code>summary_large_image</code> — give you reliable control over the big image card format.</p>
-
-<h4>Does og:description need to differ from the meta description?</h4>
-<p>Not necessarily. The generator defaults it to your SEO description, which is fine. Use a different one only if the social share should read differently — punchier, more conversational — than the search listing.</p>
-
-<h4>Is this generator free?</h4>
-<p>Yes — completely free, no account needed.</p>
-
-<h4>Where do I paste the generated tags?</h4>
-<p>Inside the <code>&lt;head&gt;</code> section of your HTML. In WordPress, SEO plugins can manage Open Graph tags for you, but the generator gives you exact control for static sites and custom builds.</p>
-
-<h4>Can I use a relative URL for og:image?</h4>
-<p>No — always use the absolute URL starting with https://. Platform crawlers cannot resolve relative paths, and the image will silently fail to load.</p>
-</article>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 — KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+<a class="rel" href="meta-tag-generator.html"><i class="fa-solid fa-tags" style="color:#4f46e5"></i><h3>Meta Tag Generator</h3><p>Generate and validate meta tags.</p></a>
+<a class="rel" href="meta-description-checker.html"><i class="fa-solid fa-tags" style="color:#7c3aed"></i><h3>Meta Description Checker</h3><p>Optimize descriptions for CTR.</p></a>
+<a class="rel" href="slug-generator.html"><i class="fa-solid fa-link" style="color:#4f46e5"></i><h3>Slug Generator</h3><p>SEO-friendly URL slugs.</p></a>
+<a class="rel" href="schema-generator.html"><i class="fa-solid fa-code" style="color:#7c3aed"></i><h3>Schema Generator</h3><p>JSON-LD schema markup builder.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../image-tools/index.html">Image Tools</a></li><li><a href="../pdf-tools/index.html">PDF Tools</a></li><li><a href="../text-tools/index.html">Text & Writing</a></li><li><a href="../seo-tools/index.html">SEO Tools</a></li><li><a href="../calculator-tools/index.html">Calculators</a></li><li><a href="../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../index.html#tools">All 203 tools</a></li><li><a href="../index.html#seo-tools">SEO tools</a></li><li><a href="../index.html#image-tools">Image tools</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../about-us.html">About</a><a href="../contact-us.html">Contact</a><a href="../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>© 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script>
         function setTab(p) {
             document.querySelectorAll('.preview-tab').forEach(t => t.classList.remove('active'));
@@ -424,7 +457,6 @@
 
         // Init
         updateAll();
-    </script>
-  <script src="../image-tools/js/th-interactions.js"></script>
+    </script><script src="../image-tools/js/th-interactions.js"></script><script src="../image-tools/js/tu-unified.js"></script><script src="../image-tools/js/v3.js"></script>
 </body>
 </html>

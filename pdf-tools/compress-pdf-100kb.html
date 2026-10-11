@@ -1,124 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Compress your PDF to 100KB reliably. Intelligent compression for text and images. 100% secure, client-side.">
-    <title>Compress PDF to 100KB - Balanced Size Reduction | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../image-tools/css/global.css">
-    <link rel="stylesheet" href="../image-tools/css/components.css">
-    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-
-  <link rel="stylesheet" href="../image-tools/css/th-header-footer.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compress PDF to 100KB - Balanced Size Reduction | TOOLSHUB</title>
+<meta name="description" content="Compress your PDF to 100KB reliably. Intelligent compression for text and images. 100% secure, client-side.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../image-tools/css/v3-design.css">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<style>/* ---- v3 PDF workspace components ---- */
+.pdf-tool-container{display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:start}
+@media(max-width:900px){.pdf-tool-container{grid-template-columns:1fr}}
+@keyframes borderFlow{to{background-position:100% 100%,300% 0}}
+@keyframes floaty{50%{transform:translateY(-8px)}}
+@keyframes popIn{from{transform:scale(.9);opacity:0}}
+.ws-dropzone,.pdf-upload-zone{position:relative;border-radius:20px;padding:56px 32px;text-align:center;cursor:pointer;
+  background:linear-gradient(#fff,#fff) padding-box,
+  linear-gradient(135deg,#6366f1,#8b5cf6,#d946ef,#6366f1) border-box;
+  background-size:100% 100%,300% 300%;border:2px dashed transparent;
+  animation:borderFlow 6s linear infinite;transition:transform .25s,box-shadow .25s}
+.ws-dropzone:hover,.pdf-upload-zone:hover{transform:translateY(-3px);box-shadow:0 20px 50px -18px rgba(139,92,246,.4)}
+.ws-dropzone.dragover,.pdf-upload-zone.dragover{transform:scale(1.02);box-shadow:0 0 0 6px rgba(139,92,246,.15),0 20px 50px -18px rgba(139,92,246,.5)}
+.pdf-upload-icon{display:inline-grid;place-items:center;width:84px;height:84px;border-radius:24px;
+  background:linear-gradient(135deg,#6366f1,#8b5cf6 55%,#d946ef);color:#fff;font-size:2.2rem;margin-bottom:20px;
+  box-shadow:0 14px 34px -10px rgba(139,92,246,.55);animation:floaty 3.5s ease-in-out infinite}
+.ws-dropzone h2,.pdf-upload-zone h2{font-size:1.45rem;letter-spacing:-.02em;margin-bottom:8px}
+.ws-dropzone p,.pdf-upload-zone p{color:#64748b;margin-bottom:6px}
+.pdf-secure{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:.84rem;color:#059669;
+  background:#ecfdf5;border:1px solid #d1fae5;padding:9px 18px;border-radius:99px;font-weight:600}
+.ws-body .tu-btn{width:100%;justify-content:center;margin-top:10px}
+.btn:disabled{opacity:.55;cursor:not-allowed;transform:none!important}
+.btn-download{display:none}
+.btn-download.show{display:inline-flex}
+.pdf-progress{height:8px;background:#eef2ff;border-radius:99px;overflow:hidden;margin-top:16px;display:none}
+.pdf-progress.show{display:block}
+.pdf-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#6366f1,#d946ef);border-radius:99px;transition:width .3s}
+.pdf-page-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin-top:24px}
+.pdf-page-item{background:#fff;border:1.5px solid #e6eaf2;border-radius:16px;padding:16px 12px;text-align:center;
+  position:relative;transition:.2s;animation:popIn .3s ease}
+.pdf-page-item:hover{border-color:#c7d2fe;transform:translateY(-3px);box-shadow:0 12px 30px -12px rgba(99,102,241,.3)}
+.pdf-page-number{position:absolute;top:8px;left:8px;min-width:28px;height:28px;border-radius:99px;
+  background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;font-size:.75rem;font-weight:700;
+  display:grid;place-items:center;padding:0 8px}
+.pdf-page-thumbnail{font-size:2.2rem;color:#dc2626;margin:6px 0}
+.pdf-file-card{background:#fff;border:1.5px solid #e6eaf2;border-radius:16px;padding:18px 14px;text-align:center;
+  position:relative;transition:.2s;animation:popIn .3s ease}
+.pdf-file-card .pdf-thumb{width:56px;height:70px;margin:0 auto 12px;border-radius:8px;
+  background:linear-gradient(135deg,#fef2f2,#fee2e2);display:grid;place-items:center;
+  color:#dc2626;font-size:1.6rem;border:1px solid #fecaca}
+.pdf-settings-panel{background:linear-gradient(180deg,#fafbff,#fff);border:1px solid #e6eaf2;border-radius:20px;padding:26px}
+.pdf-settings-panel .setting-group{margin-bottom:22px}
+.pdf-settings-panel .setting-group>label{display:block;font-size:.82rem;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:#475569;margin-bottom:14px}
+.checkbox-container,.radio-container{display:flex;align-items:center;gap:12px;cursor:pointer;font-size:.92rem;font-weight:500;padding:10px 0}
+.checkbox-container input{appearance:none;width:22px;height:22px;border:2px solid #cbd5e1;border-radius:7px;cursor:pointer;
+  position:relative;transition:.2s;flex-shrink:0;background:#fff;margin:0}
+.checkbox-container input:checked{background:linear-gradient(135deg,#6366f1,#8b5cf6);border-color:#6366f1}
+.checkbox-container input:checked::after{content:"✓";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:.8rem;font-weight:700}
+.radio-container input{appearance:none;width:22px;height:22px;border:2px solid #cbd5e1;border-radius:50%;cursor:pointer;
+  transition:.2s;flex-shrink:0;background:#fff;margin:0}
+.radio-container input:checked{border:6px solid #6366f1}
+.radio-group{display:flex;flex-direction:column;gap:4px}
+.form-control{width:100%;padding:12px 15px;border:1.5px solid #e6eaf2;border-radius:12px;font-size:.92rem;
+  font-family:inherit;outline:none;background:#fff;color:#0f172a;transition:.2s}
+.form-control:focus{border-color:#6366f1;box-shadow:0 0 0 4px rgba(99,102,241,.12)}
+input[type=range].form-control{padding:0;border:none;background:transparent;accent-color:#6366f1}
+.comparison-view{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+.comp-box{border:1.5px solid #e6eaf2;border-radius:16px;padding:20px;text-align:center;background:#fff}
+.comp-label{display:block;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin-bottom:8px}
+.comp-size{display:block;font-size:1.6rem;font-weight:700}
+.savings-badge{display:inline-block;margin-top:10px;background:#4caf50;color:#fff;font-size:.78rem;font-weight:700;padding:6px 14px;border-radius:99px}
+.watermark-preview{position:relative;background:#f8fafc;border:1.5px dashed #cbd5e1;border-radius:16px;
+  min-height:260px;display:grid;place-items:center;overflow:hidden;margin-top:16px}
+.watermark-overlay{position:absolute;font-size:2.2rem;font-weight:800;color:rgba(99,102,241,.28);
+  transform:rotate(-24deg);letter-spacing:.1em;pointer-events:none;text-transform:uppercase}
+.premium-feature-badge{display:inline-block;background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;
+  font-size:.7rem;font-weight:700;padding:4px 12px;border-radius:99px;letter-spacing:.06em;margin-left:8px}
+.queue-header h4{margin:0;font-size:1rem}
+.ws-body table{width:100%;border-collapse:collapse;font-size:.9rem;margin:12px 0}
+.ws-body th,.ws-body td{padding:10px;border-bottom:1px solid #eef2ff;text-align:left}
+.ws-body th{font-weight:600;color:#475569;font-size:.82rem;text-transform:uppercase;letter-spacing:.04em}</style>
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../index.html#tools">All Tools</a><a href="../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../index.html#tools">Explore Tools</a></div>
+</div></header>
+<!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+<nav class="crumbs"><a href="../index.html">Home</a> &nbsp;/&nbsp; <span>Compress PDF to 100KB Advanced</span></nav>
+<section class="hero">
+  <span class="hero-eyebrow">PDF Tools</span>
+  <h1>Compress PDF to <em>100KB.</em></h1>
+  <p>Compress your PDF to 100KB reliably. Intelligent compression for text and images. 100% secure, client-side.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../image-tools/index.html">Image Tools</a><a href="../pdf-tools/index.html">PDF Tools</a><a href="../text-tools/index.html">Text & Writing</a><a href="../seo-tools/index.html">SEO Tools</a><a href="../calculator-tools/index.html">Calculators</a><a href="../binary-tools/index.html">Binary Tools</a><a href="../code-format-tools/index.html">Code & Formatters</a><a href="../doc-tools/index.html">Documents</a><a href="../other-tools/index.html">Other Tools</a><a href="../about-us.html">About Us</a><a href="../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a> &gt;
-                <a href="index.html">PDF Tools</a> &gt;
-                <span>Compress PDF to 100KB Advanced</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">Compress PDF to 100KB Advanced</h1>
-                <p class="tool-description">Optimize your PDF to stay within the 100KB threshold.</p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
+</section>
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>Compress PDF to 100KB Advanced</b><span>v3.0 · local</span></div>
+  <div class="ws-body">
 <div class="pdf-tool-container">
 <div class="tool-main">
-<div class="pdf-upload-zone" id="drop-zone">
-<span class="pdf-upload-icon"><i class="fa-solid fa-file-arrow-up"></i></span>
+<div class="pdf-upload-zone ws-dropzone" id="drop-zone">
+<span class="pdf-upload-icon"><i class="fa-solid fa-compress"></i></span>
 <h2>Upload PDF</h2>
-<p>Target size: <strong>100KB</strong></p>
+<p>Target size: <strong>100KB</strong> — <u>click to browse</u></p>
 <input accept=".pdf" id="file-input" style="display: none;" type="file"/>
+<div><span class="pdf-secure"><i class="fa-solid fa-shield-halved"></i> 100% Secure — files never leave your browser</span></div>
 </div>
+<div class="pdf-progress" id="compress-pdf-100kb-progress"><i></i></div>
 </div>
 <aside class="pdf-settings-panel">
-<button class="btn btn-pdf" disabled="" id="compress-btn">
+<button class="tu-btn tu-btn-primary btn btn-pdf btn-dark" disabled="" id="compress-btn">
 <i class="fa-solid fa-compress"></i> Compress to 100KB
                 </button>
-<a class="btn-download" href="#" id="download-btn" style="display: none;">
+<a class="tu-btn tu-btn-ghost btn-download btn-light" href="#" id="download-btn" style="display: none;">
 <i class="fa-solid fa-download"></i> Download 100KB PDF
                 </a>
 </aside>
 </div>
- Features Info 
-<section class="tool-features-info" style="margin-top: 5rem;">
-<div class="features-grid">
-<div class="feature-card">
-<h3 class="feature-title">Balanced Quality</h3>
-<p class="feature-desc">Optimizes image resolution and removes unnecessary metadata to hit the 100KB
-                        target without visible quality loss for most documents.</p>
-</div>
-<div class="feature-card">
-<h3 class="feature-title">Private &amp; Fast</h3>
-<p class="feature-desc">All processing happens locally. Your documents never touch our servers,
-                        providing instant results and total data security.</p>
-</div>
-</div>
+  </div>
+</div></div>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 — HOW IT WORKS</span><h2>Three steps, zero learning curve</h2></div>
+  <div class="steps">
+    <div class="step"><div class="step-n">i.</div><h3>Upload your PDF</h3><p>Drag & drop your PDF onto the upload zone, or click to browse files on your device.</p></div>
+    <div class="step"><div class="step-n">ii.</div><h3>Compress to 100KB</h3><p>The smart engine analyzes your file and optimizes images and objects to land at or under 100KB.</p></div>
+    <div class="step"><div class="step-n">iii.</div><h3>Download the result</h3><p>Check the before/after file sizes, then download your compressed PDF in one click.</p></div>
+  </div>
 </section>
-
-
- Scripts
-            </div>
-            <section class="seo-article" data-tool="compress-pdf-100kb">
-<article class="tool-article">
-<h2>Compress PDF to 100KB — Shrink PDF Files Online, Free</h2>
-
-<p>"Attachment must be under 100KB." A scanned application form, a signed contract, a certificate — and the PDF sitting on your drive is 4MB. Email servers bounce it, portals reject it, uploads time out. A PDF compressor tuned to a target size squeezes the file down to 100KB or less by optimizing images, trimming redundant data, and re-encoding efficiently — while keeping the document readable and professional. Upload, compress, download, submit.</p>
-
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>Compress PDF to 100KB — Shrink PDF Files Online, Free</h2>
+    <p class="deck">"Attachment must be under 100KB." A scanned application form, a signed contract, a certificate — and the PDF sitting on your drive is 4MB. Email servers bounce it, portals reject it, uploads time out. A PDF compressor tuned to a target size squeezes the file down to 100KB or less by optimizing images, trimming redundant data, and re-encoding efficiently — while keeping the document readable and professional. Upload, compress, download, submit.</p>
+    <div class="article-meta"><div class="avatar">T</div><div><b>TOOLSHUB Editorial</b><span>8 min read · Updated Oct 2026</span></div></div>
+  </div>
+  <div class="article-body">
 <h3>What Does Compressing a PDF to 100KB Mean?</h3>
-
-<p>PDF compression reduces a document's file size without changing its content. The tool attacks the weight where it lives: embedded images get downsampled and re-encoded (this is where 90% of the savings come from), duplicate objects get deduplicated, unused fonts and metadata get stripped, and the whole structure gets re-encoded efficiently.</p>
-
+<p class="lead">PDF compression reduces a document's file size without changing its content. The tool attacks the weight where it lives: embedded images get downsampled and re-encoded (this is where 90% of the savings come from), duplicate objects get deduplicated, unused fonts and metadata get stripped, and the whole structure gets re-encoded efficiently.</p>
 <p>Target-size compression goes one step further than generic "make it smaller" — you type the exact limit (100KB) and the tool iterates until the output lands at or below it. That guarantee is what makes it useful for forms and portals: no guessing, no rejected uploads.</p>
-
 <p>The honest tradeoff: extreme compression costs quality. A 4MB scan squeezed to 100KB will look softer — the question is whether it stays <em>readable</em>, which for text documents it almost always does. Photos and fine graphics suffer first; printed text survives remarkably well.</p>
-
 <h3>How to Compress a PDF to 100KB Online</h3>
-
 <p><strong>Step 1 — Upload your PDF.</strong> Drag and drop or click to select. Most tools accept PDFs up to 100MB — plenty for scanned documents.</p>
-
 <p><strong>Step 2 — Set the target size.</strong> Enter 100KB (or pick it from presets). Some tools offer compression levels instead — strong/maximum gets you closest to tiny targets.</p>
-
 <p><strong>Step 3 — Compress.</strong> The tool optimizes embedded images and annotations, strips redundancies, and re-encodes. Processing takes seconds for typical documents.</p>
-
 <p><strong>Step 4 — Download and verify.</strong> Save the compressed PDF and check two things: the file size (at or under 100KB) and readability (zoom in — is the text still crisp?). Then submit with confidence.</p>
-
 <p>Habit worth building: always compress from the original PDF, never from an already-compressed one. Re-compressing compounds artifacts — text that survived one pass can turn to mush on the second.</p>
-
 <h3>Where the Bytes Go — What Compression Actually Removes</h3>
-
 <table>
 <thead><tr><th>Source of bloat</th><th>What compression does</th><th>Typical savings</th></tr></thead>
 <tbody>
@@ -129,19 +163,12 @@
 <tr><td>Uncompressed streams</td><td>Re-encodes with efficient filters</td><td>Varies — big on old PDFs</td></tr>
 </tbody>
 </table>
-
 <h3>Who Compresses PDFs to 100KB?</h3>
-
 <p><strong>Job seekers and students</strong> face the strictest limits — application portals, exam forms, and admission systems with hard caps on resume and certificate uploads. A 100KB target is the classic requirement.</p>
-
 <p><strong>Office workers</strong> shrink contracts, reports, and scanned paperwork for email — staying under attachment limits beats splitting documents or using file-transfer workarounds.</p>
-
 <p><strong>Freelancers</strong> compress portfolios and deliverables for client review, where a fast-loading file gets opened and a 50MB one gets "I'll look at it later."</p>
-
 <p><strong>Website owners</strong> compress downloadable PDFs — brochures, whitepapers, menus — because every megabyte costs load time and bandwidth.</p>
-
 <h3>Practical Tips for Hitting 100KB</h3>
-
 <ul>
 <li><strong>Start from the original.</strong> Compressing an already-compressed PDF degrades quality fast — always work from the source.</li>
 <li><strong>Scan at sane resolutions.</strong> A 600-DPI scan headed for a 100KB target wastes bytes — 150–200 DPI is plenty for on-screen reading.</li>
@@ -151,77 +178,29 @@
 <li><strong>Try strong compression first.</strong> For tiny targets, start at the highest level and dial back only if quality suffers.</li>
 <li><strong>Keep the original.</strong> Archive the full-quality PDF; the 100KB version is a submission copy, not a master.</li>
 </ul>
-
-<h3>Frequently Asked Questions</h3>
-
-<h4>Is this PDF compressor free?</h4>
-<p>Yes — free, no signup, no watermarks on the compressed file.</p>
-
-<h4>How do I compress a PDF to exactly 100KB?</h4>
-<p>Upload your PDF, enter 100KB as the target size, and compress. The tool optimizes images and structure until the output lands at or below 100KB — then verify the size before submitting.</p>
-
-<h4>Will my PDF still be readable at 100KB?</h4>
-<p>For text documents, yes — text survives aggressive compression remarkably well. Photo-heavy pages will look softer. Always zoom in and check readability after compressing.</p>
-
-<h4>What makes PDFs so large in the first place?</h4>
-<p>Embedded images, almost always. High-resolution scans, photos, and unoptimized graphics account for the vast majority of PDF weight — which is also why image optimization drives most of the savings.</p>
-
-<h4>Are my files uploaded to a server?</h4>
-<p>Server-based tools use encrypted transfers and auto-delete files (typically within hours). Browser-based tools process locally with nothing uploaded — check which kind you are using for sensitive documents.</p>
-
-<h4>Can I compress a scanned PDF?</h4>
-<p>Yes — scanned PDFs compress well because the "text" is really images, and image optimization is exactly what the tool does best. For extreme targets, rescanning at lower DPI helps enormously.</p>
-
-<h4>What is the maximum file size I can upload?</h4>
-<p>Typically up to 100MB for PDFs — far above what most documents need. If yours is larger, split it first.</p>
-
-<h4>Compress vs. resize — which do I need?</h4>
-<p>Compress when the file must shrink but the content stays the same (this tool). <strong>Resize</strong> or split when you need fewer pages or smaller dimensions. For portal uploads with KB limits, compression is the answer.</p>
-</article>
+<div class="faq"><div class="faq-item open"><div class="faq-q">Is this PDF compressor free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — free, no signup, no watermarks on the compressed file.</p></div></div><div class="faq-item"><div class="faq-q">How do I compress a PDF to exactly 100KB? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Upload your PDF, enter 100KB as the target size, and compress. The tool optimizes images and structure until the output lands at or below 100KB — then verify the size before submitting.</p></div></div><div class="faq-item"><div class="faq-q">Will my PDF still be readable at 100KB? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>For text documents, yes — text survives aggressive compression remarkably well. Photo-heavy pages will look softer. Always zoom in and check readability after compressing.</p></div></div><div class="faq-item"><div class="faq-q">What makes PDFs so large in the first place? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Embedded images, almost always. High-resolution scans, photos, and unoptimized graphics account for the vast majority of PDF weight — which is also why image optimization drives most of the savings.</p></div></div><div class="faq-item"><div class="faq-q">Are my files uploaded to a server? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Server-based tools use encrypted transfers and auto-delete files (typically within hours). Browser-based tools process locally with nothing uploaded — check which kind you are using for sensitive documents.</p></div></div><div class="faq-item"><div class="faq-q">Can I compress a scanned PDF? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — scanned PDFs compress well because the "text" is really images, and image optimization is exactly what the tool does best. For extreme targets, rescanning at lower DPI helps enormously.</p></div></div><div class="faq-item"><div class="faq-q">What is the maximum file size I can upload? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Typically up to 100MB for PDFs — far above what most documents need. If yours is larger, split it first.</p></div></div><div class="faq-item"><div class="faq-q">Compress vs. resize — which do I need? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Compress when the file must shrink but the content stays the same (this tool). <strong>Resize</strong> or split when you need fewer pages or smaller dimensions. For portal uploads with KB limits, compression is the answer.</p></div></div></div>
+  </div>
+</article></div>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 — KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+    <a class="rel" href="merge-pdf.html"><i class="fa-solid fa-layer-group" style="color:#4f46e5"></i><h3>Merge PDF</h3><p>Combine multiple PDFs into one file.</p></a>
+    <a class="rel" href="split-pdf.html"><i class="fa-solid fa-scissors" style="color:#7c3aed"></i><h3>Split PDF</h3><p>Split a PDF by pages, ranges or size.</p></a>
+    <a class="rel" href="pdf-to-zip.html"><i class="fa-regular fa-file-zipper" style="color:#4f46e5"></i><h3>PDF to ZIP</h3><p>Archive PDF collections into a ZIP file.</p></a>
+    <a class="rel" href="compress-pdf.html"><i class="fa-solid fa-compress" style="color:#7c3aed"></i><h3>Compress PDF</h3><p>Reduce PDF size with smart AI compression.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../image-tools/index.html">Image Tools</a></li><li><a href="../pdf-tools/index.html">PDF Tools</a></li><li><a href="../text-tools/index.html">Text & Writing</a></li><li><a href="../seo-tools/index.html">SEO Tools</a></li><li><a href="../calculator-tools/index.html">Calculators</a></li><li><a href="../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a><p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../index.html#tools">All 203 tools</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../about-us.html">About</a><a href="../contact-us.html">Contact</a><a href="../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>© 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
 <script src="js/pdf-logic.js"></script>
 <script>
@@ -276,6 +255,8 @@
             });
         });
     </script>
-  <script src="../image-tools/js/th-interactions.js"></script>
+<script src="../image-tools/js/th-interactions.js"></script>
+<script src="../image-tools/js/tu-unified.js"></script>
+<script src="../image-tools/js/v3.js"></script>
 </body>
 </html>

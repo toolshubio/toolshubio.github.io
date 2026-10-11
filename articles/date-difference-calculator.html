@@ -1,0 +1,99 @@
+<article class="tool-article">
+<h2>Date Difference Calculator — Free Online Days Between Dates</h2>
+
+<p>I once had to count the days between two project milestones for a contract, and my "quick mental count" was off by eleven days — embarrassing and expensive. A date difference calculator does that counting properly: enter two dates and get the exact gap in years, months, and days, plus the total days, weeks, hours, and minutes. No calendar flipping, no leap-year traps.</p>
+
+<h3>What Is a Date Difference Calculator?</h3>
+
+<p>A date difference calculator measures the exact time between any two dates. It gives you two views of the same gap: the calendar view (2 years, 3 months, 14 days) and the total view (842 days). Both matter — contracts and HR policies usually speak in calendar terms, while interest calculations and project plans want raw day counts.</p>
+
+<p>The tricky part it handles for you is the calendar itself. Months have 28–31 days, leap years insert February 29, and counting "months" between dates requires borrowing logic, not simple subtraction. Enter 28 February 2024 and 2 March 2024 and the tool correctly returns 3 days — because 2024 is a leap year and February has 29 days that year. Get that wrong by hand and everything downstream is off.</p>
+
+<p>Order does not matter: the calculator uses the earlier date as the start either way, so measuring "from A to B" and "from B to A" give the same answer. That symmetry is genuinely useful when you are checking someone else's date math.</p>
+
+<h3>How to Use the Date Difference Calculator</h3>
+
+<p>Enter the first date and the second date using the date pickers. The result appears instantly — total days between them, plus the calendar breakdown in years, months, and days, and often the breakdown in weeks, hours, and minutes too.</p>
+
+<p>Decide whether you want inclusive or exclusive counting before you trust the number. Most tools count the gap exclusively (1 Jan to 2 Jan = 1 day). If your contract counts both endpoints, add one. This single convention causes more "the tool is wrong" complaints than any actual bug — I check it first whenever numbers look off by one.</p>
+
+<p>One habit worth building: for deadline math, calculate forward from today rather than backward from the deadline. "90 days from 15 March" and "days between 15 March and 13 June" should agree — when they do not, you have caught a counting error before it mattered.</p>
+
+<h3>How Date Difference Calculation Works</h3>
+
+<p>Two computations run in parallel — one for total days, one for the calendar breakdown.</p>
+
+<p><strong>Total days.</strong> Each date converts to a timestamp (milliseconds since the epoch); the absolute difference divided by 86,400,000 (milliseconds per day) and rounded down gives the total day count. Time zones are normalized so a date means the same day everywhere.</p>
+
+<p><strong>Calendar breakdown.</strong> Years, months, and days are computed with borrowing: subtract the day-of-month first (borrowing a month's days when needed), then months (borrowing 12 when needed), then years. Leap years and month lengths come from the real calendar, not averages.</p>
+
+<p>Worked example — 10 February 1984 to 16 January 1985: total days = 341. Calendar view: from Feb 1984 to Jan 1985 is 11 months; days from the 10th to the 16th = 6 days → 0 years, 11 months, 6 days. The tool shows both, because "341 days" and "11 months 6 days" answer different questions.</p>
+
+<h3>Common Date Difference Examples</h3>
+
+<p>Typical results to verify the tool against:</p>
+
+<table>
+<thead><tr><th>Start Date</th><th>End Date</th><th>Calendar Gap</th><th>Total Days</th></tr></thead>
+<tbody>
+<tr><td>28 Feb 2024</td><td>2 Mar 2024</td><td>0 y, 0 m, 3 d</td><td>3</td></tr>
+<tr><td>1 Jan 2024</td><td>1 Jan 2025</td><td>1 y, 0 m, 0 d</td><td>366 (leap year)</td></tr>
+<tr><td>1 Jan 2025</td><td>1 Jan 2026</td><td>1 y, 0 m, 0 d</td><td>365</td></tr>
+<tr><td>10 Feb 1984</td><td>16 Jan 1985</td><td>0 y, 11 m, 6 d</td><td>341</td></tr>
+<tr><td>15 Mar 2026</td><td>13 Jun 2026</td><td>0 y, 2 m, 29 d</td><td>90</td></tr>
+</tbody>
+</table>
+
+<p>The leap-year row is the one to remember: a full year starting in 2024 is 366 days, but the same dates a year later give 365. Any tool that ignores leap years will be wrong here — a quick way to test a new calculator.</p>
+
+<h3>Who Uses Date Difference Calculators?</h3>
+
+<p><strong>Project managers</strong> count working days between milestones and verify schedule math that spreadsheets got wrong.</p>
+
+<p><strong>HR and payroll staff</strong> compute notice periods, probation lengths, and service durations where exact day counts decide pay.</p>
+
+<p><strong>Legal and contract work</strong> depends on precise durations — "90 days from signing" needs a real answer, not an estimate.</p>
+
+<p><strong>Parents and couples</strong> track pregnancy weeks, baby ages in days, and anniversary countdowns.</p>
+
+<p><strong>Students</strong> solve date-arithmetic problems and verify history timelines with exact gaps.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant results</strong> — the gap appears as you pick the dates.</li>
+<li><strong>Dual view</strong> — calendar breakdown plus total days, weeks, hours.</li>
+<li><strong>Leap-year correct</strong> — February 29 handled by the real calendar.</li>
+<li><strong>Order-independent</strong> — earlier date is used as the start automatically.</li>
+<li><strong>Business-day options</strong> — many tools exclude weekends and holidays.</li>
+<li><strong>100% free</strong> — no signup, no subscription, no limits.</li>
+<li><strong>Private by design</strong> — runs in your browser; your dates are never stored.</li>
+<li><strong>Works everywhere</strong> — any modern browser on desktop or mobile.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this date difference calculator free?</h4>
+<p>Yes — free, no account, no limits.</p>
+
+<h4>How is the difference calculated?</h4>
+<p>Total days come from the timestamp difference divided by 86,400,000 ms/day; the calendar breakdown (years, months, days) uses borrowing logic against the real calendar.</p>
+
+<h4>Does it account for leap years?</h4>
+<p>Yes. February 29 exists in leap years and the day counts reflect it — a year spanning 2024 is 366 days.</p>
+
+<h4>Does the order of the dates matter?</h4>
+<p>No. The calculator uses the earlier date as the start, so both orders give the same result.</p>
+
+<h4>Is the count inclusive or exclusive?</h4>
+<p>Most tools count exclusively (1 Jan to 2 Jan = 1 day). Add one if your use case counts both endpoints.</p>
+
+<h4>Can I exclude weekends?</h4>
+<p>Many date calculators offer a business-days mode that skips Saturdays, Sundays, and optionally holidays.</p>
+
+<h4>Can I add days to a date instead?</h4>
+<p>Yes — most tools include a date-adder mode: enter a start date plus a number of days to get the resulting date.</p>
+
+<h4>Is my data stored anywhere?</h4>
+<p>No. The calculation runs entirely in your browser; your dates never leave your device.</p>
+</article>

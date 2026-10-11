@@ -1,0 +1,110 @@
+<article class="tool-article">
+<h2>Code Obfuscator — Protect Your JavaScript Source Code</h2>
+
+<p>Shipping JavaScript to a browser means handing your source code to every visitor. Anyone can open DevTools and read it. Minification shrinks the code, but a beautifier restores it in seconds — the logic stays perfectly readable. I learned this shipping a pricing calculator with proprietary formulas: minified, it took a curious competitor about ten minutes to reconstruct the math. Obfuscation is the next level: it transforms your code into something that still runs identically but is genuinely painful to understand — renamed variables, encrypted strings, flattened control flow, dead code traps. It will not stop a determined expert, but it raises the bar from "casual glance" to "serious reverse-engineering project."</p>
+
+<h3>What Is Code Obfuscation?</h3>
+
+<p>Obfuscation rewrites your code to hide its intent while preserving its behavior. Where minification just removes whitespace, obfuscation actively disguises the logic. Variable and function names become meaningless (<code>_0x3f2a</code>), string literals get extracted into an encrypted array and decoded at runtime, straightforward if-else chains get flattened into switch-based dispatch tables that are miserable to trace by hand.</p>
+
+<p>A simple example. Before:</p>
+
+<pre><code>function calculateDiscount(price, isMember) {
+  if (isMember) {
+    return price * 0.9;
+  }
+  return price;
+}</code></pre>
+
+<p>After obfuscation, you might see something like:</p>
+
+<code>function _0x1a2b(_0x3c4d,_0x5e6f){var _0x7890=['\x64\x69\x73\x63\x6f\x75\x6e\x74'];if(_0x5e6f){return _0x3c4d*0.9;}return _0x3c4d;}</code>
+
+<p>— and that is the gentle version. Full obfuscation adds control-flow flattening, string encryption, and anti-debugging traps that make the output dramatically harder to follow. The browser executes it exactly the same; humans just cannot read it comfortably anymore.</p>
+
+<h3>How to Use the Code Obfuscator</h3>
+
+<p>Paste your JavaScript into the input box. Choose a protection level — most tools offer presets from light (renaming only) to heavy (string encryption, control-flow flattening, dead-code injection). Click obfuscate. The transformed code appears in the output panel, usually larger than the original — obfuscation trades size for obscurity.</p>
+
+<p>Copy or download the result and deploy it like any production script. Then test thoroughly: obfuscation is more invasive than minification, so run your full test suite against the obfuscated build, not just a smoke test. Pay special attention to anything dynamic — <code>eval</code>, string-built property access, reflection — because those are the patterns most likely to break under transformation.</p>
+
+<p>Keep your original source safe in version control. You will never edit the obfuscated output; it is write-only by design.</p>
+
+<h3>Obfuscation Techniques Explained</h3>
+
+<table>
+<thead><tr><th>Technique</th><th>What It Does</th><th>Cost</th></tr></thead>
+<tbody>
+<tr><td>Identifier renaming</td><td>Variables/functions become <code>_0x3f2a</code>-style names</td><td>Low — safe and cheap</td></tr>
+<tr><td>String encryption</td><td>Literals moved to an encrypted array, decoded at runtime</td><td>Medium — hides readable text</td></tr>
+<tr><td>Control-flow flattening</td><td>Logic restructured into hard-to-trace dispatch</td><td>High — bigger files, slower</td></tr>
+<tr><td>Dead-code injection</td><td>Fake branches and unused functions added as decoys</td><td>Medium — inflates size</td></tr>
+<tr><td>Debug protection</td><td>Detects DevTools, breaks or redirects debuggers</td><td>Medium — can annoy legit debugging</td></tr>
+<tr><td>Self-defending</td><td>Code detects tampering and refuses to run</td><td>High — fragile if misconfigured</td></tr>
+</tbody>
+</table>
+
+<p>Start with renaming and string encryption — they deliver most of the practical protection with minimal risk. Add flattening and dead code only for the parts that truly need it, because each layer costs file size and a little runtime performance.</p>
+
+<h3>Obfuscation vs Minification</h3>
+
+<p>People conflate these, but the goals differ completely. <strong>Minification</strong> optimizes for size: smaller files, faster downloads. The code stays readable in structure — a beautifier reverses it trivially. <strong>Obfuscation</strong> optimizes for obscurity: harder to understand, at the cost of larger files. You can (and usually should) do both: obfuscate first, then minify the result for deployment.</p>
+
+<p>And the honest caveat neither replaces: neither is encryption, and neither protects secrets. API keys, passwords, and proprietary algorithms that must stay secret belong on your server, not in client-side code. Obfuscation deters casual copying and raises the cost of theft — it does not make theft impossible.</p>
+
+<h3>Who Uses Code Obfuscators?</h3>
+
+<p><strong>Game developers</strong> shipping browser games obfuscate to slow down cheaters dissecting the client logic for exploits.</p>
+
+<p><strong>SaaS companies</strong> protect proprietary client-side algorithms — pricing engines, custom editors, specialized visualizations — from competitors lifting the implementation.</p>
+
+<p><strong>Ad-tech and analytics firms</strong> obfuscate tracking scripts to make them harder to block or spoof by examining the code.</p>
+
+<p><strong>Freelancers</strong> delivering client work obfuscate licensed components so the client cannot easily extract and reuse them beyond the agreement.</p>
+
+<p><strong>Security teams</strong> use obfuscation knowledge in reverse — understanding the techniques helps them analyze obfuscated malware samples.</p>
+
+<h3>Tips for Safe Obfuscation</h3>
+
+<p>Obfuscate as a build step, never by hand — integrate it into your deployment pipeline so every release gets the same treatment. Test the obfuscated build exactly as users will run it, including edge cases, because transformations can interact badly with dynamic code patterns. Keep source maps private: they map obfuscated code back to your originals, which is great for debugging production errors but catastrophic if leaked. Start with lighter presets and increase protection only where the value justifies the size and performance cost. And never obfuscate as a substitute for server-side security — anything truly secret stays off the client entirely.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Multiple protection levels</strong> — from light renaming to full control-flow flattening.</li>
+<li><strong>String encryption</strong> — literals hidden in encrypted arrays, decoded at runtime.</li>
+<li><strong>Identifier mangling</strong> — all names replaced with unreadable tokens.</li>
+<li><strong>Dead-code injection</strong> — decoy branches mislead anyone reading the code.</li>
+<li><strong>Debug protection</strong> — optional anti-tampering and anti-debugging measures.</li>
+<li><strong>Source maps (private)</strong> — debug production errors against your originals.</li>
+<li><strong>Copy and download</strong> — take the protected code as a .js file.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
+<li><strong>100% free</strong> — no signup, no limits, works on any device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this code obfuscator free?</h4>
+<p>Yes — completely free, no account needed, and no limits on how much code you can obfuscate.</p>
+
+<h4>Will obfuscated code still work the same?</h4>
+<p>Yes — obfuscation preserves behavior exactly. But test thoroughly, especially code using <code>eval</code> or dynamic property access, which transformations can break.</p>
+
+<h4>What is the difference between obfuscation and minification?</h4>
+<p>Minification shrinks code for faster loading; the logic stays readable. Obfuscation disguises the logic to deter reverse engineering, at the cost of larger files. Use both: obfuscate, then minify.</p>
+
+<h4>Can obfuscation be reversed?</h4>
+<p>A determined expert with time can eventually understand obfuscated code — it raises the cost enormously but is not mathematically irreversible like encryption. Never put true secrets in client-side code.</p>
+
+<h4>Does obfuscation slow down my code?</h4>
+<p>Slightly. String decoding and flattened control flow add runtime overhead. Light presets are negligible; heavy presets on hot paths can be measurable — profile if performance is critical.</p>
+
+<h4>Why did my obfuscated code break?</h4>
+<p>Usually dynamic patterns: <code>eval</code>, string-constructed function or property names, or reflection. Either avoid those patterns or exclude the affected code from heavy transformations.</p>
+
+<h4>Is my code data secure?</h4>
+<p>Yes. Obfuscation happens entirely in your browser — your source never leaves your device or touches a server.</p>
+
+<h4>Should I obfuscate everything?</h4>
+<p>Obfuscate what has value worth protecting — proprietary algorithms, licensed components. Standard UI code rarely justifies the size cost. And keep real secrets server-side regardless.</p>
+</article>

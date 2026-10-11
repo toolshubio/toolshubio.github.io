@@ -1,107 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <title>Sentence Counter | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../image-tools/css/global.css">
-    <link rel="stylesheet" href="../image-tools/css/components.css">
-    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
-
-
-  <link rel="stylesheet" href="../image-tools/css/th-header-footer.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sentence Counter | TOOLSHUB</title>
+<meta name="description" content="">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../image-tools/css/v3-design.css">
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../index.html#tools">All Tools</a><a href="../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../index.html#tools">Explore Tools</a></div>
+</div></header>
+<!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+
+<nav class="crumbs"><a href="../index.html">Home</a> &nbsp;/&nbsp; <a href="index.html">Text Tools</a> &nbsp;/&nbsp; <span>Sentence Counter</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">Text Tools</span>
+  <h1>Sentence <em>Counter</em></h1>
+  <p>Count sentences with smart detection.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> Private — runs in browser</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../image-tools/index.html">Image Tools</a><a href="../pdf-tools/index.html">PDF Tools</a><a href="../text-tools/index.html">Text & Writing</a><a href="../seo-tools/index.html">SEO Tools</a><a href="../calculator-tools/index.html">Calculators</a><a href="../binary-tools/index.html">Binary Tools</a><a href="../code-format-tools/index.html">Code & Formatters</a><a href="../doc-tools/index.html">Documents</a><a href="../other-tools/index.html">Other Tools</a><a href="../about-us.html">About Us</a><a href="../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a> &gt;
-                <a href="index.html">Text & Writing</a> &gt;
-                <span>🔢 Sentence Counter</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">🔢 Sentence Counter</h1>
-                <p class="tool-description">Count sentences with smart detection.</p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
-<div class="tool-workspace">
+</section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>Sentence Counter</b><span>v3.0 &middot; local</span></div>
+  <div class="ws-body">
+
 <section class="input-section">
 <div class="section-header">
 <h2 class="section-title">📝 Input</h2>
 </div>
-<textarea class="text-area" id="input-text" oninput="count()" placeholder="Enter text..."></textarea>
+<textarea class="text-area ws-textarea" id="input-text" oninput="count()" placeholder="Enter text..."></textarea>
 </section>
 <section class="output-section">
 <div class="section-header">
 <h2 class="section-title">📊 Statistics</h2>
 </div>
-<div class="stats-panel" style="background:transparent;padding:0;">
-<div class="stat-item" style="flex:1;"><span class="stat-label">Sentences</span><span class="stat-value highlight" id="stat-sentences">0</span></div>
-<div class="stat-item" style="flex:1;"><span class="stat-label">Words</span><span class="stat-value" id="stat-words">0</span></div>
-<div class="stat-item" style="flex:1;"><span class="stat-label">Avg Length</span><span class="stat-value" id="stat-avg">0 words</span></div>
-<div class="stat-item" style="flex:1;"><span class="stat-label">Paragraphs</span><span class="stat-value" id="stat-para">0</span></div>
+<div class="stats-panel stats" style="background:transparent;padding:0;">
+<div class="stat-item stat" style="flex:1;"><b class="stat-value highlight" id="stat-sentences">0</b><span class="stat-label">Sentences</span></div>
+<div class="stat-item stat" style="flex:1;"><b class="stat-value" id="stat-words">0</b><span class="stat-label">Words</span></div>
+<div class="stat-item stat" style="flex:1;"><b class="stat-value" id="stat-avg">0 words</b><span class="stat-label">Avg Length</span></div>
+<div class="stat-item stat" style="flex:1;"><b class="stat-value" id="stat-para">0</b><span class="stat-label">Paragraphs</span></div>
 </div>
 </section>
-</div>
-<section class="related-tools">
-<h3 class="related-tools-title">🔗 Related</h3>
-<div class="related-tools-grid">
-<a class="related-tool-card" href="character-counter.html"><span>📊</span> Character Counter</a>
-<a class="related-tool-card" href="text-summarizer.html"><span>📝</span> Summarizer</a>
-</div>
+
+
+  </div>
+</div></div>
+
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 &mdash; HOW IT WORKS</span><h2>Three steps, zero learning curve</h2></div>
+  <div class="steps">
+<div class="step"><div class="step-n">i.</div><h3>Paste your text</h3><p>Enter any article, essay or document.</p></div>
+<div class="step"><div class="step-n">ii.</div><h3>See the count instantly</h3><p>Smart detection counts sentences live as you type.</p></div>
+<div class="step"><div class="step-n">iii.</div><h3>Use the extra stats</h3><p>Words and reading-time figures sit alongside the sentence count.</p></div>
+  </div>
 </section>
-            </div>
-            <section class="seo-article" data-tool="sentence-counter">
-<article class="tool-article">
-<h2>Sentence Counter — Count Sentences in Any Text Instantly</h2>
 
-<p>My university once required a "minimum of 40 sentences" for a short essay, and I spent twenty minutes counting periods with my finger on the screen — twice, because I lost count the first time. A sentence counter does the same job before you finish pasting. Drop in your text and it tells you exactly how many sentences you wrote, plus the word, character, and paragraph counts that usually travel with it. Simple, instant, and weirdly satisfying to watch update as you type.</p>
-
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>Sentence Counter — Count Sentences in Any Text Instantly</h2>
+    <p class="deck">Count sentences with smart detection.</p>
+    <div class="article-meta">
+      <div class="avatar">T</div>
+      <div><b>TOOLSHUB Editorial</b><span>5 min read &middot; Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+<p class="lead">My university once required a "minimum of 40 sentences" for a short essay, and I spent twenty minutes counting periods with my finger on the screen — twice, because I lost count the first time. A sentence counter does the same job before you finish pasting. Drop in your text and it tells you exactly how many sentences you wrote, plus the word, character, and paragraph counts that usually travel with it. Simple, instant, and weirdly satisfying to watch update as you type.</p>
 <h3>What Is a Sentence Counter?</h3>
-
 <p>A sentence counter is a free online tool that automatically counts the sentences in your text. Instead of hunting for every period, question mark, and exclamation point yourself, you paste the text and get an exact number in real time. Most counters bundle in companion stats — words, characters with and without spaces, paragraphs, and estimated reading time — so one paste answers every "how long is this?" question at once.</p>
-
 <p>Good counters are smarter than just counting periods. They handle tricky cases like abbreviations (Dr., Mrs., Inc.), decimal numbers (3.14), and ellipses (...) so those do not inflate your count. That is the difference between a naive counter and one you can trust for school or client work.</p>
-
 <h3>How to Use the Sentence Counter</h3>
-
 <p>Copy your text from Word, Google Docs, a webpage, or anywhere else, and paste it into the counter. The sentence count appears immediately — no button to click on most tools — and updates live as you edit. Use the copy or clear buttons to manage the text when you are done.</p>
-
 <p>If the number looks wrong, check your punctuation first. The tool can only find sentences you actually ended: a paragraph with no terminal punctuation reads as one long sentence, and every stray period in an abbreviation list can add phantom sentences. Clean punctuation in, accurate count out.</p>
-
 <h3>How Sentence Counting Actually Works</h3>
-
 <p>Under the hood, the tool splits your text at sentence boundaries — periods, question marks, and exclamation points — then filters out the false positives. Here is what a solid counter accounts for:</p>
-
 <table>
 <thead><tr><th>Tricky Case</th><th>Example</th><th>How It Is Handled</th></tr></thead>
 <tbody>
@@ -112,27 +98,16 @@
 <tr><td>Quoted dialogue</td><td>She said, "Go."</td><td>Punctuation inside quotes still ends the sentence</td></tr>
 </tbody>
 </table>
-
 <p>No counter is perfect — unusual abbreviations or creative punctuation can still fool it — but for standard writing the count is reliable.</p>
-
 <h3>Why Sentence Count Matters</h3>
-
 <p><strong>Meeting requirements.</strong> Assignments, applications, and content briefs sometimes specify sentence counts. Checking takes seconds and removes all doubt.</p>
-
 <p><strong>Balancing your writing.</strong> A paragraph of twelve sentences probably rambles; a page of three-sentence paragraphs probably chops. The count helps you see rhythm problems you would otherwise only feel.</p>
-
 <p><strong>Readability.</strong> Shorter sentences are easier to scan, which matters for web writing and SEO. Writers use the sentence count alongside word count to keep average sentence length in a comfortable range.</p>
-
 <p><strong>Tracking progress.</strong> "Write 20 sentences today" is a concrete daily goal for students, bloggers, and language learners. The counter makes it measurable.</p>
-
 <p><strong>Editing and structure.</strong> Comparing sentence counts across sections reveals imbalance — an introduction of 4 sentences and a conclusion of 18 is a structural hint worth noticing.</p>
-
 <h3>Who Uses a Sentence Counter?</h3>
-
 <p><strong>Students</strong> verify essay and assignment requirements without manual counting. <strong>Writers and bloggers</strong> monitor length and pacing as they draft. <strong>Editors</strong> analyze document structure at a glance. <strong>Teachers</strong> check student work against length guidelines. <strong>Language learners</strong> practice building complete sentences and track their output. <strong>SEO writers</strong> pair it with word counters to keep content scannable and well-structured.</p>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>Instant counting</strong> — results update live as you type or paste.</li>
 <li><strong>Smart boundary detection</strong> — handles abbreviations, decimals, and ellipses correctly.</li>
@@ -142,80 +117,43 @@
 <li><strong>Works everywhere</strong> — desktop, tablet, or phone, nothing to install.</li>
 <li><strong>Copy and clear</strong> — manage your text with one click.</li>
 </ul>
+<h3>Frequently asked</h3>
+<div class="faq">
+<div class="faq-item open"><div class="faq-q">How are sentences detected? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>The tool looks for sentence-ending punctuation while ignoring common abbreviations and decimal numbers.</div></div></div>
+<div class="faq-item"><div class="faq-q">Do abbreviations like &quot;e.g.&quot; break the count? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>No — common abbreviations are recognized and do not inflate the sentence count.</div></div></div>
+<div class="faq-item"><div class="faq-q">Why does the count differ from Word? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>Different tools define sentence boundaries slightly differently. For most normal text the counts match.</div></div></div>
+<div class="faq-item"><div class="faq-q">Is it free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>Yes — free with no limits.</div></div></div>
+</div>
+  </div>
+</article></div>
 
-<h3>Frequently Asked Questions</h3>
-
-<h4>How do I count sentences in my text?</h4>
-<p>Paste your text into the counter and the sentence count appears instantly, updating live as you edit. No registration or setup needed.</p>
-
-<h4>Is the sentence counter free?</h4>
-<p>Yes — completely free, with no account required and no limits on text length.</p>
-
-<h4>How accurate is the sentence count?</h4>
-<p>Very, for normally punctuated text. The counter recognizes abbreviations, decimal numbers, and ellipses so they do not inflate the count. Unusual punctuation can occasionally confuse it.</p>
-
-<h4>What counts as a sentence?</h4>
-<p>Text ending with a period, question mark, or exclamation point. Fragments without terminal punctuation may be missed, so punctuate properly for an accurate count.</p>
-
-<h4>Does it count words and characters too?</h4>
-<p>Yes. Most sentence counters also show word count, character count (with and without spaces), paragraph count, and estimated reading time.</p>
-
-<h4>Is my text uploaded to a server?</h4>
-<p>No. All counting happens locally in your browser, so your text stays private on your device.</p>
-
-<h4>Can I use it for school assignments?</h4>
-<p>Absolutely. It is a counting tool, not a writing service — verifying your own sentence count is completely legitimate.</p>
-
-<h4>Why does my count seem too high?</h4>
-<p>Usually stray periods — in abbreviations, version numbers, or decimal lists. Check the punctuation and the count will settle.</p>
-</article>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 &mdash; KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+<a class="rel" href="character-counter.html"><i class="fa-solid fa-text-width" style="color:#4f46e5"></i><h3>Character Counter</h3><p>Count characters, words and more.</p></a>
+<a class="rel" href="text-cleaner.html"><i class="fa-solid fa-broom" style="color:#7c3aed"></i><h3>Text Cleaner</h3><p>Remove spaces, HTML and junk.</p></a>
+<a class="rel" href="text-summarizer.html"><i class="fa-solid fa-file-lines" style="color:#4f46e5"></i><h3>Text Summarizer</h3><p>Extract key sentences fast.</p></a>
+<a class="rel" href="sentence-checker.html"><i class="fa-solid fa-list-check" style="color:#7c3aed"></i><h3>Sentence Checker</h3><p>Check basic grammar issues.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../image-tools/index.html">Image Tools</a></li><li><a href="../pdf-tools/index.html">PDF Tools</a></li><li><a href="../text-tools/index.html">Text & Writing</a></li><li><a href="../seo-tools/index.html">SEO Tools</a></li><li><a href="../calculator-tools/index.html">Calculators</a></li><li><a href="../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../index.html#tools">All 203 tools</a></li><li><a href="index.html">Text tools</a></li><li><a href="../index.html#image-tools">Image tools</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../about-us.html">About</a><a href="../contact-us.html">Contact</a><a href="../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>&copy; 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script src="js/text-utils.js"></script>
 <script src="js/tool-ui.js"></script>
 <script>
+
         ToolUI.init({ toolName: 'sentence-counter' });
         function count() {
             const text = document.getElementById('input-text').value;
@@ -226,7 +164,8 @@
             document.getElementById('stat-avg').textContent = sentences > 0 ? Math.round(words / sentences) + ' words' : '0 words';
             document.getElementById('stat-para').textContent = TextUtils.countParagraphs(text);
         }
-    </script>
-  <script src="../image-tools/js/th-interactions.js"></script>
+    
+</script>
+<script src="../image-tools/js/v3.js"></script>
 </body>
 </html>

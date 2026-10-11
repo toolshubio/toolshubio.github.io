@@ -1,68 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Convert animated GIFs to PDF. Single page or multi-page frame sequences. Smart frame extraction and high resolution. 100% secure.">
-    <title>GIF to PDF - Convert Animations to PDF Online | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../image-tools/css/global.css">
-    <link rel="stylesheet" href="../image-tools/css/components.css">
-    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-
-  <link rel="stylesheet" href="../image-tools/css/th-header-footer.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GIF to PDF - Convert Animations to PDF Online | TOOLSHUB</title>
+<meta name="description" content="Convert animated GIFs to PDF. Single page or multi-page frame sequences. Smart frame extraction and high resolution. 100% secure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../image-tools/css/v3-design.css">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<style>/* ---- v3 PDF workspace components ---- */
+.pdf-tool-container{display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:start}
+@media(max-width:900px){.pdf-tool-container{grid-template-columns:1fr}}
+@keyframes borderFlow{to{background-position:100% 100%,300% 0}}
+@keyframes floaty{50%{transform:translateY(-8px)}}
+@keyframes popIn{from{transform:scale(.9);opacity:0}}
+.ws-dropzone,.pdf-upload-zone{position:relative;border-radius:20px;padding:56px 32px;text-align:center;cursor:pointer;
+  background:linear-gradient(#fff,#fff) padding-box,
+  linear-gradient(135deg,#6366f1,#8b5cf6,#d946ef,#6366f1) border-box;
+  background-size:100% 100%,300% 300%;border:2px dashed transparent;
+  animation:borderFlow 6s linear infinite;transition:transform .25s,box-shadow .25s}
+.ws-dropzone:hover,.pdf-upload-zone:hover{transform:translateY(-3px);box-shadow:0 20px 50px -18px rgba(139,92,246,.4)}
+.ws-dropzone.dragover,.pdf-upload-zone.dragover{transform:scale(1.02);box-shadow:0 0 0 6px rgba(139,92,246,.15),0 20px 50px -18px rgba(139,92,246,.5)}
+.pdf-upload-icon{display:inline-grid;place-items:center;width:84px;height:84px;border-radius:24px;
+  background:linear-gradient(135deg,#6366f1,#8b5cf6 55%,#d946ef);color:#fff;font-size:2.2rem;margin-bottom:20px;
+  box-shadow:0 14px 34px -10px rgba(139,92,246,.55);animation:floaty 3.5s ease-in-out infinite}
+.ws-dropzone h2,.pdf-upload-zone h2{font-size:1.45rem;letter-spacing:-.02em;margin-bottom:8px}
+.ws-dropzone p,.pdf-upload-zone p{color:#64748b;margin-bottom:6px}
+.pdf-secure{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:.84rem;color:#059669;
+  background:#ecfdf5;border:1px solid #d1fae5;padding:9px 18px;border-radius:99px;font-weight:600}
+.ws-body .tu-btn{width:100%;justify-content:center;margin-top:10px}
+.btn:disabled{opacity:.55;cursor:not-allowed;transform:none!important}
+.btn-download{display:none}
+.btn-download.show{display:inline-flex}
+.pdf-progress{height:8px;background:#eef2ff;border-radius:99px;overflow:hidden;margin-top:16px;display:none}
+.pdf-progress.show{display:block}
+.pdf-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#6366f1,#d946ef);border-radius:99px;transition:width .3s}
+.pdf-page-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin-top:24px}
+.pdf-page-item{background:#fff;border:1.5px solid #e6eaf2;border-radius:16px;padding:16px 12px;text-align:center;
+  position:relative;transition:.2s;animation:popIn .3s ease}
+.pdf-page-item:hover{border-color:#c7d2fe;transform:translateY(-3px);box-shadow:0 12px 30px -12px rgba(99,102,241,.3)}
+.pdf-page-number{position:absolute;top:8px;left:8px;min-width:28px;height:28px;border-radius:99px;
+  background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;font-size:.75rem;font-weight:700;
+  display:grid;place-items:center;padding:0 8px}
+.pdf-page-thumbnail{font-size:2.2rem;color:#dc2626;margin:6px 0}
+.pdf-file-card{background:#fff;border:1.5px solid #e6eaf2;border-radius:16px;padding:18px 14px;text-align:center;
+  position:relative;transition:.2s;animation:popIn .3s ease}
+.pdf-file-card .pdf-thumb{width:56px;height:70px;margin:0 auto 12px;border-radius:8px;
+  background:linear-gradient(135deg,#fef2f2,#fee2e2);display:grid;place-items:center;
+  color:#dc2626;font-size:1.6rem;border:1px solid #fecaca}
+.pdf-settings-panel{background:linear-gradient(180deg,#fafbff,#fff);border:1px solid #e6eaf2;border-radius:20px;padding:26px}
+.pdf-settings-panel .setting-group{margin-bottom:22px}
+.pdf-settings-panel .setting-group>label{display:block;font-size:.82rem;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:#475569;margin-bottom:14px}
+.checkbox-container,.radio-container{display:flex;align-items:center;gap:12px;cursor:pointer;font-size:.92rem;font-weight:500;padding:10px 0}
+.checkbox-container input{appearance:none;width:22px;height:22px;border:2px solid #cbd5e1;border-radius:7px;cursor:pointer;
+  position:relative;transition:.2s;flex-shrink:0;background:#fff;margin:0}
+.checkbox-container input:checked{background:linear-gradient(135deg,#6366f1,#8b5cf6);border-color:#6366f1}
+.checkbox-container input:checked::after{content:"✓";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:.8rem;font-weight:700}
+.radio-container input{appearance:none;width:22px;height:22px;border:2px solid #cbd5e1;border-radius:50%;cursor:pointer;
+  transition:.2s;flex-shrink:0;background:#fff;margin:0}
+.radio-container input:checked{border:6px solid #6366f1}
+.radio-group{display:flex;flex-direction:column;gap:4px}
+.form-control{width:100%;padding:12px 15px;border:1.5px solid #e6eaf2;border-radius:12px;font-size:.92rem;
+  font-family:inherit;outline:none;background:#fff;color:#0f172a;transition:.2s}
+.form-control:focus{border-color:#6366f1;box-shadow:0 0 0 4px rgba(99,102,241,.12)}
+input[type=range].form-control{padding:0;border:none;background:transparent;accent-color:#6366f1}
+.comparison-view{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+.comp-box{border:1.5px solid #e6eaf2;border-radius:16px;padding:20px;text-align:center;background:#fff}
+.comp-label{display:block;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin-bottom:8px}
+.comp-size{display:block;font-size:1.6rem;font-weight:700}
+.savings-badge{display:inline-block;margin-top:10px;background:#4caf50;color:#fff;font-size:.78rem;font-weight:700;padding:6px 14px;border-radius:99px}
+.watermark-preview{position:relative;background:#f8fafc;border:1.5px dashed #cbd5e1;border-radius:16px;
+  min-height:260px;display:grid;place-items:center;overflow:hidden;margin-top:16px}
+.watermark-overlay{position:absolute;font-size:2.2rem;font-weight:800;color:rgba(99,102,241,.28);
+  transform:rotate(-24deg);letter-spacing:.1em;pointer-events:none;text-transform:uppercase}
+.premium-feature-badge{display:inline-block;background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;
+  font-size:.7rem;font-weight:700;padding:4px 12px;border-radius:99px;letter-spacing:.06em;margin-left:8px}
+.queue-header h4{margin:0;font-size:1rem}
+.ws-body table{width:100%;border-collapse:collapse;font-size:.9rem;margin:12px 0}
+.ws-body th,.ws-body td{padding:10px;border-bottom:1px solid #eef2ff;text-align:left}
+.ws-body th{font-weight:600;color:#475569;font-size:.82rem;text-transform:uppercase;letter-spacing:.04em}</style>
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../index.html#tools">All Tools</a><a href="../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../index.html#tools">Explore Tools</a></div>
+</div></header>
+<!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+<nav class="crumbs"><a href="../index.html">Home</a> &nbsp;/&nbsp; <span>GIF to PDF Advanced</span></nav>
+<section class="hero">
+  <span class="hero-eyebrow">PDF Tools</span>
+  <h1>GIF to <em>PDF.</em></h1>
+  <p>Convert animated GIFs to PDF. Single page or multi-page frame sequences. Smart frame extraction and high resolution. 100% secure.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../image-tools/index.html">Image Tools</a><a href="../pdf-tools/index.html">PDF Tools</a><a href="../text-tools/index.html">Text & Writing</a><a href="../seo-tools/index.html">SEO Tools</a><a href="../calculator-tools/index.html">Calculators</a><a href="../binary-tools/index.html">Binary Tools</a><a href="../code-format-tools/index.html">Code & Formatters</a><a href="../doc-tools/index.html">Documents</a><a href="../other-tools/index.html">Other Tools</a><a href="../about-us.html">About Us</a><a href="../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a> &gt;
-                <a href="index.html">PDF Tools</a> &gt;
-                <span>GIF to PDF Advanced</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">GIF to PDF Advanced</h1>
-                <p class="tool-description">Convert animated images into a static PDF or an frame-by-frame document for analysis and printing.</p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
+</section>
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>GIF to PDF Advanced</b><span>v3.0 · local</span></div>
+  <div class="ws-body">
 <div class="pdf-tool-container">
 <!-- Main Content Area -->
 <div class="tool-main">
-<div class="pdf-upload-zone" id="drop-zone">
-<span class="pdf-upload-icon"><i class="fa-solid fa-film"></i></span>
+<div class="pdf-upload-zone ws-dropzone" id="drop-zone">
+<span class="pdf-upload-icon"><i class="fa-regular fa-images"></i></span>
 <h2>Upload GIF</h2>
-<p>Select an animated or static GIF</p>
+<p>Select an animated or static GIF — <u>click to browse</u></p>
 <input accept="image/gif" id="file-input" style="display: none;" type="file"/>
+<div><span class="pdf-secure"><i class="fa-solid fa-shield-halved"></i> 100% Secure — files never leave your browser</span></div>
 </div>
+<div class="pdf-progress" id="gif-to-pdf-progress"><i></i></div>
 <div id="preview-area" style="display: none; text-align: center;">
 <img id="gif-preview" style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"/>
 <div id="gif-info" style="margin-top: 1rem; font-weight: 600;">Animated GIF Detected</div>
@@ -84,59 +136,42 @@
 <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.5rem;">Extract every Nth
                         frame to reduce PDF size.</p>
 </div>
-<button class="btn btn-pdf" disabled="" id="convert-btn">
+<button class="tu-btn tu-btn-primary btn btn-pdf btn-dark" disabled="" id="convert-btn">
 <i class="fa-solid fa-file-pdf"></i> Generate PDF
                 </button>
-<a class="btn-download" href="#" id="download-btn">
+<a class="tu-btn tu-btn-ghost btn-download btn-light" href="#" id="download-btn">
 <i class="fa-solid fa-download"></i> Download Combined PDF
                 </a>
 </aside>
 </div>
- Features Info 
-<section class="tool-features-info" style="margin-top: 5rem;">
-<div class="features-grid">
-<div class="feature-card">
-<h3 class="feature-title">Fast Conversion</h3>
-<p class="feature-desc">Our client-side engine combines your images into a professional PDF
-                        instantly, without uploading your photos to a server.</p>
-</div>
-<div class="feature-card">
-<h3 class="feature-title">Privacy First</h3>
-<p class="feature-desc">All processing happens in your browser. Your images remain private and under
-                        your control throughout the process.</p>
-</div>
-</div>
+  </div>
+</div></div>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 — HOW IT WORKS</span><h2>Three steps, zero learning curve</h2></div>
+  <div class="steps">
+    <div class="step"><div class="step-n">i.</div><h3>Add your GIFs</h3><p>Drag & drop one or more GIF files, or click to browse from your computer.</p></div>
+    <div class="step"><div class="step-n">ii.</div><h3>Choose the frame mode</h3><p>Use the first frame for a static page, or export frame-by-frame for analysis and printing.</p></div>
+    <div class="step"><div class="step-n">iii.</div><h3>Convert & download</h3><p>Build your PDF and download it instantly — no watermark, no sign-up.</p></div>
+  </div>
 </section>
-
-
- Scripts
-            </div>
-            <section class="seo-article" data-tool="gif-to-pdf">
-<article class="tool-article">
-<h2>GIF to PDF Converter — Turn GIF Images Into PDF Documents</h2>
-
-<p>I once needed to include a series of reaction GIFs in a printed event handout — which sounds funny until you realize GIFs do not print. A GIF to PDF converter solved it in about a minute: each GIF became a page in a PDF I could print, email, and archive like any normal document. Whether your GIF is a single funny image or an animation, this tool turns it into a proper PDF that works everywhere PDFs work.</p>
-
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>GIF to PDF Converter — Turn GIF Images Into PDF Documents</h2>
+    <p class="deck">I once needed to include a series of reaction GIFs in a printed event handout — which sounds funny until you realize GIFs do not print. A GIF to PDF converter solved it in about a minute: each GIF became a page in a PDF I could print, email, and archive like any normal document. Whether your GIF is a single funny image or an animation, this tool turns it into a proper PDF that works everywhere PDFs work.</p>
+    <div class="article-meta"><div class="avatar">T</div><div><b>TOOLSHUB Editorial</b><span>8 min read · Updated Oct 2026</span></div></div>
+  </div>
+  <div class="article-body">
 <h3>Why Convert a GIF to PDF?</h3>
-
-<p>GIFs live on screens, but plenty of situations demand paper or documents. Teachers print GIF-based diagrams for classrooms without projectors. Designers include animated mockups as stills in client presentations. Marketers archive campaign creatives as PDFs for records. Event organizers print meme-style signage. In each case, the GIF needs to become something printable, emailable, and archivable — which means PDF.</p>
-
+<p class="lead">GIFs live on screens, but plenty of situations demand paper or documents. Teachers print GIF-based diagrams for classrooms without projectors. Designers include animated mockups as stills in client presentations. Marketers archive campaign creatives as PDFs for records. Event organizers print meme-style signage. In each case, the GIF needs to become something printable, emailable, and archivable — which means PDF.</p>
 <p>There is also the sharing angle. Some email clients and corporate chat systems mangle or block GIF attachments, while PDFs sail through. A PDF version of a visual also looks more formal when it lands in a report or proposal — the same image, but dressed for the occasion.</p>
-
 <p>The one thing to know upfront: PDFs are static documents, so animation does not survive conversion. Most converters flatten an animated GIF to its first frame. Some specialized tools split every frame of the animation into its own PDF page — a neat trick if you want a frame-by-frame storyboard of the animation. Check what your tool does before converting an animated GIF you care about.</p>
-
 <h3>How to Use the GIF to PDF Converter</h3>
-
 <p>Drop your GIF into the tool — drag and drop or click to browse. The tool reads the image and shows you a preview so you can confirm it grabbed the right file (GIFs all look alike in a downloads folder).</p>
-
 <p>If the tool offers options, this is where you set them: page size (A4, Letter, or fit-to-image), orientation, and margins. For a single GIF, "fit to page" usually looks best — the image fills the page without awkward white borders. If you are converting multiple GIFs, choose whether they become separate pages in one PDF or stay as individual files; one combined PDF is almost always easier to share and print.</p>
-
 <p>Hit Convert and download the result. My check: open the PDF and look at the image at 100% zoom. GIFs are low-resolution by nature (256 colors max), so the PDF will look exactly as good as the GIF did — no better, no worse. If the image looks stretched or squashed, reconvert with a "keep aspect ratio" or "fit to image" setting.</p>
-
 <h3>Animated GIFs: Frames vs. Flattened</h3>
-
 <p>This is the detail that trips people up, so it deserves its own section:</p>
-
 <table>
 <thead><tr><th>Approach</th><th>Result</th><th>Best for</th></tr></thead>
 <tbody>
@@ -145,33 +180,19 @@
 <tr><td><strong>Multiple GIFs, one PDF</strong></td><td>Each GIF on its own page</td><td>Collections, campaign archives, handouts</td></tr>
 </tbody>
 </table>
-
 <p>For a typical animated GIF, the flattened single page is what you want — it captures the recognizable moment. The frame-by-frame option is a specialist choice: animators reviewing timing, teachers showing motion sequences, or anyone who needs to inspect what happens between frames.</p>
-
 <h3>Common Uses for GIF-to-PDF Conversion</h3>
-
 <p><strong>Printing visuals.</strong> Classroom handouts, event signage, noticeboard posters — anything where a GIF needs to exist on paper.</p>
-
 <p><strong>Reports and proposals.</strong> Embedding a GIF's key frame into a client report or pitch deck as a static figure, with the PDF as the delivery format.</p>
-
 <p><strong>Archiving campaign creatives.</strong> Marketing teams save social-media GIFs as PDFs for records — PDFs are searchable, timestamped, and open decades later.</p>
-
 <p><strong>Combining collections.</strong> Merging several GIFs into one multi-page PDF — a meme collection, a set of tutorial animations flattened to steps, a portfolio of motion-design stills.</p>
-
 <p><strong>Email-safe sharing.</strong> When a recipient's system blocks or mishandles GIF attachments, the PDF version gets through.</p>
-
 <h3>Who Converts GIFs to PDF?</h3>
-
 <p><strong>Teachers</strong> printing animated diagrams and visual aids for offline classrooms.</p>
-
 <p><strong>Designers and marketers</strong> archiving campaign GIFs and presenting stills in client documents.</p>
-
 <p><strong>Event organizers</strong> turning digital visuals into printed signage and handouts.</p>
-
 <p><strong>Students</strong> including GIF stills in assignments and project reports that must be submitted as PDFs.</p>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>Single or batch conversion</strong> — convert one GIF or merge several into a single multi-page PDF.</li>
 <li><strong>Page size control</strong> — fit the image to A4, Letter, or its natural dimensions.</li>
@@ -180,74 +201,29 @@
 <li><strong>Works on mobile</strong> — convert GIFs saved on your phone right in the browser.</li>
 <li><strong>Free, unlimited, no watermark</strong> — no signup, no payment, clean output.</li>
 </ul>
-
-<h3>Frequently Asked Questions</h3>
-
-<h4>Will my animated GIF still animate in the PDF?</h4>
-<p>No — PDFs are static documents. Most converters use the first frame; specialized tools can put each frame on its own page as a storyboard.</p>
-
-<h4>Can I convert multiple GIFs into one PDF?</h4>
-<p>Yes. Upload several GIFs and combine them — each becomes its own page in a single PDF, which is easier to share and print.</p>
-
-<h4>Will the quality change?</h4>
-<p>The PDF looks exactly as good as the GIF — conversion does not improve or degrade the image. GIFs are limited to 256 colors, so do not expect photographic quality.</p>
-
-<h4>Why does my GIF look stretched in the PDF?</h4>
-<p>The page size setting forced the image into different proportions. Reconvert with "fit to image" or "keep aspect ratio" enabled.</p>
-
-<h4>Is it safe to convert personal GIFs?</h4>
-<p>With a client-side tool, yes — the files are processed in your browser and never uploaded anywhere.</p>
-
-<h4>Can I do this on my phone?</h4>
-<p>Yes — it runs in your mobile browser with nothing to install.</p>
-
-<h4>Is it free?</h4>
-<p>Completely free — no signup, no limits, no watermark on the PDF.</p>
-</article>
+<div class="faq"><div class="faq-item open"><div class="faq-q">Will my animated GIF still animate in the PDF? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>No — PDFs are static documents. Most converters use the first frame; specialized tools can put each frame on its own page as a storyboard.</p></div></div><div class="faq-item"><div class="faq-q">Can I convert multiple GIFs into one PDF? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes. Upload several GIFs and combine them — each becomes its own page in a single PDF, which is easier to share and print.</p></div></div><div class="faq-item"><div class="faq-q">Will the quality change? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>The PDF looks exactly as good as the GIF — conversion does not improve or degrade the image. GIFs are limited to 256 colors, so do not expect photographic quality.</p></div></div><div class="faq-item"><div class="faq-q">Why does my GIF look stretched in the PDF? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>The page size setting forced the image into different proportions. Reconvert with "fit to image" or "keep aspect ratio" enabled.</p></div></div><div class="faq-item"><div class="faq-q">Is it safe to convert personal GIFs? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>With a client-side tool, yes — the files are processed in your browser and never uploaded anywhere.</p></div></div><div class="faq-item"><div class="faq-q">Can I do this on my phone? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — it runs in your mobile browser with nothing to install.</p></div></div><div class="faq-item"><div class="faq-q">Is it free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Completely free — no signup, no limits, no watermark on the PDF.</p></div></div></div>
+  </div>
+</article></div>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 — KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+    <a class="rel" href="jpg-to-pdf.html"><i class="fa-regular fa-file-image" style="color:#4f46e5"></i><h3>JPG to PDF</h3><p>Combine JPG photos into one PDF.</p></a>
+    <a class="rel" href="png-to-pdf.html"><i class="fa-regular fa-file-image" style="color:#7c3aed"></i><h3>PNG to PDF</h3><p>Combine PNG images into one PDF.</p></a>
+    <a class="rel" href="merge-pdf.html"><i class="fa-solid fa-layer-group" style="color:#4f46e5"></i><h3>Merge PDF</h3><p>Combine multiple PDFs into one file.</p></a>
+    <a class="rel" href="compress-pdf.html"><i class="fa-solid fa-compress" style="color:#7c3aed"></i><h3>Compress PDF</h3><p>Reduce PDF size with smart AI compression.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../image-tools/index.html">Image Tools</a></li><li><a href="../pdf-tools/index.html">PDF Tools</a></li><li><a href="../text-tools/index.html">Text & Writing</a></li><li><a href="../seo-tools/index.html">SEO Tools</a></li><li><a href="../calculator-tools/index.html">Calculators</a></li><li><a href="../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a><p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../index.html#tools">All 203 tools</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../about-us.html">About</a><a href="../contact-us.html">Contact</a><a href="../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>© 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
 <script src="js/pdf-logic.js"></script>
 <script>
@@ -305,6 +281,8 @@
             });
         });
     </script>
-  <script src="../image-tools/js/th-interactions.js"></script>
+<script src="../image-tools/js/th-interactions.js"></script>
+<script src="../image-tools/js/tu-unified.js"></script>
+<script src="../image-tools/js/v3.js"></script>
 </body>
 </html>

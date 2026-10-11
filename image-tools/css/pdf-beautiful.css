@@ -1,0 +1,73 @@
+/* ===== PDF Tools — Beautiful Design System ===== */
+
+.pdf-tool-container{display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:start}
+@media(max-width:900px){.pdf-tool-container{grid-template-columns:1fr}}
+
+/* Drop zone — animated gradient border */
+.pdf-upload-zone{position:relative;border-radius:20px;padding:56px 32px;text-align:center;cursor:pointer;
+  background:linear-gradient(#fff,#fff) padding-box,
+  linear-gradient(135deg,#6366f1,#8b5cf6,#d946ef,#6366f1) border-box;
+  background-size:100% 100%,300% 300%;border:2px dashed transparent;
+  animation:borderFlow 6s linear infinite;transition:transform .25s,box-shadow .25s}
+@keyframes borderFlow{to{background-position:100% 100%,300% 0}}
+.pdf-upload-zone:hover{transform:translateY(-3px);box-shadow:0 20px 50px -18px rgba(139,92,246,.4)}
+.pdf-upload-zone.dragover{transform:scale(1.02);box-shadow:0 0 0 6px rgba(139,92,246,.15),0 20px 50px -18px rgba(139,92,246,.5)}
+.pdf-upload-icon{display:inline-grid;place-items:center;width:84px;height:84px;border-radius:24px;
+  background:linear-gradient(135deg,#6366f1,#8b5cf6 55%,#d946ef);color:#fff;font-size:2.2rem;margin-bottom:20px;
+  box-shadow:0 14px 34px -10px rgba(139,92,246,.55);animation:floaty 3.5s ease-in-out infinite}
+@keyframes floaty{50%{transform:translateY(-8px)}}
+.pdf-upload-zone h2{font-family:'Space Grotesk',sans-serif;font-size:1.45rem;letter-spacing:-.02em;margin-bottom:8px}
+.pdf-upload-zone p{color:#64748b;margin-bottom:6px}
+.pdf-secure{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:.84rem;color:#059669;
+  background:#ecfdf5;border:1px solid #d1fae5;padding:9px 18px;border-radius:99px;font-weight:600}
+
+/* File cards */
+.pdf-page-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin-top:24px}
+.pdf-file-card{background:#fff;border:1.5px solid #e6eaf2;border-radius:16px;padding:18px 14px;text-align:center;
+  position:relative;transition:.2s;animation:popIn .3s ease}
+@keyframes popIn{from{transform:scale(.9);opacity:0}}
+.pdf-file-card:hover{border-color:#c7d2fe;transform:translateY(-3px);box-shadow:0 12px 30px -12px rgba(99,102,241,.3)}
+.pdf-file-card .pdf-thumb{width:56px;height:70px;margin:0 auto 12px;border-radius:8px;
+  background:linear-gradient(135deg,#fef2f2,#fee2e2);display:grid;place-items:center;
+  color:#dc2626;font-size:1.6rem;border:1px solid #fecaca}
+.pdf-file-card .pdf-name{font-size:.8rem;font-weight:600;word-break:break-all;display:-webkit-box;
+  -webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.4em}
+.pdf-file-card .pdf-meta{font-size:.74rem;color:#94a3b8;margin-top:6px}
+.pdf-file-card .pdf-remove{position:absolute;top:8px;right:8px;width:28px;height:28px;border-radius:50%;
+  background:#fef2f2;color:#dc2626;border:none;cursor:pointer;font-size:.75rem;display:grid;place-items:center;transition:.2s}
+.pdf-file-card .pdf-remove:hover{background:#dc2626;color:#fff;transform:scale(1.1)}
+.pdf-file-card .pdf-order{position:absolute;top:8px;left:8px;min-width:28px;height:28px;border-radius:99px;
+  background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;font-size:.75rem;font-weight:700;
+  display:grid;place-items:center;padding:0 8px}
+
+/* Settings panel */
+.pdf-settings-panel{background:linear-gradient(180deg,#fafbff,#fff);border:1px solid #e6eaf2;border-radius:20px;padding:26px;position:sticky;top:90px}
+.pdf-settings-panel .setting-group{margin-bottom:22px}
+.pdf-settings-panel .setting-group>label{display:block;font-size:.82rem;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:#475569;margin-bottom:14px}
+.checkbox-container{display:flex;align-items:center;gap:12px;cursor:pointer;font-size:.92rem;font-weight:500;padding:10px 0}
+.checkbox-container input{appearance:none;width:22px;height:22px;border:2px solid #cbd5e1;border-radius:7px;cursor:pointer;
+  position:relative;transition:.2s;flex-shrink:0;background:#fff}
+.checkbox-container input:checked{background:linear-gradient(135deg,#6366f1,#8b5cf6);border-color:#6366f1}
+.checkbox-container input:checked::after{content:"✓";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:.8rem;font-weight:700}
+.pdf-settings-panel select{width:100%;padding:13px 16px;border:1.5px solid #e6eaf2;border-radius:12px;font-size:.92rem;
+  font-family:inherit;background:#fff;outline:none;cursor:pointer;transition:.2s;color:#0f172a}
+.pdf-settings-panel select:focus{border-color:#6366f1;box-shadow:0 0 0 4px rgba(99,102,241,.12)}
+#merge-btn{width:100%;justify-content:center;margin-top:6px;font-size:1.02rem;padding:16px}
+#merge-btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+#download-btn{width:100%;justify-content:center;margin-top:12px;display:none}
+#download-btn.show{display:inline-flex;animation:popIn .35s ease}
+.pdf-progress{height:8px;background:#eef2ff;border-radius:99px;overflow:hidden;margin-top:16px;display:none}
+.pdf-progress.show{display:block}
+.pdf-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#6366f1,#d946ef);border-radius:99px;transition:width .3s}
+
+/* Dark mode */
+[data-theme="dark"] .pdf-upload-zone{background:linear-gradient(#1a1a22,#1a1a22) padding-box,linear-gradient(135deg,#6366f1,#8b5cf6,#d946ef,#6366f1) border-box;background-size:100% 100%,300% 300%}
+[data-theme="dark"] .pdf-upload-zone h2{color:#f5f5f5}
+[data-theme="dark"] .pdf-file-card{background:#1a1a22;border-color:#2c2c38}
+[data-theme="dark"] .pdf-file-card .pdf-name{color:#e5e5ef}
+[data-theme="dark"] .pdf-settings-panel{background:linear-gradient(180deg,#16161e,#1a1a22);border-color:#2c2c38}
+[data-theme="dark"] .pdf-settings-panel .setting-group>label{color:#a0a0b0}
+[data-theme="dark"] .checkbox-container{color:#d5d5e0}
+[data-theme="dark"] .checkbox-container input{background:#101016;border-color:#3a3a48}
+[data-theme="dark"] .pdf-settings-panel select{background:#101016;border-color:#2c2c38;color:#f5f5f5}

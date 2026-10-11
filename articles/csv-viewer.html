@@ -1,0 +1,102 @@
+<article class="tool-article">
+<h2>CSV Viewer — Free Online Spreadsheet for CSV Files</h2>
+
+<p>Double-clicking a CSV file is a gamble. Sometimes it opens in a spreadsheet app; sometimes it opens in a text editor as a wall of commas; and sometimes — my personal favorite — Excel "helpfully" converts your product SKUs into dates and strips the leading zeros off your zip codes. I've lost data to that last one. A CSV viewer skips the gamble: upload or paste your file and it renders as a proper spreadsheet table right in the browser — sortable, searchable, with row and column stats — and it never rewrites your values behind your back.</p>
+
+<h3>What Is a CSV Viewer?</h3>
+
+<p>CSV (comma-separated values) is the universal language of tabular data — exported by spreadsheets, databases, analytics platforms, and APIs. The format itself is dead simple: rows of text, values separated by commas. But raw CSV is hard to read, and desktop spreadsheet apps come with baggage: slow launches on big files, aggressive auto-formatting that corrupts data, and no way to quickly inspect a file on a machine without Office installed.</p>
+
+<p>An online CSV viewer parses the raw text and displays it as an interactive table. Click a column header to sort, use the search box to filter rows, freeze the header row while scrolling, toggle zebra striping for readability. Because it reads the text as-is, what you see is exactly what's in the file — no silent date conversions, no dropped leading zeros.</p>
+
+<p>One practical note: CSV files come in dialects. Some use semicolons (common in European exports where commas are decimal separators), some use tabs, and encodings vary between UTF-8 and older Windows formats. If your table looks like one giant column, the delimiter or encoding is probably the issue, not the file.</p>
+
+<h3>How to Use the CSV Viewer</h3>
+
+<p>Drag your <code>.csv</code> file onto the upload area, or click browse to select it. You can also start a blank sheet with the New File option if you're building data from scratch.</p>
+
+<p>Once loaded, the table appears with row and column counts in the stats bar — a quick sanity check that the file parsed fully. Click any cell to inspect it: the cell address (like B14) and its exact value show in the inspector, which is how you verify what a cell really contains versus how it displays.</p>
+
+<p>Explore with the view controls: freeze the header row so it stays visible while you scroll through thousands of rows, toggle grid lines or zebra striping for readability, and hit the chart button to visualize numeric columns as a chart. When you're done, export or download the data back to CSV.</p>
+
+<p>My first move with any unfamiliar file: check the stats (does 50,000 rows match what I expected?), sort the key column to spot blanks and outliers, and search for a value I know should be there. That thirty-second routine catches corrupted exports before they pollute a database import.</p>
+
+<h3>What the Stats Tell You</h3>
+
+<p>The row/column counter is more useful than it looks:</p>
+
+<table>
+<thead><tr><th>Check</th><th>What it reveals</th></tr></thead>
+<tbody>
+<tr><td>Row count matches export</td><td>A shortfall means truncated download or a parsing break</td></tr>
+<tr><td>Column count is consistent</td><td>Varying counts suggest unquoted commas inside values</td></tr>
+<tr><td>Sorting a column</td><td>Blanks, outliers, and unexpected values float to the top</td></tr>
+<tr><td>Searching a known value</td><td>Confirms the file contains what you think it does</td></tr>
+<tr><td>Cell inspector</td><td>Shows the raw value — catches hidden characters and trailing spaces</td></tr>
+</tbody>
+</table>
+
+<p>The classic CSV corruption — a stray comma inside an unquoted field shifting every column after it — shows up immediately in a viewer: one row suddenly has its values one column off, and the pattern is visible in seconds instead of hiding in a text editor.</p>
+
+<h3>When a Viewer Beats a Spreadsheet App</h3>
+
+<p><strong>Quick inspection.</strong> You downloaded an export and want to confirm it's sane before importing. A viewer loads in seconds; launching a full spreadsheet app for a glance is overkill.</p>
+
+<p><strong>Data integrity.</strong> Spreadsheet apps reformat aggressively — dates, scientific notation, leading zeros. A viewer shows raw text, which is what you want when validating data for import.</p>
+
+<p><strong>Any device.</strong> No Office install, no Google account, no upload to someone's cloud. Open the page on any machine — including a client's locked-down laptop — and inspect the file.</p>
+
+<p><strong>Large files.</strong> Desktop apps choke on very large CSVs. Browser viewers with pagination or virtual scrolling handle files that make Excel give up.</p>
+
+<p><strong>Privacy.</strong> Everything parses locally in your browser. Sensitive exports — payroll, customer lists, medical data — never leave your machine, which matters for compliance.</p>
+
+<h3>Who Uses a CSV Viewer?</h3>
+
+<p><strong>Data analysts</strong> sanity-check exports from databases and analytics platforms before building reports on them.</p>
+
+<p><strong>Developers</strong> inspect API exports and seed files, verifying column structure matches what their import code expects.</p>
+
+<p><strong>QA engineers</strong> validate test data files — confirming row counts, checking for nulls, and spotting formatting issues before a test run.</p>
+
+<p><strong>Operations and finance teams</strong> review transaction exports, inventory lists, and reports without needing spreadsheet licenses on every machine.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant table view</strong> — upload a CSV and see it as a spreadsheet immediately.</li>
+<li><strong>Sortable columns</strong> — click any header to sort ascending or descending.</li>
+<li><strong>Search and filter</strong> — find rows across the whole file in seconds.</li>
+<li><strong>Row & column stats</strong> — verify file completeness at a glance.</li>
+<li><strong>Cell inspector</strong> — see any cell's exact address and raw value.</li>
+<li><strong>Freeze headers</strong> — keep column names visible while scrolling.</li>
+<li><strong>Chart view</strong> — visualize numeric columns without leaving the page.</li>
+<li><strong>Export & download</strong> — save the data back to CSV.</li>
+<li><strong>100% free and private</strong> — no account; files never leave your browser.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this CSV viewer free?</h4>
+<p>Yes — free, no signup, no limits.</p>
+
+<h4>Will it change my data like Excel does?</h4>
+<p>No. The viewer displays raw text exactly as it appears in the file — no date conversions, no dropped leading zeros.</p>
+
+<h4>How do I open a CSV file?</h4>
+<p>Drag the file onto the upload area or click browse to select it. The table renders instantly.</p>
+
+<h4>Can I edit the data?</h4>
+<p>This viewer is built for inspection, sorting, and visualization. For editing, make changes in a spreadsheet app and re-upload, or use the export to round-trip your data.</p>
+
+<h4>What if my file uses semicolons instead of commas?</h4>
+<p>That's a delimiter variant common in European exports. Check the tool's delimiter setting — switching to semicolon re-parses the file correctly.</p>
+
+<h4>Can it handle large files?</h4>
+<p>Yes — files that choke desktop spreadsheet apps typically load fine, since the viewer pages through rows rather than loading everything into a grid at once.</p>
+
+<h4>Is my file uploaded to a server?</h4>
+<p>No. Parsing happens entirely in your browser; your data never leaves your device.</p>
+
+<h4>Can I make a chart from my CSV?</h4>
+<p>Yes — the chart button visualizes numeric columns directly from the loaded data.</p>
+</article>

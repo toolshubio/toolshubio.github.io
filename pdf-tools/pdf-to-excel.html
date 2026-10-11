@@ -1,68 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Convert PDF tables and data to editable Excel spreadsheets. High-precision data extraction and cell formatting. 100% secure.">
-    <title>PDF to Excel - Convert PDF to XLSX Online | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../image-tools/css/global.css">
-    <link rel="stylesheet" href="../image-tools/css/components.css">
-    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-
-  <link rel="stylesheet" href="../image-tools/css/th-header-footer.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF to Excel - Convert PDF to XLSX Online | TOOLSHUB</title>
+<meta name="description" content="Convert PDF tables and data to editable Excel spreadsheets. High-precision data extraction and cell formatting. 100% secure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../image-tools/css/v3-design.css">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<style>/* ---- v3 PDF workspace components ---- */
+.pdf-tool-container{display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:start}
+@media(max-width:900px){.pdf-tool-container{grid-template-columns:1fr}}
+@keyframes borderFlow{to{background-position:100% 100%,300% 0}}
+@keyframes floaty{50%{transform:translateY(-8px)}}
+@keyframes popIn{from{transform:scale(.9);opacity:0}}
+.ws-dropzone,.pdf-upload-zone{position:relative;border-radius:20px;padding:56px 32px;text-align:center;cursor:pointer;
+  background:linear-gradient(#fff,#fff) padding-box,
+  linear-gradient(135deg,#6366f1,#8b5cf6,#d946ef,#6366f1) border-box;
+  background-size:100% 100%,300% 300%;border:2px dashed transparent;
+  animation:borderFlow 6s linear infinite;transition:transform .25s,box-shadow .25s}
+.ws-dropzone:hover,.pdf-upload-zone:hover{transform:translateY(-3px);box-shadow:0 20px 50px -18px rgba(139,92,246,.4)}
+.ws-dropzone.dragover,.pdf-upload-zone.dragover{transform:scale(1.02);box-shadow:0 0 0 6px rgba(139,92,246,.15),0 20px 50px -18px rgba(139,92,246,.5)}
+.pdf-upload-icon{display:inline-grid;place-items:center;width:84px;height:84px;border-radius:24px;
+  background:linear-gradient(135deg,#6366f1,#8b5cf6 55%,#d946ef);color:#fff;font-size:2.2rem;margin-bottom:20px;
+  box-shadow:0 14px 34px -10px rgba(139,92,246,.55);animation:floaty 3.5s ease-in-out infinite}
+.ws-dropzone h2,.pdf-upload-zone h2{font-size:1.45rem;letter-spacing:-.02em;margin-bottom:8px}
+.ws-dropzone p,.pdf-upload-zone p{color:#64748b;margin-bottom:6px}
+.pdf-secure{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:.84rem;color:#059669;
+  background:#ecfdf5;border:1px solid #d1fae5;padding:9px 18px;border-radius:99px;font-weight:600}
+.ws-body .tu-btn{width:100%;justify-content:center;margin-top:10px}
+.btn:disabled{opacity:.55;cursor:not-allowed;transform:none!important}
+.btn-download{display:none}
+.btn-download.show{display:inline-flex}
+.pdf-progress{height:8px;background:#eef2ff;border-radius:99px;overflow:hidden;margin-top:16px;display:none}
+.pdf-progress.show{display:block}
+.pdf-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#6366f1,#d946ef);border-radius:99px;transition:width .3s}
+.pdf-page-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin-top:24px}
+.pdf-page-item{background:#fff;border:1.5px solid #e6eaf2;border-radius:16px;padding:16px 12px;text-align:center;
+  position:relative;transition:.2s;animation:popIn .3s ease}
+.pdf-page-item:hover{border-color:#c7d2fe;transform:translateY(-3px);box-shadow:0 12px 30px -12px rgba(99,102,241,.3)}
+.pdf-page-number{position:absolute;top:8px;left:8px;min-width:28px;height:28px;border-radius:99px;
+  background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;font-size:.75rem;font-weight:700;
+  display:grid;place-items:center;padding:0 8px}
+.pdf-page-thumbnail{font-size:2.2rem;color:#dc2626;margin:6px 0}
+.pdf-file-card{background:#fff;border:1.5px solid #e6eaf2;border-radius:16px;padding:18px 14px;text-align:center;
+  position:relative;transition:.2s;animation:popIn .3s ease}
+.pdf-file-card .pdf-thumb{width:56px;height:70px;margin:0 auto 12px;border-radius:8px;
+  background:linear-gradient(135deg,#fef2f2,#fee2e2);display:grid;place-items:center;
+  color:#dc2626;font-size:1.6rem;border:1px solid #fecaca}
+.pdf-settings-panel{background:linear-gradient(180deg,#fafbff,#fff);border:1px solid #e6eaf2;border-radius:20px;padding:26px}
+.pdf-settings-panel .setting-group{margin-bottom:22px}
+.pdf-settings-panel .setting-group>label{display:block;font-size:.82rem;font-weight:700;letter-spacing:.06em;
+  text-transform:uppercase;color:#475569;margin-bottom:14px}
+.checkbox-container,.radio-container{display:flex;align-items:center;gap:12px;cursor:pointer;font-size:.92rem;font-weight:500;padding:10px 0}
+.checkbox-container input{appearance:none;width:22px;height:22px;border:2px solid #cbd5e1;border-radius:7px;cursor:pointer;
+  position:relative;transition:.2s;flex-shrink:0;background:#fff;margin:0}
+.checkbox-container input:checked{background:linear-gradient(135deg,#6366f1,#8b5cf6);border-color:#6366f1}
+.checkbox-container input:checked::after{content:"✓";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:.8rem;font-weight:700}
+.radio-container input{appearance:none;width:22px;height:22px;border:2px solid #cbd5e1;border-radius:50%;cursor:pointer;
+  transition:.2s;flex-shrink:0;background:#fff;margin:0}
+.radio-container input:checked{border:6px solid #6366f1}
+.radio-group{display:flex;flex-direction:column;gap:4px}
+.form-control{width:100%;padding:12px 15px;border:1.5px solid #e6eaf2;border-radius:12px;font-size:.92rem;
+  font-family:inherit;outline:none;background:#fff;color:#0f172a;transition:.2s}
+.form-control:focus{border-color:#6366f1;box-shadow:0 0 0 4px rgba(99,102,241,.12)}
+input[type=range].form-control{padding:0;border:none;background:transparent;accent-color:#6366f1}
+.comparison-view{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+.comp-box{border:1.5px solid #e6eaf2;border-radius:16px;padding:20px;text-align:center;background:#fff}
+.comp-label{display:block;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748b;margin-bottom:8px}
+.comp-size{display:block;font-size:1.6rem;font-weight:700}
+.savings-badge{display:inline-block;margin-top:10px;background:#4caf50;color:#fff;font-size:.78rem;font-weight:700;padding:6px 14px;border-radius:99px}
+.watermark-preview{position:relative;background:#f8fafc;border:1.5px dashed #cbd5e1;border-radius:16px;
+  min-height:260px;display:grid;place-items:center;overflow:hidden;margin-top:16px}
+.watermark-overlay{position:absolute;font-size:2.2rem;font-weight:800;color:rgba(99,102,241,.28);
+  transform:rotate(-24deg);letter-spacing:.1em;pointer-events:none;text-transform:uppercase}
+.premium-feature-badge{display:inline-block;background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff;
+  font-size:.7rem;font-weight:700;padding:4px 12px;border-radius:99px;letter-spacing:.06em;margin-left:8px}
+.queue-header h4{margin:0;font-size:1rem}
+.ws-body table{width:100%;border-collapse:collapse;font-size:.9rem;margin:12px 0}
+.ws-body th,.ws-body td{padding:10px;border-bottom:1px solid #eef2ff;text-align:left}
+.ws-body th{font-weight:600;color:#475569;font-size:.82rem;text-transform:uppercase;letter-spacing:.04em}</style>
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../index.html#tools">All Tools</a><a href="../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../index.html#tools">Explore Tools</a></div>
+</div></header>
+<!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+<nav class="crumbs"><a href="../index.html">Home</a> &nbsp;/&nbsp; <span>PDF to Excel Data Focus</span></nav>
+<section class="hero">
+  <span class="hero-eyebrow">PDF Tools</span>
+  <h1>PDF to <em>Excel.</em></h1>
+  <p>Convert PDF tables and data to editable Excel spreadsheets. High-precision data extraction and cell formatting. 100% secure.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../image-tools/index.html">Image Tools</a><a href="../pdf-tools/index.html">PDF Tools</a><a href="../text-tools/index.html">Text & Writing</a><a href="../seo-tools/index.html">SEO Tools</a><a href="../calculator-tools/index.html">Calculators</a><a href="../binary-tools/index.html">Binary Tools</a><a href="../code-format-tools/index.html">Code & Formatters</a><a href="../doc-tools/index.html">Documents</a><a href="../other-tools/index.html">Other Tools</a><a href="../about-us.html">About Us</a><a href="../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a> &gt;
-                <a href="index.html">PDF Tools</a> &gt;
-                <span>PDF to Excel Data Focus</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">PDF to Excel Data Focus</h1>
-                <p class="tool-description">Accurately extract tables and structured data from PDF files into fully functional Excel sheets.</p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
+</section>
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>PDF to Excel Data Focus</b><span>v3.0 · local</span></div>
+  <div class="ws-body">
 <div class="pdf-tool-container">
 <!-- Main Content Area -->
 <div class="tool-main">
-<div class="pdf-upload-zone" id="drop-zone">
-<span class="pdf-upload-icon"><i class="fa-solid fa-file-pdf"></i></span>
+<div class="pdf-upload-zone ws-dropzone" id="drop-zone">
+<span class="pdf-upload-icon"><i class="fa-regular fa-file-excel"></i></span>
 <h2>Upload PDF to Extract Data</h2>
-<p>Select the document containing tables</p>
+<p>Select the document containing tables — <u>click to browse</u></p>
 <input accept=".pdf" id="file-input" style="display: none;" type="file"/>
+<div><span class="pdf-secure"><i class="fa-solid fa-shield-halved"></i> 100% Secure — files never leave your browser</span></div>
 </div>
+<div class="pdf-progress" id="pdf-to-excel-progress"><i></i></div>
 <div id="upload-status" style="display: none; background: var(--bg-secondary); padding: 2rem; border-radius: var(--radius-lg); text-align: center;">
 <div id="processing-view">
 <i class="fa-solid fa-table-list fa-spin" style="font-size: 3rem; color: var(--color-pdf);"></i>
@@ -88,57 +140,41 @@
 <option value="all">Single sheet for all data</option>
 </select>
 </div>
-<button class="btn btn-pdf" disabled="" id="convert-btn">
+<button class="tu-btn tu-btn-primary btn btn-pdf btn-dark" disabled="" id="convert-btn">
 <i class="fa-solid fa-file-csv"></i> Extract to Excel
                 </button>
-<a class="btn-download" href="#" id="download-btn" style="display: none;">
+<a class="tu-btn tu-btn-ghost btn-download btn-light" href="#" id="download-btn" style="display: none;">
 <i class="fa-solid fa-download"></i> Download Excel (.xlsx)
                 </a>
 </aside>
 </div>
- Features Info 
-<section class="tool-features-info" style="margin-top: 5rem;">
-<div class="features-grid">
-<div class="feature-card">
-<h3 class="feature-title">Precision Extraction</h3>
-<p class="feature-desc">Our algorithms specifically target grid structures and cell borders to
-                        ensure 1:1 mapping of PDF tables to Excel cells.</p>
-</div>
-<div class="feature-card">
-<h3 class="feature-title">Secure &amp; Local</h3>
-<p class="feature-desc">All data processing occurs within your browser's local environment. Your
-                        proprietary spreadsheets never leave your device.</p>
-</div>
-</div>
+  </div>
+</div></div>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 — HOW IT WORKS</span><h2>Three steps, zero learning curve</h2></div>
+  <div class="steps">
+    <div class="step"><div class="step-n">i.</div><h3>Upload your PDF</h3><p>Drag & drop your PDF file, or click to browse from your computer.</p></div>
+    <div class="step"><div class="step-n">ii.</div><h3>Choose extraction mode</h3><p>Pick the data mode and scaling that best matches your tables.</p></div>
+    <div class="step"><div class="step-n">iii.</div><h3>Download your spreadsheet</h3><p>Get a working XLSX with your tables ready to sort, filter and calculate.</p></div>
+  </div>
 </section>
-
-
- Scripts
-            </div>
-            <section class="seo-article" data-tool="pdf-to-excel">
-<article class="tool-article">
-<h2>PDF to Excel Converter — Extract Tables Into Editable Spreadsheets</h2>
-
-<p>A client once sent me a 40-page PDF of sales data and asked for "a quick pivot table." Retyping forty pages was not happening, and copy-pasting from the PDF produced a single mangled column of numbers. A PDF to Excel converter did in thirty seconds what would have taken me a weekend: it read the tables in the PDF and rebuilt them as real spreadsheet cells — rows, columns, numbers I could actually sum, sort, and chart. If your data is trapped in a PDF, this is the way out.</p>
-
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>PDF to Excel Converter — Extract Tables Into Editable Spreadsheets</h2>
+    <p class="deck">A client once sent me a 40-page PDF of sales data and asked for "a quick pivot table." Retyping forty pages was not happening, and copy-pasting from the PDF produced a single mangled column of numbers. A PDF to Excel converter did in thirty seconds what would have taken me a weekend: it read the tables in the PDF and rebuilt them as real spreadsheet cells — rows, columns, numbers I could actually sum, sort, and chart. If your data is trapped in a PDF, this is the way out.</p>
+    <div class="article-meta"><div class="avatar">T</div><div><b>TOOLSHUB Editorial</b><span>8 min read · Updated Oct 2026</span></div></div>
+  </div>
+  <div class="article-body">
 <h3>Why PDF Tables Are So Hard to Work With</h3>
-
-<p>PDFs were designed to preserve how a document <em>looks</em>, not how its data is <em>structured</em>. A table in a PDF is often just text characters placed at coordinates on a page — the PDF knows where "1,240" sits visually, but it has no concept of "row 7, column 3." That is why copy-paste fails so spectacularly: you get the characters in reading order, not in table order.</p>
-
+<p class="lead">PDFs were designed to preserve how a document <em>looks</em>, not how its data is <em>structured</em>. A table in a PDF is often just text characters placed at coordinates on a page — the PDF knows where "1,240" sits visually, but it has no concept of "row 7, column 3." That is why copy-paste fails so spectacularly: you get the characters in reading order, not in table order.</p>
 <p>A converter reverses this. It analyzes the layout — alignment of text blocks, ruling lines, whitespace gaps — and reconstructs the grid: which values share a row, which share a column, where headers sit. The result is a genuine .xlsx file with real cells you can click, formula against, and sort. Bank statements, invoices, financial reports, and exported dashboards all yield to this.</p>
-
 <p>The critical distinction: text-based PDFs versus scanned PDFs. If you can select text in the PDF with your mouse, the converter reads it directly and accuracy is excellent. If the PDF is a scan (just pictures of pages), the tool needs OCR — optical character recognition — to read the pixels first. OCR works well on clean scans but degrades with skewed photos, shadows, and faint print. Always verify numbers after converting a scanned document.</p>
-
 <h3>How to Use the PDF to Excel Converter</h3>
-
 <p>Drop your PDF into the tool and hit Convert. The tool detects tables on each page and rebuilds them as worksheets — multi-page PDFs typically become multi-sheet workbooks, which keeps long reports organized.</p>
-
 <p>Then comes the step nobody should skip: verification. Open the spreadsheet and check it against the PDF. My routine: compare the totals (do the column sums match the PDF's printed totals?), scan for merged cells the converter may have split or joined incorrectly, and check that dates and currency values landed in the right columns. On a clean text-based PDF this takes two minutes; on a scanned one, spot-check every page that matters.</p>
-
 <p>If your PDF is password-protected, unlock it first — converters cannot read inside a locked file. And if the PDF mixes tables with lots of prose, expect the prose to land in cells too; a quick cleanup pass (deleting non-table rows) is normal.</p>
-
 <h3>What Converts Well (and What Doesn't)</h3>
-
 <table>
 <thead><tr><th>PDF type</th><th>Accuracy</th><th>What to watch for</th></tr></thead>
 <tbody>
@@ -149,33 +185,19 @@
 <tr><td>Multi-column prose layouts</td><td>Poor</td><td>Not really tables — convert to Word instead</td></tr>
 </tbody>
 </table>
-
 <p>The pattern: the more the PDF resembles a clean spreadsheet printout, the better the result. The more it resembles a crumpled receipt photographed at an angle, the more verification it needs.</p>
-
 <h3>Common Uses for PDF-to-Excel Conversion</h3>
-
 <p><strong>Bank and credit card statements.</strong> The number-one use I see — turning monthly PDFs into spreadsheets for budgeting, reconciliation, and tax prep.</p>
-
 <p><strong>Invoices and bills.</strong> Extracting line items from supplier PDFs into your own tracking sheet instead of retyping them.</p>
-
 <p><strong>Financial reports.</strong> Analysts pulling figures from annual reports and filings into models they can actually compute on.</p>
-
 <p><strong>Survey and research data.</strong> Tables published in reports become analyzable datasets — sortable, filterable, chartable.</p>
-
 <p><strong>Inventory and price lists.</strong> Supplier catalogs as PDFs become order sheets with working formulas.</p>
-
 <h3>Who Converts PDFs to Excel?</h3>
-
 <p><strong>Accountants and bookkeepers</strong> turning client PDFs into working spreadsheets every tax season.</p>
-
 <p><strong>Analysts</strong> extracting figures from reports and filings into financial models.</p>
-
 <p><strong>Small business owners</strong> converting statements and invoices for budgeting without retyping.</p>
-
 <p><strong>Researchers and students</strong> pulling published data tables into datasets for analysis.</p>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>Real spreadsheet cells</strong> — rows, columns, and numbers you can sort, filter, and formula against.</li>
 <li><strong>Table structure detection</strong> — headers, merged cells, and multi-page tables reconstructed.</li>
@@ -185,74 +207,29 @@
 <li><strong>100% client-side</strong> — financial documents never leave your browser.</li>
 <li><strong>Free, unlimited, no watermark</strong> — no signup, no payment, clean output.</li>
 </ul>
-
-<h3>Frequently Asked Questions</h3>
-
-<h4>Will the numbers be accurate?</h4>
-<p>For text-based PDFs, yes — the converter reads the actual text. For scanned PDFs, OCR accuracy depends on scan quality; always verify totals against the original.</p>
-
-<h4>Can it convert scanned PDFs?</h4>
-<p>Yes, using OCR — but results depend on the scan. Clean flatbed scans convert well; skewed phone photos need careful verification.</p>
-
-<h4>What if my PDF has no tables, just text?</h4>
-<p>The converter will still produce a spreadsheet, but prose converts poorly to cells. For text-heavy documents, a PDF-to-Word converter is the better choice.</p>
-
-<h4>Can I convert a password-protected PDF?</h4>
-<p>Not directly — unlock it first. The converter cannot read inside an encrypted file.</p>
-
-<h4>How do multi-page tables come out?</h4>
-<p>Usually as multiple worksheets or one continuous sheet, depending on the tool. Check that repeated header rows did not duplicate into your data.</p>
-
-<h4>Is it safe for bank statements?</h4>
-<p>With a client-side tool, yes — your financial documents are processed in your browser and never uploaded anywhere.</p>
-
-<h4>Is it free?</h4>
-<p>Completely free — no signup, no limits, no watermark.</p>
-</article>
+<div class="faq"><div class="faq-item open"><div class="faq-q">Will the numbers be accurate? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>For text-based PDFs, yes — the converter reads the actual text. For scanned PDFs, OCR accuracy depends on scan quality; always verify totals against the original.</p></div></div><div class="faq-item"><div class="faq-q">Can it convert scanned PDFs? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes, using OCR — but results depend on the scan. Clean flatbed scans convert well; skewed phone photos need careful verification.</p></div></div><div class="faq-item"><div class="faq-q">What if my PDF has no tables, just text? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>The converter will still produce a spreadsheet, but prose converts poorly to cells. For text-heavy documents, a PDF-to-Word converter is the better choice.</p></div></div><div class="faq-item"><div class="faq-q">Can I convert a password-protected PDF? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Not directly — unlock it first. The converter cannot read inside an encrypted file.</p></div></div><div class="faq-item"><div class="faq-q">How do multi-page tables come out? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Usually as multiple worksheets or one continuous sheet, depending on the tool. Check that repeated header rows did not duplicate into your data.</p></div></div><div class="faq-item"><div class="faq-q">Is it safe for bank statements? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>With a client-side tool, yes — your financial documents are processed in your browser and never uploaded anywhere.</p></div></div><div class="faq-item"><div class="faq-q">Is it free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Completely free — no signup, no limits, no watermark.</p></div></div></div>
+  </div>
+</article></div>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 — KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+    <a class="rel" href="pdf-to-word.html"><i class="fa-regular fa-file-word" style="color:#4f46e5"></i><h3>PDF to Word</h3><p>Convert PDF into editable Word documents.</p></a>
+    <a class="rel" href="excel-to-pdf.html"><i class="fa-regular fa-file-excel" style="color:#7c3aed"></i><h3>Excel to PDF</h3><p>Convert spreadsheets into formatted PDFs.</p></a>
+    <a class="rel" href="pdf-to-jpg.html"><i class="fa-regular fa-file-image" style="color:#4f46e5"></i><h3>PDF to JPG</h3><p>Extract PDF pages as JPG images.</p></a>
+    <a class="rel" href="merge-pdf.html"><i class="fa-solid fa-layer-group" style="color:#7c3aed"></i><h3>Merge PDF</h3><p>Combine multiple PDFs into one file.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../image-tools/index.html">Image Tools</a></li><li><a href="../pdf-tools/index.html">PDF Tools</a></li><li><a href="../text-tools/index.html">Text & Writing</a></li><li><a href="../seo-tools/index.html">SEO Tools</a></li><li><a href="../calculator-tools/index.html">Calculators</a></li><li><a href="../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a><p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../index.html#tools">All 203 tools</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../about-us.html">About</a><a href="../contact-us.html">Contact</a><a href="../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>© 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
 <script src="js/pdf-logic.js"></script>
 <script>
@@ -306,6 +283,8 @@
             });
         });
     </script>
-  <script src="../image-tools/js/th-interactions.js"></script>
+<script src="../image-tools/js/th-interactions.js"></script>
+<script src="../image-tools/js/tu-unified.js"></script>
+<script src="../image-tools/js/v3.js"></script>
 </body>
 </html>

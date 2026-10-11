@@ -1,0 +1,93 @@
+<article class="tool-article">
+<h2>Text Cleaner — Remove Messy Formatting From Any Text</h2>
+
+<p>Copy text out of a PDF and you get lines broken mid-sentence. Copy out of Word and invisible formatting rides along. Copy out of a chat app and you inherit weird spacing nobody can see but every system can feel. I have wasted real hours hunting a "mismatch" that turned out to be a zero-width character hiding at the end of a string. A text cleaner strips all of that junk in one pass: extra spaces, stray line breaks, invisible characters, HTML tags, smart quotes — leaving plain, honest text behind.</p>
+
+<h3>What Is a Text Cleaner?</h3>
+
+<p>A text cleaner is an online tool that removes unwanted formatting and invisible junk from pasted text. You choose which fixes to apply — collapse extra spaces, remove line breaks, strip HTML tags, delete invisible characters, normalize quotes — and it returns clean plain text. Each fix is usually a separate toggle, so you can collapse spacing without joining paragraphs, or strip invisible characters without touching anything else.</p>
+
+<p>The problems it solves are the ones you cannot see. Doubled spaces, tabs masquerading as alignment, zero-width Unicode characters, curly quotes that break code, email reply markers (>) stacked ten deep — all invisible, all capable of breaking comparisons, imports, and layouts.</p>
+
+<h3>How to Use the Text Cleaner</h3>
+
+<p>Paste your messy text into the input box. Turn on the fixes you want — start with the obvious ones like collapsing extra spaces and trimming each line. Click clean, review the result, and copy it. If you are unsure which options you need, enable them one at a time and watch what changes; the preview makes it easy to learn what each fix does.</p>
+
+<p>One habit that pays off: clean before you paste into your final destination, not after. Cleaning a CMS editor or a spreadsheet cell after the fact means fighting the tool's own formatting on top of the original mess.</p>
+
+<h3>What It Cleans</h3>
+
+<table>
+<thead><tr><th>Problem</th><th>Where It Comes From</th><th>The Fix</th></tr></thead>
+<tbody>
+<tr><td>Extra spaces</td><td>PDFs, sloppy typing</td><td>Collapse multiples into one</td></tr>
+<tr><td>Stray line breaks</td><td>PDF columns, wrapped text</td><td>Join lines into paragraphs</td></tr>
+<tr><td>Empty lines</td><td>Copy-paste gaps</td><td>Delete blank lines</td></tr>
+<tr><td>Invisible characters</td><td>Web pages, chat apps</td><td>Remove zero-width and control chars</td></tr>
+<tr><td>HTML tags</td><td>Copying from web pages</td><td>Strip tags, keep the text</td></tr>
+<tr><td>Smart quotes &amp; dashes</td><td>Word, Google Docs</td><td>Normalize to straight quotes and hyphens</td></tr>
+<tr><td>Email indents (&gt;)</td><td>Forwarded email chains</td><td>Strip leading reply markers</td></tr>
+<tr><td>Trailing whitespace</td><td>Editors, forms</td><td>Trim each line</td></tr>
+</tbody>
+</table>
+
+<h3>When Cleaning Saves You</h3>
+
+<p><strong>Text copied from PDFs.</strong> PDFs break lines wherever the column ended, so sentences arrive chopped into fragments. Removing line breaks and collapsing spaces reassembles them into readable paragraphs.</p>
+
+<p><strong>Strings that will not match.</strong> A trailing space or zero-width character is invisible but breaks comparisons, lookups, and database imports. Stripping invisible characters usually fixes the "but they look identical!" mystery instantly.</p>
+
+<p><strong>Pasting into a CMS.</strong> Copying from a word processor drags formatting artifacts into the editor — odd spacing, mystery characters, broken lists. Cleaning first keeps the published page tidy.</p>
+
+<p><strong>Cleaning AI output.</strong> Text pasted from chatbots often carries markdown symbols, extra blank lines, and hidden characters. A cleaner turns it into plain text ready for email, documents, or forms.</p>
+
+<p><strong>Preparing data.</strong> Lists, CSV content, and form entries with inconsistent spacing clean up into uniform input that imports and sorts correctly.</p>
+
+<h3>Tips for Safe Cleaning</h3>
+
+<ul>
+<li><strong>Clean in passes.</strong> Apply one or two fixes, check the result, then continue. Blanket-cleaning everything at once can remove structure you wanted.</li>
+<li><strong>Do not remove all line breaks unless you mean it.</strong> Joining lines is great for PDF text but destroys intentional lists and addresses.</li>
+<li><strong>Keep a copy of the original.</strong> Cleaning is one-way — if you strip something you needed, you will want the uncleaned version.</li>
+<li><strong>Watch code and preformatted text.</strong> Indentation matters in code; only run whitespace fixes on prose, not on snippets where spacing is meaningful.</li>
+<li><strong>Normalize quotes before importing.</strong> Curly quotes break JSON, CSV parsers, and code — straighten them when text is headed for a system.</li>
+</ul>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Granular fixes</strong> — each cleanup is a separate toggle you control.</li>
+<li><strong>Instant preview</strong> — see the cleaned result as you enable options.</li>
+<li><strong>Invisible character removal</strong> — kills zero-width and control characters.</li>
+<li><strong>100% free</strong> — no signup, no limits.</li>
+<li><strong>Private by design</strong> — cleaning runs in your browser; sensitive text never leaves your device.</li>
+<li><strong>One-click copy</strong> — take the clean text anywhere.</li>
+<li><strong>Works everywhere</strong> — desktop and mobile browsers.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What does a text cleaner do?</h4>
+<p>It removes unwanted formatting from pasted text — extra spaces, stray line breaks, invisible characters, HTML tags, smart quotes, and more — returning clean plain text.</p>
+
+<h4>Is the text cleaner free?</h4>
+<p>Yes. No account, no payment, and no limits on how much text you clean.</p>
+
+<h4>Why does my copied text have weird line breaks?</h4>
+<p>PDFs and some web layouts break lines at fixed widths, so sentences arrive chopped. The line-break removal fix joins them back into proper paragraphs.</p>
+
+<h4>What are invisible characters?</h4>
+<p>Unicode characters like zero-width spaces that take up no visible room but exist in the text. They break string comparisons, searches, and imports — the cleaner removes them.</p>
+
+<h4>Will cleaning remove my paragraph breaks?</h4>
+<p>Only if you enable that option. Fixes are separate toggles, so you can collapse extra spaces while keeping your paragraphs intact.</p>
+
+<h4>Can it strip HTML from copied web text?</h4>
+<p>Yes. The HTML-tag stripping option removes all tags and leaves just the readable text content.</p>
+
+<h4>Is it safe to clean sensitive text?</h4>
+<p>Yes. Cleaning happens locally in your browser — nothing is uploaded, so contracts, drafts, and private notes stay on your device.</p>
+
+<h4>Will it mess up my code snippets?</h4>
+<p>It can if you apply whitespace fixes to code, where indentation is meaningful. Clean prose and code separately, and skip spacing fixes on code blocks.</p>
+</article>

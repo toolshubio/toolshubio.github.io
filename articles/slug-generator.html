@@ -1,0 +1,87 @@
+<article class="tool-article">
+<h2>Slug Generator — Free SEO-Friendly URL Slug Maker</h2>
+
+<p>Every CMS auto-generates a slug from your title, and every CMS gets it wrong in its own way: capitals left in, accents breaking the link, stop words bloating it, punctuation sneaking through. I learned to always check the auto-generated slug before publishing — and a slug generator makes that check take five seconds. Paste your title, get a clean, keyword-bearing, lowercase, hyphenated slug, and paste it into your permalink field.</p>
+
+<h3>What Is a Slug Generator?</h3>
+
+<p>A URL slug is the part of a web address that identifies a specific page — in <code>example.com/best-budget-laptops</code>, the slug is <code>best-budget-laptops</code>. It is the one part of the URL you fully control on every page you create, and Google reads it before it reads almost anything else on the page. The generator turns any title or heading into a proper slug: it lowercases the text, replaces spaces with your chosen separator, strips punctuation and special characters, transliterates accented characters to ASCII (<code>Café</code> becomes <code>cafe</code>), optionally removes stop words, and can cap the length without cutting through a word.</p>
+
+<p>The transformation rules are small but unforgiving. Spaces must become separators — hyphens, which Google treats as word breaks (underscores get joined into one token, so avoid them). Everything goes lowercase for consistency across servers. Special characters like #, @, and ! get stripped because they can break links. The result is a slug that reads well in search results, survives being pasted into emails and chats, and carries your keyword.</p>
+
+<h3>How to Use the Slug Generator</h3>
+
+<p>The workflow is fast enough to become a habit for every post.</p>
+
+<p>Type or paste your title into the input field — a blog headline, a product name, any text. The slug builds itself underneath in real time; there is nothing to click. Choose your separator (hyphen is the default and the SEO-recommended choice), confirm lowercase is on, and decide on the options: remove stop words for a shorter slug, transliterate accents if your title has them, and set a max length if you want a hard cap.</p>
+
+<p>Read the result critically. A good slug is 3–5 words, contains the primary keyword, and reads like a label: "10 Best Chicken Biryani Recipes for Beginners!" becomes <code>10-best-chicken-biryani-recipes-beginners</code>. If it is still long, trim manually — drop the number or a secondary word. Copy the finished slug and paste it into your CMS permalink field before publishing.</p>
+
+<p>One rule to tattoo on your workflow: set the slug once and do not change it after publishing. Changing a live URL breaks inbound links and social shares unless you add a 301 redirect — and most of the time, the old slug was fine anyway.</p>
+
+<h3>Transformation Examples</h3>
+
+<table>
+<thead><tr><th>Input title</th><th>Generated slug</th></tr></thead>
+<tbody>
+<tr><td>10 Best Chicken Biryani Recipes for Beginners!</td><td><code>10-best-chicken-biryani-recipes-beginners</code></td></tr>
+<tr><td>How to Make Money Online From Home</td><td><code>how-to-make-money-online-home</code></td></tr>
+<tr><td>Café Culture: Paris's Best Espresso Bars</td><td><code>cafe-culture-paris-best-espresso-bars</code></td></tr>
+<tr><td>Best Chicken Mandi!!!</td><td><code>best-chicken-mandi</code></td></tr>
+<tr><td>Hello World</td><td><code>hello-world</code></td></tr>
+</tbody>
+</table>
+
+<p>Notice what each step does: "How to Make Money Online From Home" loses the stop words "to" and "from" but keeps "how" (dropping it would change the meaning), "Café" transliterates cleanly to "cafe," and the triple exclamation marks vanish entirely.</p>
+
+<h3>Who Uses Slug Generators?</h3>
+
+<p><strong>Bloggers</strong> generate slugs for every post — WordPress permalinks, checked and cleaned in seconds.</p>
+
+<p><strong>E-commerce managers</strong> create product and category slugs in bulk, keeping thousands of URLs consistent.</p>
+
+<p><strong>Developers</strong> use the rules as a reference for their own <code>slugify()</code> functions — and to avoid reinventing the accent-handling they always get wrong.</p>
+
+<p><strong>Content teams</strong> use bulk mode to convert a spreadsheet of titles into slugs for migrations and launches.</p>
+
+<p><strong>Marketers</strong> generate clean slugs for campaign landing pages that get shared in emails and ads.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Real-time generation</strong> — the slug updates as you type, no button needed.</li>
+<li><strong>Transliteration</strong> — accents and non-Latin scripts converted to readable ASCII.</li>
+<li><strong>Stop-word removal</strong> — optional stripping of filler words for shorter slugs.</li>
+<li><strong>Separator choice</strong> — hyphen (recommended), underscore, or dot.</li>
+<li><strong>Length cap</strong> — max length that never cuts mid-word.</li>
+<li><strong>Bulk mode</strong> — paste many titles, get many slugs in one go.</li>
+<li><strong>100% free</strong> — no signup, no limits.</li>
+<li><strong>Private by design</strong> — everything runs in your browser; nothing is uploaded.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is a URL slug?</h4>
+<p>The part of a web address after the domain that identifies a specific page — in example.com/best-budget-laptops, "best-budget-laptops" is the slug. It should be lowercase, hyphenated, and descriptive of the page.</p>
+
+<h4>Should I use hyphens or underscores in slugs?</h4>
+<p>Hyphens. Google treats hyphens as word separators but joins underscored words into a single token. Hyphens are also the default in WordPress, Shopify, and most CMS platforms.</p>
+
+<h4>How long should a slug be?</h4>
+<p>Three to five words is ideal. Include the primary keyword, drop stop words and filler, and resist the urge to mirror the full title.</p>
+
+<h4>Can I change a slug after publishing?</h4>
+<p>You can, but do not do it casually. Changing a live URL breaks links unless you add a 301 redirect from the old URL to the new one. Set it right the first time.</p>
+
+<h4>Should slugs include the year?</h4>
+<p>Only for genuinely time-sensitive content. A date in the slug makes the page look stale later and complicates updates — "best-laptops-2026" ages badly.</p>
+
+<h4>What about non-English titles?</h4>
+<p>The generator transliterates accents and many non-Latin scripts to ASCII equivalents. For CJK and similar scripts, check that the output is readable and test the URL before publishing.</p>
+
+<h4>Is this generator free?</h4>
+<p>Yes — completely free, no account needed, including bulk mode.</p>
+
+<h4>Does my text leave my browser?</h4>
+<p>No. Everything runs client-side; nothing you type is uploaded or tracked.</p>
+</article>

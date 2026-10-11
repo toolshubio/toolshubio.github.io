@@ -1,0 +1,87 @@
+<article class="tool-article">
+<h2>Image Compare — Compare Two Images Side by Side Online Free</h2>
+
+<p>Did my edit actually improve this photo, or did I just stare at it too long? Is the compressed version visibly worse than the original? Spot the difference between these two product shots. An image compare tool answers these by placing two pictures side by side — or layered under a draggable slider — so your eyes judge the difference directly instead of your memory. Free, no signup, and your images never leave your browser.</p>
+
+<h3>What Is an Image Compare Tool?</h3>
+
+<p>It is a viewer built for one job: judging the difference between two images. The basic mode puts them side by side with synchronized zoom and pan — zoom into a corner of one and the other follows, so you are always looking at the same region of both. More advanced tools offer multiple views of the same pair: a draggable reveal slider (the classic before-and-after), a fade cross-dissolve, a flicker mode that alternates the two rapidly so changes appear to jump, and a subtract view that renders identical pixels black so any difference glows.</p>
+
+<p>There are two different problems people bring here. The first is <strong>qualitative</strong>: which edit looks better, did the retouch work, where did the designer change the mockup. The second is <strong>quantitative</strong>: pixel-by-pixel diffing that produces a change log — regions grouped and listed beside the image, per-channel error counts, difference percentages. Methods like SSIM measure structural similarity the way humans perceive it; PSNR scores compression quality; plain pixel counting (AE) tells you exactly how many pixels changed.</p>
+
+<p>When I first used one, the flicker mode surprised me most. Differences I could not see side by side became obvious the moment the images alternated — motion is something human vision is built to catch.</p>
+
+<h3>How to Compare Two Images Online</h3>
+
+<p><strong>Step 1 — Upload both images.</strong> Drop Image 1 (original) and Image 2 (changed) into the tool. PNG, JPG, WebP, GIF, and HEIC all work, even mixed formats.</p>
+
+<p><strong>Step 2 — Pick a comparison view.</strong> Side by side for general judging; slider for before-and-after reveals; fade for easing between versions; flicker for spotting moved elements; subtract or highlight for pixel-level change detection.</p>
+
+<p><strong>Step 3 — Inspect.</strong> Use synchronized zoom to check fine detail — compression artifacts cluster at object boundaries and fine textures, exactly where zooming pays off. For overlay modes, both images should have the same dimensions; pixels are read in position, so a resized copy reads as a whole-image change.</p>
+
+<p><strong>Step 4 — Export if needed.</strong> Some tools export the comparison as a shareable PNG — the before/after slider baked into one image — or a diff report with error percentages.</p>
+
+<p>Habit worth building: for before-and-after work, use two images of the same dimensions. Same-size pairs stay pixel-aligned, which makes fine detail easy to judge honestly.</p>
+
+<h3>Comparison Views and What Each Reveals</h3>
+
+<table>
+<thead><tr><th>View</th><th>How it works</th><th>Best for</th></tr></thead>
+<tbody>
+<tr><td>Side by side</td><td>Both images next to each other, synced zoom/pan</td><td>General comparison, design revisions</td></tr>
+<tr><td>Slider / reveal</td><td>Drag a divider to reveal one beneath the other</td><td>Before-and-after edits, retouching</td></tr>
+<tr><td>Fade</td><td>Cross-dissolve controlled by a slider</td><td>Easing between versions, subtle color shifts</td></tr>
+<tr><td>Flicker</td><td>Alternates rapidly between the two</td><td>Spotting moved or added elements</td></tr>
+<tr><td>Subtract / highlight</td><td>Identical pixels go black; differences glow</td><td>Pixel-level diffing, compression analysis</td></tr>
+<tr><td>Text compare</td><td>OCR reads both images, compares as text</td><td>When the change is in wording, not pixels</td></tr>
+</tbody>
+</table>
+
+<h3>Who Compares Images?</h3>
+
+<p><strong>Photographers and retouchers</strong> judge before/after edits — did the <strong>sharpening</strong> help, did the denoise soften too much, did the color grade go too far. The slider view is their daily driver.</p>
+
+<p><strong>Designers</strong> compare mockup revisions with clients. A slider comparison communicates "here is what changed" better than two separate files ever will.</p>
+
+<p><strong>Developers and QA testers</strong> diff UI screenshots between builds. Pixel-subtract views catch the one-pixel shift that a human scan misses — and SSIM scores quantify compression quality objectively.</p>
+
+<p><strong>Content creators</strong> compare AI upscales against sources, game mods against vanilla, and compression settings against originals — anywhere the claim is "this looks better," the comparison is the proof.</p>
+
+<h3>Practical Tips for Honest Comparisons</h3>
+
+<ul>
+<li><strong>Match dimensions first.</strong> Overlay modes need same-size images — <strong>resize</strong> both to identical pixels before comparing, or scaling itself shows as a diff.</li>
+<li><strong>Use PNG for diffs.</strong> JPEG noise shows up as false differences in subtract views; PNG keeps the comparison clean.</li>
+<li><strong>Zoom to 100%.</strong> Compression artifacts hide at fit-to-screen and show at actual size — judge detail at 1:1.</li>
+<li><strong>Try flicker for motion.</strong> Anything that moved between shots jumps visibly in flicker mode when side-by-side looks identical.</li>
+<li><strong>Label your sides.</strong> "Before" and "After" labels (or filenames) prevent the classic embarrassment of judging the wrong direction.</li>
+<li><strong>Compare text as text.</strong> If the change is wording on a screenshot, the OCR text-compare view beats pixel staring.</li>
+<li><strong>Export the proof.</strong> When a client asks "what changed," a baked before/after PNG answers better than a paragraph.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this image compare tool free?</h4>
+<p>Yes — free, no signup, no watermark on exports.</p>
+
+<h4>Do the two images need the same dimensions?</h4>
+<p>For overlay and diff modes, yes — pixels are compared in position, so a resized or shifted copy reads as a whole-image change. Align, <strong>crop</strong>, or resize the pair first; side-by-side viewing is more forgiving.</p>
+
+<h4>What is the difference view showing me?</h4>
+<p>It subtracts one image from the other pixel by pixel. Identical areas render flat black; any difference glows — including differences too faint to see side by side.</p>
+
+<h4>Can I compare compression quality?</h4>
+<p>Yes. Upload the original as image one and the compressed version as image two, then use SSIM (structural similarity, closest to human perception) or PSNR (a single numeric quality score). The diff shows exactly where artifacts appear.</p>
+
+<h4>Are my images uploaded to a server?</h4>
+<p>Browser-based tools process locally — nothing leaves your device. Some tools offer shareable links and embeds, which do host the images; check each tool's retention policy.</p>
+
+<h4>Can I embed a comparison on my website?</h4>
+<p>Some tools provide an embed snippet that drops the interactive slider straight into your page, sized to your image — handy for portfolio before/afters.</p>
+
+<h4>What is flicker mode for?</h4>
+<p>It alternates the two images rapidly in place. Anything that moved, appeared, or disappeared seems to jump — the fastest way to spot changes your eyes glide past.</p>
+
+<h4>How is this different from an image merger?</h4>
+<p>A compare tool helps you <em>judge differences</em> between two images; a <strong>merger</strong> combines multiple images into one file. Different jobs, often used in sequence — merge for presentation, compare for evaluation.</p>
+</article>

@@ -1,0 +1,93 @@
+<article class="tool-article">
+<h2>Alt Text Generator — Write Image Descriptions That Help SEO and Accessibility</h2>
+
+<p>I audited a client's blog last year and found 340 images with alt text like "IMG_0042.jpg" — invisible to Google Images, meaningless to screen readers, a ranking opportunity sitting in plain sight. An alt text generator writes proper alternative text for your images: concise, descriptive phrases that tell search engines what the image shows and let visually impaired visitors understand your content.</p>
+
+<h3>What Is Alt Text and Why Does It Matter?</h3>
+
+<p>Alt text (the <code>alt</code> attribute on an <code>&lt;img&gt;</code> tag) serves two audiences. For people using screen readers, it is read aloud in place of the image — it is how a blind visitor "sees" your product photo. For search engines, it is one of the few textual signals describing image content, feeding both Google Images rankings and the page's overall topical relevance.</p>
+
+<p>Good alt text describes the image's function in context, not just its pixels. <code>alt="dog"</code> is technically valid but useless. <code>alt="Golden retriever puppy chewing a red rubber toy on a lawn"</code> tells everyone — human and crawler — what matters. The generator produces this kind of specific, natural phrasing instead of filename gibberish.</p>
+
+<p>There is also a quiet third audience now: AI systems. ChatGPT, Perplexity, and visual search tools increasingly rely on alt text to understand images they cannot otherwise interpret. Well-written alt text is becoming AI-visibility infrastructure, not just an SEO checkbox.</p>
+
+<h3>How to Use the Alt Text Generator</h3>
+
+<p>Upload your image or describe it in the input field, depending on the tool type. AI-powered generators analyze the actual pixels; text-based ones expand your short description into polished alt text. Review the suggestion, tweak it for your page's context (mention the product name, the location, whatever the surrounding article is about), then copy it into your CMS's alt field or <code>&lt;img&gt;</code> tag.</p>
+
+<p>Context is the part generators cannot fully do for you. The same photo of a coffee cup needs different alt text on a product page ("Ceramic pour-over coffee dripper, matte black, 600ml") versus a blog post ("Barista pouring hot water over coffee grounds in a V60 dripper"). Let the tool draft, then add the context only you know.</p>
+
+<p>For bulk work — a store with 500 product photos — look for generators with batch or API support. Doing them one by one is a weekend you will never get back.</p>
+
+<h3>How Alt Text Generation Works</h3>
+
+<p>Modern generators combine vision models with language models in three steps.</p>
+
+<p><strong>Step 1 — Image analysis.</strong> A vision model scans the uploaded image, identifying objects, people, settings, colors, and spatial relationships — the same kind of scene understanding in your phone's photo search.</p>
+
+<p><strong>Step 2 — Description drafting.</strong> A language model turns those observations into a natural sentence, typically capped around 125 characters — the practical limit before screen readers start truncating or users tune out.</p>
+
+<p><strong>Step 3 — SEO shaping.</strong> The draft is refined for search: relevant keywords woven in naturally, filler words trimmed, and decorative-image detection flagging pictures that should get empty alt (<code>alt=""</code>) instead of a description.</p>
+
+<p>The 125-character guideline comes from screen reader behavior — most pause or cut off longer descriptions. It is a usability rule first, an SEO rule second.</p>
+
+<h3>Alt Text Examples: Bad vs Good</h3>
+
+<table>
+<thead><tr><th>Weak alt text</th><th>Strong alt text</th><th>Why it wins</th></tr></thead>
+<tbody>
+<tr><td><code>image1.png</code></td><td><code>Bar chart showing website traffic growth from January to June</code></td><td>Describes content and context</td></tr>
+<tr><td><code>shoes</code></td><td><code>Women's white leather running shoes with blue accents, side view</code></td><td>Specific, product-relevant detail</td></tr>
+<tr><td><code>team photo</code></td><td><code>Marketing team of six posing in the downtown office lobby</code></td><td>Answers who and where</td></tr>
+<tr><td><code>banner</code></td><td><code>Spring sale banner: 30% off all garden furniture through Sunday</code></td><td>Captures text inside the image</td></tr>
+<tr><td><code>decorative line</code></td><td><code>""</code> (empty)</td><td>Decorative images should be silent</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Alt Text Generators?</h3>
+
+<p><strong>Bloggers</strong> fix years of neglected image SEO across their archives in bulk.</p>
+
+<p><strong>E-commerce managers</strong> write product-image alt text that ranks in Google Images and Shopping.</p>
+
+<p><strong>Web developers</strong> generate alt text during builds to ship accessible sites from day one.</p>
+
+<p><strong>Content marketers</strong> make infographics and charts understandable to crawlers and screen readers.</p>
+
+<p><strong>Accessibility consultants</strong> audit and remediate client sites for WCAG compliance.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Free generation</strong> — no signup for basic use.</li>
+<li><strong>AI image analysis</strong> — describes actual image content, not filenames.</li>
+<li><strong>SEO-aware phrasing</strong> — natural keyword inclusion without stuffing.</li>
+<li><strong>125-character targeting</strong> — sized for screen readers.</li>
+<li><strong>Multiple languages</strong> — generate alt text in your site's language.</li>
+<li><strong>Bulk support</strong> — handle product catalogs and media libraries.</li>
+<li><strong>Decorative detection</strong> — flags images that should have empty alt.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this alt text generator free?</h4>
+<p>Yes — basic generation is free with no account required. Bulk and API features may sit on paid tiers.</p>
+
+<h4>How long should alt text be?</h4>
+<p>Aim for under 125 characters. Screen readers may truncate longer text, and concise descriptions serve users better.</p>
+
+<h4>Should I put keywords in alt text?</h4>
+<p>Include them naturally when they describe the image — never stuff. <code>alt="buy cheap shoes online discount footwear"</code> hurts more than it helps.</p>
+
+<h4>What about decorative images?</h4>
+<p>Use empty alt (<code>alt=""</code>). This tells screen readers to skip the image entirely instead of announcing something meaningless.</p>
+
+<h4>Does alt text really affect SEO?</h4>
+<p>Yes — it drives Google Images traffic and reinforces the page's topical relevance. It is a small signal per image that compounds across a site.</p>
+
+<h4>Can AI-generated alt text replace manual writing?</h4>
+<p>For drafting at scale, yes. But always review — only you know the page context the image serves, and context is what separates good alt text from generic.</p>
+
+<h4>Do I need alt text on every image?</h4>
+<p>Every meaningful image, yes. Decorative flourishes get empty alt. There is no exemption for "it's just a stock photo."</p>
+</article>

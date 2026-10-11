@@ -1,0 +1,103 @@
+<article class="tool-article">
+<h2>Hex to Binary Converter — Free Online Base-2 Expander</h2>
+
+<p>Debuggers love hex and datasheets love binary, which means I spend a surprising amount of time translating between the two. A hex address like 0xA5 means nothing to me until I see it as 10100101 — suddenly the individual flags and bit fields become visible. A hex to binary converter expands each compact hex digit back into its four bits, instantly, in the browser.</p>
+
+<h3>What Is a Hex to Binary Converter?</h3>
+
+<p>Hexadecimal is base-16 (digits 0–9, A–F) and binary is base-2 (digits 0–1). Because 16 is 2⁴, every hex digit unpacks into exactly four bits — no arithmetic required, just a lookup. A becomes 1010, F becomes 1111, 3 becomes 0011. So the hex value 4F expands to 01001111, and FF becomes 11111111.</p>
+
+<p>This direction of conversion — expanding rather than compressing — is what you do when you need to see what the bits actually are. A microcontroller datasheet might document a control register in hex (0x3C), but to know which of its eight features are switched on, you expand it to 00111100 and read each bit.</p>
+
+<p>One detail beginners miss: leading zeros inside each nibble matter here. The hex digit 3 is 0011, not 11 — drop the zeros and your bit positions shift, which scrambles every flag you are trying to read.</p>
+
+<h3>How to Use the Hex to Binary Converter</h3>
+
+<p>Paste your hex value into the input box — with or without the 0x prefix, uppercase or lowercase, it all works. Click Convert and the binary expansion appears, usually grouped in fours for readability.</p>
+
+<p>Copy the result into your notes, datasheet annotations, or homework. If you are reading a hardware register, I recommend writing the bit positions (7 down to 0) under each nibble; that little index row turns a string of bits into an answer about which features are enabled. Embedded engineers do this constantly when a peripheral misbehaves.</p>
+
+<p>One habit worth building: verify with the round trip. Convert your hex to binary, then convert the binary back to hex with the matching tool. If you get your original value, the expansion is exact — reassuring when the bits control real hardware.</p>
+
+<h3>How Hex to Binary Conversion Works</h3>
+
+<p>This is the simplest conversion in the family — one lookup per digit, no division loops.</p>
+
+<p><strong>Step 1 — Strip the prefix.</strong> Remove any 0x prefix and whitespace. 0x4F becomes 4F.</p>
+
+<p><strong>Step 2 — Expand each digit.</strong> Replace every hex digit with its 4-bit binary equivalent from the nibble map: 0→0000, 1→0001, …, 9→1001, A→1010, B→1011, C→1100, D→1101, E→1110, F→1111.</p>
+
+<p><strong>Step 3 — Join.</strong> Concatenate the nibbles in order. 4F → 0100 1111 → 01001111.</p>
+
+<p>Worked example — expand 3C7: 3→0011, C→1100, 7→0111 → 001111000111. Check by grouping back: 0011 1100 0111 → 3 C 7. A twelve-bit value expands in the time it takes to blink, versus the careful minute it would take by hand.</p>
+
+<h3>Common Hex to Binary Examples</h3>
+
+<p>The nibble map — the only table you need for this conversion:</p>
+
+<table>
+<thead><tr><th>Hex</th><th>Binary</th><th>Decimal</th></tr></thead>
+<tbody>
+<tr><td><code>0</code></td><td>0000</td><td>0</td></tr>
+<tr><td><code>1</code></td><td>0001</td><td>1</td></tr>
+<tr><td><code>5</code></td><td>0101</td><td>5</td></tr>
+<tr><td><code>9</code></td><td>1001</td><td>9</td></tr>
+<tr><td><code>A</code></td><td>1010</td><td>10</td></tr>
+<tr><td><code>C</code></td><td>1100</td><td>12</td></tr>
+<tr><td><code>F</code></td><td>1111</td><td>15</td></tr>
+</tbody>
+</table>
+
+<p>Full values to try: <code>FF</code> → 11111111 (decimal 255); <code>41</code> → 01000001 (the ASCII letter A); <code>1A3</code> → 000110100011 (decimal 419); <code>0x4F</code> → 01001111. Expand a couple by hand using the map, then check against the tool.</p>
+
+<h3>Who Uses Hex to Binary Converters?</h3>
+
+<p><strong>Embedded engineers</strong> expand register values from datasheets to see which bit-fields and flags are set — the single most common use of this tool.</p>
+
+<p><strong>Programmers</strong> decode hex dumps and bitmask constants while debugging, translating compact hex into readable bit patterns.</p>
+
+<p><strong>Cybersecurity analysts</strong> examine hex-encoded shellcode and protocol bytes, expanding to binary to analyze flag-level behavior.</p>
+
+<p><strong>Students</strong> in digital logic and computer architecture courses practice number-system conversions with instant verification.</p>
+
+<p><strong>Network engineers</strong> occasionally expand hex portions of IPv6 addresses and MAC addresses when diagnosing addressing issues.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant expansion</strong> — any length converts in milliseconds.</li>
+<li><strong>100% free</strong> — no signup, no subscription, no limits.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
+<li><strong>Flexible input</strong> — accepts 0x prefixes, spaces, uppercase or lowercase.</li>
+<li><strong>Nibble grouping</strong> — output grouped in fours so bit positions stay clear.</li>
+<li><strong>Exact and lossless</strong> — expansion is a pure lookup, so nothing is lost or rounded.</li>
+<li><strong>Copy with one click</strong> — grab the result instantly.</li>
+<li><strong>Works everywhere</strong> — any modern browser on desktop or mobile.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this hex to binary converter free?</h4>
+<p>Yes — free, no account, no limits.</p>
+
+<h4>How do I convert hex to binary manually?</h4>
+<p>Replace each hex digit with its 4-bit equivalent from the nibble map. For example, 4F → 0100 1111 → 01001111.</p>
+
+<h4>Do I need to include the 0x prefix?</h4>
+<p>No. The tool accepts hex with or without it — 0x4F and 4F both convert to 01001111.</p>
+
+<h4>Why does 3 expand to 0011 instead of 11?</h4>
+<p>Every hex digit is exactly four bits. Keeping the leading zeros preserves bit positions, which is the whole point of the expansion.</p>
+
+<h4>Are uppercase and lowercase hex the same?</h4>
+<p>Yes. 4f and 4F expand to the same binary — case never matters in hex.</p>
+
+<h4>Is my data secure?</h4>
+<p>Yes. Conversion happens entirely in your browser — your input never leaves your device.</p>
+
+<h4>How do I convert binary back to hex?</h4>
+<p>Use the matching binary-to-hex tool: group bits into fours and map each nibble back to its hex digit.</p>
+
+<h4>What is FF in binary?</h4>
+<p>11111111 — decimal 255, all eight bits set.</p>
+</article>

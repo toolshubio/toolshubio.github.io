@@ -1,78 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free online Document Scanner - Scan documents using camera or upload, apply filters, crop, and OCR text extraction. 100% private.">
-    <title>Document Scanner - Scan & OCR Online | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../image-tools/css/global.css">
-    <link rel="stylesheet" href="../image-tools/css/components.css">
-    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document Scanner - Scan &amp; OCR Online | TOOLSHUB</title>
+<meta name="description" content="Free online Document Scanner - Scan documents using camera or upload, apply filters, crop, and OCR text extraction. 100% private.">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../image-tools/css/v3-design.css">
 <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-  <link rel="stylesheet" href="../image-tools/css/th-header-footer.css">
-</head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
-  </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../image-tools/index.html">Image Tools</a><a href="../pdf-tools/index.html">PDF Tools</a><a href="../text-tools/index.html">Text & Writing</a><a href="../seo-tools/index.html">SEO Tools</a><a href="../calculator-tools/index.html">Calculators</a><a href="../binary-tools/index.html">Binary Tools</a><a href="../code-format-tools/index.html">Code & Formatters</a><a href="../doc-tools/index.html">Documents</a><a href="../other-tools/index.html">Other Tools</a><a href="../about-us.html">About Us</a><a href="../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a> &gt;
-                <a href="index.html">Documents</a> &gt;
-                <span>Document Scanner</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">Document Scanner</h1>
-                <p class="tool-description">Free online Document Scanner - Scan documents using camera or upload, apply filters, crop, and OCR text extraction. 100% private.</p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
-<main class="tool-main">
-<div class="container">
 
+<style>
+/* ---- v3 tool workspace chrome: original tool UI, v3 styling ---- */
+.ws-dropzone{border:2px dashed #c7d2fe;border-radius:16px;padding:52px 32px;text-align:center;background:#fafaff;transition:.2s;cursor:pointer}
+.ws-dropzone:hover,.ws-dropzone.dragover{border-color:#4f46e5;background:#eef2ff}
+.dz-icon{width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;display:grid;place-items:center;font-size:1.9rem;margin:0 auto 18px}
+.doc-upload-title{font-size:1.3rem;font-weight:700;letter-spacing:-.02em;margin-bottom:10px}
+.doc-upload-subtitle{color:#3f3f46;margin-bottom:22px;font-size:.95rem}
+.doc-upload-formats{color:#71717a;font-size:.82rem;margin-top:16px}
+.ws-body input[type="text"],.ws-body input[type="number"],.ws-body input[type="password"],.ws-body select,.ws-body textarea:not(.ws-textarea),.doc-settings-select,.cv-form-input,.cv-form-select,.cv-form-textarea,.form-control,.formula-input{width:100%;border:1.5px solid #e4e4e7;border-radius:12px;padding:11px 14px;font-size:.92rem;font-family:Inter,system-ui,sans-serif;background:#fff;color:#0a0a0b;outline:none;transition:.2s}
+.ws-body input:focus,.ws-body select:focus,.ws-body textarea:focus{border-color:#4f46e5;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+input[type="range"],.doc-settings-slider{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:99px;background:#e4e4e7;outline:none;padding:0;border:none}
+input[type="range"]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:#4f46e5;cursor:pointer}
+input[type="checkbox"]{width:18px;height:18px;accent-color:#4f46e5}
+.doc-settings-panel{background:#fafafa;border:1px solid #e4e4e7;border-radius:16px;padding:26px;margin-top:24px}
+.doc-settings-title{font-weight:700;font-size:.95rem;margin-bottom:18px}
+.doc-settings-group{margin-bottom:14px}
+.doc-settings-label{display:block;font-size:.82rem;font-weight:600;color:#3f3f46;margin-bottom:8px}
+.doc-settings-toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;font-size:.9rem}
+.doc-toggle-switch,.toggle-switch,.toggle-slider{width:44px;height:24px;border-radius:99px;background:#d4d4d8;position:relative;cursor:pointer;transition:.2s;flex-shrink:0}
+.doc-toggle-switch::after,.toggle-switch::after,.toggle-slider::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:.2s;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+.doc-toggle-switch.active,.toggle-switch.active,.toggle-slider.active,.toggle-switch.on{background:#4f46e5}
+.doc-toggle-switch.active::after,.toggle-switch.active::after,.toggle-slider.active::after{left:23px}
+.doc-preview-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.doc-toolbar-divider{width:1px;height:24px;background:#e4e4e7}
+.doc-action-bar{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.doc-stats-bar{display:grid;gap:12px;background:#fff;border:1px solid #e4e4e7;border-radius:12px;padding:18px;margin-top:16px}
+.doc-stat-item{text-align:center}
+.doc-stat-value,.stat-value{display:block;font-size:1.6rem;font-weight:700;letter-spacing:-.02em}
+.doc-stat-label{font-size:.72rem;color:#71717a;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+.spreadsheet-wrapper{overflow:auto;border:1px solid #e4e4e7;border-radius:12px;max-height:440px;margin-top:16px;background:#fff}
+.spreadsheet-table{border-collapse:collapse;font-size:.85rem;min-width:100%}
+.spreadsheet-table th,.spreadsheet-table td{border:1px solid #e4e4e7;padding:8px 12px;white-space:nowrap}
+.spreadsheet-table thead th{background:#f4f4f5;font-weight:600;position:sticky;top:0;cursor:pointer;z-index:1}
+.spreadsheet-table td.cell-selected{background:#eef2ff}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.compare-pane{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden;background:#fff}
+.pane-header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid #f4f4f5;background:#fafafa}
+.pane-content{min-height:240px;padding:24px}
+.compare-placeholder{border:2px dashed #d4d4d8;border-radius:12px;padding:52px 20px;text-align:center;color:#71717a;cursor:pointer;transition:.2s}
+.compare-placeholder:hover{border-color:#4f46e5;background:#fafaff}
+.doc-main-area{margin-bottom:8px}
+.doc-preview-area{margin-top:16px}
+.doc-tool-container{display:flex;flex-direction:column;gap:8px}
+.modal{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.5);align-items:center;justify-content:center}
+.modal.open,.modal.show{display:flex}
+.modal-content{background:#fff;border-radius:20px;max-width:580px;width:calc(100% - 40px);max-height:86vh;overflow:auto;box-shadow:0 24px 64px -12px rgba(0,0,0,.3)}
+.modal-header,.modal-footer{padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.modal-title{font-size:1.05rem;font-weight:700}
+.modal-body{padding:0 24px 24px}
+.filter-btn,.format-option{border:1.5px solid #e4e4e7;background:#fff;border-radius:12px;padding:10px 18px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:Inter,system-ui,sans-serif;transition:.15s}
+.filter-btn.active,.format-option.selected,.format-option.active{border-color:#4f46e5;background:#eef2ff;color:#4f46e5}
+.merger-list,.file-list{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.option-label{font-size:.85rem;font-weight:600;color:#3f3f46}
+.scanner-viewport{position:relative;border:1px solid #e4e4e7;border-radius:16px;overflow:hidden;background:#111;min-height:280px;display:grid;place-items:center;color:#71717a}
+.scan-overlay{position:absolute;inset:0;pointer-events:none}
+.scanning-line{position:absolute;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#4f46e5,transparent);animation:scanline 2s linear infinite}
+@keyframes scanline{0%{top:0}100%{top:100%}}
+.image-preview-container img{max-width:100%;border-radius:12px;display:block}
+.signature-canvas-wrapper{border:1.5px solid #e4e4e7;border-radius:12px;background:#fff;overflow:hidden}
+.signature-canvas-wrapper canvas{max-width:100%;display:block;touch-action:none}
+.pages-strip{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.editor-toolbar{display:flex;flex-wrap:wrap;gap:6px;padding:12px;border:1px solid #e4e4e7;border-bottom:none;border-radius:16px 16px 0 0;background:#fafafa}
+.toolbar-group{display:flex;gap:2px;padding-right:8px;margin-right:6px;border-right:1px solid #e4e4e7}
+.toolbar-group:last-child{border-right:none}
+.icon-btn{min-width:34px;height:34px;border:none;background:transparent;border-radius:8px;cursor:pointer;color:#3f3f46;font-size:.9rem;display:inline-flex;align-items:center;justify-content:center}
+.icon-btn:hover,.icon-btn.active{background:#e4e4e7}
+.editor-area{min-height:320px;border:1px solid #e4e4e7;border-radius:0 0 16px 16px;padding:20px;background:#fff;outline:none;font-size:1rem;line-height:1.7}
+.status-bar{display:flex;gap:20px;flex-wrap:wrap;margin-top:14px;font-size:.82rem;color:#71717a}
+.notepad-container{background:#fff;border:1px solid #e4e4e7;border-radius:16px}
+.notepad-header{display:flex;align-items:center;gap:10px;padding:14px 20px;border-bottom:1px solid #f4f4f5;font-weight:700}
+.panel-section{padding:16px 0;border-top:1px solid #f4f4f5}
+.panel-title{font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#71717a;margin-bottom:10px}
+.editor-main{display:flex;gap:20px}
+.side-panel{width:280px;flex-shrink:0}
+.saving-badge{font-size:.75rem;color:#22c55e;font-weight:600}
+.color-palette{display:flex;gap:8px;flex-wrap:wrap}
+.color-option,.cv-color-option{width:36px;height:36px;border-radius:50%;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 1px #e4e4e7}
+.color-option.selected,.cv-color-option.selected{box-shadow:0 0 0 2px #4f46e5}
+.theme-options{display:flex;gap:10px;flex-wrap:wrap}
+.theme-option{border:1.5px solid #e4e4e7;border-radius:12px;padding:10px 16px;cursor:pointer;font-size:.85rem;font-weight:600}
+.theme-option.active{border-color:#4f46e5;background:#eef2ff}
+.code-editor{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden;background:#fff}
+.code-header{display:flex;align-items:center;gap:8px;padding:10px 16px;background:#f4f4f5;font-size:.82rem;font-weight:600}
+.code-body{display:flex}
+.line-numbers{padding:16px 12px;background:#fafafa;color:#a1a1aa;font-size:.85rem;text-align:right;user-select:none;font-family:monospace}
+.code-content{flex:1;padding:16px;font-size:.9rem;font-family:monospace;white-space:pre;overflow:auto}
+.cv-form-section{background:#fff;border:1px solid #e4e4e7;border-radius:16px;margin-bottom:16px;overflow:hidden}
+.cv-section-header{padding:18px 24px;cursor:pointer;display:flex;align-items:center;justify-content:space-between}
+.cv-section-title{font-size:1rem;font-weight:700}
+.cv-section-content{padding:4px 24px 24px}
+.cv-form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cv-form-group{margin-bottom:14px}
+.cv-form-label{display:block;font-size:.82rem;font-weight:600;margin-bottom:6px;color:#3f3f46}
+.cv-wizard-steps{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.cv-wizard-step{display:flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid #e4e4e7;border-radius:99px;font-size:.85rem;font-weight:600;background:#fff}
+.cv-wizard-step.active{background:#0a0a0b;color:#fff;border-color:#0a0a0b}
+.cv-wizard-step-number{width:26px;height:26px;border-radius:50%;background:#e4e4e7;display:grid;place-items:center;font-size:.75rem;font-weight:700}
+.cv-wizard-step.active .cv-wizard-step-number{background:#4f46e5;color:#fff}
+.cv-industry-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+.cv-industry-card{border:1.5px solid #e4e4e7;border-radius:14px;padding:22px 12px;text-align:center;cursor:pointer;transition:.15s;background:#fff}
+.cv-industry-card:hover{border-color:#c7d2fe}
+.cv-industry-card.selected{border-color:#4f46e5;background:#eef2ff}
+.cv-industry-icon{font-size:1.6rem;margin-bottom:10px}
+.cv-industry-name{font-size:.85rem;font-weight:600}
+.cv-input-methods{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.cv-input-card{border:1.5px solid #e4e4e7;border-radius:14px;padding:22px;cursor:pointer;transition:.15s;background:#fff}
+.cv-input-card:hover{border-color:#4f46e5;transform:translateY(-2px)}
+.cv-input-icon{font-size:1.5rem;margin-bottom:10px}
+.cv-input-title{font-weight:700;margin-bottom:6px}
+.cv-input-desc{font-size:.85rem;color:#71717a}
+.cv-export-options{display:flex;gap:12px;flex-wrap:wrap}
+.cv-export-btn{display:flex;align-items:center;gap:10px;border:1.5px solid #e4e4e7;border-radius:14px;padding:16px 20px;background:#fff;cursor:pointer;font-weight:600;font-size:.9rem;transition:.15s}
+.cv-export-btn:hover{border-color:#4f46e5}
+.cv-color-schemes{display:flex;gap:10px;flex-wrap:wrap}
+.cv-template-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.cv-preview-container{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden;background:#fff;padding:24px}
+.cv-ats-meter{height:10px;border-radius:99px;background:#f4f4f5;overflow:hidden;margin:10px 0}
+.cv-ats-fill{height:100%;background:linear-gradient(90deg,#4f46e5,#7c3aed);border-radius:99px;transition:.5s}
+.cv-progress{height:8px;border-radius:99px;background:#f4f4f5;overflow:hidden;margin:12px 0}
+.cv-progress-fill,.cv-progress-bar{height:100%;background:linear-gradient(90deg,#4f46e5,#7c3aed)}
+.cv-add-entry-btn,.cv-entry-list,.cv-step-panel{margin-top:14px}
+.cv-tool-card{border:1px solid #e4e4e7;border-radius:14px;overflow:hidden;background:#fff}
+.cv-tool-header{padding:16px 20px;display:flex;align-items:center;gap:12px}
+.cv-tool-icon{width:40px;height:40px;border-radius:12px;background:#eef2ff;color:#4f46e5;display:grid;place-items:center}
+.cv-tool-title{font-weight:700}
+.cv-tool-content{padding:0 20px 20px}
+.cv-photo-placeholder{width:110px;height:110px;border-radius:50%;background:#f4f4f5;display:grid;place-items:center;color:#a1a1aa;font-size:2rem;margin:0 auto 12px}
+.repair-status-box,.ocr-result,.compress-info{border:1px solid #e4e4e7;border-radius:12px;padding:18px;background:#fafafa;margin-top:16px;font-size:.92rem}
+.format-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+.format-section{margin-bottom:18px}
+.section-title{font-weight:700;margin-bottom:10px}
+.quick-actions{display:flex;gap:10px;flex-wrap:wrap}
+.quick-action-btn,.account-btns button{border:1px solid #e4e4e7;background:#fff;border-radius:10px;padding:9px 16px;font-size:.85rem;font-weight:600;cursor:pointer}
+.quick-action-btn:hover{border-color:#4f46e5}
+.filename{font-weight:600;font-size:.9rem}
+.dots{display:flex;gap:6px}
+.dot{width:10px;height:10px;border-radius:50%;background:#d4d4d8}
+.dot.red{background:#ef4444}.dot.yellow{background:#eab308}.dot.green{background:#22c55e}
+.toc-sidebar{background:#fafafa;border:1px solid #e4e4e7;border-radius:12px;padding:16px;font-size:.88rem}
+#toc-list{list-style:none;margin:0}
+#toc-list li{padding:6px 0;cursor:pointer}
+#toc-list li:hover{color:#4f46e5}
+#word-content{background:#fff;border:1px solid #e4e4e7;border-radius:12px;padding:32px;min-height:300px;line-height:1.8}
+.doc-preview-content{margin-top:8px}
+.chart-modal canvas{max-width:100%}
+.size-box{text-align:center;padding:14px;border:1px solid #e4e4e7;border-radius:12px;background:#fff}
+.size-label{font-size:.75rem;color:#71717a;text-transform:uppercase;letter-spacing:.05em}
+.size-value{font-size:1.4rem;font-weight:700}
+@media(max-width:700px){.compare-grid,.cv-form-row,.editor-main{grid-template-columns:1fr;flex-direction:column}.side-panel{width:100%}.ws-dropzone{padding:36px 20px}}
+</style>
+
+</head>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../index.html#tools">All Tools</a><a href="../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../index.html#tools">Explore Tools</a></div>
+</div></header>
+
+<nav class="crumbs"><a href="../index.html">Home</a> &nbsp;/&nbsp; <span>Document Scanner</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">Document Tools</span>
+  <h1>Scan & digitize, <em>anywhere.</em></h1>
+  <p>Free online Document Scanner - Scan documents using camera or upload, apply filters, crop, and OCR text extraction. 100% private.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
+  </div>
+</section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>Document Scanner</b><span>v3.0 &middot; local</span></div>
+  <div class="ws-body">
+<div class="container">
 <!-- Hero Section -->
-<div class="doc-hero">
-<h1 class="doc-hero-title">Document Scanner</h1>
-<p class="doc-hero-subtitle">Scan documents via camera, apply intelligent filters, and extract text with
-                    OCR. Your documents are never uploaded to any server.</p>
-</div>
+
 <!-- Main Tool Container -->
 <div class="doc-tool-container">
 <div class="doc-main-area">
 <!-- Upload/Camera Section -->
-<div class="doc-upload-section" id="upload-section">
-<div class="doc-upload-icon">📷</div>
+<div class="doc-upload-section ws-dropzone" id="upload-section">
+<div class="dz-icon">📷</div>
 <h2 class="doc-upload-title">Start Scanning</h2>
 <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
-<button class="doc-upload-btn" id="camera-btn">📸 Use Camera</button>
-<button class="doc-upload-btn secondary" id="browse-btn">📁 Upload Images</button>
+<button class="btn btn-light doc-upload-btn tu-btn tu-btn-ghost" id="camera-btn"><i class="fa-solid fa-camera"></i> Use Camera</button>
+<button class="btn btn-light doc-upload-btn secondary tu-btn tu-btn-ghost" id="browse-btn"><i class="fa-solid fa-folder-open"></i> Upload Images</button>
 </div>
 <input accept="image/*" hidden="" id="file-input" multiple="" type="file"/>
 </div>
@@ -89,10 +218,10 @@
 </div>
 <!-- Action Bar -->
 <div class="doc-action-bar" id="action-bar" style="display: none;">
-<button class="doc-action-btn secondary" id="add-more-btn">➕ Add Page</button>
-<button class="doc-action-btn primary" id="ocr-btn">🔍 Extract Text (OCR)</button>
-<button class="doc-action-btn" id="download-btn">📥 Save Document</button>
-<button class="doc-action-btn secondary" id="reset-btn">🗑️ Reset</button>
+<button class="btn btn-light doc-action-btn secondary tu-btn tu-btn-ghost" id="add-more-btn"><i class="fa-solid fa-plus"></i> Add Page</button>
+<button class="btn btn-dark doc-action-btn primary tu-btn tu-btn-primary" id="ocr-btn"><i class="fa-solid fa-magnifying-glass"></i> Extract Text (OCR)</button>
+<button class="btn btn-light doc-action-btn tu-btn tu-btn-ghost" id="download-btn"><i class="fa-solid fa-download"></i> Save Document</button>
+<button class="btn btn-light doc-action-btn secondary tu-btn tu-btn-ghost" id="reset-btn"><i class="fa-solid fa-trash-can"></i> Reset</button>
 </div>
 </div>
 <!-- Settings Panel -->
@@ -102,10 +231,10 @@
 <div class="doc-settings-group">
 <label class="doc-settings-label">Image Filters</label>
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
-<button class="doc-toolbar-btn filter-btn active" data-filter="none">Original</button>
-<button class="doc-toolbar-btn filter-btn" data-filter="grayscale">B&amp;W</button>
-<button class="doc-toolbar-btn filter-btn" data-filter="contrast">Enhanced</button>
-<button class="doc-toolbar-btn filter-btn" data-filter="bw">Document</button>
+<button class="doc-toolbar-btn filter-btn active tu-btn tu-btn-ghost" data-filter="none">Original</button>
+<button class="doc-toolbar-btn filter-btn tu-btn tu-btn-ghost" data-filter="grayscale">B&amp;W</button>
+<button class="doc-toolbar-btn filter-btn tu-btn tu-btn-ghost" data-filter="contrast">Enhanced</button>
+<button class="doc-toolbar-btn filter-btn tu-btn tu-btn-ghost" data-filter="bw">Document</button>
 </div>
 </div>
 <div class="doc-settings-group">
@@ -151,34 +280,38 @@
 </div>
 </div>
 </div>
-</main>
-            </div>
-            <section class="seo-article" data-tool="document-scanner">
-<article class="tool-article">
-<h2>Document Scanner — Free Online Scan & OCR Tool</h2>
+  </div>
+</div></div>
 
-<p>The scanner on my desk died two years ago and I never replaced it. I haven't missed it once — because my phone camera plus a good scanning tool does the job better. A document scanner turns photos of paper into clean, flat, readable digital documents: it detects the page edges, straightens the perspective, cleans up shadows, and bundles multiple pages into one file. Add OCR (optical character recognition) and the text inside becomes searchable and copyable. No hardware, no app install — just your camera and a browser.</p>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 &mdash; HOW IT WORKS</span><h2>Three steps, zero learning curve</h2></div>
+  <div class="steps">
+<div class="step"><div class="step-n">i.</div><h3>Capture or upload</h3><p>Use your camera to scan pages, or upload existing photos of documents.</p></div><div class="step"><div class="step-n">ii.</div><h3>Crop, filter &amp; enhance</h3><p>Straighten edges, apply black-and-white or color filters, and tune brightness.</p></div><div class="step"><div class="step-n">iii.</div><h3>Extract &amp; download</h3><p>Run OCR to extract text, then download your clean scanned document.</p></div>
+  </div>
+</section>
 
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>Document Scanner — Free Online Scan &amp; OCR Tool</h2>
+    <p class="deck">Your camera is now a document scanner.</p>
+    <div class="article-meta">
+      <div class="avatar">D</div>
+      <div><b>TOOLSHUB Editorial</b><span>5 min read &middot; Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+<p class="lead">The scanner on my desk died two years ago and I never replaced it. I haven't missed it once — because my phone camera plus a good scanning tool does the job better. A document scanner turns photos of paper into clean, flat, readable digital documents: it detects the page edges, straightens the perspective, cleans up shadows, and bundles multiple pages into one file. Add OCR (optical character recognition) and the text inside becomes searchable and copyable. No hardware, no app install — just your camera and a browser.</p>
 <h3>What Is a Document Scanner?</h3>
-
 <p>A document scanner is software that converts photos of physical documents into proper digital scans. Point your camera at a page and the tool does four things a raw photo can't: it finds the document's corners automatically, corrects the perspective so a photo taken at an angle becomes a flat rectangle, enhances contrast to make text crisp, and removes shadows and glare.</p>
-
 <p>The result looks like it came from a flatbed scanner — black text on a clean white background — instead of a crooked phone photo with your thumb in the corner. Multi-page mode lets you scan a stack of pages into a single PDF, which is how contracts, receipts, and notebooks become emailable documents.</p>
-
 <p>OCR is the second half of the magic. It reads the text in your scan and converts it into actual selectable characters. A scanned contract becomes searchable ("find the termination clause"), copyable (paste a paragraph into an email), and editable. Without OCR, a scan is just a picture of text; with it, it's a document.</p>
-
 <h3>How to Use the Document Scanner</h3>
-
 <p>Click the camera button to capture a page directly, or upload existing photos from your device. The scanner detects the page corners automatically — if it misses (curled pages and busy backgrounds confuse it), adjust the corner handles manually until the outline hugs the page edges.</p>
-
 <p>Fine-tune the image with the brightness and contrast sliders. A photo taken in warm indoor light often needs a contrast boost to make text pop; a washed-out page needs brightness pulled down. The goal is dark text on a clean background — preview the result before moving on.</p>
-
 <p>Scanning multiple pages? Hit "add more" and capture each page; they collect in the pages strip where you can reorder or remove any of them. When the set is complete, choose your export format (PDF for documents, image when you need a picture) and download. For searchable text, run OCR on the scan — the extracted text appears in the results panel with a word count, ready to copy.</p>
-
 <p>My setup for reliable scans: lay the page flat on a dark, uncluttered surface (contrast helps edge detection), shoot in bright indirect light to avoid shadows, and hold the phone parallel to the page. Two extra seconds of care here saves minutes of cleanup later.</p>
-
 <h3>Tips for Perfect Scans</h3>
-
 <table>
 <thead><tr><th>Tip</th><th>Why it matters</th></tr></thead>
 <tbody>
@@ -191,116 +324,78 @@
 <tr><td>Flatten curled pages</td><td>Curls distort text lines and confuse OCR</td></tr>
 </tbody>
 </table>
-
 <p>The blur point deserves emphasis: OCR engines are remarkably tolerant of skew, shadows, and mediocre lighting, but motion blur destroys character shapes beyond recognition. If your OCR output is gibberish, retake the photo steadier before blaming the software.</p>
-
 <h3>What to Scan</h3>
-
 <p><strong>Receipts and invoices.</strong> Expense reports, tax records, warranty claims — scan them the day they arrive and the paper can go.</p>
-
 <p><strong>Contracts and forms.</strong> Signed pages become emailable PDFs in seconds; OCR makes the terms searchable later.</p>
-
 <p><strong>Whiteboards.</strong> Meeting notes captured before someone erases them — the contrast filter turns marker scribbles into readable text.</p>
-
 <p><strong>Business cards.</strong> OCR pulls the contact details into copyable text instead of a photo you can never search.</p>
-
 <p><strong>Handwritten notes.</strong> Notebooks, journals, and annotations become archivable and (with OCR) partially searchable.</p>
-
 <p><strong>IDs and certificates.</strong> Keep digital copies of important documents — though always check what a given institution accepts; some require certified originals.</p>
-
 <h3>Who Uses a Document Scanner?</h3>
-
 <p><strong>Freelancers and small businesses</strong> digitize receipts, contracts, and client paperwork without owning a scanner.</p>
-
 <p><strong>Students</strong> scan textbook pages, handouts, and handwritten notes into searchable study material.</p>
-
 <p><strong>Travelers</strong> capture boarding passes, hotel receipts, and travel documents on the go.</p>
-
 <p><strong>Anyone going paperless</strong> works through the filing cabinet one stack at a time, turning paper archives into searchable PDFs.</p>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>Camera capture</strong> — scan pages directly with your device camera.</li>
 <li><strong>Automatic edge detection</strong> — finds page corners; manual adjust when needed.</li>
 <li><strong>Perspective correction</strong> — angled photos become flat scans.</li>
-<li><strong>Brightness & contrast controls</strong> — clean up lighting and shadows.</li>
+<li><strong>Brightness &amp; contrast controls</strong> — clean up lighting and shadows.</li>
 <li><strong>Multi-page scanning</strong> — bundle a stack of pages into one PDF.</li>
 <li><strong>Built-in OCR</strong> — extract searchable, copyable text with word counts.</li>
 <li><strong>Multiple export formats</strong> — PDF for documents, image when you need one.</li>
 <li><strong>100% free and private</strong> — no account; scans never leave your browser.</li>
 </ul>
-
 <h3>Frequently Asked Questions</h3>
-
 <h4>Is this document scanner free?</h4>
 <p>Yes — free, no signup, no watermarks on your scans.</p>
-
 <h4>Do I need to install anything?</h4>
 <p>No. It runs in your browser on any device with a camera — phone, tablet, or laptop.</p>
-
 <h4>How does the scanner straighten my photo?</h4>
 <p>It detects the page's four corners, then applies a perspective transform that maps the angled photo onto a flat rectangle — the same math flatbed scanners avoid needing.</p>
-
 <h4>What is OCR and how accurate is it?</h4>
 <p>OCR (optical character recognition) converts the text in your scan into selectable characters. On clean printed text it's typically 95%+ accurate; handwriting and blur lower that.</p>
-
 <h4>Why is my OCR output gibberish?</h4>
 <p>Almost always a blurry or shadowed photo. Retake it steadier with better light, boost contrast, and try again.</p>
-
 <h4>Can I scan multiple pages into one PDF?</h4>
 <p>Yes — use "add more" to capture each page, reorder them in the pages strip, and export as a single PDF.</p>
-
 <h4>What should I scan as PDF vs. image?</h4>
 <p>PDF for documents you'll share, file, or print; image format when you need a picture for a presentation or message.</p>
-
 <h4>Are my scans uploaded anywhere?</h4>
 <p>No. Capture, enhancement, and OCR all happen in your browser; your documents stay on your device.</p>
-</article>
+    <h3>Frequently asked</h3>
+    <div class="faq">
+<div class="faq-item open"><div class="faq-q">Is the document scanner free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>Yes — free with no sign-up and no watermarks.</div></div></div><div class="faq-item"><div class="faq-q">How accurate is the OCR? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>OCR works best on clean, well-lit scans. Enhancing brightness and contrast first improves results.</div></div></div><div class="faq-item"><div class="faq-q">Can I scan multiple pages? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>Yes — add multiple pages and combine them into one document.</div></div></div><div class="faq-item"><div class="faq-q">Are my scans uploaded anywhere? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><div>No. Scanning and OCR run locally in your browser.</div></div></div>
+    </div>
+  </div>
+</article></div>
+
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 &mdash; KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+<a class="rel" href="document-signer.html"><i class="fa-solid fa-pen-nib" style="color:#4f46e5"></i><h3>Document Signer</h3><p>Add electronic signatures to PDFs.</p></a>
+<a class="rel" href="document-compressor.html"><i class="fa-solid fa-compress" style="color:#7c3aed"></i><h3>Document Compressor</h3><p>Shrink PDFs and Office documents.</p></a>
+<a class="rel" href="text-viewer.html"><i class="fa-solid fa-file-lines" style="color:#4f46e5"></i><h3>Text Viewer</h3><p>Read TXT files with syntax highlighting.</p></a>
+<a class="rel" href="word-viewer.html"><i class="fa-solid fa-file-word" style="color:#7c3aed"></i><h3>Word Viewer</h3><p>Open DOCX files without Microsoft Word.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../image-tools/index.html">Image Tools</a></li><li><a href="../pdf-tools/index.html">PDF Tools</a></li><li><a href="../text-tools/index.html">Text & Writing</a></li><li><a href="../seo-tools/index.html">SEO Tools</a></li><li><a href="../calculator-tools/index.html">Calculators</a></li><li><a href="../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../index.html#tools">All 203 tools</a></li><li><a href="../pdf-tools/">PDF tools</a></li><li><a href="../image-tools/">Image tools</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../about-us.html">About</a><a href="../contact-us.html">Contact</a><a href="../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>&copy; 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+
 <script>
         (function () {
             let pages = [];
@@ -477,6 +572,6 @@
             document.getElementById('reset-btn').onclick = () => { pages = []; stopCamera(); location.reload(); };
         })();
     </script>
-  <script src="../image-tools/js/th-interactions.js"></script>
+<script src="../image-tools/js/v3.js"></script>
 </body>
 </html>

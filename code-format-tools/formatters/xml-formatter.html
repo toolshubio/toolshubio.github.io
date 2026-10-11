@@ -1,75 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Free, pro XML formatter. Beautify messy XML data, fix indentation, and validate syntax 100% client-side.">
-    <title>XML Formatter - Prettify & Validate XML | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../../image-tools/css/global.css">
-    <link rel="stylesheet" href="../../image-tools/css/components.css">
-    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
-
-
-  <link rel="stylesheet" href="../../image-tools/css/th-header-footer.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XML Formatter - Prettify &amp; Validate XML | TOOLSHUB</title>
+<meta name="description" content="Free, pro XML formatter. Beautify messy XML data, fix indentation, and validate syntax 100% client-side.">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../../image-tools/css/v3-design.css">
+<style>.ws-textarea{font-family:ui-monospace,SFMono-Regular,'JetBrains Mono',Menlo,Consolas,monospace}</style>
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../../index.html#tools">All Tools</a><a href="../../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../../index.html#tools">Explore Tools</a></div>
+</div></header>
+
+<nav class="crumbs"><a href="../../index.html">Home</a> &nbsp;/&nbsp; <a href="../../index.html#code-format-tools">Code &amp; Formatters</a> &nbsp;/&nbsp; <span>XML Formatter</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">Code Tools</span>
+  <h1>XML <em>Formatter.</em></h1>
+  <p>Format, beautify, and validate your XML documents for better readability and debugging.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../../image-tools/index.html">Image Tools</a><a href="../../pdf-tools/index.html">PDF Tools</a><a href="../../text-tools/index.html">Text & Writing</a><a href="../../seo-tools/index.html">SEO Tools</a><a href="../../calculator-tools/index.html">Calculators</a><a href="../../binary-tools/index.html">Binary Tools</a><a href="../../code-format-tools/index.html">Code & Formatters</a><a href="../../doc-tools/index.html">Documents</a><a href="../../other-tools/index.html">Other Tools</a><a href="../../about-us.html">About Us</a><a href="../../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../../index.html">Home</a> &gt;
-                <a href="../index.html">Code & Formatters</a> &gt;
-                <span>XML Formatter</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">XML Formatter</h1>
-                <p class="tool-description">Format, beautify, and validate your XML documents for better readability and
-                    debugging.</p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
+</section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>XML Formatter</b><span>v3.0 · local</span></div>
+  <div class="ws-body">
+<div class="tool-workspace">
 <div class="tool-workspace">
 <div class="code-workspace">
 <div class="editor-container">
 <div class="editor-header">
 <span class="editor-title">Source XML</span>
-<button class="btn btn-sm btn-secondary" onclick="document.getElementById('input-code').value = ''; onInputChange()">Clear</button>
+<button class="btn btn-light" onclick="document.getElementById('input-code').value = ''; onInputChange()"><i class="fa-solid fa-eraser"></i> Clear</button>
 </div>
-<textarea class="code-area" id="input-code" oninput="onInputChange()" placeholder="&lt;root&gt;&lt;node&gt;value&lt;/node&gt;&lt;/root&gt;..."></textarea>
+<textarea class="ws-textarea" id="input-code" oninput="onInputChange()" placeholder="&lt;root&gt;&lt;node&gt;value&lt;/node&gt;&lt;/root&gt;..."></textarea>
 <div class="code-stats" id="input-stats"></div>
 </div>
 <div class="editor-container">
 <div class="editor-header">
 <span class="editor-title">Beautiful XML</span>
-<button class="btn btn-sm btn-primary" onclick="CodeUI.copyToClipboard('output-code', this)">Copy Result</button>
+<button class="btn btn-light" onclick="CodeUI.copyToClipboard('output-code', this)"><i class="fa-solid fa-copy"></i> Copy Result</button>
 </div>
-<textarea class="code-area" id="output-code" placeholder="Output will appear here..." readonly=""></textarea>
+<textarea class="ws-textarea" id="output-code" placeholder="Output will appear here..." readonly=""></textarea>
 <div class="code-stats" id="output-stats"></div>
 </div>
 </div>
@@ -81,62 +64,47 @@
 <option selected="" value="4">4 Spaces</option>
 </select>
 </div>
-<button class="btn btn-primary btn-lg" onclick="format()"> Beautify XML</button>
-</div>
-<section class="tool-content mt-12">
-<div class="content-grid">
-<div class="main-text">
-<h2>The Resilience of XML</h2>
-<p>Despite the popularity of JSON, XML remains the backbone of many enterprise systems,
-                                configuration files (Web.config, pom.xml), and data interchange standards (SOAP). Our
-                                formatter ensures your XML follows strict hierarchical rules.</p>
-<h3>What we check:</h3>
-<ul>
-<li><strong>Opening/Closing Tags:</strong> Ensures every node is properly terminated.
-                                </li>
-<li><strong>Attribute Formatting:</strong> Clean spacing for node meta-data.</li>
-<li><strong>Escape Sequences:</strong> Checks for valid XML entity usage.</li>
-</ul>
+<button class="btn btn-dark" onclick="format()"><i class="fa-solid fa-wand-magic-sparkles"></i>  Beautify XML</button>
 </div>
 </div>
+</div>
+  </div>
+</div></div>
+
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 — HOW IT WORKS</span><h2>How to use</h2><p>Get results in three simple steps.</p></div>
+  <div class="steps">
+    <div class="step"><div class="step-n">i.</div><h3>Paste XML</h3><p>Drop raw or minified XML into the editor.</p></div>
+    <div class="step"><div class="step-n">ii.</div><h3>Format</h3><p>Applies clean hierarchical indentation.</p></div>
+    <div class="step"><div class="step-n">iii.</div><h3>Copy result</h3><p>Copy the pretty XML wherever you need it.</p></div>
+  </div>
 </section>
-</div>
 
-
- Reusing js-beautify for high quality XML formatting
-            </div>
-            <section class="seo-article" data-tool="xml-formatter">
-<article class="tool-article">
-<h2>XML Formatter — Beautify Minified XML Online</h2>
-
-<p>The first time I had to debug a SOAP API, the response came back as a single line — three thousand characters of XML with no breaks, no indentation, nothing my eyes could hold onto. I scrolled sideways for what felt like minutes before giving up and finding a formatter. An XML formatter takes that compressed string and unfolds it into a proper tree: each tag on its own line, nested elements indented, attributes lined up where you can read them. Paste the XML, click one button, and the structure reveals itself.</p>
-
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>XML Formatter — Beautify Minified XML Online</h2>
+    <p class="deck">Free, pro XML formatter. Beautify messy XML data, fix indentation, and validate syntax 100% client-side.</p>
+    <div class="article-meta">
+      <div class="avatar">T</div>
+      <div><b>TOOLSHUB Editorial</b><span>7 min read · Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+    <p class="lead">The first time I had to debug a SOAP API, the response came back as a single line — three thousand characters of XML with no breaks, no indentation, nothing my eyes could hold onto. I scrolled sideways for what felt like minutes before giving up and finding a formatter. An XML formatter takes that compressed string and unfolds it into a proper tree: each tag on its own line, nested elements indented, attributes lined up where you can read them. Paste the XML, click one button, and the structure reveals itself.</p>
 <h3>What Is an XML Formatter?</h3>
-
 <p>I think of it as the opposite of squinting. XML is designed to be both machine-readable and human-readable, but in practice servers strip every unnecessary byte before sending it. That is sensible for bandwidth — nobody wants to ship 40 KB of whitespace across the network — but it makes the payload useless for a person trying to find a wrong value three levels deep.</p>
-
 <p>The tool restores the human-readable shape without touching the data. Tags, attributes, text content, comments, namespaces — everything survives exactly as it was. Only the layout changes: line breaks between elements, consistent indentation per nesting level, and sensible wrapping for long attribute lists. Feed the formatted result back to any parser and it behaves identically, because XML does not care about indentation between elements.</p>
-
 <p>Most good formatters also double as validators. A formatter has to parse your XML to rebuild it, so the moment it hits a missing closing tag or an attribute without quotes, it can tell you exactly where the problem is — which makes the tool a fast first check before you hand a file to a stricter schema validator.</p>
-
 <h3>How to Use the XML Formatter</h3>
-
 <p>Copy the XML from wherever it came from: an API response, a config file, a database export, an RSS feed. Paste it into the input box. Many tools let you pick an indentation style — two spaces, four spaces, or a tab — so match whatever your team uses, because consistency across config files matters when you are diffing changes later.</p>
-
 <p>Click the format button (some tools format live as you paste, which I prefer when I am iterating). The beautified XML appears in the output panel, usually with syntax highlighting that separates tags from attributes from text content. From there, copy it to your clipboard or download it as an .xml file.</p>
-
 <p>If the tool reports an error instead of output, do not panic — that is the validator half doing its job. It will point at the line where the structure breaks, which is usually a missing closing tag or a badly nested element. Fix that spot and format again.</p>
-
 <h3>How XML Formatting Works</h3>
-
 <p>Formatting is really a two-step dance: parse, then print. First the tool runs your input through an XML parser, which builds a tree in memory — the root element at the top, children hanging below it, attributes attached to their elements, text nodes in between. If the parser chokes, you get an error with a line number instead of output.</p>
-
 <p>Once the tree exists, the printer walks it and writes each element on its own line, increasing the indentation by one level for every step deeper into the tree. Here is what the transformation looks like. Before:</p>
-
 <code>&lt;library&gt;&lt;book&gt;&lt;title&gt;Learning XML&lt;/title&gt;&lt;author&gt;John Smith&lt;/author&gt;&lt;price&gt;29.99&lt;/price&gt;&lt;/book&gt;&lt;/library&gt;</code>
-
 <p>After:</p>
-
 <pre><code>&lt;library&gt;
   &lt;book&gt;
     &lt;title&gt;Learning XML&lt;/title&gt;
@@ -144,13 +112,9 @@
     &lt;price&gt;29.99&lt;/price&gt;
   &lt;/book&gt;
 &lt;/library&gt;</code></pre>
-
 <p>Notice that the data did not change at all — only the whitespace between elements. The printer also has to be careful with mixed content (text and elements interleaved, like in a document with inline formatting) and with pre-like elements where whitespace is meaningful. A careless formatter can corrupt those; a good one leaves them alone.</p>
-
 <h3>XML Syntax Rules Worth Knowing</h3>
-
 <p>Formatting catches some errors, but knowing the basic rules helps you write XML that survives the first pass:</p>
-
 <table>
 <thead><tr><th>Rule</th><th>Example</th></tr></thead>
 <tbody>
@@ -162,29 +126,17 @@
 <tr><td>Every file starts with a declaration (recommended)</td><td><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code></td></tr>
 </tbody>
 </table>
-
 <p>Case sensitivity trips people up more than anything else. If your formatter complains about a mismatched tag, check whether you wrote <code>&lt;Item&gt;</code> in one place and <code>&lt;/item&gt;</code> in another — the parser sees two different elements.</p>
-
 <h3>Who Uses XML Formatters?</h3>
-
 <p><strong>Backend developers</strong> run into XML through SOAP APIs, SAML authentication, and legacy integrations that never migrated to JSON. When a third-party API returns an error payload, formatting it is the fastest way to find the actual error code.</p>
-
 <p><strong>System administrators</strong> deal with XML constantly: server configs, deployment descriptors, policy files. A config file that someone edited by hand and broke is much easier to repair when the structure is visible.</p>
-
 <p><strong>Data analysts</strong> use the tool when working with XML exports from databases or enterprise software. Formatting a sample of the export reveals the schema — which elements repeat, which are optional — before writing the parsing script.</p>
-
 <p><strong>QA testers</strong> format API responses to compare expected vs actual payloads. Side-by-side diffs of formatted XML show exactly which element changed between two runs.</p>
-
 <p><strong>Students</strong> learning markup languages use formatters to check their homework. Seeing proper nesting laid out visually teaches the tree structure faster than any textbook diagram.</p>
-
 <h3>Tips for Working With Formatted XML</h3>
-
 <p>Keep your minified originals separate from the formatted copies — formatting is a one-way convenience, and you want the production payload untouched. If you are debugging a large API response, format it once and save the file locally so you can search through it with your editor instead of re-pasting. And when a formatter flags an error, trust the line number it gives you; the real problem is almost always within a few lines of where the parser stopped, usually an unclosed tag or a stray ampersand that needed escaping.</p>
-
 <p>For very large files, expect a short delay — the parser still has to read every byte. If a file is too big for the browser tab, split it or use a desktop tool; but for the everyday sizes (config files, API responses, feeds), the online tool is instant.</p>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>Instant beautification</strong> — minified XML becomes a readable tree in one click.</li>
 <li><strong>Indentation choices</strong> — 2 spaces, 4 spaces, or tabs to match your project style.</li>
@@ -195,82 +147,38 @@
 <li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
 <li><strong>100% free</strong> — no signup, no limits, works on desktop and mobile.</li>
 </ul>
+<div class="faq"><div class="faq-item open"><div class="faq-q">Is this XML formatter free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — completely free, no account needed, and no limits on how much XML you can format.</p></div></div><div class="faq-item"><div class="faq-q">Will formatting change my data? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>No. Formatting only adjusts whitespace between elements. Tags, attributes, text, and comments stay exactly as they were, and the XML parses identically.</p></div></div><div class="faq-item"><div class="faq-q">What does "XML is not well-formed" mean? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>It means the document breaks a basic syntax rule — usually a missing closing tag, improperly nested elements, or an unquoted attribute. The tool points to the line where the parser failed.</p></div></div><div class="faq-item"><div class="faq-q">Can I minify XML with this tool too? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes. Most formatters include a minify option that strips whitespace and line breaks, producing a compact single-line payload for production use.</p></div></div><div class="faq-item"><div class="faq-q">Are XML tags case-sensitive? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes. <code>&lt;Title&gt;</code> and <code>&lt;title&gt;</code> are two different elements in XML. Mismatched case between opening and closing tags is a common formatting error.</p></div></div><div class="faq-item"><div class="faq-q">Is my XML data secure? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes. All formatting and validation happen locally in your browser — your XML never leaves your device.</p></div></div><div class="faq-item"><div class="faq-q">Why does the formatter fail on my file? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Check for unclosed tags, overlapping elements, special characters like &amp; that need escaping, or multiple root elements. The error's line number shows where parsing stopped.</p></div></div><div class="faq-item"><div class="faq-q">Can it handle very large XML files? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Everyday sizes — config files, API responses, RSS feeds — format instantly. Very large files may take a moment; if the browser struggles, split the file or use a desktop XML editor.</p></div></div></div>
+  </div>
+</article></div>
 
-<h3>Frequently Asked Questions</h3>
-
-<h4>Is this XML formatter free?</h4>
-<p>Yes — completely free, no account needed, and no limits on how much XML you can format.</p>
-
-<h4>Will formatting change my data?</h4>
-<p>No. Formatting only adjusts whitespace between elements. Tags, attributes, text, and comments stay exactly as they were, and the XML parses identically.</p>
-
-<h4>What does "XML is not well-formed" mean?</h4>
-<p>It means the document breaks a basic syntax rule — usually a missing closing tag, improperly nested elements, or an unquoted attribute. The tool points to the line where the parser failed.</p>
-
-<h4>Can I minify XML with this tool too?</h4>
-<p>Yes. Most formatters include a minify option that strips whitespace and line breaks, producing a compact single-line payload for production use.</p>
-
-<h4>Are XML tags case-sensitive?</h4>
-<p>Yes. <code>&lt;Title&gt;</code> and <code>&lt;title&gt;</code> are two different elements in XML. Mismatched case between opening and closing tags is a common formatting error.</p>
-
-<h4>Is my XML data secure?</h4>
-<p>Yes. All formatting and validation happen locally in your browser — your XML never leaves your device.</p>
-
-<h4>Why does the formatter fail on my file?</h4>
-<p>Check for unclosed tags, overlapping elements, special characters like &amp; that need escaping, or multiple root elements. The error's line number shows where parsing stopped.</p>
-
-<h4>Can it handle very large XML files?</h4>
-<p>Everyday sizes — config files, API responses, RSS feeds — format instantly. Very large files may take a moment; if the browser struggles, split the file or use a desktop XML editor.</p>
-</article>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 — KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+    <a class="rel" href="css-beautifier.html"><i class="fa-brands fa-css3-alt" style="color:#4f46e5"></i><h3>CSS Beautifier</h3><p>Restore organization and beauty to cluttered or minified CSS files instantly.</p></a>
+    <a class="rel" href="html-formatter.html"><i class="fa-brands fa-html5" style="color:#7c3aed"></i><h3>HTML Formatter</h3><p>Transform unreadable, minified, or messy HTML into a clean, well-indented structure.</p></a>
+    <a class="rel" href="javascript-beautifier.html"><i class="fa-brands fa-js" style="color:#4f46e5"></i><h3>JavaScript Beautifier</h3><p>Un-minify and format cryptic JavaScript code into clean, readable source code.</p></a>
+    <a class="rel" href="json-formatter.html"><i class="fa-solid fa-braces" style="color:#7c3aed"></i><h3>JSON Formatter</h3><p>Clean up, validate, and format your JSON data for better readability and debugging.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../../image-tools/index.html">Image Tools</a></li><li><a href="../../pdf-tools/index.html">PDF Tools</a></li><li><a href="../../text-tools/index.html">Text & Writing</a></li><li><a href="../../seo-tools/index.html">SEO Tools</a></li><li><a href="../../calculator-tools/index.html">Calculators</a></li><li><a href="../../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../../index.html#tools">All 203 tools</a></li><li><a href="../../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li><li><a href="../../code-format-tools/minifiers/css-minifier.html">CSS Minifier</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../../about-us.html">About</a></li><li><a href="../../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="../../about-us.html">About</a></li><li><a href="../../contact-us.html">Contact</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../../about-us.html">About</a><a href="../../contact-us.html">Contact</a><a href="../../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>© 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.7/beautify-html.min.js"></script>
 <script src="../js/code-utils.js"></script>
 <script src="../js/code-ui.js"></script>
 <script>
-        CodeUI.init({ toolName: 'xml-formatter' });
+CodeUI.init({ toolName: 'xml-formatter' });
 
         function onInputChange() {
             const code = document.getElementById('input-code').value;
@@ -304,7 +212,7 @@
             { icon: 'ðŸŽ¨', name: 'JSON Formatter', desc: 'Prettify JSON data', url: 'json-formatter.html' },
             { icon: 'âœ…', name: 'JSON Validator', desc: 'Check JSON syntax', url: '../validators/json-validator.html' }
         ]);
-    </script>
-  <script src="../../image-tools/js/th-interactions.js"></script>
+</script>
+<script src="../../image-tools/js/v3.js"></script>
 </body>
 </html>

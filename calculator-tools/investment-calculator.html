@@ -1,174 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Premium investment calculator with SIP step-up analysis, CAGR modeling, and inflation-adjusted wealth projections. Professional financial planning.">
-    <title>High-End Wealth & Investment Intelligence | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../image-tools/css/global.css">
-    <link rel="stylesheet" href="../image-tools/css/components.css">
-    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>High-End Wealth &amp; Investment Intelligence | TOOLSHUB</title>
+<meta name="description" content="Premium investment calculator with SIP step-up analysis, CAGR modeling, and inflation-adjusted wealth projections. Professional financial planning.">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../image-tools/css/v3-design.css">
+<style>
+/* ===== v3 calculator extras ===== */
+.ws-fgroup{margin-bottom:18px}
+.ws-label{display:block;font-size:.82rem;font-weight:600;color:#3f3f46;margin-bottom:8px;letter-spacing:.01em}
+.ws-input,.calc-input,.calc-select{border:1.5px solid #e4e4e7;border-radius:12px;padding:14px 16px;width:100%;font-family:Inter,system-ui,sans-serif;font-size:.95rem;background:#fff;color:#0a0a0b;outline:none;transition:.2s}
+.ws-input:focus,.calc-input:focus,.calc-select:focus{border-color:#4f46e5;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+textarea.ws-input{min-height:110px;resize:vertical}
+input[type=checkbox].ws-input{width:auto;padding:0}
+.ws-panel{background:#fff;border:1px solid #e4e4e7;border-radius:20px;padding:32px;margin-bottom:24px}
+.ws-title{font-size:1rem;font-weight:700;letter-spacing:-.01em;margin-bottom:20px}
+.ws-sub{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#71717a}
+.ws-hero-val{font-size:clamp(2.4rem,4.5vw,3.6rem);font-weight:700;letter-spacing:-.04em;line-height:1.05;margin:10px 0}
+.ws-hero-val.strike{text-decoration:line-through;color:#a1a1aa;font-size:1.5rem}
+.ws-grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+.ws-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:24px}
+.ws-grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:900px){.ws-grid2,.ws-grid3{grid-template-columns:1fr}.ws-grid4{grid-template-columns:repeat(2,1fr)}.ws-panel{padding:24px}}
+.ws-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.ws-tab{border:1.5px solid #e4e4e7;background:#fff;border-radius:99px;padding:10px 22px;font-family:Inter,system-ui,sans-serif;font-weight:600;font-size:.88rem;cursor:pointer;transition:.2s;color:#3f3f46}
+.ws-tab:hover{border-color:#4f46e5;color:#4f46e5}
+.ws-tab.active,.btn-active{background:#0a0a0b!important;color:#fff!important;border-color:#0a0a0b!important}
+.btn-danger-outline{background:#fff;border:1.5px solid #fecaca;color:#b91c1c;border-radius:12px;padding:10px 16px;font-family:Inter,sans-serif;font-weight:600;font-size:.85rem;cursor:pointer}
+.ws-table{width:100%;border-collapse:collapse;font-size:.88rem}
+.ws-table th{background:#0a0a0b;color:#fff;padding:10px 12px;text-align:left;font-size:.75rem;letter-spacing:.04em}
+.ws-table td{padding:10px 12px;border-top:1px solid #f4f4f5}
+.ws-table-wrap{overflow-x:auto;border:1px solid #e4e4e7;border-radius:12px}
+.ws-note{font-size:.8rem;color:#71717a;margin-top:8px}
+canvas{max-width:100%}
+.ws-flex{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.ws-between{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.ws-check{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #f4f4f5;font-size:.92rem}
+/* keypad (simple calculator) */
+#calculator-keypad{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
+.calc-btn{border:1px solid #e4e4e7;background:#fafafa;border-radius:12px;padding:16px 8px;font-size:1.05rem;font-weight:600;font-family:Inter,system-ui,sans-serif;cursor:pointer;transition:.15s;color:#0a0a0b}
+.calc-btn:hover{background:#eef2ff;border-color:#4f46e5}
+.calc-btn.operator{background:#0a0a0b;color:#fff;border-color:#0a0a0b}
+.calc-btn.clear{background:#fee2e2;border-color:#fecaca;color:#b91c1c}
+.calc-btn.function{background:#eef2ff;border-color:#c7d2fe;color:#4f46e5}
+.calc-btn.equals{background:linear-gradient(135deg,#4f46e5,#7c3aed);color:#fff;border:none}
+.display-container{background:#0a0a0b;color:#fff;border-radius:16px;padding:22px 24px;text-align:right}
+.mode-indicator{display:flex;gap:8px;justify-content:flex-end;margin-bottom:8px}
+.mode-badge{background:rgba(255,255,255,.14);border-radius:6px;padding:2px 10px;font-size:.68rem;font-weight:700;letter-spacing:.08em}
+#expression{min-height:1.6em;color:#a1a1aa;font-size:1rem;overflow-x:auto;white-space:nowrap}
+#display{font-size:2.8rem;font-weight:700;letter-spacing:-.02em;overflow-x:auto;white-space:nowrap}
+.history-item-premium{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #f4f4f5;padding:10px 0;font-size:.92rem;cursor:pointer}
+.history-item-premium:hover{background:#fafafa}
+.history-expr{color:#71717a}.history-res{font-weight:700}
+/* bmi gauge */
+.bmi-gauge-premium{position:relative;height:10px;border-radius:99px;background:linear-gradient(90deg,#60a5fa,#22c55e 20%,#22c55e 55%,#f59e0b 70%,#ef4444);margin:28px 10px 10px}
+.bmi-marker-premium{position:absolute;top:-6px;width:5px;height:22px;background:#0a0a0b;border-radius:3px;transform:translateX(-50%);transition:left .3s}
+.bmi-scale{display:flex;justify-content:space-between;font-size:.72rem;color:#71717a;padding:0 4px}
+.badge-cat{display:inline-block;padding:6px 18px;border-radius:99px;color:#fff;font-weight:700;font-size:.82rem;letter-spacing:.06em}
+/* calorie macro bars */
+.macro-distribution{display:flex;height:24px;border-radius:99px;overflow:hidden;margin:8px 0 18px;background:#f4f4f5}
+.macro-segment{display:flex;align-items:center;justify-content:center;color:#fff;font-size:.7rem;font-weight:700;transition:width .4s;white-space:nowrap;overflow:hidden}
+.macro-p{background:#4f46e5}.macro-c{background:#7c3aed}.macro-f{background:#f59e0b}
+/* age timeline + history */
+.milestone-timeline{position:relative;height:64px;margin-top:8px}
+.milestone-track{position:absolute;top:22px;left:0;right:0;height:6px;background:#f4f4f5;border-radius:99px}
+.milestone-progress{height:100%;background:linear-gradient(90deg,#4f46e5,#7c3aed);border-radius:99px;transition:width .5s}
+.milestone-dot{position:absolute;top:16px;width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid #e4e4e7;transform:translateX(-50%)}
+.milestone-label{position:absolute;top:42px;transform:translateX(-50%);font-size:.68rem;color:#71717a;white-space:nowrap}
+.history-card{border:1px solid #f4f4f5;border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.history-card .hc-t{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#71717a;margin-bottom:4px}
+/* mortgage piti */
+.breakdown-bar{display:flex;height:14px;border-radius:99px;overflow:hidden;margin:18px 0;background:#f4f4f5}
+.breakdown-segment{height:100%}
+#comparison-result{border-left:4px solid #4f46e5;border-radius:12px;padding:18px;background:#fff;margin-top:20px}
+/* discount coupons / gpa courses */
+.coupon-stack-item,.course-row-premium{display:flex;gap:10px;align-items:center;margin-bottom:10px}
+.coupon-stack-item .ws-input,.coupon-stack-item .calc-input,.course-row-premium .ws-input,.course-row-premium .calc-input,.course-row-premium .calc-select{flex:1;min-width:0}
+/* unit converter */
+#category-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.batch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.batch-item{border:1px solid #f4f4f5;border-radius:12px;padding:12px 10px;text-align:center;cursor:pointer;transition:.15s}
+.batch-item:hover{border-color:#4f46e5;background:#eef2ff}
+/* time log */
+#duration-log{max-height:230px;overflow:auto;margin:4px 0 14px}
+.log-item{display:flex;justify-content:space-between;align-items:center;border:1px solid #f4f4f5;border-radius:12px;padding:10px 14px;margin-bottom:8px;font-size:.9rem}
+/* tax brackets */
+.bracket-strip{display:flex;height:12px;border-radius:99px;overflow:hidden;background:#f4f4f5;margin-bottom:18px}
+.bracket-part{height:100%}
+#bracket-list>div{border-bottom:1px solid #f4f4f5;padding:10px 0;font-size:.9rem}
+/* date difference */
+.timeline-container{height:8px;background:#f4f4f5;border-radius:99px;margin:26px 0 10px}
+.timeline-fill{height:100%;background:linear-gradient(90deg,#4f46e5,#7c3aed);border-radius:99px;transition:width .4s}
+.day-badge{border:1px solid #e4e4e7;border-radius:99px;padding:8px 16px;font-size:.85rem;background:#fff;display:inline-block;margin:4px}
+.temporal-badge{background:#eef2ff;color:#4f46e5;border-radius:99px;padding:5px 14px;font-size:.75rem;font-weight:700;white-space:nowrap}
+/* JS-generated tables */
+#batch-table-container table,#travel-table{width:100%;border-collapse:collapse;font-size:.88rem}
+#batch-table-container th,#batch-table-container td,#travel-table th,#travel-table td{padding:10px 12px;border-top:1px solid #f4f4f5;text-align:left}
+#batch-table-container th,#travel-table th{background:#0a0a0b;color:#fff;border:none;font-size:.75rem}
+/* generic utilities used by JS-generated markup */
+.text-secondary{color:#71717a}.text-tertiary{color:#a1a1aa}.text-success{color:#16a34a}.text-danger{color:#dc2626}.text-warning{color:#d97706}.text-primary{color:#4f46e5}.text-accent{color:#7c3aed}.text-highlight{color:#4f46e5}
+.font-bold{font-weight:700}.font-mono{font-family:monospace}
+.text-xs{font-size:.75rem}.text-sm{font-size:.85rem}.text-lg{font-size:1.05rem}.text-xl{font-size:1.25rem}.text-2xl{font-size:1.5rem}.text-3xl{font-size:1.9rem}.text-5xl{font-size:3rem}
+.uppercase{text-transform:uppercase}.italic{font-style:italic}
+.text-center{text-align:center}.text-left{text-align:left}
+.flex{display:flex}.items-center{align-items:center}.justify-between{justify-content:space-between}.justify-center{justify-content:center}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.flex-1{flex:1}
+.gap-2{gap:8px}.gap-3{gap:12px}.gap-4{gap:16px}.gap-6{gap:24px}.gap-8{gap:32px}.gap-10{gap:40px}.gap-12{gap:48px}
+.mt-1{margin-top:4px}.mt-2{margin-top:8px}.mt-4{margin-top:16px}.mt-6{margin-top:24px}.mt-8{margin-top:32px}.mt-10{margin-top:40px}
+.mb-1{margin-bottom:4px}.mb-2{margin-bottom:8px}.mb-3{margin-bottom:12px}.mb-4{margin-bottom:16px}.mb-6{margin-bottom:24px}.mb-8{margin-bottom:32px}
+.p-2{padding:8px}.p-3{padding:12px}.p-4{padding:16px}.p-6{padding:24px}.p-8{padding:32px}.p-10{padding:40px}
+.px-2{padding-left:8px;padding-right:8px}.px-4{padding-left:16px;padding-right:16px}.py-2{padding-top:8px;padding-bottom:8px}.py-4{padding-top:16px;padding-bottom:16px}
+.pl-8{padding-left:32px}.pt-8{padding-top:32px}
+.rounded{border-radius:8px}.rounded-lg{border-radius:12px}.rounded-xl{border-radius:16px}.rounded-full{border-radius:99px}
+.border{border:1px solid #e4e4e7}.border-b{border-bottom:1px solid #e4e4e7}.border-t{border-top:1px solid #e4e4e7}
+.w-full{width:100%}.block{display:block}
 
-
-  <link rel="stylesheet" href="../image-tools/css/th-header-footer.css">
+</style>
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../index.html#tools">All Tools</a><a href="../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../index.html#tools">Explore Tools</a></div>
+</div></header>
+<nav class="crumbs"><a href="../index.html">Home</a> &nbsp;/&nbsp; <span>Investment Calculator</span></nav>
+<section class="hero">
+  <span class="hero-eyebrow">Calculators</span>
+  <h1>Project your <em>wealth.</em></h1>
+  <p>SIP and lump-sum growth projections with step-up modeling, inflation discounting, tax modeling and XIRR.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-money-bill-wave"></i> SIP + lump sum</span>
+    <span><i class="fa-solid fa-chart-line"></i> Wealth timeline</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../image-tools/index.html">Image Tools</a><a href="../pdf-tools/index.html">PDF Tools</a><a href="../text-tools/index.html">Text & Writing</a><a href="../seo-tools/index.html">SEO Tools</a><a href="../calculator-tools/index.html">Calculators</a><a href="../binary-tools/index.html">Binary Tools</a><a href="../code-format-tools/index.html">Code & Formatters</a><a href="../doc-tools/index.html">Documents</a><a href="../other-tools/index.html">Other Tools</a><a href="../about-us.html">About Us</a><a href="../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a> &gt;
-                <a href="index.html">Calculators</a> &gt;
-                <span>💹 Wealth Intelligence</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">💹 Wealth Intelligence</h1>
-                <p class="tool-description">Advanced SIP modeling, step-up analysis, and inflation-discounted wealth
-                    projections.</p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
-MONETAG-ZONE: vignette/banner - paste zone script here 
-<main class="tool-main">
-<div class="container">
-
-
-<div class="tool-workspace">
-<div class="wealth-hero">
-<div class="glass-panel p-8">
-<h3 class="panel-title mb-6">Portfolio Configuration</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="input-group">
-<label class="input-label">Initial Lump Sum</label>
-<input class="calc-input" id="lumpsum" oninput="calculate()" type="number" value="10000"/>
+</section>
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>Investment Calculator</b><span>v3.0 &middot; local</span></div>
+  <div class="ws-body">
+<div class="ws-grid2">
+  <div class="ws-panel" style="margin-bottom:0">
+    <h3 class="ws-title">Portfolio Configuration</h3>
+    <div class="ws-grid2" style="margin-bottom:0">
+      <div class="ws-fgroup"><label class="ws-label">Initial Lump Sum</label><input class="ws-input" id="lumpsum" type="number" value="10000" oninput="calculate()"></div>
+      <div class="ws-fgroup"><label class="ws-label">Monthly SIP</label><input class="ws-input" id="sip" type="number" value="1000" oninput="calculate()"></div>
+      <div class="ws-fgroup"><label class="ws-label">Exp. Return (%)</label><input class="ws-input" id="rate" type="number" step="0.1" value="12" oninput="calculate()"></div>
+      <div class="ws-fgroup" style="margin-bottom:0"><label class="ws-label">Duration (Years)</label><input class="ws-input" id="years" type="number" value="15" oninput="calculate()"></div>
+    </div>
+    <div class="ws-check" style="margin-top:18px"><span><b>SIP Step-Up</b> <span class="ws-note">annual increment</span></span><input id="enable-stepup" type="checkbox" onchange="calculate()"></div>
+    <div class="ws-fgroup" style="margin-top:14px;margin-bottom:0;max-width:240px"><label class="ws-label">Annual Increment (%)</label><input class="ws-input" id="stepup-pct" type="number" value="10" oninput="calculate()"></div>
+  </div>
+  <div class="ws-panel" style="margin-bottom:0;text-align:center">
+    <span class="ws-sub">Projected maturity value</span>
+    <div class="ws-hero-val" id="res-total">$2.4M</div>
+    <div class="stats" style="grid-template-columns:repeat(2,1fr)">
+      <div class="stat"><b id="res-invested">$180K</b><span>Total invested</span></div>
+      <div class="stat"><b id="res-gain">$2.2M</b><span>Wealth created</span></div>
+    </div>
+  </div>
 </div>
-<div class="input-group">
-<label class="input-label">Monthly SIP</label>
-<input class="calc-input" id="sip" oninput="calculate()" type="number" value="1000"/>
+<div class="ws-grid2">
+  <div class="ws-panel" style="margin-bottom:0">
+    <h3 class="ws-title">Real-World Adjustments</h3>
+    <div class="ws-grid2" style="margin-bottom:0">
+      <div>
+        <label class="ws-label">Annual Inflation (%)</label>
+        <input class="ws-input" id="inflation" type="number" value="6" oninput="calculate()">
+        <div class="ws-hero-val" style="font-size:1.8rem" id="res-real">$84,000</div>
+        <p class="ws-note">Purchasing power in today&rsquo;s terms.</p>
+      </div>
+      <div>
+        <label class="ws-label">Effective LTCG (%)</label>
+        <input class="ws-input" id="tax" type="number" value="10" oninput="calculate()">
+        <div class="ws-hero-val" style="font-size:1.8rem" id="res-taxed">$2.1M</div>
+        <p class="ws-note">Post-tax maturity value estimation.</p>
+      </div>
+    </div>
+  </div>
+  <div class="ws-panel" style="margin-bottom:0">
+    <h3 class="ws-title">Efficiency Metrics</h3>
+    <div class="stats" style="grid-template-columns:repeat(2,1fr)">
+      <div class="stat"><b>12.00%</b><span>CAGR for goal</span></div>
+      <div class="stat"><b id="res-xirr">12.68%</b><span>XIRR</span></div>
+    </div>
+    <p class="ws-note">Internal rate of return on your contributions.</p>
+  </div>
 </div>
-<div class="input-group">
-<label class="input-label">Exp. Return (%)</label>
-<input class="calc-input" id="rate" oninput="calculate()" step="0.1" type="number" value="12"/>
+<div class="ws-panel">
+  <h3 class="ws-title">Wealth Accumulation Timeline</h3>
+  <canvas id="wealth-canvas"></canvas>
 </div>
-<div class="input-group">
-<label class="input-label">Duration (Years)</label>
-<input class="calc-input" id="years" oninput="calculate()" type="number" value="15"/>
+<div class="ws-actions">
+  <button class="btn btn-light" onclick="exportData('pdf')"><i class="fa-solid fa-file-pdf"></i> Download Wealth Blueprint (PDF)</button>
+  <button class="btn btn-light" onclick="exportData('csv')"><i class="fa-solid fa-file-csv"></i> Export Timeline (CSV)</button>
 </div>
-</div>
-<div class="step-up-panel mt-6">
-<div class="flex items-center gap-4 mb-4">
-<div class="text-sm font-bold uppercase tracking-wider text-primary">SIP Step-Up</div>
-<input id="enable-stepup" onchange="calculate()" type="checkbox"/>
-</div>
-<div class="grid grid-cols-2 gap-4">
-<div class="input-group">
-<label class="text-xs text-secondary">Annual Increment (%)</label>
-<input class="calc-input" id="stepup-pct" oninput="calculate()" type="number" value="10"/>
-</div>
-</div>
-</div>
-</div>
-<div class="wealth-meter glass-panel">
-<div class="text-secondary font-bold uppercase tracking-widest text-xs mb-2">Projected Maturity
-                        Value</div>
-<div class="wealth-val" id="res-total">$2.4M</div>
-<div class="flex justify-center gap-12 mt-6">
-<div class="text-center">
-<div class="text-xs text-secondary mb-1">Total Invested</div>
-<div class="text-xl font-bold text-success" id="res-invested">$180K</div>
-</div>
-<div class="text-center">
-<div class="text-xs text-secondary mb-1">Wealth Created</div>
-<div class="text-xl font-bold text-primary" id="res-gain">$2.2M</div>
-</div>
-</div>
-</div>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
-<!-- Efficiency & Realism -->
-<div class="lg:col-span-2 glass-panel p-6">
-<h3 class="panel-title mb-6">Real-World Adjustments</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<div>
-<h4 class="text-sm font-bold uppercase mb-4 text-warning">Inflation Discounting</h4>
-<div class="input-group mb-4">
-<label class="text-xs text-secondary">Annual Inflation (%)</label>
-<input class="calc-input" id="inflation" oninput="calculate()" type="number" value="6"/>
-</div>
-<div class="text-2xl font-bold" id="res-real">$84,000</div>
-<div class="text-xs text-secondary mt-1">Purchasing power in today's terms.</div>
-</div>
-<div>
-<h4 class="text-sm font-bold uppercase mb-4 text-danger">Tax Modeling</h4>
-<div class="input-group mb-4">
-<label class="text-xs text-secondary">Effective LTCG (%)</label>
-<input class="calc-input" id="tax" oninput="calculate()" type="number" value="10"/>
-</div>
-<div class="text-2xl font-bold" id="res-taxed">$2.1M</div>
-<div class="text-xs text-secondary mt-1">Post-tax maturity value estimation.</div>
-</div>
-</div>
-</div>
-<!-- Benchmarking -->
-<div class="glass-panel p-6">
-<h3 class="panel-title mb-6">Efficiency metrics</h3>
-<div class="space-y-4">
-<div class="p-4 bg-tertiary rounded-lg">
-<div class="text-xs text-secondary uppercase font-bold">CAGR Req. for Goal</div>
-<div class="text-xl font-bold text-primary">12.00%</div>
-</div>
-<div class="p-4 bg-tertiary rounded-lg">
-<div class="text-xs text-secondary uppercase font-bold">XIRR (Internal Return)</div>
-<div class="text-xl font-bold text-success" id="res-xirr">12.68%</div>
-</div>
-</div>
-</div>
-</div>
-<div class="glass-panel p-6 mb-8">
-<h3 class="panel-title mb-6">Wealth Accumulation Timeline</h3>
-<div class="projection-chart">
-<canvas id="wealth-canvas"></canvas>
-</div>
-</div>
-<div class="mt-8 flex gap-4">
-<button class="btn btn-secondary flex-1" onclick="exportData('pdf')">Download Wealth Blueprint
-                    (PDF)</button>
-<button class="btn btn-secondary flex-1" onclick="exportData('csv')">Export Timeline (CSV)</button>
-</div>
-</div>
-<section class="seo-article" data-tool="investment-calculator">
-<article class="tool-article">
-<h2>Investment Calculator — Project Your SIP and Lump Sum Growth</h2>
-
-<p>A few years ago a friend asked me how much her ₹5,000-a-month mutual fund SIP would be worth in fifteen years. I guessed something, she believed me, and we were both wrong by a lot — in my case by nearly half. Guessing at investment growth is a terrible habit because compounding does not feel intuitive; it feels slow, then suddenly it isn't. This investment calculator runs the actual math for both regular monthly investing (SIP) and one-time lump sums, so you see the real trajectory instead of a guess.</p>
+  </div>
+</div></div>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 &mdash; HOW IT WORKS</span><h2>Three steps, zero learning curve</h2></div>
+  <div class="steps">
+<div class="step"><div class="step-n">i.</div><h3>Enter your investment</h3><p>Add a lump sum, a monthly SIP amount, or both.</p></div>
+<div class="step"><div class="step-n">ii.</div><h3>Set growth assumptions</h3><p>Choose the expected annual return, time horizon and an optional yearly step-up.</p></div>
+<div class="step"><div class="step-n">iii.</div><h3>Review the projection</h3><p>See total invested, gains, maturity value, XIRR and inflation-adjusted wealth.</p></div>
+  </div>
+</section>
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>Investment Calculator — Project Your SIP and Lump Sum Growth</h2>
+    <p class="deck">Premium investment calculator with SIP step-up analysis, CAGR modeling, and inflation-adjusted wealth projections. Professional financial planning.</p>
+    <div class="article-meta">
+      <div class="avatar">I</div>
+      <div><b>TOOLSHUB Editorial</b><span>8 min read &middot; Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+<p class="lead">A few years ago a friend asked me how much her ₹5,000-a-month mutual fund SIP would be worth in fifteen years. I guessed something, she believed me, and we were both wrong by a lot — in my case by nearly half. Guessing at investment growth is a terrible habit because compounding does not feel intuitive; it feels slow, then suddenly it isn't. This investment calculator runs the actual math for both regular monthly investing (SIP) and one-time lump sums, so you see the real trajectory instead of a guess.</p>
 
 <h3>What Is an Investment Calculator?</h3>
 
@@ -235,87 +285,38 @@ MONETAG-ZONE: vignette/banner - paste zone script here
 <li><strong>Currency-agnostic</strong> — works with dollars, rupees, or any currency.</li>
 <li><strong>Free and private</strong> — no signup, unlimited scenarios, everything stays in your browser.</li>
 </ul>
-
-<h3>Frequently Asked Questions</h3>
-
-<h4>What is the difference between SIP and lump sum investing?</h4>
-<p>SIP invests a fixed amount regularly (usually monthly), which averages out market ups and downs. Lump sum invests the entire amount at once. SIP suits steady earners; lump sum suits money already in hand.</p>
-
-<h4>What return rate should I assume?</h4>
-<p>Historical equity markets average 10–12% annually. Conservative planning uses 7–8% (roughly inflation-adjusted). Fixed deposits typically yield 5–7%. Run multiple rates to see the range.</p>
-
-<h4>How accurate are the projected returns?</h4>
-<p>They are estimates, not guarantees. Markets vary year to year and past performance does not ensure future results. Treat the figures as a planning guide and use conservative rates as your baseline.</p>
-
-<h4>What is a step-up SIP?</h4>
-<p>A SIP that increases by a fixed percentage each year — e.g., 10% — to match rising income. Because later installments are larger, the final corpus grows noticeably.</p>
-
-<h4>What does XIRR mean?</h4>
-<p>Extended internal rate of return: the single annualized rate that explains investments made at different times and amounts. It is the honest measure of what your cash flows actually earned.</p>
-
-<h4>Does the calculator account for taxes?</h4>
-<p>The standard projection does not deduct capital gains taxes automatically. Enter your expected tax rate to see after-tax figures, and consult a tax advisor for your local rules.</p>
-
-<h4>Can I use this for retirement planning?</h4>
-<p>Yes — set your monthly contribution, time horizon, and return rate to project your retirement corpus, then test step-ups and longer horizons to see what gets you to your goal.</p>
-
-<h4>Is this investment calculator free?</h4>
-<p>Yes. No sign-up, no limits, no data collected — everything runs in your browser.</p>
-</article>
-</section>
+<h3>Frequently asked</h3>
+<div class="faq">
+<div class="faq-item open"><div class="faq-q">SIP or lump sum — which is better? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Lump sums win in steadily rising markets; SIPs smooth out volatility. The tool models both together.</p></div></div>
+<div class="faq-item"><div class="faq-q">What is XIRR? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>The annualized return accounting for the timing of every deposit — the honest measure of performance.</p></div></div>
+<div class="faq-item"><div class="faq-q">What does step-up do? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>It increases your SIP by a set percentage each year, modeling salary growth.</p></div></div>
+<div class="faq-item"><div class="faq-q">Are returns guaranteed? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>No — projections assume a constant rate; real markets fluctuate.</p></div></div>
 </div>
-</main>
-
- MONETAG-ZONE: popunder - paste zone script here 
- MONETAG-ZONE: in-page-push - paste zone script here
-            </div>
-            
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../image-tools/index.html">Image Tools</a></li><li><a href="../pdf-tools/index.html">PDF Tools</a></li><li><a href="../text-tools/index.html">Text & Writing</a></li><li><a href="../seo-tools/index.html">SEO Tools</a></li><li><a href="../calculator-tools/index.html">Calculators</a></li><li><a href="../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../about-us.html">About</a><a href="../contact-us.html">Contact</a><a href="../sitemap.xml">Sitemap</a></div>
-    </div>
+</article></div>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 &mdash; KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+<a class="rel" href="interest-calculator.html"><i class="fa-solid fa-chart-line" style="color:#4f46e5"></i><h3>Interest Calculator</h3><p>Compound interest and growth models.</p></a>
+<a class="rel" href="retirement-calculator.html"><i class="fa-solid fa-umbrella-beach" style="color:#7c3aed"></i><h3>Retirement Calculator</h3><p>Corpus planning and withdrawals.</p></a>
+<a class="rel" href="loan-emi-calculator.html"><i class="fa-solid fa-landmark" style="color:#4f46e5"></i><h3>Loan EMI Calculator</h3><p>EMI, amortization and payoff plans.</p></a>
+<a class="rel" href="tax-calculator.html"><i class="fa-solid fa-receipt" style="color:#7c3aed"></i><h3>Tax Calculator</h3><p>Income brackets and sales tax.</p></a>
   </div>
+</section>
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../index.html#tools">All 203 tools</a></li><li><a href="../index.html#calculator-tools">Calculators</a></li><li><a href="../index.html#image-tools">Image tools</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+  </div>
+  <div class="ft-bot"><span>&copy; 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script src="js/calc-utils.js"></script>
 <script src="js/calc-ui.js"></script>
 <script>
+
         function init() {
             CalcUI.init({ toolName: 'investment-calculator' });
             calculate();
@@ -391,7 +392,8 @@ MONETAG-ZONE: vignette/banner - paste zone script here
         }
 
         init();
-    </script>
-  <script src="../image-tools/js/th-interactions.js"></script>
+    
+</script>
+<script src="../image-tools/js/v3.js"></script>
 </body>
 </html>

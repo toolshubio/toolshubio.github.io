@@ -1,0 +1,106 @@
+<article class="tool-article">
+<h2>JSON Formatter — Beautify and Validate JSON Instantly</h2>
+
+<p>JSON is the language APIs speak, and APIs are not considerate speakers. Every developer has pasted an API response into an editor and been greeted by a single line of ten thousand characters — technically valid, practically unreadable. Worse is the almost-valid JSON: one missing comma somewhere in the middle, and your parser throws an error pointing at the end of the file. A JSON formatter does two jobs at once: it pretty-prints the structure so you can read it, and it validates the syntax so you know exactly where it breaks.</p>
+
+<h3>What a JSON Formatter Does</h3>
+
+<p><strong>Formatting (beautifying)</strong> takes compact JSON and re-renders it with indentation and line breaks — objects and arrays on separate lines, nested levels visibly nested. <strong>Validation</strong> parses the JSON strictly and reports syntax errors with their location, instead of failing silently or with a cryptic message. <strong>Minification</strong> does the reverse: strips all whitespace for compact transmission to production.</p>
+
+<p>The three operations form a loop most developers run daily: receive minified JSON from an API → format it to read and debug → fix or edit → validate → minify again for sending. Having all three in one tool (with copy/download at each step) removes the tab-switching that otherwise eats the workflow.</p>
+
+<h3>Before and After</h3>
+
+<p><strong>Before (as APIs usually return it):</strong></p>
+<p><code>{"name":"John","age":30,"city":"New York","skills":["JavaScript","Node.js","React"]}</code></p>
+
+<p><strong>After (formatted):</strong></p>
+<pre><code>{
+    "name": "John",
+    "age": 30,
+    "city": "New York",
+    "skills": [
+        "JavaScript",
+        "Node.js",
+        "React"
+    ]
+}</code></pre>
+
+<p>Same data, but now the structure is scannable: four keys, one of them an array of three strings. On a real API response with nested objects five levels deep, formatting is the difference between understanding the payload and scrolling hopelessly.</p>
+
+<h3>How to Use the JSON Formatter</h3>
+
+<p>Paste, format, fix, export. The error panel guides you when the JSON is broken.</p>
+
+<p><strong>Step 1 — Paste your JSON.</strong> Drop raw, minified, or messy JSON into the input panel — API responses, config files, log entries, whatever needs reading.</p>
+
+<p><strong>Step 2 — Choose indent size and format.</strong> Set 2 or 4 spaces (2 is the common convention for JSON) and hit format. The output appears with syntax highlighting: keys, strings, numbers, and booleans each color-coded.</p>
+
+<p><strong>Step 3 — Read any validation errors.</strong> If the JSON is invalid, the error panel tells you what's wrong and where — line and column, not just "parse error." Fix the highlighted issue and re-format.</p>
+
+<p><strong>Step 4 — Minify, copy, or download.</strong> Use minify to compress the JSON for production use, then copy the result to your clipboard or download it as a <code>.json</code> file.</p>
+
+<h3>Common JSON Errors (and What They Mean)</h3>
+
+<table>
+<thead><tr><th>Error</th><th>What It Looks Like</th><th>The Fix</th></tr></thead>
+<tbody>
+<tr><td>Missing comma</td><td><code>{"a":1 "b":2}</code></td><td>Add the comma between members</td></tr>
+<tr><td>Trailing comma</td><td><code>{"a":1,}</code></td><td>Remove the last comma (strict JSON forbids it)</td></tr>
+<tr><td>Unquoted keys</td><td><code>{a:1}</code></td><td>Quote all keys: <code>{"a":1}</code></td></tr>
+<tr><td>Single quotes</td><td><code>{'a':1}</code></td><td>Use double quotes for strings and keys</td></tr>
+<tr><td>Unclosed bracket</td><td><code>{"a":[1,2}</code></td><td>Close every opened bracket in order</td></tr>
+<tr><td>Comments</td><td><code>{"a":1 // note}</code></td><td>Remove — standard JSON has no comments</td></tr>
+</tbody>
+</table>
+
+<p>The trailing-comma trap deserves emphasis: JavaScript object literals allow trailing commas, JSON does not. Code that works fine in JS breaks the moment it's serialized strictly — and the validator catches it before your API call fails at runtime.</p>
+
+<h3>Who Uses a JSON Formatter?</h3>
+
+<p><strong>API developers</strong> format responses to understand payload structure while debugging integrations — the single most common use.</p>
+
+<p><strong>DevOps and backend engineers</strong> validate config files and beautify JSON log entries during incident investigation.</p>
+
+<p><strong>Frontend developers</strong> prepare mock data and fixtures, validating before the data ever reaches the app.</p>
+
+<p><strong>Data engineers</strong> inspect JSON during migrations and transformations, where one malformed record can break a pipeline.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant formatting</strong> — minified JSON pretty-printed with one click.</li>
+<li><strong>Real validation</strong> — syntax errors reported with line and column positions.</li>
+<li><strong>Minification</strong> — compress JSON for production transmission.</li>
+<li><strong>Customizable indentation</strong> — 2 spaces, 4 spaces, or tabs.</li>
+<li><strong>Syntax highlighting</strong> — keys, strings, numbers, and booleans color-coded.</li>
+<li><strong>Copy and download</strong> — formatted or minified output ready to use.</li>
+<li><strong>Private and free</strong> — everything runs in your browser; your data never leaves your device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is the difference between formatting and validating JSON?</h4>
+<p>Formatting makes JSON readable with indentation and spacing. Validation checks whether the JSON is syntactically correct. This tool does both — and formatting a broken document surfaces its errors.</p>
+
+<h4>Why does my JSON fail to parse?</h4>
+<p>The usual suspects: a missing comma, a trailing comma (allowed in JS, forbidden in JSON), unquoted keys, single quotes instead of double, or an unclosed bracket. The validator pinpoints the exact location.</p>
+
+<h4>Can I convert formatted JSON back to minified?</h4>
+<p>Yes — the minify option strips all whitespace, producing the compact single-line form used for API transmission and storage.</p>
+
+<h4>What indent size should I use?</h4>
+<p>2 spaces is the most common convention for JSON. Use 4 if your team prefers it — consistency matters more than the number.</p>
+
+<h4>Does JSON support comments?</h4>
+<p>No — standard JSON has no comments. If your file contains <code>//</code> or <code>/* */</code>, it's JSON-with-comments (JSONC), and a strict parser will reject it. Remove comments before validating.</p>
+
+<h4>Can I format large JSON files?</h4>
+<p>Yes — the tool handles large payloads in the browser. For extremely large files, formatting in sections keeps things responsive.</p>
+
+<h4>Is my JSON data uploaded anywhere?</h4>
+<p>No. Formatting and validation run entirely in your browser — API keys, tokens, and payloads in your JSON never leave your device.</p>
+
+<h4>Is this JSON formatter free?</h4>
+<p>Yes — free, unlimited, no account required.</p>
+</article>

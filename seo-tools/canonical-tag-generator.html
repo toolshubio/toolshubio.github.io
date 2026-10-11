@@ -1,66 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Generate correct SEO canonical tags. Features cross-domain checks, self-referencing validation, query parameter handling, and duplicate content prevention.">
-    <title>Canonical Tag Generator | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../image-tools/css/global.css">
-    <link rel="stylesheet" href="../image-tools/css/components.css">
-    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canonical Tag Generator | TOOLSHUB</title>
+<meta name="description" content="Generate correct SEO canonical tags. Features cross-domain checks, self-referencing validation, query parameter handling, and duplicate content prevention.">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../image-tools/css/v3-design.css">
+<style>
+/* v3 compat — legacy tool markup mapped onto the v3 design system */
+:root{--border-color:#e4e4e7;--bg-tertiary:#f4f4f5;--bg-primary:#ffffff;--text-primary:#0a0a0b;--text-secondary:#3f3f46;--color-seo:#4f46e5}
+.ws-input,select.ws-input,textarea.ws-input{width:100%;border:1.5px solid #e4e4e7;border-radius:12px;padding:14px 16px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;outline:none;transition:.2s;background:#fff;color:#0a0a0b}
+.ws-input:focus{border-color:#4f46e5;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.ws-input::placeholder{color:#a1a1aa}
+.input-group{margin-bottom:20px}
+.input-label{display:block;font-weight:600;font-size:.92rem;margin-bottom:10px;color:#0a0a0b}
+.input-desc{font-size:.85rem;color:#71717a;margin-top:10px;line-height:1.6}
+.action-bar{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap}
+.output-section{margin-top:28px}
+.section-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.section-title{font-size:1.1rem;font-weight:700;letter-spacing:-.01em}
+.output-container{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden;background:#fff}
+.output-container table{width:100%;border-collapse:collapse;font-size:.94rem}
+.output-container th,.output-container td{padding:12px 16px;border-bottom:1px solid #f4f4f5;text-align:left}
+.output-code{font-family:monospace;font-size:.9rem;background:#f4f4f5;border:1px solid #e4e4e7;border-radius:12px;padding:16px;white-space:pre-wrap;word-break:break-all;color:#0a0a0b}
+.container,.tool-interface-container{max-width:100%}
+.schema-form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.mb-md{margin-bottom:16px}.mb-lg{margin-bottom:24px}.mb-sm{margin-bottom:8px}.mt-md{margin-top:16px}.mt-lg{margin-top:24px}.mt-sm{margin-top:8px}.text-center{text-align:center}
+.tab,.mode-btn,.device-tab,.preview-tab,.editor-tab,.nav-item{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;border:1px solid #e4e4e7;background:#fff;font-size:.88rem;font-weight:600;cursor:pointer;color:#3f3f46;transition:.15s;font-family:inherit}
+.tab:hover,.mode-btn:hover,.device-tab:hover,.preview-tab:hover,.editor-tab:hover,.nav-item:hover{border-color:#c7d2fe}
+.tab.active,.mode-btn.active,.device-tab.active,.preview-tab.active,.editor-tab.active,.nav-item.active{background:#0a0a0b;color:#fff;border-color:#0a0a0b}
+.btn-add-schema,.tu-btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;border:1px solid #e4e4e7;background:#fff;font-size:.85rem;font-weight:600;cursor:pointer;color:#3f3f46;transition:.15s;font-family:inherit}
+.btn-add-schema:hover,.tu-btn-ghost:hover{border-color:#c7d2fe;background:#eef2ff}
+.hidden{display:none!important}
+.selected{outline:2px solid #4f46e5;outline-offset:2px}
+.visual-card,.seo-card{border:1.5px solid #e4e4e7;border-radius:16px;padding:20px;cursor:pointer;transition:.15s;background:#fff}
+.visual-card:hover,.seo-card:hover{border-color:#c7d2fe}
+.option-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:24px}
+.card-icon{font-size:1.4rem;color:#4f46e5;display:block;margin-bottom:10px}
+.card-title{font-weight:700;margin-bottom:6px;color:#0a0a0b}
+.card-desc{font-size:.88rem;color:#71717a}
+.feature-card{border:1px solid #e4e4e7;border-radius:16px;padding:20px;background:#fff}
+.feature-title{font-size:.85rem;font-weight:600;color:#3f3f46;margin-bottom:8px}
+.feature-desc{font-size:.9rem;color:#71717a}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #f4f4f5;font-size:.92rem;color:#0a0a0b}
+.toggle-switch{position:relative;display:inline-block;width:48px;height:26px;flex:none}
+.toggle-switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;inset:0;background:#d4d4d8;border-radius:99px;transition:.2s;cursor:pointer}
+.slider:before{content:"";position:absolute;width:20px;height:20px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s}
+.toggle-switch input:checked+.slider{background:#4f46e5}
+.toggle-switch input:checked+.slider:before{transform:translateX(22px)}
+.checklist-item{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #e4e4e7;border-radius:12px;margin-bottom:10px;background:#fff;cursor:pointer;transition:.15s}
+.checklist-item:hover{border-color:#c7d2fe}
+.seo-result-item,.preview-box,#serpPreviewBox{border:1px solid #e4e4e7;border-radius:16px;padding:20px;background:#fff;margin-top:16px}
+.seo-url{color:#166534;font-size:.85rem}
+.seo-title{color:#1a0dab;font-size:1.1rem;margin:4px 0}
+.seo-desc{color:#3f3f46;font-size:.9rem}
+.status-badge{display:inline-block;padding:.5rem 1rem;border-radius:30px;font-weight:700}
+.bulk-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.bulk-table th,.bulk-table td{padding:10px 12px;border-bottom:1px solid #f4f4f5;text-align:left}
+.emotional-word{background:#fef3c7;padding:1px 4px;border-radius:4px}
+.power-word{background:#eef2ff;padding:1px 4px;border-radius:4px}
+.invalid,.duplicate-error{border-color:#ef4444!important}
+button.active:not(.nav-item):not(.tab):not(.mode-btn):not(.device-tab):not(.preview-tab):not(.editor-tab),a.active{box-shadow:inset 0 0 0 2px #4f46e5}
+.sim-row{display:flex;gap:10px;align-items:center;padding:8px 0;font-size:.9rem;color:#3f3f46}
+/* website speed test dashboard */
+.speed-dashboard{max-width:100%}
+.url-input-container{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.url-input-container .ws-input{flex:1;min-width:240px}
+.results-container,.history-section{margin-top:24px}
+.perf-header{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-bottom:20px}
+.vitals-summary{flex:1;min-width:240px}
+.gauge-wrapper{display:flex;gap:16px;flex-wrap:wrap}
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+.category-scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:20px 0}
+.screenshot-section,.audit-container{margin-top:28px}
+.audit-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:10px}
+.table-responsive{overflow-x:auto;border:1px solid #e4e4e7;border-radius:16px}
+.audit-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.audit-table th,.audit-table td{padding:12px 14px;border-bottom:1px solid #f4f4f5;text-align:left}
+.badge{display:inline-block;padding:4px 12px;border-radius:99px;font-size:.78rem;font-weight:700;background:#eef2ff;color:#4f46e5}
+.badge-secondary{background:#f4f4f5;color:#3f3f46}
+.analyze-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:14px;font-weight:600;font-size:.92rem;cursor:pointer;border:none;background:#0a0a0b;color:#fff;font-family:inherit;transition:.2s}
+.analyze-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -8px rgba(0,0,0,.3)}
+.loading-overlay{position:fixed;inset:0;background:rgba(255,255,255,.94);z-index:50;display:flex;align-items:center;justify-content:center}
+.progress-card{background:#fff;border:1px solid #e4e4e7;border-radius:20px;padding:36px;max-width:480px;width:90%;box-shadow:0 12px 40px -12px rgba(0,0,0,.12)}
+.p-bar{height:10px;background:#f4f4f5;border-radius:99px;overflow:hidden;margin:16px 0}
+.p-fill{height:100%;width:0;background:linear-gradient(135deg,#4f46e5,#7c3aed);border-radius:99px;transition:width .3s}
+.wst-step{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:.9rem;color:#3f3f46}
+.s-spin{width:16px;height:16px;border:2px solid #e4e4e7;border-top-color:#4f46e5;border-radius:50%;animation:spn .8s linear infinite;display:none;flex:none}
+@keyframes spn{to{transform:rotate(360deg)}}
+.error-board{border:1px solid #fecaca;background:#fef2f2;border-radius:16px;padding:28px;margin-top:20px}
+.screenshot-container{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden}
+.screenshot-img{max-width:100%;display:block}
+.data-source-badge{display:inline-block;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;background:#eef2ff;color:#4f46e5;margin-bottom:8px}
+/* aliases for markup injected by legacy JS at runtime */
+.seo-textarea{width:100%;min-height:160px;border:1.5px solid #e4e4e7;border-radius:16px;padding:22px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;line-height:1.8;resize:vertical;outline:none;transition:.2s;background:#fafafa;color:#0a0a0b}
+.seo-textarea:focus{border-color:#4f46e5;background:#fff;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.seo-textarea::placeholder{color:#a1a1aa}
+.seo-input,select.seo-input,.seo-select{width:100%;border:1.5px solid #e4e4e7;border-radius:12px;padding:14px 16px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;outline:none;transition:.2s;background:#fff;color:#0a0a0b}
+.seo-input:focus,.seo-select:focus{border-color:#4f46e5;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.seo-input::placeholder{color:#a1a1aa}
 
-
-  <link rel="stylesheet" href="../image-tools/css/th-header-footer.css">
+</style>
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../index.html#tools">All Tools</a><a href="../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../index.html#tools">Explore Tools</a></div>
+</div></header>
+<!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+<nav class="crumbs"><a href="../index.html">Home</a> &nbsp;/&nbsp; <span>Advanced Canonical Tag Generator</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">SEO Tools</span>
+  <h1>Advanced <em>Canonical</em> Tag Generator</h1>
+  <p>Generate precise canonical tags with cross-domain support and query parameter handling logic.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../image-tools/index.html">Image Tools</a><a href="../pdf-tools/index.html">PDF Tools</a><a href="../text-tools/index.html">Text & Writing</a><a href="../seo-tools/index.html">SEO Tools</a><a href="../calculator-tools/index.html">Calculators</a><a href="../binary-tools/index.html">Binary Tools</a><a href="../code-format-tools/index.html">Code & Formatters</a><a href="../doc-tools/index.html">Documents</a><a href="../other-tools/index.html">Other Tools</a><a href="../about-us.html">About Us</a><a href="../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a> &gt;
-                <a href="index.html">SEO Tools</a> &gt;
-                <span>Advanced Canonical Tag Generator</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">Advanced Canonical Tag Generator</h1>
-                <p class="tool-description">Generate correct SEO canonical tags. Features cross-domain checks, self-referencing validation, query parameter handling, and duplicate content prevention.</p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
-<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
-<div class="container text-center">
-<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Advanced Canonical Tag Generator
-                </h1>
-<p class="hero-subtitle">Generate precise canonical tags with cross-domain support and query parameter
-                    handling logic.</p>
-</div>
 </section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>Advanced Canonical Tag Generator</b><span>v3.0 · local</span></div>
+  <div class="ws-body">
+
 <div class="container">
 <div class="tool-interface-container" style="max-width: 900px; margin: 0 auto;">
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
@@ -68,12 +140,12 @@
 <div class="input-section">
 <div class="input-group">
 <label class="input-label">Current Page URL (Optional)</label>
-<input class="seo-input" id="currentUrl" oninput="update()" placeholder="https://example.com/page?ref=twitter" type="url"/>
+<input class="seo-input ws-input" id="currentUrl" oninput="update()" placeholder="https://example.com/page?ref=twitter" type="url"/>
 <p class="input-desc">Used to detect self-referencing issues or mismatches.</p>
 </div>
 <div class="input-group">
 <label class="input-label">Canonical (Target) URL</label>
-<input class="seo-input" id="targetUrl" oninput="update()" placeholder="https://example.com/page" type="url"/>
+<input class="seo-input ws-input" id="targetUrl" oninput="update()" placeholder="https://example.com/page" type="url"/>
 </div>
 <div class="seo-card" style="padding: 1rem; margin-bottom: 1rem;">
 <h4 style="margin-bottom: 1rem; font-size: 1rem;">Advanced Settings</h4>
@@ -107,15 +179,15 @@
 </div>
 </div>
 <div class="action-bar">
-<button class="btn-primary" onclick="update()" style="width: 100%;">Refresh</button>
-<button class="btn-secondary" onclick="resetForm()" style="width: 100%;">Reset</button>
+<button class="btn-primary btn btn-dark tu-btn tu-btn-primary" onclick="update()" style="width: 100%;"><i class="fa-solid fa-rotate"></i> Refresh</button>
+<button class="btn-secondary btn btn-light tu-btn tu-btn-ghost" onclick="resetForm()" style="width: 100%;"><i class="fa-solid fa-rotate-right"></i> Reset</button>
 </div>
 </div>
 <!-- Right: Output & Validation -->
 <div class="output-section">
 <div class="section-header">
 <h3 class="section-title">Result</h3>
-<button class="btn-secondary" onclick="copyCode()" style="font-size: 0.8rem;">Copy</button>
+<button class="btn-secondary btn btn-light tu-btn tu-btn-ghost" onclick="copyCode()" style="font-size: 0.8rem;"><i class="fa-solid fa-copy"></i> Copy</button>
 </div>
 <div class="output-container" style="min-height: 80px; display:flex; align-items:center;">
 <pre class="output-code" id="outputCode" style="margin:0; white-space: pre-wrap; word-break: break-all;"></pre>
@@ -136,47 +208,48 @@
 </div>
 </div>
 </div>
-            </div>
-            <section class="seo-article" data-tool="canonical-tag-generator">
-<article class="tool-article">
-<h2>Canonical Tag Generator — Fix Duplicate Content With One Line of HTML</h2>
 
-<p>I once watched a client's blog lose half its traffic because the same article lived at four URLs — with and without www, with and without a trailing slash, plus a ?utm_campaign version Google had indexed separately. The fix was a single HTML tag. A canonical tag generator writes that tag for you: <code>&lt;link rel="canonical"&gt;</code>, telling search engines which URL is the real one when duplicates exist.</p>
+  </div>
+</div></div>
 
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 — HOW IT WORKS</span><h2>Three steps, zero learning curve</h2></div>
+  <div class="steps">
+<div class="step"><div class="step-n">i.</div><h3>Enter your URLs</h3><p>Add the page URL and the canonical URL you want search engines to prefer.</p></div>
+<div class="step"><div class="step-n">ii.</div><h3>Set the options</h3><p>Configure cross-domain settings and query-parameter handling logic.</p></div>
+<div class="step"><div class="step-n">iii.</div><h3>Copy the tag</h3><p>Copy the generated &lt;link rel=&quot;canonical&quot;&gt; tag into your page &lt;head&gt;.</p></div>
+  </div>
+</section>
+
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>Canonical Tag Generator — Fix Duplicate Content With One Line of HTML</h2>
+    <p class="deck">I once watched a client's blog lose half its traffic because the same article lived at four URLs — with and without www, with and without a trailing slash, plus a ?utm_campaign version Google had indexed separately. The fix was a single HTML tag. A canonical tag generator writes that tag for you: <code>&lt;link rel="canonical"&gt;</code>, telling search engines which URL is the real one when duplicates exist.</p>
+    <div class="article-meta">
+      <div class="avatar">T</div>
+      <div><b>TOOLSHUB Editorial</b><span>8 min read · Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+<p class="lead">I once watched a client's blog lose half its traffic because the same article lived at four URLs — with and without www, with and without a trailing slash, plus a ?utm_campaign version Google had indexed separately. The fix was a single HTML tag. A canonical tag generator writes that tag for you: <code>&lt;link rel="canonical"&gt;</code>, telling search engines which URL is the real one when duplicates exist.</p>
 <h3>What Is a Canonical Tag?</h3>
-
-<p>Duplicate content is rarely about copying — it is about plumbing. E-commerce filters (?color=red&size=m), tracking parameters (?utm_source=newsletter), HTTP vs HTTPS, www vs non-www, and print-friendly versions all create multiple URLs showing the same content. To Google, each URL is a separate page competing with itself, splitting ranking signals across copies.</p>
-
+<p>Duplicate content is rarely about copying — it is about plumbing. E-commerce filters (?color=red&amp;size=m), tracking parameters (?utm_source=newsletter), HTTP vs HTTPS, www vs non-www, and print-friendly versions all create multiple URLs showing the same content. To Google, each URL is a separate page competing with itself, splitting ranking signals across copies.</p>
 <p>The canonical tag resolves this. Placed in the page's <code>&lt;head&gt;</code>, it says: "of all the URLs showing this content, this one is the primary — consolidate everything here." It is a strong hint rather than a command; Google honors it in the vast majority of cases, provided your other signals (sitemaps, internal links, redirects) agree with it.</p>
-
 <p>A common misunderstanding: canonical tags do not redirect users. Visitors still land on whichever URL they clicked; the tag only guides search engines behind the scenes. For actually moving traffic, you want a 301 redirect — canonicals are for the cases where multiple URLs must legitimately keep working.</p>
-
 <h3>How to Use the Canonical Tag Generator</h3>
-
 <p>Paste the URL you want search engines to treat as primary — the clean version, no tracking parameters, HTTPS, your preferred www choice. The generator normalizes it (stripping UTM tags, fixing the protocol, handling trailing slashes) and outputs the ready-to-paste tag:</p>
-
 <p><code>&lt;link rel="canonical" href="https://example.com/your-page/" /&gt;</code></p>
-
 <p>Copy that line into the <code>&lt;head&gt;</code> section of every duplicate or variant page, pointing them all at the same primary URL. If you use WordPress, SEO plugins like Rank Math and Yoast have a canonical URL field per post — paste it there instead of editing code. Then verify in Google Search Console's URL Inspection tool that Google sees the tag.</p>
-
 <p>Include a self-referencing canonical on the primary page itself — the page pointing at its own URL. Google's own engineers recommend this; it guards against scrapers and parameter variants you have not thought of yet.</p>
-
 <h3>How Canonicalization Works</h3>
-
 <p>The mechanism is a negotiation between your signals and Google's judgment.</p>
-
 <p><strong>Step 1 — Tag placement.</strong> Each variant page carries the canonical tag in its HTML head (or, for non-HTML files like PDFs, in the HTTP Link header) naming the preferred URL.</p>
-
 <p><strong>Step 2 — Crawling.</strong> Googlebot fetches the variants, reads the tags, and groups the URLs into a duplicate cluster.</p>
-
 <p><strong>Step 3 — Signal consolidation.</strong> Ranking signals — links, relevance, freshness — from all cluster members are folded toward the canonical URL. This is the payoff: instead of four weak copies, you have one strong page.</p>
-
 <p><strong>Step 4 — Index selection.</strong> Google typically indexes the canonical URL and drops the variants from results. If your sitemap, internal links, or redirects contradict the tag, Google may pick a different canonical — consistency across signals is what makes the hint stick.</p>
-
 <p>Normalization is the generator's real value-add: absolute HTTPS URLs without tracking parameters get honored far more reliably than relative URLs or parameter-laden ones.</p>
-
 <h3>Canonical Tag Examples</h3>
-
 <table>
 <thead><tr><th>Situation</th><th>Canonical should point to</th></tr></thead>
 <tbody>
@@ -187,21 +260,13 @@
 <tr><td>PDF with an HTML equivalent</td><td>The HTML page, via HTTP Link header</td></tr>
 </tbody>
 </table>
-
 <h3>Who Uses Canonical Tag Generators?</h3>
-
 <p><strong>SEO specialists</strong> audit sites for duplicate clusters and deploy canonicals as the standard fix.</p>
-
 <p><strong>E-commerce managers</strong> tame faceted navigation and filtered URLs that spawn thousands of duplicates.</p>
-
 <p><strong>Bloggers</strong> handle tag pages, archives, and syndicated content pointing back to originals.</p>
-
 <p><strong>Developers</strong> generate correct tags during builds instead of hand-writing them per template.</p>
-
 <p><strong>Content marketers</strong> protect original articles when partners republish them.</p>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>Free generation</strong> — no signup, instant output.</li>
 <li><strong>URL normalization</strong> — strips tracking params, forces HTTPS, fixes slashes.</li>
@@ -211,74 +276,41 @@
 <li><strong>Validation checks</strong> — flags common mistakes before you deploy.</li>
 <li><strong>Browser-based</strong> — nothing to install.</li>
 </ul>
+<h3>Frequently asked</h3>
+<div class="faq">
+<div class="faq-item open"><div class="faq-q">Is this canonical tag generator free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — free with no account required.</p></div></div>
+<div class="faq-item"><div class="faq-q">Where do I put the canonical tag? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Inside the <code>&lt;head&gt;</code> section of the page's HTML, on every variant page — each one pointing to the primary URL.</p></div></div>
+<div class="faq-item"><div class="faq-q">Should the primary page have a canonical tag too? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — a self-referencing canonical (the page pointing to itself) is recommended even when no duplicates exist.</p></div></div>
+<div class="faq-item"><div class="faq-q">Canonical tag vs 301 redirect — which should I use? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Use 301s when old URLs should stop working (site moves, deleted pages). Use canonicals when variants must stay live (tracking params, filters, syndication).</p></div></div>
+<div class="faq-item"><div class="faq-q">Can I use relative URLs in canonical tags? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>You can, but absolute URLs (full https:// address) are honored more reliably. Always generate absolute.</p></div></div>
+<div class="faq-item"><div class="faq-q">How long until Google respects my canonical? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Usually days to a few weeks after recrawling. Check the "Google-selected canonical" in Search Console's URL Inspection to confirm.</p></div></div>
+<div class="faq-item"><div class="faq-q">What if Google ignores my canonical tag? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Check for conflicting signals — sitemap URLs, internal links, and redirects should all agree with the tag. Mixed signals are the usual cause.</p></div></div>
+</div>
+  </div>
+</article></div>
 
-<h3>Frequently Asked Questions</h3>
-
-<h4>Is this canonical tag generator free?</h4>
-<p>Yes — free with no account required.</p>
-
-<h4>Where do I put the canonical tag?</h4>
-<p>Inside the <code>&lt;head&gt;</code> section of the page's HTML, on every variant page — each one pointing to the primary URL.</p>
-
-<h4>Should the primary page have a canonical tag too?</h4>
-<p>Yes — a self-referencing canonical (the page pointing to itself) is recommended even when no duplicates exist.</p>
-
-<h4>Canonical tag vs 301 redirect — which should I use?</h4>
-<p>Use 301s when old URLs should stop working (site moves, deleted pages). Use canonicals when variants must stay live (tracking params, filters, syndication).</p>
-
-<h4>Can I use relative URLs in canonical tags?</h4>
-<p>You can, but absolute URLs (full https:// address) are honored more reliably. Always generate absolute.</p>
-
-<h4>How long until Google respects my canonical?</h4>
-<p>Usually days to a few weeks after recrawling. Check the "Google-selected canonical" in Search Console's URL Inspection to confirm.</p>
-
-<h4>What if Google ignores my canonical tag?</h4>
-<p>Check for conflicting signals — sitemap URLs, internal links, and redirects should all agree with the tag. Mixed signals are the usual cause.</p>
-</article>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 — KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+<a class="rel" href="meta-robots-generator.html"><i class="fa-solid fa-robot" style="color:#4f46e5"></i><h3>Meta Robots Generator</h3><p>Build meta robots tags visually.</p></a>
+<a class="rel" href="robots-txt-generator.html"><i class="fa-solid fa-robot" style="color:#7c3aed"></i><h3>Robots.txt Generator</h3><p>Visual robots.txt rule builder.</p></a>
+<a class="rel" href="sitemap-generator.html"><i class="fa-solid fa-sitemap" style="color:#4f46e5"></i><h3>Sitemap Generator</h3><p>XML sitemaps with image and video.</p></a>
+<a class="rel" href="seo-url-checker.html"><i class="fa-solid fa-link" style="color:#7c3aed"></i><h3>SEO URL Checker</h3><p>Validate SEO-friendly URLs.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../image-tools/index.html">Image Tools</a></li><li><a href="../pdf-tools/index.html">PDF Tools</a></li><li><a href="../text-tools/index.html">Text & Writing</a></li><li><a href="../seo-tools/index.html">SEO Tools</a></li><li><a href="../calculator-tools/index.html">Calculators</a></li><li><a href="../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../index.html#tools">All 203 tools</a></li><li><a href="../index.html#seo-tools">SEO tools</a></li><li><a href="../index.html#image-tools">Image tools</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../about-us.html">About</a><a href="../contact-us.html">Contact</a><a href="../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>© 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script>
         function update() {
             const currentUrlInput = document.getElementById('currentUrl').value.trim();
@@ -395,7 +427,6 @@
 
         // Init
         update();
-    </script>
-  <script src="../image-tools/js/th-interactions.js"></script>
+    </script><script src="../image-tools/js/th-interactions.js"></script><script src="../image-tools/js/tu-unified.js"></script><script src="../image-tools/js/v3.js"></script>
 </body>
 </html>

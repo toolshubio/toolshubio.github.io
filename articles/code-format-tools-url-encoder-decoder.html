@@ -1,0 +1,109 @@
+<article class="tool-article">
+<h2>URL Encoder Decoder — Make Any Text Safe for Web Addresses</h2>
+
+<p>I once shared a link to a file named "Q3 report (final) & approved.pdf" and watched it break in spectacular fashion — the ampersand split the URL in two, the parentheses confused the server, and the spaces turned into a mess. The link worked for me and for nobody else. That was my introduction to percent-encoding: URLs can only safely carry a limited set of characters, and everything else — spaces, ampersands, accented letters, emoji — has to be rewritten in a form every browser and server reads the same way. This tool does that rewriting in both directions.</p>
+
+<h3>What URL Encoding Is</h3>
+
+<p>URL encoding (also called <strong>percent-encoding</strong>) replaces any character that isn't safe in a web address with a <code>%</code> sign followed by two hexadecimal digits representing the character's code. A space becomes <code>%20</code>, an ampersand becomes <code>%26</code>, a question mark becomes <code>%3F</code>. Non-ASCII characters — accented letters, Chinese, Arabic, emoji — are first converted to their UTF-8 bytes, and each byte is percent-encoded, so a single Chinese character can expand to nine encoded characters.</p>
+
+<p>Why does this matter? Because characters like <code>&</code>, <code>=</code>, <code>?</code>, and <code>#</code> have structural jobs inside a URL: <code>&</code> separates query parameters, <code>#</code> starts a fragment. If your search term contains a literal <code>&</code> ("fish & chips"), the server reads it as a parameter separator and your query breaks in half. Encoding turns the data <code>&</code> into <code>%26</code> — inert data instead of structure — and the link survives intact.</p>
+
+<h3>encodeURIComponent vs encodeURI</h3>
+
+<p>This is the distinction that causes most encoding bugs, and the tool offers both methods because they solve different problems:</p>
+
+<table>
+<thead><tr><th>Method</th><th>What It Encodes</th><th>Use It For</th></tr></thead>
+<tbody>
+<tr><td><code>encodeURIComponent</code></td><td>Everything except <code>A-Z a-z 0-9 - _ . ! ~ * ' ( )</code></td><td>A <strong>value</strong> inside a URL — query parameters, path segments, form data</td></tr>
+<tr><td><code>encodeURI</code></td><td>Only unsafe characters; preserves <code>:// / ? # &amp; =</code></td><td>A <strong>whole URL</strong> that already has structure</td></tr>
+</tbody>
+</table>
+
+<p>In practice:</p>
+
+<p><code>encodeURIComponent("hello world &amp; goodbye")</code><br>→ <code>hello%20world%20%26%20goodbye</code></p>
+
+<p><code>encodeURI("https://example.com/search?q=hello world")</code><br>→ <code>https://example.com/search?q=hello%20world</code></p>
+
+<p>Notice the difference: the component encoder escaped the <code>&</code> (it's data), while the full-URL encoder left <code>://</code>, <code>?</code> and <code>=</code> alone (they're structure). Use the wrong one and you either break the URL's structure or leave dangerous characters unescaped. When in doubt: encoding a <em>piece</em> of a URL → component; encoding a <em>complete</em> address → full URL.</p>
+
+<h3>How to Use the URL Encoder Decoder</h3>
+
+<p>Paste, pick a direction and method, copy the result. The output updates as you type.</p>
+
+<p><strong>Step 1 — Paste your text.</strong> A full URL, a query parameter value, form data, or any text with special characters.</p>
+
+<p><strong>Step 2 — Choose Encode or Decode, and the method.</strong> Encode converts text to percent-encoded form; Decode reverses <code>%XX</code> sequences back to readable characters. Pick the component method for values and the full-URL method for complete addresses.</p>
+
+<p><strong>Step 3 — Read the result.</strong> The encoded or decoded output appears instantly, with character counts showing how much the string grew — useful when you're working near URL length limits (browsers cap URLs around 2,048 characters).</p>
+
+<p><strong>Step 4 — Copy and use.</strong> One click copies the result for pasting into code, links, API calls, or redirect targets.</p>
+
+<p>A note on the plus sign: in HTML form data (<code>application/x-www-form-urlencoded</code>), spaces are traditionally written as <code>+</code> rather than <code>%20</code>. When decoding form submissions, treat <code>+</code> as a space; when encoding for general URLs, <code>%20</code> is correct. Mixing these up is a classic source of "why is there a plus in my search term" bugs.</p>
+
+<h3>Common Encoded Characters</h3>
+
+<table>
+<thead><tr><th>Character</th><th>Encoded</th><th>Why It Needs Encoding</th></tr></thead>
+<tbody>
+<tr><td>space</td><td><code>%20</code></td><td>Not allowed raw in URLs</td></tr>
+<tr><td><code>&amp;</code></td><td><code>%26</code></td><td>Separates query parameters</td></tr>
+<tr><td><code>=</code></td><td><code>%3D</code></td><td>Separates parameter names from values</td></tr>
+<tr><td><code>?</code></td><td><code>%3F</code></td><td>Starts the query string</td></tr>
+<tr><td><code>#</code></td><td><code>%23</code></td><td>Starts the fragment</td></tr>
+<tr><td><code>+</code></td><td><code>%2B</code></td><td>Means "space" in form data</td></tr>
+<tr><td><code>/</code></td><td><code>%2F</code></td><td>Separates path segments</td></tr>
+<tr><td><code>%</code></td><td><code>%25</code></td><td>The escape character itself</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses a URL Encoder Decoder?</h3>
+
+<p><strong>Web developers</strong> encode query parameters, build redirect URLs, and debug API calls — the most common daily use by far.</p>
+
+<p><strong>SEO and marketing folks</strong> fix broken tracking links and UTM parameters, where one unencoded <code>&</code> silently corrupts campaign data.</p>
+
+<p><strong>API testers</strong> decode percent-encoded URLs from logs to read the actual parameters that were passed.</p>
+
+<p><strong>Anyone sharing links</strong> with spaces, parentheses, or non-English characters encodes them so the link works for every recipient, not just the sender.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Two encoding methods</strong> — component encoding for values, full-URL encoding that preserves structure.</li>
+<li><strong>Bidirectional</strong> — encode text to percent-form and decode <code>%XX</code> sequences back.</li>
+<li><strong>Real-time conversion</strong> — output updates as you type.</li>
+<li><strong>Full UTF-8 support</strong> — Chinese, Arabic, emoji, and all Unicode handled correctly.</li>
+<li><strong>Size comparison</strong> — see original vs encoded character counts.</li>
+<li><strong>Copy and swap</strong> — one-click copy; swap input/output for quick round-trips.</li>
+<li><strong>Private and free</strong> — runs entirely in your browser; URLs and tokens never leave your device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is percent-encoding?</h4>
+<p>Writing a character as <code>%</code> plus two hexadecimal digits (e.g., space → <code>%20</code>, <code>&amp;</code> → <code>%26</code>). It lets URLs safely carry characters that would otherwise break their structure.</p>
+
+<h4>When should I use encodeURIComponent vs encodeURI?</h4>
+<p>Use <code>encodeURIComponent</code> for a <em>value</em> inside a URL (query parameters, path segments) — it encodes everything structural. Use <code>encodeURI</code> for a <em>complete</em> URL — it preserves <code>://</code>, <code>/</code>, <code>?</code>, <code>&amp;</code>, and <code>=</code>.</p>
+
+<h4>Why did my link break when it contained an &amp;?</h4>
+<p>The server read your literal <code>&amp;</code> as a query-parameter separator, splitting your value in two. Encode it as <code>%26</code> so it's treated as data.</p>
+
+<h4>What is the difference between + and %20 for spaces?</h4>
+<p>In HTML form data, <code>+</code> traditionally represents a space. In general URLs, <code>%20</code> is correct. When decoding form submissions, convert <code>+</code> back to spaces.</p>
+
+<h4>How are non-English characters encoded?</h4>
+<p>They're converted to UTF-8 bytes first, then each byte is percent-encoded. One Chinese character typically becomes nine encoded characters (e.g., <code>%E4%B8%8A</code>).</p>
+
+<h4>Can I decode a URL to read its parameters?</h4>
+<p>Yes — paste the encoded URL and decode it. Percent sequences revert to readable characters, revealing the actual query values and redirect targets.</p>
+
+<h4>Is URL encoding the same as encryption?</h4>
+<p>No. Like Base64, it's a reversible encoding with no key and no security — anyone can decode it. It exists for safe transport, not secrecy.</p>
+
+<h4>Is this URL encoder free?</h4>
+<p>Yes — free, no signup, and nothing you paste leaves your browser.</p>
+</article>

@@ -1,71 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Generate accessible, SEO-friendly alt text. Features accessibility scoring, bulk filename converter, and keyword optimization checks.">
-    <title>Advanced Alt Text Generator | TOOLSHUB</title>
-    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
-    <link rel="stylesheet" href="../image-tools/css/global.css">
-    <link rel="stylesheet" href="../image-tools/css/components.css">
-    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
-    <link rel="stylesheet" href="../image-tools/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Alt Text Generator | TOOLSHUB</title>
+<meta name="description" content="Generate accessible, SEO-friendly alt text. Features accessibility scoring, bulk filename converter, and keyword optimization checks.">
+<!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="../image-tools/css/v3-design.css">
+<style>
+/* v3 compat — legacy tool markup mapped onto the v3 design system */
+:root{--border-color:#e4e4e7;--bg-tertiary:#f4f4f5;--bg-primary:#ffffff;--text-primary:#0a0a0b;--text-secondary:#3f3f46;--color-seo:#4f46e5}
+.ws-input,select.ws-input,textarea.ws-input{width:100%;border:1.5px solid #e4e4e7;border-radius:12px;padding:14px 16px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;outline:none;transition:.2s;background:#fff;color:#0a0a0b}
+.ws-input:focus{border-color:#4f46e5;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.ws-input::placeholder{color:#a1a1aa}
+.input-group{margin-bottom:20px}
+.input-label{display:block;font-weight:600;font-size:.92rem;margin-bottom:10px;color:#0a0a0b}
+.input-desc{font-size:.85rem;color:#71717a;margin-top:10px;line-height:1.6}
+.action-bar{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap}
+.output-section{margin-top:28px}
+.section-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.section-title{font-size:1.1rem;font-weight:700;letter-spacing:-.01em}
+.output-container{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden;background:#fff}
+.output-container table{width:100%;border-collapse:collapse;font-size:.94rem}
+.output-container th,.output-container td{padding:12px 16px;border-bottom:1px solid #f4f4f5;text-align:left}
+.output-code{font-family:monospace;font-size:.9rem;background:#f4f4f5;border:1px solid #e4e4e7;border-radius:12px;padding:16px;white-space:pre-wrap;word-break:break-all;color:#0a0a0b}
+.container,.tool-interface-container{max-width:100%}
+.schema-form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.mb-md{margin-bottom:16px}.mb-lg{margin-bottom:24px}.mb-sm{margin-bottom:8px}.mt-md{margin-top:16px}.mt-lg{margin-top:24px}.mt-sm{margin-top:8px}.text-center{text-align:center}
+.tab,.mode-btn,.device-tab,.preview-tab,.editor-tab,.nav-item{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:10px;border:1px solid #e4e4e7;background:#fff;font-size:.88rem;font-weight:600;cursor:pointer;color:#3f3f46;transition:.15s;font-family:inherit}
+.tab:hover,.mode-btn:hover,.device-tab:hover,.preview-tab:hover,.editor-tab:hover,.nav-item:hover{border-color:#c7d2fe}
+.tab.active,.mode-btn.active,.device-tab.active,.preview-tab.active,.editor-tab.active,.nav-item.active{background:#0a0a0b;color:#fff;border-color:#0a0a0b}
+.btn-add-schema,.tu-btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;border:1px solid #e4e4e7;background:#fff;font-size:.85rem;font-weight:600;cursor:pointer;color:#3f3f46;transition:.15s;font-family:inherit}
+.btn-add-schema:hover,.tu-btn-ghost:hover{border-color:#c7d2fe;background:#eef2ff}
+.hidden{display:none!important}
+.selected{outline:2px solid #4f46e5;outline-offset:2px}
+.visual-card,.seo-card{border:1.5px solid #e4e4e7;border-radius:16px;padding:20px;cursor:pointer;transition:.15s;background:#fff}
+.visual-card:hover,.seo-card:hover{border-color:#c7d2fe}
+.option-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:24px}
+.card-icon{font-size:1.4rem;color:#4f46e5;display:block;margin-bottom:10px}
+.card-title{font-weight:700;margin-bottom:6px;color:#0a0a0b}
+.card-desc{font-size:.88rem;color:#71717a}
+.feature-card{border:1px solid #e4e4e7;border-radius:16px;padding:20px;background:#fff}
+.feature-title{font-size:.85rem;font-weight:600;color:#3f3f46;margin-bottom:8px}
+.feature-desc{font-size:.9rem;color:#71717a}
+.toggle-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #f4f4f5;font-size:.92rem;color:#0a0a0b}
+.toggle-switch{position:relative;display:inline-block;width:48px;height:26px;flex:none}
+.toggle-switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;inset:0;background:#d4d4d8;border-radius:99px;transition:.2s;cursor:pointer}
+.slider:before{content:"";position:absolute;width:20px;height:20px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s}
+.toggle-switch input:checked+.slider{background:#4f46e5}
+.toggle-switch input:checked+.slider:before{transform:translateX(22px)}
+.checklist-item{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border:1px solid #e4e4e7;border-radius:12px;margin-bottom:10px;background:#fff;cursor:pointer;transition:.15s}
+.checklist-item:hover{border-color:#c7d2fe}
+.seo-result-item,.preview-box,#serpPreviewBox{border:1px solid #e4e4e7;border-radius:16px;padding:20px;background:#fff;margin-top:16px}
+.seo-url{color:#166534;font-size:.85rem}
+.seo-title{color:#1a0dab;font-size:1.1rem;margin:4px 0}
+.seo-desc{color:#3f3f46;font-size:.9rem}
+.status-badge{display:inline-block;padding:.5rem 1rem;border-radius:30px;font-weight:700}
+.bulk-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.bulk-table th,.bulk-table td{padding:10px 12px;border-bottom:1px solid #f4f4f5;text-align:left}
+.emotional-word{background:#fef3c7;padding:1px 4px;border-radius:4px}
+.power-word{background:#eef2ff;padding:1px 4px;border-radius:4px}
+.invalid,.duplicate-error{border-color:#ef4444!important}
+button.active:not(.nav-item):not(.tab):not(.mode-btn):not(.device-tab):not(.preview-tab):not(.editor-tab),a.active{box-shadow:inset 0 0 0 2px #4f46e5}
+.sim-row{display:flex;gap:10px;align-items:center;padding:8px 0;font-size:.9rem;color:#3f3f46}
+/* website speed test dashboard */
+.speed-dashboard{max-width:100%}
+.url-input-container{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.url-input-container .ws-input{flex:1;min-width:240px}
+.results-container,.history-section{margin-top:24px}
+.perf-header{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-bottom:20px}
+.vitals-summary{flex:1;min-width:240px}
+.gauge-wrapper{display:flex;gap:16px;flex-wrap:wrap}
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:20px 0}
+.category-scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:20px 0}
+.screenshot-section,.audit-container{margin-top:28px}
+.audit-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:10px}
+.table-responsive{overflow-x:auto;border:1px solid #e4e4e7;border-radius:16px}
+.audit-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.audit-table th,.audit-table td{padding:12px 14px;border-bottom:1px solid #f4f4f5;text-align:left}
+.badge{display:inline-block;padding:4px 12px;border-radius:99px;font-size:.78rem;font-weight:700;background:#eef2ff;color:#4f46e5}
+.badge-secondary{background:#f4f4f5;color:#3f3f46}
+.analyze-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:14px;font-weight:600;font-size:.92rem;cursor:pointer;border:none;background:#0a0a0b;color:#fff;font-family:inherit;transition:.2s}
+.analyze-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px -8px rgba(0,0,0,.3)}
+.loading-overlay{position:fixed;inset:0;background:rgba(255,255,255,.94);z-index:50;display:flex;align-items:center;justify-content:center}
+.progress-card{background:#fff;border:1px solid #e4e4e7;border-radius:20px;padding:36px;max-width:480px;width:90%;box-shadow:0 12px 40px -12px rgba(0,0,0,.12)}
+.p-bar{height:10px;background:#f4f4f5;border-radius:99px;overflow:hidden;margin:16px 0}
+.p-fill{height:100%;width:0;background:linear-gradient(135deg,#4f46e5,#7c3aed);border-radius:99px;transition:width .3s}
+.wst-step{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:.9rem;color:#3f3f46}
+.s-spin{width:16px;height:16px;border:2px solid #e4e4e7;border-top-color:#4f46e5;border-radius:50%;animation:spn .8s linear infinite;display:none;flex:none}
+@keyframes spn{to{transform:rotate(360deg)}}
+.error-board{border:1px solid #fecaca;background:#fef2f2;border-radius:16px;padding:28px;margin-top:20px}
+.screenshot-container{border:1px solid #e4e4e7;border-radius:16px;overflow:hidden}
+.screenshot-img{max-width:100%;display:block}
+.data-source-badge{display:inline-block;font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:99px;background:#eef2ff;color:#4f46e5;margin-bottom:8px}
+/* aliases for markup injected by legacy JS at runtime */
+.seo-textarea{width:100%;min-height:160px;border:1.5px solid #e4e4e7;border-radius:16px;padding:22px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;line-height:1.8;resize:vertical;outline:none;transition:.2s;background:#fafafa;color:#0a0a0b}
+.seo-textarea:focus{border-color:#4f46e5;background:#fff;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.seo-textarea::placeholder{color:#a1a1aa}
+.seo-input,select.seo-input,.seo-select{width:100%;border:1.5px solid #e4e4e7;border-radius:12px;padding:14px 16px;font-size:1rem;font-family:'Inter',system-ui,sans-serif;outline:none;transition:.2s;background:#fff;color:#0a0a0b}
+.seo-input:focus,.seo-select:focus{border-color:#4f46e5;box-shadow:0 0 0 4px rgba(79,70,229,.08)}
+.seo-input::placeholder{color:#a1a1aa}
 
-
-  <link rel="stylesheet" href="../image-tools/css/th-header-footer.css">
+</style>
 </head>
-<body class="tool-page">
-    <header class="th-header">
-  <div class="th-header-inner">
-    <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-    <nav class="th-nav" aria-label="Main navigation">
-      <div class="th-dropdown">
-        <button class="th-drop-btn" aria-haspopup="true">All Tools <i class="fa-solid fa-chevron-down"></i></button>
-        <div class="th-dropdown-menu"><a href="../image-tools/index.html"><i class="fa-regular fa-image"></i>Image Tools</a><a href="../pdf-tools/index.html"><i class="fa-regular fa-file-pdf"></i>PDF Tools</a><a href="../text-tools/index.html"><i class="fa-solid fa-font"></i>Text & Writing</a><a href="../seo-tools/index.html"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO Tools</a><a href="../calculator-tools/index.html"><i class="fa-solid fa-calculator"></i>Calculators</a><a href="../binary-tools/index.html"><i class="fa-solid fa-code"></i>Binary Tools</a><a href="../code-format-tools/index.html"><i class="fa-solid fa-file-code"></i>Code & Formatters</a><a href="../doc-tools/index.html"><i class="fa-regular fa-file-lines"></i>Documents</a><a href="../other-tools/index.html"><i class="fa-solid fa-shapes"></i>Other Tools</a></div>
-      </div>
-      <a class="th-nav-link" href="../image-tools/index.html">Image Tools</a>
-      <a class="th-nav-link" href="../pdf-tools/index.html">PDF Tools</a>
-      <a class="th-nav-link" href="../seo-tools/index.html">SEO Tools</a>
-      <a class="th-nav-link" href="../about-us.html">About</a>
-    </nav>
-    <div class="th-spacer"></div>
-    <div class="th-search"><i class="fa-solid fa-magnifying-glass"></i><input type="text" class="th-search-input" data-th-home="../index.html" placeholder="Search 203 tools..." aria-label="Search tools"></div>
-    <button class="th-theme-btn" data-th-theme title="Toggle dark mode" aria-label="Toggle dark mode"><i class="fa-regular fa-moon"></i></button>
-    <a class="th-cta" href="../index.html#features">Explore Tools</a>
-    <button class="th-mobile-toggle" data-th-menu-btn aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+<body>
+
+<header class="hd"><div class="hd-in">
+  <a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+  <nav class="nav"><a href="../index.html#tools">All Tools</a><a href="../about-us.html">About</a></nav>
+  <div class="hd-right"><a class="hd-cta" href="../index.html#tools">Explore Tools</a></div>
+</div></header>
+<!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+<nav class="crumbs"><a href="../index.html">Home</a> &nbsp;/&nbsp; <span>Advanced Alt Text Generator</span></nav>
+
+<section class="hero">
+  <span class="hero-eyebrow">SEO Tools</span>
+  <h1>Advanced <em>Alt Text</em> Generator</h1>
+  <p>Create distinct, descriptive, and accessible alt text. Convert filenames to descriptions instantly.</p>
+  <div class="hero-meta">
+    <span><i class="fa-solid fa-bolt"></i> Instant results</span>
+    <span><i class="fa-solid fa-lock"></i> 100% private</span>
+    <span><i class="fa-solid fa-check"></i> No sign-up</span>
   </div>
-  <div class="th-mobile-menu" data-th-menu><a href="../image-tools/index.html">Image Tools</a><a href="../pdf-tools/index.html">PDF Tools</a><a href="../text-tools/index.html">Text & Writing</a><a href="../seo-tools/index.html">SEO Tools</a><a href="../calculator-tools/index.html">Calculators</a><a href="../binary-tools/index.html">Binary Tools</a><a href="../code-format-tools/index.html">Code & Formatters</a><a href="../doc-tools/index.html">Documents</a><a href="../other-tools/index.html">Other Tools</a><a href="../about-us.html">About Us</a><a href="../contact-us.html">Contact Us</a></div>
-</header>
-    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
-    <main class="tool-main">
-        <div class="container">
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a> &gt;
-                <a href="index.html">SEO Tools</a> &gt;
-                <span>Advanced Alt Text Generator</span>
-            </div>
-            <div class="tool-header">
-                <h1 class="tool-title">Advanced Alt Text Generator</h1>
-                <p class="tool-description">Generate accessible, SEO-friendly alt text. Features accessibility scoring, bulk filename converter, and keyword optimization checks.</p>
-                <div class="tool-badges"></div>
-            </div>
-            <div class="tool-workspace">
-<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
-<div class="container text-center">
-<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Advanced Alt Text Generator</h1>
-<p class="hero-subtitle">Create distinct, descriptive, and accessible alt text. Convert filenames to
-                    descriptions instantly.</p>
-</div>
 </section>
+
+<div class="ws-wrap"><div class="ws">
+  <div class="ws-bar"><span class="ws-dot"></span><b>Advanced Alt Text Generator</b><span>v3.0 · local</span></div>
+  <div class="ws-body">
+
 <div class="container">
 <div class="tool-interface-container" style="max-width: 1100px; margin: 0 auto;">
 <div class="mode-toggle">
-<button class="mode-btn active" id="btn-single" onclick="setMode('single')">Single Image
+<button class="mode-btn active tu-btn tu-btn-ghost" id="btn-single" onclick="setMode('single')"><i class="fa-solid fa-image"></i> Single Image
                         Optimizer</button>
-<button class="mode-btn" id="btn-bulk" onclick="setMode('bulk')">Bulk Filename Converter</button>
+<button class="mode-btn tu-btn tu-btn-ghost" id="btn-bulk" onclick="setMode('bulk')"><i class="fa-solid fa-images"></i> Bulk Filename Converter</button>
 </div>
 <!-- Single Mode -->
 <div id="view-single">
@@ -75,7 +148,7 @@
 <div class="schema-form-grid">
 <div class="input-group">
 <label class="input-label">Image Context</label>
-<select class="seo-select" id="imgContext" onchange="updateTemplate()">
+<select class="seo-select ws-input" id="imgContext" onchange="updateTemplate()">
 <option value="ecommerce">E-Commerce Product</option>
 <option value="informational">Informational / Diagram</option>
 <option value="decorative">Decorative</option>
@@ -85,7 +158,7 @@
 </div>
 <div class="input-group">
 <label class="input-label">Target Keyword (Optional)</label>
-<input class="seo-input" id="keyword" oninput="generate()" placeholder="e.g. leather boots" type="text"/>
+<input class="seo-input ws-input" id="keyword" oninput="generate()" placeholder="e.g. leather boots" type="text"/>
 </div>
 </div>
 <div id="dynamicInputs" style="margin-bottom: 1.5rem; border: 1px solid #e2e8f0; padding: 1rem; border-radius: 8px;">
@@ -93,11 +166,11 @@
 </div>
 <div class="input-group">
 <label class="input-label">Generated Alt Text (Editable)</label>
-<textarea class="seo-textarea" id="finalAlt" oninput="analyze()" style="height: 100px; font-size: 1.1rem;"></textarea>
+<textarea class="seo-textarea ws-textarea" id="finalAlt" oninput="analyze()" style="height: 100px; font-size: 1.1rem;"></textarea>
 </div>
 <div class="action-bar">
-<button class="btn-primary" onclick="copyAlt()">Copy Text</button>
-<button class="btn-secondary" onclick="copyHtml()">Copy HTML Tag</button>
+<button class="btn-primary btn btn-dark tu-btn tu-btn-ghost" onclick="copyAlt()"><i class="fa-solid fa-copy"></i> Copy Text</button>
+<button class="btn-secondary btn btn-light tu-btn tu-btn-ghost" onclick="copyHtml()"><i class="fa-solid fa-code"></i> Copy HTML Tag</button>
 </div>
 </div>
 <!-- Sidebar Analysis -->
@@ -128,7 +201,7 @@
 <div id="view-bulk" style="display: none;">
 <div class="input-group">
 <label class="input-label">Paste Filenames (One per line)</label>
-<textarea class="seo-textarea" id="bulkInput" oninput="processBulk()" placeholder="IMG_2024.jpg
+<textarea class="seo-textarea ws-textarea" id="bulkInput" oninput="processBulk()" placeholder="IMG_2024.jpg
 blue-running-shoes.png
 header-banner-v2.webp" style="height: 150px;"></textarea>
 <p class="input-desc">We will intelligently convert filenames into readable alt text
@@ -145,48 +218,51 @@ header-banner-v2.webp" style="height: 150px;"></textarea>
 <!-- Rows -->
 </div>
 </div>
-<button class="btn-primary" onclick="copyAllBulk()" style="margin-top: 1rem;">Copy All
+<button class="btn-primary btn btn-dark tu-btn tu-btn-primary" onclick="copyAllBulk()" style="margin-top: 1rem;"><i class="fa-solid fa-copy"></i> Copy All
                         Suggestions</button>
 </div>
 </div>
 </div>
-            </div>
-            <section class="seo-article" data-tool="alt-text-generator">
-<article class="tool-article">
-<h2>Alt Text Generator — Write Image Descriptions That Help SEO and Accessibility</h2>
 
-<p>I audited a client's blog last year and found 340 images with alt text like "IMG_0042.jpg" — invisible to Google Images, meaningless to screen readers, a ranking opportunity sitting in plain sight. An alt text generator writes proper alternative text for your images: concise, descriptive phrases that tell search engines what the image shows and let visually impaired visitors understand your content.</p>
+  </div>
+</div></div>
 
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">01 — HOW IT WORKS</span><h2>Three steps, zero learning curve</h2></div>
+  <div class="steps">
+<div class="step"><div class="step-n">i.</div><h3>Add your image info</h3><p>Enter the image filename or a short description of what the picture shows.</p></div>
+<div class="step"><div class="step-n">ii.</div><h3>Choose a mode</h3><p>Pick the single-image optimizer or the bulk filename converter for batches.</p></div>
+<div class="step"><div class="step-n">iii.</div><h3>Copy the alt text</h3><p>Copy the generated text or the full HTML &lt;img&gt; tag and paste it into your page.</p></div>
+  </div>
+</section>
+
+<div class="article-wrap"><article class="article">
+  <div class="article-hero">
+    <span class="article-tag">Guide</span>
+    <h2>Alt Text Generator — Write Image Descriptions That Help SEO and Accessibility</h2>
+    <p class="deck">I audited a client's blog last year and found 340 images with alt text like "IMG_0042.jpg" — invisible to Google Images, meaningless to screen readers, a ranking opportunity sitting in plain sight. An alt text generator writes proper alternative text for your images: concise, descriptive phrases that tell search engines what the image shows and let visually impaired visitors understand your content.</p>
+    <div class="article-meta">
+      <div class="avatar">T</div>
+      <div><b>TOOLSHUB Editorial</b><span>8 min read · Updated Oct 2026</span></div>
+    </div>
+  </div>
+  <div class="article-body">
+<p class="lead">I audited a client's blog last year and found 340 images with alt text like "IMG_0042.jpg" — invisible to Google Images, meaningless to screen readers, a ranking opportunity sitting in plain sight. An alt text generator writes proper alternative text for your images: concise, descriptive phrases that tell search engines what the image shows and let visually impaired visitors understand your content.</p>
 <h3>What Is Alt Text and Why Does It Matter?</h3>
-
 <p>Alt text (the <code>alt</code> attribute on an <code>&lt;img&gt;</code> tag) serves two audiences. For people using screen readers, it is read aloud in place of the image — it is how a blind visitor "sees" your product photo. For search engines, it is one of the few textual signals describing image content, feeding both Google Images rankings and the page's overall topical relevance.</p>
-
 <p>Good alt text describes the image's function in context, not just its pixels. <code>alt="dog"</code> is technically valid but useless. <code>alt="Golden retriever puppy chewing a red rubber toy on a lawn"</code> tells everyone — human and crawler — what matters. The generator produces this kind of specific, natural phrasing instead of filename gibberish.</p>
-
 <p>There is also a quiet third audience now: AI systems. ChatGPT, Perplexity, and visual search tools increasingly rely on alt text to understand images they cannot otherwise interpret. Well-written alt text is becoming AI-visibility infrastructure, not just an SEO checkbox.</p>
-
 <h3>How to Use the Alt Text Generator</h3>
-
 <p>Upload your image or describe it in the input field, depending on the tool type. AI-powered generators analyze the actual pixels; text-based ones expand your short description into polished alt text. Review the suggestion, tweak it for your page's context (mention the product name, the location, whatever the surrounding article is about), then copy it into your CMS's alt field or <code>&lt;img&gt;</code> tag.</p>
-
 <p>Context is the part generators cannot fully do for you. The same photo of a coffee cup needs different alt text on a product page ("Ceramic pour-over coffee dripper, matte black, 600ml") versus a blog post ("Barista pouring hot water over coffee grounds in a V60 dripper"). Let the tool draft, then add the context only you know.</p>
-
 <p>For bulk work — a store with 500 product photos — look for generators with batch or API support. Doing them one by one is a weekend you will never get back.</p>
-
 <h3>How Alt Text Generation Works</h3>
-
 <p>Modern generators combine vision models with language models in three steps.</p>
-
 <p><strong>Step 1 — Image analysis.</strong> A vision model scans the uploaded image, identifying objects, people, settings, colors, and spatial relationships — the same kind of scene understanding in your phone's photo search.</p>
-
 <p><strong>Step 2 — Description drafting.</strong> A language model turns those observations into a natural sentence, typically capped around 125 characters — the practical limit before screen readers start truncating or users tune out.</p>
-
 <p><strong>Step 3 — SEO shaping.</strong> The draft is refined for search: relevant keywords woven in naturally, filler words trimmed, and decorative-image detection flagging pictures that should get empty alt (<code>alt=""</code>) instead of a description.</p>
-
 <p>The 125-character guideline comes from screen reader behavior — most pause or cut off longer descriptions. It is a usability rule first, an SEO rule second.</p>
-
 <h3>Alt Text Examples: Bad vs Good</h3>
-
 <table>
 <thead><tr><th>Weak alt text</th><th>Strong alt text</th><th>Why it wins</th></tr></thead>
 <tbody>
@@ -197,21 +273,13 @@ header-banner-v2.webp" style="height: 150px;"></textarea>
 <tr><td><code>decorative line</code></td><td><code>""</code> (empty)</td><td>Decorative images should be silent</td></tr>
 </tbody>
 </table>
-
 <h3>Who Uses Alt Text Generators?</h3>
-
 <p><strong>Bloggers</strong> fix years of neglected image SEO across their archives in bulk.</p>
-
 <p><strong>E-commerce managers</strong> write product-image alt text that ranks in Google Images and Shopping.</p>
-
 <p><strong>Web developers</strong> generate alt text during builds to ship accessible sites from day one.</p>
-
 <p><strong>Content marketers</strong> make infographics and charts understandable to crawlers and screen readers.</p>
-
 <p><strong>Accessibility consultants</strong> audit and remediate client sites for WCAG compliance.</p>
-
 <h3>Key Features</h3>
-
 <ul>
 <li><strong>Free generation</strong> — no signup for basic use.</li>
 <li><strong>AI image analysis</strong> — describes actual image content, not filenames.</li>
@@ -221,74 +289,41 @@ header-banner-v2.webp" style="height: 150px;"></textarea>
 <li><strong>Bulk support</strong> — handle product catalogs and media libraries.</li>
 <li><strong>Decorative detection</strong> — flags images that should have empty alt.</li>
 </ul>
+<h3>Frequently asked</h3>
+<div class="faq">
+<div class="faq-item open"><div class="faq-q">Is this alt text generator free? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — basic generation is free with no account required. Bulk and API features may sit on paid tiers.</p></div></div>
+<div class="faq-item"><div class="faq-q">How long should alt text be? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Aim for under 125 characters. Screen readers may truncate longer text, and concise descriptions serve users better.</p></div></div>
+<div class="faq-item"><div class="faq-q">Should I put keywords in alt text? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Include them naturally when they describe the image — never stuff. <code>alt="buy cheap shoes online discount footwear"</code> hurts more than it helps.</p></div></div>
+<div class="faq-item"><div class="faq-q">What about decorative images? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Use empty alt (<code>alt=""</code>). This tells screen readers to skip the image entirely instead of announcing something meaningless.</p></div></div>
+<div class="faq-item"><div class="faq-q">Does alt text really affect SEO? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Yes — it drives Google Images traffic and reinforces the page's topical relevance. It is a small signal per image that compounds across a site.</p></div></div>
+<div class="faq-item"><div class="faq-q">Can AI-generated alt text replace manual writing? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>For drafting at scale, yes. But always review — only you know the page context the image serves, and context is what separates good alt text from generic.</p></div></div>
+<div class="faq-item"><div class="faq-q">Do I need alt text on every image? <i class="fa-solid fa-plus"></i></div><div class="faq-a"><p>Every meaningful image, yes. Decorative flourishes get empty alt. There is no exemption for "it's just a stock photo."</p></div></div>
+</div>
+  </div>
+</article></div>
 
-<h3>Frequently Asked Questions</h3>
-
-<h4>Is this alt text generator free?</h4>
-<p>Yes — basic generation is free with no account required. Bulk and API features may sit on paid tiers.</p>
-
-<h4>How long should alt text be?</h4>
-<p>Aim for under 125 characters. Screen readers may truncate longer text, and concise descriptions serve users better.</p>
-
-<h4>Should I put keywords in alt text?</h4>
-<p>Include them naturally when they describe the image — never stuff. <code>alt="buy cheap shoes online discount footwear"</code> hurts more than it helps.</p>
-
-<h4>What about decorative images?</h4>
-<p>Use empty alt (<code>alt=""</code>). This tells screen readers to skip the image entirely instead of announcing something meaningless.</p>
-
-<h4>Does alt text really affect SEO?</h4>
-<p>Yes — it drives Google Images traffic and reinforces the page's topical relevance. It is a small signal per image that compounds across a site.</p>
-
-<h4>Can AI-generated alt text replace manual writing?</h4>
-<p>For drafting at scale, yes. But always review — only you know the page context the image serves, and context is what separates good alt text from generic.</p>
-
-<h4>Do I need alt text on every image?</h4>
-<p>Every meaningful image, yes. Decorative flourishes get empty alt. There is no exemption for "it's just a stock photo."</p>
-</article>
+<section class="sec">
+  <div class="sec-head"><span class="sec-num">02 — KEEP EXPLORING</span><h2>Related tools</h2></div>
+  <div class="rel-grid">
+<a class="rel" href="meta-tag-generator.html"><i class="fa-solid fa-tags" style="color:#4f46e5"></i><h3>Meta Tag Generator</h3><p>Generate and validate meta tags.</p></a>
+<a class="rel" href="open-graph-generator.html"><i class="fa-solid fa-share-nodes" style="color:#7c3aed"></i><h3>Open Graph Generator</h3><p>Social cards for Facebook and X.</p></a>
+<a class="rel" href="meta-description-checker.html"><i class="fa-solid fa-tags" style="color:#4f46e5"></i><h3>Meta Description Checker</h3><p>Optimize descriptions for CTR.</p></a>
+<a class="rel" href="slug-generator.html"><i class="fa-solid fa-link" style="color:#7c3aed"></i><h3>Slug Generator</h3><p>SEO-friendly URL slugs.</p></a>
+  </div>
 </section>
-        </div>
-    </main>
-    <footer class="th-footer">
-  <div class="th-footer-top">
-    <div class="th-f-brand">
-      <a class="th-logo" href="../index.html"><span class="th-logo-badge"><i class="fa-solid fa-wrench"></i></span><span class="th-logo-text">TOOL<em>SHUB</em></span></a>
-      <p>203 free online tools that run entirely in your browser. No sign-up, no watermarks, no limits.</p>
-      <div class="th-social">
-        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      </div>
-    </div>
-    <div class="th-f-col">
-      <h4>Popular Tools</h4>
-      <ul><li><a href="../image-tools/compression/image-compressor.html">Image Compressor</a></li><li><a href="../pdf-tools/merge-pdf.html">Merge PDF</a></li><li><a href="../seo-tools/word-counter.html">Word Counter</a></li><li><a href="../code-format-tools/formatters/json-formatter.html">JSON Formatter</a></li><li><a href="../image-tools/conversion/heic-jpg-converter.html">HEIC to JPG</a></li><li><a href="../code-format-tools/encoders/base64-encoder-decoder.html">Base64 Encoder</a></li></ul>
-    </div>
-    <div class="th-f-col">
-      <h4>Categories</h4>
-      <ul><li><a href="../image-tools/index.html">Image Tools</a></li><li><a href="../pdf-tools/index.html">PDF Tools</a></li><li><a href="../text-tools/index.html">Text & Writing</a></li><li><a href="../seo-tools/index.html">SEO Tools</a></li><li><a href="../calculator-tools/index.html">Calculators</a></li><li><a href="../index.html#features">View All 203 Tools</a></li></ul>
-    </div>
-    <div class="th-f-col th-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Get notified when we launch new tools. No spam, ever.</p>
-      <form class="th-newsletter-form" onsubmit="return false;"><input type="email" placeholder="Your email address" aria-label="Email address"><button type="submit">Join</button></form>
-      <div class="th-f-stats">
-        <div><b>203</b><span>Free Tools</span></div>
-        <div><b>10</b><span>Categories</span></div>
-        <div><b>100%</b><span>Free Forever</span></div>
-      </div>
-    </div>
+
+<footer class="ft">
+  <div class="ft-in">
+    <div class="ft-brand"><a class="logo" href="../index.html"><span class="logo-mark">T</span>TOOLSHUB</a>
+      <p>203 free tools that run entirely in your browser. No sign-up, no tracking.</p></div>
+    <div><h4>Tools</h4><ul><li><a href="../index.html#tools">All 203 tools</a></li><li><a href="../index.html#seo-tools">SEO tools</a></li><li><a href="../index.html#image-tools">Image tools</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="../sitemap.xml">Sitemap</a></li><li><a href="../about-us.html">About</a></li><li><a href="../contact-us.html">Contact</a></li></ul></div>
   </div>
-  <div class="th-footer-bottom">
-    <div class="th-footer-bottom-inner">
-      <span>&copy; 2026 TOOLSHUB. All rights reserved. Made for the open web.</span>
-      <div class="th-f-legal"><a href="../about-us.html">About</a><a href="../contact-us.html">Contact</a><a href="../sitemap.xml">Sitemap</a></div>
-    </div>
-  </div>
+  <div class="ft-bot"><span>© 2026 TOOLSHUB</span><span>Made for the open web</span></div>
 </footer>
-    <!-- MONETAG-ZONE: popunder - paste zone script here -->
-    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<!-- MONETAG-ZONE: popunder - paste zone script here -->
+<!-- MONETAG-ZONE: in-page-push - paste zone script here -->
 <script>
         // --- State ---
         let currentMode = 'single';
@@ -469,7 +504,6 @@ header-banner-v2.webp" style="height: 150px;"></textarea>
         // Init
         updateTemplate();
 
-    </script>
-  <script src="../image-tools/js/th-interactions.js"></script>
+    </script><script src="../image-tools/js/th-interactions.js"></script><script src="../image-tools/js/tu-unified.js"></script><script src="../image-tools/js/v3.js"></script>
 </body>
 </html>
