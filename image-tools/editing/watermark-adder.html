@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Add Text or Image Watermark to photos online. Batch process multiple images, custom positioning, transparency, and tiling support.">
+    <title>Watermark Adder - Batch Image Watermarking | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../../image-tools/css/global.css">
+    <link rel="stylesheet" href="../../image-tools/css/components.css">
+    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../../about-us.html">About</a>
+                <a class="nav-link" href="../../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> &gt;
+                <a href="../index.html">Image Tools</a> &gt;
+                <span>🎨 Watermark Adder</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">🎨 Watermark Adder</h1>
+                <p class="tool-description">Protect your images with text or logo watermarks. Supports batch processing,
+                    transparency, and smart tiling.</p>
+                <div class="tool-badges"><span class="badge badge-primary">Text &amp; Image</span><span class="badge badge-primary">Individual Downloads</span><span class="badge badge-secondary">Transparency</span></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<section class="preview-area">
+<div id="upload-zone"></div>
+<div id="preview-container" style="display: none; margin-top: 20px; text-align: center;">
+<img id="preview-img" style="max-width: 100%; max-height: 500px; border: 1px solid var(--border-color); border-radius: 8px;"/>
+<p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-secondary);">Preview (First
+                            Image)</p>
+</div>
+</section>
+<aside class="control-panel">
+<!-- Type Selection -->
+<div class="control-section">
+<h3 class="control-section-title">Type</h3>
+<div class="preset-buttons" id="type-select">
+<button class="preset-btn active" data-type="text">Text</button>
+<button class="preset-btn" data-type="image">Image / Logo</button>
+</div>
+</div>
+<!-- Text Controls -->
+<div class="control-section" id="text-controls">
+<label class="control-label">Text Content</label>
+<input class="form-input" id="wm-text" placeholder="Enter text..." type="text" value="© Copyright 2025"/>
+<div style="display: flex; gap: 10px; margin-top: 10px;">
+<div style="flex: 1;">
+<label class="control-label">Size</label>
+<input class="form-input" id="wm-size" type="number" value="48"/>
+</div>
+<div>
+<label class="control-label">Color</label>
+<input id="wm-color" style="height: 38px; width: 50px; padding: 0; border: none; cursor: pointer;" type="color" value="#ffffff"/>
+</div>
+</div>
+</div>
+<!-- Image Controls -->
+<div class="control-section" id="image-controls" style="display: none;">
+<label class="control-label">Upload Logo</label>
+<button class="btn btn-secondary w-full" id="upload-logo-btn">Select Logo File</button>
+<input accept="image/*" id="logo-input" style="display: none;" type="file"/>
+<div id="logo-preview" style="margin-top: 10px; text-align: center; display: none;">
+<img id="logo-img-preview" style="max-height: 50px; border: 1px solid #ccc;"/>
+</div>
+<div style="margin-top: 10px;">
+<label class="control-label">Scale Logo (%)</label>
+<input class="slider-input" id="logo-scale" max="100" min="10" type="range" value="30"/>
+</div>
+</div>
+<!-- Positioning & Opacity -->
+<div class="control-section">
+<h3 class="control-section-title">Appearance</h3>
+<label class="control-label">Position</label>
+<div class="preset-buttons" id="pos-select" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px;">
+<button class="preset-btn" data-pos="tl">↖</button>
+<button class="preset-btn" data-pos="tc">↑</button>
+<button class="preset-btn" data-pos="tr">↗</button>
+<button class="preset-btn" data-pos="cl">←</button>
+<button class="preset-btn active" data-pos="cc">⊙</button>
+<button class="preset-btn" data-pos="cr">→</button>
+<button class="preset-btn" data-pos="bl">↙</button>
+<button class="preset-btn" data-pos="bc">↓</button>
+<button class="preset-btn" data-pos="br">↘</button>
+</div>
+<div class="control-group" style="margin-top: 15px;">
+<label class="control-label">Opacity: <span id="opacity-val">50%</span></label>
+<input class="slider-input" id="wm-opacity" max="100" min="0" type="range" value="50"/>
+</div>
+<div class="control-group">
+<label class="control-label">Rotation: <span id="rot-val">0°</span></label>
+<input class="slider-input" id="wm-rotation" max="180" min="-180" type="range" value="0"/>
+</div>
+<div class="toggle-control" style="margin-top: 10px;">
+<span class="toggle-label">Tile Watermark</span>
+<div class="toggle-switch" id="tile-toggle"></div>
+</div>
+</div>
+<div class="control-section">
+<button class="btn btn-primary w-full" disabled="" id="convert-btn"><span>🎨</span> Apply
+                            Watermark</button>
+<button class="btn btn-premium-download w-full mt-3" id="download-all-btn" style="display: none;"><span>📥</span> Download All</button>
+<button class="btn btn-secondary w-full mt-2" id="reset-btn" style="display: none;"><span>🔄</span> Start Over</button>
+</div>
+</aside>
+</div>
+</div>
+</main>
+            </div>
+            <section class="seo-article" data-tool="watermark-adder">
+<article class="tool-article">
+<h2>Watermark Adder — Add Text Watermarks to Photos Online Free</h2>
+
+<p>The first time someone reused one of my photos on their own page without asking, I did not feel angry so much as unprepared. My name was nowhere on the image. A watermark fixes that quietly — a small line of text or a logo stamped onto the photo that says who made it, every time the file travels. This watermark adder lets you overlay text on any image in seconds, with control over opacity, size, position, and rotation, all running locally in your browser so your photos never leave your device.</p>
+
+<h3>What Is a Watermark Adder?</h3>
+
+<p>A watermark is a semi-transparent mark placed over an image to identify its creator. The concept is older than digital photography — paper mills literally pressed patterns into wet paper to prove origin, and "watermarking" borrowed the name. On the web, it is the text or logo you see stamped across stock photos and professional portfolios.</p>
+
+<p>This tool handles the most common case: <strong>text watermarks</strong>. You type something like "© YourName 2026" or your website address, then tune how it looks — font size, color, transparency, position, even rotation. Some tools also support logo watermarks (a PNG image overlay), which look more professional for brand recognition, but text covers copyright notices and attribution perfectly well on its own.</p>
+
+<p>Why a dedicated tool instead of your phone's photo editor? Speed and control. Most editors bury text overlays in menus and give you opaque captions. A watermark needs to be <em>transparent</em> — visible enough to establish ownership, subtle enough not to ruin the photo — and that balance takes the specific opacity slider a watermark tool provides.</p>
+
+<h3>How to Add a Watermark to an Image</h3>
+
+<p>The whole process takes under 30 seconds.</p>
+
+<p><strong>Step 1 — Upload your image.</strong> Drag and drop or click to browse. JPG, PNG, WebP, and GIF all work, with no file-size limit in sight. If you are watermarking a whole set, consider a bulk workflow instead of repeating this per file.</p>
+
+<p><strong>Step 2 — Type your watermark text.</strong> Your name, your brand, a copyright line, or a URL — whatever you want attached to the file wherever it travels. A good default is your name plus the year, e.g. "© YourName 2026".</p>
+
+<p><strong>Step 3 — Tune the look.</strong> Set opacity between 10 and 100 percent, pick a font size from 8 to 100 pixels, and adjust position. The preview updates live as you change options, so you see exactly what you will download. For rotation and color control, a few seconds of experimentation goes further than guessing.</p>
+
+<p><strong>Step 4 — Download.</strong> One click saves the watermarked image as a PNG. Clean output, no tool branding stamped on it — the only mark on the file is yours.</p>
+
+<p>The habit worth building: watermark <em>before</em> you share, every time. Once a clean copy is floating around the internet, adding a watermark later cannot take it back.</p>
+
+<h3>Text Watermarks vs. Logo Watermarks</h3>
+
+<p>Both establish ownership; they suit different jobs. Here is how I think about the choice:</p>
+
+<table>
+<thead><tr><th>Type</th><th>Best for</th><th>Looks like</th></tr></thead>
+<tbody>
+<tr><td>Text watermark</td><td>Copyright notices, URLs, quick attribution</td><td>"© YourName 2026" in a chosen font</td></tr>
+<tr><td>Logo watermark</td><td>Brand recognition, client previews, portfolios</td><td>Your business mark in a corner</td></tr>
+<tr><td>Diagonal tile text</td><td>Maximum theft deterrence</td><td>Repeated text across the whole image</td></tr>
+<tr><td>Corner signature</td><td>Minimal, professional attribution</td><td>Small mark in a bottom corner</td></tr>
+</tbody>
+</table>
+
+<p>Text watermarks are the fastest to make and read clearly at any size — great for adding a copyright line or website URL. Logos build brand recognition and look more professional in client galleries, but they require you to have a clean transparent PNG ready. The diagonal style repeats across the image and cannot be cropped out easily, which is the strongest deterrent short of never sharing the photo at all.</p>
+
+<h3>Who Adds Watermarks — and Why</h3>
+
+<p><strong>Photographers</strong> watermark client previews and portfolio shots. The mark lets buyers inspect lighting, focus, and expression while making it pointless to screenshot the preview as the final product.</p>
+
+<p><strong>Content creators and bloggers</strong> stamp original graphics and infographics so that when an image gets reposted — and it will — their name or domain travels with it. This is free attribution you set up once.</p>
+
+<p><strong>E-commerce sellers</strong> watermark product photos to discourage competitors from lifting listing images. On marketplaces, image theft is common enough that sellers treat watermarking as routine, right alongside <strong>resizing</strong> and <strong>background cleanup</strong> in their photo prep.</p>
+
+<p><strong>Designers and agencies</strong> watermark mockups and drafts sent for review. It signals "work in progress, not final" and protects unfinished concepts from being passed off as delivered.</p>
+
+<h3>Getting the Placement and Opacity Right</h3>
+
+<p>A watermark has two jobs that pull in opposite directions: be noticeable enough to protect, subtle enough not to distract. Here is what works.</p>
+
+<ul>
+<li><strong>Opacity 30–50%.</strong> This is the sweet spot competitors and photographers converge on — readable on close look, invisible at a glance.</li>
+<li><strong>Corners for subtlety.</strong> A bottom corner keeps the mark out of the composition's way while still identifying the file.</li>
+<li><strong>Center for protection.</strong> A diagonal mark across the focal point cannot be cropped out — but it does change how the image reads, so reserve it for previews you are actively protecting.</li>
+<li><strong>Contrast matters.</strong> White semi-transparent text works on dark areas, dark text on light areas. Check your photo's dominant tones before choosing a color.</li>
+<li><strong>Scale to the image.</strong> A watermark that is readable on a 4000px original may vanish on a 800px export. Size for the version you are sharing.</li>
+<li><strong>Keep the clean original.</strong> Always save the unwatermarked file separately — you need it for prints, licensing, and any future use.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this watermark tool free?</h4>
+<p>Yes, completely free. No signup, no credits, no hidden fees — add watermarks to as many images as you like.</p>
+
+<h4>Can I use my logo instead of text?</h4>
+<p>This tool stamps text watermarks, which are ideal for copyright notices and branding. For logo overlays, use a PNG-capable image watermark tool — text such as your company or site name protects photos effectively on its own.</p>
+
+<h4>What opacity should I use?</h4>
+<p>30–50% is the recommended range — visible enough to establish ownership, subtle enough not to distract from the photo content.</p>
+
+<h4>Will the watermark reduce my image quality?</h4>
+<p>The watermark is drawn as an overlay without touching the rest of the pixels. PNG output preserves quality perfectly; JPG re-save introduces only the minimal compression any JPEG export would.</p>
+
+<h4>Can watermarks be removed?</h4>
+<p>A determined editor with enough time can remove almost any watermark, but it takes real effort and usually leaves visible traces. Diagonal placement across the focal point makes removal hardest. Keep unwatermarked originals in secure storage.</p>
+
+<h4>Are my images uploaded to a server?</h4>
+<p>No. Everything runs locally in your browser — your photos never leave your device.</p>
+
+<h4>What image formats are supported?</h4>
+<p>JPG, PNG, WebP, and GIF for input; the watermarked result downloads as a PNG.</p>
+
+<h4>Should I watermark every photo I share?</h4>
+<p>For professional work — client previews, portfolio pieces, product photos, original graphics — yes, it is cheap insurance. For casual personal snaps, it is overkill.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../../about-us.html">About Us</a>
+                    <a class="footer-link" href="../../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../js/shared/unified-input.js"></script>
+<script src="../js/utils/image-loader.js"></script>
+<script>
+        class WatermarkAdder {
+            constructor() {
+                this.files = [];
+                this.results = [];
+                this.logoImg = null;
+                this.settings = {
+                    type: 'text',
+                    text: '© Copyright 2025',
+                    textSize: 48,
+                    textColor: '#ffffff',
+                    logoScale: 0.3,
+                    position: 'cc',
+                    opacity: 0.5,
+                    rotation: 0,
+                    tiled: false
+                };
+                this.debounceTimer = null;
+                this.init();
+            }
+
+            init() {
+                this.unifiedInput = new UnifiedInput({
+                    containerId: 'upload-zone',
+                    toolIcon: '🎨',
+                    toolName: 'Watermark Adder',
+                    acceptTypes: 'image/*',
+                    onFilesLoaded: (files) => this.handleFilesLoaded(files)
+                });
+                this.setupControls();
+            }
+
+            setupControls() {
+                // Type Switch
+                document.querySelectorAll('#type-select .preset-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        document.querySelectorAll('#type-select .preset-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        this.settings.type = btn.dataset.type;
+                        document.getElementById('text-controls').style.display = this.settings.type === 'text' ? 'block' : 'none';
+                        document.getElementById('image-controls').style.display = this.settings.type === 'image' ? 'block' : 'none';
+                        this.updatePreview();
+                    });
+                });
+
+                // Text Inputs
+                const updateSetting = (key, val, refresh = true) => {
+                    this.settings[key] = val;
+                    if (refresh) this.updatePreview();
+                };
+
+                document.getElementById('wm-text').addEventListener('input', e => updateSetting('text', e.target.value));
+                document.getElementById('wm-size').addEventListener('input', e => updateSetting('textSize', parseInt(e.target.value)));
+                document.getElementById('wm-color').addEventListener('input', e => updateSetting('textColor', e.target.value));
+
+                // Image Inputs
+                document.getElementById('upload-logo-btn').addEventListener('click', () => document.getElementById('logo-input').click());
+                document.getElementById('logo-input').addEventListener('change', async (e) => {
+                    if (e.target.files.length > 0) {
+                        const file = e.target.files[0];
+                        this.logoImg = await window.ImageLoader.loadSingleImage(file);
+                        document.getElementById('logo-preview').style.display = 'block';
+                        document.getElementById('logo-img-preview').src = this.logoImg.canvas.toDataURL();
+                        this.updatePreview();
+                    }
+                });
+                document.getElementById('logo-scale').addEventListener('input', e => updateSetting('logoScale', parseInt(e.target.value) / 100));
+
+                // Position
+                document.querySelectorAll('#pos-select .preset-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        document.querySelectorAll('#pos-select .preset-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        this.settings.position = btn.dataset.pos;
+                        this.updatePreview();
+                    });
+                });
+
+                // Appearance
+                document.getElementById('wm-opacity').addEventListener('input', e => {
+                    const val = parseInt(e.target.value);
+                    document.getElementById('opacity-val').textContent = val + '%';
+                    updateSetting('opacity', val / 100);
+                });
+                document.getElementById('wm-rotation').addEventListener('input', e => {
+                    const val = parseInt(e.target.value);
+                    document.getElementById('rot-val').textContent = val + '°';
+                    updateSetting('rotation', val);
+                });
+                document.getElementById('tile-toggle').addEventListener('click', e => {
+                    e.target.classList.toggle('active');
+                    updateSetting('tiled', e.target.classList.contains('active'));
+                });
+
+                // Actions
+                document.getElementById('convert-btn').addEventListener('click', () => this.processAll());
+                document.getElementById('download-all-btn').addEventListener('click', () => this.downloadAll());
+                document.getElementById('reset-btn').addEventListener('click', () => location.reload());
+            }
+
+            handleFilesLoaded(files) {
+                this.files = files;
+                document.getElementById('convert-btn').disabled = false;
+                if (files.length > 0) this.updatePreview(true);
+            }
+
+            updatePreview(immediate = false) {
+                if (this.files.length === 0) return;
+                if (this.debounceTimer) clearTimeout(this.debounceTimer);
+
+                const run = async () => {
+                    const img = await window.ImageLoader.loadSingleImage(this.files[0]);
+                    const blob = await this.renderWatermark(img.canvas);
+                    document.getElementById('preview-container').style.display = 'block';
+                    this.previewManager.render(URL.createObjectURL(img.canvas.toDataURL()), URL.createObjectURL(blob), `watermarked_${this.files[0].name}`);
+                };
+
+                if (immediate) run();
+                else this.debounceTimer = setTimeout(run, 300);
+            }
+
+            async processAll() {
+                const btn = document.getElementById('convert-btn');
+                btn.disabled = true;
+                btn.textContent = 'Processing...';
+
+                this.results = [];
+
+                for (let i = 0; i < this.files.length; i++) {
+                    const file = this.files[i];
+                    try {
+                        const img = await window.ImageLoader.loadSingleImage(file);
+                        const blob = await this.renderWatermark(img.canvas, file.type);
+
+                        this.results.push({ blob, name: "watermarked_" + file.name });
+                        this.unifiedInput.setFileStatus(i, 'done');
+                    } catch (e) {
+                        console.error(e);
+                        this.unifiedInput.setFileStatus(i, 'error');
+                    }
+                }
+
+                document.getElementById('convert-btn').style.display = 'none';
+                document.getElementById('download-all-btn').style.display = 'block';
+                document.getElementById('reset-btn').style.display = 'block';
+                document.getElementById('upload-zone').style.display = 'none';
+            }
+
+            async renderWatermark(baseCanvas, type = 'image/jpeg') {
+                const canvas = document.createElement('canvas');
+                canvas.width = baseCanvas.width;
+                canvas.height = baseCanvas.height;
+                const ctx = canvas.getContext('2d');
+
+                // Draw Base
+                ctx.drawImage(baseCanvas, 0, 0);
+
+                // Prepare Watermark
+                ctx.save();
+                ctx.globalAlpha = this.settings.opacity;
+
+                let wmCanvas;
+                if (this.settings.type === 'text') {
+                    // Create text canvas
+                    wmCanvas = document.createElement('canvas');
+                    const tCtx = wmCanvas.getContext('2d');
+                    // Guess size to set canvas
+                    tCtx.font = `${this.settings.textSize}px Arial`; // Basic font for now
+                    const metrics = tCtx.measureText(this.settings.text);
+                    wmCanvas.width = metrics.width + 20;
+                    wmCanvas.height = this.settings.textSize * 1.5;
+
+                    // Re-get context after resize
+                    const tCtx2 = wmCanvas.getContext('2d');
+                    tCtx2.font = `bold ${this.settings.textSize}px Arial`;
+                    tCtx2.fillStyle = this.settings.textColor;
+                    tCtx2.textBaseline = 'middle';
+                    tCtx2.fillText(this.settings.text, 10, wmCanvas.height / 2);
+                    // Add simple shadow
+                    tCtx2.shadowColor = "rgba(0,0,0,0.5)";
+                    tCtx2.shadowBlur = 4;
+                    tCtx2.shadowOffsetX = 2;
+                    tCtx2.shadowOffsetY = 2;
+                    tCtx2.fillText(this.settings.text, 10, wmCanvas.height / 2);
+                } else {
+                    if (!this.logoImg) { ctx.restore(); return new Promise(r => canvas.toBlob(r, type)); }
+                    wmCanvas = this.logoImg.canvas;
+                }
+
+                if (this.settings.tiled) {
+                    // Tiled Mode: Diagonal Pattern
+                    // Create a pattern canvas
+                    ctx.rotate(-45 * Math.PI / 180);
+                    const diagSize = Math.max(canvas.width, canvas.height) * 1.5;
+
+                    // This simple logic is tricky for rotation around center.
+                    // Easier: Tile across a larger area then rotate and crop?
+                    // Simplest: Loop through grid.
+
+                    // Reset rotation to handle manually in loop
+                    ctx.restore(); ctx.save();
+                    ctx.globalAlpha = this.settings.opacity;
+
+                    const gap = 200;
+                    const countX = Math.ceil(canvas.width / gap) + 2;
+                    const countY = Math.ceil(canvas.height / gap) + 2;
+
+                    // Just simple grid for now, diagonal is harder to perfect in short time without patterns
+                    for (let x = 0; x < canvas.width; x += gap) {
+                        for (let y = 0; y < canvas.height; y += gap) {
+                            ctx.save();
+                            ctx.translate(x, y);
+                            ctx.rotate(this.settings.rotation * Math.PI / 180);
+                            ctx.drawImage(wmCanvas, -wmCanvas.width / 2, -wmCanvas.height / 2);
+                            ctx.restore();
+                        }
+                    }
+
+                } else {
+                    // Single Position Mode
+                    const { position, rotation } = this.settings;
+                    let x = canvas.width / 2;
+                    let y = canvas.height / 2;
+
+                    const margin = 50;
+                    if (position.includes('l')) x = margin + wmCanvas.width / 2;
+                    if (position.includes('r')) x = canvas.width - margin - wmCanvas.width / 2;
+                    if (position.includes('t')) y = margin + wmCanvas.height / 2;
+                    if (position.includes('b')) y = canvas.height - margin - wmCanvas.height / 2;
+
+                    // Logic for image scale
+                    let drawW = wmCanvas.width;
+                    let drawH = wmCanvas.height;
+
+                    if (this.settings.type === 'image') {
+                        // Apply scaling relative to BASE image width
+                        const baseScale = (baseCanvas.width * this.settings.logoScale) / wmCanvas.width;
+                        drawW = wmCanvas.width * baseScale;
+                        drawH = wmCanvas.height * baseScale;
+
+                        // Re-calc positions based on new size
+                        if (position.includes('l')) x = margin + drawW / 2;
+                        if (position.includes('r')) x = canvas.width - margin - drawW / 2;
+                        if (position.includes('t')) y = margin + drawH / 2;
+                        if (position.includes('b')) y = canvas.height - margin - drawH / 2;
+                    }
+
+                    ctx.translate(x, y);
+                    ctx.rotate(rotation * Math.PI / 180);
+                    ctx.drawImage(wmCanvas, -drawW / 2, -drawH / 2, drawW, drawH);
+                }
+
+                ctx.restore();
+                return new Promise(r => canvas.toBlob(r, type, 0.9));
+            }
+
+            async downloadAll() {
+                for (const res of this.results) {
+                    const a = document.createElement('a');
+                    a.href = URL.createObjectURL(res.blob);
+                    a.download = res.name;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    await new Promise(resolve => setTimeout(resolve, 150));
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => new WatermarkAdder());
+    </script>
+</body>
+</html>

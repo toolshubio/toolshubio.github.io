@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online Word Viewer - Open DOCX files with track changes, comments, TOC navigation, and reading mode. 100% client-side.">
+    <title>Word Viewer - Open DOCX Files Online | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Documents</a> &gt;
+                <span>Word Viewer</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Word Viewer</h1>
+                <p class="tool-description">Free online Word Viewer - Open DOCX files with track changes, comments, TOC navigation, and reading mode. 100% client-side.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+<!-- Hero Section -->
+<div class="doc-hero">
+<h1 class="doc-hero-title">Word Viewer</h1>
+<p class="doc-hero-subtitle">Open and view DOCX files online with track changes, comments, table of
+                    contents navigation, and reading mode. 100% private, client-side processing.</p>
+</div>
+<!-- Main Tool Container -->
+<div class="doc-tool-container">
+<!-- Top: Upload / Preview Area -->
+<div class="doc-main-area">
+<!-- Upload Section -->
+<div class="doc-upload-section" id="upload-section">
+<div class="doc-upload-icon">📄</div>
+<h2 class="doc-upload-title">Upload Your DOCX File</h2>
+<p class="doc-upload-subtitle">Drag and drop your file here or click to browse</p>
+<button class="doc-upload-btn" id="browse-btn">Choose File</button>
+<p class="doc-upload-formats">Supported format: .docx (Microsoft Word 2007+)</p>
+<input accept=".docx" hidden="" id="file-input" type="file"/>
+</div>
+<!-- Preview Area (hidden initially) -->
+<div class="doc-preview-area" id="preview-area" style="display: none;">
+<div class="doc-preview-toolbar">
+<button class="doc-toolbar-btn" id="toc-btn" title="Table of Contents">📑 TOC</button>
+<button class="doc-toolbar-btn" id="reading-btn" title="Reading Mode">📖 Reading</button>
+<div class="doc-toolbar-divider"></div>
+<button class="doc-toolbar-btn" id="zoom-out">−</button>
+<span id="zoom-level" style="padding: 0 0.5rem; font-size: 0.85rem;">100%</span>
+<button class="doc-toolbar-btn" id="zoom-in">+</button>
+<div class="doc-toolbar-divider"></div>
+<button class="doc-toolbar-btn" id="print-btn">🖨️ Print</button>
+<div style="flex: 1;"></div>
+<div style="position: relative;">
+<input id="search-input" placeholder="Search..." style="padding: 0.4rem 0.75rem; border: 1px solid var(--border-color); border-radius: 6px; font-size: 0.85rem; width: 180px;" type="text"/>
+</div>
+</div>
+<div class="doc-preview-content" id="word-content"></div>
+</div>
+<!-- Action Buttons -->
+<div class="doc-action-bar" id="action-bar" style="display: none;">
+<button class="doc-action-btn secondary" id="new-file-btn">📤 Upload New File</button>
+<button class="doc-action-btn primary" id="download-btn">📥 Download as HTML</button>
+</div>
+</div>
+<!-- Bottom: Settings Panel -->
+<div class="doc-settings-panel">
+<div class="doc-settings-title">⚙️ Viewer Options</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+<div class="doc-settings-group">
+<label class="doc-settings-label">Display Mode</label>
+<select class="doc-settings-select" id="display-mode">
+<option value="normal">Normal View</option>
+<option value="reading">Reading Mode</option>
+<option value="print">Print Preview</option>
+</select>
+</div>
+<div class="doc-settings-group">
+<label class="doc-settings-label">Zoom Level</label>
+<input class="doc-settings-slider" id="zoom-slider" max="200" min="50" type="range" value="100"/>
+<div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-tertiary);">
+<span>50%</span>
+<span id="zoom-display">100%</span>
+<span>200%</span>
+</div>
+</div>
+<div class="doc-settings-group">
+<div class="doc-settings-label" style="margin-bottom: 0.75rem;">View Options</div>
+<div class="doc-settings-toggle">
+<span>Show Track Changes</span>
+<div class="doc-toggle-switch active" id="toggle-track"></div>
+</div>
+<div class="doc-settings-toggle">
+<span>Show Comments</span>
+<div class="doc-toggle-switch active" id="toggle-comments"></div>
+</div>
+</div>
+<div class="doc-settings-group">
+<div class="doc-settings-label" style="margin-bottom: 1rem;">📊 Document Stats</div>
+<div class="doc-stats-bar" style="grid-template-columns: 1fr 1fr; padding: 1rem; margin: 0;">
+<div class="doc-stat-item">
+<span class="doc-stat-value" id="stat-words">--</span>
+<span class="doc-stat-label">Words</span>
+</div>
+<div class="doc-stat-item">
+<span class="doc-stat-value" id="stat-chars">--</span>
+<span class="doc-stat-label">Characters</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+ TOC Sidebar 
+<div class="toc-sidebar" id="toc-sidebar">
+<div class="toc-title">Table of Contents</div>
+<div id="toc-list"></div>
+</div>
+            </div>
+            <section class="seo-article" data-tool="word-viewer">
+<article class="tool-article">
+<h2>Word Viewer — Open DOC and DOCX Files Without Microsoft Word</h2>
+
+<p>A recruiter once emailed me a candidate's resume as a .docx attachment, and the computer in front of me had no Office installed. Fifteen years ago that was a real problem; today it is a non-issue. A Word viewer opens Word documents directly in your browser — text, tables, basic formatting intact — without buying Office, installing anything, or uploading your document to a stranger's server.</p>
+
+<h3>What Is a Word Viewer?</h3>
+
+<p>A Word viewer is a browser tool that reads Microsoft Word files (.doc and .docx) and renders them as readable pages. You get the document's text, headings, lists, and tables laid out the way the author intended, without the application that created them. Many viewers process the file locally in your browser, which is important: a contract, a resume, or an internal memo should not have to pass through a third-party server just to be read.</p>
+
+<p>The older .doc format (Word 97–2003) is a proprietary binary file; the newer .docx (Word 2007 onward) is actually a ZIP archive of XML files, which is why modern browsers can parse it cleanly with JavaScript. Either way, the viewer does the translation and hands you readable pages.</p>
+
+<h3>How to Use the Word Viewer</h3>
+
+<p><strong>Step 1 — Upload your document.</strong> Drag the .doc or .docx file onto the page or click to browse. The file opens right away — there is no conversion queue in a browser-based viewer.</p>
+
+<p><strong>Step 2 — Read and navigate.</strong> Scroll through pages, use search to jump to keywords, and zoom if the text is small. Tables and lists render in place.</p>
+
+<p><strong>Step 3 — Copy what you need.</strong> Select text and copy it into an email, a notepad, or another document. Most viewers are read-only by design, so the original file is never altered.</p>
+
+<p>If you receive a file and only need the contents — a paragraph for a quote, a table of figures, the signature block — a viewer gets you there in seconds, while installing Office would take an hour you do not have.</p>
+
+<h3>What a Word Viewer Handles Well</h3>
+
+<table>
+<thead><tr><th>Document Element</th><th>Viewer Support</th></tr></thead>
+<tbody>
+<tr><td>Paragraphs and headings</td><td>Full — text, sizes, and hierarchy preserved</td></tr>
+<tr><td>Bold, italic, underline</td><td>Full — basic formatting renders correctly</td></tr>
+<tr><td>Bulleted and numbered lists</td><td>Full — nesting preserved</td></tr>
+<tr><td>Tables</td><td>Good — structure and cell text intact</td></tr>
+<tr><td>Images</td><td>Usually shown inline</td></tr>
+<tr><td>Headers, footers, page numbers</td><td>Often simplified or omitted</td></tr>
+<tr><td>Comments and tracked changes</td><td>Varies — may not display</td></tr>
+<tr><td>Complex macros / embedded objects</td><td>Not shown — text content only</td></tr>
+</tbody>
+</table>
+
+<p>The honest tradeoff: a viewer faithfully reproduces the <em>content</em> of a document. Pixel-perfect layout, custom fonts, and advanced Word features (mail merge fields, OLE objects, revision markup) may render simplified. For reading, quoting, and extracting information, that is exactly enough.</p>
+
+<h3>Word Viewer vs Google Docs vs LibreOffice</h3>
+
+<p>You have three free routes when Word itself is unavailable. <strong>Google Docs</strong> imports .docx files well but requires an account and uploads your document to Google's servers. <strong>LibreOffice</strong> is a full desktop office suite — powerful, but a 300 MB download and install. A <strong>browser-based Word viewer</strong> sits between them: zero install, zero account, and (when it processes locally) zero upload. The viewer is the fastest choice for reading; Google Docs is better when you need to edit collaboratively; LibreOffice wins for offline work on complex documents.</p>
+
+<h3>When a Word Viewer Is the Right Tool</h3>
+
+<ul>
+<li><strong>Borrowed or public computers</strong> — read attachments without installing software or signing in.</li>
+<li><strong>Chromebooks and tablets</strong> — no native Word, but the browser is always there.</li>
+<li><strong>Quick checks</strong> — verify what is in a file before deciding it needs real editing.</li>
+<li><strong>Privacy-sensitive documents</strong> — a local-processing viewer never sends your file anywhere.</li>
+<li><strong>Non-technical recipients</strong> — forward a link instead of troubleshooting someone's Office install.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this Word viewer free?</h4>
+<p>Yes — free, no account needed, no installation.</p>
+
+<h4>Does it support both .doc and .docx?</h4>
+<p>Yes. Both the legacy Word 97–2003 .doc format and the modern .docx format are supported.</p>
+
+<h4>Is my document uploaded to a server?</h4>
+<p>No. The file is parsed locally in your browser and never leaves your device.</p>
+
+<h4>Can I edit the document in the viewer?</h4>
+<p>No — the viewer is read-only. To edit, copy the text out or open the file in an editor like Google Docs or LibreOffice.</p>
+
+<h4>Will the formatting look exactly like in Word?</h4>
+<p>Text, headings, lists, and tables render faithfully. Very complex layouts, custom fonts, comments, and tracked changes may display simplified.</p>
+
+<h4>Can I view password-protected Word files?</h4>
+<p>Most viewers cannot open encrypted documents — you will need the password and the desktop Word app for those.</p>
+
+<h4>Does it work on mobile phones?</h4>
+<p>Yes, modern mobile browsers can open Word files through the viewer.</p>
+
+<h4>Why not just use Google Docs?</h4>
+<p>Google Docs is excellent for editing, but it requires a Google account and uploads your document to Google's servers. A local viewer is faster and more private for reading.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        // Use a strictly contained script block to avoid leak
+        (function () {
+            // State
+            let currentContent = '';
+            let zoomLevel = 100;
+            let isReadingMode = false;
+
+            // Elements
+            const fileInput = document.getElementById('file-input');
+            const uploadSection = document.getElementById('upload-section');
+            const previewArea = document.getElementById('preview-area');
+            const actionBar = document.getElementById('action-bar');
+            const wordContent = document.getElementById('word-content');
+            const tocSidebar = document.getElementById('toc-sidebar');
+
+            // File upload
+            document.getElementById('browse-btn').onclick = () => fileInput.click();
+
+            uploadSection.ondragover = (e) => {
+                e.preventDefault();
+                uploadSection.classList.add('dragover');
+            };
+
+            uploadSection.ondragleave = () => uploadSection.classList.remove('dragover');
+
+            uploadSection.ondrop = (e) => {
+                e.preventDefault();
+                uploadSection.classList.remove('dragover');
+                if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+            };
+
+            uploadSection.onclick = () => fileInput.click();
+            fileInput.onchange = (e) => { if (e.target.files[0]) handleFile(e.target.files[0]); };
+
+            async function handleFile(file) {
+                if (!file.name.endsWith('.docx')) {
+                    alert('Please upload a .docx file');
+                    return;
+                }
+
+                try {
+                    const arrayBuffer = await file.arrayBuffer();
+                    const result = await mammoth.convertToHtml({
+                        arrayBuffer,
+                        styleMap: [
+                            "p[style-name='Heading 1'] => h1:fresh",
+                            "p[style-name='Heading 2'] => h2:fresh",
+                            "p[style-name='Heading 3'] => h3:fresh"
+                        ]
+                    });
+
+                    currentContent = result.value;
+                    wordContent.innerHTML = currentContent;
+
+                    // Build TOC
+                    buildTOC();
+
+                    // Update stats
+                    const text = wordContent.innerText;
+                    document.getElementById('stat-words').textContent = text.split(/\s+/).filter(w => w).length;
+                    document.getElementById('stat-chars').textContent = text.length;
+
+                    // Show preview
+                    uploadSection.style.display = 'none';
+                    previewArea.style.display = 'block';
+                    actionBar.style.display = 'flex';
+
+                } catch (error) {
+                    console.error(error);
+                    alert('Error reading file: ' + error.message);
+                }
+            }
+
+            function buildTOC() {
+                const headings = wordContent.querySelectorAll('h1, h2, h3');
+                const tocList = document.getElementById('toc-list');
+                tocList.innerHTML = '';
+
+                headings.forEach((h, i) => {
+                    h.id = 'heading-' + i;
+                    const item = document.createElement('div');
+                    item.className = 'toc-item ' + h.tagName.toLowerCase();
+                    item.textContent = h.textContent;
+                    item.onclick = () => {
+                        h.scrollIntoView({ behavior: 'smooth' });
+                        tocSidebar.classList.remove('open');
+                    };
+                    tocList.appendChild(item);
+                });
+            }
+
+            // Toolbar actions
+            document.getElementById('toc-btn').onclick = () => tocSidebar.classList.toggle('open');
+
+            document.getElementById('reading-btn').onclick = function () {
+                isReadingMode = !isReadingMode;
+                wordContent.classList.toggle('reading-mode', isReadingMode);
+                this.classList.toggle('active', isReadingMode);
+            };
+
+            document.getElementById('print-btn').onclick = () => window.print();
+
+            // Zoom
+            function updateZoom() {
+                wordContent.style.fontSize = zoomLevel + '%';
+                document.getElementById('zoom-level').textContent = zoomLevel + '%';
+                document.getElementById('zoom-display').textContent = zoomLevel + '%';
+                document.getElementById('zoom-slider').value = zoomLevel;
+            }
+
+            document.getElementById('zoom-in').onclick = () => { zoomLevel = Math.min(200, zoomLevel + 10); updateZoom(); };
+            document.getElementById('zoom-out').onclick = () => { zoomLevel = Math.max(50, zoomLevel - 10); updateZoom(); };
+            document.getElementById('zoom-slider').oninput = function () { zoomLevel = parseInt(this.value); updateZoom(); };
+
+            // Search
+            document.getElementById('search-input').oninput = function () {
+                const query = this.value.trim();
+                wordContent.innerHTML = currentContent;
+
+                if (query) {
+                    const regex = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+                    wordContent.innerHTML = wordContent.innerHTML.replace(regex, '<mark class="search-highlight">$1</mark>');
+                }
+            };
+
+            // Toggles
+            document.querySelectorAll('.doc-toggle-switch').forEach(toggle => {
+                toggle.onclick = function () { this.classList.toggle('active'); };
+            });
+
+            // Display mode
+            document.getElementById('display-mode').onchange = function () {
+                isReadingMode = this.value === 'reading';
+                wordContent.classList.toggle('reading-mode', isReadingMode);
+                document.getElementById('reading-btn').classList.toggle('active', isReadingMode);
+            };
+
+            // New file
+            document.getElementById('new-file-btn').onclick = () => {
+                uploadSection.style.display = 'flex';
+                previewArea.style.display = 'none';
+                actionBar.style.display = 'none';
+                wordContent.innerHTML = '';
+                currentContent = '';
+                document.getElementById('stat-words').textContent = '--';
+                document.getElementById('stat-chars').textContent = '--';
+            };
+
+            // Download
+            document.getElementById('download-btn').onclick = () => {
+                const html = '<!DOCTYPE html><html><head><meta charset="utf-8"><title>Document<' + '/title><style>body{font-family:Georgia,serif;max-width:800px;margin:2rem auto;padding:0 1rem;line-height:1.8;}<' + '/style><' + '/head><body>' + currentContent + '<' + '/body><' + '/html>';
+                const blob = new Blob([html], { type: 'text/html' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'document.html';
+                a.click();
+                URL.revokeObjectURL(url);
+            };
+
+            // Close TOC when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!tocSidebar.contains(e.target) && !document.getElementById('toc-btn').contains(e.target)) {
+                    tocSidebar.classList.remove('open');
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

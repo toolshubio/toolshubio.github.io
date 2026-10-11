@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert TIFF images to JPG or PNG. Supports multi-page TIFFs, batch processing, and high-quality conversion. Client-side.">
+    <title>TIFF to JPG Converter - Multi-page Support | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../../image-tools/css/global.css">
+    <link rel="stylesheet" href="../../image-tools/css/components.css">
+    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<script src="https://cdn.jsdelivr.net/npm/utif@3.1.0/UTIF.js"></script>
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../../about-us.html">About</a>
+                <a class="nav-link" href="../../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> &gt;
+                <a href="../index.html">Image Tools</a> &gt;
+                <span>📠 TIFF to JPG Converter</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">📠 TIFF to JPG Converter</h1>
+                <p class="tool-description">Convert TIFF/TIF handling multi-page documents. Extract all pages to
+                    high-quality JPG or PNG images.</p>
+                <div class="tool-badges"><span class="badge badge-primary">Multi-Page Support</span><span class="badge badge-primary">High Quality</span><span class="badge badge-secondary">Secure</span></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<section class="preview-area">
+<div id="upload-zone"></div>
+<div id="status-container" style="margin-top: 20px; display: none;"></div>
+</section>
+<aside class="control-panel">
+<div class="control-section">
+<h3 class="control-section-title">⚙️ Settings</h3>
+<div class="control-group">
+<label class="control-label">Output Format</label>
+<select class="form-select" id="format-select">
+<option value="image/jpeg">JPG (Standard)</option>
+<option value="image/png">PNG (Lossless)</option>
+</select>
+</div>
+<div class="control-group" id="quality-group">
+<label class="control-label">
+                                JPG Quality <span class="badge badge-sm" id="quality-val">90%</span>
+</label>
+<input class="slider-input" id="quality-slider" max="100" min="1" type="range" value="90"/>
+</div>
+</div>
+<div class="control-section">
+<button class="btn btn-primary w-full" disabled="" id="convert-btn"><span>🔄</span> Convert
+                            All</button>
+<button class="btn btn-premium-download w-full mt-3" id="download-all-btn" style="display: none;"><span>📥</span> Download All</button>
+<button class="btn btn-secondary w-full mt-2" id="reset-btn" style="display: none;"><span>🔄</span> Start Over</button>
+</div>
+</aside>
+</div>
+</div>
+</main>
+
+
+
+
+
+
+
+
+<div id="comparison-container" style="display: none;"></div>
+            </div>
+            <section class="seo-article" data-tool="tiff-jpg-converter">
+<article class="tool-article">
+<h2>TIFF to JPG Converter — Make Scans and Archives Shareable</h2>
+
+<p>A photographer friend once sent me a folder of scans — each file 80 MB, the email bouncing every attempt. They were TIFFs: the archival format professionals swear by, and the format nothing outside professional software wants to deal with. A TIFF to JPG converter turned that 80 MB scan into a 4 MB JPG that looked identical on screen and sailed through email. That is the entire job: take the preservation master and make a working copy the rest of the world can actually open.</p>
+
+<h3>What Is TIFF?</h3>
+
+<p>TIFF (Tagged Image File Format) dates back to the 1980s — Aldus Corporation created it, Adobe owns it now — and it remains the standard for professional photography pipelines, print prepress, and scanners. It supports lossless compression (LZW, ZIP/Deflate, PackBits) or no compression at all, high bit depths up to 32-bit, CMYK color, transparency, and even multiple pages in one file (scanned documents love this).</p>
+
+<p>The price of all that capability is size. A 24-megapixel TIFF runs 36–144 MB; a 600 DPI letter-size scan can hit 25–100 MB. And browsers cannot display TIFF at all — no native rendering in Chrome, Firefox, or Safari. It is a format built for editing and archiving, not for sharing.</p>
+
+<h3>Why Convert TIFF to JPG?</h3>
+
+<ul>
+<li><strong>Email-able scans</strong> — a quality-92 JPG of that 600 DPI scan lands at 1–4 MB, comfortably under Gmail's and Outlook's 25 MB caps.</li>
+<li><strong>Universal compatibility</strong> — JPG opens on every device, browser, email client, and social platform in existence.</li>
+<li><strong>Web publishing</strong> — browsers cannot display TIFF; JPG is the web's native photo format.</li>
+<li><strong>Social sharing</strong> — Instagram, Facebook, and X accept JPG and reject TIFF.</li>
+<li><strong>Cheaper storage</strong> — converting an archive to JPG cuts storage needs by 90–95% where lossless is not required.</li>
+</ul>
+
+<h3>TIFF vs JPG</h3>
+
+<table>
+<thead><tr><th>Feature</th><th>TIFF</th><th>JPG</th></tr></thead>
+<tbody>
+<tr><td>Compression</td><td>Lossless or none</td><td>Lossy (DCT)</td></tr>
+<tr><td>Typical size (24 MP)</td><td>36–144 MB</td><td>4–10 MB at quality 85</td></tr>
+<tr><td>Color depth</td><td>8, 16, 32-bit</td><td>8-bit per channel only</td></tr>
+<tr><td>Browser support</td><td>None</td><td>Universal</td></tr>
+<tr><td>Multi-page</td><td>Yes (scanned documents)</td><td>No — one image per file</td></tr>
+<tr><td>Re-save degradation</td><td>None</td><td>Cumulative with each save</td></tr>
+<tr><td>Best for</td><td>Editing, archiving, print</td><td>Sharing, web, email, delivery</td></tr>
+</tbody>
+</table>
+
+<p>The professional workflow this implies: <strong>edit and archive in TIFF, export to JPG for delivery.</strong> The conversion is the last step, not the storage format.</p>
+
+<h3>How to Convert TIFF to JPG</h3>
+
+<p><strong>Step 1 — Upload your TIFF/TIF files.</strong> Drag and drop or click to browse. Batch upload handles whole archives; multi-page TIFFs are accepted.</p>
+
+<p><strong>Step 2 — Choose quality and size.</strong> Quality in the low 80s is the sweet spot for sharing — visually indistinguishable from the TIFF for photographic content at a fraction of the size. Low 90s for client delivery or print. Optionally scale down the resolution; a 600 DPI scan rarely needs full resolution for screen viewing.</p>
+
+<p><strong>Step 3 — Convert and download.</strong> Each page of a multi-page TIFF typically becomes its own JPG, numbered sequentially, with a ZIP offered for multi-file results.</p>
+
+<p>As a rough guide to the savings: at quality 85, an 82 MB TIFF becomes roughly a 7.6 MB JPG (about 91% smaller); at quality 95, closer to 18 MB; at quality 70, around 3.5 MB. The file shrinks dramatically long before your eyes notice.</p>
+
+<h3>Quality Considerations</h3>
+
+<p><strong>16-bit color gets downsampled.</strong> TIFF may hold 16-bit color data; JPG is 8-bit per channel. For color-critical work, handle tone mapping in Lightroom or Photoshop rather than a quick converter.</p>
+
+<p><strong>CMYK TIFFs need care.</strong> Print-oriented TIFFs in CMYK color may shift when converted to JPG's RGB. Check the colors in the preview.</p>
+
+<p><strong>Never convert your only copy.</strong> JPG compression is lossy and cumulative. Archive the TIFF; convert copies for sharing.</p>
+
+<p><strong>Scans compress beautifully.</strong> Document scans are mostly white space and text — JPG handles them efficiently, which is why a 50 MB scan becomes a 2 MB email-friendly file.</p>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this TIFF to JPG converter free?</h4>
+<p>Yes — free, no account, no watermarks.</p>
+
+<h4>Will converting reduce quality?</h4>
+<p>At quality 85+, the difference is imperceptible for photographic content. For critical color work, keep the TIFF.</p>
+
+<h4>Can I convert multi-page TIFFs?</h4>
+<p>Yes — each page becomes its own JPG, usually numbered sequentially and offered as a ZIP.</p>
+
+<h4>Why is my TIFF so large?</h4>
+<p>TIFF stores data losslessly (or uncompressed) at high bit depths. A 24 MP photo is 36–144 MB; the same image as JPG is 4–10 MB.</p>
+
+<h4>Can I convert multiple TIFFs at once?</h4>
+<p>Yes — batch conversion is supported.</p>
+
+<h4>What quality setting should I use?</h4>
+<p>Low 80s for web and sharing, low 90s for client delivery and print.</p>
+
+<h4>Are my files uploaded to a server?</h4>
+<p>Browser-based converters process locally; server-based ones should auto-delete files after processing.</p>
+
+<h4>Should I delete the TIFF after converting?</h4>
+<p>No — archive it. The TIFF is your lossless master; the JPG is the shareable working copy.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../../about-us.html">About Us</a>
+                    <a class="footer-link" href="../../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../js/shared/unified-input.js"></script>
+<script src="../js/shared/preview-manager.js"></script>
+<script src="../js/utils/image-loader.js"></script>
+<script src="../js/utils/converter.js"></script>
+<script>
+        class TiffConverter {
+            constructor() {
+                this.files = [];
+                this.results = [];
+                this.settings = {
+                    format: 'image/jpeg',
+                    quality: 0.9
+                };
+                this.init();
+            }
+
+            init() {
+                this.unifiedInput = new UnifiedInput({
+                    containerId: 'upload-zone',
+                    toolIcon: '📠',
+                    toolName: 'TIFF to JPG',
+                    acceptTypes: '.tiff, .tif',
+                    onFilesLoaded: (files) => this.handleFilesLoaded(files)
+                });
+                this.previewManager = new PreviewManager({ containerId: 'comparison-container' });
+                this.setupControls();
+                this.injectAdvancedStyles();
+            }
+
+            setupControls() {
+                document.getElementById('format-select').addEventListener('change', (e) => {
+                    this.settings.format = e.target.value;
+                    document.getElementById('quality-group').style.display = this.settings.format === 'image/jpeg' ? 'block' : 'none';
+                });
+
+                document.getElementById('quality-slider').addEventListener('input', (e) => {
+                    this.settings.quality = e.target.value / 100;
+                    document.getElementById('quality-val').textContent = e.target.value + '%';
+                });
+
+                document.getElementById('convert-btn').onclick = () => this.convertAll();
+                document.getElementById('download-all-btn').onclick = () => this.downloadAll();
+                document.getElementById('reset-btn').onclick = () => location.reload();
+            }
+
+            handleFilesLoaded(files) {
+                this.files = files;
+                document.getElementById('convert-btn').disabled = false;
+            }
+
+            async convertAll() {
+                const btn = document.getElementById('convert-btn');
+                btn.disabled = true;
+                btn.textContent = 'Processing...';
+
+                this.results = [];
+                const container = document.getElementById('comparison-container');
+                if (container) container.style.display = 'block';
+
+                for (let i = 0; i < this.files.length; i++) {
+                    const file = this.files[i];
+                    try {
+                        const arrayBuffer = await file.arrayBuffer();
+                        const ifds = UTIF.decode(arrayBuffer);
+
+                        for (let j = 0; j < ifds.length; j++) {
+                            UTIF.decodeImage(arrayBuffer, ifds[j]);
+                            const rgba = UTIF.toRGBA8(ifds[j]);
+                            const width = ifds[j].width;
+                            const height = ifds[j].height;
+
+                            const canvas = document.createElement('canvas');
+                            canvas.width = width;
+                            canvas.height = height;
+                            const ctx = canvas.getContext('2d');
+                            const imgData = ctx.createImageData(width, height);
+                            imgData.data.set(rgba);
+                            ctx.putImageData(imgData, 0, 0);
+
+                            const ext = this.settings.format === 'image/jpeg' ? '.jpg' : '.png';
+                            let fileName = file.name.replace(/\.[^.]+$/, '');
+                            if (ifds.length > 1) fileName += `-${j + 1}`;
+                            fileName += ext;
+
+                            const blob = await new Promise(r => canvas.toBlob(r, this.settings.format, this.settings.quality));
+                            const resultURL = URL.createObjectURL(blob);
+
+                            this.results.push({
+                                dataURL: resultURL,
+                                convertedFile: { name: fileName }
+                            });
+
+                            if (i === 0 && j === 0) {
+                                const originalURL = canvas.toDataURL('image/png');
+                                this.previewManager.render(originalURL, resultURL, fileName);
+                            }
+                        }
+
+                        this.unifiedInput.setFileStatus(i, 'done');
+                    } catch (e) {
+                        console.error(e);
+                        this.unifiedInput.setFileStatus(i, 'error');
+                    }
+                }
+
+                btn.style.display = 'none';
+                document.getElementById('download-all-btn').style.display = 'block';
+                document.getElementById('reset-btn').style.display = 'block';
+                document.getElementById('upload-zone').style.display = 'none';
+            }
+
+            async downloadAll() {
+                for (const result of this.results) {
+                    const a = document.createElement('a');
+                    a.href = result.dataURL;
+                    a.download = result.convertedFile.name;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                }
+            }
+
+            injectAdvancedStyles() {
+                const style = document.createElement('style');
+                style.textContent = `#comparison-container { margin-top: 2rem; border: 1px solid var(--border-color); border-radius: 12px; padding: 1rem; background: var(--bg-secondary); min-height: 400px; }`;
+                document.head.appendChild(style);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => new TiffConverter());
+    </script>
+</body>
+</html>

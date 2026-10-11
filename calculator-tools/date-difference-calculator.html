@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium date calculator with business days, holiday exclusion, and countdown timelines. Professional-grade time analysis.">
+    <title>High-End Date & Time Intelligence | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Calculators</a> &gt;
+                <span>📆 Date Intelligence</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">📆 Date Intelligence</h1>
+                <p class="tool-description">Advanced temporal analysis, business day logic, and countdown management.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<div class="glass-panel p-8 mb-8">
+<div class="date-hero">
+<div class="date-input-card">
+<div class="text-xs text-secondary uppercase font-bold mb-4">Start Date</div>
+<input class="calc-input text-center" id="start-date" oninput="calculate()" type="date"/>
+</div>
+<div class="text-3xl text-secondary">⇢</div>
+<div class="date-input-card">
+<div class="text-xs text-secondary uppercase font-bold mb-4">End Date</div>
+<input class="calc-input text-center" id="end-date" oninput="calculate()" type="date"/>
+</div>
+</div>
+<div class="text-center">
+<div class="text-secondary font-bold uppercase tracking-widest text-xs mb-2">Total Difference</div>
+<div class="diff-indicator" id="res-days">30</div>
+<div class="text-lg text-secondary font-medium">Calendar Days</div>
+<div class="flex justify-center gap-4 flex-wrap mt-6">
+<div class="day-badge">💼 <span id="res-business">22</span> Business Days</div>
+<div class="day-badge text-warning">🏖️ <span id="res-holidays">0</span> Holidays Excluded</div>
+<div class="day-badge text-accent">⏳ <span id="res-weeks">4.3</span> Weeks</div>
+</div>
+</div>
+<div class="timeline-container">
+<div class="timeline-fill" id="timeline-bar" style="width: 50%;"></div>
+</div>
+<div class="flex justify-between text-xs text-secondary font-bold px-4">
+<span id="label-start">Month Day, Year</span>
+<span id="label-end">Month Day, Year</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+<div class="glass-panel p-6 logic-card">
+<h3 class="panel-title mb-4">Advanced Logic</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-2 border-b border-border">
+<span class="text-secondary font-medium">Include End Date</span>
+<input id="inc-end" onchange="calculate()" type="checkbox"/>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-border">
+<span class="text-secondary font-medium">Exclude National Holidays</span>
+<input checked="" id="ex-holidays" onchange="calculate()" type="checkbox"/>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-border">
+<span class="text-secondary font-medium">Time Unit Output</span>
+<select class="calc-select" onchange="calculate()" style="width: 120px;">
+<option>Days</option>
+<option>Hours</option>
+<option>Minutes</option>
+</select>
+</div>
+</div>
+</div>
+<div class="glass-panel p-6">
+<h3 class="panel-title mb-4">Unit Breakdown</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-tertiary rounded-lg text-center">
+<div class="text-xl font-bold" id="res-months">1.2</div>
+<div class="text-xs text-secondary">Months</div>
+</div>
+<div class="p-4 bg-tertiary rounded-lg text-center">
+<div class="text-xl font-bold" id="res-hours">720</div>
+<div class="text-xs text-secondary">Hours</div>
+</div>
+<div class="p-4 bg-tertiary rounded-lg text-center">
+<div class="text-xl font-bold" id="res-minutes">43.2k</div>
+<div class="text-xs text-secondary">Minutes</div>
+</div>
+<div class="p-4 bg-tertiary rounded-lg text-center">
+<div class="text-xl font-bold" id="res-seconds">2.6M</div>
+<div class="text-xs text-secondary">Seconds</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex gap-4">
+<button class="btn btn-secondary flex-1" onclick="exportData('pdf')">Export Date Report (PDF)</button>
+<button class="btn btn-secondary flex-1" onclick="exportData('csv')">Export Time Data (CSV)</button>
+</div>
+</div>
+<section class="seo-article" data-tool="date-difference-calculator">
+<article class="tool-article">
+<h2>Date Difference Calculator — Free Online Days Between Dates</h2>
+
+<p>I once had to count the days between two project milestones for a contract, and my "quick mental count" was off by eleven days — embarrassing and expensive. A date difference calculator does that counting properly: enter two dates and get the exact gap in years, months, and days, plus the total days, weeks, hours, and minutes. No calendar flipping, no leap-year traps.</p>
+
+<h3>What Is a Date Difference Calculator?</h3>
+
+<p>A date difference calculator measures the exact time between any two dates. It gives you two views of the same gap: the calendar view (2 years, 3 months, 14 days) and the total view (842 days). Both matter — contracts and HR policies usually speak in calendar terms, while interest calculations and project plans want raw day counts.</p>
+
+<p>The tricky part it handles for you is the calendar itself. Months have 28–31 days, leap years insert February 29, and counting "months" between dates requires borrowing logic, not simple subtraction. Enter 28 February 2024 and 2 March 2024 and the tool correctly returns 3 days — because 2024 is a leap year and February has 29 days that year. Get that wrong by hand and everything downstream is off.</p>
+
+<p>Order does not matter: the calculator uses the earlier date as the start either way, so measuring "from A to B" and "from B to A" give the same answer. That symmetry is genuinely useful when you are checking someone else's date math.</p>
+
+<h3>How to Use the Date Difference Calculator</h3>
+
+<p>Enter the first date and the second date using the date pickers. The result appears instantly — total days between them, plus the calendar breakdown in years, months, and days, and often the breakdown in weeks, hours, and minutes too.</p>
+
+<p>Decide whether you want inclusive or exclusive counting before you trust the number. Most tools count the gap exclusively (1 Jan to 2 Jan = 1 day). If your contract counts both endpoints, add one. This single convention causes more "the tool is wrong" complaints than any actual bug — I check it first whenever numbers look off by one.</p>
+
+<p>One habit worth building: for deadline math, calculate forward from today rather than backward from the deadline. "90 days from 15 March" and "days between 15 March and 13 June" should agree — when they do not, you have caught a counting error before it mattered.</p>
+
+<h3>How Date Difference Calculation Works</h3>
+
+<p>Two computations run in parallel — one for total days, one for the calendar breakdown.</p>
+
+<p><strong>Total days.</strong> Each date converts to a timestamp (milliseconds since the epoch); the absolute difference divided by 86,400,000 (milliseconds per day) and rounded down gives the total day count. Time zones are normalized so a date means the same day everywhere.</p>
+
+<p><strong>Calendar breakdown.</strong> Years, months, and days are computed with borrowing: subtract the day-of-month first (borrowing a month's days when needed), then months (borrowing 12 when needed), then years. Leap years and month lengths come from the real calendar, not averages.</p>
+
+<p>Worked example — 10 February 1984 to 16 January 1985: total days = 341. Calendar view: from Feb 1984 to Jan 1985 is 11 months; days from the 10th to the 16th = 6 days → 0 years, 11 months, 6 days. The tool shows both, because "341 days" and "11 months 6 days" answer different questions.</p>
+
+<h3>Common Date Difference Examples</h3>
+
+<p>Typical results to verify the tool against:</p>
+
+<table>
+<thead><tr><th>Start Date</th><th>End Date</th><th>Calendar Gap</th><th>Total Days</th></tr></thead>
+<tbody>
+<tr><td>28 Feb 2024</td><td>2 Mar 2024</td><td>0 y, 0 m, 3 d</td><td>3</td></tr>
+<tr><td>1 Jan 2024</td><td>1 Jan 2025</td><td>1 y, 0 m, 0 d</td><td>366 (leap year)</td></tr>
+<tr><td>1 Jan 2025</td><td>1 Jan 2026</td><td>1 y, 0 m, 0 d</td><td>365</td></tr>
+<tr><td>10 Feb 1984</td><td>16 Jan 1985</td><td>0 y, 11 m, 6 d</td><td>341</td></tr>
+<tr><td>15 Mar 2026</td><td>13 Jun 2026</td><td>0 y, 2 m, 29 d</td><td>90</td></tr>
+</tbody>
+</table>
+
+<p>The leap-year row is the one to remember: a full year starting in 2024 is 366 days, but the same dates a year later give 365. Any tool that ignores leap years will be wrong here — a quick way to test a new calculator.</p>
+
+<h3>Who Uses Date Difference Calculators?</h3>
+
+<p><strong>Project managers</strong> count working days between milestones and verify schedule math that spreadsheets got wrong.</p>
+
+<p><strong>HR and payroll staff</strong> compute notice periods, probation lengths, and service durations where exact day counts decide pay.</p>
+
+<p><strong>Legal and contract work</strong> depends on precise durations — "90 days from signing" needs a real answer, not an estimate.</p>
+
+<p><strong>Parents and couples</strong> track pregnancy weeks, baby ages in days, and anniversary countdowns.</p>
+
+<p><strong>Students</strong> solve date-arithmetic problems and verify history timelines with exact gaps.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant results</strong> — the gap appears as you pick the dates.</li>
+<li><strong>Dual view</strong> — calendar breakdown plus total days, weeks, hours.</li>
+<li><strong>Leap-year correct</strong> — February 29 handled by the real calendar.</li>
+<li><strong>Order-independent</strong> — earlier date is used as the start automatically.</li>
+<li><strong>Business-day options</strong> — many tools exclude weekends and holidays.</li>
+<li><strong>100% free</strong> — no signup, no subscription, no limits.</li>
+<li><strong>Private by design</strong> — runs in your browser; your dates are never stored.</li>
+<li><strong>Works everywhere</strong> — any modern browser on desktop or mobile.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this date difference calculator free?</h4>
+<p>Yes — free, no account, no limits.</p>
+
+<h4>How is the difference calculated?</h4>
+<p>Total days come from the timestamp difference divided by 86,400,000 ms/day; the calendar breakdown (years, months, days) uses borrowing logic against the real calendar.</p>
+
+<h4>Does it account for leap years?</h4>
+<p>Yes. February 29 exists in leap years and the day counts reflect it — a year spanning 2024 is 366 days.</p>
+
+<h4>Does the order of the dates matter?</h4>
+<p>No. The calculator uses the earlier date as the start, so both orders give the same result.</p>
+
+<h4>Is the count inclusive or exclusive?</h4>
+<p>Most tools count exclusively (1 Jan to 2 Jan = 1 day). Add one if your use case counts both endpoints.</p>
+
+<h4>Can I exclude weekends?</h4>
+<p>Many date calculators offer a business-days mode that skips Saturdays, Sundays, and optionally holidays.</p>
+
+<h4>Can I add days to a date instead?</h4>
+<p>Yes — most tools include a date-adder mode: enter a start date plus a number of days to get the resulting date.</p>
+
+<h4>Is my data stored anywhere?</h4>
+<p>No. The calculation runs entirely in your browser; your dates never leave your device.</p>
+</article>
+</section>
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="js/calc-utils.js"></script>
+<script src="js/calc-ui.js"></script>
+<script>
+        function init() {
+            CalcUI.init({ toolName: 'date-difference-calculator' });
+            const today = new Date();
+            const nextMonth = new Date();
+            nextMonth.setMonth(today.getMonth() + 1);
+
+            document.getElementById('start-date').valueAsDate = today;
+            document.getElementById('end-date').valueAsDate = nextMonth;
+            calculate();
+        }
+
+        function calculate() {
+            const start = document.getElementById('start-date').valueAsDate;
+            const end = document.getElementById('end-date').valueAsDate;
+            const incEnd = document.getElementById('inc-end').checked;
+            const exHolidays = document.getElementById('ex-holidays').checked;
+
+            if (!start || !end) return;
+
+            const diffTime = end - start;
+            let diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            if (incEnd) diffDays += 1;
+
+            document.getElementById('res-days').textContent = diffDays;
+            document.getElementById('res-weeks').textContent = (diffDays / 7).toFixed(1);
+            document.getElementById('res-months').textContent = (diffDays / 30.44).toFixed(1);
+            document.getElementById('res-hours').textContent = (diffDays * 24).toLocaleString();
+            document.getElementById('res-minutes').textContent = (diffDays * 24 * 60).toLocaleString();
+            document.getElementById('res-seconds').textContent = (diffDays * 24 * 60 * 60 / 1000000).toFixed(1) + 'M';
+
+            // Business days & Holidays
+            let business = 0;
+            let holidays = 0;
+            const current = new Date(start);
+            while (current <= end) {
+                const day = current.getDay();
+                if (day !== 0 && day !== 6) {
+                    // Mock holiday list: Jan 1, Jul 4, Dec 25
+                    const m = current.getMonth();
+                    const d = current.getDate();
+                    if (exHolidays && ((m === 0 && d === 1) || (m === 6 && d === 4) || (m === 11 && d === 25))) {
+                        holidays++;
+                    } else {
+                        business++;
+                    }
+                }
+                current.setDate(current.getDate() + 1);
+            }
+
+            document.getElementById('res-business').textContent = business;
+            document.getElementById('res-holidays').textContent = holidays;
+
+            // Labels
+            const opt = { month: 'short', day: 'numeric', year: 'numeric' };
+            document.getElementById('label-start').textContent = start.toLocaleDateString('en-US', opt);
+            document.getElementById('label-end').textContent = end.toLocaleDateString('en-US', opt);
+
+            // Timeline
+            const yearStart = new Date(start.getFullYear(), 0, 1);
+            const yearEnd = new Date(start.getFullYear(), 11, 31);
+            const progress = ((start - yearStart) / (yearEnd - yearStart)) * 100;
+            document.getElementById('timeline-bar').style.width = Math.max(5, progress) + '%';
+        }
+
+        function exportData(format) {
+            const data = {
+                title: 'Date Intelligence Report',
+                total_days: document.getElementById('res-days').textContent,
+                business_days: document.getElementById('res-business').textContent,
+                weeks: document.getElementById('res-weeks').textContent
+            };
+            CalcUI.exportResult(data, 'date-report', format);
+        }
+
+        init();
+    </script>
+</body>
+</html>

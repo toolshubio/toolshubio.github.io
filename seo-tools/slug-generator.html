@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Slug Generator | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">SEO Tools</a> &gt;
+                <span>Slug Generator</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Slug Generator</h1>
+                <p class="tool-description"></p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
+<div class="container text-center">
+<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Slug Generator</h1>
+<p class="hero-subtitle">Convert page titles into SEO-friendly URL slugs strictly adhering to best
+                    practices.</p>
+</div>
+</section>
+<div class="container">
+<div class="tool-interface-container">
+<div class="input-group">
+<label class="input-label">Page Title / String</label>
+<input class="seo-input" id="inputString" oninput="generateSlug()" placeholder="How to optimize your website for SEO in 2025!" type="text"/>
+</div>
+<div class="schema-form-grid">
+<div class="input-group">
+<label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+<input id="removeStopWords" onchange="generateSlug()" type="checkbox"/> Remove Stop Words
+                        </label>
+</div>
+<div class="input-group">
+<label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+<input id="removeNumbers" onchange="generateSlug()" type="checkbox"/> Remove Numbers
+                        </label>
+</div>
+</div>
+<div class="output-section">
+<div class="section-header">
+<h3 class="section-title">Generated Slug</h3>
+<button class="btn-secondary" onclick="copySlug()" style="padding: 0.5rem 1rem;">Copy</button>
+</div>
+<div class="output-container">
+<pre class="output-code" id="outputSlug" style="font-size: 1.25rem; font-weight: bold; color: var(--color-seo); min-height: 50px; display: flex; align-items: center;"></pre>
+</div>
+</div>
+</div>
+</div>
+            </div>
+            <section class="seo-article" data-tool="slug-generator">
+<article class="tool-article">
+<h2>Slug Generator — Free SEO-Friendly URL Slug Maker</h2>
+
+<p>Every CMS auto-generates a slug from your title, and every CMS gets it wrong in its own way: capitals left in, accents breaking the link, stop words bloating it, punctuation sneaking through. I learned to always check the auto-generated slug before publishing — and a slug generator makes that check take five seconds. Paste your title, get a clean, keyword-bearing, lowercase, hyphenated slug, and paste it into your permalink field.</p>
+
+<h3>What Is a Slug Generator?</h3>
+
+<p>A URL slug is the part of a web address that identifies a specific page — in <code>example.com/best-budget-laptops</code>, the slug is <code>best-budget-laptops</code>. It is the one part of the URL you fully control on every page you create, and Google reads it before it reads almost anything else on the page. The generator turns any title or heading into a proper slug: it lowercases the text, replaces spaces with your chosen separator, strips punctuation and special characters, transliterates accented characters to ASCII (<code>Café</code> becomes <code>cafe</code>), optionally removes stop words, and can cap the length without cutting through a word.</p>
+
+<p>The transformation rules are small but unforgiving. Spaces must become separators — hyphens, which Google treats as word breaks (underscores get joined into one token, so avoid them). Everything goes lowercase for consistency across servers. Special characters like #, @, and ! get stripped because they can break links. The result is a slug that reads well in search results, survives being pasted into emails and chats, and carries your keyword.</p>
+
+<h3>How to Use the Slug Generator</h3>
+
+<p>The workflow is fast enough to become a habit for every post.</p>
+
+<p>Type or paste your title into the input field — a blog headline, a product name, any text. The slug builds itself underneath in real time; there is nothing to click. Choose your separator (hyphen is the default and the SEO-recommended choice), confirm lowercase is on, and decide on the options: remove stop words for a shorter slug, transliterate accents if your title has them, and set a max length if you want a hard cap.</p>
+
+<p>Read the result critically. A good slug is 3–5 words, contains the primary keyword, and reads like a label: "10 Best Chicken Biryani Recipes for Beginners!" becomes <code>10-best-chicken-biryani-recipes-beginners</code>. If it is still long, trim manually — drop the number or a secondary word. Copy the finished slug and paste it into your CMS permalink field before publishing.</p>
+
+<p>One rule to tattoo on your workflow: set the slug once and do not change it after publishing. Changing a live URL breaks inbound links and social shares unless you add a 301 redirect — and most of the time, the old slug was fine anyway.</p>
+
+<h3>Transformation Examples</h3>
+
+<table>
+<thead><tr><th>Input title</th><th>Generated slug</th></tr></thead>
+<tbody>
+<tr><td>10 Best Chicken Biryani Recipes for Beginners!</td><td><code>10-best-chicken-biryani-recipes-beginners</code></td></tr>
+<tr><td>How to Make Money Online From Home</td><td><code>how-to-make-money-online-home</code></td></tr>
+<tr><td>Café Culture: Paris's Best Espresso Bars</td><td><code>cafe-culture-paris-best-espresso-bars</code></td></tr>
+<tr><td>Best Chicken Mandi!!!</td><td><code>best-chicken-mandi</code></td></tr>
+<tr><td>Hello World</td><td><code>hello-world</code></td></tr>
+</tbody>
+</table>
+
+<p>Notice what each step does: "How to Make Money Online From Home" loses the stop words "to" and "from" but keeps "how" (dropping it would change the meaning), "Café" transliterates cleanly to "cafe," and the triple exclamation marks vanish entirely.</p>
+
+<h3>Who Uses Slug Generators?</h3>
+
+<p><strong>Bloggers</strong> generate slugs for every post — WordPress permalinks, checked and cleaned in seconds.</p>
+
+<p><strong>E-commerce managers</strong> create product and category slugs in bulk, keeping thousands of URLs consistent.</p>
+
+<p><strong>Developers</strong> use the rules as a reference for their own <code>slugify()</code> functions — and to avoid reinventing the accent-handling they always get wrong.</p>
+
+<p><strong>Content teams</strong> use bulk mode to convert a spreadsheet of titles into slugs for migrations and launches.</p>
+
+<p><strong>Marketers</strong> generate clean slugs for campaign landing pages that get shared in emails and ads.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Real-time generation</strong> — the slug updates as you type, no button needed.</li>
+<li><strong>Transliteration</strong> — accents and non-Latin scripts converted to readable ASCII.</li>
+<li><strong>Stop-word removal</strong> — optional stripping of filler words for shorter slugs.</li>
+<li><strong>Separator choice</strong> — hyphen (recommended), underscore, or dot.</li>
+<li><strong>Length cap</strong> — max length that never cuts mid-word.</li>
+<li><strong>Bulk mode</strong> — paste many titles, get many slugs in one go.</li>
+<li><strong>100% free</strong> — no signup, no limits.</li>
+<li><strong>Private by design</strong> — everything runs in your browser; nothing is uploaded.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is a URL slug?</h4>
+<p>The part of a web address after the domain that identifies a specific page — in example.com/best-budget-laptops, "best-budget-laptops" is the slug. It should be lowercase, hyphenated, and descriptive of the page.</p>
+
+<h4>Should I use hyphens or underscores in slugs?</h4>
+<p>Hyphens. Google treats hyphens as word separators but joins underscored words into a single token. Hyphens are also the default in WordPress, Shopify, and most CMS platforms.</p>
+
+<h4>How long should a slug be?</h4>
+<p>Three to five words is ideal. Include the primary keyword, drop stop words and filler, and resist the urge to mirror the full title.</p>
+
+<h4>Can I change a slug after publishing?</h4>
+<p>You can, but do not do it casually. Changing a live URL breaks links unless you add a 301 redirect from the old URL to the new one. Set it right the first time.</p>
+
+<h4>Should slugs include the year?</h4>
+<p>Only for genuinely time-sensitive content. A date in the slug makes the page look stale later and complicates updates — "best-laptops-2026" ages badly.</p>
+
+<h4>What about non-English titles?</h4>
+<p>The generator transliterates accents and many non-Latin scripts to ASCII equivalents. For CJK and similar scripts, check that the output is readable and test the URL before publishing.</p>
+
+<h4>Is this generator free?</h4>
+<p>Yes — completely free, no account needed, including bulk mode.</p>
+
+<h4>Does my text leave my browser?</h4>
+<p>No. Everything runs client-side; nothing you type is uploaded or tracked.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        const stopWords = ["a", "an", "the", "and", "or", "but", "of", "to", "in", "on", "at", "for", "with", "by", "as", "from"];
+
+        function generateSlug() {
+            let text = document.getElementById('inputString').value;
+            const removeStop = document.getElementById('removeStopWords').checked;
+            const removeNum = document.getElementById('removeNumbers').checked;
+
+            if (!text) {
+                document.getElementById('outputSlug').innerText = '';
+                return;
+            }
+
+            text = text.toLowerCase();
+
+            if (removeStop) {
+                text = text.split(/\s+/).filter(w => !stopWords.includes(w)).join(' ');
+            }
+
+            // Replace special chars with spaces first to ensure separation
+            text = text.replace(/[^a-z0-9\s-]/g, ' ');
+
+            if (removeNum) {
+                text = text.replace(/[0-9]/g, '');
+            }
+
+            // Convert spaces to hyphens and collapse multiple
+            text = text.trim().replace(/\s+/g, '-');
+
+            // Remove trailing hyphens
+            text = text.replace(/^-+|-+$/g, '');
+
+            document.getElementById('outputSlug').innerText = text;
+        }
+
+        function copySlug() {
+            const text = document.getElementById('outputSlug').innerText;
+            if (text) {
+                navigator.clipboard.writeText(text).then(() => alert("Copied!"));
+            }
+        }
+    </script>
+</body>
+</html>

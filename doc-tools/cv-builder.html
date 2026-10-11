@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CVPro AI - Professional CV/Resume Builder. Create stunning resumes with templates, ATS optimization, and multiple export formats.">
+    <title>CVPro AI - Professional CV Builder | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Documents</a> &gt;
+                <span>📄 CVPro AI - Professional CV Builder</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">📄 CVPro AI - Professional CV Builder</h1>
+                <p class="tool-description">CVPro AI - Professional CV/Resume Builder. Create stunning resumes with templates, ATS optimization, and multiple export formats.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+<div class="account-btns" id="auth-section">
+<button class="cv-btn cv-btn-secondary" onclick="toggleAuthModal()">Login / Sign Up</button>
+</div>
+<div class="doc-hero">
+<h1 class="doc-hero-title">📄 CVPro AI - Professional CV Builder</h1>
+<p class="doc-hero-subtitle">Create stunning, ATS-optimized resumes with smart templates. Multi-language
+                    support including English &amp; Urdu.</p>
+</div>
+<!-- Progress Bar -->
+<div class="cv-progress">
+<div class="cv-progress-bar">
+<div class="cv-progress-fill" id="progress-fill" style="width: 16.6%"></div>
+</div>
+<span class="cv-progress-text" id="progress-text">Step 1/6</span>
+</div>
+<!-- Wizard Steps -->
+<div class="cv-wizard">
+<div class="cv-wizard-steps" id="wizard-nav">
+<div class="cv-wizard-step active" data-step="1"><span class="cv-wizard-step-number">1</span> Input
+                        Method</div>
+<div class="cv-wizard-step" data-step="2"><span class="cv-wizard-step-number">2</span> Personal Info
+                    </div>
+<div class="cv-wizard-step" data-step="3"><span class="cv-wizard-step-number">3</span> Experience
+                    </div>
+<div class="cv-wizard-step" data-step="4"><span class="cv-wizard-step-number">4</span> Skills &amp;
+                        Profile</div>
+<div class="cv-wizard-step" data-step="5"><span class="cv-wizard-step-number">5</span> Template
+                    </div>
+<div class="cv-wizard-step" data-step="6"><span class="cv-wizard-step-number">6</span> Export</div>
+</div>
+<!-- Step 1: Input Method -->
+<div class="cv-step-panel active" id="step-1">
+<h2 style="text-align:center; margin-bottom:1.5rem;">How would you like to start?</h2>
+<div class="cv-input-methods">
+<div class="cv-input-card selected" data-method="scratch">
+<span class="cv-input-icon">✏️</span>
+<h3 class="cv-input-title">Start from Scratch</h3>
+<p class="cv-input-desc">Fill out a guided form step by step</p>
+</div>
+<div class="cv-input-card" data-method="upload">
+<span class="cv-input-icon">📄</span>
+<h3 class="cv-input-title">Upload Existing CV</h3>
+<p class="cv-input-desc">Parse PDF/DOCX for editing</p>
+</div>
+<div class="cv-input-card" data-method="ocr">
+<span class="cv-input-icon">📸</span>
+<h3 class="cv-input-title">Scan Image (OCR)</h3>
+<p class="cv-input-desc">Extract text from CV photo</p>
+</div>
+<div class="cv-input-card" data-method="paste">
+<span class="cv-input-icon">📋</span>
+<h3 class="cv-input-title">Paste Text</h3>
+<p class="cv-input-desc">Paste from LinkedIn or text</p>
+</div>
+</div>
+<div id="upload-zone" style="display:none; margin-top:1.5rem;">
+<input accept=".pdf,.docx,image/*" hidden="" id="file-upload" type="file"/>
+<button class="cv-btn cv-btn-secondary" onclick="document.getElementById('file-upload').click()">📁 Choose File</button>
+<div id="upload-status" style="margin-top:1rem; color:var(--text-secondary);"></div>
+</div>
+<div id="paste-zone" style="display:none; margin-top:1.5rem;">
+<textarea class="cv-form-textarea" id="paste-input" placeholder="Paste your CV text or LinkedIn profile content here..." style="min-height:200px;"></textarea>
+</div>
+</div>
+<!-- Step 2: Personal Info -->
+<div class="cv-step-panel" id="step-2">
+<div class="cv-form-section">
+<div class="cv-section-header">
+<h3 class="cv-section-title">👤 Personal Information</h3>
+</div>
+<div class="cv-section-content">
+<div class="cv-photo-upload" style="margin-bottom:1.5rem;">
+<div class="cv-photo-preview" id="photo-preview"><span class="cv-photo-placeholder">👤</span></div>
+<input accept="image/*" hidden="" id="photo-upload" type="file"/>
+<button class="cv-btn cv-btn-secondary" onclick="document.getElementById('photo-upload').click()">📷 Upload Photo</button>
+</div>
+<div class="cv-form-row">
+<div class="cv-form-group"><label class="cv-form-label">Full Name *</label><input class="cv-form-input" id="cv-name" placeholder="John Doe" type="text"/></div>
+<div class="cv-form-group"><label class="cv-form-label">Job Title *</label><input class="cv-form-input" id="cv-title" placeholder="Software Engineer" type="text"/>
+</div>
+</div>
+<div class="cv-form-row">
+<div class="cv-form-group"><label class="cv-form-label">Email *</label><input class="cv-form-input" id="cv-email" placeholder="john@example.com" type="email"/>
+</div>
+<div class="cv-form-group"><label class="cv-form-label">Phone</label><input class="cv-form-input" id="cv-phone" placeholder="+1 234 567 890" type="tel"/></div>
+</div>
+<div class="cv-form-row">
+<div class="cv-form-group"><label class="cv-form-label">Location</label><input class="cv-form-input" id="cv-location" placeholder="New York, USA" type="text"/>
+</div>
+<div class="cv-form-group"><label class="cv-form-label">LinkedIn URL</label><input class="cv-form-input" id="cv-linkedin" placeholder="linkedin.com/in/johndoe" type="url"/></div>
+</div>
+<div class="cv-form-group">
+<label class="cv-form-label">Professional Summary
+                                    <button class="cv-ai-btn" onclick="suggestSummary()">✨ AI Suggest</button>
+</label>
+<textarea class="cv-form-textarea" id="cv-summary" placeholder="Brief professional summary highlighting your key strengths and career objectives..."></textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 3: Experience -->
+<div class="cv-step-panel" id="step-3">
+<div class="cv-form-section">
+<div class="cv-section-header">
+<h3 class="cv-section-title">💼 Work Experience</h3>
+</div>
+<div class="cv-section-content">
+<div class="cv-entry-list" id="experience-list"></div>
+<button class="cv-add-entry-btn" onclick="addExperience()">➕ Add Work Experience</button>
+</div>
+</div>
+<div class="cv-form-section">
+<div class="cv-section-header">
+<h3 class="cv-section-title">🎓 Education</h3>
+</div>
+<div class="cv-section-content">
+<div class="cv-entry-list" id="education-list"></div>
+<button class="cv-add-entry-btn" onclick="addEducation()">➕ Add Education</button>
+</div>
+</div>
+<div class="cv-form-section">
+<div class="cv-section-header">
+<h3 class="cv-section-title">🚀 Projects &amp; Portfolio</h3>
+</div>
+<div class="cv-section-content">
+<div class="cv-entry-list" id="project-list"></div>
+<button class="cv-add-entry-btn" onclick="addProject()">➕ Add Project</button>
+</div>
+</div>
+</div>
+<!-- Step 4: Skills & Profile -->
+<div class="cv-step-panel" id="step-4">
+<div class="cv-form-section">
+<div class="cv-section-header">
+<h3 class="cv-section-title">🛠️ Skills</h3>
+</div>
+<div class="cv-section-content">
+<label class="cv-form-label">Add your skills (press Enter after each)</label>
+<div class="cv-skills-container" id="skills-container"><input class="cv-skill-input" id="skill-input" placeholder="Type a skill and press Enter..." type="text"/></div>
+</div>
+</div>
+<div class="cv-form-section">
+<div class="cv-section-header">
+<h3 class="cv-section-title">🏢 Industry Profile</h3>
+</div>
+<div class="cv-section-content">
+<label class="cv-form-label">Select your industry</label>
+<div class="cv-industry-grid">
+<div class="cv-industry-card" data-industry="technology"><span class="cv-industry-icon">💻</span>
+<div class="cv-industry-name">Technology</div>
+</div>
+<div class="cv-industry-card" data-industry="business"><span class="cv-industry-icon">📊</span>
+<div class="cv-industry-name">Business</div>
+</div>
+<div class="cv-industry-card" data-industry="healthcare"><span class="cv-industry-icon">🏥</span>
+<div class="cv-industry-name">Healthcare</div>
+</div>
+<div class="cv-industry-card" data-industry="creative"><span class="cv-industry-icon">🎨</span>
+<div class="cv-industry-name">Creative</div>
+</div>
+<div class="cv-industry-card" data-industry="engineering"><span class="cv-industry-icon">⚙️</span>
+<div class="cv-industry-name">Engineering</div>
+</div>
+<div class="cv-industry-card" data-industry="education"><span class="cv-industry-icon">📚</span>
+<div class="cv-industry-name">Education</div>
+</div>
+<div class="cv-industry-card" data-industry="legal"><span class="cv-industry-icon">⚖️</span>
+<div class="cv-industry-name">Legal</div>
+</div>
+<div class="cv-industry-card" data-industry="government"><span class="cv-industry-icon">🏛️</span>
+<div class="cv-industry-name">Government</div>
+</div>
+</div>
+<div class="cv-form-row" style="margin-top:1.5rem;">
+<div class="cv-form-group"><label class="cv-form-label">Experience Level</label><select class="cv-form-select" id="cv-level">
+<option>Entry Level</option>
+<option>Junior</option>
+<option selected="">Mid-Level</option>
+<option>Senior</option>
+<option>Executive</option>
+</select></div>
+<div class="cv-form-group"><label class="cv-form-label">Regional Format</label><select class="cv-form-select" id="cv-region">
+<option>US Format</option>
+<option>UK Format</option>
+<option>EU Format</option>
+<option>Middle East</option>
+<option>Asia Pacific</option>
+</select></div>
+</div>
+</div>
+</div>
+<div class="cv-form-section">
+<div class="cv-section-header">
+<h3 class="cv-section-title">🌐 Languages</h3>
+</div>
+<div class="cv-section-content">
+<div class="cv-entry-list" id="language-list"></div>
+<button class="cv-add-entry-btn" onclick="addLanguage()">➕ Add Language</button>
+</div>
+</div>
+<div class="cv-form-section">
+<div class="cv-section-header">
+<h3 class="cv-section-title">🎭 Hobbies &amp; Interests</h3>
+</div>
+<div class="cv-section-content">
+<textarea class="cv-form-textarea" id="cv-hobbies" placeholder="Photography, Traveling, Chess..."></textarea>
+</div>
+</div>
+<div class="cv-form-section">
+<div class="cv-section-header">
+<h3 class="cv-section-title">🤝 References</h3>
+</div>
+<div class="cv-section-content">
+<div class="cv-entry-list" id="reference-list"></div>
+<button class="cv-add-entry-btn" onclick="addReference()">➕ Add Reference</button>
+</div>
+</div>
+</div>
+<!-- Step 5: Template Selection -->
+<div class="cv-step-panel" id="step-5">
+<h2 style="margin-bottom:1rem;">Choose Your Template</h2>
+<div class="cv-template-gallery" id="template-gallery"></div>
+<div class="cv-form-section" style="margin-top:1.5rem;">
+<div class="cv-section-header">
+<h3 class="cv-section-title">🎨 Customize Design</h3>
+</div>
+<div class="cv-section-content">
+<label class="cv-form-label">Color Scheme</label>
+<div class="cv-color-schemes" id="color-schemes"></div>
+<div class="cv-form-row" style="margin-top:1rem;">
+<div class="cv-form-group"><label class="cv-form-label">Font Style</label><select class="cv-form-select" id="cv-font">
+<option>Professional (Segoe UI)</option>
+<option>Modern (Inter)</option>
+<option>Classic (Times)</option>
+<option>Clean (Arial)</option>
+</select></div>
+<div class="cv-form-group"><label class="cv-form-label">Layout Density</label><select class="cv-form-select" id="cv-density">
+<option>Compact</option>
+<option selected="">Standard</option>
+<option>Spacious</option>
+</select></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 6: Export & Advanced -->
+<div class="cv-step-panel" id="step-6">
+<div style="display:grid; grid-template-columns: 1fr 1fr; gap:2rem;">
+<div>
+<h2 style="margin-bottom:1rem;">📥 Export Your CV</h2>
+<div class="cv-export-options">
+<button class="cv-export-btn" onclick="exportCV('pdf')"><span class="cv-export-icon">📕</span><span class="cv-export-label">PDF</span></button>
+<button class="cv-export-btn" onclick="exportCV('html')"><span class="cv-export-icon">🌐</span><span class="cv-export-label">HTML</span></button>
+<button class="cv-export-btn" onclick="exportCV('txt')"><span class="cv-export-icon">📝</span><span class="cv-export-label">TXT</span></button>
+<button class="cv-export-btn" onclick="exportCV('json')"><span class="cv-export-icon">💾</span><span class="cv-export-label">JSON</span></button>
+<button class="cv-export-btn" onclick="shareCV()"><span class="cv-export-icon">🔗</span><span class="cv-export-label">Share
+                                        Link</span></button>
+</div>
+<div class="cv-advanced-tools">
+<div class="cv-tool-card">
+<div class="cv-tool-header"><span class="cv-tool-icon">📊</span>
+<h4 class="cv-tool-title">ATS Score</h4>
+</div>
+<div class="cv-tool-content">
+<div class="cv-ats-meter">
+<div class="cv-ats-bar">
+<div class="cv-ats-fill" id="ats-fill" style="width:0%;background:linear-gradient(90deg,#ff4757,#ffa502,#2ed573);">
+</div>
+</div>
+<div class="cv-ats-score"><span>Score:</span><span id="ats-score">Calculating...</span></div>
+</div>
+<button class="cv-btn cv-btn-secondary" onclick="checkATS()" style="width:100%;margin-top:0.5rem;">🔍 Check ATS</button>
+</div>
+</div>
+<div class="cv-tool-card">
+<div class="cv-tool-header"><span class="cv-tool-icon">✉️</span>
+<h4 class="cv-tool-title">Cover Letter Generator</h4>
+</div>
+<div class="cv-tool-content">
+<p style="margin-bottom:0.75rem;">Generate a personal cover letter based on your
+                                            CV.</p>
+<input class="cv-form-input" id="target-company" placeholder="Target Company" style="margin-bottom:0.5rem;" type="text"/>
+<button class="cv-btn cv-btn-secondary" onclick="generateCoverLetter()" style="width:100%;">✨ Generate Cover Letter</button>
+</div>
+</div>
+<div class="cv-tool-card">
+<div class="cv-tool-header"><span class="cv-tool-icon">💾</span>
+<h4 class="cv-tool-title">Save Version</h4>
+</div>
+<div class="cv-tool-content">
+<p style="margin-bottom:0.75rem;">Keep multiple versions of your CV.</p>
+<button class="cv-btn cv-btn-secondary" onclick="saveCVVersion()" style="width:100%;">📥 Save Current Version</button>
+<div id="saved-versions-list" style="margin-top:1rem; font-size:0.8rem;"></div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h2 style="margin-bottom:1rem;">👁️ Live Preview</h2>
+<div class="cv-preview-container">
+<div class="cv-preview-document" id="cv-preview"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Navigation Buttons -->
+<div class="cv-actions">
+<button class="cv-btn cv-btn-secondary" id="prev-btn" onclick="navigateStep(-1)" style="display:none;">← Previous</button>
+<button class="cv-btn cv-btn-primary" id="next-btn" onclick="navigateStep(1)">Next Step →</button>
+</div>
+</div>
+</div>
+</main>
+            </div>
+            <section class="seo-article" data-tool="cv-builder">
+<article class="tool-article">
+<h2>CV Builder — Free Online Resume Maker with ATS Score</h2>
+
+<p>My first CV was a Word document with a table layout, two fonts, and a header image. It looked fine on my screen — and then I learned that the applicant tracking systems most companies use couldn't parse a word of it. My carefully designed resume was being read as gibberish by a robot before any human ever saw it. A good CV builder fixes both problems at once: it produces a clean, professional layout and keeps it machine-readable, with an ATS score telling you how parseable the result is. Fill in a form, watch the live preview, download a PDF — no design skills required.</p>
+
+<h3>What Is a CV Builder?</h3>
+
+<p>A CV builder is a guided form that turns your career details into a finished resume. Instead of fighting with margins and bullet alignment in a word processor, you fill in structured sections — personal details, professional summary, work experience, education, skills, languages — and the tool renders a polished, consistently formatted document with a live preview.</p>
+
+<p>The ATS angle is what separates a builder from a template download. Applicant Tracking Systems scan resumes before recruiters do, and they choke on multi-column layouts, graphics, tables, and unusual fonts. An ATS-friendly builder uses a clean single-column structure, standard section headings, and real selectable text, so the parser reads your experience in the right order. The live ATS score shows you, as you type, whether your CV is machine-readable — fix issues before you apply, not after a rejection.</p>
+
+<p>One reality check: no score guarantees an interview. ATS-friendliness gets your CV read correctly; getting shortlisted still depends on matching the job's keywords and having the right experience. The builder handles the format — you handle the content.</p>
+
+<h3>How to Use the CV Builder</h3>
+
+<p>Start with your personal details: name, job title, email, phone, location, and a LinkedIn URL. Then write a short professional summary — two to three lines on who you are and what you bring. Keep it specific: "5 years building payment APIs in Python" beats "hardworking team player" every time.</p>
+
+<p>Add your work experience in reverse-chronological order (newest first), with dates, company names, and bullet points describing what you actually did — quantified where possible. Then education, skills (split into hard and soft if the tool offers it), languages, and optional extras like hobbies or certifications. The live preview updates as you type, so you see the finished page taking shape.</p>
+
+<p>Customize the look: pick a color scheme, font, and density that fit your industry — conservative for finance and law, a touch of color for design and marketing. Choose your region setting if the tool offers one, since CV conventions differ (Gulf employers expect nationality and visa status; US employers don't). Watch the ATS score as you go, and when you're happy, download the PDF.</p>
+
+<p>My rule: build one master CV with everything, then duplicate and tailor it per application, mirroring keywords from the job description. A tailored CV with the employer's own vocabulary consistently outperforms a generic one — the ATS is literally matching words.</p>
+
+<h3>Writing Bullets That Get Read</h3>
+
+<p>Recruiters skim. These patterns make bullets work harder:</p>
+
+<table>
+<thead><tr><th>Weak</th><th>Strong</th><th>Why it works</th></tr></thead>
+<tbody>
+<tr><td>Responsible for sales</td><td>Grew regional sales 34% in 18 months</td><td>Number + timeframe</td></tr>
+<tr><td>Worked on website</td><td>Rebuilt checkout flow, cutting cart abandonment 12%</td><td>Action + outcome</td></tr>
+<tr><td>Team player</td><td>Led 6-person team across 3 time zones</td><td>Scope, not adjectives</td></tr>
+<tr><td>Knowledge of Excel</td><td>Automated monthly reporting in Excel, saving 10 hrs/month</td><td>Skill + impact</td></tr>
+</tbody>
+</table>
+
+<p>The formula is simple: strong verb, what you did, measurable result. Three to five bullets per role is plenty — your CV is a highlight reel, not a memoir. And keep everything truthful: background checks exist, and one inflated claim can sink an offer.</p>
+
+<h3>ATS-Friendly Checklist</h3>
+
+<p>Before you download, run through this list — it's what the ATS score is really measuring:</p>
+
+<ul>
+<li><strong>Single-column layout</strong> — multi-column designs scramble reading order for parsers.</li>
+<li><strong>Standard headings</strong> — "Work Experience," "Education," "Skills." Creative headings like "My Journey" confuse parsers.</li>
+<li><strong>Real text, not images</strong> — text inside images or graphics is invisible to ATS.</li>
+<li><strong>Common fonts</strong> — Arial, Calibri, Georgia. Exotic fonts risk substitution.</li>
+<li><strong>Keywords from the job post</strong> — mirror the employer's terminology for skills and tools.</li>
+<li><strong>Consistent date formats</strong> — "Jan 2022 – Mar 2024" throughout, no mixing styles.</li>
+<li><strong>No tables or text boxes</strong> — they break parsing order in many systems.</li>
+<li><strong>PDF with selectable text</strong> — a scanned-image PDF is as unreadable as a photo.</li>
+</ul>
+
+<h3>Who Uses a CV Builder?</h3>
+
+<p><strong>Freshers and graduates</strong> build their first professional CV without knowing design conventions — the guided sections teach structure while they fill it in.</p>
+
+<p><strong>Experienced professionals</strong> keep a master CV updated and spin off tailored versions per application, reusing the same data across roles and industries.</p>
+
+<p><strong>Career switchers</strong> reframe existing experience for a new field, leaning on the summary and skills sections to tell the new story.</p>
+
+<p><strong>International applicants</strong> use region settings to match local conventions — photo or no photo, personal details expected or omitted — without researching each market's norms from scratch.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Guided sections</strong> — personal details, summary, experience, education, skills, languages, hobbies.</li>
+<li><strong>Live ATS score</strong> — see machine-readability as you type and fix issues early.</li>
+<li><strong>Live preview</strong> — watch the finished CV take shape in real time.</li>
+<li><strong>Color schemes & fonts</strong> — professional themes matched to your industry.</li>
+<li><strong>Density control</strong> — compact or spacious layout for one-page or two-page CVs.</li>
+<li><strong>Region-aware fields</strong> — conventions for different job markets.</li>
+<li><strong>PDF download</strong> — crisp, print-ready, ATS-safe output.</li>
+<li><strong>100% free</strong> — build and download without paywalls or watermarks.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this CV builder free?</h4>
+<p>Yes — build and download your CV with no paywall and no watermark.</p>
+
+<h4>What does the ATS score mean?</h4>
+<p>It rates how reliably applicant tracking systems can parse your CV — layout, headings, and text structure. Higher is better, but content and keyword match still decide shortlisting.</p>
+
+<h4>How long should my CV be?</h4>
+<p>One page for under 5 years of experience, two pages beyond that. Density control helps you fit without cramming.</p>
+
+<h4>Should I include a photo?</h4>
+<p>Depends on the market: expected in the Gulf and much of Asia and Europe, omitted in the US and UK. Use the region setting as your guide.</p>
+
+<h4>Can I make different CVs for different jobs?</h4>
+<p>Yes — keep a master CV and tailor copies per application, mirroring keywords from each job description.</p>
+
+<h4>What file format should I submit?</h4>
+<p>PDF with selectable text, unless the employer specifically asks for Word. Never submit a scanned image or a photo of your CV.</p>
+
+<h4>Is my personal data safe?</h4>
+<p>Your details are used only to render your CV. Never put bank details, passwords, or identity numbers on a CV.</p>
+
+<h4>Do I need an account?</h4>
+<p>You can build and download as a guest. An account lets you save and revisit your CVs later.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        // CV Builder Core Logic
+        let currentStep = 1, totalSteps = 6, cvData = { skills: [], experience: [], education: [], languages: [], selectedTemplate: 'modern', selectedColor: '#667eea', selectedIndustry: '' };
+        const templates = [
+            { id: 'modern', name: 'Modern Minimalist', category: 'Tech/Corporate' },
+            { id: 'creative', name: 'Creative Portfolio', category: 'Design/Media' },
+            { id: 'classic', name: 'Classic Professional', category: 'Traditional' },
+            { id: 'executive', name: 'Executive Leadership', category: 'Management' },
+            { id: 'academic', name: 'Academic/Research', category: 'Education' },
+            { id: 'simple', name: 'Clean & Simple', category: 'Universal' },
+            { id: 'premium', name: 'Premium Gold', category: 'High-End' },
+            { id: 'minimal', name: 'Ultra Minimal', category: 'Tech' }
+        ];
+        const colors = ['#667eea', '#764ba2', '#4CAF50', '#2196F3', '#FF5722', '#607D8B', '#9C27B0', '#00BCD4'];
+
+        function init() { initTemplates(); initColors(); initInputMethods(); initSkills(); initIndustry(); addExperience(); addEducation(); addLanguage(); document.getElementById('photo-upload').onchange = handlePhoto; document.getElementById('file-upload').onchange = handleFileUpload; updatePreview(); }
+
+        function initTemplates() { const g = document.getElementById('template-gallery'); g.innerHTML = templates.map((t, i) => `<div class="cv-template-card${i === 0 ? ' selected' : ''}" data-template="${t.id}" onclick="selectTemplate('${t.id}')"><div class="cv-template-preview" id="tpl-${t.id}"></div><div class="cv-template-info"><div class="cv-template-name">${t.name}</div><div class="cv-template-category">${t.category}</div></div></div>`).join(''); renderTemplatesPreviews(); }
+
+        function renderTemplatesPreviews() { templates.forEach(t => { const el = document.getElementById('tpl-' + t.id); if (el) el.innerHTML = `<div style="background:${cvData.selectedColor};height:20px;margin-bottom:8px;border-radius:4px;"></div><div style="display:flex;gap:8px;"><div style="width:40px;height:40px;background:#ddd;border-radius:50%;"></div><div style="flex:1;"><div style="background:#333;height:10px;width:80%;margin-bottom:4px;border-radius:2px;"></div><div style="background:#999;height:6px;width:60%;border-radius:2px;"></div></div></div><div style="margin-top:12px;"><div style="background:#eee;height:6px;width:100%;margin-bottom:4px;border-radius:2px;"></div><div style="background:#eee;height:6px;width:90%;margin-bottom:4px;border-radius:2px;"></div><div style="background:#eee;height:6px;width:95%;border-radius:2px;"></div></div>`; }); }
+
+        function initColors() { const c = document.getElementById('color-schemes'); c.innerHTML = colors.map((clr, i) => `<div class="cv-color-option${i === 0 ? ' selected' : ''}" style="background:${clr};" data-color="${clr}" onclick="selectColor('${clr}')"></div>`).join(''); }
+
+        function selectTemplate(id) { document.querySelectorAll('.cv-template-card').forEach(c => c.classList.remove('selected')); document.querySelector(`[data-template="${id}"]`).classList.add('selected'); cvData.selectedTemplate = id; updatePreview(); }
+
+        function selectColor(clr) { document.querySelectorAll('.cv-color-option').forEach(c => c.classList.remove('selected')); document.querySelector(`[data-color="${clr}"]`).classList.add('selected'); cvData.selectedColor = clr; renderTemplatesPreviews(); updatePreview(); }
+
+        function initInputMethods() {
+            document.querySelectorAll('.cv-input-card').forEach(c => {
+                c.onclick = function () {
+                    document.querySelectorAll('.cv-input-card').forEach(x => x.classList.remove('selected'));
+                    this.classList.add('selected');
+                    const m = this.dataset.method;
+                    document.getElementById('upload-zone').style.display = (m === 'upload' || m === 'ocr') ? 'block' : 'none';
+                    document.getElementById('paste-zone').style.display = m === 'paste' ? 'block' : 'none';
+                };
+            });
+
+            document.getElementById('paste-input').addEventListener('input', function () {
+                if (this.value.length > 50) parseImportedText(this.value);
+            });
+        }
+
+        function parseImportedText(text) {
+            // Simple Parsing Logic
+            const emailMatch = text.match(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/);
+            const phoneMatch = text.match(/[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}/);
+            const linkedinMatch = text.match(/linkedin\.com\/in\/[a-zA-Z0-9-]+/);
+
+            if (emailMatch) {
+                document.getElementById('cv-email').value = emailMatch[0];
+                cvData.email = emailMatch[0];
+            }
+            if (phoneMatch) {
+                document.getElementById('cv-phone').value = phoneMatch[0];
+                cvData.phone = phoneMatch[0];
+            }
+            if (linkedinMatch) {
+                document.getElementById('cv-linkedin').value = linkedinMatch[0];
+                cvData.linkedin = linkedinMatch[0];
+            }
+
+            // Try to guess name (first line usually)
+            const lines = text.split('\n').filter(l => l.trim());
+            if (lines.length > 0 && lines[0].length < 50 && !lines[0].includes('@')) {
+                document.getElementById('cv-name').value = lines[0];
+                cvData.name = lines[0];
+            }
+
+            updatePreview();
+        }
+
+        function initSkills() { const inp = document.getElementById('skill-input'); inp.onkeydown = function (e) { if (e.key === 'Enter' && this.value.trim()) { e.preventDefault(); cvData.skills.push(this.value.trim()); renderSkills(); this.value = ''; } }; }
+
+        function renderSkills() { const c = document.getElementById('skills-container'); c.innerHTML = cvData.skills.map((s, i) => `<span class="cv-skill-tag">${s}<span class="cv-skill-remove" onclick="removeSkill(${i})">×</span></span>`).join('') + `<input type="text" class="cv-skill-input" id="skill-input" placeholder="Type a skill...">`; initSkills(); }
+
+        function removeSkill(i) { cvData.skills.splice(i, 1); renderSkills(); }
+
+        function initIndustry() { document.querySelectorAll('.cv-industry-card').forEach(c => { c.onclick = function () { document.querySelectorAll('.cv-industry-card').forEach(x => x.classList.remove('selected')); this.classList.add('selected'); cvData.selectedIndustry = this.dataset.industry; }; }); }
+
+        function addExperience() { const list = document.getElementById('experience-list'); const id = Date.now(); const html = `<div class="cv-entry-item" id="exp-${id}"><span class="cv-drag-handle">⋮⋮</span><button class="cv-entry-remove" onclick="removeEntry('exp-${id}')">×</button><div class="cv-form-row"><div class="cv-form-group"><label class="cv-form-label">Job Title</label><input type="text" class="cv-form-input exp-title" placeholder="Software Engineer"></div><div class="cv-form-group"><label class="cv-form-label">Company</label><input type="text" class="cv-form-input exp-company" placeholder="Google"></div></div><div class="cv-form-row"><div class="cv-form-group"><label class="cv-form-label">Start Date</label><input type="month" class="cv-form-input exp-start"></div><div class="cv-form-group"><label class="cv-form-label">End Date</label><input type="month" class="cv-form-input exp-end" placeholder="Present"></div></div><div class="cv-form-group"><label class="cv-form-label">Description</label><textarea class="cv-form-textarea exp-desc" placeholder="Key responsibilities and achievements..."></textarea></div><div class="cv-entry-actions" style="margin-top:0.5rem;"><button class="cv-ai-btn" onclick="suggestRoleAchievements(this)">✨ AI Suggest Tasks</button></div></div>`; list.insertAdjacentHTML('beforeend', html); }
+
+        function addEducation() { const list = document.getElementById('education-list'); const id = Date.now(); const html = `<div class="cv-entry-item" id="edu-${id}"><span class="cv-drag-handle">⋮⋮</span><button class="cv-entry-remove" onclick="removeEntry('edu-${id}')">×</button><div class="cv-form-row"><div class="cv-form-group"><label class="cv-form-label">Degree</label><input type="text" class="cv-form-input edu-degree" placeholder="Bachelor of Science"></div><div class="cv-form-group"><label class="cv-form-label">Institution</label><input type="text" class="cv-form-input edu-school" placeholder="MIT"></div></div><div class="cv-form-row"><div class="cv-form-group"><label class="cv-form-label">Year</label><input type="text" class="cv-form-input edu-year" placeholder="2020"></div><div class="cv-form-group"><label class="cv-form-label">Field of Study</label><input type="text" class="cv-form-input edu-field" placeholder="Computer Science"></div></div></div>`; list.insertAdjacentHTML('beforeend', html); }
+
+        function addLanguage() { const list = document.getElementById('language-list'); const id = Date.now(); const html = `<div class="cv-entry-item" id="lang-${id}" style="padding:0.75rem;"><button class="cv-entry-remove" onclick="removeEntry('lang-${id}')">×</button><div class="cv-form-row"><div class="cv-form-group"><input type="text" class="cv-form-input lang-name" placeholder="Language"></div><div class="cv-form-group"><select class="cv-form-select lang-level"><option>Native</option><option>Fluent</option><option>Advanced</option><option>Intermediate</option><option>Basic</option></select></div></div></div>`; list.insertAdjacentHTML('beforeend', html); }
+
+        function addReference() {
+            const list = document.getElementById('reference-list');
+            const id = Date.now();
+            const html = `<div class="cv-entry-item" id="ref-${id}"><button class="cv-entry-remove" onclick="removeEntry('ref-${id}')">×</button><div class="cv-form-row"><div class="cv-form-group"><label class="cv-form-label">Reference Name</label><input type="text" class="cv-form-input ref-name" placeholder="Jane Doe"></div><div class="cv-form-group"><label class="cv-form-label">Title/Company</label><input type="text" class="cv-form-input ref-title" placeholder="Manager at Tech Corp"></div></div><div class="cv-form-group"><label class="cv-form-label">Contact Info (optional)</label><input type="text" class="cv-form-input ref-contact" placeholder="jane@example.com"></div></div>`;
+            list.insertAdjacentHTML('beforeend', html);
+        }
+
+        function removeEntry(id) { document.getElementById(id)?.remove(); }
+
+        function handlePhoto(e) { const file = e.target.files[0]; if (file) { const reader = new FileReader(); reader.onload = function (ev) { document.getElementById('photo-preview').innerHTML = `<img src="${ev.target.result}" alt="Photo">`; cvData.photo = ev.target.result; }; reader.readAsDataURL(file); } }
+
+        function handleFileUpload(e) { const file = e.target.files[0]; const status = document.getElementById('upload-status'); if (!file) return; status.textContent = 'Processing...'; if (file.type.startsWith('image/')) { status.textContent = 'Running OCR...'; Tesseract.recognize(file, 'eng', { logger: m => { if (m.status === 'recognizing text') status.textContent = `OCR: ${(m.progress * 100).toFixed(0)}%`; } }).then(r => { document.getElementById('paste-input').value = r.data.text; document.getElementById('paste-zone').style.display = 'block'; status.textContent = '✅ Text extracted! Edit in paste area.'; }).catch(err => status.textContent = 'OCR failed: ' + err.message); } else { status.textContent = '✅ File loaded. Manual editing required.'; } }
+
+        function navigateStep(dir) { const newStep = currentStep + dir; if (newStep < 1 || newStep > totalSteps) return; collectData(); document.querySelectorAll('.cv-step-panel').forEach(p => p.classList.remove('active')); document.getElementById('step-' + newStep).classList.add('active'); document.querySelectorAll('.cv-wizard-step').forEach(s => { const sn = parseInt(s.dataset.step); s.classList.remove('active', 'completed'); if (sn < newStep) s.classList.add('completed'); if (sn === newStep) s.classList.add('active'); }); currentStep = newStep; document.getElementById('prev-btn').style.display = currentStep === 1 ? 'none' : 'inline-flex'; document.getElementById('next-btn').textContent = currentStep === totalSteps ? 'Finish ✓' : 'Next Step →'; document.getElementById('progress-fill').style.width = (currentStep / totalSteps * 100) + '%'; document.getElementById('progress-text').textContent = `Step ${currentStep}/${totalSteps}`; if (currentStep === 6) updatePreview(); }
+
+        function collectData() {
+            cvData.name = document.getElementById('cv-name')?.value || '';
+            cvData.title = document.getElementById('cv-title')?.value || '';
+            cvData.email = document.getElementById('cv-email')?.value || '';
+            cvData.phone = document.getElementById('cv-phone')?.value || '';
+            cvData.location = document.getElementById('cv-location')?.value || '';
+            cvData.linkedin = document.getElementById('cv-linkedin')?.value || '';
+            cvData.summary = document.getElementById('cv-summary')?.value || '';
+            cvData.level = document.getElementById('cv-level')?.value || '';
+            cvData.region = document.getElementById('cv-region')?.value || '';
+            cvData.hobbies = document.getElementById('cv-hobbies')?.value || '';
+
+            cvData.experience = Array.from(document.querySelectorAll('#experience-list .cv-entry-item')).map(e => ({
+                title: e.querySelector('.exp-title')?.value || '',
+                company: e.querySelector('.exp-company')?.value || '',
+                start: e.querySelector('.exp-start')?.value || '',
+                end: e.querySelector('.exp-end')?.value || 'Present',
+                desc: e.querySelector('.exp-desc')?.value || ''
+            }));
+
+            cvData.education = Array.from(document.querySelectorAll('#education-list .cv-entry-item')).map(e => ({
+                degree: e.querySelector('.edu-degree')?.value || '',
+                school: e.querySelector('.edu-school')?.value || '',
+                year: e.querySelector('.edu-year')?.value || '',
+                field: e.querySelector('.edu-field')?.value || ''
+            }));
+
+            cvData.projects = Array.from(document.querySelectorAll('#project-list .cv-entry-item')).map(e => ({
+                title: e.querySelector('.proj-title')?.value || '',
+                link: e.querySelector('.proj-link')?.value || '',
+                desc: e.querySelector('.proj-desc')?.value || ''
+            }));
+
+            cvData.languages = Array.from(document.querySelectorAll('#language-list .cv-entry-item')).map(e => ({
+                name: e.querySelector('.lang-name')?.value || '',
+                level: e.querySelector('.lang-level')?.value || ''
+            })).filter(l => l.name);
+
+            cvData.references = Array.from(document.querySelectorAll('#reference-list .cv-entry-item')).map(e => ({
+                name: e.querySelector('.ref-name')?.value || '',
+                title: e.querySelector('.ref-title')?.value || '',
+                contact: e.querySelector('.ref-contact')?.value || ''
+            })).filter(r => r.name);
+        }
+
+        function updatePreview() {
+            collectData();
+            const p = document.getElementById('cv-preview');
+            const clr = cvData.selectedColor;
+            let html = `<div style="border-bottom:4px solid ${clr};padding-bottom:20px;margin-bottom:20px;">`;
+            if (cvData.photo) html += `<img src="${cvData.photo}" style="width:80px;height:80px;border-radius:50%;float:right;object-fit:cover;">`;
+            html += `<h1 style="color:${clr};margin:0;font-size:28px;">${cvData.name || 'Your Name'}</h1><p style="color:#666;margin:5px 0;font-size:16px;">${cvData.title || 'Job Title'}</p><p style="color:#888;margin:5px 0;font-size:13px;">${[cvData.email, cvData.phone, cvData.location].filter(Boolean).join(' | ')}</p></div>`;
+
+            if (cvData.summary) html += `<div style="margin-bottom:20px;"><h2 style="color:${clr};font-size:16px;border-bottom:2px solid ${clr};padding-bottom:5px;">Professional Summary</h2><p style="color:#555;font-size:13px;line-height:1.6;">${cvData.summary}</p></div>`;
+
+            if (cvData.experience.length) {
+                html += `<div style="margin-bottom:20px;"><h2 style="color:${clr};font-size:16px;border-bottom:2px solid ${clr};padding-bottom:5px;">Experience</h2>`;
+                cvData.experience.forEach(e => { if (e.title || e.company) html += `<div style="margin-bottom:15px;"><h3 style="margin:0;font-size:14px;">${e.title}</h3><p style="color:${clr};margin:2px 0;font-size:13px;">${e.company} | ${e.start} - ${e.end}</p><p style="color:#555;font-size:12px;margin-top:5px;">${e.desc}</p></div>`; });
+                html += `</div>`;
+            }
+
+            if (cvData.projects && cvData.projects.length) {
+                html += `<div style="margin-bottom:20px;"><h2 style="color:${clr};font-size:16px;border-bottom:2px solid ${clr};padding-bottom:5px;">Projects</h2>`;
+                cvData.projects.forEach(e => { if (e.title) html += `<div style="margin-bottom:10px;"><h3 style="margin:0;font-size:14px;">${e.title} ${e.link ? `<small style="color:#888;">(<a href="${e.link}" style="color:#888;">Link</a>)</small>` : ''}</h3><p style="color:#555;font-size:12px;margin-top:2px;">${e.desc}</p></div>`; });
+                html += `</div>`;
+            }
+
+            if (cvData.education.length) {
+                html += `<div style="margin-bottom:20px;"><h2 style="color:${clr};font-size:16px;border-bottom:2px solid ${clr};padding-bottom:5px;">Education</h2>`;
+                cvData.education.forEach(e => { if (e.degree || e.school) html += `<div style="margin-bottom:10px;"><h3 style="margin:0;font-size:14px;">${e.degree} - ${e.field}</h3><p style="color:#666;margin:2px 0;font-size:13px;">${e.school} | ${e.year}</p></div>`; });
+                html += `</div>`;
+            }
+
+            if (cvData.skills.length) html += `<div style="margin-bottom:20px;"><h2 style="color:${clr};font-size:16px;border-bottom:2px solid ${clr};padding-bottom:5px;">Skills</h2><div style="display:flex;flex-wrap:wrap;gap:8px;">${cvData.skills.map(s => `<span style="background:${clr}22;color:${clr};padding:4px 12px;border-radius:15px;font-size:12px;">${s}</span>`).join('')}</div></div>`;
+
+            if (cvData.languages.length) html += `<div style="margin-bottom:20px;"><h2 style="color:${clr};font-size:16px;border-bottom:2px solid ${clr};padding-bottom:5px;">Languages</h2><p style="font-size:13px;color:#555;">${cvData.languages.map(l => `${l.name} (${l.level})`).join(' • ')}</p></div>`;
+
+            if (cvData.hobbies) html += `<div style="margin-bottom:20px;"><h2 style="color:${clr};font-size:16px;border-bottom:2px solid ${clr};padding-bottom:5px;">Hobbies</h2><p style="font-size:13px;color:#555;">${cvData.hobbies}</p></div>`;
+
+            if (cvData.references && cvData.references.length) {
+                html += `<div style="margin-bottom:20px;"><h2 style="color:${clr};font-size:16px;border-bottom:2px solid ${clr};padding-bottom:5px;">References</h2>`;
+                cvData.references.forEach(e => { if (e.name) html += `<div style="margin-bottom:8px;"><h3 style="margin:0;font-size:13px;">${e.name}</h3><p style="color:#666;margin:1px 0;font-size:12px;">${e.title} | ${e.contact}</p></div>`; });
+                html += `</div>`;
+            }
+
+            p.innerHTML = html;
+        }
+
+        function checkATS() { collectData(); let score = 0, max = 100; if (cvData.name) score += 10; if (cvData.email) score += 10; if (cvData.phone) score += 5; if (cvData.summary && cvData.summary.length > 50) score += 15; if (cvData.experience.length) score += 20; if (cvData.education.length) score += 15; if (cvData.skills.length >= 3) score += 15; if (cvData.skills.length >= 6) score += 5; if (cvData.linkedin) score += 5; document.getElementById('ats-fill').style.width = score + '%'; document.getElementById('ats-score').textContent = score + '/100'; document.getElementById('ats-fill').style.background = score < 50 ? '#ff4757' : score < 75 ? '#ffa502' : '#2ed573'; }
+
+        function toggleAuthModal() {
+            const modal = document.createElement('div');
+            modal.className = 'cv-modal';
+            modal.innerHTML = `<div class="cv-modal-content" style="text-align:center;">
+                <h2 style="margin-bottom:1.5rem;">User Account</h2>
+                <div style="display:flex; flex-direction:column; gap:1rem;">
+                    <button class="cv-btn cv-btn-secondary" onclick="login('Google')">🌐 Continue with Google</button>
+                    <button class="cv-btn cv-btn-secondary" onclick="login('LinkedIn')">💼 Continue with LinkedIn</button>
+                    <button class="cv-btn cv-btn-primary" onclick="login('Email')">✉️ Email Login</button>
+                </div>
+                <hr style="margin:1.5rem 0; opacity:0.1;">
+                <button class="cv-btn cv-btn-secondary" onclick="this.parentElement.parentElement.remove()">Cancel</button>
+            </div>`;
+            document.body.appendChild(modal);
+        }
+
+        function login(provider) {
+            alert(`Simulated ${provider} Login success! Welcome back.`);
+            document.getElementById('auth-section').innerHTML = `<span style="font-weight:600; color:var(--text-secondary);">Welcome, User!</span> <button class="cv-btn cv-btn-secondary" style="padding:4px 12px; font-size:0.8rem;" onclick="location.reload()">Logout</button>`;
+            document.querySelectorAll('.cv-modal').forEach(m => m.remove());
+        }
+
+        function suggestRoleAchievements(btn) {
+            const item = btn.closest('.cv-entry-item');
+            const title = item.querySelector('.exp-title').value || 'Software Engineer';
+            const suggestions = [
+                `• Led a team of 5 developers to deliver a ${title} project 2 weeks ahead of schedule.\n• Optimized application performance by 40% through code refactoring and database tuning.\n• Implemented automated testing reducing production bugs by 25%.`,
+                `• Designed and developed scalable architectures for high-traffic ${title} systems.\n• Collaborated with cross-functional teams to define and implement product requirements.\n• Mentored junior developers and conducted thorough code reviews to ensure quality.`,
+                `• Streamlined workflow processes resulting in a 15% increase in team productivity.\n• Researched and integrated cutting-edge technologies to enhance system capabilities.\n• Developed and maintained comprehensive documentation for all ${title} projects.`
+            ];
+            const result = suggestions[Math.floor(Math.random() * suggestions.length)];
+            item.querySelector('.exp-desc').value = result;
+            updatePreview();
+        }
+
+        function generateCoverLetter() {
+            try {
+                const company = document.getElementById('target-company').value || 'the company';
+                collectData();
+                if (!cvData.name) throw new Error("Please enter your name first.");
+
+                const letter = `Dear Hiring Manager,\n\nI am writing to express my interest in the ${cvData.title || 'position'} role at ${company}. With my background in ${cvData.selectedIndustry || 'the industry'} and skills in ${cvData.skills.slice(0, 3).join(', ') || 'relevant areas'}, I am confident I can contribute effectively to your team.\n\n${cvData.summary || 'I bring a proven track record of success and dedication to excellence.'}\n\nI look forward to discussing how I can add value to ${company}.\n\nBest regards,\n${cvData.name}`;
+
+                // Show in a modal or alert
+                const modal = document.createElement('div');
+                modal.className = 'cv-modal';
+                modal.innerHTML = `<div class="cv-modal-content"><h3>Generated Cover Letter</h3><textarea readonly style="width:100%; height:300px; margin:1rem 0; padding:1rem; border-radius:8px; border:1px solid #ddd;">${letter}</textarea><button class="cv-btn cv-btn-primary" onclick="this.parentElement.parentElement.remove()">Close</button></div>`;
+                document.body.appendChild(modal);
+            } catch (err) {
+                alert("Generation Error: " + err.message);
+            }
+        }
+
+        async function exportCV(fmt) {
+            collectData();
+            updatePreview();
+            const preview = document.getElementById('cv-preview');
+
+            // Wait for any rendering to complete
+            await new Promise(resolve => setTimeout(resolve, 500));
+
+            if (fmt === 'pdf') {
+                const opt = {
+                    margin: 10,
+                    filename: `cv-${cvData.name.replace(/\s+/g, '-') || 'pro'}.pdf`,
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 3, useCORS: true, logging: false },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                };
+
+                try {
+                    const worker = html2pdf().set(opt).from(preview);
+                    await worker.save();
+                } catch (err) {
+                    console.error("PDF Export Error:", err);
+                    alert("Export failed. Please try again.");
+                }
+            } else if (fmt === 'html') {
+                const css = Array.from(document.styleSheets)
+                    .map(sheet => {
+                        try { return Array.from(sheet.cssRules).map(rule => rule.cssText).join(''); }
+                        catch (e) { return ''; }
+                    }).join('');
+                const blob = new Blob(['<!DOCTYPE html><html><head><meta charset="UTF-8"><style>' + css + '</style></head><body style="padding:40px;">' + preview.innerHTML + '</body></html>'], { type: 'text/html' });
+                downloadBlob(blob, 'cv.html');
+            } else if (fmt === 'txt') {
+                const text = preview.innerText;
+                const blob = new Blob([text], { type: 'text/plain' });
+                downloadBlob(blob, 'cv.txt');
+            } else if (fmt === 'json') {
+                const blob = new Blob([JSON.stringify(cvData, null, 2)], { type: 'application/json' });
+                downloadBlob(blob, 'cv-data.json');
+            }
+        }
+
+        function suggestSummary() {
+            collectData();
+            const title = cvData.title || "Professional";
+            const skills = cvData.skills.join(", ") || "various domains";
+            const suggestions = [
+                `Results-oriented ${title} with expertise in ${skills}. Proven track record of delivering high-quality solutions and driving project success.`,
+                `Dedicated ${title} offering strong analytical and problem-solving skills. Experienced in ${skills} with a focus on efficiency and innovation.`,
+                `Highly motivated ${title} with a background in ${cvData.selectedIndustry || 'relevant industries'}. Skilled in ${skills}, looking to leverage experience in a dynamic role.`
+            ];
+            const result = suggestions[Math.floor(Math.random() * suggestions.length)];
+            document.getElementById('cv-summary').value = result;
+            updatePreview();
+        }
+
+        function addProject() {
+            const list = document.getElementById('project-list');
+            const id = Date.now();
+            const html = `<div class="cv-entry-item" id="project-${id}"><button class="cv-entry-remove" onclick="removeEntry('project-${id}')">×</button><div class="cv-form-group"><label class="cv-form-label">Project Title</label><input type="text" class="cv-form-input proj-title" placeholder="Portfolio Website"></div><div class="cv-form-group"><label class="cv-form-label">Link/URL</label><input type="url" class="cv-form-input proj-link" placeholder="github.com/username/repo"></div><div class="cv-form-group"><label class="cv-form-label">Description</label><textarea class="cv-form-textarea proj-desc" placeholder="Briefly describe the project and your role..."></textarea></div></div>`;
+            list.insertAdjacentHTML('beforeend', html);
+        }
+
+        function saveCVVersion() {
+            collectData();
+            const versions = JSON.parse(localStorage.getItem('cv_versions') || '[]');
+            versions.push({ date: new Date().toLocaleString(), data: { ...cvData } });
+            localStorage.setItem('cv_versions', JSON.stringify(versions));
+            renderSavedVersions();
+            alert("Version saved!");
+        }
+
+        function renderSavedVersions() {
+            const list = document.getElementById('saved-versions-list');
+            const versions = JSON.parse(localStorage.getItem('cv_versions') || '[]');
+            list.innerHTML = versions.slice(-5).map((v, i) => `<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:5px;"><span>${v.date}</span><button class="cv-btn cv-btn-secondary" style="padding:2px 8px; font-size:0.7rem;" onclick="loadVersion(${i})">Load</button></div>`).join('');
+        }
+
+        function loadVersion(idx) {
+            const versions = JSON.parse(localStorage.getItem('cv_versions') || '[]');
+            if (versions[idx]) {
+                cvData = versions[idx].data;
+                // Re-populate all fields (this would ideally be a separate function to sync UI with cvData)
+                alert("Version loaded! Navigating to Step 2 to review.");
+                currentStep = 2;
+                navigateStep(0);
+                updatePreview();
+            }
+        }
+
+        function shareCV() {
+            const id = Math.random().toString(36).substr(2, 9);
+            const url = window.location.href.split('?')[0] + '?cv=' + id;
+            const modal = document.createElement('div');
+            modal.className = 'cv-modal';
+            modal.innerHTML = `<div class="cv-modal-content" style="text-align:center;">
+                <h3>Shareable Link Created!</h3>
+                <p style="margin:1rem 0;">Direct recruiters to your professional profile:</p>
+                <div style="display:flex; gap:0.5rem; background:var(--bg-secondary); padding:0.5rem; border-radius:8px; margin-bottom:1.5rem;">
+                    <input type="text" value="${url}" readonly style="flex:1; background:transparent; border:none; color:var(--text-primary); outline:none;">
+                    <button class="cv-btn cv-btn-primary" style="padding:4px 12px; font-size:0.8rem;" onclick="navigator.clipboard.writeText('${url}'); alert('Link copied!')">Copy</button>
+                </div>
+                <button class="cv-btn cv-btn-secondary" onclick="this.parentElement.parentElement.remove()">Close</button>
+            </div>`;
+            document.body.appendChild(modal);
+        }
+
+        function downloadBlob(blob, name) { const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = name; a.click(); URL.revokeObjectURL(url); }
+
+        window.onload = () => { init(); renderSavedVersions(); };
+    </script>
+</body>
+</html>

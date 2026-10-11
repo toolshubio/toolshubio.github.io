@@ -1,0 +1,210 @@
+/* ============================================
+   PREMIUM STYLESHEET - High-End Tools Platform
+   Focus: Glassmorphism, Premium Typography, Smooth Transitions
+   ============================================ */
+
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+    --premium-font: 'Outfit', 'Inter', sans-serif;
+    --accent-glow: 0 0 20px rgba(16, 185, 129, 0.2);
+}
+
+[data-theme="dark"] {
+    --glass-bg: rgba(15, 23, 42, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: var(--radius-xl);
+    transition: var(--transition-slow);
+}
+
+.glass-panel:hover {
+    border-color: var(--primary);
+    box-shadow: var(--glass-shadow), var(--accent-glow);
+}
+
+/* Premium Typography */
+.premium-title {
+    font-family: var(--premium-font);
+    letter-spacing: -0.02em;
+    font-weight: 800;
+}
+
+/* Instant State Changes (No animations for loading) */
+.instant-update {
+    transition: none !important;
+}
+
+/* Premium Reveal Animations */
+@keyframes premiumEntry {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal-init {
+    opacity: 0;
+}
+
+.reveal-active {
+    animation: premiumEntry 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Flicker Prevention */
+.flicker-prevention {
+    visibility: hidden;
+}
+
+.flicker-ready {
+    visibility: visible;
+}
+
+/* Advanced Chart Container */
+.chart-container {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    margin-top: var(--space-6);
+    overflow: hidden;
+}
+
+.chart-canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Amortization Table Premium Styles */
+.premium-table-container {
+    overflow-x: auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    background: var(--bg-primary);
+}
+
+.premium-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+}
+
+.premium-table th {
+    background: var(--bg-tertiary);
+    padding: var(--space-3) var(--space-4);
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.premium-table td {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.premium-table tr:last-child td {
+    border-bottom: none;
+}
+
+.premium-table tr:hover td {
+    background: var(--primary-light);
+}
+
+/* Export Sidebar */
+.export-actions {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+}
+
+/* Calculation History Premium */
+.history-item-premium {
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    margin-bottom: var(--space-3);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.history-item-premium:hover {
+    border-color: var(--primary);
+    background: var(--bg-primary);
+    transform: translateX(4px);
+}
+
+.history-item-premium .history-expr {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    display: block;
+}
+
+.history-item-premium .history-res {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.125rem;
+}
+
+/* Smart Autocomplete Suggestions */
+.autocomplete-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    z-index: 100;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.suggestion-item {
+    padding: var(--space-2) var(--space-4);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.suggestion-item:hover {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+/* Accessibility Support */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Keyboard focus states */
+:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate OG tags for Facebook, Twitter, LinkedIn, and Discord. Preview how your content looks across social media platforms. Support for Video OG tags.">
+    <title>Advanced Open Graph Generator | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">SEO Tools</a> &gt;
+                <span>Advanced Open Graph Generator</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Advanced Open Graph Generator</h1>
+                <p class="tool-description">Generate OG tags for Facebook, Twitter, LinkedIn, and Discord. Preview how your content looks across social media platforms. Support for Video OG tags.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
+<div class="container text-center">
+<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Advanced Open Graph Generator
+                </h1>
+<p class="hero-subtitle">Create optimized social cards for Facebook, Twitter, and Discord. Now with
+                    Video OG support.</p>
+</div>
+</section>
+<div class="container">
+<div class="tool-interface-container" style="max-width: 1200px; margin: 0 auto;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+<!-- Left: Form -->
+<div class="input-section">
+<h3 class="input-label" style="font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                            Basic Info</h3>
+<div class="input-group">
+<label class="input-label">Title (og:title)</label>
+<input class="seo-input" id="ogTitle" oninput="updateAll()" placeholder="My Awesome Article" type="text"/>
+</div>
+<div class="input-group">
+<label class="input-label">Description (og:description)</label>
+<textarea class="seo-textarea" id="ogDesc" oninput="updateAll()" placeholder="Brief summary..." style="height: 100px;"></textarea>
+</div>
+<div class="schema-form-grid">
+<div class="input-group">
+<label class="input-label">Site Name</label>
+<input class="seo-input" id="ogSite" oninput="updateAll()" placeholder="My Website" type="text"/>
+</div>
+<div class="input-group">
+<label class="input-label">Type</label>
+<select class="seo-select" id="ogType" onchange="updateAll()">
+<option value="website">Website</option>
+<option value="article">Article</option>
+<option value="video.movie">Video</option>
+<option value="product">Product</option>
+</select>
+</div>
+</div>
+<div class="input-group">
+<label class="input-label">Canonical URL</label>
+<input class="seo-input" id="ogUrl" oninput="updateAll()" placeholder="https://example.com/page" type="url"/>
+</div>
+<div class="input-group">
+<label class="input-label">Image URL</label>
+<input class="seo-input" id="ogImage" oninput="updateAll()" placeholder="https://example.com/image.jpg" type="url"/>
+<p class="input-desc">Recommended size: 1200x630 pixels</p>
+</div>
+<!-- Video Section -->
+<div style="margin-top: 1.5rem;">
+<button class="accordian-btn" onclick="toggleVideo()">?? Video Tags (Optional)</button>
+<div class="hidden" id="videoSection" style="padding: 1rem; border: 1px solid var(--border-color); border-top: none; border-radius: 0 0 4px 4px;">
+<div class="input-group">
+<label class="input-label">Video URL (og:video)</label>
+<input class="seo-input" id="ogVideo" oninput="updateAll()" placeholder="https://example.com/video.mp4" type="url"/>
+</div>
+<div class="schema-form-grid">
+<div class="input-group">
+<label class="input-label">Width</label>
+<input class="seo-input" id="ogVidW" oninput="updateAll()" placeholder="1280" type="number"/>
+</div>
+<div class="input-group">
+<label class="input-label">Height</label>
+<input class="seo-input" id="ogVidH" oninput="updateAll()" placeholder="720" type="number"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Output & Preview -->
+<div class="output-section">
+<!-- Preview Tabs -->
+<div class="preview-tabs">
+<div class="preview-tab active" id="tab-fb" onclick="setTab('fb')">?? Facebook</div>
+<div class="preview-tab" id="tab-tw" onclick="setTab('tw')">?? Twitter</div>
+<div class="preview-tab" id="tab-dc" onclick="setTab('dc')">?? Discord</div>
+</div>
+<!-- Facebook Preview -->
+<div class="preview-container fb-preview" id="view-fb">
+<div class="fb-card">
+<img class="fb-img" id="fbImg" onerror="this.style.backgroundColor='#ddd'" src=""/>
+<div class="fb-content">
+<div class="fb-host" id="fbHost">EXAMPLE.COM</div>
+<div class="fb-title" id="fbTitle">Title</div>
+<div class="fb-desc" id="fbDesc">Description...</div>
+</div>
+</div>
+</div>
+<!-- Twitter Preview -->
+<div class="preview-container tw-preview hidden" id="view-tw">
+<div class="tw-card">
+<img class="tw-img" id="twImg" onerror="this.style.backgroundColor='#cfd9de'" src=""/>
+<div class="tw-content">
+<div class="tw-host"><span id="twHost">example.com</span></div>
+<div class="tw-title" id="twTitle">Title</div>
+<div class="tw-desc" id="twDesc">Description...</div>
+</div>
+</div>
+</div>
+<!-- Discord Preview -->
+<div class="preview-container dc-preview hidden" id="view-dc">
+<div class="dc-card">
+<div class="dc-site" id="dcSite">My Website</div>
+<div class="dc-title"><a href="#" id="dcTitle" style="color:#00a8fc; text-decoration:none;">Title</a></div>
+<div class="dc-desc" id="dcDesc">Description...</div>
+<img class="dc-img" id="dcImg" onerror="this.style.display='none'" src="" style="display:none;"/>
+</div>
+</div>
+<!-- Code Output -->
+<div style="margin-top: 2rem;">
+<div class="section-header">
+<h3 class="section-title">Generated Meta Tags</h3>
+<button class="btn-secondary" onclick="copyCode()" style="font-size: 0.8rem; padding: 0.2rem 0.5rem;">Copy</button>
+</div>
+<div class="output-container">
+<pre class="output-code" id="outputCode" style="max-height: 250px;"></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+            <section class="seo-article" data-tool="open-graph-generator">
+<article class="tool-article">
+<h2>Open Graph Generator — Free Social Preview Meta Tags</h2>
+
+<p>A friend once launched a course page and shared the link on LinkedIn. The preview showed a random sidebar image, no description, and a title pulled from somewhere in the navigation. It looked broken — because, as far as social platforms were concerned, it was. An Open Graph generator builds the meta tags that control exactly how your link looks when shared on Facebook, LinkedIn, WhatsApp, Slack, and X. Fill in a form, copy the tags, paste them in your head section, and your previews come out clean every time.</p>
+
+<h3>What Is an Open Graph Generator?</h3>
+
+<p>Open Graph is a protocol Facebook created in 2010 that lets any page declare how it should appear when shared: its title, description, image, URL, and content type. When someone pastes your link into Facebook, LinkedIn, WhatsApp, Discord, or Slack, the platform reads your page's <code>og:</code> meta tags and builds the preview card from them. Without those tags, each platform guesses — and the guesses are often wrong.</p>
+
+<p>The generator turns that guessing into a form. You enter your <code>og:title</code> (keep it under about 60 characters), <code>og:description</code> (around 150–200 characters works well for social), <code>og:url</code> (the canonical absolute URL), <code>og:image</code> (the preview image — 1200×630 pixels is the recommended size), and <code>og:type</code> (usually "website" for regular pages). It outputs a ready-to-paste block, often with matching Twitter Card tags (<code>twitter:card</code>, <code>twitter:title</code>, and so on) included, since X reads its own tag set. The best generators also render live previews showing your link the way each platform would display it, so you spot a bad image crop before your audience does.</p>
+
+<h3>How to Use the Open Graph Generator</h3>
+
+<p>The whole job takes a few minutes, and I run it on every important page.</p>
+
+<p>First, pick the page type — Website, Article, Product, or Video — since this sets <code>og:type</code> and can add type-specific properties. For an article, that means <code>article:published_time</code> and author; for a product, price and currency. Then fill in the core fields: title, description, canonical URL, and image URL. Set the image dimensions (default 1200×630) so platforms do not have to probe the image themselves, and add <code>og:site_name</code> plus your locale (e.g. en_US) for completeness.</p>
+
+<p>Check the platform previews. The generator renders mock cards for Facebook, X, LinkedIn, and often Slack or Discord — look at the image crop, read the description at a glance, and confirm the title is not truncated. If anything looks off, adjust and watch the previews update.</p>
+
+<p>Then click copy and paste the tag block into your page's <code>&lt;head&gt;</code>. One detail that bites people: use absolute image URLs (<code>https://…</code>), never relative paths, and keep the image under about 5MB so crawlers do not give up on it.</p>
+
+<p>Finally, validate. Run the URL through Facebook's Sharing Debugger to clear the cached preview and re-scrape, and use X's Card Validator for the Twitter side. Platforms cache aggressively — without the debugger step, your followers may keep seeing the old broken preview for days.</p>
+
+<h3>The Key Tags, Explained</h3>
+
+<table>
+<thead><tr><th>Tag</th><th>What it controls</th><th>Good practice</th></tr></thead>
+<tbody>
+<tr><td><code>og:title</code></td><td>The headline on the shared card</td><td>Under ~60 chars; often matches your SEO title</td></tr>
+<tr><td><code>og:description</code></td><td>The summary text on the card</td><td>150–200 chars; a hook, not a keyword dump</td></tr>
+<tr><td><code>og:image</code></td><td>The preview image</td><td>1200×630 px, absolute HTTPS URL, under 5MB</td></tr>
+<tr><td><code>og:url</code></td><td>The canonical link address</td><td>Absolute URL matching your canonical tag</td></tr>
+<tr><td><code>og:type</code></td><td>Content type (website, article…)</td><td>"website" for pages; "article" for posts</td></tr>
+<tr><td><code>og:site_name</code></td><td>Your site's name on the card</td><td>Short brand name</td></tr>
+<tr><td><code>twitter:card</code></td><td>The X card layout</td><td>summary_large_image for the big image card</td></tr>
+</tbody>
+</table>
+
+<p>Two common mistakes I see constantly: missing <code>og:image</code> (the card renders as plain text, which kills click-through), and relative image URLs that the platform cannot resolve. The generator defaults guard against both, but double-check after pasting.</p>
+
+<h3>Example: A Generated Block</h3>
+
+<p>Here is what the tool produces for a typical article page:</p>
+
+<p>
+<code>&lt;!-- Open Graph / Facebook --&gt;</code><br>
+<code>&lt;meta property="og:type" content="article"&gt;</code><br>
+<code>&lt;meta property="og:title" content="How to Sharpen a Kitchen Knife at Home"&gt;</code><br>
+<code>&lt;meta property="og:description" content="Three simple methods, the tools that actually matter, and the mistakes that ruin a blade — a practical guide for home cooks."&gt;</code><br>
+<code>&lt;meta property="og:image" content="https://example.com/images/knife-sharpening.jpg"&gt;</code><br>
+<code>&lt;meta property="og:image:width" content="1200"&gt;</code><br>
+<code>&lt;meta property="og:image:height" content="630"&gt;</code><br>
+<code>&lt;meta property="og:url" content="https://example.com/sharpen-kitchen-knife"&gt;</code><br>
+<code>&lt;meta property="og:site_name" content="Example Kitchen"&gt;</code><br>
+<code>&lt;!-- Twitter / X Card --&gt;</code><br>
+<code>&lt;meta name="twitter:card" content="summary_large_image"&gt;</code><br>
+<code>&lt;meta name="twitter:title" content="How to Sharpen a Kitchen Knife at Home"&gt;</code><br>
+<code>&lt;meta name="twitter:description" content="Three simple methods, the tools that actually matter..."&gt;</code>
+</p>
+
+<h3>Who Uses Open Graph Generators?</h3>
+
+<p><strong>Bloggers</strong> use them so every post shares with a proper image and hook instead of a random crop — the preview card is free distribution.</p>
+
+<p><strong>Marketers</strong> control how campaign landing pages appear when shared, A/B testing descriptions and images for social click-through.</p>
+
+<p><strong>E-commerce managers</strong> generate product-type tags with price and currency, so shared products show up richly on social feeds.</p>
+
+<p><strong>Developers</strong> scaffold the social tags for every new template alongside the core SEO tags, rather than hand-writing them each time.</p>
+
+<p><strong>News publishers</strong> use article-type tags with publish times so stories surface correctly in social and news surfaces.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Complete OG tag block</strong> — title, description, image, URL, type, site name, locale.</li>
+<li><strong>Twitter Card tags included</strong> — matching X preview tags generated alongside.</li>
+<li><strong>Live multi-platform previews</strong> — see Facebook, X, LinkedIn, and messaging-app cards as you type.</li>
+<li><strong>Page-type variants</strong> — article, product, and video properties added automatically.</li>
+<li><strong>Image dimension fields</strong> — width and height tags so platforms render instantly.</li>
+<li><strong>One-click copy</strong> — the whole block, ready for your page head.</li>
+<li><strong>100% free</strong> — no signup, no limits.</li>
+<li><strong>Private by design</strong> — everything runs in your browser; nothing is uploaded.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is Open Graph?</h4>
+<p>Open Graph is a protocol (created by Facebook in 2010) that lets a web page declare how it should appear when shared — its title, description, image, and URL. Social platforms read these <code>og:</code> meta tags to build link preview cards.</p>
+
+<h4>What size should my og:image be?</h4>
+<p>1200×630 pixels is the recommended size. Use an absolute HTTPS URL and keep the file under about 5MB so platform crawlers fetch it reliably.</p>
+
+<h4>Why does my shared link show the wrong preview?</h4>
+<p>Social platforms cache previews aggressively. After fixing your tags, run the URL through Facebook's Sharing Debugger (and X's Card Validator) to clear the cache and force a re-scrape.</p>
+
+<h4>Do I need Twitter Card tags if I have Open Graph?</h4>
+<p>Mostly yes for X. X can fall back to Open Graph tags, but explicit <code>twitter:card</code> tags — especially <code>summary_large_image</code> — give you reliable control over the big image card format.</p>
+
+<h4>Does og:description need to differ from the meta description?</h4>
+<p>Not necessarily. The generator defaults it to your SEO description, which is fine. Use a different one only if the social share should read differently — punchier, more conversational — than the search listing.</p>
+
+<h4>Is this generator free?</h4>
+<p>Yes — completely free, no account needed.</p>
+
+<h4>Where do I paste the generated tags?</h4>
+<p>Inside the <code>&lt;head&gt;</code> section of your HTML. In WordPress, SEO plugins can manage Open Graph tags for you, but the generator gives you exact control for static sites and custom builds.</p>
+
+<h4>Can I use a relative URL for og:image?</h4>
+<p>No — always use the absolute URL starting with https://. Platform crawlers cannot resolve relative paths, and the image will silently fail to load.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        function setTab(p) {
+            document.querySelectorAll('.preview-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('tab-' + p).classList.add('active');
+
+            document.querySelectorAll('.preview-container').forEach(c => c.classList.add('hidden'));
+            document.getElementById('view-' + p).classList.remove('hidden');
+        }
+
+        function toggleVideo() {
+            document.getElementById('videoSection').classList.toggle('hidden');
+        }
+
+        function updateAll() {
+            // Inputs
+            const title = document.getElementById('ogTitle').value || 'Title';
+            const desc = document.getElementById('ogDesc').value || 'Description...';
+            const site = document.getElementById('ogSite').value || 'My Website';
+            const url = document.getElementById('ogUrl').value || 'https://example.com';
+            const img = document.getElementById('ogImage').value;
+            const type = document.getElementById('ogType').value;
+
+            // Video
+            const vidUrl = document.getElementById('ogVideo').value;
+            const vidW = document.getElementById('ogVidW').value;
+            const vidH = document.getElementById('ogVidH').value;
+
+            // Host parsing
+            let host = 'EXAMPLE.COM';
+            try { host = new URL(url).hostname.toUpperCase(); } catch (e) { }
+            let hostLow = host.toLowerCase();
+
+            // --- Update Previews ---
+
+            // FB
+            document.getElementById('fbTitle').innerText = title;
+            document.getElementById('fbDesc').innerText = desc;
+            document.getElementById('fbHost').innerText = host;
+            document.getElementById('fbImg').src = img || '';
+            document.getElementById('fbImg').style.display = img ? 'block' : 'none';
+
+            // Twitter
+            document.getElementById('twTitle').innerText = title;
+            document.getElementById('twDesc').innerText = desc;
+            document.getElementById('twHost').innerText = hostLow;
+            document.getElementById('twImg').src = img || '';
+            document.getElementById('twImg').style.display = img ? 'block' : 'none';
+
+            // Discord
+            document.getElementById('dcTitle').innerText = title;
+            document.getElementById('dcDesc').innerText = desc;
+            document.getElementById('dcSite').innerText = site;
+            const dcImg = document.getElementById('dcImg');
+            if (img) {
+                dcImg.src = img;
+                dcImg.style.display = 'block';
+            } else {
+                dcImg.style.display = 'none';
+            }
+
+            // --- Generate Code ---
+            let code = `<!-- Open Graph / Facebook -->
+<meta property="og:type" content="${type}" />
+<meta property="og:url" content="${url}" />
+<meta property="og:title" content="${title}" />
+<meta property="og:description" content="${desc}" />
+<meta property="og:image" content="${img}" />
+<meta property="og:site_name" content="${site}" />`;
+
+            if (vidUrl) {
+                code += `\n\n<!-- Video -->
+<meta property="og:video" content="${vidUrl}" />
+<meta property="og:video:type" content="video/mp4" />`;
+                if (vidW) code += `\n<meta property="og:video:width" content="${vidW}" />`;
+                if (vidH) code += `\n<meta property="og:video:height" content="${vidH}" />`;
+            }
+
+            code += `\n\n<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="${url}" />
+<meta property="twitter:title" content="${title}" />
+<meta property="twitter:description" content="${desc}" />
+<meta property="twitter:image" content="${img}" />`;
+
+            document.getElementById('outputCode').innerText = code;
+        }
+
+        function copyCode() {
+            navigator.clipboard.writeText(document.getElementById('outputCode').innerText).then(() => alert("Copied!"));
+        }
+
+        // Init
+        updateAll();
+    </script>
+</body>
+</html>

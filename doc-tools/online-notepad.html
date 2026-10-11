@@ -1,0 +1,2210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Advanced Notepad Pro | Rich Text Editor</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@300;400;500&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Documents</a> &gt;
+                <span>Advanced Notepad Pro</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Advanced Notepad Pro</h1>
+                <p class="tool-description"></p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<div class="notepad-container">
+<!-- Header -->
+<div class="notepad-header">
+<div class="logo">
+<div class="logo-icon">
+<i class="fas fa-edit"></i>
+</div>
+<div class="logo-text">
+<h1>Advanced Notepad Pro</h1>
+<p>Rich text editor with advanced features</p>
+</div>
+</div>
+<div class="header-actions">
+<button class="btn btn-primary" id="newNoteBtn">
+<i class="fas fa-plus"></i>
+<span>New</span>
+</button>
+<button class="panel-toggle" id="panelToggle">
+<i class="fas fa-sliders-h"></i>
+</button>
+</div>
+</div>
+<!-- Enhanced Toolbar with Advanced Features -->
+<div class="toolbar" id="toolbar">
+<!-- File Operations (Open File Removed) -->
+<div class="toolbar-group">
+<button class="btn btn-success" id="saveBtn" title="Save">
+<i class="fas fa-save"></i>
+<span>Save</span>
+</button>
+<button class="btn btn-warning" id="exportBtn" title="Export">
+<i class="fas fa-download"></i>
+<span>Export</span>
+</button>
+<button class="btn btn-primary" id="printBtn" title="Print">
+<i class="fas fa-print"></i>
+<span>Print</span>
+</button>
+</div>
+<!-- Basic Formatting -->
+<div class="toolbar-group">
+<button class="btn icon-btn" id="boldBtn" title="Bold (Ctrl+B)">
+<i class="fas fa-bold"></i>
+</button>
+<button class="btn icon-btn" id="italicBtn" title="Italic (Ctrl+I)">
+<i class="fas fa-italic"></i>
+</button>
+<button class="btn icon-btn" id="underlineBtn" title="Underline (Ctrl+U)">
+<i class="fas fa-underline"></i>
+</button>
+<button class="btn icon-btn" id="strikeBtn" title="Strikethrough">
+<i class="fas fa-strikethrough"></i>
+</button>
+</div>
+<!-- Text Alignment -->
+<div class="toolbar-group">
+<button class="btn icon-btn" id="alignLeftBtn" title="Align Left">
+<i class="fas fa-align-left"></i>
+</button>
+<button class="btn icon-btn" id="alignCenterBtn" title="Align Center">
+<i class="fas fa-align-center"></i>
+</button>
+<button class="btn icon-btn" id="alignRightBtn" title="Align Right">
+<i class="fas fa-align-right"></i>
+</button>
+<button class="btn icon-btn" id="justifyBtn" title="Justify Text">
+<i class="fas fa-align-justify"></i>
+</button>
+</div>
+<!-- Lists -->
+<div class="toolbar-group">
+<button class="btn icon-btn" id="bulletListBtn" title="Bulleted List">
+<i class="fas fa-list-ul"></i>
+</button>
+<button class="btn icon-btn" id="numberListBtn" title="Numbered List">
+<i class="fas fa-list-ol"></i>
+</button>
+<button class="btn icon-btn" id="indentBtn" title="Increase Indent">
+<i class="fas fa-indent"></i>
+</button>
+<button class="btn icon-btn" id="outdentBtn" title="Decrease Indent">
+<i class="fas fa-outdent"></i>
+</button>
+</div>
+<!-- Headings -->
+<div class="toolbar-group">
+<select class="btn dropdown-btn" id="headingSelect" style="min-width: 100px;">
+<option value="p">Normal Text</option>
+<option value="h1">Heading 1</option>
+<option value="h2">Heading 2</option>
+<option value="h3">Heading 3</option>
+<option value="h4">Heading 4</option>
+<option value="h5">Heading 5</option>
+<option value="h6">Heading 6</option>
+</select>
+</div>
+<!-- Font Styles -->
+<div class="toolbar-group">
+<select class="btn" id="fontFamilySelect" style="min-width: 120px;">
+<option value="Arial, sans-serif">Arial</option>
+<option value="'Times New Roman', serif">Times New Roman</option>
+<option value="'Courier New', monospace">Courier New</option>
+<option value="Georgia, serif">Georgia</option>
+<option value="Verdana, sans-serif">Verdana</option>
+<option value="'Comic Sans MS', cursive">Comic Sans</option>
+<option selected="" value="'Roboto Mono', monospace">Roboto Mono</option>
+</select>
+<select class="btn" id="fontSizeSelect" style="min-width: 70px;">
+<option value="1">8px</option>
+<option value="2">10px</option>
+<option value="3">12px</option>
+<option value="4">14px</option>
+<option selected="" value="5">16px</option>
+<option value="6">18px</option>
+<option value="7">24px</option>
+<option value="8">32px</option>
+</select>
+</div>
+<!-- Colors -->
+<div class="toolbar-group">
+<button class="btn" id="textColorBtn" title="Text Color">
+<i class="fas fa-font"></i>
+<span>Color</span>
+</button>
+<button class="btn" id="highlightColorBtn" title="Highlight Color">
+<i class="fas fa-highlighter"></i>
+<span>Highlight</span>
+</button>
+</div>
+<!-- Insert Features -->
+<div class="toolbar-group">
+<button class="btn" id="insertImageBtn" title="Insert Image">
+<i class="fas fa-image"></i>
+<span>Image</span>
+</button>
+<button class="btn" id="insertLinkBtn" title="Insert Link">
+<i class="fas fa-link"></i>
+<span>Link</span>
+</button>
+<button class="btn" id="insertTableBtn" title="Insert Table">
+<i class="fas fa-table"></i>
+<span>Table</span>
+</button>
+</div>
+<!-- Advanced Tools -->
+<div class="toolbar-group">
+<button class="btn" id="findBtn" title="Find (Ctrl+F)">
+<i class="fas fa-search"></i>
+<span>Find</span>
+</button>
+<button class="btn" id="replaceBtn" title="Replace (Ctrl+H)">
+<i class="fas fa-exchange-alt"></i>
+<span>Replace</span>
+</button>
+<button class="btn" id="wordCountBtn" title="Word Count">
+<i class="fas fa-calculator"></i>
+<span>Count</span>
+</button>
+</div>
+<!-- View Options -->
+<div class="toolbar-group">
+<button class="btn" id="themeBtn" title="Change Theme">
+<i class="fas fa-palette"></i>
+<span>Theme</span>
+</button>
+<button class="btn" id="fullscreenBtn" title="Fullscreen">
+<i class="fas fa-expand"></i>
+<span>Fullscreen</span>
+</button>
+<button class="btn" id="spellCheckBtn" title="Spell Check">
+<i class="fas fa-spell-check"></i>
+<span>Spell</span>
+</button>
+</div>
+</div>
+<!-- Editor Area -->
+<div class="editor-container">
+<div class="editor-main">
+<div class="editor-area">
+<div class="editor-content" contenteditable="true" id="editor">
+<h1>Welcome to Advanced Notepad Pro! ✨</h1>
+<p>This is a <strong>rich text editor</strong> with <em>advanced features</em> that you won't
+                            find in ordinary notepads.</p>
+<h2>🎯 Key Features:</h2>
+<h3>📝 Text Formatting:</h3>
+<ul>
+<li><strong>Bold</strong>, <em>Italic</em>, <u>Underline</u>, <s>Strikethrough</s></li>
+<li>Multiple font families and sizes</li>
+<li>Text and background colors</li>
+<li>Text alignment (Left, Center, Right, Justify)</li>
+</ul>
+<h3>📑 Document Structure:</h3>
+<ol>
+<li>Headings (H1 to H6)</li>
+<li>Bulleted and numbered lists</li>
+<li>Text indentation</li>
+<li>Blockquotes and code blocks</li>
+</ol>
+<h3>🖼️ Media Insertion:</h3>
+<p>You can insert images via URL:</p>
+<blockquote>
+                            "A picture is worth a thousand words" - Try inserting an image using the Image button!
+                        </blockquote>
+<h3>📊 Table Feature (Now Working!):</h3>
+<p>Click the <strong>Table button</strong> to insert a customizable table with rows and columns.
+                        </p>
+<h3>🔧 Advanced Tools:</h3>
+<ul>
+<li>Find and Replace</li>
+<li>Word and character count</li>
+<li>Spell checking</li>
+<li>Multiple themes</li>
+<li>Export to various formats</li>
+<li>Auto-save functionality</li>
+</ul>
+<h3>💡 Try These:</h3>
+<p>1. Select text and change its <strong style="color: #667eea;">color</strong> or <mark style="background-color: #ffeb3b;">highlight</mark> it</p>
+<p>2. Create <strong>headings</strong> using the heading dropdown</p>
+<p>3. Insert an <strong>image</strong> using the Image button</p>
+<p>4. Insert a <strong>table</strong> using the Table button</p>
+<p>5. Try different <strong>themes</strong> from the right panel</p>
+<p style="text-align: center; font-style: italic; color: #666;">
+                            Start creating your amazing documents! 🚀
+                        </p>
+</div>
+</div>
+</div>
+<!-- Enhanced Side Panel -->
+<div class="side-panel" id="sidePanel">
+<!-- Document Statistics -->
+<div class="panel-section">
+<div class="panel-title">
+<i class="fas fa-chart-bar"></i>
+<span>Document Statistics</span>
+</div>
+<div class="format-grid">
+<div class="format-option">
+<div class="option-label">Words</div>
+<div class="stat-value" id="wordCount">0</div>
+</div>
+<div class="format-option">
+<div class="option-label">Characters</div>
+<div class="stat-value" id="charCount">0</div>
+</div>
+<div class="format-option">
+<div class="option-label">Lines</div>
+<div class="stat-value" id="lineCount">0</div>
+</div>
+<div class="format-option">
+<div class="option-label">Paragraphs</div>
+<div class="stat-value" id="paragraphCount">0</div>
+</div>
+</div>
+</div>
+<!-- Advanced Formatting -->
+<div class="panel-section">
+<div class="panel-title">
+<i class="fas fa-sliders-h"></i>
+<span>Advanced Formatting</span>
+</div>
+<div class="advanced-formatting">
+<div class="format-section">
+<div class="section-title">
+<i class="fas fa-heading"></i>
+                                Headings
+                            </div>
+<div class="headings-preview">
+<div class="heading-sample h1-sample" data-heading="h1">Heading 1</div>
+<div class="heading-sample h2-sample" data-heading="h2">Heading 2</div>
+<div class="heading-sample h3-sample" data-heading="h3">Heading 3</div>
+<div class="heading-sample h4-sample" data-heading="h4">Heading 4</div>
+</div>
+</div>
+<div class="format-section">
+<div class="section-title">
+<i class="fas fa-palette"></i>
+                                Colors
+                            </div>
+<div class="color-palette">
+<div class="color-option" data-color="#667eea" style="background: #667eea;"></div>
+<div class="color-option" data-color="#10b981" style="background: #10b981;"></div>
+<div class="color-option" data-color="#f59e0b" style="background: #f59e0b;"></div>
+<div class="color-option" data-color="#ef4444" style="background: #ef4444;"></div>
+<div class="color-option" data-color="#8b5cf6" style="background: #8b5cf6;"></div>
+<div class="color-option" data-color="#000000" style="background: #000000;"></div>
+<div class="color-option" data-color="#666666" style="background: #666666;"></div>
+<div class="color-option" data-color="#333333" style="background: #333333;"></div>
+</div>
+</div>
+<div class="format-section">
+<div class="section-title">
+<i class="fas fa-image"></i>
+                                Insert Image
+                            </div>
+<div class="image-preview-container">
+<div class="image-preview" id="imagePreview">
+<div class="no-image">No image selected</div>
+</div>
+<input class="form-control" id="imageUrl" placeholder="Enter image URL" type="url"/>
+<button class="btn btn-primary" id="insertImageFromUrl" style="width: 100%; margin-top: 8px;">
+<i class="fas fa-plus"></i> Insert Image
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="panel-section">
+<div class="panel-title">
+<i class="fas fa-bolt"></i>
+<span>Quick Actions</span>
+</div>
+<div class="quick-actions">
+<button class="quick-action-btn" id="insertDateBtn">
+<i class="fas fa-calendar"></i> Insert Date
+                        </button>
+<button class="quick-action-btn" id="insertTimeBtn">
+<i class="fas fa-clock"></i> Insert Time
+                        </button>
+<button class="quick-action-btn" id="clearFormatBtn">
+<i class="fas fa-eraser"></i> Clear Format
+                        </button>
+<button class="quick-action-btn" id="copyAllBtn">
+<i class="fas fa-copy"></i> Copy All
+                        </button>
+</div>
+</div>
+<!-- Editor Settings -->
+<div class="panel-section">
+<div class="panel-title">
+<i class="fas fa-cog"></i>
+<span>Editor Settings</span>
+</div>
+<div class="advanced-formatting">
+<div class="toggle-container">
+<div class="toggle-label">
+<span class="toggle-main-label">Dark Mode</span>
+<span class="toggle-sub-label">Switch theme</span>
+</div>
+<label class="toggle-switch">
+<input id="darkModeToggle" type="checkbox"/>
+<span class="toggle-slider"></span>
+</label>
+</div>
+<div class="toggle-container">
+<div class="toggle-label">
+<span class="toggle-main-label">Auto-save</span>
+<span class="toggle-sub-label">Save automatically</span>
+</div>
+<label class="toggle-switch">
+<input checked="" id="autoSaveToggle" type="checkbox"/>
+<span class="toggle-slider"></span>
+</label>
+</div>
+<div class="toggle-container">
+<div class="toggle-label">
+<span class="toggle-main-label">Spell Check</span>
+<span class="toggle-sub-label">Check spelling</span>
+</div>
+<label class="toggle-switch">
+<input id="spellCheckToggle" type="checkbox"/>
+<span class="toggle-slider"></span>
+</label>
+</div>
+<div class="toggle-container">
+<div class="toggle-label">
+<span class="toggle-main-label">Word Wrap</span>
+<span class="toggle-sub-label">Wrap long lines</span>
+</div>
+<label class="toggle-switch">
+<input checked="" id="wordWrapToggle" type="checkbox"/>
+<span class="toggle-slider"></span>
+</label>
+</div>
+</div>
+</div>
+<!-- Recent Files -->
+<div class="panel-section">
+<div class="panel-title">
+<i class="fas fa-history"></i>
+<span>Recent Files</span>
+</div>
+<div class="file-list" id="fileList">
+<!-- Files will be added here dynamically -->
+</div>
+</div>
+</div>
+</div>
+<!-- Status Bar -->
+<div class="status-bar">
+<div class="status-item">
+<i class="fas fa-file-alt"></i>
+<span id="fileName">Untitled.html</span>
+<span id="fileType" style="color: #888; margin-left: 5px;">(HTML)</span>
+</div>
+<div class="status-item">
+<i class="fas fa-save"></i>
+<span>Auto-saved: <span id="lastSaved">Just now</span></span>
+</div>
+<div class="status-item">
+<i class="fas fa-keyboard"></i>
+<span>Ln <span id="currentLine">1</span>, Col <span id="currentCol">1</span> | </span>
+<span>Zoom: <span id="zoomLevel">100%</span></span>
+</div>
+</div>
+</div>
+ Modals 
+ Insert Image Modal 
+<div class="modal" id="imageModal">
+<div class="modal-content">
+<div class="modal-header">
+<div class="modal-title">Insert Image</div>
+</div>
+<div class="modal-body">
+<div class="form-group">
+<label for="imageUrlInput">Image URL:</label>
+<input class="form-control" id="imageUrlInput" placeholder="https://example.com/image.jpg" type="url"/>
+</div>
+<div class="form-group">
+<label for="imageAltText">Alternative Text:</label>
+<input class="form-control" id="imageAltText" placeholder="Description of image" type="text"/>
+</div>
+<div class="form-group">
+<label for="imageWidth">Width (px):</label>
+<input class="form-control" id="imageWidth" max="2000" min="50" placeholder="Auto" type="number"/>
+</div>
+<div class="form-group">
+<label for="imageHeight">Height (px):</label>
+<input class="form-control" id="imageHeight" max="2000" min="50" placeholder="Auto" type="number"/>
+</div>
+<div class="form-group">
+<label for="imageAlignment">Alignment:</label>
+<select class="form-control" id="imageAlignment">
+<option value="left">Left</option>
+<option selected="" value="center">Center</option>
+<option value="right">Right</option>
+</select>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn" id="cancelImageBtn">Cancel</button>
+<button class="btn btn-primary" id="insertImageBtnModal">Insert Image</button>
+</div>
+</div>
+</div>
+ Insert Link Modal 
+<div class="modal" id="linkModal">
+<div class="modal-content">
+<div class="modal-header">
+<div class="modal-title">Insert Link</div>
+</div>
+<div class="modal-body">
+<div class="form-group">
+<label for="linkUrl">URL:</label>
+<input class="form-control" id="linkUrl" placeholder="https://example.com" type="url"/>
+</div>
+<div class="form-group">
+<label for="linkText">Link Text:</label>
+<input class="form-control" id="linkText" placeholder="Click here" type="text"/>
+</div>
+<div class="form-group">
+<label for="linkTarget">Open in:</label>
+<select class="form-control" id="linkTarget">
+<option value="_self">Same tab</option>
+<option value="_blank">New tab</option>
+</select>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn" id="cancelLinkBtn">Cancel</button>
+<button class="btn btn-primary" id="insertLinkBtnModal">Insert Link</button>
+</div>
+</div>
+</div>
+ Insert Table Modal - FIXED VERSION 
+<div class="modal" id="tableModal">
+<div class="modal-content">
+<div class="modal-header">
+<div class="modal-title">Insert Table</div>
+</div>
+<div class="modal-body">
+<div style="display: flex; gap: 15px; margin-bottom: 20px;">
+<div class="form-group">
+<label for="tableRows">Rows:</label>
+<input class="form-control" id="tableRows" max="20" min="1" type="number" value="3"/>
+</div>
+<div class="form-group">
+<label for="tableColumns">Columns:</label>
+<input class="form-control" id="tableColumns" max="10" min="1" type="number" value="3"/>
+</div>
+</div>
+<div class="form-group">
+<label for="tableBorder">Border Size:</label>
+<select class="form-control" id="tableBorder">
+<option value="0">No border</option>
+<option value="1">1px</option>
+<option selected="" value="2">2px</option>
+<option value="3">3px</option>
+</select>
+</div>
+<div class="form-group">
+<label for="tableWidth">Table Width:</label>
+<select class="form-control" id="tableWidth">
+<option value="100%">Full width</option>
+<option value="80%">80% width</option>
+<option value="60%">60% width</option>
+<option value="auto">Auto</option>
+</select>
+</div>
+<div class="form-group">
+<label for="tableHeader">Include Header Row:</label>
+<select class="form-control" id="tableHeader">
+<option value="yes">Yes</option>
+<option value="no">No</option>
+</select>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn" id="cancelTableBtn">Cancel</button>
+<button class="btn btn-primary" id="insertTableBtnModal">Insert Table</button>
+</div>
+</div>
+</div>
+ Theme Modal 
+<div class="modal" id="themeModal">
+<div class="modal-content">
+<div class="modal-header">
+<div class="modal-title">Choose Theme</div>
+</div>
+<div class="modal-body">
+<p style="margin-bottom: 15px; color: #666;">Select a theme for your notepad:</p>
+<div class="theme-options">
+<div class="theme-option theme-light active" data-theme="light">
+                        Light
+                    </div>
+<div class="theme-option theme-dark" data-theme="dark">
+                        Dark
+                    </div>
+<div class="theme-option theme-blue" data-theme="blue">
+                        Blue
+                    </div>
+<div class="theme-option theme-green" data-theme="green">
+                        Green
+                    </div>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn" id="cancelThemeBtn">Cancel</button>
+<button class="btn btn-primary" id="applyThemeBtn">Apply Theme</button>
+</div>
+</div>
+</div>
+ Find & Replace Modal 
+<div class="modal" id="findModalDialog">
+<div class="modal-content">
+<div class="modal-header">
+<div class="modal-title">Find &amp; Replace</div>
+</div>
+<div class="modal-body">
+<div class="form-group">
+<label for="findTextInput">Find:</label>
+<input class="form-control" id="findTextInput" placeholder="Text to find" type="text"/>
+</div>
+<div class="form-group">
+<label for="replaceTextInput">Replace with:</label>
+<input class="form-control" id="replaceTextInput" placeholder="Replacement text" type="text"/>
+</div>
+<div class="form-group">
+<label>
+<input id="matchCaseCheck" type="checkbox"/> Match case
+                    </label>
+<label style="margin-left: 15px;">
+<input id="wholeWordCheck" type="checkbox"/> Whole word only
+                    </label>
+</div>
+<div style="color: #666; font-size: 12px; margin-top: 10px;">
+<div>Search results: <span id="findResults">0 found</span></div>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn" id="cancelFindBtn">Cancel</button>
+<button class="btn" id="findNextBtnModal">Find Next</button>
+<button class="btn btn-warning" id="replaceBtnModal">Replace</button>
+<button class="btn btn-primary" id="replaceAllBtnModal">Replace All</button>
+</div>
+</div>
+</div>
+ Export Modal 
+<div class="modal" id="exportModal">
+<div class="modal-content">
+<div class="modal-header">
+<div class="modal-title">Export Document</div>
+</div>
+<div class="modal-body">
+<div class="form-group">
+<label for="exportFileName">File Name:</label>
+<input class="form-control" id="exportFileName" placeholder="Enter file name" type="text" value="mydocument"/>
+</div>
+<div class="form-group">
+<label>Export Format:</label>
+<div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
+<button class="btn" data-format="html">
+<i class="fas fa-code"></i> HTML
+                        </button>
+<button class="btn" data-format="txt">
+<i class="fas fa-file-alt"></i> TXT
+                        </button>
+<button class="btn" data-format="pdf">
+<i class="fas fa-file-pdf"></i> PDF
+                        </button>
+<button class="btn" data-format="doc">
+<i class="fas fa-file-word"></i> DOC
+                        </button>
+<button class="btn" data-format="md">
+<i class="fab fa-markdown"></i> Markdown
+                        </button>
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn" id="cancelExportBtn">Cancel</button>
+<button class="btn btn-primary" id="confirmExportBtn">Export</button>
+</div>
+</div>
+</div>
+            </div>
+            <section class="seo-article" data-tool="online-notepad">
+<article class="tool-article">
+<h2>Online Notepad — A Free Notepad That Saves Your Work Automatically</h2>
+
+<p>I used to keep my notes in whatever app happened to be open — sticky notes on the desktop, a half-finished doc in Google Drive, once even the URL bar. Then I lost an hour of meeting notes when my laptop battery died mid-sentence, and I switched to a different habit. An online notepad is exactly what it sounds like: a plain text editor that lives in your browser. No install, no account, no save button anxiety. You open the page, you type, and your words are there when you come back.</p>
+
+<h3>What Is an Online Notepad?</h3>
+
+<p>At its simplest, it is a blank page that remembers. Unlike a desktop app that ties your notes to one machine, a browser-based notepad works on anything with a modern browser — a borrowed laptop, a library computer, your phone on the train. The best ones store your text locally in the browser using localStorage, which means the content never travels to a server. Refresh the tab, close the browser, lose your Wi-Fi — the words stay put.</p>
+
+<p>People confuse online notepads with word processors, but they are different tools for different jobs. A word processor is built for documents: formatting, images, page layouts, print styles. A notepad is built for speed: capture the thought before it leaves. I use mine for quick drafts, to-do lists, pasted error logs, temporary code snippets, and outlines I will reshape later somewhere fancier. The absence of formatting is the feature, not a flaw.</p>
+
+<h3>How to Use the Online Notepad</h3>
+
+<p>There is genuinely almost nothing to learn. Click into the editor area and start typing or paste text from anywhere else. Most online notepads save continuously as you write — every second or so, a copy lands in your browser's local storage, and a small "Saved" indicator confirms it.</p>
+
+<p>The workflow I rely on is simple:</p>
+
+<p><strong>Step 1 — Write freely.</strong> Type your note, list, draft, or paste content. Formatting tools like bold, lists, and headings are there if you want them; plain text is fine too.</p>
+
+<p><strong>Step 2 — Let autosave do its job.</strong> You do not need to press anything. Close the tab and your text waits for you next time.</p>
+
+<p><strong>Step 3 — Export when you need a file.</strong> Most notepads offer TXT export (and sometimes PDF, Markdown, or Word), a one-click copy button, and print. Download anything important as a file if you ever plan to clear your browser data — clearing site data wipes local storage along with it.</p>
+
+<p>One small habit worth building: for anything that matters, export a .txt backup. Local autosave is a safety net, not an archive.</p>
+
+<h3>How Autosave and Local Storage Work</h3>
+
+<p>The magic behind autosave is an HTML5 feature called localStorage — a small storage area your browser reserves per website, usually 5–10 MB, which is enormous for text. Every time you pause typing, the editor serializes your content and writes it there. Because it is local to your device and browser, nothing is uploaded, nothing is synced anywhere, and nothing appears on anyone else's screen.</p>
+
+<p>That privacy model has a flip side worth understanding. Since notes live in one browser on one device, they will not follow you to your phone. If you use incognito or private mode, the data evaporates when the window closes. And if you clear cookies and site data, the notes go with them. Some notepads add optional cloud sync with a free account for exactly this reason; others stay deliberately offline-first. Choose based on what your notes are worth.</p>
+
+<h3>Everyday Uses for an Online Notepad</h3>
+
+<p>The list is longer than it sounds:</p>
+
+<ul>
+<li><strong>Meeting notes and agendas</strong> — open the tab before the call starts; no app launch delay.</li>
+<li><strong>To-do lists and reminders</strong> — faster than any task manager for a quick brain dump.</li>
+<li><strong>Draft writing</strong> — articles, captions, emails, and outlines in a distraction-free space.</li>
+<li><strong>Code and error logs</strong> — a neutral scratchpad for pasting stack traces while debugging.</li>
+<li><strong>Temporary data</strong> — tracking numbers, confirmation codes, phone numbers you need for five minutes.</li>
+<li><strong>Journaling</strong> — a private page that asks for nothing, which is why people keep coming back.</li>
+</ul>
+
+<p>Students lean on notepads for lecture notes and assignment word counts; writers use them for first drafts they later move into publishing tools; professionals keep a tab pinned for daily logs. The common thread is the same: zero friction between thinking and writing.</p>
+
+<h3>Key Features to Look For</h3>
+
+<table>
+<thead><tr><th>Feature</th><th>Why It Matters</th></tr></thead>
+<tbody>
+<tr><td>Autosave every second</td><td>Protects against crashes, closed tabs, and dead batteries</td></tr>
+<tr><td>No login required</td><td>Start writing in two seconds from any device</td></tr>
+<tr><td>Word / character / line counts</td><td>Essential for assignments and content with limits</td></tr>
+<tr><td>Dark mode</td><td>Easier on the eyes during long writing sessions</td></tr>
+<tr><td>Find and replace</td><td>Edit long drafts without scrolling endlessly</td></tr>
+<tr><td>Font size and word wrap controls</td><td>Comfort tuning for reading and writing</td></tr>
+<tr><td>TXT / PDF export</td><td>Take your notes out of the browser when needed</td></tr>
+<tr><td>Spell check</td><td>Browser-native spelling catches typos as you type</td></tr>
+<tr><td>Keyboard shortcuts</td><td>Ctrl+N for new, Ctrl+S to export, Ctrl+F to find</td></tr>
+</tbody>
+</table>
+
+<p>Privacy is the feature most people underestimate: with local-only storage, the notepad never sees your content. That makes it a reasonable place even for sensitive drafts you would hesitate to paste into a cloud tool.</p>
+
+<h3>Online Notepad vs Desktop Notes Apps</h3>
+
+<p><strong>Desktop apps</strong> like Notepad (Windows) or Notes (Mac) are tied to the operating system. They are fast and reliable, but your notes stay on that machine unless you wire up sync yourself. Microsoft WordPad, the classic built-in word editor, was removed from Windows 11 in version 24H2 (October 2024), which pushed a lot of people toward browser alternatives.</p>
+
+<p><strong>Online notepads</strong> trade that OS lock-in for universality: any browser, any OS, any device, no install. The autosave-to-localStorage model means the experience is nearly identical to desktop — the main difference is where the file lives (the browser's storage rather than your documents folder). For people who hop between machines, the browser version wins. For long, formatted documents, a proper editor still has its place.</p>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this online notepad free?</h4>
+<p>Yes — completely free, no account, no signup, no usage limits.</p>
+
+<h4>Does it save my notes automatically?</h4>
+<p>Yes. Your text is saved locally in your browser every second as you type, and restored automatically when you return.</p>
+
+<h4>Where are my notes stored?</h4>
+<p>Only in your current browser on your current device, via localStorage. They are never uploaded to any server.</p>
+
+<h4>Will I lose my notes if I clear my browser data?</h4>
+<p>Yes — clearing cookies and site data removes locally stored notes. Export important notes as .txt files for backup.</p>
+
+<h4>Can I access my notes on another device?</h4>
+<p>Not with local-only storage. Copy text over, or use the export feature to move it to another machine.</p>
+
+<h4>Is my content private?</h4>
+<p>Yes. Since everything stays in your browser, the notepad service itself never receives your text.</p>
+
+<h4>Can I count words in my note?</h4>
+<p>Yes — live word, character, and line counts are shown while you write.</p>
+
+<h4>Does it work offline?</h4>
+<p>Once the page is loaded, writing and autosave work fine without an internet connection.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        // DOM Elements
+        const editor = document.getElementById('editor');
+        const sidePanel = document.getElementById('sidePanel');
+        const panelToggle = document.getElementById('panelToggle');
+
+        // Statistics elements
+        const wordCountEl = document.getElementById('wordCount');
+        const charCountEl = document.getElementById('charCount');
+        const lineCountEl = document.getElementById('lineCount');
+        const paragraphCountEl = document.getElementById('paragraphCount');
+
+        // Status bar elements
+        const fileNameEl = document.getElementById('fileName');
+        const lastSavedEl = document.getElementById('lastSaved');
+        const currentLineEl = document.getElementById('currentLine');
+        const currentColEl = document.getElementById('currentCol');
+        const zoomLevelEl = document.getElementById('zoomLevel');
+
+        // Toolbar buttons
+        const boldBtn = document.getElementById('boldBtn');
+        const italicBtn = document.getElementById('italicBtn');
+        const underlineBtn = document.getElementById('underlineBtn');
+        const strikeBtn = document.getElementById('strikeBtn');
+
+        // Alignment buttons
+        const alignLeftBtn = document.getElementById('alignLeftBtn');
+        const alignCenterBtn = document.getElementById('alignCenterBtn');
+        const alignRightBtn = document.getElementById('alignRightBtn');
+        const justifyBtn = document.getElementById('justifyBtn');
+
+        // List buttons
+        const bulletListBtn = document.getElementById('bulletListBtn');
+        const numberListBtn = document.getElementById('numberListBtn');
+        const indentBtn = document.getElementById('indentBtn');
+        const outdentBtn = document.getElementById('outdentBtn');
+
+        // Headings and font
+        const headingSelect = document.getElementById('headingSelect');
+        const fontFamilySelect = document.getElementById('fontFamilySelect');
+        const fontSizeSelect = document.getElementById('fontSizeSelect');
+
+        // Color buttons
+        const textColorBtn = document.getElementById('textColorBtn');
+        const highlightColorBtn = document.getElementById('highlightColorBtn');
+
+        // Insert buttons
+        const insertImageBtn = document.getElementById('insertImageBtn');
+        const insertLinkBtn = document.getElementById('insertLinkBtn');
+        const insertTableBtn = document.getElementById('insertTableBtn');
+
+        // Other buttons
+        const findBtn = document.getElementById('findBtn');
+        const replaceBtn = document.getElementById('replaceBtn');
+        const wordCountBtn = document.getElementById('wordCountBtn');
+        const saveBtn = document.getElementById('saveBtn');
+        const exportBtn = document.getElementById('exportBtn');
+        const printBtn = document.getElementById('printBtn');
+        const newNoteBtn = document.getElementById('newNoteBtn');
+        const themeBtn = document.getElementById('themeBtn');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const spellCheckBtn = document.getElementById('spellCheckBtn');
+
+        // Side panel elements
+        const imageUrlInput = document.getElementById('imageUrl');
+        const insertImageFromUrlBtn = document.getElementById('insertImageFromUrl');
+        const imagePreview = document.getElementById('imagePreview');
+        const insertDateBtn = document.getElementById('insertDateBtn');
+        const insertTimeBtn = document.getElementById('insertTimeBtn');
+        const clearFormatBtn = document.getElementById('clearFormatBtn');
+        const copyAllBtn = document.getElementById('copyAllBtn');
+
+        // Modals
+        const imageModal = document.getElementById('imageModal');
+        const linkModal = document.getElementById('linkModal');
+        const tableModal = document.getElementById('tableModal');
+        const themeModal = document.getElementById('themeModal');
+        const findModalDialog = document.getElementById('findModalDialog');
+        const exportModalDialog = document.getElementById('exportModal');
+
+        // State variables
+        let autoSaveInterval;
+        let currentTheme = 'light';
+        let isFullscreen = false;
+        let files = [];
+        let currentZoom = 100;
+        let isBold = false;
+        let isItalic = false;
+        let isUnderline = false;
+        let isStrike = false;
+        let currentAlignment = 'left';
+
+        // Initialize the application
+        function init() {
+            // Load saved content and settings from localStorage
+            loadSavedData();
+
+            // Set up event listeners
+            setupEventListeners();
+
+            // Update statistics
+            updateStatistics();
+
+            // Update cursor position
+            updateCursorPosition();
+
+            // Start auto-save
+            startAutoSave();
+
+            // Initialize file list
+            loadFileList();
+
+            // Apply initial settings
+            applyInitialSettings();
+
+            // Setup image URL preview
+            setupImagePreview();
+        }
+
+        // Set up event listeners
+        function setupEventListeners() {
+            // Panel toggle
+            panelToggle.addEventListener('click', function () {
+                sidePanel.classList.toggle('active');
+            });
+
+            // Formatting buttons
+            boldBtn.addEventListener('click', function () {
+                document.execCommand('bold', false, null);
+                updateFormattingButtons();
+            });
+
+            italicBtn.addEventListener('click', function () {
+                document.execCommand('italic', false, null);
+                updateFormattingButtons();
+            });
+
+            underlineBtn.addEventListener('click', function () {
+                document.execCommand('underline', false, null);
+                updateFormattingButtons();
+            });
+
+            strikeBtn.addEventListener('click', function () {
+                document.execCommand('strikethrough', false, null);
+                updateFormattingButtons();
+            });
+
+            // Alignment buttons
+            alignLeftBtn.addEventListener('click', function () {
+                document.execCommand('justifyLeft', false, null);
+                updateAlignmentButtons('left');
+            });
+
+            alignCenterBtn.addEventListener('click', function () {
+                document.execCommand('justifyCenter', false, null);
+                updateAlignmentButtons('center');
+            });
+
+            alignRightBtn.addEventListener('click', function () {
+                document.execCommand('justifyRight', false, null);
+                updateAlignmentButtons('right');
+            });
+
+            justifyBtn.addEventListener('click', function () {
+                document.execCommand('justifyFull', false, null);
+                updateAlignmentButtons('justify');
+            });
+
+            // List buttons
+            bulletListBtn.addEventListener('click', function () {
+                document.execCommand('insertUnorderedList', false, null);
+            });
+
+            numberListBtn.addEventListener('click', function () {
+                document.execCommand('insertOrderedList', false, null);
+            });
+
+            indentBtn.addEventListener('click', function () {
+                document.execCommand('indent', false, null);
+            });
+
+            outdentBtn.addEventListener('click', function () {
+                document.execCommand('outdent', false, null);
+            });
+
+            // Headings and font
+            headingSelect.addEventListener('change', function () {
+                const heading = this.value;
+                if (heading === 'p') {
+                    document.execCommand('formatBlock', false, '<p>');
+                } else {
+                    document.execCommand('formatBlock', false, `<${heading}>`);
+                }
+            });
+
+            fontFamilySelect.addEventListener('change', function () {
+                document.execCommand('fontName', false, this.value);
+            });
+
+            fontSizeSelect.addEventListener('change', function () {
+                document.execCommand('fontSize', false, this.value);
+            });
+
+            // Color buttons
+            textColorBtn.addEventListener('click', function () {
+                const color = prompt('Enter text color (hex code or name):', '#333333');
+                if (color) {
+                    document.execCommand('foreColor', false, color);
+                }
+            });
+
+            highlightColorBtn.addEventListener('click', function () {
+                const color = prompt('Enter highlight color (hex code or name):', '#ffff00');
+                if (color) {
+                    document.execCommand('hiliteColor', false, color);
+                }
+            });
+
+            // Insert buttons
+            insertImageBtn.addEventListener('click', function () {
+                imageModal.style.display = 'flex';
+            });
+
+            insertLinkBtn.addEventListener('click', function () {
+                linkModal.style.display = 'flex';
+            });
+
+            // Table button - FIXED: Now properly opens the table modal
+            insertTableBtn.addEventListener('click', function () {
+                tableModal.style.display = 'flex';
+            });
+
+            // Other buttons
+            findBtn.addEventListener('click', function () {
+                findModalDialog.style.display = 'flex';
+            });
+
+            replaceBtn.addEventListener('click', function () {
+                findModalDialog.style.display = 'flex';
+            });
+
+            wordCountBtn.addEventListener('click', function () {
+                updateStatistics();
+                alert(`Document Statistics:\nWords: ${wordCountEl.textContent}\nCharacters: ${charCountEl.textContent}\nLines: ${lineCountEl.textContent}\nParagraphs: ${paragraphCountEl.textContent}`);
+            });
+
+            saveBtn.addEventListener('click', saveDocument);
+
+            exportBtn.addEventListener('click', function () {
+                exportModalDialog.style.display = 'flex';
+            });
+
+            printBtn.addEventListener('click', function () {
+                window.print();
+            });
+
+            newNoteBtn.addEventListener('click', newDocument);
+
+            themeBtn.addEventListener('click', function () {
+                themeModal.style.display = 'flex';
+            });
+
+            fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+            spellCheckBtn.addEventListener('click', function () {
+                const isChecked = !editor.spellcheck;
+                editor.spellcheck = isChecked;
+                spellCheckBtn.classList.toggle('active', isChecked);
+                alert(`Spell check ${isChecked ? 'enabled' : 'disabled'}`);
+            });
+
+            // Editor events
+            editor.addEventListener('input', function () {
+                updateStatistics();
+                updateLastSavedTime();
+                updateFormattingButtons();
+            });
+
+            editor.addEventListener('keyup', function () {
+                updateCursorPosition();
+                updateFormattingButtons();
+            });
+
+            editor.addEventListener('click', function () {
+                updateCursorPosition();
+                updateFormattingButtons();
+                updateAlignmentFromSelection();
+            });
+
+            editor.addEventListener('mouseup', function () {
+                updateFormattingButtons();
+                updateAlignmentFromSelection();
+            });
+
+            editor.addEventListener('scroll', updateCursorPosition);
+
+            // Side panel buttons
+            insertImageFromUrlBtn.addEventListener('click', function () {
+                const url = imageUrlInput.value.trim();
+                if (url) {
+                    insertImage(url, 'Inserted image', 0, 0, 'center');
+                    imageUrlInput.value = '';
+                } else {
+                    alert('Please enter an image URL');
+                }
+            });
+
+            insertDateBtn.addEventListener('click', function () {
+                const now = new Date();
+                const dateStr = now.toLocaleDateString();
+                document.execCommand('insertText', false, dateStr);
+            });
+
+            insertTimeBtn.addEventListener('click', function () {
+                const now = new Date();
+                const timeStr = now.toLocaleTimeString();
+                document.execCommand('insertText', false, timeStr);
+            });
+
+            clearFormatBtn.addEventListener('click', function () {
+                document.execCommand('removeFormat', false, null);
+                document.execCommand('unlink', false, null);
+                updateFormattingButtons();
+            });
+
+            copyAllBtn.addEventListener('click', function () {
+                const text = editor.innerText;
+                navigator.clipboard.writeText(text).then(() => {
+                    alert('All text copied to clipboard!');
+                });
+            });
+
+            // Heading samples
+            document.querySelectorAll('.heading-sample').forEach(sample => {
+                sample.addEventListener('click', function () {
+                    const heading = this.getAttribute('data-heading');
+                    document.execCommand('formatBlock', false, `<${heading}>`);
+                });
+            });
+
+            // Color palette
+            document.querySelectorAll('.color-option').forEach(color => {
+                color.addEventListener('click', function () {
+                    const colorValue = this.getAttribute('data-color');
+                    document.execCommand('foreColor', false, colorValue);
+                });
+            });
+
+            // Modal buttons
+            document.getElementById('cancelImageBtn').addEventListener('click', function () {
+                imageModal.style.display = 'none';
+            });
+
+            document.getElementById('insertImageBtnModal').addEventListener('click', function () {
+                const url = document.getElementById('imageUrlInput').value;
+                const alt = document.getElementById('imageAltText').value;
+                const width = document.getElementById('imageWidth').value;
+                const height = document.getElementById('imageHeight').value;
+                const alignment = document.getElementById('imageAlignment').value;
+
+                if (url) {
+                    insertImage(url, alt, width, height, alignment);
+                    imageModal.style.display = 'none';
+                    // Clear fields
+                    document.getElementById('imageUrlInput').value = '';
+                    document.getElementById('imageAltText').value = '';
+                    document.getElementById('imageWidth').value = '';
+                    document.getElementById('imageHeight').value = '';
+                } else {
+                    alert('Please enter an image URL');
+                }
+            });
+
+            document.getElementById('cancelLinkBtn').addEventListener('click', function () {
+                linkModal.style.display = 'none';
+            });
+
+            document.getElementById('insertLinkBtnModal').addEventListener('click', function () {
+                const url = document.getElementById('linkUrl').value;
+                const text = document.getElementById('linkText').value;
+                const target = document.getElementById('linkTarget').value;
+
+                if (url) {
+                    insertLink(url, text, target);
+                    linkModal.style.display = 'none';
+                    // Clear fields
+                    document.getElementById('linkUrl').value = '';
+                    document.getElementById('linkText').value = '';
+                } else {
+                    alert('Please enter a URL');
+                }
+            });
+
+            // Table modal buttons - FIXED
+            document.getElementById('cancelTableBtn').addEventListener('click', function () {
+                tableModal.style.display = 'none';
+            });
+
+            document.getElementById('insertTableBtnModal').addEventListener('click', function () {
+                const rows = parseInt(document.getElementById('tableRows').value) || 3;
+                const cols = parseInt(document.getElementById('tableColumns').value) || 3;
+                const border = parseInt(document.getElementById('tableBorder').value) || 1;
+                const width = document.getElementById('tableWidth').value || '100%';
+                const includeHeader = document.getElementById('tableHeader').value === 'yes';
+
+                insertTable(rows, cols, border, width, includeHeader);
+                tableModal.style.display = 'none';
+            });
+
+            document.getElementById('cancelThemeBtn').addEventListener('click', function () {
+                themeModal.style.display = 'none';
+            });
+
+            document.getElementById('applyThemeBtn').addEventListener('click', applyTheme);
+
+            document.getElementById('cancelFindBtn').addEventListener('click', function () {
+                findModalDialog.style.display = 'none';
+            });
+
+            document.getElementById('findNextBtnModal').addEventListener('click', findNextText);
+
+            document.getElementById('replaceBtnModal').addEventListener('click', replaceSelectedText);
+
+            document.getElementById('replaceAllBtnModal').addEventListener('click', replaceAllText);
+
+            document.getElementById('cancelExportBtn').addEventListener('click', function () {
+                exportModalDialog.style.display = 'none';
+            });
+
+            document.getElementById('confirmExportBtn').addEventListener('click', exportDocument);
+
+            // Export format buttons
+            document.querySelectorAll('#exportModal [data-format]').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    document.querySelectorAll('#exportModal [data-format]').forEach(b => {
+                        b.classList.remove('btn-primary');
+                    });
+                    this.classList.add('btn-primary');
+                });
+            });
+
+            // Zoom controls
+            document.addEventListener('keydown', function (e) {
+                // Ctrl+Plus for zoom in
+                if (e.ctrlKey && e.key === '+' || e.ctrlKey && e.key === '=') {
+                    e.preventDefault();
+                    changeZoom(10);
+                }
+
+                // Ctrl+Minus for zoom out
+                if (e.ctrlKey && e.key === '-') {
+                    e.preventDefault();
+                    changeZoom(-10);
+                }
+
+                // Ctrl+0 for reset zoom
+                if (e.ctrlKey && e.key === '0') {
+                    e.preventDefault();
+                    currentZoom = 100;
+                    updateZoom();
+                }
+            });
+
+            // Close modals when clicking outside
+            window.addEventListener('click', function (e) {
+                if (e.target === imageModal) imageModal.style.display = 'none';
+                if (e.target === linkModal) linkModal.style.display = 'none';
+                if (e.target === tableModal) tableModal.style.display = 'none';
+                if (e.target === themeModal) themeModal.style.display = 'none';
+                if (e.target === findModalDialog) findModalDialog.style.display = 'none';
+                if (e.target === exportModalDialog) exportModalDialog.style.display = 'none';
+            });
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', function (e) {
+                // Ctrl+S to save
+                if (e.ctrlKey && e.key === 's') {
+                    e.preventDefault();
+                    saveDocument();
+                }
+
+                // Ctrl+F to find
+                if (e.ctrlKey && e.key === 'f') {
+                    e.preventDefault();
+                    findModalDialog.style.display = 'flex';
+                }
+
+                // Ctrl+H to replace
+                if (e.ctrlKey && e.key === 'h') {
+                    e.preventDefault();
+                    findModalDialog.style.display = 'flex';
+                }
+
+                // Ctrl+N for new document
+                if (e.ctrlKey && e.key === 'n') {
+                    e.preventDefault();
+                    newDocument();
+                }
+
+                // Ctrl+B for bold
+                if (e.ctrlKey && e.key === 'b') {
+                    e.preventDefault();
+                    document.execCommand('bold', false, null);
+                    updateFormattingButtons();
+                }
+
+                // Ctrl+I for italic
+                if (e.ctrlKey && e.key === 'i') {
+                    e.preventDefault();
+                    document.execCommand('italic', false, null);
+                    updateFormattingButtons();
+                }
+
+                // Ctrl+U for underline
+                if (e.ctrlKey && e.key === 'u') {
+                    e.preventDefault();
+                    document.execCommand('underline', false, null);
+                    updateFormattingButtons();
+                }
+
+                // Ctrl+Z for undo
+                if (e.ctrlKey && e.key === 'z') {
+                    e.preventDefault();
+                    document.execCommand('undo');
+                }
+
+                // Ctrl+Y for redo
+                if (e.ctrlKey && e.key === 'y') {
+                    e.preventDefault();
+                    document.execCommand('redo');
+                }
+
+                // Ctrl+A for select all
+                if (e.ctrlKey && e.key === 'a') {
+                    e.preventDefault();
+                    document.execCommand('selectAll');
+                }
+
+                // Ctrl+L for align left
+                if (e.ctrlKey && e.key === 'l') {
+                    e.preventDefault();
+                    document.execCommand('justifyLeft', false, null);
+                    updateAlignmentButtons('left');
+                }
+
+                // Ctrl+E for center
+                if (e.ctrlKey && e.key === 'e') {
+                    e.preventDefault();
+                    document.execCommand('justifyCenter', false, null);
+                    updateAlignmentButtons('center');
+                }
+
+                // Ctrl+R for align right
+                if (e.ctrlKey && e.key === 'r') {
+                    e.preventDefault();
+                    document.execCommand('justifyRight', false, null);
+                    updateAlignmentButtons('right');
+                }
+
+                // Ctrl+J for justify
+                if (e.ctrlKey && e.key === 'j') {
+                    e.preventDefault();
+                    document.execCommand('justifyFull', false, null);
+                    updateAlignmentButtons('justify');
+                }
+            });
+
+            // Responsive panel behavior
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 1024) {
+                    sidePanel.classList.remove('active');
+                }
+            });
+
+            // Setup toggle switches
+            setupToggleSwitches();
+        }
+
+        // Setup image URL preview
+        function setupImagePreview() {
+            imageUrlInput.addEventListener('input', function () {
+                const url = this.value.trim();
+                if (url && (url.startsWith('http://') || url.startsWith('https://'))) {
+                    imagePreview.innerHTML = `<img src="${url}" alt="Preview" onerror="this.parentElement.innerHTML='<div class=\'no-image\'>Invalid image URL</div>'">`;
+                } else {
+                    imagePreview.innerHTML = '<div class="no-image">No image selected</div>';
+                }
+            });
+        }
+
+        // Setup toggle switches
+        function setupToggleSwitches() {
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const autoSaveToggle = document.getElementById('autoSaveToggle');
+            const spellCheckToggle = document.getElementById('spellCheckToggle');
+            const wordWrapToggle = document.getElementById('wordWrapToggle');
+
+            darkModeToggle.addEventListener('change', function () {
+                toggleDarkMode(this.checked);
+                saveSetting('darkMode', this.checked);
+            });
+
+            autoSaveToggle.addEventListener('change', function () {
+                if (this.checked) {
+                    startAutoSave();
+                } else {
+                    stopAutoSave();
+                }
+                saveSetting('autoSave', this.checked);
+            });
+
+            spellCheckToggle.addEventListener('change', function () {
+                editor.spellcheck = this.checked;
+                saveSetting('spellCheck', this.checked);
+            });
+
+            wordWrapToggle.addEventListener('change', function () {
+                if (this.checked) {
+                    editor.style.whiteSpace = 'pre-wrap';
+                    editor.style.wordWrap = 'break-word';
+                } else {
+                    editor.style.whiteSpace = 'pre';
+                    editor.style.wordWrap = 'normal';
+                }
+                saveSetting('wordWrap', this.checked);
+            });
+        }
+
+        // Apply initial settings from localStorage
+        function applyInitialSettings() {
+            const settings = JSON.parse(localStorage.getItem('notepadSettings') || '{}');
+
+            if (settings.darkMode) {
+                document.getElementById('darkModeToggle').checked = settings.darkMode;
+                toggleDarkMode(settings.darkMode);
+            }
+
+            if (settings.autoSave !== undefined) {
+                document.getElementById('autoSaveToggle').checked = settings.autoSave;
+                if (!settings.autoSave) stopAutoSave();
+            }
+
+            if (settings.spellCheck) {
+                document.getElementById('spellCheckToggle').checked = settings.spellCheck;
+                editor.spellcheck = settings.spellCheck;
+            }
+
+            if (settings.wordWrap !== undefined) {
+                document.getElementById('wordWrapToggle').checked = settings.wordWrap;
+                if (settings.wordWrap) {
+                    editor.style.whiteSpace = 'pre-wrap';
+                    editor.style.wordWrap = 'break-word';
+                }
+            }
+        }
+
+        // Save setting to localStorage
+        function saveSetting(key, value) {
+            const settings = JSON.parse(localStorage.getItem('notepadSettings') || '{}');
+            settings[key] = value;
+            localStorage.setItem('notepadSettings', JSON.stringify(settings));
+        }
+
+        // Update formatting buttons state
+        function updateFormattingButtons() {
+            isBold = document.queryCommandState('bold');
+            isItalic = document.queryCommandState('italic');
+            isUnderline = document.queryCommandState('underline');
+            isStrike = document.queryCommandState('strikethrough');
+
+            boldBtn.classList.toggle('active', isBold);
+            italicBtn.classList.toggle('active', isItalic);
+            underlineBtn.classList.toggle('active', isUnderline);
+            strikeBtn.classList.toggle('active', isStrike);
+        }
+
+        // Update alignment buttons
+        function updateAlignmentButtons(alignment) {
+            currentAlignment = alignment;
+
+            alignLeftBtn.classList.remove('active');
+            alignCenterBtn.classList.remove('active');
+            alignRightBtn.classList.remove('active');
+            justifyBtn.classList.remove('active');
+
+            switch (alignment) {
+                case 'left':
+                    alignLeftBtn.classList.add('active');
+                    break;
+                case 'center':
+                    alignCenterBtn.classList.add('active');
+                    break;
+                case 'right':
+                    alignRightBtn.classList.add('active');
+                    break;
+                case 'justify':
+                    justifyBtn.classList.add('active');
+                    break;
+            }
+        }
+
+        // Update alignment from current selection
+        function updateAlignmentFromSelection() {
+            if (document.queryCommandState('justifyLeft')) {
+                updateAlignmentButtons('left');
+            } else if (document.queryCommandState('justifyCenter')) {
+                updateAlignmentButtons('center');
+            } else if (document.queryCommandState('justifyRight')) {
+                updateAlignmentButtons('right');
+            } else if (document.queryCommandState('justifyFull')) {
+                updateAlignmentButtons('justify');
+            }
+        }
+
+        // Update document statistics
+        function updateStatistics() {
+            const text = editor.innerText || editor.textContent;
+
+            // Word count
+            const words = text.trim().split(/\s+/).filter(word => word.length > 0);
+            wordCountEl.textContent = words.length;
+
+            // Character count
+            charCountEl.textContent = text.length;
+
+            // Line count
+            const lines = text.split('\n').filter(line => line.length > 0);
+            lineCountEl.textContent = lines.length || 1;
+
+            // Paragraph count
+            const paragraphs = text.split('\n\n').filter(para => para.trim().length > 0);
+            paragraphCountEl.textContent = paragraphs.length || 1;
+        }
+
+        // Update cursor position
+        function updateCursorPosition() {
+            const selection = window.getSelection();
+            if (!selection.rangeCount) return;
+
+            const range = selection.getRangeAt(0);
+            const preCaretRange = range.cloneRange();
+            preCaretRange.selectNodeContents(editor);
+            preCaretRange.setEnd(range.endContainer, range.endOffset);
+
+            const text = preCaretRange.toString();
+            const lines = text.split('\n');
+            const line = lines.length;
+            const col = lines[lines.length - 1].length + 1;
+
+            currentLineEl.textContent = line;
+            currentColEl.textContent = col;
+        }
+
+        // Update last saved time
+        function updateLastSavedTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            lastSavedEl.textContent = timeString;
+        }
+
+        // Change zoom level
+        function changeZoom(delta) {
+            currentZoom += delta;
+            if (currentZoom < 50) currentZoom = 50;
+            if (currentZoom > 200) currentZoom = 200;
+            updateZoom();
+        }
+
+        // Update zoom display
+        function updateZoom() {
+            zoomLevelEl.textContent = `${currentZoom}%`;
+            editor.style.fontSize = `${16 * (currentZoom / 100)}px`;
+        }
+
+        // Insert image function
+        function insertImage(url, alt, width, height, alignment) {
+            const img = document.createElement('img');
+            img.src = url;
+            img.alt = alt || 'Image';
+            img.className = 'inserted-image';
+
+            if (width) img.width = width;
+            if (height) img.height = height;
+
+            img.style.display = 'block';
+
+            switch (alignment) {
+                case 'left':
+                    img.style.float = 'left';
+                    img.style.marginRight = '15px';
+                    break;
+                case 'right':
+                    img.style.float = 'right';
+                    img.style.marginLeft = '15px';
+                    break;
+                case 'center':
+                    img.style.margin = '0 auto';
+                    img.style.display = 'block';
+                    break;
+            }
+
+            // Create container for image
+            const container = document.createElement('div');
+            container.style.textAlign = alignment;
+            container.appendChild(img);
+
+            // Add caption if alt text exists
+            if (alt) {
+                const caption = document.createElement('div');
+                caption.className = 'image-caption';
+                caption.textContent = alt;
+                container.appendChild(caption);
+            }
+
+            // Insert at cursor position
+            insertHtmlAtCursor(container.outerHTML);
+        }
+
+        // Insert link function
+        function insertLink(url, text, target) {
+            const linkText = text || url;
+            const linkHtml = `<a href="${url}" target="${target}" style="color: #667eea; text-decoration: underline;">${linkText}</a>`;
+            insertHtmlAtCursor(linkHtml);
+        }
+
+        // Insert table function - FIXED VERSION
+        function insertTable(rows, cols, border, width, includeHeader) {
+            // Create table element
+            const table = document.createElement('table');
+            table.style.borderCollapse = 'collapse';
+            table.style.width = width;
+            table.style.margin = '15px 0';
+            table.style.backgroundColor = 'white';
+            table.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+
+            if (border > 0) {
+                table.style.border = border + 'px solid #ddd';
+            }
+
+            // Create header row if needed
+            if (includeHeader) {
+                const thead = document.createElement('thead');
+                const headerRow = document.createElement('tr');
+                headerRow.style.backgroundColor = '#667eea';
+
+                for (let j = 0; j < cols; j++) {
+                    const th = document.createElement('th');
+                    th.textContent = 'Header ' + (j + 1);
+                    th.style.border = '1px solid #ddd';
+                    th.style.padding = '10px 12px';
+                    th.style.textAlign = 'left';
+                    th.style.color = 'white';
+                    th.style.fontWeight = '600';
+                    headerRow.appendChild(th);
+                }
+
+                thead.appendChild(headerRow);
+                table.appendChild(thead);
+            }
+
+            // Create table body
+            const tbody = document.createElement('tbody');
+
+            for (let i = 0; i < rows; i++) {
+                const row = document.createElement('tr');
+
+                // Alternate row colors
+                if (i % 2 === 0) {
+                    row.style.backgroundColor = '#f9f9f9';
+                }
+
+                row.addEventListener('mouseenter', function () {
+                    this.style.backgroundColor = '#f0f4ff';
+                });
+
+                row.addEventListener('mouseleave', function () {
+                    this.style.backgroundColor = i % 2 === 0 ? '#f9f9f9' : 'white';
+                });
+
+                for (let j = 0; j < cols; j++) {
+                    const cell = document.createElement('td');
+                    cell.textContent = 'Cell ' + (i + 1) + ',' + (j + 1);
+                    cell.style.border = '1px solid #ddd';
+                    cell.style.padding = '10px 12px';
+                    cell.style.textAlign = 'left';
+                    cell.style.verticalAlign = 'top';
+
+                    // Make cells editable
+                    cell.setAttribute('contenteditable', 'true');
+
+                    row.appendChild(cell);
+                }
+
+                tbody.appendChild(row);
+            }
+
+            table.appendChild(tbody);
+
+            // Insert the table
+            insertElementAtCursor(table);
+
+            // Show success message
+            showNotification(`Table inserted: ${rows} rows × ${cols} columns`, 'success');
+        }
+
+        // Helper function to insert HTML at cursor
+        function insertHtmlAtCursor(html) {
+            const selection = window.getSelection();
+            if (selection.rangeCount) {
+                const range = selection.getRangeAt(0);
+                range.deleteContents();
+
+                const div = document.createElement('div');
+                div.innerHTML = html;
+                const fragment = document.createDocumentFragment();
+                let node;
+                while ((node = div.firstChild)) {
+                    fragment.appendChild(node);
+                }
+                range.insertNode(fragment);
+
+                // Move cursor after inserted content
+                range.setStartAfter(fragment.lastChild);
+                range.setEndAfter(fragment.lastChild);
+                selection.removeAllRanges();
+                selection.addRange(range);
+
+                editor.focus();
+            }
+        }
+
+        // Helper function to insert element at cursor
+        function insertElementAtCursor(element) {
+            const selection = window.getSelection();
+            if (selection.rangeCount) {
+                const range = selection.getRangeAt(0);
+                range.deleteContents();
+                range.insertNode(element);
+
+                // Move cursor after inserted element
+                range.setStartAfter(element);
+                range.setEndAfter(element);
+                selection.removeAllRanges();
+                selection.addRange(range);
+
+                editor.focus();
+            }
+        }
+
+        // Find next text
+        function findNextText() {
+            const findText = document.getElementById('findTextInput').value;
+            const matchCase = document.getElementById('matchCaseCheck').checked;
+
+            if (!findText) {
+                alert('Please enter text to find.');
+                return;
+            }
+
+            const content = editor.innerText || editor.textContent;
+            let searchText = findText;
+            let searchContent = content;
+
+            if (!matchCase) {
+                searchText = searchText.toLowerCase();
+                searchContent = content.toLowerCase();
+            }
+
+            const index = searchContent.indexOf(searchText);
+
+            if (index !== -1) {
+                // Find and select the text
+                const textNodes = getTextNodes(editor);
+                let currentIndex = 0;
+                let targetNode = null;
+                let targetOffset = 0;
+
+                for (const node of textNodes) {
+                    const nodeText = matchCase ? node.textContent : node.textContent.toLowerCase();
+                    const nodeLength = node.textContent.length;
+
+                    if (currentIndex + nodeLength > index) {
+                        targetNode = node;
+                        targetOffset = index - currentIndex;
+                        break;
+                    }
+                    currentIndex += nodeLength;
+                }
+
+                if (targetNode) {
+                    const range = document.createRange();
+                    const sel = window.getSelection();
+                    range.setStart(targetNode, targetOffset);
+                    range.setEnd(targetNode, targetOffset + findText.length);
+                    sel.removeAllRanges();
+                    sel.addRange(range);
+
+                    // Scroll to found text
+                    targetNode.parentElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    // Update results count
+                    const matches = (searchContent.match(new RegExp(searchText, 'g')) || []).length;
+                    document.getElementById('findResults').textContent = `${matches} found`;
+                }
+            } else {
+                alert(`"${findText}" not found.`);
+                document.getElementById('findResults').textContent = '0 found';
+            }
+        }
+
+        // Replace selected text
+        function replaceSelectedText() {
+            const findText = document.getElementById('findTextInput').value;
+            const replaceText = document.getElementById('replaceTextInput').value;
+
+            if (!findText) {
+                alert('Please enter text to find.');
+                return;
+            }
+
+            const selection = window.getSelection();
+            if (selection.toString() === findText) {
+                document.execCommand('insertText', false, replaceText);
+                findNextText(); // Find next occurrence
+            } else {
+                alert('No matching text selected.');
+            }
+        }
+
+        // Replace all text
+        function replaceAllText() {
+            const findText = document.getElementById('findTextInput').value;
+            const replaceText = document.getElementById('replaceTextInput').value;
+            const matchCase = document.getElementById('matchCaseCheck').checked;
+
+            if (!findText) {
+                alert('Please enter text to find.');
+                return;
+            }
+
+            const content = editor.innerHTML;
+            const flags = matchCase ? 'g' : 'gi';
+            const regex = new RegExp(findText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), flags);
+            const newContent = content.replace(regex, replaceText);
+
+            editor.innerHTML = newContent;
+            updateStatistics();
+
+            const matches = (content.match(regex) || []).length;
+            alert(`Replaced ${matches} occurrence(s) of "${findText}"`);
+            document.getElementById('findResults').textContent = '0 found';
+        }
+
+        // Get all text nodes in an element
+        function getTextNodes(node) {
+            const textNodes = [];
+
+            function traverse(node) {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    textNodes.push(node);
+                } else {
+                    for (const child of node.childNodes) {
+                        traverse(child);
+                    }
+                }
+            }
+
+            traverse(node);
+            return textNodes;
+        }
+
+        // Toggle dark mode
+        function toggleDarkMode(enable) {
+            if (enable) {
+                document.querySelector('.editor-area').style.backgroundColor = '#1a1a2e';
+                editor.style.backgroundColor = '#1a1a2e';
+                editor.style.color = '#f8f9fa';
+            } else {
+                document.querySelector('.editor-area').style.backgroundColor = '#fefefe';
+                editor.style.backgroundColor = 'transparent';
+                editor.style.color = '#333';
+            }
+        }
+
+        // Apply selected theme
+        function applyTheme() {
+            const selectedTheme = document.querySelector('#themeModal .theme-option.active').dataset.theme;
+            currentTheme = selectedTheme;
+
+            // Apply theme to notepad container
+            const container = document.querySelector('.notepad-container');
+
+            // Reset all theme classes
+            container.classList.remove('theme-light', 'theme-dark', 'theme-blue', 'theme-green');
+            container.classList.add(`theme-${selectedTheme}`);
+
+            // Apply specific theme settings
+            switch (selectedTheme) {
+                case 'dark':
+                    document.querySelector('.editor-area').style.backgroundColor = '#1a1a2e';
+                    editor.style.backgroundColor = '#1a1a2e';
+                    editor.style.color = '#f8f9fa';
+                    break;
+                case 'blue':
+                    document.querySelector('.editor-area').style.backgroundColor = '#f0f4ff';
+                    editor.style.backgroundColor = '#f0f4ff';
+                    editor.style.color = '#1e3a8a';
+                    break;
+                case 'green':
+                    document.querySelector('.editor-area').style.backgroundColor = '#f0fdf4';
+                    editor.style.backgroundColor = '#f0fdf4';
+                    editor.style.color = '#064e3b';
+                    break;
+                default: // light
+                    document.querySelector('.editor-area').style.backgroundColor = '#fefefe';
+                    editor.style.backgroundColor = 'transparent';
+                    editor.style.color = '#333';
+            }
+
+            // Save theme preference
+            localStorage.setItem('notepadTheme', selectedTheme);
+
+            themeModal.style.display = 'none';
+
+            // Show theme applied message
+            showNotification(`Theme changed to ${selectedTheme}`, 'success');
+        }
+
+        // Toggle fullscreen
+        function toggleFullscreen() {
+            const container = document.querySelector('.notepad-container');
+
+            if (!isFullscreen) {
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) {
+                    container.webkitRequestFullscreen();
+                } else if (container.msRequestFullscreen) {
+                    container.msRequestFullscreen();
+                }
+                isFullscreen = true;
+                fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i><span>Exit Fullscreen</span>';
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+                isFullscreen = false;
+                fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i><span>Fullscreen</span>';
+            }
+        }
+
+        // Save document
+        function saveDocument() {
+            const content = editor.innerHTML;
+            const fileName = prompt('Enter file name:', 'document.html') || 'document.html';
+
+            // Save to localStorage
+            const fileData = {
+                name: fileName,
+                content: content,
+                date: new Date().toISOString(),
+                size: content.length
+            };
+
+            // Add to files array
+            files.unshift(fileData);
+
+            // Keep only last 10 files
+            if (files.length > 10) {
+                files = files.slice(0, 10);
+            }
+
+            // Save to localStorage
+            localStorage.setItem('notepadFiles', JSON.stringify(files));
+            localStorage.setItem('notepadCurrentFile', JSON.stringify(fileData));
+
+            fileNameEl.textContent = fileName;
+
+            showNotification('Document saved successfully!', 'success');
+
+            // Update file list
+            loadFileList();
+        }
+
+        // Export document
+        function exportDocument() {
+            const fileName = document.getElementById('exportFileName').value || 'mydocument';
+            const content = editor.innerHTML;
+            const plainText = editor.innerText || editor.textContent;
+            const format = document.querySelector('#exportModal [data-format].btn-primary')?.dataset.format || 'html';
+
+            let blob, mimeType, extension, exportContent;
+
+            switch (format) {
+                case 'pdf':
+                    alert(`Exporting as PDF: ${fileName}.pdf\n\nIn a real application, this would generate a PDF file.`);
+                    break;
+                case 'html':
+                    exportContent = `<!DOCTYPE html><html><head><title>${fileName}</title><meta charset="UTF-8"><style>body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: 0 auto; } img { max-width: 100%; } table { border-collapse: collapse; width: 100%; } th, td { border: 1px solid #ddd; padding: 8px; text-align: left; } th { background: #667eea; color: white; } tr:nth-child(even) { background: #f9f9f9; }</style></head><body>${content}</body></html>`;
+                    blob = new Blob([exportContent], { type: 'text/html' });
+                    mimeType = 'text/html';
+                    extension = 'html';
+                    break;
+                case 'doc':
+                    exportContent = `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="UTF-8"><title>${fileName}</title></head><body>${content}</body></html>`;
+                    blob = new Blob([exportContent], { type: 'application/msword' });
+                    mimeType = 'application/msword';
+                    extension = 'doc';
+                    break;
+                case 'md':
+                    // Simple conversion from HTML to Markdown
+                    let markdown = plainText
+                        .replace(/^# (.+)$/gm, '# $1')
+                        .replace(/^## (.+)$/gm, '## $1')
+                        .replace(/^### (.+)$/gm, '### $1')
+                        .replace(/^#### (.+)$/gm, '#### $1')
+                        .replace(/^##### (.+)$/gm, '##### $1')
+                        .replace(/^###### (.+)$/gm, '###### $1')
+                        .replace(/\*\*(.+?)\*\*/g, '**$1**')
+                        .replace(/\*(.+?)\*/g, '*$1*');
+
+                    blob = new Blob([markdown], { type: 'text/markdown' });
+                    mimeType = 'text/markdown';
+                    extension = 'md';
+                    break;
+                case 'txt':
+                default:
+                    blob = new Blob([plainText], { type: 'text/plain' });
+                    mimeType = 'text/plain';
+                    extension = 'txt';
+            }
+
+            if (blob) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${fileName}.${extension}`;
+                a.click();
+                URL.revokeObjectURL(url);
+                showNotification(`Exported as ${fileName}.${extension}`, 'success');
+            }
+
+            exportModalDialog.style.display = 'none';
+        }
+
+        // New document
+        function newDocument() {
+            if (editor.innerHTML && !confirm('Create new document? Current content will be lost.')) {
+                return;
+            }
+
+            editor.innerHTML = '<p><br></p>';
+            fileNameEl.textContent = 'Untitled.html';
+            updateStatistics();
+            updateLastSavedTime();
+            updateFormattingButtons();
+            showNotification('New document created', 'info');
+        }
+
+        // Load saved data from localStorage
+        function loadSavedData() {
+            // Load theme
+            const savedTheme = localStorage.getItem('notepadTheme');
+            if (savedTheme) {
+                currentTheme = savedTheme;
+                const themeOption = document.querySelector(`#themeModal .theme-option[data-theme="${savedTheme}"]`);
+                if (themeOption) {
+                    document.querySelectorAll('#themeModal .theme-option').forEach(opt => {
+                        opt.classList.remove('active');
+                    });
+                    themeOption.classList.add('active');
+                }
+            }
+
+            // Load current file
+            const savedFile = localStorage.getItem('notepadCurrentFile');
+            if (savedFile) {
+                try {
+                    const fileData = JSON.parse(savedFile);
+                    editor.innerHTML = fileData.content;
+                    fileNameEl.textContent = fileData.name;
+                } catch (e) {
+                    console.error('Error loading saved file:', e);
+                }
+            }
+
+            // Load files list
+            const savedFiles = localStorage.getItem('notepadFiles');
+            if (savedFiles) {
+                try {
+                    files = JSON.parse(savedFiles);
+                } catch (e) {
+                    console.error('Error loading files:', e);
+                }
+            }
+        }
+
+        // Load file list
+        function loadFileList() {
+            const fileListEl = document.getElementById('fileList');
+            fileListEl.innerHTML = '';
+
+            files.forEach((file, index) => {
+                const fileItem = document.createElement('div');
+                fileItem.className = 'file-item';
+                fileItem.innerHTML = `
+                    <div class="file-info">
+                        <div class="file-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div>
+                            <div class="file-name">${file.name}</div>
+                            <div class="file-size">${formatFileSize(file.size)} • ${new Date(file.date).toLocaleDateString()}</div>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="icon-btn" onclick="loadFile(${index})" title="Open">
+                            <i class="fas fa-folder-open"></i>
+                        </button>
+                    </div>
+                `;
+                fileListEl.appendChild(fileItem);
+            });
+
+            if (files.length === 0) {
+                fileListEl.innerHTML = '<div style="text-align: center; color: #888; padding: 20px; font-size: 14px;">No recent files</div>';
+            }
+        }
+
+        // Load a file
+        function loadFile(index) {
+            const file = files[index];
+            if (file) {
+                editor.innerHTML = file.content;
+                fileNameEl.textContent = file.name;
+                updateStatistics();
+                updateLastSavedTime();
+                updateFormattingButtons();
+                sidePanel.classList.remove('active');
+                showNotification(`Loaded: ${file.name}`, 'info');
+            }
+        }
+
+        // Format file size
+        function formatFileSize(bytes) {
+            if (bytes < 1024) return bytes + ' B';
+            if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+            return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+        }
+
+        // Show notification
+        function showNotification(message, type) {
+            const colors = {
+                success: '#10b981',
+                error: '#ef4444',
+                info: '#667eea',
+                warning: '#f59e0b'
+            };
+
+            const notification = document.createElement('div');
+            notification.innerHTML = `
+                <div style="position:fixed; top:20px; right:20px; background:${colors[type] || colors.info}; color:white; padding:12px 20px; border-radius:8px; box-shadow:0 5px 15px rgba(0,0,0,0.2); z-index:1000; display:flex; align-items:center; gap:10px; animation: slideIn 0.3s ease;">
+                    <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 3000);
+        }
+
+        // Start auto-save
+        function startAutoSave() {
+            if (autoSaveInterval) {
+                clearInterval(autoSaveInterval);
+            }
+
+            autoSaveInterval = setInterval(function () {
+                const content = editor.innerHTML;
+                if (content.trim()) {
+                    localStorage.setItem('notepadAutosave', content);
+                    updateLastSavedTime();
+                }
+            }, 30000); // Auto-save every 30 seconds
+        }
+
+        // Stop auto-save
+        function stopAutoSave() {
+            if (autoSaveInterval) {
+                clearInterval(autoSaveInterval);
+                autoSaveInterval = null;
+            }
+        }
+
+        // Initialize the application
+        init();
+    </script>
+</body>
+</html>

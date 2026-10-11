@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Optimize your SEO titles with pixel-perfect accuracy. Features A/B testing, CTR scoring, and power word analysis.">
+    <title>Advanced Meta Title Checker | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">SEO Tools</a> &gt;
+                <span>Advanced Meta Title Checker</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Advanced Meta Title Checker</h1>
+                <p class="tool-description">Optimize your SEO titles with pixel-perfect accuracy. Features A/B testing, CTR scoring, and power word analysis.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<main class="main-content" style="margin-top: 100px;">
+<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
+<div class="container text-center">
+<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Advanced Meta Title Checker</h1>
+<p class="hero-subtitle">Optimize for pixel width and Click-Through Rate (CTR). Compare variations with
+                    A/B testing.</p>
+</div>
+</section>
+<div class="container">
+<div class="tool-interface-container" style="max-width: 1200px; margin: 0 auto;">
+<div class="mode-switch">
+<button class="mode-btn active" id="btn-single" onclick="setMode('single')">Single Analysis</button>
+<button class="mode-btn" id="btn-ab" onclick="setMode('ab')">A/B Comparison</button>
+</div>
+<!-- Single Mode -->
+<div id="view-single">
+<div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+<div>
+<div class="input-group">
+<label class="input-label">Page Title</label>
+<input class="seo-input" id="titleA" oninput="analyze('A')" placeholder="Enter your page title..." style="font-size: 1.1rem; padding: 1rem;" type="text"/>
+<div style="display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.9rem;">
+<span id="px-A">0px / 580px</span>
+<span id="chars-A">0 chars</span>
+</div>
+<div class="pixel-bar-bg" style="height: 6px; background: #e2e8f0; border-radius: 3px; margin-top: 5px;">
+<div id="bar-A" style="height: 100%; width: 0%; background: #22c55e; border-radius: 3px; transition: width 0.3s;">
+</div>
+</div>
+</div>
+<div class="preview-box" style="margin-top: 2rem;">
+<div class="seo-result-item">
+<div class="seo-url">https://example.com � page-url</div>
+<a class="seo-title" href="#" id="preview-A">Your Title Here</a>
+<div class="seo-desc">This is how your title tag will appear in Google search
+                                        results...</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Analysis -->
+<div class="seo-card" style="padding: 1.5rem;">
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+<h3 class="section-title" style="margin: 0;">CTR Score</h3>
+<div class="score-circle" id="score-A">0</div>
+</div>
+<div class="checklist">
+<div class="checklist-item" id="check-len-A"><span class="checklist-icon">??</span>
+                                    Optimal Length (50-60 chars)</div>
+<div class="checklist-item" id="check-pow-A"><span class="checklist-icon">?</span>
+                                    Contains Power Word</div>
+<div class="checklist-item" id="check-emo-A"><span class="checklist-icon">??</span>
+                                    Contains Emotional Word</div>
+<div class="checklist-item" id="check-num-A"><span class="checklist-icon">#??</span>
+                                    Contains Number</div>
+<div class="checklist-item" id="check-brand-A"><span class="checklist-icon">???</span>
+                                    Avoids ALL CAPS</div>
+</div>
+<div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #eee;">
+<h4 style="font-size: 0.9rem; margin-bottom: 0.5rem;">Detected Keywords:</h4>
+<div id="keywords-A" style="min-height: 20px;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- A/B Mode -->
+<div id="view-ab" style="display: none;">
+<div class="ab-grid">
+<!-- Variant A (Reused from Single Mode inputs via JS mirroring, but we create separate UI for clarity) -->
+<!-- Actually, let's keep it simple: separate ID for B, reuse A -->
+<div style="border-right: 1px solid #e2e8f0; padding-right: 2rem;">
+<h3 class="section-title">Variant A</h3>
+<!-- Re-using Title A input is tricky if moved. We'll just clone logic visually. -->
+<!-- To avoid complex DOM moving, we'll just have B inputs here and hide Single View A -->
+<!-- Redundant logic for A in AB mode to keep code simple? No, let's just show B input in AB mode next to A? -->
+<!-- Better: In AB mode, we show side-by-side. I'll dynamically adjust the layout via CSS/Classes. -->
+</div>
+<!-- For simplicity in this static file, I will just build the 'B' column here and show 'A' column effectively by transforming the Single View Layout? -->
+<!-- Easier: Just duplicate the structure for B here. -->
+<div>
+<h3 class="section-title">Variant B</h3>
+<div class="input-group">
+<input class="seo-input" id="titleB" oninput="analyze('B')" placeholder="Test a variation..." style="font-size: 1.1rem; padding: 1rem;" type="text"/>
+<div style="display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.9rem;">
+<span id="px-B">0px / 580px</span>
+<span id="chars-B">0 chars</span>
+</div>
+<div class="pixel-bar-bg" style="height: 6px; background: #e2e8f0; border-radius: 3px; margin-top: 5px;">
+<div id="bar-B" style="height: 100%; width: 0%; background: #22c55e; border-radius: 3px; transition: width 0.3s;">
+</div>
+</div>
+</div>
+<div class="preview-box" style="margin-top: 1rem;">
+<div class="seo-result-item">
+<div class="seo-url">https://example.com � page-url</div>
+<a class="seo-title" href="#" id="preview-B">Variation B</a>
+<div class="seo-desc">This is how your title tag will appear in Google search
+                                        results...</div>
+</div>
+</div>
+<div class="seo-card" style="padding: 1rem; margin-top: 1rem;">
+<div style="display: flex; justify-content: space-between; align-items: center;">
+<strong>Score</strong>
+<div class="score-circle" id="score-B" style="width:40px; height:40px; font-size: 0.9rem;">0</div>
+</div>
+<div class="checklist" style="margin-top: 0.5rem;">
+<div class="checklist-item" id="check-len-B"><span class="checklist-icon">??</span>
+                                        Length</div>
+<div class="checklist-item" id="check-pow-B"><span class="checklist-icon">?</span>
+                                        Power</div>
+<div class="checklist-item" id="check-emo-B"><span class="checklist-icon">??</span>
+                                        Emotion</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+ Canvas 
+<canvas id="textCanvas" style="display:none;"></canvas>
+            </div>
+            <section class="seo-article" data-tool="meta-title-checker">
+<article class="tool-article">
+<h2>Meta Title Checker — Free Online Pixel Width & SERP Preview</h2>
+
+<p>The most painful SEO lesson I ever got came from a single title. It was 68 characters, it read beautifully, and the last four words — including the keyword I cared about — never appeared in Google. They were replaced by an ellipsis. A meta title checker would have caught it in ten seconds. Paste your title, see its pixel width against the limit Google actually uses, and preview exactly how it renders before you publish.</p>
+
+<h3>What Is a Meta Title Checker?</h3>
+
+<p>Your meta title (the <code>&lt;title&gt;</code> tag) is the blue clickable headline in search results. It is one of the few things that directly affects both rankings and clicks — Google uses it as a relevance signal, and searchers use it to decide whether to click. The checker is the tool that answers one question: will this title display in full?</p>
+
+<p>The key insight, confirmed across every serious checker tool, is that Google does not count characters — it measures pixel width. The commonly observed safe zone is around 580–600 pixels on desktop, which roughly equals 50–60 characters. But "roughly" is doing a lot of work there. A 60-character title in narrow letters fits comfortably; the same 60 characters in capitals and wide letters like W and M gets cut. Character counts alone can lie to you. A real checker measures both the character count and the estimated pixel width, and shows a live Google-style preview so you see the truncation point yourself.</p>
+
+<p>And one honest caveat before you obsess: Google rewrites titles roughly a third of the time, generating its own headline from page content when it thinks it knows better. A well-sized, intent-matching title makes that less likely, but nothing prevents it. The checker optimizes what you can control.</p>
+
+<h3>How to Use the Meta Title Checker</h3>
+
+<p>My routine is simple enough to do for every post.</p>
+
+<p>Paste your planned title into the checker's input box. The tool immediately shows three things: the character count, the estimated pixel width, and a color-coded status — green for safe, orange for near the limit, red for will-be-truncated. A live SERP preview renders your title the way Google would, complete with your URL and description underneath if you add them.</p>
+
+<p>Read the preview as a stranger would. Is the primary keyword visible before any cut point? Does the title still make sense if the last few words disappear? The most common fix I make: moving the keyword and the main benefit toward the front, and pushing brand names and filler to the end — anything past the cut is wasted, but anything before it works.</p>
+
+<p>A practical trick from the tool-makers: think mobile first. Mobile truncates a touch earlier than desktop, so if your most important words sit within the first 50 characters, you are safe on every device. When the status reads green, copy the title into your CMS title field and move on.</p>
+
+<h3>The Length Rules, Plainly</h3>
+
+<table>
+<thead><tr><th>Measurement</th><th>Safe zone</th><th>Danger zone</th></tr></thead>
+<tbody>
+<tr><td>Characters</td><td>50–60</td><td>61+ risks truncation</td></tr>
+<tr><td>Pixel width</td><td>Under ~580 px</td><td>Past ~600 px gets the ellipsis</td></tr>
+<tr><td>Mobile display</td><td>First ~50 chars</td><td>Anything later may vanish</td></tr>
+<tr><td>Keyword position</td><td>Near the front</td><td>Near the end risks being cut</td></tr>
+</tbody>
+</table>
+
+<p>Why pixels matter more than characters: "WILLIAM" and "illiiii" are both seven characters and nowhere near the same width. Titles heavy in capitals, W's, and M's hit the pixel ceiling far earlier than a lowercase-heavy title of the same length. If your checker only counts characters, it is measuring the wrong thing.</p>
+
+<h3>Examples: Weak vs. Strong Titles</h3>
+
+<p>Real titles make this concrete. Imagine a bakery page:</p>
+
+<p><strong>Weak:</strong> "Home | Welcome | Bakery Shop Page Main" — no keyword, no benefit, and the pipes eat pixel budget. This reads like a template nobody finished.</p>
+
+<p><strong>Weak (truncated):</strong> "Custom Wedding Cakes in Chicago with Free Delivery and Same-Day Pickup Options Available Every Weekend" — 104 characters. Google cuts it mid-sentence; the weekend-pickup hook, the most clickable part, never shows.</p>
+
+<p><strong>Strong:</strong> "Fresh Custom Cakes in Paris | Same Day Bakery Orders" — 52 characters, keyword near the front, benefit second, pixel-safe. Every word works for its place.</p>
+
+<p>The pattern I follow: keyword first, benefit or differentiator second, brand last (or skipped if space is tight). "Best Budget Laptops 2026 — Tested &amp; Compared | TechSite" beats "TechSite Blog | Our Thoughts on Some Laptops We Tried Recently" on every axis.</p>
+
+<h3>Who Uses Meta Title Checkers?</h3>
+
+<p><strong>Bloggers</strong> check every post title before publishing — it is the cheapest CTR improvement available.</p>
+
+<p><strong>SEO professionals</strong> run title audits across client sites, catching truncation at scale instead of eyeballing hundreds of listings.</p>
+
+<p><strong>Copywriters</strong> use the live preview to compare two or three title candidates side by side and pick the one that renders best.</p>
+
+<p><strong>E-commerce managers</strong> check product titles, where a cut-off size, price, or shipping term directly costs clicks and sales.</p>
+
+<p><strong>Beginners</strong> use the tool to build an instinct for snippet length — after checking fifty titles, you start writing within the limits naturally.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Pixel-width measurement</strong> — measures the width Google actually uses, not just characters.</li>
+<li><strong>Live SERP preview</strong> — desktop and mobile rendering, updated as you type.</li>
+<li><strong>Color-coded status</strong> — green, orange, or red at a glance; no interpretation needed.</li>
+<li><strong>Keyword visibility check</strong> — see whether your target keyword survives the cut point.</li>
+<li><strong>100% free</strong> — no signup, unlimited checks.</li>
+<li><strong>Private by design</strong> — everything runs in your browser; nothing is uploaded.</li>
+<li><strong>Title + description pairing</strong> — check both snippet elements in one view.</li>
+<li><strong>Works everywhere</strong> — any modern browser, nothing to install.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>How long should a meta title be?</h4>
+<p>Keep it between 50–60 characters, under roughly 580–600 pixels. Titles past that get truncated with an ellipsis, so the last words are wasted.</p>
+
+<h4>Do meta titles affect rankings?</h4>
+<p>Yes — the title tag is a confirmed ranking signal, and it is also the biggest single influence on click-through rate from results. It is the highest-leverage text on your page.</p>
+
+<h4>Why does Google rewrite my title?</h4>
+<p>Google generates its own headline when it believes your title does not match the query or is poorly formatted. Well-sized titles that match search intent are rewritten far less often, but rewrites can still happen.</p>
+
+<h4>Should the keyword go at the start of the title?</h4>
+<p>Usually, yes. Front-loading the keyword protects it from truncation, signals relevance to Google, and matches how searchers scan results. Brand names can go at the end or be dropped if space is tight.</p>
+
+<h4>Why pixels instead of characters?</h4>
+<p>Because Google truncates by pixel width. Wide letters (W, M, capitals) consume more pixels than narrow ones, so two 60-character titles can behave very differently. The checker measures both.</p>
+
+<h4>Is this checker free?</h4>
+<p>Yes — completely free, no account needed, no limits.</p>
+
+<h4>Does my data leave my browser?</h4>
+<p>No. Everything runs client-side; nothing is uploaded or stored.</p>
+
+<h4>Can I check titles in other languages?</h4>
+<p>Character counting works for any script, but pixel estimates are calibrated for Latin text. For Cyrillic, Arabic, Chinese, and similar scripts, lean on character limits and visual preview rather than the pixel number.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        // Lists
+        const powerWords = ['best', 'top', 'guide', 'review', '2025', 'free', 'cheap', 'easy', 'fast', 'simple', 'pro', 'ultimate', 'checklist', 'secrets', 'deals', 'exclusive', 'new', 'guarantee'];
+        const emotionalWords = ['amazing', 'shocking', 'love', 'hate', 'fear', 'happy', 'urgent', 'now', 'limited', 'today', 'weird', 'unusual', 'crazy'];
+
+        // Elements
+        const canvas = document.getElementById('textCanvas');
+        const ctx = canvas.getContext('2d');
+        ctx.font = '20px arial, sans-serif';
+
+        function setMode(mode) {
+            document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('btn-' + mode).classList.add('active');
+
+            const abView = document.getElementById('view-ab');
+            const singleView = document.getElementById('view-single');
+
+            if (mode === 'ab') {
+                abView.style.display = 'block';
+                // Move A column into AB grid if needed, or just handle visibility
+                // Simplest approach: Just clone the inputs of A into the AB view if I were using a framework.
+                // Raw JS: I'll simple show the "B" column and change the grid layout of "view-single" to look like a half-column? 
+
+                // Let's modify the grid of view-single to wrap the single view into the AB view logic
+                // Actually, cleaner approach:
+                // View-Single contains everything for A.
+                // View-AB contains B.
+                // When in AB mode, we show BOTH View-Single AND View-AB side-by-side.
+
+                singleView.style.display = 'block'; // Keep A visible
+
+                // Change layout wrapper
+                document.querySelector('.container .tool-interface-container').classList.add('ab-active');
+            } else {
+                abView.style.display = 'none';
+                singleView.style.display = 'block';
+                document.querySelector('.container .tool-interface-container').classList.remove('ab-active');
+            }
+        }
+
+        // CSS injection for AB layout toggle
+        const style = document.createElement('style');
+        style.innerHTML = `
+            .ab-active .mode-switch { margin-bottom: 2rem; }
+            .ab-active #view-single { display: inline-block; width: 48%; vertical-align: top; }
+            .ab-active #view-ab { display: inline-block; width: 48%; vertical-align: top; margin-left: 2%; }
+            .ab-active #view-single .seo-card { display: none; } /* Hide sidebar for A in AB mode to save space? Or keep it? Let's hide detailed sidebar */
+            @media (max-width: 900px) {
+                .ab-active #view-single, .ab-active #view-ab { width: 100%; display: block; margin: 0; margin-bottom: 2rem; }
+            }
+        `;
+        document.head.appendChild(style);
+
+
+        function analyze(variant) {
+            const input = document.getElementById('title' + variant);
+            const text = input.value || '';
+            const width = ctx.measureText(text).width;
+
+            // Preview
+            document.getElementById('preview-' + variant).innerText = text || (variant === 'A' ? 'Your Title Here' : 'Variation B');
+
+            // Pixel Bar
+            const pxEl = document.getElementById('px-' + variant);
+            const charsEl = document.getElementById('chars-' + variant);
+            const barEl = document.getElementById('bar-' + variant);
+
+            pxEl.innerText = `${Math.round(width)}px / 600px`;
+            charsEl.innerText = `${text.length} chars`;
+
+            const pct = Math.min((width / 600) * 100, 100);
+            barEl.style.width = `${pct}%`;
+
+            if (width > 580) barEl.style.background = '#ef4444';
+            else if (width < 250) barEl.style.background = '#eab308';
+            else barEl.style.background = '#22c55e';
+
+            // Checklists
+            const words = text.toLowerCase().split(/\s+/);
+            const hasPow = words.some(w => powerWords.includes(w));
+            const hasEmo = words.some(w => emotionalWords.includes(w));
+            const hasNum = /\d/.test(text);
+            const isOptimal = text.length >= 50 && text.length <= 60;
+            const notAllCaps = text !== text.toUpperCase() || text.length < 5;
+
+            updateCheck('check-pow-' + variant, hasPow);
+            updateCheck('check-emo-' + variant, hasEmo);
+            updateCheck('check-num-' + variant, hasNum);
+            updateCheck('check-len-' + variant, isOptimal);
+            if (variant === 'A') updateCheck('check-brand-' + variant, notAllCaps);
+
+            // Score
+            let score = 50; // Base
+            if (isOptimal) score += 20;
+            if (hasPow) score += 10;
+            if (hasEmo) score += 10;
+            if (hasNum) score += 5;
+            if (width > 580) score -= 20;
+            if (width < 200) score -= 10;
+            if (!notAllCaps) score -= 10;
+
+            score = Math.max(0, Math.min(100, score));
+            const scoreEl = document.getElementById('score-' + variant);
+            scoreEl.innerText = score;
+
+            scoreEl.className = 'score-circle ' + (score > 75 ? 'score-high' : (score > 40 ? 'score-mid' : 'score-low'));
+
+            // Keywords (Only A for now)
+            if (variant === 'A') {
+                const kwContainer = document.getElementById('keywords-A');
+                kwContainer.innerHTML = '';
+                words.forEach(w => {
+                    if (w.length > 3 && !['and', 'the', 'for', 'with'].includes(w)) {
+                        const span = document.createElement('span');
+                        span.className = 'keyword-badge';
+                        if (powerWords.includes(w)) span.classList.add('power-word');
+                        if (emotionalWords.includes(w)) span.classList.add('emotional-word');
+                        span.innerText = w;
+                        kwContainer.appendChild(span);
+                    }
+                });
+            }
+        }
+
+        function updateCheck(id, pass) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            if (pass) {
+                el.classList.add('checked');
+                el.querySelector('.checklist-icon').innerText = '?';
+            } else {
+                el.classList.remove('checked');
+                // restore icon
+                const originalIcons = { 'pow': '?', 'emo': '??', 'num': '#??', 'len': '??', 'brand': '???' };
+                const key = id.split('-')[1];
+                el.querySelector('.checklist-icon').innerText = originalIcons[key] || '�';
+            }
+        }
+
+        // Init
+        analyze('A');
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Contact ToolsHub.com - Get in touch with our team for support, feature requests, or feedback on our free online tools.">
+    <title>Contact Us | ToolsHub.com</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <style>
+        .contact-hero {
+            padding: var(--spacing-2xl) 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+            text-align: center;
+        }
+
+        .contact-container {
+            padding: var(--spacing-2xl) 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: var(--bg-secondary);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+            color: var(--text-primary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            color: var(--text-primary);
+            outline: none;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🛠️</span>
+                <span class="logo-text">ToolsHub<span class="logo-dot">.</span>com</span>
+            </a>
+
+            <nav class="header-nav">
+                <div class="nav-item dropdown" id="category-dropdown-trigger">
+                    <a href="#" class="nav-link">Categories <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown-menu" id="category-menu">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+                <a href="about-us.html" class="nav-link">About Us</a>
+                <a href="contact-us.html" class="nav-link">Contact Us</a>
+            </nav>
+
+            <div class="utility-icons">
+                <button class="icon-btn" id="search-trigger" aria-label="Search tools">🔍</button>
+                <button class="icon-btn" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+            </div>
+
+            <!-- Search Overlay -->
+            <div class="search-overlay" id="search-overlay">
+                <div class="search-modal">
+                    <div class="search-box">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" class="search-input" id="search-bar" placeholder="Search for tools..."
+                            autocomplete="off">
+                        <button class="search-close" id="search-close">×</button>
+                    </div>
+                    <div class="search-autocomplete" id="search-autocomplete"></div>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="contact-hero">
+            <div class="container">
+                <h1 class="hero-title">Contact Us</h1>
+                <p class="hero-subtitle">Have a question or feedback? We'd love to hear from you.</p>
+            </div>
+        </section>
+
+        <section class="contact-container">
+            <div class="container">
+                <div class="contact-card">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <select id="subject" class="form-control" required>
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Feature Request">Feature Request</option>
+                                <option value="Bug Report">Bug Report</option>
+                                <option value="Business Proposition">Business Proposition</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" class="form-control" rows="5" placeholder="Your message..."
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JS -->
+    <script src="scripts/tools-data.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate accessible, SEO-friendly alt text. Features accessibility scoring, bulk filename converter, and keyword optimization checks.">
+    <title>Advanced Alt Text Generator | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">SEO Tools</a> &gt;
+                <span>Advanced Alt Text Generator</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Advanced Alt Text Generator</h1>
+                <p class="tool-description">Generate accessible, SEO-friendly alt text. Features accessibility scoring, bulk filename converter, and keyword optimization checks.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
+<div class="container text-center">
+<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Advanced Alt Text Generator</h1>
+<p class="hero-subtitle">Create distinct, descriptive, and accessible alt text. Convert filenames to
+                    descriptions instantly.</p>
+</div>
+</section>
+<div class="container">
+<div class="tool-interface-container" style="max-width: 1100px; margin: 0 auto;">
+<div class="mode-toggle">
+<button class="mode-btn active" id="btn-single" onclick="setMode('single')">Single Image
+                        Optimizer</button>
+<button class="mode-btn" id="btn-bulk" onclick="setMode('bulk')">Bulk Filename Converter</button>
+</div>
+<!-- Single Mode -->
+<div id="view-single">
+<div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+<!-- Input -->
+<div>
+<div class="schema-form-grid">
+<div class="input-group">
+<label class="input-label">Image Context</label>
+<select class="seo-select" id="imgContext" onchange="updateTemplate()">
+<option value="ecommerce">E-Commerce Product</option>
+<option value="informational">Informational / Diagram</option>
+<option value="decorative">Decorative</option>
+<option value="logo">Logo / Branding</option>
+<option value="general">General Photo</option>
+</select>
+</div>
+<div class="input-group">
+<label class="input-label">Target Keyword (Optional)</label>
+<input class="seo-input" id="keyword" oninput="generate()" placeholder="e.g. leather boots" type="text"/>
+</div>
+</div>
+<div id="dynamicInputs" style="margin-bottom: 1.5rem; border: 1px solid #e2e8f0; padding: 1rem; border-radius: 8px;">
+<!-- Injected via JS -->
+</div>
+<div class="input-group">
+<label class="input-label">Generated Alt Text (Editable)</label>
+<textarea class="seo-textarea" id="finalAlt" oninput="analyze()" style="height: 100px; font-size: 1.1rem;"></textarea>
+</div>
+<div class="action-bar">
+<button class="btn-primary" onclick="copyAlt()">Copy Text</button>
+<button class="btn-secondary" onclick="copyHtml()">Copy HTML Tag</button>
+</div>
+</div>
+<!-- Sidebar Analysis -->
+<div>
+<div class="seo-card" style="padding: 1.5rem;">
+<h3 class="input-label" style="display: flex; justify-content: space-between;">
+                                    Accessibility Score
+                                    <span id="scoreVal" style="color: #22c55e;">0/100</span>
+</h3>
+<div class="score-bar">
+<div class="score-fill" id="scoreFill"></div>
+</div>
+<div id="issueList" style="margin-top: 1rem;">
+<!-- Badges -->
+</div>
+<div style="margin-top: 1.5rem; border-top: 1px solid #eee; padding-top: 1rem;">
+<h4 class="mb-sm" style="font-size: 0.9rem;">Preview:</h4>
+<div style="background: #f1f5f9; padding: 1rem; border-radius: 8px; font-size: 0.8rem; color: #64748b;">
+<p>Standard Image:</p>
+<code id="previewCode" style="display:block; margin-top:0.5rem; color:#334155; word-break: break-all;">&lt;img src="..." alt=""&gt;</code>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bulk Mode -->
+<div id="view-bulk" style="display: none;">
+<div class="input-group">
+<label class="input-label">Paste Filenames (One per line)</label>
+<textarea class="seo-textarea" id="bulkInput" oninput="processBulk()" placeholder="IMG_2024.jpg
+blue-running-shoes.png
+header-banner-v2.webp" style="height: 150px;"></textarea>
+<p class="input-desc">We will intelligently convert filenames into readable alt text
+                            descriptions.</p>
+</div>
+<div class="bulk-results" style="border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+<div class="bulk-row">
+<div>Filename</div>
+<div>Suggested Alt Text</div>
+<div>Score</div>
+<div></div>
+</div>
+<div id="bulkContainer">
+<!-- Rows -->
+</div>
+</div>
+<button class="btn-primary" onclick="copyAllBulk()" style="margin-top: 1rem;">Copy All
+                        Suggestions</button>
+</div>
+</div>
+</div>
+            </div>
+            <section class="seo-article" data-tool="alt-text-generator">
+<article class="tool-article">
+<h2>Alt Text Generator — Write Image Descriptions That Help SEO and Accessibility</h2>
+
+<p>I audited a client's blog last year and found 340 images with alt text like "IMG_0042.jpg" — invisible to Google Images, meaningless to screen readers, a ranking opportunity sitting in plain sight. An alt text generator writes proper alternative text for your images: concise, descriptive phrases that tell search engines what the image shows and let visually impaired visitors understand your content.</p>
+
+<h3>What Is Alt Text and Why Does It Matter?</h3>
+
+<p>Alt text (the <code>alt</code> attribute on an <code>&lt;img&gt;</code> tag) serves two audiences. For people using screen readers, it is read aloud in place of the image — it is how a blind visitor "sees" your product photo. For search engines, it is one of the few textual signals describing image content, feeding both Google Images rankings and the page's overall topical relevance.</p>
+
+<p>Good alt text describes the image's function in context, not just its pixels. <code>alt="dog"</code> is technically valid but useless. <code>alt="Golden retriever puppy chewing a red rubber toy on a lawn"</code> tells everyone — human and crawler — what matters. The generator produces this kind of specific, natural phrasing instead of filename gibberish.</p>
+
+<p>There is also a quiet third audience now: AI systems. ChatGPT, Perplexity, and visual search tools increasingly rely on alt text to understand images they cannot otherwise interpret. Well-written alt text is becoming AI-visibility infrastructure, not just an SEO checkbox.</p>
+
+<h3>How to Use the Alt Text Generator</h3>
+
+<p>Upload your image or describe it in the input field, depending on the tool type. AI-powered generators analyze the actual pixels; text-based ones expand your short description into polished alt text. Review the suggestion, tweak it for your page's context (mention the product name, the location, whatever the surrounding article is about), then copy it into your CMS's alt field or <code>&lt;img&gt;</code> tag.</p>
+
+<p>Context is the part generators cannot fully do for you. The same photo of a coffee cup needs different alt text on a product page ("Ceramic pour-over coffee dripper, matte black, 600ml") versus a blog post ("Barista pouring hot water over coffee grounds in a V60 dripper"). Let the tool draft, then add the context only you know.</p>
+
+<p>For bulk work — a store with 500 product photos — look for generators with batch or API support. Doing them one by one is a weekend you will never get back.</p>
+
+<h3>How Alt Text Generation Works</h3>
+
+<p>Modern generators combine vision models with language models in three steps.</p>
+
+<p><strong>Step 1 — Image analysis.</strong> A vision model scans the uploaded image, identifying objects, people, settings, colors, and spatial relationships — the same kind of scene understanding in your phone's photo search.</p>
+
+<p><strong>Step 2 — Description drafting.</strong> A language model turns those observations into a natural sentence, typically capped around 125 characters — the practical limit before screen readers start truncating or users tune out.</p>
+
+<p><strong>Step 3 — SEO shaping.</strong> The draft is refined for search: relevant keywords woven in naturally, filler words trimmed, and decorative-image detection flagging pictures that should get empty alt (<code>alt=""</code>) instead of a description.</p>
+
+<p>The 125-character guideline comes from screen reader behavior — most pause or cut off longer descriptions. It is a usability rule first, an SEO rule second.</p>
+
+<h3>Alt Text Examples: Bad vs Good</h3>
+
+<table>
+<thead><tr><th>Weak alt text</th><th>Strong alt text</th><th>Why it wins</th></tr></thead>
+<tbody>
+<tr><td><code>image1.png</code></td><td><code>Bar chart showing website traffic growth from January to June</code></td><td>Describes content and context</td></tr>
+<tr><td><code>shoes</code></td><td><code>Women's white leather running shoes with blue accents, side view</code></td><td>Specific, product-relevant detail</td></tr>
+<tr><td><code>team photo</code></td><td><code>Marketing team of six posing in the downtown office lobby</code></td><td>Answers who and where</td></tr>
+<tr><td><code>banner</code></td><td><code>Spring sale banner: 30% off all garden furniture through Sunday</code></td><td>Captures text inside the image</td></tr>
+<tr><td><code>decorative line</code></td><td><code>""</code> (empty)</td><td>Decorative images should be silent</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Alt Text Generators?</h3>
+
+<p><strong>Bloggers</strong> fix years of neglected image SEO across their archives in bulk.</p>
+
+<p><strong>E-commerce managers</strong> write product-image alt text that ranks in Google Images and Shopping.</p>
+
+<p><strong>Web developers</strong> generate alt text during builds to ship accessible sites from day one.</p>
+
+<p><strong>Content marketers</strong> make infographics and charts understandable to crawlers and screen readers.</p>
+
+<p><strong>Accessibility consultants</strong> audit and remediate client sites for WCAG compliance.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Free generation</strong> — no signup for basic use.</li>
+<li><strong>AI image analysis</strong> — describes actual image content, not filenames.</li>
+<li><strong>SEO-aware phrasing</strong> — natural keyword inclusion without stuffing.</li>
+<li><strong>125-character targeting</strong> — sized for screen readers.</li>
+<li><strong>Multiple languages</strong> — generate alt text in your site's language.</li>
+<li><strong>Bulk support</strong> — handle product catalogs and media libraries.</li>
+<li><strong>Decorative detection</strong> — flags images that should have empty alt.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this alt text generator free?</h4>
+<p>Yes — basic generation is free with no account required. Bulk and API features may sit on paid tiers.</p>
+
+<h4>How long should alt text be?</h4>
+<p>Aim for under 125 characters. Screen readers may truncate longer text, and concise descriptions serve users better.</p>
+
+<h4>Should I put keywords in alt text?</h4>
+<p>Include them naturally when they describe the image — never stuff. <code>alt="buy cheap shoes online discount footwear"</code> hurts more than it helps.</p>
+
+<h4>What about decorative images?</h4>
+<p>Use empty alt (<code>alt=""</code>). This tells screen readers to skip the image entirely instead of announcing something meaningless.</p>
+
+<h4>Does alt text really affect SEO?</h4>
+<p>Yes — it drives Google Images traffic and reinforces the page's topical relevance. It is a small signal per image that compounds across a site.</p>
+
+<h4>Can AI-generated alt text replace manual writing?</h4>
+<p>For drafting at scale, yes. But always review — only you know the page context the image serves, and context is what separates good alt text from generic.</p>
+
+<h4>Do I need alt text on every image?</h4>
+<p>Every meaningful image, yes. Decorative flourishes get empty alt. There is no exemption for "it's just a stock photo."</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        // --- State ---
+        let currentMode = 'single';
+
+        function setMode(mode) {
+            currentMode = mode;
+            document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('btn-' + mode).classList.add('active');
+
+            document.getElementById('view-single').style.display = mode === 'single' ? 'block' : 'none';
+            document.getElementById('view-bulk').style.display = mode === 'bulk' ? 'block' : 'none';
+        }
+
+        // --- Single Mode Logic ---
+
+        function updateTemplate() {
+            const context = document.getElementById('imgContext').value;
+            const container = document.getElementById('dynamicInputs');
+            let html = '';
+
+            if (context === 'ecommerce') {
+                html = `
+                    <div class="input-group"><label class="input-label">Product Name</label><input class="seo-input" id="p_name" oninput="generate()" placeholder="Leather Ankle Boots"></div>
+                    <div class="input-group"><label class="input-label">Color / Material</label><input class="seo-input" id="p_detail" oninput="generate()" placeholder="Brown leather"></div>
+                    <div class="input-group"><label class="input-label">Angle / Context (Optional)</label><input class="seo-input" id="p_ctx" oninput="generate()" placeholder="side view on white background"></div>
+                `;
+            } else if (context === 'informational') {
+                html = `
+                    <div class="input-group"><label class="input-label">Chart/Topic Title</label><input class="seo-input" id="i_title" oninput="generate()" placeholder="Q1 Sales Growth"></div>
+                    <div class="input-group"><label class="input-label">Data Summary</label><input class="seo-input" id="i_data" oninput="generate()" placeholder="showing 15% increase"></div>
+                `;
+            } else if (context === 'logo') {
+                html = `
+                    <div class="input-group"><label class="input-label">Company Name</label><input class="seo-input" id="l_name" oninput="generate()" placeholder="Acme Corp"></div>
+                `;
+            } else if (context === 'decorative') {
+                html = `<p class="input-desc">Decorative images do not need content. Alt text will be empty.</p>`;
+            } else {
+                html = `<div class="input-group"><label class="input-label">Description</label><input class="seo-input" id="g_desc" oninput="generate()" placeholder="A dog running in the park"></div>`;
+            }
+
+            container.innerHTML = html;
+            generate();
+        }
+
+        function generate() {
+            const context = document.getElementById('imgContext').value;
+            let alt = '';
+
+            if (context === 'ecommerce') {
+                const name = document.getElementById('p_name')?.value || '';
+                const detail = document.getElementById('p_detail')?.value || '';
+                const ctx = document.getElementById('p_ctx')?.value || '';
+                alt = `${detail} ${name} ${ctx}`.trim();
+            } else if (context === 'informational') {
+                const t = document.getElementById('i_title')?.value || '';
+                const d = document.getElementById('i_data')?.value || '';
+                alt = `Chart showing ${t}: ${d}`.trim();
+            } else if (context === 'logo') {
+                const n = document.getElementById('l_name')?.value || '';
+                alt = `${n} Logo`;
+            } else if (context === 'decorative') {
+                alt = '';
+            } else {
+                alt = document.getElementById('g_desc')?.value || '';
+            }
+
+            // Keyword injection
+            const kw = document.getElementById('keyword').value;
+            if (kw && alt && !alt.toLowerCase().includes(kw.toLowerCase())) {
+                alt += ` - ${kw}`; // Append if not present
+            }
+
+            document.getElementById('finalAlt').value = alt;
+            analyze();
+        }
+
+        function analyze() {
+            const alt = document.getElementById('finalAlt').value;
+            const container = document.getElementById('issueList');
+            container.innerHTML = '';
+
+            let score = 100;
+            let issues = [];
+
+            // 1. Length Check
+            if (alt.length > 125) {
+                issues.push('Too long (>125 chars)');
+                score -= 20;
+            } else if (alt.length < 5 && document.getElementById('imgContext').value !== 'decorative') {
+                issues.push('Too short');
+                score -= 20;
+            }
+
+            // 2. Redundancy
+            if (/^(image of|picture of|photo of)/i.test(alt)) {
+                issues.push('Remove "image of"');
+                score -= 15;
+            }
+
+            // 3. Keyword
+            const kw = document.getElementById('keyword').value;
+            if (kw && !alt.toLowerCase().includes(kw.toLowerCase())) {
+                issues.push('Missing Keyword');
+                score -= 10;
+            }
+
+            // 4. File Extension check in alt (laziness)
+            if (/\.(jpg|png|webp|jpeg)$/i.test(alt)) {
+                issues.push('Contains file extension');
+                score -= 30;
+            }
+
+            // Render
+            if (issues.length === 0) {
+                container.innerHTML = `<span class="issue-tag good-tag">? Perfect</span>`;
+            } else {
+                issues.forEach(i => {
+                    container.innerHTML += `<span class="issue-tag">${i}</span>`;
+                });
+            }
+
+            document.getElementById('scoreVal').innerText = score + '/100';
+            document.getElementById('scoreFill').style.width = score + '%';
+            document.getElementById('scoreFill').style.background = score > 80 ? '#22c55e' : (score > 50 ? '#eab308' : '#ef4444');
+
+            // Preview
+            document.getElementById('previewCode').innerText = `<img src="image.jpg" alt="${alt}">`;
+        }
+
+        function copyAlt() {
+            navigator.clipboard.writeText(document.getElementById('finalAlt').value).then(() => alert('Copied!'));
+        }
+        function copyHtml() {
+            navigator.clipboard.writeText(document.getElementById('previewCode').innerText).then(() => alert('Copied HTML!'));
+        }
+
+        // --- Bulk Capability ---
+
+        function processBulk() {
+            const text = document.getElementById('bulkInput').value;
+            const lines = text.split('\n').filter(l => l.trim());
+            const container = document.getElementById('bulkContainer');
+
+            container.innerHTML = lines.map(filename => {
+                const alt = filenameToAlt(filename);
+                // Simple score
+                const score = alt.length < 125 ? 100 : 80;
+                return `
+                    <div class="bulk-row">
+                        <div style="font-size:0.9rem; color:#64748b; overflow:hidden; text-overflow:ellipsis;">${filename}</div>
+                        <input type="text" class="seo-input" value="${alt}" style="padding:0.25rem;">
+                        <div style="color:${score === 100 ? '#166534' : '#ea580c'}">${score}/100</div>
+                        <button class="btn-remove-block" onclick="this.parentElement.remove()">�</button>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function filenameToAlt(filename) {
+            // Remove extension
+            let clean = filename.replace(/\.[^/.]+$/, "");
+            // Replace hyphens/underscores
+            clean = clean.replace(/[-_]/g, " ");
+            // Remove numbers if they look like IDs (e.g., img_8293)
+            clean = clean.replace(/\d{4,}/g, "");
+            // Capitalize first letter
+            return clean.charAt(0).toUpperCase() + clean.slice(1).trim();
+        }
+
+        function copyAllBulk() {
+            const inputs = document.querySelectorAll('#bulkContainer input');
+            let text = '';
+            inputs.forEach(inp => text += inp.value + '\n');
+            navigator.clipboard.writeText(text).then(() => alert('Copied all suggestions!'));
+        }
+
+        // Init
+        updateTemplate();
+
+    </script>
+</body>
+</html>

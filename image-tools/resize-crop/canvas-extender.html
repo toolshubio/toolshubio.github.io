@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Extend Image Canvas. Add padding to images with solid color, blur, mirror, or stretch fill options. Directional control and batch processing.">
+    <title>Canvas Extender - Smart Fill & Padding | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../../image-tools/css/global.css">
+    <link rel="stylesheet" href="../../image-tools/css/components.css">
+    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../../about-us.html">About</a>
+                <a class="nav-link" href="../../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> &gt;
+                <a href="../index.html">Image Tools</a> &gt;
+                <span>🖼️ Canvas Extender</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">🖼️ Canvas Extender</h1>
+                <p class="tool-description">Extend your image boundaries with intelligent fill options. Add padding,
+                    blur backgrounds, or mirror edges instantly.</p>
+                <div class="tool-badges"><span class="badge badge-primary">Smart Fill</span><span class="badge badge-primary">Directional</span><span class="badge badge-secondary">Batch</span></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<section class="preview-area">
+<div id="upload-zone"></div>
+<div id="preview-container" style="display: none; margin-top: 20px; text-align: center;">
+<img id="preview-img" style="max-width: 100%; max-height: 500px; border: 1px solid var(--border-color); box-shadow: 0 4px 6px rgba(0,0,0,0.1);"/>
+<p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-secondary);">Preview (First
+                            Image)</p>
+</div>
+</section>
+<aside class="control-panel">
+<div class="control-section">
+<h3 class="control-section-title">📐 Extension Amount (px)</h3>
+<div class="padding-inputs">
+<div class="padding-input-group">
+<label>Top</label>
+<input class="form-input" id="pad-top" min="0" type="number" value="50"/>
+</div>
+<div class="padding-input-group">
+<label>Bottom</label>
+<input class="form-input" id="pad-bottom" min="0" type="number" value="50"/>
+</div>
+<div class="padding-input-group">
+<label>Left</label>
+<input class="form-input" id="pad-left" min="0" type="number" value="50"/>
+</div>
+<div class="padding-input-group">
+<label>Right</label>
+<input class="form-input" id="pad-right" min="0" type="number" value="50"/>
+</div>
+</div>
+<div class="toggle-control" style="margin-top: 10px;">
+<span class="toggle-label">Uniform Padding</span>
+<div class="toggle-switch active" id="uniform-toggle"></div>
+</div>
+</div>
+<div class="control-section">
+<h3 class="control-section-title">🎨 Fill Style</h3>
+<select class="form-select" id="fill-mode">
+<option value="color">Solid Color</option>
+<option value="blur">Blur Extension</option>
+<option value="mirror">Mirror Edge</option>
+<option value="stretch">Stretch Edge</option>
+</select>
+<div id="color-picker-group" style="margin-top: 10px;">
+<label class="control-label">Background Color</label>
+<div style="display: flex; gap: 10px;">
+<input id="fill-color" style="height: 38px; width: 50px; padding: 0; border: none;" type="color" value="#ffffff"/>
+<input class="form-input" id="fill-color-text" style="flex: 1;" type="text" value="#ffffff"/>
+</div>
+</div>
+<div id="blur-amount-group" style="margin-top: 10px; display: none;">
+<label class="control-label">Blur Amount</label>
+<input class="slider-input" id="blur-amount" max="100" min="0" type="range" value="20"/>
+</div>
+</div>
+<div class="control-section">
+<button class="btn btn-primary w-full" disabled="" id="convert-btn"><span>🖼️</span> Extend
+                            All</button>
+<button class="btn btn-premium-download w-full mt-3" id="download-all-btn" style="display: none;"><span>📥</span> Download All</button>
+<button class="btn btn-secondary w-full mt-2" id="reset-btn" style="display: none;"><span>🔄</span> Start Over</button>
+</div>
+</aside>
+</div>
+</div>
+</main>
+
+
+
+
+
+
+
+
+<div id="preview-container"></div>
+            </div>
+            <section class="seo-article" data-tool="canvas-extender">
+<article class="tool-article">
+<h2>Canvas Extender — Add Padding & Extend Image Canvas Online</h2>
+
+<p>Every platform wants a different shape. Instagram wants a square, YouTube wants a wide banner, a marketplace wants a specific ratio — and your photo is none of those. Cropping would cut out half the subject. A canvas extender takes the opposite approach: it keeps every pixel of your image and adds padding around it until the shape fits. Upload the photo, pick a target size or aspect ratio, choose a fill color, and download a properly-sized image without losing a single detail of the original.</p>
+
+<h3>What Is a Canvas Extender?</h3>
+
+<p>Think of the canvas as the frame and the image as the picture inside it. Most editing is about the picture; a canvas extender works on the frame. It grows the canvas — wider, taller, or both — and fills the new space with padding: transparent, white, black, or any color you pick.</p>
+
+<p>This is fundamentally different from resizing. Resizing stretches or squeezes your pixels to fit a shape; extending leaves your pixels completely alone and builds around them. Nothing gets cropped, nothing gets distorted. The original photo sits centered (or positioned per your choice) inside a larger canvas, exactly as it was.</p>
+
+<p>There is also a trendy cousin: AI "uncrop" tools that generate new image content to fill the expanded area. They look impressive on demos but the generated edges can go wrong — especially around faces, hands, text, or straight architecture — and the good ones usually want an account or a subscription. A plain canvas extender is honest: the added area is padding, the original is untouched, and the result is predictable every time.</p>
+
+<h3>How to Extend an Image Canvas Online</h3>
+
+<p><strong>Step 1 — Upload your image.</strong> Drop in a JPG, PNG, or WebP. The tool reads its current dimensions and shows you what you are working with.</p>
+
+<p><strong>Step 2 — Pick a target ratio or size.</strong> Choose from presets — 1:1 square, 4:3, 16:9, 9:16 story, 4:5 portrait, 21:9 ultra-wide — or enter custom pixel dimensions. The tool computes how much padding each side needs to reach that shape.</p>
+
+<p><strong>Step 3 — Set the padding.</strong> Decide how the new space fills in: transparent (PNG only — perfect for product photos that need breathing room), solid white or black via quick presets, or any color from the picker. You can adjust each side independently or link them for uniform padding all around.</p>
+
+<p><strong>Step 4 — Download.</strong> The original content is centered in the new canvas, padding fills the edges, and you get the file back in seconds.</p>
+
+<p>Habit worth building: decide the fill before you upload. If the destination is a dark-mode website or a story viewer, matching the padding color to that background makes the padding visually disappear.</p>
+
+<h3>Common Uses — Ratios for Every Platform</h3>
+
+<p>The practical reason this tool exists is platform requirements. Here are the scenarios I see most:</p>
+
+<table>
+<thead><tr><th>Need</th><th>Target ratio</th><th>Padding choice</th></tr></thead>
+<tbody>
+<tr><td>Instagram square post from a portrait</td><td>1:1</td><td>Matching background color or blur</td></tr>
+<tr><td>YouTube thumbnail requirement</td><td>16:9</td><td>Solid color pillarbox bars</td></tr>
+<tr><td>Story / Reel vertical from landscape</td><td>9:16</td><td>Dark fill for cinematic look</td></tr>
+<tr><td>Marketplace product listing</td><td>1:1 or per-spec</td><td>Transparent PNG or white</td></tr>
+<tr><td>Facebook cover photo</td><td>Wide banner</td><td>Brand-color fill</td></tr>
+<tr><td>Presentation slide graphic</td><td>16:9 or 4:3</td><td>Slide-background color</td></tr>
+</tbody>
+</table>
+
+<p>Product sellers deserve a special mention: many marketplaces require specific canvas sizes and reject images that do not match. Extending with transparent or white padding — rather than stretching the product photo — keeps the listing compliant without warping the product.</p>
+
+<h3>Canvas Extension vs. Cropping vs. Resizing</h3>
+
+<p>These three get confused constantly, and picking the wrong one ruins images. Here is the plain distinction:</p>
+
+<ul>
+<li><strong>Canvas extension:</strong> adds space around the image. Pixel count grows; original pixels unchanged; file gets larger in dimensions but the content is identical.</li>
+<li><strong>Cropping:</strong> removes space from the image. Pixel count shrinks; you lose content permanently (unless you kept the original).</li>
+<li><strong>Resizing:</strong> changes the pixel dimensions of the image itself. Content is stretched or compressed; aspect changes distort shapes.</li>
+</ul>
+
+<p>My rule of thumb: extend when the content matters more than the shape; crop when the shape matters more than the content; resize when the file size or pixel count is the problem. For platform ratios where nothing can be lost — a face near the edge, text in a graphic — extension is the only safe choice.</p>
+
+<h3>Who Uses Canvas Extenders?</h3>
+
+<p><strong>Social media managers</strong> adapt one creative across platforms daily. A landscape photo becomes a square post, a vertical story, and a wide banner — extension handles all three without re-shooting anything.</p>
+
+<p><strong>E-commerce sellers</strong> meet marketplace image requirements without distortion. Padded product photos pass dimension checks that stretched ones fail.</p>
+
+<p><strong>Designers and marketers</strong> add breathing room around subjects for text overlays, ad banners, and presentation slides. A padded graphic with a headline looks deliberate; a cramped one looks accidental.</p>
+
+<p><strong>Photographers</strong> prep prints — extending a canvas with a white border is exactly how you add a mat-style frame for printing without touching the photo itself.</p>
+
+<h3>Practical Tips for Clean Results</h3>
+
+<ul>
+<li><strong>Match the fill to the destination.</strong> White padding on a white page vanishes; mismatched colors create visible bars.</li>
+<li><strong>Transparent for product shots.</strong> PNG with transparent padding looks native on any storefront background.</li>
+<li><strong>Link sides for uniformity.</strong> Independent per-side control is powerful, but symmetrical padding looks more intentional.</li>
+<li><strong>Check the file format.</strong> Transparency needs PNG — extending a JPG forces a solid fill, so pick your color deliberately.</li>
+<li><strong>Do not extend then upscale.</strong> Padding is clean pixels; upscaling the result softens everything including your original photo.</li>
+<li><strong>Keep text inside the safe zone.</strong> If you will overlay headlines later, extend a bit more than the platform minimum so text has room.</li>
+<li><strong>Preview at final size.</strong> Padding that looks fine on a thumbnail can look stark at full width — zoom out and judge honestly.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Does extending the canvas crop my image?</h4>
+<p>No. Canvas extension adds padding to the outside — nothing is cropped, stretched, or distorted. The original image stays centered and pixel-identical.</p>
+
+<h4>Can I choose the padding color?</h4>
+<p>Yes. A color picker lets you choose any background color, with white and black as quick presets. Transparent output is available for PNG files.</p>
+
+<h4>Is this canvas extender free?</h4>
+<p>Yes, completely free with no signup required.</p>
+
+<h4>Are my images uploaded to a server?</h4>
+<p>No. Processing happens locally in your browser — your files never leave your device.</p>
+
+<h4>What is the difference between canvas extension and AI uncrop?</h4>
+<p>Extension pads with a chosen fill — predictable and instant. AI uncrop generates new image content in the added area, which looks impressive on simple backgrounds but can produce wrong results around faces, text, or architecture, and often requires an account.</p>
+
+<h4>Which ratio should I pick for Instagram?</h4>
+<p>1:1 for feed posts, 4:5 for portrait feed posts (they get more screen space), and 9:16 for Stories and Reels. The tool's presets cover all of these.</p>
+
+<h4>Will extending change my image's file format?</h4>
+<p>Only if you need transparency — that requires PNG. Otherwise you can keep JPG or WebP with a solid fill color.</p>
+
+<h4>Can I extend only one side?</h4>
+<p>Yes. Per-side padding control lets you add space on just the top, bottom, left, or right — useful when you need room for a headline or a logo on one edge.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../../about-us.html">About Us</a>
+                    <a class="footer-link" href="../../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../js/shared/unified-input.js"></script>
+<script src="../js/shared/preview-manager.js"></script>
+<script src="../js/utils/image-loader.js"></script>
+<script src="../js/utils/converter.js"></script>
+<script>
+        class CanvasExtender {
+            constructor() {
+                this.files = [];
+                this.results = [];
+                this.isUniform = true;
+                this.settings = {
+                    top: 50, bottom: 50, left: 50, right: 50,
+                    mode: 'color',
+                    color: '#ffffff',
+                    blur: 20
+                };
+                this.init();
+            }
+
+            init() {
+                this.unifiedInput = new UnifiedInput({
+                    containerId: 'upload-zone',
+                    toolIcon: '🖼️',
+                    toolName: 'Canvas Extender',
+                    acceptTypes: 'image/*',
+                    onFilesLoaded: (files) => this.handleFilesLoaded(files)
+                });
+
+                this.previewManager = new PreviewManager({ containerId: 'preview-container' });
+                this.setupControls();
+                this.injectAdvancedStyles();
+            }
+
+            setupControls() {
+                const sides = ['top', 'bottom', 'left', 'right'];
+                sides.forEach(side => {
+                    const el = document.getElementById(`pad-${side}`);
+                    if (el) {
+                        el.oninput = (e) => {
+                            const val = parseInt(e.target.value) || 0;
+                            if (this.isUniform) {
+                                sides.forEach(s => {
+                                    const inp = document.getElementById(`pad-${s}`);
+                                    if (inp) inp.value = val;
+                                    this.settings[s] = val;
+                                });
+                            } else {
+                                this.settings[side] = val;
+                            }
+                            this.updatePreview();
+                        };
+                    }
+                });
+
+                const uniformToggle = document.getElementById('uniform-toggle');
+                if (uniformToggle) {
+                    uniformToggle.onclick = (e) => {
+                        e.target.classList.toggle('active');
+                        this.isUniform = e.target.classList.contains('active');
+                        if (this.isUniform) {
+                            const val = this.settings.top;
+                            sides.forEach(s => {
+                                const inp = document.getElementById(`pad-${s}`);
+                                if (inp) inp.value = val;
+                                this.settings[s] = val;
+                            });
+                        }
+                    };
+                }
+
+                const fillMode = document.getElementById('fill-mode');
+                if (fillMode) {
+                    fillMode.onchange = (e) => {
+                        this.settings.mode = e.target.value;
+                        document.getElementById('color-picker-group').style.display = this.settings.mode === 'color' ? 'block' : 'none';
+                        document.getElementById('blur-amount-group').style.display = this.settings.mode === 'blur' ? 'block' : 'none';
+                        this.updatePreview();
+                    };
+                }
+
+                const fillColor = document.getElementById('fill-color');
+                if (fillColor) {
+                    fillColor.oninput = (e) => {
+                        this.settings.color = e.target.value;
+                        document.getElementById('fill-color-text').value = e.target.value;
+                        this.updatePreview();
+                    };
+                }
+
+                const blurAmount = document.getElementById('blur-amount');
+                if (blurAmount) {
+                    blurAmount.oninput = (e) => {
+                        this.settings.blur = parseInt(e.target.value);
+                        this.updatePreview();
+                    };
+                }
+
+                document.getElementById('convert-btn').onclick = () => this.extendAll();
+                document.getElementById('download-all-btn').onclick = () => this.downloadAll();
+                document.getElementById('reset-btn').onclick = () => location.reload();
+            }
+
+            async handleFilesLoaded(files) {
+                this.files = files;
+                if (files.length > 0) this.updatePreview();
+                document.getElementById('convert-btn').disabled = files.length === 0;
+            }
+
+            async updatePreview() {
+                if (this.files.length === 0) return;
+                const file = this.files[0];
+                const blob = await this.processImage(file);
+                document.getElementById('preview-container').style.display = 'block';
+                this.previewManager.render(URL.createObjectURL(file), URL.createObjectURL(blob), `extended_${file.name}`);
+            }
+
+            async extendAll() {
+                const btn = document.getElementById('convert-btn');
+                btn.disabled = true;
+                btn.textContent = 'Processing...';
+
+                this.results = [];
+                for (let i = 0; i < this.files.length; i++) {
+                    const file = this.files[i];
+                    try {
+                        const blob = await this.processImage(file);
+                        this.results.push({ blob, name: `extended_${file.name}` });
+                        this.unifiedInput.setFileStatus(i, 'done');
+                    } catch (e) {
+                        console.error(e);
+                        this.unifiedInput.setFileStatus(i, 'error');
+                    }
+                }
+
+                btn.style.display = 'none';
+                document.getElementById('download-all-btn').style.display = 'block';
+                document.getElementById('reset-btn').style.display = 'block';
+                document.getElementById('upload-zone').style.display = 'none';
+            }
+
+            async processImage(file) {
+                const img = await window.ImageLoader.loadSingleImage(file);
+                const { top, bottom, left, right, mode, color, blur } = this.settings;
+
+                const canvas = document.createElement('canvas');
+                const finalW = img.width + left + right;
+                const finalH = img.height + top + bottom;
+                canvas.width = finalW;
+                canvas.height = finalH;
+                const ctx = canvas.getContext('2d');
+
+                if (mode === 'color') {
+                    ctx.fillStyle = color;
+                    ctx.fillRect(0, 0, finalW, finalH);
+                } else if (mode === 'blur') {
+                    ctx.drawImage(img.canvas, 0, 0, finalW, finalH);
+                    const blurCanvas = document.createElement('canvas');
+                    blurCanvas.width = finalW;
+                    blurCanvas.height = finalH;
+                    const blurCtx = blurCanvas.getContext('2d');
+                    blurCtx.filter = `blur(${blur}px)`;
+                    blurCtx.drawImage(canvas, 0, 0);
+                    ctx.drawImage(blurCanvas, 0, 0);
+                } else if (mode === 'stretch') {
+                    ctx.drawImage(img.canvas, 0, 0, 1, img.height, 0, 0, left, finalH);
+                    ctx.drawImage(img.canvas, img.width - 1, 0, 1, img.height, finalW - right, 0, right, finalH);
+                    ctx.drawImage(img.canvas, 0, 0, img.width, 1, 0, 0, finalW, top);
+                    ctx.drawImage(img.canvas, 0, img.height - 1, img.width, 1, 0, finalH - bottom, finalW, bottom);
+                } else if (mode === 'mirror') {
+                    ctx.fillStyle = color;
+                    ctx.fillRect(0, 0, finalW, finalH);
+                }
+
+                ctx.drawImage(img.canvas, left, top);
+                return new Promise(r => canvas.toBlob(r, file.type, 0.95));
+            }
+
+            async downloadAll() {
+                for (const r of this.results) {
+                    const a = document.createElement('a');
+                    a.href = URL.createObjectURL(r.blob);
+                    a.download = r.name;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    await new Promise(resolve => setTimeout(resolve, 150));
+                }
+            }
+
+            injectAdvancedStyles() {
+                const style = document.createElement('style');
+                style.textContent = `
+                    #preview-container { margin-top: 2rem; border: 1px solid var(--border-color); border-radius: 12px; padding: 1rem; background: var(--bg-secondary); min-height: 400px; display: none; }
+                `;
+                document.head.appendChild(style);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => new CanvasExtender());
+    </script>
+</body>
+</html>

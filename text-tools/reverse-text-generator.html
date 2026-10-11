@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Reverse Text Generator | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Text & Writing</a> &gt;
+                <span>◀️ Reverse Text Generator</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">◀️ Reverse Text Generator</h1>
+                <p class="tool-description">Flip text by character, word, or line.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<div class="tool-workspace">
+<section class="input-section">
+<div class="section-header">
+<h2 class="section-title">📝 Input</h2>
+<button class="btn btn-secondary" onclick="clearAll()">🗑️ Clear</button>
+</div>
+<textarea class="text-area" id="input-text" oninput="reverseText()" placeholder="Enter text..."></textarea>
+</section>
+<section class="settings-panel">
+<h2 class="section-title">⚙️ Mode</h2>
+<div class="preset-buttons" id="mode-buttons">
+<button class="preset-btn active" data-mode="char">By Character</button>
+<button class="preset-btn" data-mode="word">By Word</button>
+<button class="preset-btn" data-mode="line">By Line</button>
+</div>
+</section>
+<section class="output-section">
+<div class="section-header">
+<h2 class="section-title">🔄 Output</h2>
+<button class="btn btn-primary" onclick="ToolUI.copyOutput()">📋 Copy</button>
+</div>
+<textarea class="text-area" id="output-text" readonly=""></textarea>
+</section>
+</div>
+<section class="related-tools">
+<h3 class="related-tools-title">🔗 Related</h3>
+<div class="related-tools-grid">
+<a class="related-tool-card" href="upside-down-text.html"><span>🙃</span> Upside Down</a>
+<a class="related-tool-card" href="text-case-changer.html"><span>🔤</span> Case Changer</a>
+</div>
+</section>
+            </div>
+            <section class="seo-article" data-tool="reverse-text-generator">
+<article class="tool-article">
+<h2>Reverse Text Generator — Flip Any Text Backwards Instantly</h2>
+
+<p>The first time I saw a friend's username written completely backwards, I spent an embarrassing minute trying to read it before realizing the trick. Reversing text by hand is slow and error-prone — miss one letter and the whole thing is gibberish. A reverse text generator does it perfectly in a blink: paste your words, and get them flipped character-by-character, word-by-word, or line-by-line. It is a small tool with an outsized fun factor, and it quietly comes in handy for puzzles, coding, and design work too.</p>
+
+<h3>What Is a Reverse Text Generator?</h3>
+
+<p>A reverse text generator takes normal text and flips its order. Type "Hello world" and you can get "dlrow olleH" (every character reversed), "world Hello" (words in reverse order), or flip a whole list so the last line comes first. The output is still plain text — real letters, not an image — so it copies and pastes anywhere.</p>
+
+<p>There is a cousin worth knowing about: upside-down text uses special Unicode characters that look rotated, which is a different trick. A pure reverse generator only changes the order of the characters you typed. Both are free, both run in your browser, and both are endlessly entertaining in group chats.</p>
+
+<h3>How to Use the Reverse Text Generator</h3>
+
+<p>Type or paste your text into the input box and pick a reversal mode. The result updates instantly — no button to press on most tools. Click the copy button and paste the reversed text into a social post, a username field, a message, or your code.</p>
+
+<p>To flip it back to normal, just run the reversed text through the tool again with the same mode. Reversing twice restores the original, which makes this a handy way to pass "secret" messages that a friend can decode with the same tool.</p>
+
+<h3>Reversal Modes Explained</h3>
+
+<table>
+<thead><tr><th>Mode</th><th>What It Does</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td>Reverse characters</td><td>Flips every character end to end</td><td>"abc def" → "fed cba"</td></tr>
+<tr><td>Reverse words</td><td>Reverses word order, words stay intact</td><td>"one two three" → "three two one"</td></tr>
+<tr><td>Reverse lines</td><td>Reverses line order, lines stay intact</td><td>Line 1 / Line 2 → Line 2 / Line 1</td></tr>
+</tbody>
+</table>
+
+<p>Character reversal gives the classic mirror effect. Word reversal keeps everything readable but scrambled — good for puzzles where you want the reader to work a little. Line reversal is the practical one: it reorders lists, logs, and multi-line notes without touching the content of each line.</p>
+
+<h3>Fun and Practical Uses</h3>
+
+<p><strong>Social media and bios.</strong> Backwards text stands out in a feed of identical posts. A reversed caption or username gets a second look, which is the whole point on Instagram, TikTok, or Discord.</p>
+
+<p><strong>Puzzles and secret messages.</strong> Teachers build word puzzles, escape-room designers hide clues, and friends send messages that need flipping to read. It is a simple cipher that anyone can decode with the same tool.</p>
+
+<p><strong>Creative writing and design.</strong> Mirror text works as a stylistic effect in posters, story dialogue, and art projects — especially when paired with an actual mirror in the layout.</p>
+
+<p><strong>Programming and testing.</strong> Developers reverse strings to test how apps, forms, and databases handle unusual input. Palindrome checks — words that read the same backwards, like "racecar" — are a classic interview exercise, and a reverser verifies them instantly.</p>
+
+<p><strong>Data reordering.</strong> Need a list in reverse chronological order or a log flipped newest-first? Line reversal does in one click what would take tedious manual cutting and pasting.</p>
+
+<h3>Reverse Text Examples</h3>
+
+<p>Try these in the tool to see each mode in action:</p>
+
+<table>
+<thead><tr><th>Input</th><th>Reverse Characters</th><th>Reverse Words</th></tr></thead>
+<tbody>
+<tr><td>Hello World</td><td><code>dlroW olleH</code></td><td><code>World Hello</code></td></tr>
+<tr><td>The dog ran fast</td><td><code>tsaf nar god ehT</code></td><td><code>fast ran dog The</code></td></tr>
+<tr><td>racecar</td><td><code>racecar</code></td><td><code>racecar</code></td></tr>
+</tbody>
+</table>
+
+<p>Notice "racecar" survives character reversal unchanged — that is what makes it a palindrome. Try your own name; most people are surprised how unreadable a familiar word becomes backwards.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant reversal</strong> — output updates the moment you type or paste.</li>
+<li><strong>Multiple modes</strong> — reverse characters, words, or lines.</li>
+<li><strong>100% free</strong> — no signup, no limits, no watermarks.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser.</li>
+<li><strong>One-click copy</strong> — grab the result for pasting anywhere.</li>
+<li><strong>Works everywhere</strong> — any modern browser on desktop or mobile.</li>
+<li><strong>Unlimited length</strong> — reverse a single word or a whole article.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>How do I reverse text online?</h4>
+<p>Paste your text into the generator, choose characters, words, or lines, and copy the reversed result. It happens instantly in your browser.</p>
+
+<h4>Is the reverse text generator free?</h4>
+<p>Yes — completely free with no account needed and no limits on how much text you can reverse.</p>
+
+<h4>Can I reverse the text back to normal?</h4>
+<p>Yes. Run the reversed text through the same mode again and you get the original back. Reversing twice restores it exactly.</p>
+
+<h4>What is the difference between reverse text and upside-down text?</h4>
+<p>Reverse text only changes character order ("Hello" → "olleH"). Upside-down text also swaps each letter for a rotated Unicode lookalike, so it looks flipped as well as backwards.</p>
+
+<h4>Will reversed text work in usernames and bios?</h4>
+<p>In most cases, yes — the output is plain text. A few platforms restrict certain characters, so test it in the specific field first.</p>
+
+<h4>Does it work with emoji and special characters?</h4>
+<p>Most tools handle Unicode characters including emoji, though some complex emoji may split oddly when reversed character by character.</p>
+
+<h4>Is my text uploaded to a server?</h4>
+<p>No. Reversal happens entirely in your browser, so your text never leaves your device.</p>
+
+<h4>Can I reverse a whole list?</h4>
+<p>Yes — use line-reversal mode. It flips the order of lines while keeping each line's content unchanged, which is perfect for reordering lists and logs.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="js/text-utils.js"></script>
+<script src="js/tool-ui.js"></script>
+<script>
+        ToolUI.init({ toolName: 'reverse-text' });
+        let mode = 'char';
+        document.querySelectorAll('#mode-buttons .preset-btn').forEach(btn => {
+            btn.onclick = () => {
+                document.querySelectorAll('#mode-buttons .preset-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                mode = btn.dataset.mode;
+                reverseText();
+            };
+        });
+        function reverseText() {
+            const input = document.getElementById('input-text').value;
+            let output = '';
+            if (mode === 'char') output = TextUtils.reverseByCharacter(input);
+            else if (mode === 'word') output = TextUtils.reverseByWord(input);
+            else output = TextUtils.reverseByLine(input);
+            document.getElementById('output-text').value = output;
+        }
+        function clearAll() {
+            document.getElementById('input-text').value = '';
+            document.getElementById('output-text').value = '';
+        }
+    </script>
+</body>
+</html>

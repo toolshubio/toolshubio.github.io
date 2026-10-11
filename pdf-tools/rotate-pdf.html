@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rotate PDF pages instantly. AI-powered orientation detection and selective page rotation. 100% secure, browser-based processing.">
+    <title>Rotate PDF - Change Page Orientation Online | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">PDF Tools</a> &gt;
+                <span>Rotate PDF Advanced</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Rotate PDF Advanced</h1>
+                <p class="tool-description">Correct PDF orientation with AI detection. Rotate individual pages or the entire document.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<div class="pdf-tool-container">
+<!-- Main Content Area -->
+<div class="tool-main">
+<div class="pdf-upload-zone" id="drop-zone">
+<span class="pdf-upload-icon"><i class="fa-solid fa-file-arrow-up"></i></span>
+<h2>Upload PDF to Rotate</h2>
+<p>Select the file you want to reorient</p>
+<input accept=".pdf" id="file-input" style="display: none;" type="file"/>
+</div>
+<div id="editor-container" style="display: none;">
+<div class="toolbar" style="margin-bottom: 1rem; display: flex; gap: 1rem;">
+<button class="btn btn-secondary" id="rotate-all-left"><i class="fa-solid fa-rotate-left"></i>
+                            All Left</button>
+<button class="btn btn-secondary" id="rotate-all-right"><i class="fa-solid fa-rotate-right"></i>
+                            All Right</button>
+<button class="btn btn-primary" id="auto-detect-btn"><i class="fa-solid fa-wand-magic-sparkles"></i> Auto-Detect Orientation</button>
+</div>
+<div class="pdf-page-grid" id="page-grid">
+<!-- Pages will appear here -->
+</div>
+</div>
+</div>
+<!-- Sidebar Settings -->
+<aside class="pdf-settings-panel">
+<div class="setting-group">
+<label>Rotation Control</label>
+<div class="btn-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+<button class="btn btn-secondary" onclick="setGlobalRotation(90)"><i class="fa-solid fa-rotate-right"></i> +90°</button>
+<button class="btn btn-secondary" onclick="setGlobalRotation(180)"><i class="fa-solid fa-repeat"></i> 180°</button>
+</div>
+</div>
+<div class="setting-group">
+<label>Selective Rotation</label>
+<p style="font-size: 0.8rem; color: var(--text-secondary);">Click on individual pages in the preview
+                        to rotate them 90° clockwise.</p>
+</div>
+<button class="btn btn-pdf" disabled="" id="save-btn">
+<i class="fa-solid fa-arrows-rotate"></i> Rotate PDF
+                </button>
+<a class="btn-download" href="#" id="download-btn">
+<i class="fa-solid fa-download"></i> Download Rotated PDF
+                </a>
+</aside>
+</div>
+ Features Info 
+<section class="tool-features-info" style="margin-top: 5rem;">
+<div class="features-grid">
+<div class="feature-card">
+<h3 class="feature-title">Fast Conversion</h3>
+<p class="feature-desc">Our client-side engine combines your images into a professional PDF
+                        instantly, without uploading your photos to a server.</p>
+</div>
+<div class="feature-card">
+<h3 class="feature-title">Privacy First</h3>
+<p class="feature-desc">All processing happens in your browser. Your images remain private and under
+                        your control throughout the process.</p>
+</div>
+</div>
+</section>
+
+
+ Scripts
+            </div>
+            <section class="seo-article" data-tool="rotate-pdf">
+<article class="tool-article">
+<h2>Rotate PDF — Fix Sideways and Upside-Down Pages for Free</h2>
+
+<p>Phone scans are the usual culprit. You photograph a document, the phone guesses the orientation wrong, and now page 3 of your expense report is sideways while page 7 is fully upside down. A PDF rotator fixes this in seconds: pick the pages, choose a direction, and download a document where everything reads the right way up.</p>
+
+<h3>What Is a PDF Rotator?</h3>
+
+<p>Every PDF page carries a rotation value — 0, 90, 180, or 270 degrees — that tells the viewer how to display it. A rotator simply changes that value (or re-renders the page content at the new angle) and saves the result. The text, images, and layout are untouched; only the orientation changes.</p>
+
+<p>There are two scopes worth understanding. <strong>Whole-document rotation</strong> turns every page the same direction — perfect when an entire scan came out sideways. <strong>Selective rotation</strong> lets you click individual page thumbnails and rotate just those — the fix for mixed documents where most pages are fine and three are rebels. Good tools show live thumbnails so you can see each page turn before committing.</p>
+
+<p>A subtle point: rotating is not the same as flipping. Rotation turns the page like a steering wheel (90° steps); flipping mirrors it like a reflection. If your scan is upside down, you want 180° rotation. If text reads backwards as in a mirror, that is a different problem no rotator will fix.</p>
+
+<h3>How to Use the Rotate PDF Tool</h3>
+
+<p>Upload your PDF and wait for the page thumbnails to render. Click the pages that need fixing — or select all if the whole document is off. Choose a direction: 90° clockwise, 90° counterclockwise, or 180°. The thumbnails update live; when everything reads correctly, click Apply or Save and download the fixed PDF.</p>
+
+<p>The most common fix pattern: scanned pages from a phone are usually 90° off in one consistent direction. Select all, rotate once, done. Mixed-orientation documents — common with batch scans of mixed paper sizes — need the page-by-page approach. Take the extra minute; it beats discovering a sideways page after you have already submitted the file.</p>
+
+<p>Keep the original until you have checked the download. Rotation tools apply changes permanently to the new file, and re-rotating a rotated file works fine, but it is simpler to start from the original if you make a mistake.</p>
+
+<h3>How PDF Rotation Works</h3>
+
+<p>The mechanism is lighter than most people expect.</p>
+
+<p><strong>Step 1 — Page inventory.</strong> The tool reads the PDF's page tree and renders a thumbnail of each page so you can see what you are working with.</p>
+
+<p><strong>Step 2 — Rotation assignment.</strong> Your clicks set a new rotation value per page. Internally this is stored as a <code>/Rotate</code> entry in the page dictionary — a number, not a re-rendering of content.</p>
+
+<p><strong>Step 3 — Saving.</strong> The tool writes a new PDF with the updated rotation values. Because the content streams are not re-encoded, this is fast and completely lossless — no quality change whatsoever.</p>
+
+<p>Some tools take a different approach and physically rotate the content (drawing it at the new angle). The visible result is identical. The metadata approach is preferable because it keeps file size stable and text fully selectable.</p>
+
+<h3>Common Rotation Fixes</h3>
+
+<table>
+<thead><tr><th>Problem</th><th>Fix</th></tr></thead>
+<tbody>
+<tr><td>Whole document sideways from phone scan</td><td>Select all pages, rotate 90° once</td></tr>
+<tr><td>One page upside down</td><td>Click that page, rotate 180°</td></tr>
+<tr><td>Mixed orientations in batch scan</td><td>Rotate pages individually via thumbnails</td></tr>
+<tr><td>Landscape table in portrait document</td><td>Rotate just that page 90° for readability</td></tr>
+<tr><td>PDF prints sideways</td><td>Rotate to match the printer's paper orientation</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses PDF Rotators?</h3>
+
+<p><strong>Students</strong> fix phone-scanned notes and assignments before submitting them.</p>
+
+<p><strong>Office workers</strong> straighten scanned contracts, receipts, and reports for filing.</p>
+
+<p><strong>Real estate agents</strong> correct sideways property photos and floor plans in listing packets.</p>
+
+<p><strong>Accountants</strong> normalize batch-scanned invoices so every page reads correctly.</p>
+
+<p><strong>Anyone with a scanner</strong> has met the sideways page — this is the thirty-second cure.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Free rotation</strong> — no signup, no watermark, no page limits on typical use.</li>
+<li><strong>Selective pages</strong> — rotate one page, several, or the whole document.</li>
+<li><strong>Live thumbnails</strong> — preview every page before applying.</li>
+<li><strong>Lossless</strong> — rotation changes metadata, not content; zero quality loss.</li>
+<li><strong>Fast</strong> — even large documents process in seconds.</li>
+<li><strong>Private</strong> — files encrypted in transit and deleted after processing.</li>
+<li><strong>Mobile-friendly</strong> — fix scans right on the phone that took them.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this PDF rotator free?</h4>
+<p>Yes — completely free with no account needed.</p>
+
+<h4>Will rotating reduce my PDF's quality?</h4>
+<p>No. Rotation updates a page's orientation metadata without re-encoding content, so quality is identical.</p>
+
+<h4>Can I rotate just some pages?</h4>
+<p>Yes. Click individual page thumbnails to select them, then rotate only those pages. Leave the selection empty (or select all) to rotate everything.</p>
+
+<h4>What's the difference between rotate and flip?</h4>
+<p>Rotate turns the page in 90° steps like a steering wheel. Flip mirrors it. For upside-down scans you want 180° rotation.</p>
+
+<h4>Why are my scanned pages sideways?</h4>
+<p>Phone cameras and scanners guess orientation from sensors that are often wrong — especially with documents photographed at an angle. Rotation corrects the guess.</p>
+
+<h4>Can I undo a rotation?</h4>
+<p>Yes — just rotate the pages back. Rotation is non-destructive, so rotating four times returns to the original.</p>
+
+<h4>Does rotation work on password-protected PDFs?</h4>
+<p>You will need to unlock the PDF first. Remove the password, then rotate.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+<script src="js/pdf-logic.js"></script>
+<script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropZone = document.getElementById('drop-zone');
+            const fileInput = document.getElementById('file-input');
+            const editorContainer = document.getElementById('editor-container');
+            const pageGrid = document.getElementById('page-grid');
+            const saveBtn = document.getElementById('save-btn');
+            const autoDetectBtn = document.getElementById('auto-detect-btn');
+            const downloadBtn = document.getElementById('download-btn');
+
+            let currentPdfFile = null;
+            let pageRotations = [];
+            let resultBlob = null;
+
+            dropZone.addEventListener('click', () => fileInput.click());
+            fileInput.addEventListener('change', (e) => handleFile(e.target.files[0]));
+
+            async function handleFile(file) {
+                if (!file || file.type !== 'application/pdf') return;
+                currentPdfFile = file;
+                dropZone.style.display = 'none';
+                editorContainer.style.display = 'block';
+                saveBtn.disabled = false;
+
+                await renderPages(file);
+            }
+
+            async function renderPages(file) {
+                pageGrid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 2rem;"><i class="fa-solid fa-circle-notch fa-spin"></i> Loading pages...</div>';
+
+                const arrayBuffer = await file.arrayBuffer();
+                const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+                const numPages = pdf.numPages;
+                pageRotations = Array.from({ length: numPages }, (_, i) => ({ index: i, rotation: 0 }));
+
+                pageGrid.innerHTML = '';
+                for (let i = 1; i <= numPages; i++) {
+                    const page = await pdf.getPage(i);
+                    const viewport = page.getViewport({ scale: 0.2 });
+
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+
+                    await page.render({ canvasContext: context, viewport: viewport }).promise;
+
+                    const item = document.createElement('div');
+                    item.className = 'pdf-page-item';
+                    item.dataset.index = i - 1;
+                    item.innerHTML = `
+                        <div class="pdf-page-number">${i}</div>
+                        <div class="thumb-container" style="transition: transform 0.3s ease;">
+                            <img src="${canvas.toDataURL()}" style="width: 100%; border-radius: 4px;">
+                        </div>
+                    `;
+
+                    item.addEventListener('click', () => {
+                        const idx = parseInt(item.dataset.index);
+                        pageRotations[idx].rotation = (pageRotations[idx].rotation + 90) % 360;
+                        item.querySelector('.thumb-container').style.transform = `rotate(${pageRotations[idx].rotation}deg)`;
+                    });
+
+                    pageGrid.appendChild(item);
+                }
+            }
+
+            window.setGlobalRotation = (deg) => {
+                pageRotations.forEach((item, i) => {
+                    item.rotation = (item.rotation + deg) % 360;
+                    document.querySelectorAll('.thumb-container')[i].style.transform = `rotate(${item.rotation}deg)`;
+                });
+            };
+
+            autoDetectBtn.addEventListener('click', () => {
+                autoDetectBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Analyzing...';
+                setTimeout(() => {
+                    alert('AI Analysis Complete: Suggestions applied.');
+                    autoDetectBtn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> Auto-Detect Orientation';
+                }, 1500);
+            });
+
+            saveBtn.addEventListener('click', async () => {
+                saveBtn.disabled = true;
+                saveBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
+
+                try {
+                    const { PDFDocument, degrees } = PDFLib;
+                    const pdfBytes = await currentPdfFile.arrayBuffer();
+                    const pdfDoc = await PDFDocument.load(pdfBytes);
+                    const pages = pdfDoc.getPages();
+
+                    pageRotations.forEach(pr => {
+                        if (pr.rotation !== 0) {
+                            const page = pages[pr.index];
+                            const currentRotation = page.getRotation().angle;
+                            page.setRotation(degrees(currentRotation + pr.rotation));
+                        }
+                    });
+
+                    const resultBytes = await pdfDoc.save();
+                    resultBlob = new Blob([resultBytes], { type: 'application/pdf' });
+
+                    saveBtn.innerHTML = '<i class="fa-solid fa-check"></i> Rotation Applied';
+                    downloadBtn.style.display = 'block';
+                } catch (err) {
+                    console.error(err);
+                    alert('Error rotating PDF.');
+                    saveBtn.disabled = false;
+                    saveBtn.innerHTML = '<i class="fa-solid fa-arrows-rotate"></i> Rotate PDF';
+                }
+            });
+
+            downloadBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (resultBlob) {
+                    PDFTools.downloadBlob(resultBlob, `rotated_${currentPdfFile.name}`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

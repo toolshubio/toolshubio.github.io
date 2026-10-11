@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Random Name Generator | ToolsHub</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Other Tools</a> &gt;
+                <span>Random Name Generator</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Random Name Generator</h1>
+                <p class="tool-description"></p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+Sidebar 
+ Main Content 
+<div class="main-content-area">
+<!-- Header -->
+<header class="top-header">
+</header>
+<div class="breadcrumb-container" style="max-width: 1200px; margin: 0 auto 3rem; padding: 0 1rem;">
+<nav aria-label="breadcrumb">
+
+</nav>
+</div>
+<h1 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem; color: var(--text-primary);">Random
+                Name Generator</h1>
+<!-- Tool Interface -->
+<main class="tool-card mt-4">
+<div class="form-grid">
+<div class="form-group">
+<label>Culture / Region</label>
+<select class="search-input" id="region" style="width: 100%;">
+<option value="us">United States 🇺🇸</option>
+<option value="uk">United Kingdom 🇬🇧</option>
+<option value="fr">France 🇫🇷</option>
+<option value="de">Germany 🇩🇪</option>
+<option value="it">Italy 🇮🇹</option>
+<option value="es">Spain 🇪🇸</option>
+<option value="jp">Japan 🇯🇵</option>
+<option value="cn">China 🇨🇳</option>
+<option value="in">India 🇮🇳</option>
+<option value="pk">Pakistan 🇵🇰</option>
+<option value="ru">Russia 🇷🇺</option>
+<option value="br">Brazil 🇧🇷</option>
+<option value="id">Indonesia 🇮🇩</option>
+<option value="tr">Turkey 🇹🇷</option>
+<option value="sa">Saudi Arabia 🇸🇦</option>
+</select>
+</div>
+<div class="form-group">
+<label>Gender</label>
+<select class="search-input" id="gender" style="width: 100%;">
+<option value="random">Random</option>
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+</div>
+<div class="form-group">
+<label>Quantity</label>
+<select class="search-input" id="quantity" style="width: 100%;">
+<option value="1">1 Name</option>
+<option value="5">5 Names</option>
+<option value="10">10 Names</option>
+<option value="50">50 Names (Bulk)</option>
+</select>
+</div>
+<div class="form-group">
+<label>Identity Traits</label>
+<div style="display: flex; gap: 10px; flex-wrap: wrap;">
+<label><input id="trait-age" type="checkbox"/> Add Age</label>
+<label><input id="trait-job" type="checkbox"/> Add Profession</label>
+</div>
+</div>
+</div>
+<div class="actions mt-3">
+<button class="btn-primary w-100" id="generate">
+<i class="fas fa-magic"></i> Generate Names
+                    </button>
+<div class="mt-3 text-right">
+<button class="action-btn d-inline-flex" id="btn-copy-all" style="width: auto; padding: 0 10px; border-radius: 8px;" title="Copy All">
+<i class="fas fa-copy mr-2"></i> Copy All
+                        </button>
+<button class="action-btn d-inline-flex" id="btn-download" style="width: auto; padding: 0 10px; border-radius: 8px;" title="Download CSV">
+<i class="fas fa-download mr-2"></i> Export CSV
+                        </button>
+</div>
+</div>
+<div class="mt-4" id="results-area" style="min-height: 200px; max-height: 500px; overflow-y: auto;">
+<!-- Results will appear here -->
+<div class="text-center text-muted p-5">
+<i class="fas fa-user-astronaut fa-3x mb-3 opacity-50"></i>
+<p>Select options above and click Generate</p>
+</div>
+</div>
+</main>
+</div>
+            </div>
+            <section class="seo-article" data-tool="random-name-generator">
+<article class="tool-article">
+<h2>Random Name Generator — Realistic Fake Names Online, Free</h2>
+
+<p>Naming things is famously one of the two hard problems in computer science — and naming fake people should not be one of them. Whether you need a protagonist for chapter three, a hundred test users for a staging database, a character for tonight's game session, or a placeholder that does not look like "Test User 47," a random name generator produces realistic full names in one click. Set the gender, pick a cultural background, choose how many you want, and get a list that reads like actual people.</p>
+
+<h3>What Is a Random Name Generator?</h3>
+
+<p>It is a tool that combines first and last names from large curated databases into realistic full names. The better ones draw from 20,000+ name combinations across the US, UK, Canada, and dozens of cultures — English, Chinese, Japanese, Spanish, Arabic, Indian, and more — so the output matches the population you are modeling instead of defaulting to one region.</p>
+
+<p>Options usually include gender (male, female, or any), name type (first only, last only, or full), quantity (one name or dozens at once), and cultural origin. Some generators go further and bundle a complete identity: address, phone number, email, username — a full test persona in one click.</p>
+
+<p>The realism is the point. "John Smith" forty times in a test database hides bugs that varied, culturally diverse names reveal — sorting edge cases, character encoding issues, length limits, and display truncation all surface with realistic data.</p>
+
+<h3>How to Generate Random Names</h3>
+
+<p><strong>Step 1 — Set your options.</strong> Choose how many names you need, the gender mix, and the cultural background. Generating first names, last names, or full names is usually a separate toggle.</p>
+
+<p><strong>Step 2 — Click Generate.</strong> The tool assembles random combinations from its name database — each generation produces fresh combinations for maximum variety.</p>
+
+<p><strong>Step 3 — Copy your list.</strong> Names appear ready to copy — individually or as a batch — into your document, database seeder, spreadsheet, or character sheet.</p>
+
+<p>Habit worth building: regenerate until the list feels right for creative work, but accept the first realistic batch for testing. Test data does not need to be perfect — it needs to be varied.</p>
+
+<h3>Who Uses Random Name Generators?</h3>
+
+<p><strong>Writers and storytellers</strong> find character names for novels, scripts, and screenplays — a culturally authentic name can unlock a character faster than an hour of brainstorming.</p>
+
+<p><strong>Gamers and role-players</strong> create character names, usernames, and in-game identities for RPGs and MMOs. A good name makes the avatar feel real.</p>
+
+<p><strong>Developers and testers</strong> generate dummy names for database seeding, user-profile testing, and software demos — realistic names exercise the UI the way "asdf" never will.</p>
+
+<p><strong>Marketers</strong> build pseudo-personas for case studies and market research — named, believable profiles beat "Persona A" in every presentation.</p>
+
+<p><strong>Teachers</strong> create fictional scenarios for training materials, letting students work with realistic examples without using real people's data.</p>
+
+<p><strong>Privacy-conscious users</strong> use randomized names for throwaway signups, forum accounts, and surveys — anywhere a name is required but yours is not needed.</p>
+
+<h3>Practical Tips for Better Name Data</h3>
+
+<ul>
+<li><strong>Match culture to context.</strong> Testing a Japanese-market app with American names misses localization bugs — set the cultural background deliberately.</li>
+<li><strong>Generate in bulk.</strong> Dozens at once for databases and spreadsheets; one careful pick for a protagonist.</li>
+<li><strong>Include edge cases.</strong> Long names, hyphenated surnames, apostrophes, and non-Latin scripts are where software breaks — realistic generators surface them.</li>
+<li><strong>Pair with full identities.</strong> Names plus <strong>fake addresses</strong> and <strong>fake phone numbers</strong> make coherent test records instead of floating names.</li>
+<li><strong>Watch for duplicates.</strong> Random combinations can repeat — dedupe before seeding if uniqueness matters.</li>
+<li><strong>Keep fiction labeled.</strong> In test databases, tag generated personas so nobody mistakes them for real users in analytics.</li>
+<li><strong>Respect real people.</strong> Generated names occasionally match real individuals — for published fiction, a quick search avoids awkward collisions.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is the random name generator free?</h4>
+<p>Yes — completely free, unlimited, no signup required.</p>
+
+<h4>How does it work?</h4>
+<p>The tool draws from curated databases of first and last names (often 20,000+ combinations), then assembles random pairings filtered by your gender, culture, and quantity settings.</p>
+
+<h4>Can I specify cultural origin?</h4>
+<p>Yes. Most generators offer cultural backgrounds — English, Chinese, Japanese, Spanish, Arabic, Indian, and many more — so names match the population you are modeling.</p>
+
+<h4>Are the generated names unique?</h4>
+<p>Each generation creates fresh random combinations for maximum variety, but repeats can occur across large batches. Dedupe when uniqueness matters.</p>
+
+<h4>How many names can I generate at once?</h4>
+<p>Typically dozens per click with no daily limits — generate as many as your project needs.</p>
+
+<h4>Can I use generated names for my novel or game?</h4>
+<p>Yes — that is one of the primary uses. For published work, do a quick search to make sure your chosen name is not strongly associated with a real person.</p>
+
+<h4>Do I need an account?</h4>
+<p>No. Generation is instant and anonymous — no registration, no saved data on any server.</p>
+
+<h4>What is the difference between a name generator and a fake identity generator?</h4>
+<p>A name generator produces names. A fake identity generator bundles the name with an address, phone number, email, and sometimes payment-test data — a complete persona for form and checkout testing.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="js/generator-common.js"></script>
+<script>
+        // Data Sets
+        const namesDB = {
+            us: { m: ['James', 'John', 'Robert', 'Michael', 'William', 'David', 'Richard', 'Joseph', 'Thomas', 'Charles'], f: ['Mary', 'Patricia', 'Jennifer', 'Linda', 'Elizabeth', 'Barbara', 'Susan', 'Jessica', 'Sarah', 'Karen'], l: ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis', 'Rodriguez', 'Martinez'] },
+            uk: { m: ['Oliver', 'George', 'Harry', 'Noah', 'Jack', 'Leo', 'Arthur', 'Muhammad', 'Oscar', 'Charlie'], f: ['Olivia', 'Amelia', 'Isla', 'Ava', 'Mia', 'Ivy', 'Lily', 'Isabella', 'Rosie', 'Sophia'], l: ['Smith', 'Jones', 'Taylor', 'Brown', 'Williams', 'Wilson', 'Johnson', 'Davies', 'Robinson', 'Wright'] },
+            // ... (We will expand this via more JS logic or a separate data file if needed, keeping it inline for speed now)
+            fr: { m: ['Gabriel', 'Léo', 'Raphaël', 'Arthur', 'Louis'], f: ['Jade', 'Louise', 'Emma', 'Ambre', 'Alice'], l: ['Martin', 'Bernard', 'Thomas', 'Petit', 'Robert'] },
+            de: { m: ['Noah', 'Matteo', 'Leon', 'Finn', 'Paul'], f: ['Mia', 'Emilia', 'Hannah', 'Sophia', 'Emma'], l: ['Müller', 'Schmidt', 'Schneider', 'Fischer', 'Weber'] },
+            jp: { m: ['Haruto', 'Riku', 'Haru', 'Hinata', 'Kaito'], f: ['Himari', 'Hina', 'Yua', 'Sakura', 'Ichika'], l: ['Sato', 'Suzuki', 'Takahashi', 'Tanaka', 'Watanabe'] },
+            ru: { m: ['Aleksandr', 'Mikhail', 'Ivan', 'Maxim', 'Artem'], f: ['Sofia', 'Maria', 'Anna', 'Alisa', 'Eva'], l: ['Ivanov', 'Smirnov', 'Kuznetsov', 'Popov', 'Vasiliev'] },
+            br: { m: ['Miguel', 'Arthur', 'Heitor', 'Bernardo', 'Davi'], f: ['Alice', 'Sophia', 'Helena', 'Valentina', 'Laura'], l: ['Silva', 'Santos', 'Oliveira', 'Souza', 'Rodrigues'] },
+            in: { m: ['Aarav', 'Vihaan', 'Vivaan', 'Ansh', 'Ishaan'], f: ['Aadya', 'Diya', 'Saanvi', 'Ananya', 'Kiara'], l: ['Kumar', 'Sharma', 'Patel', 'Singh', 'Verma'] },
+            pk: { m: ['Muhammad', 'Ali', 'Ahmed', 'Raza', 'Hassan'], f: ['Fatima', 'Ayesha', 'Zainab', 'Sana', 'Maryam'], l: ['Khan', 'Ahmed', 'Malik', 'Raja', 'Shah'] },
+            cn: { m: ['Wei', 'Jie', 'Hao', 'Yi', 'Jun'], f: ['Fang', 'Na', 'Min', 'Jing', 'Li'], l: ['Wang', 'Li', 'Zhang', 'Liu', 'Chen'] },
+            sa: { m: ['Mohammed', 'Abdullah', 'Fahad', 'Omar', 'Ali'], f: ['Noura', 'Sara', 'Reem', 'Maha', 'Lina'], l: ['Al-Saud', 'Al-Harbi', 'Al-Otaibi', 'Al-Ghamdi', 'Al-Zahrani'] },
+            tr: { m: ['Yusuf', 'Eymen', 'Ömer', 'Mustafa', 'Miraç'], f: ['Zeynep', 'Elif', 'Defne', 'Hiranur', 'Ebrar'], l: ['Yılmaz', 'Kaya', 'Demir', 'Çelik', 'Şahin'] },
+            id: { m: ['Muhammad', 'Ahmad', 'Satria', 'Budi', 'Eko'], f: ['Siti', 'Nur', 'Putri', 'Dewi', 'Lestari'], l: ['Santoso', 'Pratama', 'Saputra', 'Hidayat', 'Nugroho'] }
+        };
+
+        const professions = ['Software Engineer', 'Teacher', 'Nurse', 'Doctor', 'Artist', 'Designer', 'Accountant', 'Chef', 'Driver', 'Student', 'Lawyer', 'Manager'];
+
+        function getRandom(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+        document.getElementById('generate').addEventListener('click', () => {
+            const region = document.getElementById('region').value;
+            const genderReq = document.getElementById('gender').value;
+            const qty = parseInt(document.getElementById('quantity').value);
+            const addAge = document.getElementById('trait-age').checked;
+            const addJob = document.getElementById('trait-job').checked;
+
+            const db = namesDB[region] || namesDB.us;
+            const results = [];
+
+            for (let i = 0; i < qty; i++) {
+                const gender = genderReq === 'random' ? (Math.random() > 0.5 ? 'm' : 'f') : (genderReq === 'male' ? 'm' : 'f');
+                const first = getRandom(db[gender]);
+                const last = getRandom(db.l);
+
+                let details = [];
+                if (addAge) details.push(`${Math.floor(Math.random() * 60) + 18} years`);
+                if (addJob) details.push(getRandom(professions));
+
+                const detailStr = details.length ? `<span class="text-muted small ml-2">(${details.join(', ')})</span>` : '';
+
+                results.push({
+                    name: `${first} ${last}`,
+                    details: details.join(', '),
+                    html: `
+                        <div class="result-item p-3 mb-2 bg-white rounded border d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong style="font-size: 1.1rem;">${first} ${last}</strong>
+                                ${detailStr}
+                            </div>
+                            <button class="action-btn sm" onclick="GeneratorUtils.copyToClipboard('${first} ${last}')"><i class="fas fa-copy"></i></button>
+                        </div>
+                    `
+                });
+            }
+
+            // Render
+            document.getElementById('results-area').innerHTML = results.map(r => r.html).join('');
+
+            // Save to history (first one only to avoid spam)
+            HistoryManager.add({ tool: 'Name Generator', preview: results[0].name + (results.length > 1 ? ` +${results.length - 1} more` : ''), value: results.map(r => r.name).join('\n') });
+        });
+
+        // Bulk Actions
+        document.getElementById('btn-copy-all').addEventListener('click', () => {
+            const names = Array.from(document.querySelectorAll('.result-item strong')).map(e => e.innerText).join('\n');
+            if (names) GeneratorUtils.copyToClipboard(names);
+        });
+
+        document.getElementById('btn-download').addEventListener('click', () => {
+            const names = Array.from(document.querySelectorAll('.result-item strong')).map(e => e.innerText).join('\n');
+            if (names) GeneratorUtils.downloadText('random-names.csv', names);
+        });
+    </script>
+</body>
+</html>

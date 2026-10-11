@@ -1,0 +1,183 @@
+/* PDF Tool Page Specific Styles */
+:root {
+    --color-pdf: #E91E63;
+    --color-pdf-light: #FCE4EC;
+    --color-pdf-dark: #C2185B;
+    --tool-primary: var(--color-pdf);
+}
+
+.pdf-tool-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.breadcrumb {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.tool-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.tool-header h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 2.5rem;
+}
+
+.tool-header p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 1rem auto 0;
+}
+
+/* Upload Area Enhancements */
+.pdf-upload-zone {
+    border: 2px dashed var(--color-pdf-light);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    padding: 4rem 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.pdf-upload-zone:hover,
+.pdf-upload-zone.dragover {
+    border-color: var(--color-pdf);
+    background: var(--color-pdf-light);
+}
+
+.pdf-upload-icon {
+    font-size: 4rem;
+    color: var(--color-pdf);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+/* Page Preview Grid */
+.pdf-page-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.pdf-page-item {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 0.5rem;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.pdf-page-item:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
+.pdf-page-number {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background: var(--color-pdf);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.pdf-page-thumbnail {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: #f0f0f0;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    font-size: 2rem;
+}
+
+/* Settings Panel */
+.pdf-settings-panel {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    position: sticky;
+    top: 2rem;
+}
+
+.setting-group {
+    margin-bottom: 1.5rem;
+}
+
+.setting-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+/* Action Buttons */
+.btn-pdf {
+    background: var(--color-pdf);
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    font-weight: 700;
+    border-radius: var(--radius-md);
+    margin-top: 1rem;
+}
+
+.btn-pdf:hover {
+    background: var(--color-pdf-dark);
+}
+
+.btn-download {
+    background: #4CAF50;
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    font-weight: 700;
+    border-radius: var(--radius-md);
+    margin-top: 1rem;
+    display: none;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-download:hover {
+    background: #388E3C;
+}
+
+/* Premium Badges */
+.premium-feature-badge {
+    background: linear-gradient(to right, #673ab7, #e91e63);
+    color: white;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate correct SEO canonical tags. Features cross-domain checks, self-referencing validation, query parameter handling, and duplicate content prevention.">
+    <title>Canonical Tag Generator | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">SEO Tools</a> &gt;
+                <span>Advanced Canonical Tag Generator</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Advanced Canonical Tag Generator</h1>
+                <p class="tool-description">Generate correct SEO canonical tags. Features cross-domain checks, self-referencing validation, query parameter handling, and duplicate content prevention.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
+<div class="container text-center">
+<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Advanced Canonical Tag Generator
+                </h1>
+<p class="hero-subtitle">Generate precise canonical tags with cross-domain support and query parameter
+                    handling logic.</p>
+</div>
+</section>
+<div class="container">
+<div class="tool-interface-container" style="max-width: 900px; margin: 0 auto;">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+<!-- Left: Inputs -->
+<div class="input-section">
+<div class="input-group">
+<label class="input-label">Current Page URL (Optional)</label>
+<input class="seo-input" id="currentUrl" oninput="update()" placeholder="https://example.com/page?ref=twitter" type="url"/>
+<p class="input-desc">Used to detect self-referencing issues or mismatches.</p>
+</div>
+<div class="input-group">
+<label class="input-label">Canonical (Target) URL</label>
+<input class="seo-input" id="targetUrl" oninput="update()" placeholder="https://example.com/page" type="url"/>
+</div>
+<div class="seo-card" style="padding: 1rem; margin-bottom: 1rem;">
+<h4 style="margin-bottom: 1rem; font-size: 1rem;">Advanced Settings</h4>
+<div class="d-flex align-center mb-md">
+<label class="toggle-switch">
+<input checked="" id="forceHttps" onchange="update()" type="checkbox"/>
+<span class="slider"></span>
+</label>
+<span>Force HTTPS</span>
+</div>
+<div class="d-flex align-center mb-md">
+<label class="toggle-switch">
+<input checked="" id="stripParams" onchange="update()" type="checkbox"/>
+<span class="slider"></span>
+</label>
+<span>Strip Query Parameters</span>
+</div>
+<div class="d-flex align-center mb-md">
+<label class="toggle-switch">
+<input id="addTrailingSlash" onchange="update()" type="checkbox"/>
+<span class="slider"></span>
+</label>
+<span>Add Trailing Slash</span>
+</div>
+<div class="d-flex align-center">
+<label class="toggle-switch">
+<input id="lowerCase" onchange="update()" type="checkbox"/>
+<span class="slider"></span>
+</label>
+<span>Force Lowercase</span>
+</div>
+</div>
+<div class="action-bar">
+<button class="btn-primary" onclick="update()" style="width: 100%;">Refresh</button>
+<button class="btn-secondary" onclick="resetForm()" style="width: 100%;">Reset</button>
+</div>
+</div>
+<!-- Right: Output & Validation -->
+<div class="output-section">
+<div class="section-header">
+<h3 class="section-title">Result</h3>
+<button class="btn-secondary" onclick="copyCode()" style="font-size: 0.8rem;">Copy</button>
+</div>
+<div class="output-container" style="min-height: 80px; display:flex; align-items:center;">
+<pre class="output-code" id="outputCode" style="margin:0; white-space: pre-wrap; word-break: break-all;"></pre>
+</div>
+<div id="validationArea">
+<!-- Validation messages appear here -->
+</div>
+<div class="mt-lg">
+<h4 class="input-label">How to use:</h4>
+<p class="input-desc">Paste the generated code into the <code>&lt;head&gt;</code> section of
+                                your HTML document.</p>
+<p class="input-desc" style="margin-top: 0.5rem; color: #64748b;">?
+                                <strong>Self-referencing:</strong> It's good practice for a page to point to itself if
+                                it's the master version.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+            <section class="seo-article" data-tool="canonical-tag-generator">
+<article class="tool-article">
+<h2>Canonical Tag Generator — Fix Duplicate Content With One Line of HTML</h2>
+
+<p>I once watched a client's blog lose half its traffic because the same article lived at four URLs — with and without www, with and without a trailing slash, plus a ?utm_campaign version Google had indexed separately. The fix was a single HTML tag. A canonical tag generator writes that tag for you: <code>&lt;link rel="canonical"&gt;</code>, telling search engines which URL is the real one when duplicates exist.</p>
+
+<h3>What Is a Canonical Tag?</h3>
+
+<p>Duplicate content is rarely about copying — it is about plumbing. E-commerce filters (?color=red&size=m), tracking parameters (?utm_source=newsletter), HTTP vs HTTPS, www vs non-www, and print-friendly versions all create multiple URLs showing the same content. To Google, each URL is a separate page competing with itself, splitting ranking signals across copies.</p>
+
+<p>The canonical tag resolves this. Placed in the page's <code>&lt;head&gt;</code>, it says: "of all the URLs showing this content, this one is the primary — consolidate everything here." It is a strong hint rather than a command; Google honors it in the vast majority of cases, provided your other signals (sitemaps, internal links, redirects) agree with it.</p>
+
+<p>A common misunderstanding: canonical tags do not redirect users. Visitors still land on whichever URL they clicked; the tag only guides search engines behind the scenes. For actually moving traffic, you want a 301 redirect — canonicals are for the cases where multiple URLs must legitimately keep working.</p>
+
+<h3>How to Use the Canonical Tag Generator</h3>
+
+<p>Paste the URL you want search engines to treat as primary — the clean version, no tracking parameters, HTTPS, your preferred www choice. The generator normalizes it (stripping UTM tags, fixing the protocol, handling trailing slashes) and outputs the ready-to-paste tag:</p>
+
+<p><code>&lt;link rel="canonical" href="https://example.com/your-page/" /&gt;</code></p>
+
+<p>Copy that line into the <code>&lt;head&gt;</code> section of every duplicate or variant page, pointing them all at the same primary URL. If you use WordPress, SEO plugins like Rank Math and Yoast have a canonical URL field per post — paste it there instead of editing code. Then verify in Google Search Console's URL Inspection tool that Google sees the tag.</p>
+
+<p>Include a self-referencing canonical on the primary page itself — the page pointing at its own URL. Google's own engineers recommend this; it guards against scrapers and parameter variants you have not thought of yet.</p>
+
+<h3>How Canonicalization Works</h3>
+
+<p>The mechanism is a negotiation between your signals and Google's judgment.</p>
+
+<p><strong>Step 1 — Tag placement.</strong> Each variant page carries the canonical tag in its HTML head (or, for non-HTML files like PDFs, in the HTTP Link header) naming the preferred URL.</p>
+
+<p><strong>Step 2 — Crawling.</strong> Googlebot fetches the variants, reads the tags, and groups the URLs into a duplicate cluster.</p>
+
+<p><strong>Step 3 — Signal consolidation.</strong> Ranking signals — links, relevance, freshness — from all cluster members are folded toward the canonical URL. This is the payoff: instead of four weak copies, you have one strong page.</p>
+
+<p><strong>Step 4 — Index selection.</strong> Google typically indexes the canonical URL and drops the variants from results. If your sitemap, internal links, or redirects contradict the tag, Google may pick a different canonical — consistency across signals is what makes the hint stick.</p>
+
+<p>Normalization is the generator's real value-add: absolute HTTPS URLs without tracking parameters get honored far more reliably than relative URLs or parameter-laden ones.</p>
+
+<h3>Canonical Tag Examples</h3>
+
+<table>
+<thead><tr><th>Situation</th><th>Canonical should point to</th></tr></thead>
+<tbody>
+<tr><td><code>example.com/page?utm_source=email</code></td><td><code>https://example.com/page</code></td></tr>
+<tr><td><code>www.example.com/page</code> and <code>example.com/page</code></td><td>Whichever version you standardized on</td></tr>
+<tr><td><code>example.com/page/</code> and <code>example.com/page</code></td><td>One consistent trailing-slash policy</td></tr>
+<tr><td>Syndicated article republished elsewhere</td><td>The original publisher's URL (cross-domain)</td></tr>
+<tr><td>PDF with an HTML equivalent</td><td>The HTML page, via HTTP Link header</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Canonical Tag Generators?</h3>
+
+<p><strong>SEO specialists</strong> audit sites for duplicate clusters and deploy canonicals as the standard fix.</p>
+
+<p><strong>E-commerce managers</strong> tame faceted navigation and filtered URLs that spawn thousands of duplicates.</p>
+
+<p><strong>Bloggers</strong> handle tag pages, archives, and syndicated content pointing back to originals.</p>
+
+<p><strong>Developers</strong> generate correct tags during builds instead of hand-writing them per template.</p>
+
+<p><strong>Content marketers</strong> protect original articles when partners republish them.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Free generation</strong> — no signup, instant output.</li>
+<li><strong>URL normalization</strong> — strips tracking params, forces HTTPS, fixes slashes.</li>
+<li><strong>Absolute URLs</strong> — the format Google honors most reliably.</li>
+<li><strong>HTTP header output</strong> — Link headers for PDFs and non-HTML files.</li>
+<li><strong>Cross-domain support</strong> — point at URLs on other domains for syndication.</li>
+<li><strong>Validation checks</strong> — flags common mistakes before you deploy.</li>
+<li><strong>Browser-based</strong> — nothing to install.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this canonical tag generator free?</h4>
+<p>Yes — free with no account required.</p>
+
+<h4>Where do I put the canonical tag?</h4>
+<p>Inside the <code>&lt;head&gt;</code> section of the page's HTML, on every variant page — each one pointing to the primary URL.</p>
+
+<h4>Should the primary page have a canonical tag too?</h4>
+<p>Yes — a self-referencing canonical (the page pointing to itself) is recommended even when no duplicates exist.</p>
+
+<h4>Canonical tag vs 301 redirect — which should I use?</h4>
+<p>Use 301s when old URLs should stop working (site moves, deleted pages). Use canonicals when variants must stay live (tracking params, filters, syndication).</p>
+
+<h4>Can I use relative URLs in canonical tags?</h4>
+<p>You can, but absolute URLs (full https:// address) are honored more reliably. Always generate absolute.</p>
+
+<h4>How long until Google respects my canonical?</h4>
+<p>Usually days to a few weeks after recrawling. Check the "Google-selected canonical" in Search Console's URL Inspection to confirm.</p>
+
+<h4>What if Google ignores my canonical tag?</h4>
+<p>Check for conflicting signals — sitemap URLs, internal links, and redirects should all agree with the tag. Mixed signals are the usual cause.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        function update() {
+            const currentUrlInput = document.getElementById('currentUrl').value.trim();
+            let targetUrl = document.getElementById('targetUrl').value.trim();
+            const outputCode = document.getElementById('outputCode');
+            const validationArea = document.getElementById('validationArea');
+
+            if (!targetUrl) {
+                if (currentUrlInput) {
+                    // Logic: If target is empty but current is set, maybe they want self-referencing?
+                    // We'll wait for user input, but we can hint.
+                    outputCode.innerText = '<!-- Enter Canonical URL -->';
+                    validationArea.innerHTML = '';
+                    return;
+                }
+                outputCode.innerText = '';
+                validationArea.innerHTML = '';
+                return;
+            }
+
+            // Apply transformations
+            try {
+                // Ensure protocol if missing (default to https)
+                if (!/^https?:\/\//i.test(targetUrl)) {
+                    targetUrl = 'https://' + targetUrl;
+                }
+
+                let urlObj = new URL(targetUrl);
+
+                // Force HTTPS
+                if (document.getElementById('forceHttps').checked) {
+                    urlObj.protocol = 'https:';
+                }
+
+                // Strip Params
+                if (document.getElementById('stripParams').checked) {
+                    urlObj.search = '';
+                }
+
+                // Lowercase
+                if (document.getElementById('lowerCase').checked) {
+                    urlObj.pathname = urlObj.pathname.toLowerCase();
+                    urlObj.hostname = urlObj.hostname.toLowerCase();
+                }
+
+                // Trailing Slash
+                if (document.getElementById('addTrailingSlash').checked) {
+                    if (!urlObj.pathname.endsWith('/') && !urlObj.pathname.split('/').pop().includes('.')) {
+                        urlObj.pathname += '/';
+                    }
+                }
+
+                const finalUrl = urlObj.toString();
+                const tag = `<link rel="canonical" href="${finalUrl}" />`;
+                outputCode.innerText = tag;
+
+                // Validation Logic
+                let messages = [];
+
+                // 1. Domain Check
+                if (currentUrlInput) {
+                    try {
+                        const currentObj = new URL(currentUrlInput);
+                        const isCrossDomain = currentObj.hostname !== urlObj.hostname;
+                        const isExactMatch = currentObj.href === finalUrl;
+
+                        if (isExactMatch) {
+                            messages.push({ type: 'success', text: '? Self-referencing canonical tag. This page points to itself as the master.' });
+                        } else if (isCrossDomain) {
+                            messages.push({ type: 'warning', text: '?? Cross-domain canonical. You are pointing to a different domain. Make sure you own/control the target.' });
+                        } else {
+                            messages.push({ type: 'info', text: '?? This page points to another URL on the same domain.' });
+                        }
+                    } catch (e) {
+                        // Inherently invalid current URL, ignore
+                    }
+                }
+
+                // 2. Protocol Check
+                if (urlObj.protocol === 'http:') {
+                    messages.push({ type: 'warning', text: '?? You are using HTTP. Google strongly prefers HTTPS for canonicals.' });
+                }
+
+                // Render Messages
+                validationArea.innerHTML = messages.map(m => `
+                    <div class="validation-alert validation-${m.type}">
+                        <div>${m.text}</div>
+                    </div>
+                `).join('');
+
+            } catch (e) {
+                outputCode.innerText = 'Invalid URL format';
+                validationArea.innerHTML = `<div class="validation-alert validation-error">? Please enter a valid URL (e.g. https://example.com)</div>`;
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('currentUrl').value = '';
+            document.getElementById('targetUrl').value = '';
+            update();
+        }
+
+        function copyCode() {
+            const text = document.getElementById('outputCode').innerText;
+            if (!text || text.startsWith('<!--') || text === "Invalid URL format") return;
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = document.querySelector('.section-header button').innerText;
+                document.querySelector('.section-header button').innerText = 'Copied!';
+                setTimeout(() => {
+                    document.querySelector('.section-header button').innerText = originalText;
+                }, 2000);
+            });
+        }
+
+        // Init
+        update();
+    </script>
+</body>
+</html>

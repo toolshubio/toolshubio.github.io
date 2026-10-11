@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free, pro JSON formatter. Beautify, validate, and minify JSON data instantly 100% client-side.">
+    <title>JSON Formatter - Validate & Prettify JSON | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../../image-tools/css/global.css">
+    <link rel="stylesheet" href="../../image-tools/css/components.css">
+    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../../about-us.html">About</a>
+                <a class="nav-link" href="../../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> &gt;
+                <a href="../index.html">Code & Formatters</a> &gt;
+                <span>🎨 JSON Formatter</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">🎨 JSON Formatter</h1>
+                <p class="tool-description">Clean up, validate, and format your JSON data for better readability and
+                    debugging.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<div class="tool-workspace">
+<div class="code-workspace">
+<div class="editor-container">
+<div class="editor-header">
+<span class="editor-title">Input JSON</span>
+<div class="header-actions">
+<button class="btn btn-sm btn-secondary" onclick="document.getElementById('input-code').value = ''; onInputChange()">Clear</button>
+<button class="btn btn-sm btn-secondary" onclick="loadSample()">Sample</button>
+</div>
+</div>
+<textarea class="code-area" id="input-code" oninput="onInputChange()" placeholder="Paste your messy JSON here..."></textarea>
+<div class="code-stats" id="input-stats"></div>
+</div>
+<div class="editor-container">
+<div class="editor-header">
+<span class="editor-title">Formatted JSON</span>
+<div class="header-actions">
+<button class="btn btn-sm btn-secondary" onclick="minifyJSON()">Minify</button>
+<button class="btn btn-sm btn-primary" onclick="CodeUI.copyToClipboard('output-code', this)">Copy Result</button>
+</div>
+</div>
+<textarea class="code-area" id="output-code" placeholder="Result will appear here..." readonly=""></textarea>
+<div class="code-stats" id="output-stats"></div>
+</div>
+</div>
+<div class="json-error" id="json-error"></div>
+<div class="action-bar">
+<div class="input-group" style="flex-direction: row; align-items: center; gap: 10px; margin: 0;">
+<label class="input-label" style="margin: 0;">Indent:</label>
+<select class="calc-select" id="indent-size" onchange="format()" style="width: 120px;">
+<option value="2">2 Spaces</option>
+<option selected="" value="4">4 Spaces</option>
+<option value="tab">Tabs</option>
+</select>
+</div>
+<button class="btn btn-primary btn-lg" onclick="format()">🚀 Format &amp; Validate</button>
+</div>
+<section class="tool-content mt-12">
+<div class="content-grid">
+<div class="main-text">
+<h2>The Essential Tool for API Developers</h2>
+<p>JSON (JavaScript Object Notation) is the language of the modern web. Whether you're
+                                debugging a REST API response or cleaning up a config file, our JSON Formatter provides
+                                instant, secure, client-side transformation.</p>
+<h3>Key Features</h3>
+<ul>
+<li><strong>Real-time Validation:</strong> Catch missing commas or unclosed brackets
+                                    instantly.</li>
+<li><strong>Custom Indentation:</strong> Switch between spaces and tabs to match your
+                                    project style.</li>
+<li><strong>100% Privacy:</strong> Your data stays in the browser. We never send your
+                                    JSON to a server.</li>
+</ul>
+</div>
+<div class="faq-section">
+<h3>FAQ</h3>
+<div class="faq-item">
+<strong>Can it handle large JSON?</strong>
+<p>Yes, our tool handles multi-megabyte JSON files efficiently using optimized native
+                                    browser parsers.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+            </div>
+            <section class="seo-article" data-tool="json-formatter">
+<article class="tool-article">
+<h2>JSON Formatter — Beautify and Validate JSON Instantly</h2>
+
+<p>JSON is the language APIs speak, and APIs are not considerate speakers. Every developer has pasted an API response into an editor and been greeted by a single line of ten thousand characters — technically valid, practically unreadable. Worse is the almost-valid JSON: one missing comma somewhere in the middle, and your parser throws an error pointing at the end of the file. A JSON formatter does two jobs at once: it pretty-prints the structure so you can read it, and it validates the syntax so you know exactly where it breaks.</p>
+
+<h3>What a JSON Formatter Does</h3>
+
+<p><strong>Formatting (beautifying)</strong> takes compact JSON and re-renders it with indentation and line breaks — objects and arrays on separate lines, nested levels visibly nested. <strong>Validation</strong> parses the JSON strictly and reports syntax errors with their location, instead of failing silently or with a cryptic message. <strong>Minification</strong> does the reverse: strips all whitespace for compact transmission to production.</p>
+
+<p>The three operations form a loop most developers run daily: receive minified JSON from an API → format it to read and debug → fix or edit → validate → minify again for sending. Having all three in one tool (with copy/download at each step) removes the tab-switching that otherwise eats the workflow.</p>
+
+<h3>Before and After</h3>
+
+<p><strong>Before (as APIs usually return it):</strong></p>
+<p><code>{"name":"John","age":30,"city":"New York","skills":["JavaScript","Node.js","React"]}</code></p>
+
+<p><strong>After (formatted):</strong></p>
+<pre><code>{
+    "name": "John",
+    "age": 30,
+    "city": "New York",
+    "skills": [
+        "JavaScript",
+        "Node.js",
+        "React"
+    ]
+}</code></pre>
+
+<p>Same data, but now the structure is scannable: four keys, one of them an array of three strings. On a real API response with nested objects five levels deep, formatting is the difference between understanding the payload and scrolling hopelessly.</p>
+
+<h3>How to Use the JSON Formatter</h3>
+
+<p>Paste, format, fix, export. The error panel guides you when the JSON is broken.</p>
+
+<p><strong>Step 1 — Paste your JSON.</strong> Drop raw, minified, or messy JSON into the input panel — API responses, config files, log entries, whatever needs reading.</p>
+
+<p><strong>Step 2 — Choose indent size and format.</strong> Set 2 or 4 spaces (2 is the common convention for JSON) and hit format. The output appears with syntax highlighting: keys, strings, numbers, and booleans each color-coded.</p>
+
+<p><strong>Step 3 — Read any validation errors.</strong> If the JSON is invalid, the error panel tells you what's wrong and where — line and column, not just "parse error." Fix the highlighted issue and re-format.</p>
+
+<p><strong>Step 4 — Minify, copy, or download.</strong> Use minify to compress the JSON for production use, then copy the result to your clipboard or download it as a <code>.json</code> file.</p>
+
+<h3>Common JSON Errors (and What They Mean)</h3>
+
+<table>
+<thead><tr><th>Error</th><th>What It Looks Like</th><th>The Fix</th></tr></thead>
+<tbody>
+<tr><td>Missing comma</td><td><code>{"a":1 "b":2}</code></td><td>Add the comma between members</td></tr>
+<tr><td>Trailing comma</td><td><code>{"a":1,}</code></td><td>Remove the last comma (strict JSON forbids it)</td></tr>
+<tr><td>Unquoted keys</td><td><code>{a:1}</code></td><td>Quote all keys: <code>{"a":1}</code></td></tr>
+<tr><td>Single quotes</td><td><code>{'a':1}</code></td><td>Use double quotes for strings and keys</td></tr>
+<tr><td>Unclosed bracket</td><td><code>{"a":[1,2}</code></td><td>Close every opened bracket in order</td></tr>
+<tr><td>Comments</td><td><code>{"a":1 // note}</code></td><td>Remove — standard JSON has no comments</td></tr>
+</tbody>
+</table>
+
+<p>The trailing-comma trap deserves emphasis: JavaScript object literals allow trailing commas, JSON does not. Code that works fine in JS breaks the moment it's serialized strictly — and the validator catches it before your API call fails at runtime.</p>
+
+<h3>Who Uses a JSON Formatter?</h3>
+
+<p><strong>API developers</strong> format responses to understand payload structure while debugging integrations — the single most common use.</p>
+
+<p><strong>DevOps and backend engineers</strong> validate config files and beautify JSON log entries during incident investigation.</p>
+
+<p><strong>Frontend developers</strong> prepare mock data and fixtures, validating before the data ever reaches the app.</p>
+
+<p><strong>Data engineers</strong> inspect JSON during migrations and transformations, where one malformed record can break a pipeline.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant formatting</strong> — minified JSON pretty-printed with one click.</li>
+<li><strong>Real validation</strong> — syntax errors reported with line and column positions.</li>
+<li><strong>Minification</strong> — compress JSON for production transmission.</li>
+<li><strong>Customizable indentation</strong> — 2 spaces, 4 spaces, or tabs.</li>
+<li><strong>Syntax highlighting</strong> — keys, strings, numbers, and booleans color-coded.</li>
+<li><strong>Copy and download</strong> — formatted or minified output ready to use.</li>
+<li><strong>Private and free</strong> — everything runs in your browser; your data never leaves your device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is the difference between formatting and validating JSON?</h4>
+<p>Formatting makes JSON readable with indentation and spacing. Validation checks whether the JSON is syntactically correct. This tool does both — and formatting a broken document surfaces its errors.</p>
+
+<h4>Why does my JSON fail to parse?</h4>
+<p>The usual suspects: a missing comma, a trailing comma (allowed in JS, forbidden in JSON), unquoted keys, single quotes instead of double, or an unclosed bracket. The validator pinpoints the exact location.</p>
+
+<h4>Can I convert formatted JSON back to minified?</h4>
+<p>Yes — the minify option strips all whitespace, producing the compact single-line form used for API transmission and storage.</p>
+
+<h4>What indent size should I use?</h4>
+<p>2 spaces is the most common convention for JSON. Use 4 if your team prefers it — consistency matters more than the number.</p>
+
+<h4>Does JSON support comments?</h4>
+<p>No — standard JSON has no comments. If your file contains <code>//</code> or <code>/* */</code>, it's JSON-with-comments (JSONC), and a strict parser will reject it. Remove comments before validating.</p>
+
+<h4>Can I format large JSON files?</h4>
+<p>Yes — the tool handles large payloads in the browser. For extremely large files, formatting in sections keeps things responsive.</p>
+
+<h4>Is my JSON data uploaded anywhere?</h4>
+<p>No. Formatting and validation run entirely in your browser — API keys, tokens, and payloads in your JSON never leave your device.</p>
+
+<h4>Is this JSON formatter free?</h4>
+<p>Yes — free, unlimited, no account required.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../../about-us.html">About Us</a>
+                    <a class="footer-link" href="../../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../js/code-utils.js"></script>
+<script src="../js/code-ui.js"></script>
+<script>
+        CodeUI.init({ toolName: 'json-formatter' });
+
+        function onInputChange() {
+            const code = document.getElementById('input-code').value;
+            CodeUI.renderStats('input-stats', CodeUtils.getStats(code));
+            document.getElementById('json-error').style.display = 'none';
+        }
+
+        function format() {
+            const input = document.getElementById('input-code').value;
+            if (!input) return;
+
+            const indentField = document.getElementById('indent-size').value;
+            const indent = indentField === 'tab' ? '\t' : parseInt(indentField);
+
+            try {
+                const parsed = JSON.parse(input);
+                const formatted = JSON.stringify(parsed, null, indent);
+                document.getElementById('output-code').value = formatted;
+                document.getElementById('json-error').style.display = 'none';
+                CodeUI.renderStats('output-stats', CodeUtils.getStats(formatted));
+            } catch (e) {
+                const errorEl = document.getElementById('json-error');
+                errorEl.textContent = 'âŒ Invalid JSON: ' + e.message;
+                errorEl.style.display = 'block';
+            }
+        }
+
+        function minifyJSON() {
+            const input = document.getElementById('input-code').value;
+            if (!input) return;
+            try {
+                const parsed = JSON.parse(input);
+                const minified = JSON.stringify(parsed);
+                document.getElementById('output-code').value = minified;
+                CodeUI.renderStats('output-stats', CodeUtils.getStats(minified));
+            } catch (e) {
+                alert('Invalid JSON for minification');
+            }
+        }
+
+        function loadSample() {
+            const sample = {
+                "id": 1,
+                "name": "Quick Sample",
+                "tags": ["api", "json", "fast"],
+                "metadata": {
+                    "version": "1.0",
+                    "author": "Toolshub"
+                }
+            };
+            document.getElementById('input-code').value = JSON.stringify(sample);
+            onInputChange();
+            format();
+        }
+
+        CodeUI.renderRelated('related-tools', [
+            { icon: 'ðŸ‘ï¸', name: 'JSON Viewer', desc: 'Interactive JSON tree', url: '../viewers/json-viewer.html' },
+            { icon: 'âœ…', name: 'JSON Validator', desc: 'Strict syntax checking', url: '../validators/json-validator.html' },
+            { icon: '🎨', name: 'SQL Formatter', desc: 'Prettify SQL queries', url: 'sql-formatter.html' }
+        ]);
+    </script>
+</body>
+</html>

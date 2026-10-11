@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ultimate Image Compressor. Compress images by quality, target file size (e.g. 50KB, 200KB), or lossless optimization. All-in-one tool.">
+    <title>Image Compressor - Quality, Target Size & Lossless | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../../image-tools/css/global.css">
+    <link rel="stylesheet" href="../../image-tools/css/components.css">
+    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../../about-us.html">About</a>
+                <a class="nav-link" href="../../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> &gt;
+                <a href="../index.html">Image Tools</a> &gt;
+                <span>📦 Image Compressor</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">📦 Image Compressor</h1>
+                <p class="tool-description">The ultimate image compressor. Choose between perceptual quality (SSIM),
+                    specific target file size (e.g., 50KB), or lossless optimization.</p>
+                <div class="tool-badges"><span class="badge badge-primary">Target Size</span><span class="badge badge-primary">SSIM Quality</span><span class="badge badge-primary">Lossless</span><span class="badge badge-secondary">Batch Mode</span></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+<div class="tool-workspace">
+<section class="preview-area">
+<!-- Visual Comparison Container -->
+<div id="comparison-container" style="display: none; margin-bottom: 2rem;"></div>
+<!-- Cropping Container -->
+<div id="crop-container" style="display: none; margin-bottom: 2rem;">
+<div style="max-height: 500px; overflow: hidden; border-radius: var(--radius-xl);">
+<img id="crop-image" src="" style="max-width: 100%;"/>
+</div>
+<div style="display: flex; justify-content: center; gap: 10px; margin-top: 10px;">
+<button class="btn btn-primary btn-sm" id="apply-crop-btn">Apply Crop</button>
+<button class="btn btn-secondary btn-sm" id="cancel-crop-btn">Cancel</button>
+</div>
+</div>
+<!-- Crop Feature Section -->
+<div class="control-section" id="crop-section" style="display: none;">
+<h3 class="control-section-title">✂️ Advanced Edit</h3>
+<button class="btn btn-secondary btn-sm w-full" id="enable-crop-btn">
+<span>✂️</span> Enable Crop Mode
+                        </button>
+</div>
+<div id="upload-zone"></div>
+</section>
+<aside class="control-panel">
+<!-- Compression Method Tabs -->
+<div class="control-section">
+<h3 class="control-section-title">🛠️ Compression Method</h3>
+<div class="preset-buttons">
+<button class="preset-btn active" data-method="quality">Quality</button>
+<button class="preset-btn" data-method="size">Target Size</button>
+<button class="preset-btn" data-method="lossless">Lossless</button>
+</div>
+</div>
+<!-- METHOD: Quality (from previous version) -->
+<div id="method-quality">
+<div class="control-section">
+<h3 class="control-section-title">🎯 Quality Mode</h3>
+<div class="preset-buttons">
+<button class="preset-btn" data-mode="light">Light</button>
+<button class="preset-btn active" data-mode="balanced">Balanced</button>
+<button class="preset-btn" data-mode="aggressive">Aggressive</button>
+<button class="preset-btn" data-mode="custom">Custom</button>
+</div>
+</div>
+<div class="control-section" id="custom-quality">
+<h3 class="control-section-title">📊 Quality Level</h3>
+<div class="slider-control">
+<div class="slider-header">
+<span class="slider-label">Quality</span>
+<span class="slider-value" id="quality-value">80%</span>
+</div>
+<input class="slider-input" id="quality-slider" max="100" min="1" type="range" value="80"/>
+</div>
+</div>
+</div>
+<!-- METHOD: Target Size (NEW) -->
+<div id="method-size" style="display: none;">
+<div class="control-section">
+<h3 class="control-section-title">⚖️ Target File Size</h3>
+<div style="display: flex; gap: var(--space-2); align-items: center;">
+<input class="form-input" id="target-size-input" max="10240" min="1" type="number" value="50"/>
+<select class="form-select" id="size-unit" style="width: 80px;">
+<option value="KB">KB</option>
+<option value="MB">MB</option>
+</select>
+</div>
+<!-- Quick Presets -->
+<div class="preset-buttons" style="margin-top: var(--space-3);">
+<button class="preset-btn active" data-target="10">10 KB</button>
+<button class="preset-btn" data-target="20">20 KB</button>
+<button class="preset-btn" data-target="50">50 KB</button>
+<button class="preset-btn" data-target="100">100 KB</button>
+<button class="preset-btn" data-target="200">200 KB</button>
+</div>
+</div>
+</div>
+<!-- METHOD: Lossless (NEW) -->
+<div id="method-lossless" style="display: none;">
+<div class="control-section">
+<h3 class="control-section-title">💎 Lossless Optimization</h3>
+<p style="font-size: var(--text-sm); color: var(--text-secondary);">
+                                Reduces file size by stripping metadata and optimizing encoding without changing a
+                                single pixel. Best for archiving.
+                            </p>
+</div>
+</div>
+<!-- Output Format -->
+<div class="control-section">
+<h3 class="control-section-title">📁 Output Format</h3>
+<div class="preset-buttons">
+<button class="preset-btn active" data-format="auto">Auto</button>
+<button class="preset-btn" data-format="jpg">JPEG</button>
+<button class="preset-btn" data-format="webp">WebP</button>
+<button class="preset-btn" data-format="png" id="png-option">PNG</button>
+</div>
+</div>
+<!-- Metadata -->
+<div class="control-section">
+<h3 class="control-section-title">🔒 Privacy</h3>
+<div class="toggle-control">
+<span class="toggle-label">Strip All Metadata</span>
+<div class="toggle-switch active" id="strip-meta-toggle"></div>
+</div>
+</div>
+<!-- Stats -->
+<div class="control-section">
+<h3 class="control-section-title">📈 Stats</h3>
+<div class="stats-display">
+<div class="stat-item">
+<div class="stat-label">Original</div>
+<div class="stat-value" id="stat-original">--</div>
+</div>
+<div class="stat-item">
+<div class="stat-label">Compressed</div>
+<div class="stat-value highlight" id="stat-converted">--</div>
+</div>
+<div class="stat-item">
+<div class="stat-label">Savings</div>
+<div class="stat-value highlight" id="stat-savings">--</div>
+</div>
+</div>
+</div>
+<div class="control-section">
+<button class="btn btn-primary w-full" disabled="" id="convert-btn"><span>📦</span>
+                            Compress</button>
+<button class="btn btn-premium-download w-full mt-3" id="download-btn" style="display: none;"><span>📥</span> Download</button>
+<button class="btn btn-secondary w-full mt-2" id="reset-btn" style="display: none;"><span>🔄</span> Start Over</button>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<div class="processing-overlay" id="processing-overlay" style="display: none;">
+<div class="processing-spinner"></div>
+<div class="processing-text">Compressing...</div>
+<div class="processing-progress">
+<div class="processing-progress-bar" id="progress-bar"></div>
+</div>
+</div>
+
+
+
+
+
+
+
+ JSZip NO LONGER NEEDED BUT KEPT FOR COMPATIBILITY IF OTHER SCRIPTS RELY ON IT
+            </div>
+            <section class="seo-article" data-tool="image-compressor">
+<article class="tool-article">
+<h2>Image Compressor — Shrink Photos Without Ruining Them</h2>
+
+<p>I run a site where I publish a lot of photos, and I learned the hard way that a beautiful 6 MB image is also a slow one. My pages took forever to load until I started compressing every upload. An image compressor reduces your photo's file size — often by 60 to 80 percent — while keeping it looking essentially identical. It is the single highest-leverage thing most people can do for their websites, their email attachments, and their cloud storage bills.</p>
+
+<h3>What Is an Image Compressor?</h3>
+
+<p>An image compressor is a tool that rewrites your image file more efficiently. There are two kinds of compression at work. <strong>Lossy</strong> compression (used for JPEG/WebP) discards visual data the human eye barely notices — subtle color variations, fine noise — to make the file much smaller. <strong>Lossless</strong> compression (used for PNG) reorganizes the data more cleverly without losing a single pixel.</p>
+
+<p>The key insight: a photo straight from a camera or phone is usually saved at far higher quality than anyone needs. Dropping JPEG quality from 100 to 80 often cuts the file to a third of its size, and side by side, almost nobody can tell the difference. That is the trade a compressor lets you control.</p>
+
+<h3>How to Use the Image Compressor</h3>
+
+<p><strong>Step 1 — Upload your images.</strong> Drag and drop one or several files — JPG, PNG, WebP, and often GIF, BMP, TIFF, and HEIC are all accepted.</p>
+
+<p><strong>Step 2 — Choose your compression.</strong> Pick a mode: lossy for the smallest files (best for photos on the web), lossless when every pixel must survive (best for graphics and archival), or drag a quality slider — 80–90 is the sweet spot for most uses. Some tools let you target an exact file size, like 100 KB or 500 KB, which is perfect for upload forms with hard limits.</p>
+
+<p><strong>Step 3 — Compare and download.</strong> Good tools show you the before-and-after: original size, compressed size, and the percentage saved. Download files individually or grab everything as a ZIP.</p>
+
+<p>My rule of thumb: compress a copy, zoom in to 100%, and compare against the original. If you cannot see a difference at full size, your visitors will not see one at web size.</p>
+
+<h3>Lossy vs Lossless: Which to Choose?</h3>
+
+<table>
+<thead><tr><th></th><th>Lossy</th><th>Lossless</th></tr></thead>
+<tbody>
+<tr><td>How it works</td><td>Discards subtle visual data</td><td>Reorganizes data, keeps everything</td></tr>
+<tr><td>Size reduction</td><td>60–90% typical</td><td>10–40% typical</td></tr>
+<tr><td>Quality</td><td>Excellent at quality 80–90</td><td>Pixel-identical</td></tr>
+<tr><td>Best for</td><td>Photos, web images, social posts</td><td>Logos, screenshots, archival, medical</td></tr>
+<tr><td>Repeated saves</td><td>Degrades a little each save</td><td>No degradation, ever</td></tr>
+</tbody>
+</table>
+
+<p>One caution: lossy compression is cumulative. Each time you open, edit, and re-save a JPEG, a little more detail disappears. Always keep your original — compress copies for delivery, never your only master.</p>
+
+<h3>Recommended Quality Settings</h3>
+
+<p>Quality numbers are not grades — they are a dial between size and fidelity. Here is how I think about the slider:</p>
+
+<ul>
+<li><strong>90–100</strong> — Near-original quality. Use for print, portfolios, and client delivery.</li>
+<li><strong>80–90</strong> — The sweet spot. Virtually indistinguishable from the original; files shrink dramatically. My default for everything web-facing.</li>
+<li><strong>60–80</strong> — Good for web images where bandwidth matters more than perfection; fine for thumbnails and social feeds.</li>
+<li><strong>Below 60</strong> — Noticeable artifacts. Only for previews or when a hard size cap leaves no choice.</li>
+</ul>
+
+<p>Photographic content compresses far better than flat graphics: a busy photo might drop 80% with no visible change, while a screenshot with sharp text can show artifacts sooner. Judge each image at 100% zoom before shipping it.</p>
+
+<h3>Why Compress Images?</h3>
+
+<p><strong>Websites load faster.</strong> Images are usually the heaviest part of a page. Smaller files mean faster loads, better Core Web Vitals scores (Largest Contentful Paint especially), and a direct SEO benefit — Google factors page speed into rankings.</p>
+
+<p><strong>Email and uploads stop failing.</strong> Gmail caps attachments at 25 MB; many forms cap uploads at 2–5 MB. Compressed images fit where originals would not.</p>
+
+<p><strong>Storage and bandwidth cost less.</strong> A photo library of 10,000 images at 5 MB each is 50 GB; compressed to 1 MB each it is 10 GB. That is real money on cloud storage and real time on mobile data.</p>
+
+<p><strong>Mobile users thank you.</strong> On slow connections, the difference between a 4 MB hero image and a 400 KB one is the difference between a visitor and a bounce.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Batch compression</strong> — drop dozens of images, compress them all at once, download as ZIP.</li>
+<li><strong>Quality slider</strong> — fine-tune the size-versus-quality tradeoff yourself.</li>
+<li><strong>Target file size</strong> — set 50 KB, 100 KB, or 1 MB and let the tool find the right quality.</li>
+<li><strong>Multi-format support</strong> — JPG, PNG, WebP, GIF, BMP, TIFF, HEIC in one place.</li>
+<li><strong>Resize during compression</strong> — shrink dimensions at the same time for even smaller files.</li>
+<li><strong>Before/after comparison</strong> — see exact savings per file before you commit.</li>
+<li><strong>Private processing</strong> — browser-based compression means your photos never upload anywhere.</li>
+<li><strong>Metadata handling</strong> — strip EXIF/GPS data for privacy, or preserve it for archival.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this image compressor free?</h4>
+<p>Yes — free, no account required, no watermarks on your images.</p>
+
+<h4>Will compression visibly reduce quality?</h4>
+<p>At quality 80–90, virtually no. The difference is imperceptible for photos viewed at normal size.</p>
+
+<h4>What is the difference between lossy and lossless compression?</h4>
+<p>Lossy discards subtle visual data for much smaller files; lossless keeps every pixel exactly, with modest savings.</p>
+
+<h4>Can I compress multiple images at once?</h4>
+<p>Yes — upload a batch and download all compressed files individually or as a ZIP.</p>
+
+<h4>How do I hit an exact file size like 100 KB?</h4>
+<p>Use a target-size option if available, or lower the quality slider and check the reported output size until it lands under your limit.</p>
+
+<h4>Are my photos uploaded to a server?</h4>
+<p>Browser-based compressors process everything locally on your device — nothing is uploaded or stored.</p>
+
+<h4>Should I compress my original photos?</h4>
+<p>No — always compress a copy. Keep originals archived; lossy compression cannot be undone.</p>
+
+<h4>Does compressing help my website's SEO?</h4>
+<p>Yes. Smaller images load faster, improving Core Web Vitals, which Google uses as a ranking factor.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../../about-us.html">About Us</a>
+                    <a class="footer-link" href="../../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../js/shared/unified-input.js"></script>
+<script src="../js/shared/preview-manager.js"></script>
+<script src="../js/utils/image-loader.js"></script>
+<script src="../js/utils/converter.js"></script>
+<script>
+        class ImageCompressorTool {
+            constructor() {
+                this.files = [];
+                this.results = [];
+                this.settings = {
+                    method: 'quality', // 'quality', 'size', 'lossless'
+                    quality: 80,
+                    targetSizeKB: 50,
+                    format: 'auto',
+                    stripMeta: true,
+                    isCropping: false,
+                    croppedCanvas: null
+                };
+                this.cropper = null;
+                this.init();
+            }
+
+            init() {
+                this.unifiedInput = new UnifiedInput({
+                    containerId: 'upload-zone',
+                    toolIcon: '📦',
+                    toolName: 'Image Compressor',
+                    acceptTypes: 'image/*',
+                    onFilesLoaded: (files) => this.handleFilesLoaded(files)
+                });
+
+                this.previewManager = new PreviewManager({ containerId: 'comparison-container' });
+                this.setupControls();
+                this.setupActions();
+                this.injectAdvancedStyles();
+            }
+
+            setupControls() {
+                document.querySelectorAll('[data-method]').forEach(btn => {
+                    btn.onclick = () => {
+                        document.querySelectorAll('[data-method]').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        this.settings.method = btn.dataset.method;
+                        document.getElementById('method-quality').style.display = this.settings.method === 'quality' ? 'block' : 'none';
+                        document.getElementById('method-size').style.display = this.settings.method === 'size' ? 'block' : 'none';
+                        document.getElementById('method-lossless').style.display = this.settings.method === 'lossless' ? 'block' : 'none';
+                    };
+                });
+
+                document.querySelectorAll('[data-mode]').forEach(btn => {
+                    btn.onclick = () => {
+                        document.querySelectorAll('[data-mode]').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        const qualityMap = { light: 92, balanced: 82, aggressive: 65, custom: this.settings.quality };
+                        this.settings.quality = qualityMap[btn.dataset.mode];
+                        const slider = document.getElementById('quality-slider');
+                        if (slider) {
+                            slider.value = this.settings.quality;
+                            document.getElementById('quality-value').textContent = `${this.settings.quality}%`;
+                        }
+                    };
+                });
+
+                document.getElementById('quality-slider')?.addEventListener('input', e => {
+                    this.settings.quality = parseInt(e.target.value);
+                    document.getElementById('quality-value').textContent = `${this.settings.quality}%`;
+                    document.querySelectorAll('[data-mode]').forEach(b => b.classList.remove('active'));
+                    document.querySelector('[data-mode="custom"]')?.classList.add('active');
+                });
+
+                document.querySelectorAll('[data-target]').forEach(btn => {
+                    btn.onclick = () => {
+                        document.querySelectorAll('[data-target]').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        const input = document.getElementById('target-size-input');
+                        input.value = btn.dataset.target;
+                        this.settings.targetSizeKB = parseInt(btn.dataset.target);
+                    };
+                });
+
+                document.querySelectorAll('[data-format]').forEach(btn => {
+                    btn.onclick = () => {
+                        document.querySelectorAll('[data-format]').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        this.settings.format = btn.dataset.format;
+                    };
+                });
+
+                document.getElementById('strip-meta-toggle')?.addEventListener('click', e => {
+                    e.target.classList.toggle('active');
+                    this.settings.stripMeta = e.target.classList.contains('active');
+                });
+
+                document.getElementById('enable-crop-btn').onclick = () => this.startCropping();
+                document.getElementById('apply-crop-btn').onclick = () => this.applyCrop();
+                document.getElementById('cancel-crop-btn').onclick = () => this.stopCropping();
+            }
+
+            setupActions() {
+                document.getElementById('convert-btn').onclick = () => this.process();
+                document.getElementById('download-btn').onclick = () => this.download();
+                document.getElementById('reset-btn').onclick = () => location.reload();
+            }
+
+            handleFilesLoaded(files) {
+                this.files = files;
+                this.updateStats();
+                document.getElementById('convert-btn').disabled = files.length === 0;
+
+                if (files.length === 1) {
+                    document.getElementById('crop-section').style.display = 'block';
+                } else {
+                    document.getElementById('crop-section').style.display = 'none';
+                }
+            }
+
+            startCropping() {
+                if (this.files.length === 0) return;
+                const file = this.files[0];
+                const img = document.getElementById('crop-image');
+                img.src = URL.createObjectURL(file);
+
+                document.getElementById('upload-zone').style.display = 'none';
+                document.getElementById('comparison-container').style.display = 'none';
+                document.getElementById('crop-container').style.display = 'block';
+
+                if (this.cropper) this.cropper.destroy();
+                this.cropper = new Cropper(img, {
+                    viewMode: 1,
+                    autoCropArea: 0.8,
+                    responsive: true
+                });
+                this.settings.isCropping = true;
+            }
+
+            applyCrop() {
+                if (!this.cropper) return;
+                this.settings.croppedCanvas = this.cropper.getCroppedCanvas();
+                this.stopCropping();
+                // Show feedback
+                const btn = document.getElementById('enable-crop-btn');
+                btn.innerHTML = '<span>✅</span> Crop Applied (Click to Change)';
+                btn.classList.add('active');
+            }
+
+            stopCropping() {
+                if (this.cropper) this.cropper.destroy();
+                this.cropper = null;
+                document.getElementById('crop-container').style.display = 'none';
+                document.getElementById('upload-zone').style.display = this.files.length > 0 ? 'none' : 'block';
+                if (this.results.length > 0) {
+                    document.getElementById('comparison-container').style.display = 'block';
+                } else if (this.files.length > 0) {
+                    // Show something or just wait for compress
+                }
+                this.settings.isCropping = false;
+            }
+
+            updateStats() {
+                const totalSize = this.files.reduce((s, f) => s + f.size, 0);
+                document.getElementById('stat-original').textContent = this.formatSize(totalSize);
+
+                if (this.results.length > 0) {
+                    const compressedSize = this.results.reduce((s, r) => s + r.convertedSize, 0);
+                    document.getElementById('stat-converted').textContent = this.formatSize(compressedSize);
+                    document.getElementById('stat-savings').textContent = `${Math.max(0, ((totalSize - compressedSize) / totalSize * 100)).toFixed(1)}%`;
+                }
+            }
+
+            async process() {
+                const btn = document.getElementById('convert-btn');
+                btn.disabled = true;
+                btn.textContent = 'Processing...';
+                this.results = [];
+
+                try {
+                    for (let i = 0; i < this.files.length; i++) {
+                        const file = this.files[i];
+                        const format = this.settings.format === 'auto' ? file.type.split('/')[1] : this.settings.format;
+
+                        let source = file;
+                        if (i === 0 && this.settings.croppedCanvas) {
+                            // Convert canvas to blob for consistency with converter
+                            source = await new Promise(resolve => this.settings.croppedCanvas.toBlob(resolve, file.type));
+                        }
+
+                        let result;
+                        if (this.settings.method === 'quality') {
+                            result = await window.ImageConverter.convertFile(source, format, {
+                                quality: this.settings.quality / 100,
+                                scrubMetadata: this.settings.stripMeta
+                            });
+                        } else if (this.settings.method === 'size') {
+                            // Iterative compression to hit target size
+                            result = await this.compressToTargetSize(file, this.settings.targetSizeKB * 1024, format);
+                        } else {
+                            // Lossless-ish (High quality, meta scrub)
+                            result = await window.ImageConverter.convertFile(file, format === 'png' ? 'png' : 'webp', {
+                                quality: 1.0,
+                                scrubMetadata: this.settings.stripMeta
+                            });
+                        }
+
+                        this.results.push(result);
+                        this.unifiedInput.setFileStatus(i, 'done');
+
+                        if (i === 0) {
+                            document.getElementById('comparison-container').style.display = 'block';
+                            const originalURL = this.settings.croppedCanvas ? this.settings.croppedCanvas.toDataURL() : URL.createObjectURL(file);
+                            this.previewManager.render(originalURL, result.dataURL, result.convertedFile.name);
+                        }
+                    }
+
+                    this.updateStats();
+                    btn.style.display = 'none';
+                    document.getElementById('download-btn').style.display = 'block';
+                    document.getElementById('reset-btn').style.display = 'block';
+                    document.getElementById('upload-zone').style.display = 'none';
+
+                } catch (e) {
+                    console.error(e);
+                    alert("Error: " + e.message);
+                    btn.disabled = false;
+                    btn.textContent = 'Retry';
+                }
+            }
+
+            async compressToTargetSize(file, targetBytes, format) {
+                let quality = 0.9;
+                let result = await window.ImageConverter.convertFile(file, format, { quality, scrubMetadata: this.settings.stripMeta });
+
+                if (result.convertedSize <= targetBytes) return result;
+
+                // Simple binary-ish search for target size
+                let min = 0.01, max = 0.9;
+                for (let i = 0; i < 5; i++) {
+                    quality = (min + max) / 2;
+                    result = await window.ImageConverter.convertFile(file, format, { quality, scrubMetadata: this.settings.stripMeta });
+                    if (result.convertedSize > targetBytes) max = quality;
+                    else min = quality;
+                }
+                return result;
+            }
+
+            async download() {
+                for (const result of this.results) {
+                    const a = document.createElement('a');
+                    a.href = result.dataURL;
+                    a.download = result.convertedFile.name;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    await new Promise(resolve => setTimeout(resolve, 150));
+                }
+            }
+
+            formatSize(bytes) {
+                if (bytes === 0) return '0 B';
+                const k = 1024;
+                const sizes = ['B', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+            }
+
+            injectAdvancedStyles() {
+                const style = document.createElement('style');
+                style.textContent = `
+                    #comparison-container { margin-top: 2rem; border: 1px solid var(--border-color); border-radius: var(--radius-xl); padding: 1rem; background: var(--bg-secondary); min-height: 400px; }
+                    .stats-display { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 1rem; }
+                    .stat-item { background: var(--bg-tertiary); padding: 10px; border-radius: 8px; text-align: center; }
+                    .stat-label { font-size: 0.75rem; color: var(--text-tertiary); margin-bottom: 4px; }
+                    .stat-value { font-weight: 700; color: var(--text-primary); }
+                    .toggle-switch.active { background: var(--primary-color); }
+                    .toggle-switch.active::after { left: calc(100% - 18px); }
+                `;
+                document.head.appendChild(style);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => new ImageCompressorTool());
+    </script>
+</body>
+</html>

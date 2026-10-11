@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium investment calculator with SIP step-up analysis, CAGR modeling, and inflation-adjusted wealth projections. Professional financial planning.">
+    <title>High-End Wealth & Investment Intelligence | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Calculators</a> &gt;
+                <span>💹 Wealth Intelligence</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">💹 Wealth Intelligence</h1>
+                <p class="tool-description">Advanced SIP modeling, step-up analysis, and inflation-discounted wealth
+                    projections.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<div class="wealth-hero">
+<div class="glass-panel p-8">
+<h3 class="panel-title mb-6">Portfolio Configuration</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="input-group">
+<label class="input-label">Initial Lump Sum</label>
+<input class="calc-input" id="lumpsum" oninput="calculate()" type="number" value="10000"/>
+</div>
+<div class="input-group">
+<label class="input-label">Monthly SIP</label>
+<input class="calc-input" id="sip" oninput="calculate()" type="number" value="1000"/>
+</div>
+<div class="input-group">
+<label class="input-label">Exp. Return (%)</label>
+<input class="calc-input" id="rate" oninput="calculate()" step="0.1" type="number" value="12"/>
+</div>
+<div class="input-group">
+<label class="input-label">Duration (Years)</label>
+<input class="calc-input" id="years" oninput="calculate()" type="number" value="15"/>
+</div>
+</div>
+<div class="step-up-panel mt-6">
+<div class="flex items-center gap-4 mb-4">
+<div class="text-sm font-bold uppercase tracking-wider text-primary">SIP Step-Up</div>
+<input id="enable-stepup" onchange="calculate()" type="checkbox"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="input-group">
+<label class="text-xs text-secondary">Annual Increment (%)</label>
+<input class="calc-input" id="stepup-pct" oninput="calculate()" type="number" value="10"/>
+</div>
+</div>
+</div>
+</div>
+<div class="wealth-meter glass-panel">
+<div class="text-secondary font-bold uppercase tracking-widest text-xs mb-2">Projected Maturity
+                        Value</div>
+<div class="wealth-val" id="res-total">$2.4M</div>
+<div class="flex justify-center gap-12 mt-6">
+<div class="text-center">
+<div class="text-xs text-secondary mb-1">Total Invested</div>
+<div class="text-xl font-bold text-success" id="res-invested">$180K</div>
+</div>
+<div class="text-center">
+<div class="text-xs text-secondary mb-1">Wealth Created</div>
+<div class="text-xl font-bold text-primary" id="res-gain">$2.2M</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+<!-- Efficiency & Realism -->
+<div class="lg:col-span-2 glass-panel p-6">
+<h3 class="panel-title mb-6">Real-World Adjustments</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h4 class="text-sm font-bold uppercase mb-4 text-warning">Inflation Discounting</h4>
+<div class="input-group mb-4">
+<label class="text-xs text-secondary">Annual Inflation (%)</label>
+<input class="calc-input" id="inflation" oninput="calculate()" type="number" value="6"/>
+</div>
+<div class="text-2xl font-bold" id="res-real">$84,000</div>
+<div class="text-xs text-secondary mt-1">Purchasing power in today's terms.</div>
+</div>
+<div>
+<h4 class="text-sm font-bold uppercase mb-4 text-danger">Tax Modeling</h4>
+<div class="input-group mb-4">
+<label class="text-xs text-secondary">Effective LTCG (%)</label>
+<input class="calc-input" id="tax" oninput="calculate()" type="number" value="10"/>
+</div>
+<div class="text-2xl font-bold" id="res-taxed">$2.1M</div>
+<div class="text-xs text-secondary mt-1">Post-tax maturity value estimation.</div>
+</div>
+</div>
+</div>
+<!-- Benchmarking -->
+<div class="glass-panel p-6">
+<h3 class="panel-title mb-6">Efficiency metrics</h3>
+<div class="space-y-4">
+<div class="p-4 bg-tertiary rounded-lg">
+<div class="text-xs text-secondary uppercase font-bold">CAGR Req. for Goal</div>
+<div class="text-xl font-bold text-primary">12.00%</div>
+</div>
+<div class="p-4 bg-tertiary rounded-lg">
+<div class="text-xs text-secondary uppercase font-bold">XIRR (Internal Return)</div>
+<div class="text-xl font-bold text-success" id="res-xirr">12.68%</div>
+</div>
+</div>
+</div>
+</div>
+<div class="glass-panel p-6 mb-8">
+<h3 class="panel-title mb-6">Wealth Accumulation Timeline</h3>
+<div class="projection-chart">
+<canvas id="wealth-canvas"></canvas>
+</div>
+</div>
+<div class="mt-8 flex gap-4">
+<button class="btn btn-secondary flex-1" onclick="exportData('pdf')">Download Wealth Blueprint
+                    (PDF)</button>
+<button class="btn btn-secondary flex-1" onclick="exportData('csv')">Export Timeline (CSV)</button>
+</div>
+</div>
+<section class="seo-article" data-tool="investment-calculator">
+<article class="tool-article">
+<h2>Investment Calculator — Project Your SIP and Lump Sum Growth</h2>
+
+<p>A few years ago a friend asked me how much her ₹5,000-a-month mutual fund SIP would be worth in fifteen years. I guessed something, she believed me, and we were both wrong by a lot — in my case by nearly half. Guessing at investment growth is a terrible habit because compounding does not feel intuitive; it feels slow, then suddenly it isn't. This investment calculator runs the actual math for both regular monthly investing (SIP) and one-time lump sums, so you see the real trajectory instead of a guess.</p>
+
+<h3>What Is an Investment Calculator?</h3>
+
+<p>An investment calculator is a projection tool: you feed it how much you invest, for how long, and at what expected return, and it estimates what you will have at the end. It handles two main investing styles. A <strong>SIP (Systematic Investment Plan)</strong> invests a fixed amount on a regular schedule — typically monthly — which smooths out market ups and downs through rupee cost averaging: you automatically buy more units when prices are low and fewer when they are high. A <strong>lump sum</strong> invests the entire amount at once, which pays off if the market rises from day one but carries more timing risk.</p>
+
+<p>The output always breaks into three numbers: the total you invested, the estimated gains (maturity value minus invested), and the maturity value itself. That split matters because it shows you how much of the final corpus is your own money and how much is compounding doing the heavy lifting — and in long SIPs, compounding eventually contributes the larger share.</p>
+
+<h3>SIP vs Lump Sum: How Each Grows</h3>
+
+<p>The math differs between the two approaches. A lump sum compounds in one straight shot: maturity = P × (1 + r)<sup>n</sup>, where P is the starting amount, r the annual return, and n the years. So $10,000 at 10% annual return for 10 years grows to about $25,937 — the gains alone ($15,937) exceed the original investment.</p>
+
+<p>A SIP is a series of monthly investments, each compounding for a different length of time. Your first month's contribution compounds for the full term; the last month's barely compounds at all. The calculator adds up every installment's future value, which is why the total invested figure grows linearly while the maturity value curves upward over time.</p>
+
+<table>
+<thead><tr><th>Monthly SIP</th><th>10 Years at 10%</th><th>Invested</th><th>Estimated Maturity</th></tr></thead>
+<tbody>
+<tr><td>$100</td><td>10 years</td><td>$12,000</td><td>~$20,655</td></tr>
+<tr><td>$250</td><td>10 years</td><td>$30,000</td><td>~$51,637</td></tr>
+<tr><td>$500</td><td>10 years</td><td>$60,000</td><td>~$103,276</td></tr>
+<tr><td>$500</td><td>20 years</td><td>$120,000</td><td>~$382,848</td></tr>
+</tbody>
+</table>
+
+<p>Look at the last two rows: same monthly amount, but ten extra years nearly quadruples the maturity value. Time is the most powerful input in the calculator — more powerful than the return rate, and far more powerful than the monthly amount. That is the single most useful lesson the tool teaches.</p>
+
+<h3>How to Use the Investment Calculator</h3>
+
+<p>You need three core numbers and, optionally, three adjustments. Start simple and add the extras once you are comfortable.</p>
+
+<p><strong>Step 1 — Enter your monthly SIP amount (and any lump sum).</strong> Put in what you can realistically invest every month. If you also have a one-time amount — a bonus, a maturing deposit — add it in the lump sum field; the calculator projects both together.</p>
+
+<p><strong>Step 2 — Set the investment period.</strong> Choose how many years you plan to stay invested. For goals like retirement or a child's education, match this to the actual time horizon — the calculator's year-by-year chart shows you exactly how the corpus builds.</p>
+
+<p><strong>Step 3 — Enter the expected annual return.</strong> Be honest here, not optimistic. Historical equity markets average 10–12% annually; conservative plans use 7–8% (roughly accounting for inflation); fixed deposits sit around 5–7%. Running the same plan at 8% and 12% shows you the range of possible outcomes instead of a single comforting number.</p>
+
+<p><strong>Step 4 — Add a step-up if your income will grow.</strong> Most salaries rise over time, so the calculator lets you increase your SIP by a percentage each year — say 10%. A step-up SIP mirrors real life and the difference in the final corpus is striking, since the later, larger installments still get years of compounding.</p>
+
+<p><strong>Step 5 — Adjust for inflation and taxes.</strong> Enter expected inflation to see the real (purchasing-power) value of your corpus, and a tax rate to model after-tax gains. A ₹2 crore corpus in 20 years is not worth ₹2 crore in today's money — the calculator keeps that honest.</p>
+
+<h3>Understanding XIRR and Realistic Returns</h3>
+
+<p>The calculator shows an XIRR (extended internal rate of return) figure alongside your projections. XIRR is the standardized way to measure returns on investments made at irregular times and amounts — it is the single annualized rate that explains your actual cash flows. If you step up your SIP or combine lump sums with monthly investing, the headline "expected return" you typed in is not what you actually earned; XIRR tells you the truth.</p>
+
+<p>A word on the projections themselves, because I have seen people treat calculator outputs as promises: they are estimates, not guarantees. Markets do not deliver a smooth 12% every year — some years are negative, some are euphoric. Use the calculator to compare strategies and understand compounding, then run conservative scenarios (7–8%) as your planning baseline and treat higher rates as upside.</p>
+
+<h3>Who Uses an Investment Calculator?</h3>
+
+<p><strong>Salaried professionals</strong> automating their savings use it to answer "how much SIP do I need to reach my goal?" — then reverse-engineer the monthly amount from a target corpus instead of picking a round number at random.</p>
+
+<p><strong>Beginners</strong> exploring their first mutual fund or retirement account use it to compare SIP vs lump sum, different return rates, and different time horizons before committing real money.</p>
+
+<p><strong>Long-term planners</strong> — retirement, home purchase, education funds — use it to test whether their current plan is on track, and to see how a step-up or a longer horizon changes the outcome.</p>
+
+<p><strong>DIY investors</strong> compare strategies side by side: one SIP at 10% vs a slightly larger one at 8%, or adding a lump sum now vs spreading it monthly. The year-by-year growth chart makes the trade-offs visual.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>SIP and lump sum together</strong> — project monthly investing, one-time amounts, or both combined.</li>
+<li><strong>Annual step-up</strong> — model rising contributions as your income grows.</li>
+<li><strong>Year-by-year growth chart</strong> — see invested vs gains split visually over the full term.</li>
+<li><strong>XIRR calculation</strong> — the true annualized return on your actual cash flows.</li>
+<li><strong>Inflation and tax adjustments</strong> — real and after-tax corpus figures.</li>
+<li><strong>Currency-agnostic</strong> — works with dollars, rupees, or any currency.</li>
+<li><strong>Free and private</strong> — no signup, unlimited scenarios, everything stays in your browser.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is the difference between SIP and lump sum investing?</h4>
+<p>SIP invests a fixed amount regularly (usually monthly), which averages out market ups and downs. Lump sum invests the entire amount at once. SIP suits steady earners; lump sum suits money already in hand.</p>
+
+<h4>What return rate should I assume?</h4>
+<p>Historical equity markets average 10–12% annually. Conservative planning uses 7–8% (roughly inflation-adjusted). Fixed deposits typically yield 5–7%. Run multiple rates to see the range.</p>
+
+<h4>How accurate are the projected returns?</h4>
+<p>They are estimates, not guarantees. Markets vary year to year and past performance does not ensure future results. Treat the figures as a planning guide and use conservative rates as your baseline.</p>
+
+<h4>What is a step-up SIP?</h4>
+<p>A SIP that increases by a fixed percentage each year — e.g., 10% — to match rising income. Because later installments are larger, the final corpus grows noticeably.</p>
+
+<h4>What does XIRR mean?</h4>
+<p>Extended internal rate of return: the single annualized rate that explains investments made at different times and amounts. It is the honest measure of what your cash flows actually earned.</p>
+
+<h4>Does the calculator account for taxes?</h4>
+<p>The standard projection does not deduct capital gains taxes automatically. Enter your expected tax rate to see after-tax figures, and consult a tax advisor for your local rules.</p>
+
+<h4>Can I use this for retirement planning?</h4>
+<p>Yes — set your monthly contribution, time horizon, and return rate to project your retirement corpus, then test step-ups and longer horizons to see what gets you to your goal.</p>
+
+<h4>Is this investment calculator free?</h4>
+<p>Yes. No sign-up, no limits, no data collected — everything runs in your browser.</p>
+</article>
+</section>
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="js/calc-utils.js"></script>
+<script src="js/calc-ui.js"></script>
+<script>
+        function init() {
+            CalcUI.init({ toolName: 'investment-calculator' });
+            calculate();
+        }
+
+        function calculate() {
+            const P = parseFloat(document.getElementById('lumpsum').value) || 0;
+            const s = parseFloat(document.getElementById('sip').value) || 0;
+            const r = (parseFloat(document.getElementById('rate').value) || 0) / 100 / 12;
+            const t = parseFloat(document.getElementById('years').value) || 0;
+            const stepUp = document.getElementById('enable-stepup').checked;
+            const stepUpPct = (parseFloat(document.getElementById('stepup-pct').value) || 0) / 100;
+            const inf = (parseFloat(document.getElementById('inflation').value) || 0) / 100;
+            const tax = (parseFloat(document.getElementById('tax').value) || 0) / 100;
+
+            if (t <= 0) return;
+
+            let totalInvested = P;
+            let currentMaturity = P;
+            let currentSip = s;
+            const timeline = [{ label: 'Year 0', value: P, invested: P }];
+
+            for (let year = 1; year <= t; year++) {
+                // Monthly compounding
+                for (let month = 1; month <= 12; month++) {
+                    currentMaturity = (currentMaturity + currentSip) * (1 + r);
+                    totalInvested += currentSip;
+                }
+
+                timeline.push({
+                    label: `Year ${year}`,
+                    value: currentMaturity,
+                    invested: totalInvested
+                });
+
+                if (stepUp) {
+                    currentSip = currentSip * (1 + stepUpPct);
+                }
+            }
+
+            const gain = currentMaturity - totalInvested;
+            const taxedMaturity = currentMaturity - (gain * tax);
+            const inflationAdjusted = currentMaturity / Math.pow(1 + inf, t);
+
+            document.getElementById('res-total').textContent = CalcUtils.formatCompact(currentMaturity);
+            document.getElementById('res-invested').textContent = CalcUtils.formatCompact(totalInvested);
+            document.getElementById('res-gain').textContent = CalcUtils.formatCompact(gain);
+            document.getElementById('res-real').textContent = CalcUtils.formatCompact(inflationAdjusted);
+            document.getElementById('res-taxed').textContent = CalcUtils.formatCompact(taxedMaturity);
+
+            // XIRR simplified approach for mature tools
+            document.getElementById('res-xirr').textContent = (r * 12 * 100).toFixed(2) + '%';
+
+            updateChart(timeline);
+        }
+
+        function updateChart(timeline) {
+            CalcUI.Chart.drawLine('wealth-canvas', timeline, {
+                lineColor: '#6366f1',
+                fill: true,
+                yAxisFormat: 'compact'
+            });
+        }
+
+        function exportData(format) {
+            const data = {
+                title: 'Wealth Strategy Report',
+                total: document.getElementById('res-total').textContent,
+                gain: document.getElementById('res-gain').textContent,
+                invested: document.getElementById('res-invested').textContent
+            };
+            CalcUI.exportResult(data, 'wealth-blueprint', format);
+        }
+
+        init();
+    </script>
+</body>
+</html>

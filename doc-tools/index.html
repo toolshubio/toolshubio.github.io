@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Professional Document Tools - View, edit, sign, scan, compress, merge, and compare documents online. 100% free, client-side processing.">
+    <title>Document Tools - Professional PDF & Doc Processing | TOOLSHUB.COM</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+
+    <style>
+        /* Document Category Specific Overrides */
+        .hero {
+            background: linear-gradient(135deg, #004D40 0%, #00695C 100%);
+        }
+
+        .hero::before {
+            background: linear-gradient(45deg, #009688 0%, #80CBC4 100%);
+            opacity: 0.1;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #009688 0%, #00796B 100%);
+        }
+
+        .category-title {
+            background: linear-gradient(135deg, #009688 0%, #004D40 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-title {
+            color: white;
+        }
+
+        .hero-gradient-text {
+            background: linear-gradient(to right, #4DB6AC, #B2DFDB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .badge-primary {
+            background: rgba(0, 150, 136, 0.1);
+            color: #009688;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header will be injected by header.js -->
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">
+                Professional Document Tools<br>
+                <span class="hero-gradient-text">100% Free & Private</span>
+            </h1>
+            <p class="hero-description">
+                12 powerful document processing tools. View, edit, sign, and manage your files directly in your browser.
+                No uploads, no servers, complete privacy.
+            </p>
+
+            <div class="hero-features">
+                <div class="hero-feature">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" />
+                    </svg>
+                    <span>100% Client-Side Privacy</span>
+                </div>
+                <div class="hero-feature">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
+                    </svg>
+                    <span>No File Size Limits</span>
+                </div>
+                <div class="hero-feature">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+                    </svg>
+                    <span>All Formats Supported</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-box">
+                <svg class="search-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                </svg>
+                <input type="text" id="toolSearch" placeholder="Search for document tools...">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-box">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Professional Tools</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Secure & Private</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Unlimited Usage</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Sections -->
+    <main class="tools-section">
+        <div class="container">
+
+            <!-- Viewers -->
+            <section class="category-section" id="viewers">
+                <div class="category-header">
+                    <h2 class="category-title">👁️ Document Viewers</h2>
+                    <p class="category-description">
+                        Instant, high-fidelity viewers for Word, Excel, and Text files without installing any software.
+                    </p>
+                </div>
+                <div class="tools-grid">
+                    <!-- Word Viewer -->
+                    <a href="word-viewer.html" class="tool-card">
+                        <div class="tool-card-icon">📄</div>
+                        <h3 class="tool-card-title">Word Viewer</h3>
+                        <p class="tool-card-description">Open DOCX files with track changes, comments navigation</p>
+                        <div class="tool-card-features">
+                            <span class="badge badge-primary">Track Changes</span>
+                            <span class="badge badge-primary">Reading Mode</span>
+                        </div>
+                    </a>
+
+                    <!-- Excel Viewer -->
+                    <a href="excel-viewer.html" class="tool-card">
+                        <div class="tool-card-icon">📊</div>
+                        <h3 class="tool-card-title">Excel Viewer</h3>
+                        <p class="tool-card-description">View spreadsheets with charts and formula inspection</p>
+                        <div class="tool-card-features">
+                            <span class="badge badge-primary">Charts</span>
+                            <span class="badge badge-primary">Freeze Panes</span>
+                        </div>
+                    </a>
+
+                    <!-- CSV Viewer -->
+                    <a href="csv-viewer.html" class="tool-card">
+                        <div class="tool-card-icon">📜</div>
+                        <h3 class="tool-card-title">CSV Viewer</h3>
+                        <p class="tool-card-description">View CSV files with charts and data inspection</p>
+                        <div class="tool-card-features">
+                            <span class="badge badge-primary">Charts</span>
+                            <span class="badge badge-primary">Sortable</span>
+                        </div>
+                    </a>
+
+                    <!-- Text Viewer -->
+                    <a href="text-viewer.html" class="tool-card">
+                        <div class="tool-card-icon">📝</div>
+                        <h3 class="tool-card-title">Text Viewer</h3>
+                        <p class="tool-card-description">Read text files with syntax highlighting and encoding options
+                        </p>
+                        <div class="tool-card-features">
+                            <span class="badge badge-primary">Code Highlight</span>
+                            <span class="badge badge-primary">Line Numbers</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Editors -->
+            <section class="category-section" id="editors">
+                <div class="category-header">
+                    <h2 class="category-title">✏️ Editors & Creation</h2>
+                    <p class="category-description">
+                        Create, edit, and modify content with advanced client-side editors.
+                    </p>
+                </div>
+                <div class="tools-grid">
+                    <!-- Online Notepad -->
+
+
+                    <!-- Online Notepad -->
+                    <a href="online-notepad.html" class="tool-card">
+                        <div class="tool-card-icon">🗒️</div>
+                        <h3 class="tool-card-title">Online Notepad</h3>
+                        <p class="tool-card-description">Distraction-free text editor with auto-save and download</p>
+                        <div class="tool-card-features">
+                            <span class="badge badge-primary">Auto-Save</span>
+                            <span class="badge badge-primary">Rich Text</span>
+                        </div>
+                    </a>
+
+                    <!-- Excel Editor -->
+                    <a href="excel-editor.html" class="tool-card">
+                        <div class="tool-card-icon">📅</div>
+                        <h3 class="tool-card-title">Excel Editor</h3>
+                        <p class="tool-card-description">Edit spreadsheets, formulas, and cells in your browser</p>
+                        <div class="tool-card-features">
+                            <span class="badge badge-primary">Formulas</span>
+                            <span class="badge badge-primary">Data Grid</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Utilities -->
+            <section class="category-section" id="utilities">
+                <div class="category-header">
+                    <h2 class="category-title">🛠️ Utilities & Processing</h2>
+                    <p class="category-description">
+                        Essential tools to sign, scan, compress, and organize your documents.
+                    </p>
+                </div>
+                <div class="tools-grid">
+                    <!-- Document Scanner -->
+                    <a href="document-scanner.html" class="tool-card">
+                        <div class="tool-card-icon">📷</div>
+                        <h3 class="tool-card-title">Document Scanner</h3>
+                        <p class="tool-card-description">Scan docs via camera, crop, filter, and extract text (OCR)</p>
+                        <div class="tool-card-features">
+                            <span class="badge badge-primary">OCR</span>
+                            <span class="badge badge-primary">Smart Crop</span>
+                        </div>
+                    </a>
+
+                    <!-- Document Signer -->
+                    <a href="document-signer.html" class="tool-card">
+                        <div class="tool-card-icon">✍️</div>
+                        <h3 class="tool-card-title">Document Signer</h3>
+                        <p class="tool-card-description">Digitally sign documents with drawing or uploaded signatures
+                        </p>
+                        <div class="tool-card-features">
+                            <span class="badge badge-primary">E-Sign</span>
+                            <span class="badge badge-primary">Audit Trail</span>
+                        </div>
+                    </a>
+
+                    <!-- Document Compressor -->
+                    <a href="document-compressor.html" class="tool-card">
+                        <div class="tool-card-icon">🗜️</div>
+                        <h3 class="tool-card-title">Document Compressor</h3>
+                        <p class="tool-card-description">Optimize file size while maintaining quality</p>
+                        <div class="tool-card-features">
+                            <span class="badge badge-primary">Batch</span>
+                            <span class="badge badge-primary">Lossless</span>
+                        </div>
+                    </a>
+
+                    <!-- Document Merger -->
+                    <a href="document-merger.html" class="tool-card">
+                        <div class="tool-card-icon">🔗</div>
+                        <h3 class="tool-card-title">Document Merger</h3>
+                        <p class="tool-card-description">Combine multiple files into a single document</p>
+                        <div class="tool-card-features">
+                            <span class="badge badge-primary">Reorder</span>
+                            <span class="badge badge-primary">TOC Generator</span>
+                        </div>
+                    </a>
+
+                    <!-- Document Compare -->
+                    <a href="document-compare.html" class="tool-card">
+                        <div class="tool-card-icon">⚖️</div>
+                        <h3 class="tool-card-title">Document Compare</h3>
+                        <p class="tool-card-description">Compare text differences between two documents</p>
+                        <div class="tool-card-features">
+                            <span class="badge badge-primary">Diff View</span>
+                            <span class="badge badge-primary">Merge</span>
+                        </div>
+                    </a>
+
+                    <!-- Document Repair -->
+                    <a href="document-repair.html" class="tool-card">
+                        <div class="tool-card-icon">🩺</div>
+                        <h3 class="tool-card-title">Document Repair</h3>
+                        <p class="tool-card-description">Analyze and recover corrupted document files</p>
+                        <div class="tool-card-features">
+                            <span class="badge badge-primary">Recovery</span>
+                            <span class="badge badge-primary">Diagnostics</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../image-tools/js/shared/theme.js"></script>
+    <script src="../image-tools/js/shared/header.js"></script>
+    <script src="../image-tools/js/shared/footer.js"></script>
+    <script>
+        // Simple search functionality
+        document.getElementById('toolSearch').addEventListener('input', function (e) {
+            const term = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.tool-card');
+
+            cards.forEach(card => {
+                const title = card.querySelector('.tool-card-title').textContent.toLowerCase();
+                const desc = card.querySelector('.tool-card-description').textContent.toLowerCase();
+
+                if (title.includes(term) || desc.includes(term)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

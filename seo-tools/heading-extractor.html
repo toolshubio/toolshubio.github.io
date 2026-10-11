@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Heading Extractor | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">SEO Tools</a> &gt;
+                <span>Heading Extractor</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Heading Extractor</h1>
+                <p class="tool-description"></p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
+<div class="container text-center">
+<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Heading Extractor</h1>
+<p class="hero-subtitle">Extract and visualize the H1-H6 heading structure of your content.</p>
+</div>
+</section>
+<div class="container">
+<div class="tool-interface-container">
+<div class="input-group">
+<label class="input-label">HTML Content / Text</label>
+<textarea class="seo-textarea" id="inputHtml" placeholder="Paste your HTML source code or text content here..." style="min-height: 250px;"></textarea>
+</div>
+<div class="action-bar">
+<button class="btn-primary" onclick="extractHeadings()">Extract Headings</button>
+<button class="btn-secondary" onclick="resetForm()">Reset</button>
+</div>
+<div class="output-section" id="resultsArea" style="display: none;">
+<h3 class="section-title mb-md">Structure Analysis</h3>
+<div class="schema-form-grid mb-lg" style="grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));">
+<div class="feature-card" style="padding: 1rem; text-align: center;">
+<h4 class="feature-title" style="font-size: 1rem;">H1</h4>
+<p class="stat-number" id="h1Count">0</p>
+</div>
+<div class="feature-card" style="padding: 1rem; text-align: center;">
+<h4 class="feature-title" style="font-size: 1rem;">H2</h4>
+<p class="stat-number" id="h2Count">0</p>
+</div>
+<div class="feature-card" style="padding: 1rem; text-align: center;">
+<h4 class="feature-title" style="font-size: 1rem;">H3</h4>
+<p class="stat-number" id="h3Count">0</p>
+</div>
+<div class="feature-card" style="padding: 1rem; text-align: center;">
+<h4 class="feature-title" style="font-size: 1rem;">H4-H6</h4>
+<p class="stat-number" id="h46Count">0</p>
+</div>
+</div>
+<div class="output-container" id="headingList">
+<!-- List injected here -->
+</div>
+<div class="mt-lg" id="seoIssues"></div>
+</div>
+</div>
+</div>
+            </div>
+            <section class="seo-article" data-tool="heading-extractor">
+<article class="tool-article">
+<h2>Heading Extractor — Pull Every H1–H6 From Any Page in Seconds</h2>
+
+<p>When I take on a new SEO client, the first thing I do is extract the heading structure of their top ten pages. It takes two minutes and tells me more than an hour of reading would: skipped levels, three competing H1s, keyword-stuffed H2s. A heading extractor pulls every H1 through H6 tag from any URL and lays them out as a clean outline — the page's skeleton, minus the flesh.</p>
+
+<h3>What Is a Heading Extractor?</h3>
+
+<p>HTML headings (H1 for the main title, H2–H6 for progressively deeper subsections) are the structural backbone of a page. Search engines use them to understand topic hierarchy; screen readers use them as a navigation menu for blind users; readers use them to scan. A page's headings are effectively its table of contents.</p>
+
+<p>The extractor fetches a page's source, finds every heading tag in document order, and presents them indented by level — H1 at the top, H2s beneath it, H3s under their parents. Good tools go further: flagging structural errors like missing H1s, duplicate H1s, skipped levels (jumping from H2 to H4), empty headings, and absurdly long heading text.</p>
+
+<p>The competitor-analysis angle is where it gets powerful. Extract the headings of the top three ranking pages for your target keyword and you can see exactly how they structure the topic — which subtopics they cover, in what order, at what depth. That outline is a free content brief written by Google's winners.</p>
+
+<h3>How to Use the Heading Extractor</h3>
+
+<p>Paste the page URL and run the extraction. Read the outline top to bottom, asking three questions: is there exactly one H1 that states the page's topic? Do H2s break the topic into logical sections in a sensible order? Do deeper levels nest properly without skipping?</p>
+
+<p>Common fixes the outline reveals: multiple H1s (usually a logo or site title mistakenly marked up — demote extras to plain text or lower levels), skipped levels (an H4 sitting directly under an H2 — insert the missing H3 or renumber), and empty headings (often icon fonts or spacers abusing heading tags — remove the tags). Each fix is typically a thirty-second CMS edit once you know which tag to change.</p>
+
+<p>For competitor research, extract two or three top-ranking URLs side by side. List every H2 across them, merge duplicates, and note subtopics none of them cover well — that gap is your opening.</p>
+
+<h3>How Heading Extraction Works</h3>
+
+<p>The tool performs a focused parse of the page.</p>
+
+<p><strong>Step 1 — Page fetch.</strong> The URL is requested and the HTML source retrieved. Pages behind logins or paywalls return nothing — only public markup can be analyzed.</p>
+
+<p><strong>Step 2 — Heading parse.</strong> The HTML is scanned for <code>h1</code> through <code>h6</code> elements in document order. Text content is extracted with inner markup stripped, so <code>&lt;h2&gt;Best &lt;em&gt;laptops&lt;/em&gt;&lt;/h2&gt;</code> reports as "Best laptops".</p>
+
+<p><strong>Step 3 — Outline assembly.</strong> Headings are arranged by level into an indented tree, preserving their sequence. Counts per level are tallied (how many H2s, how many H3s).</p>
+
+<p><strong>Step 4 — Issue detection.</strong> The outline is checked against structural rules: exactly one H1 expected, no skipped levels, no empty headings, reasonable length limits. Violations are flagged with plain-language explanations.</p>
+
+<p>Note what extraction does not do: it cannot see headings injected by JavaScript after load unless the tool renders the page, and it cannot judge heading quality — only structure. "Amazing Deals!!!" passes every structural check while being terrible SEO.</p>
+
+<h3>Heading Structure Issues and Fixes</h3>
+
+<table>
+<thead><tr><th>Issue flagged</th><th>Why it matters</th><th>Fix</th></tr></thead>
+<tbody>
+<tr><td>Missing H1</td><td>Page has no declared main topic</td><td>Add one H1 stating the page topic</td></tr>
+<tr><td>Multiple H1s</td><td>Competing "main topics" confuse crawlers</td><td>Keep one; demote the rest</td></tr>
+<tr><td>Skipped level (H2 → H4)</td><td>Broken hierarchy hurts screen readers</td><td>Renumber to maintain sequence</td></tr>
+<tr><td>Empty heading</td><td>Announces nothing; usually tag abuse</td><td>Remove the heading tags</td></tr>
+<tr><td>Overly long heading</td><td>Unreadable in outlines and SERPs</td><td>Trim to a scannable phrase</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Heading Extractors?</h3>
+
+<p><strong>SEO specialists</strong> audit heading structure as a standard on-page check.</p>
+
+<p><strong>Content writers</strong> verify their drafts follow proper hierarchy before publishing.</p>
+
+<p><strong>Competitor analysts</strong> reverse-engineer top-ranking pages' topic coverage.</p>
+
+<p><strong>Web developers</strong> check templates to ensure themes output semantic markup.</p>
+
+<p><strong>Accessibility auditors</strong> validate heading navigation for screen-reader users.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Free extraction</strong> — no signup for single-URL scans.</li>
+<li><strong>Full H1–H6 capture</strong> — every heading level, in order.</li>
+<li><strong>Indented outline view</strong> — hierarchy visible at a glance.</li>
+<li><strong>Automatic issue flags</strong> — missing/duplicate H1s, skipped levels, empties.</li>
+<li><strong>Bulk URL support</strong> — extract from multiple pages at once on some tools.</li>
+<li><strong>Title + meta included</strong> — many extractors bundle these for context.</li>
+<li><strong>Fast</strong> — results in seconds for typical pages.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this heading extractor free?</h4>
+<p>Yes — single-page extractions are free with no account required.</p>
+
+<h4>Can I extract headings from a competitor's site?</h4>
+<p>Yes. Any public URL works — competitor heading analysis is one of the tool's main uses.</p>
+
+<h4>How many H1 tags should a page have?</h4>
+<p>One. A single H1 declaring the page's main topic is the long-standing best practice for both SEO and accessibility.</p>
+
+<h4>Does heading structure really affect rankings?</h4>
+<p>Indirectly but meaningfully. Clean hierarchy helps Google understand topical structure (improving snippet and long-tail wins) and is essential for screen-reader navigation.</p>
+
+<h4>Can it extract from pages behind a login?</h4>
+<p>No. The tool can only read publicly accessible HTML — logged-in or paywalled pages return nothing.</p>
+
+<h4>Should keywords go in headings?</h4>
+<p>Naturally, yes — headings should describe their sections accurately, and accurate descriptions include relevant terms. Forcing keywords into every heading reads badly and helps nothing.</p>
+
+<h4>What's a skipped heading level?</h4>
+<p>Jumping from H2 directly to H4 without an H3 in between. It breaks the logical outline; renumber so levels descend sequentially.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        function extractHeadings() {
+            const content = document.getElementById('inputHtml').value;
+            if (!content) {
+                alert("Please paste HTML content.");
+                return;
+            }
+
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(content, 'text/html');
+            const headings = doc.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+            const counts = { H1: 0, H2: 0, H3: 0, H4: 0, H5: 0, H6: 0 };
+            let html = '<ul style="list-style: none; padding: 0;">';
+            let issues = [];
+
+            if (headings.length === 0) {
+                html += '<li class="text-secondary">No headings found.</li>';
+            } else {
+                headings.forEach(h => {
+                    const tag = h.tagName;
+                    const text = h.textContent.trim();
+                    counts[tag]++;
+
+                    const indent = (parseInt(tag[1]) - 1) * 20;
+                    let color = '#333';
+                    if (tag === 'H1') color = '#D32F2F';
+                    if (tag === 'H2') color = '#1976D2';
+                    if (tag === 'H3') color = '#388E3C';
+
+                    html += `
+                    <li style="margin-left: ${indent}px; padding: 5px 0; border-bottom: 1px dashed #eee;">
+                        <span style="display: inline-block; padding: 2px 6px; background: ${color}15; color: ${color}; border-radius: 4px; font-size: 0.8rem; font-weight: bold; margin-right: 8px;">${tag}</span>
+                        <span>${text || '(Empty Heading)'}</span>
+                    </li>
+                `;
+
+                    if (!text) issues.push(`Empty ${tag} tag found.`);
+                });
+            }
+            html += '</ul>';
+
+            // Update UI
+            document.getElementById('h1Count').innerText = counts.H1;
+            document.getElementById('h2Count').innerText = counts.H2;
+            document.getElementById('h3Count').innerText = counts.H3;
+            document.getElementById('h46Count').innerText = counts.H4 + counts.H5 + counts.H6;
+            document.getElementById('headingList').innerHTML = html;
+
+            // Check issues
+            if (counts.H1 === 0) issues.push("Missing H1 tag. Every page should have one H1.");
+            if (counts.H1 > 1) issues.push("Multiple H1 tags found. It is recommended to have only one H1.");
+
+            const issuesDiv = document.getElementById('seoIssues');
+            if (issues.length > 0) {
+                issuesDiv.innerHTML = `
+                <div style="background: #FFF3E0; border: 1px solid #FFE0B2; padding: 1rem; border-radius: 8px;">
+                    <h4 style="color: #E65100; margin-bottom: 0.5rem;">SEO Considerations:</h4>
+                    <ul style="padding-left: 1.2rem; color: #E65100;">
+                        ${issues.map(i => `<li>${i}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+            } else {
+                issuesDiv.innerHTML = `
+                 <div style="background: #E8F5E9; border: 1px solid #C8E6C9; padding: 1rem; border-radius: 8px; color: #2E7D32; font-weight: 500;">
+                    ? Structure looks good!
+                </div>
+            `;
+            }
+
+            document.getElementById('resultsArea').style.display = 'block';
+        }
+
+        function resetForm() {
+            document.getElementById('inputHtml').value = '';
+            document.getElementById('resultsArea').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

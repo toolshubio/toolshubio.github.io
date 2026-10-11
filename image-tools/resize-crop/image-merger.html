@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Image Merger. Combine multiple images into a grid, strip, or collage with custom spacing and borders.">
+    <title>Image Merger - Grid & Strip Combiner | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../../image-tools/css/global.css">
+    <link rel="stylesheet" href="../../image-tools/css/components.css">
+    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../../about-us.html">About</a>
+                <a class="nav-link" href="../../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> &gt;
+                <a href="../index.html">Image Tools</a> &gt;
+                <span>🖼️ Pro Image Merger</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">🖼️ Pro Image Merger</h1>
+                <p class="tool-description">Seamlessly combine multiple images into a single professional layout. Custom
+                    grids, strips, and spacing.</p>
+                <div class="tool-badges"><span class="badge badge-primary">Dynamic Grid</span><span class="badge badge-primary">Custom Spacing</span><span class="badge badge-secondary">Auto-Align</span></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+
+<div class="merger-workspace">
+<section class="preview-pane" id="upload-zone">
+<div class="merge-canvas-wrapper" id="canvas-wrapper" style="display: none;">
+<canvas id="merge-canvas"></canvas>
+</div>
+</section>
+<aside class="control-panel">
+<div class="control-section">
+<h3 class="control-section-title">📐 Layout</h3>
+<div class="layout-grid">
+<button class="layout-btn active" data-layout="grid">
+<span class="layout-icon">⊞</span> Grid
+                            </button>
+<button class="layout-btn" data-layout="h-strip">
+<span class="layout-icon">▬</span> H-Strip
+                            </button>
+<button class="layout-btn" data-layout="v-strip">
+<span class="layout-icon">▮</span> V-Strip
+                            </button>
+</div>
+<div id="grid-only-controls">
+<div class="control-group">
+<label class="control-label">Columns</label>
+<input class="form-input" id="merge-cols" max="10" min="1" type="number" value="2"/>
+</div>
+</div>
+<div class="control-group">
+<label class="control-label">Spacing (px)</label>
+<input class="slider-input" id="merge-spacing" max="100" min="0" type="range" value="10"/>
+</div>
+<div class="control-group">
+<label class="control-label">Background Color</label>
+<input class="form-input" id="merge-bg" style="height: 40px; padding: 2px;" type="color" value="#ffffff"/>
+</div>
+</div>
+<div class="control-section">
+<h3 class="control-section-title">📚 Images (<span id="queue-count">0</span>)</h3>
+<div class="image-queue" id="image-queue"></div>
+<button class="btn btn-secondary w-full mt-3 btn-sm" onclick="document.getElementById('file-input').click()">+ Add More</button>
+</div>
+<div class="control-section">
+<button class="btn btn-primary w-full" disabled="" id="merge-btn"><span>🖼️</span> Download Merged
+                            Image</button>
+<button class="btn btn-secondary w-full mt-2" onclick="location.reload()"><span>🔄</span>
+                            Reset</button>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<input accept="image/*" id="file-input" multiple="" style="display: none;" type="file"/>
+            </div>
+            <section class="seo-article" data-tool="image-merger">
+<article class="tool-article">
+<h2>Image Merger — Combine Multiple Photos Into One, Free</h2>
+
+<p>Before-and-after photos, side-by-side product comparisons, a strip of screenshots for a tutorial — some images only make sense together. I used to arrange them in a slide deck or a photo editor and export, which took longer than the actual writing. An image merger does it in seconds: upload two or more pictures, pick a layout, set the spacing and background, and download one combined file. No design software, no account, everything processed in your browser.</p>
+
+<h3>What Is an Image Merger?</h3>
+
+<p>An image merger (also called an image combiner) joins multiple pictures into a single image file. You choose how they sit together — side by side, stacked vertically, or in a grid — and the tool handles alignment, spacing, and the background between them.</p>
+
+<p>The scenarios are everywhere once you start noticing them. A realtor posts a before/after renovation pair as one image. A support agent stacks three screenshots into a single tutorial visual instead of attaching five files. A seller shows four product angles in one listing photo. A platform that accepts only one image per post (LinkedIn cards, some CMS editors, Twitter cards) practically demands this tool.</p>
+
+<p>What I appreciate about the browser-based mergers: nothing uploads. The combination runs on the Canvas API in your own browser, so private photos — client work, documents, family — never touch a server. The result downloads as a clean PNG or JPG with no tool watermark on it.</p>
+
+<h3>How to Merge Images Online</h3>
+
+<p><strong>Step 1 — Upload your images.</strong> Add at least two pictures to the upload area. JPG, PNG, GIF, and WebP all work in the same merge, and there is no practical cap on how many you can add.</p>
+
+<p><strong>Step 2 — Pick a layout.</strong> Horizontal places images left to right (wide result); vertical stacks them top to bottom (tall result); grid arranges them in rows and columns. Drag thumbnails to reorder — for a before/after, "before" goes left or on top, always.</p>
+
+<p><strong>Step 3 — Tune spacing and background.</strong> Set a gap between images (20–40 px is the clean default; 0–100 px is typical range), pick a background color, and optionally add borders or rounded corners. White is cleanest for comparisons; brand colors work for marketing; transparent keeps a PNG flexible.</p>
+
+<p><strong>Step 4 — Merge and download.</strong> Export as PNG (lossless, keeps transparency), JPEG (smaller files, quality slider 60–100%), or WebP (best of both for web use).</p>
+
+<p>Habit worth building: merge at the resolution you need <em>before</em> combining. Upscaling tiny originals into a big merge just makes the softness bigger — <strong>resize</strong> thoughtfully first.</p>
+
+<h3>Layout Options and When to Use Them</h3>
+
+<table>
+<thead><tr><th>Layout</th><th>Best for</th><th>Result shape</th></tr></thead>
+<tbody>
+<tr><td>Horizontal (side by side)</td><td>Before/after pairs, product comparisons</td><td>Wide</td></tr>
+<tr><td>Vertical (stacked)</td><td>Tutorial screenshots, story sequences, lists</td><td>Tall</td></tr>
+<tr><td>Grid (2×2, 3×3…)</td><td>Product angles, photo collections, mood boards</td><td>Balanced</td></tr>
+</table>
+
+<p>Mixed sizes are handled gracefully: in horizontal mode images scale proportionally to a matching height; in vertical mode to a matching width; grid cells fit each image uniformly. Nothing gets cropped unless you explicitly choose the crop-to-match sizing option. The match-sizes control typically offers keep-original, match-largest, match-smallest, or crop-to-match — pick match-largest when you want the biggest possible shared frame.</p>
+
+<h3>Who Merges Images?</h3>
+
+<p><strong>Realtors, designers, and contractors</strong> live on before/after pairs — renovations, redesigns, and results that need to be seen side by side to land their impact.</p>
+
+<p><strong>E-commerce and marketing teams</strong> combine product variations — colors, styles, features, angles — into single comparison images for listings and ads.</p>
+
+<p><strong>Support teams and educators</strong> stack screenshots into one visual for tutorials, bug reports, and walkthroughs. One attachment beats five, every time.</p>
+
+<p><strong>Social media managers</strong> merge highlights, perspectives, and moments into shareable single files for platforms that prefer one image per post.</p>
+
+<h3>Practical Tips for Clean Merges</h3>
+
+<ul>
+<li><strong>Match orientations deliberately.</strong> Two portraits side by side work; a portrait and a landscape in one row create awkward dead space — consider a grid instead.</li>
+<li><strong>Use a real gap.</strong> 20–40 px of background between images reads as intentional; 0 px looks like a glitch, 100 px looks disconnected.</li>
+<li><strong>Keep backgrounds consistent.</strong> One shared background color unifies the merge; mismatched photo edges make it look assembled.</li>
+<li><strong>Order matters.</strong> Drag to sequence: before→after, step 1→step 2, problem→solution. The eye reads left-to-right, top-to-bottom.</li>
+<li><strong>Export PNG for graphics.</strong> Screenshots and text-heavy merges stay crisp as PNG; photos are fine as high-quality JPEG.</li>
+<li><strong>Watch the total size.</strong> Four 4000px photos merged make a giant file — <strong>resize</strong> or <strong>compress</strong> originals first if the merge is for the web.</li>
+<li><strong>Add text after merging.</strong> Labels like "Before"/"After" belong on the final combined image, positioned once rather than per photo.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this image merger free?</h4>
+<p>Yes — free, no account needed, and it does not stamp any watermark on your exported image.</p>
+
+<h4>How many images can I merge at once?</h4>
+<p>There is no small cap. The practical limit is your browser's ability to draw the combined result — extremely large merges may be scaled down, and the tool shows the final size.</p>
+
+<h4>Can I merge images of different sizes?</h4>
+<p>Yes. JPG, PNG, GIF, and WebP mix freely. Images scale proportionally to match (height for horizontal, width for vertical) or you can use the match-sizes control to keep, match, or crop to uniform sizes.</p>
+
+<h4>What is the difference between horizontal and vertical merging?</h4>
+<p>Horizontal places images left to right for a wide result (ideal for comparisons); vertical stacks them top to bottom for a tall result (ideal for sequences and tutorials).</p>
+
+<h4>Can I add spacing and a background color?</h4>
+<p>Yes. Spacing typically runs 0–100 px, with optional border width, rounded corners, and any background color — or transparent for PNG output.</p>
+
+<h4>Which format should I download?</h4>
+<p>PNG for lossless quality and transparency, JPEG with 80–100% quality for small photo files, WebP for web use with the best size-to-quality balance.</p>
+
+<h4>Are my images uploaded to a server?</h4>
+<p>No. The merge runs entirely in your browser via the Canvas API; your files are never uploaded.</p>
+
+<h4>Can I merge screenshots for a tutorial?</h4>
+<p>That is one of the best uses. Stack screenshots vertically, add a small gap, export as PNG for crisp text, and you have a single tutorial visual instead of scattered attachments.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../../about-us.html">About Us</a>
+                    <a class="footer-link" href="../../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../js/shared/unified-input.js"></script>
+<script src="../js/utils/image-loader.js"></script>
+<script>
+        class ImageMerger {
+            constructor() {
+                this.images = [];
+                this.canvas = document.getElementById('merge-canvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.settings = {
+                    layout: 'grid',
+                    cols: 2,
+                    spacing: 10,
+                    bg: '#ffffff'
+                };
+
+                this.init();
+            }
+
+            init() {
+                this.setupUnifiedInput();
+                this.setupControls();
+                document.getElementById('merge-btn').onclick = () => this.download();
+            }
+
+            setupUnifiedInput() {
+                this.unifiedInput = new UnifiedInput({
+                    containerId: 'upload-zone',
+                    toolIcon: '🖼️',
+                    toolName: 'Image Merger',
+                    acceptTypes: 'image/*',
+                    showList: false, // Custom Queue used
+                    onFilesLoaded: (files, newFiles) => this.handleFiles(files, newFiles)
+                });
+            }
+
+            setupControls() {
+                document.querySelectorAll('.layout-btn').forEach(btn => {
+                    btn.onclick = () => {
+                        document.querySelectorAll('.layout-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        this.settings.layout = btn.dataset.layout;
+                        document.getElementById('grid-only-controls').style.display = this.settings.layout === 'grid' ? 'block' : 'none';
+                        this.render();
+                    };
+                });
+
+                document.getElementById('merge-cols').oninput = (e) => {
+                    this.settings.cols = parseInt(e.target.value) || 1;
+                    this.render();
+                };
+
+                document.getElementById('merge-spacing').oninput = (e) => {
+                    this.settings.spacing = parseInt(e.target.value);
+                    this.render();
+                };
+
+                document.getElementById('merge-bg').oninput = (e) => {
+                    this.settings.bg = e.target.value;
+                    this.render();
+                };
+            }
+
+            async handleFiles(allFiles, newFiles) {
+                // Only process new files
+                for (const file of newFiles) {
+                    const imgData = await window.ImageLoader.loadSingleImage(file);
+                    this.images.push(imgData);
+                }
+
+                document.getElementById('canvas-wrapper').style.display = 'block';
+                document.getElementById('merge-btn').disabled = false;
+
+                this.updateQueue();
+                this.render();
+            }
+
+            updateQueue() {
+                const queue = document.getElementById('image-queue');
+                queue.innerHTML = '';
+                document.getElementById('queue-count').textContent = this.images.length;
+
+                this.images.forEach((img, idx) => {
+                    const item = document.createElement('div');
+                    item.className = 'queue-item';
+                    const sImg = document.createElement('img');
+                    sImg.src = img.canvas.toDataURL();
+                    item.appendChild(sImg);
+
+                    const remove = document.createElement('button');
+                    remove.className = 'remove-btn';
+                    remove.textContent = '×';
+                    remove.onclick = () => {
+                        this.images.splice(idx, 1);
+                        this.updateQueue();
+                        this.render();
+                    };
+                    item.appendChild(remove);
+                    queue.appendChild(item);
+                });
+            }
+
+            render() {
+                if (this.images.length === 0) return;
+
+                const { spacing, layout, cols, bg } = this.settings;
+
+                // Calculate max dimensions to normalize scaling
+                const maxWidth = Math.max(...this.images.map(img => img.width));
+                const maxHeight = Math.max(...this.images.map(img => img.height));
+
+                let totalW = 0, totalH = 0;
+
+                if (layout === 'h-strip') {
+                    totalW = this.images.length * maxWidth + (this.images.length + 1) * spacing;
+                    totalH = maxHeight + 2 * spacing;
+                } else if (layout === 'v-strip') {
+                    totalW = maxWidth + 2 * spacing;
+                    totalH = this.images.length * maxHeight + (this.images.length + 1) * spacing;
+                } else {
+                    const numCols = Math.min(this.images.length, cols);
+                    const numRows = Math.ceil(this.images.length / numCols);
+                    totalW = numCols * maxWidth + (numCols + 1) * spacing;
+                    totalH = numRows * maxHeight + (numRows + 1) * spacing;
+                }
+
+                this.canvas.width = totalW;
+                this.canvas.height = totalH;
+                this.ctx.fillStyle = bg;
+                this.ctx.fillRect(0, 0, totalW, totalH);
+
+                this.images.forEach((img, idx) => {
+                    let x, y;
+                    if (layout === 'h-strip') {
+                        x = spacing + idx * (maxWidth + spacing);
+                        y = spacing;
+                    } else if (layout === 'v-strip') {
+                        x = spacing;
+                        y = spacing + idx * (maxHeight + spacing);
+                    } else {
+                        const numCols = Math.min(this.images.length, cols);
+                        const r = Math.floor(idx / numCols);
+                        const c = idx % numCols;
+                        x = spacing + c * (maxWidth + spacing);
+                        y = spacing + r * (maxHeight + spacing);
+                    }
+
+                    // Center image in the target box
+                    const targetX = x + (maxWidth - img.width) / 2;
+                    const targetY = y + (maxHeight - img.height) / 2;
+                    this.ctx.drawImage(img.canvas, targetX, targetY);
+                });
+            }
+
+            download() {
+                const link = document.createElement('a');
+                link.download = `merged_image.png`;
+                link.href = this.canvas.toDataURL('image/png');
+                link.click();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => new ImageMerger());
+    </script>
+</body>
+</html>

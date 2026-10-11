@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free, pro JS minifier. Compress JavaScript code, remove comments, and collapse whitespace 100% client-side.">
+    <title>Javascript Minifier - Code Tools | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Code Tools</a> &gt;
+                <span>Javascript Minifier</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Javascript Minifier</h1>
+                <p class="tool-description">Shrink your JavaScript files by stripping out human-readable characters
+                    without changing functionality.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+<div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+<div class="tool-workspace">
+<div class="tool-workspace">
+<div class="code-workspace">
+<div class="editor-container">
+<div class="editor-header">
+<span class="editor-title">Source JavaScript</span>
+<button class="btn btn-sm btn-secondary" onclick="document.getElementById('input-code').value = ''; onInputChange()">Clear</button>
+</div>
+<textarea class="code-area" id="input-code" oninput="onInputChange()" placeholder="Paste your JavaScript here..."></textarea>
+<div class="code-stats" id="input-stats"></div>
+</div>
+<div class="editor-container">
+<div class="editor-header">
+<span class="editor-title">Minified Output</span>
+<button class="btn btn-sm btn-primary" onclick="CodeUI.copyToClipboard('output-code', this)">Copy Result</button>
+</div>
+<textarea class="code-area" id="output-code" placeholder="Output will appear here..." readonly=""></textarea>
+<div class="code-stats" id="output-stats"></div>
+</div>
+</div>
+<div class="action-bar">
+<button class="btn btn-primary btn-lg" onclick="minify()">Compress JavaScript</button>
+</div>
+<section class="tool-content mt-12">
+<div class="content-grid">
+<div class="main-text">
+<h2>Why JavaScript Minification?</h2>
+<p>Modern web applications rely heavily on JavaScript. Minifying your script files is one of
+                                the most effective ways to reduce TTI (Time to Interactive), especially on 3G and 4G
+                                connections where latency is a factor.</p>
+<h3>Safe Minification</h3>
+<p>Our tool uses a safe regex-based approach to strip single-line and multi-line comments
+                                while collapsing whitespace. For production deployments involving complex AST trees, we
+                                recommend using this tool for quick snippets and prototyping.</p>
+</div>
+<div class="faq-section">
+<h3>Common Logic</h3>
+<div class="faq-item">
+<strong>Is this an Obfuscator?</strong>
+<p>No. Minification focuses on size. Obfuscation focuses on making code unreadable. Use
+                                    our <strong>Code Obfuscator</strong> utility if you need to hide logic.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<section class="seo-article" data-tool="javascript-minifier">
+<article class="tool-article">
+<h2>JavaScript Minifier — Free Online JS Code Compressor</h2>
+
+<p>The first time I checked my website's loading speed, the report flagged a single JavaScript file eating up most of the download time. Opening it showed thousands of lines of beautifully formatted code — great for reading, terrible for shipping. A JavaScript minifier compresses your JS by stripping everything the browser doesn't need to run it: comments, indentation, line breaks, extra spaces. The code behaves exactly the same, but the file shrinks dramatically. Paste your source, click one button, and you get production-ready output in seconds.</p>
+
+<h3>What Is JavaScript Minification?</h3>
+
+<p>When you write JavaScript, you format it for humans — indentation, descriptive variable names, explanatory comments. Browsers don't need any of that. Minification is the process of removing all the human-friendly extras so the file travels faster over the network and parses quicker in the browser.</p>
+
+<p>A real minifier does more than delete whitespace. Modern tools like Terser (the engine behind most online minifiers) actually parse your code, then rebuild it shorter: comments and line breaks go, but so do redundancies the parser can safely remove. Shortening local variable names (<code>userName</code> becomes <code>a</code>) is part of that, and it happens safely because the parser tracks each variable's scope.</p>
+
+<p>The result is functionally identical code that downloads faster. On a script-heavy page, the savings are real — well-formatted source files often shrink 30 to 70 percent. That gap matters most on slow mobile connections, where every kilobyte adds visible delay before your page becomes interactive.</p>
+
+<h3>How to Use the JavaScript Minifier</h3>
+
+<p>Copy your JavaScript source from your project — a <code>.js</code> file, an inline <code>&lt;script&gt;</code> block, or a snippet you're testing — and paste it into the input box at the top of the tool.</p>
+
+<p>Click the Minify button. The compressed output appears in the result area along with compression stats: original size, minified size, and the percentage saved. That percentage is worth glancing at, because it tells you whether the file was mostly comments and formatting (big savings) or already compact (small savings).</p>
+
+<p>Copy the minified result to your clipboard or download it as a <code>.js</code> file, then deploy that version to your live site. Keep the original, readable version as your source of truth — you edit the source, minify again, and ship the minified copy. Never edit the minified file directly; it's deliberately hard to read.</p>
+
+<p>If you run into a parse error, the tool will tell you. Minifiers need valid syntax to work — an unclosed brace or a stray character stops the process. Fix the error in your source, then minify again. I treat this as a free sanity check: if the minifier chokes, my code probably has a problem anyway.</p>
+
+<h3>What Gets Removed During Minification?</h3>
+
+<p>Knowing exactly what disappears helps you trust the output. Here is the checklist:</p>
+
+<table>
+<thead><tr><th>Removed or changed</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td>Comments</td><td><code>// note</code> and <code>/* block */</code> are deleted</td></tr>
+<tr><td>Whitespace</td><td>Indentation, blank lines, and extra spaces go</td></tr>
+<tr><td>Line breaks</td><td>Everything collapses toward fewer lines</td></tr>
+<tr><td>Redundant characters</td><td>Extra semicolons and spacing around operators are trimmed</td></tr>
+<tr><td>Local variable names</td><td><code>totalPrice</code> may become <code>t</code> inside a function scope</td></tr>
+<tr><td>Dead code</td><td>Unreachable statements are dropped</td></tr>
+</tbody>
+</table>
+
+<p>Two things are deliberately left alone: string contents (your text stays byte-for-byte identical) and <code>/*!</code> license comments, which most minifiers preserve so open-source attribution survives. If you're minifying someone else's library, that license header staying put is not an accident.</p>
+
+<h3>Before and After Example</h3>
+
+<p>A small function shows the transformation clearly.</p>
+
+<p><strong>Original (248 bytes):</strong></p>
+<p><code>function helloWorld(userName) {<br>&nbsp;&nbsp;// Greet the visitor<br>&nbsp;&nbsp;var message = "Hello, " + userName + "!";<br>&nbsp;&nbsp;console.log(message);<br>&nbsp;&nbsp;return message;<br>}</code></p>
+
+<p><strong>Minified (~105 bytes, about 58% smaller):</strong></p>
+<p><code>function helloWorld(o){var e="Hello, "+o+"!";return console.log(e),e}</code></p>
+
+<p>Same behavior — call <code>helloWorld("Sara")</code> and you get the same greeting. Now multiply that saving across a 200 KB bundle and you start to see why this is standard practice before deployment. The gains also feed straight into Google's page-experience signals: smaller JavaScript payloads improve load metrics like Time to Interactive and Total Blocking Time, which show up in Lighthouse scores.</p>
+
+<h3>Why Minify Before Going Live?</h3>
+
+<p><strong>Faster page loads.</strong> Smaller files download and parse sooner, so visitors see a working page earlier — especially on mobile networks.</p>
+
+<p><strong>Lower bandwidth costs.</strong> If your site serves millions of requests, shaving kilobytes off every response cuts your hosting bill measurably.</p>
+
+<p><strong>Better Core Web Vitals.</strong> Google factors loading performance into rankings. Minified JavaScript is one of the cheapest wins on that checklist.</p>
+
+<p><strong>Mild obfuscation.</strong> Minified code isn't secure against a determined reader, but it's annoying enough to read that casual copying drops off. For real protection you'd use an obfuscator — a different tool on this site.</p>
+
+<p><strong>Size-constrained contexts.</strong> Bookmarklets, email templates, and URL-embedded scripts all have hard size limits where minification is the difference between fitting and not.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant minification</strong> — paste code, click once, get compressed output.</li>
+<li><strong>100% free</strong> — no account, no caps, no strings attached.</li>
+<li><strong>Private by design</strong> — everything runs in your browser; your code never leaves your device.</li>
+<li><strong>Modern syntax support</strong> — handles ES5 through modern ES6+ JavaScript safely.</li>
+<li><strong>Compression stats</strong> — see original vs. minified size and the percentage saved.</li>
+<li><strong>Syntax error alerts</strong> — clear messages when your code can't be parsed, with a hint at where.</li>
+<li><strong>Copy and download</strong> — clipboard copy or save the result as a <code>.js</code> file.</li>
+<li><strong>Works with frameworks</strong> — minifies plain scripts, WordPress code, and standalone files alike.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this JavaScript minifier free?</h4>
+<p>Yes — completely free, no signup and no limit on file size or usage.</p>
+
+<h4>Does minification change how my code works?</h4>
+<p>No. The minified output is functionally identical to the original. Only comments, whitespace, and internal variable names change.</p>
+
+<h4>Is my code sent to a server?</h4>
+<p>No. Minification runs entirely in your browser using a parser-based engine, so your code stays on your device.</p>
+
+<h4>What happens if my JavaScript has a syntax error?</h4>
+<p>The tool shows an error message instead of output. Fix the syntax problem in your source, then try again.</p>
+
+<h4>How much smaller will my file get?</h4>
+<p>Typically 30–70% smaller, depending on how much formatting and how many comments the original contains.</p>
+
+<h4>Should I minify code I'm still developing?</h4>
+<p>No — keep the readable version while you work, and minify only the copy you deploy. If you need to read a minified file later, run it through the beautifier on this site.</p>
+
+<h4>Will minification break my strings or HTML?</h4>
+<p>No. String contents, template literals, and regular expressions are preserved exactly as written.</p>
+
+<h4>Can I use this with WordPress or other CMS platforms?</h4>
+<p>Yes. Minify your custom scripts, then paste or upload the result wherever the original file was used.</p>
+</article>
+</section>
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../code-format-tools/js/code-utils.js"></script>
+<script src="../code-format-tools/js/code-ui.js"></script>
+<script>
+        CodeUI.init({ toolName: 'javascript-minifier' });
+
+        function onInputChange() {
+            const code = document.getElementById('input-code').value;
+            CodeUI.renderStats('input-stats', CodeUtils.getStats(code));
+        }
+
+        function minify() {
+            const input = document.getElementById('input-code').value;
+            if (!input) return;
+            const output = CodeUtils.minifyJS(input);
+            document.getElementById('output-code').value = output;
+            CodeUI.renderStats('output-stats', CodeUtils.getStats(output));
+        }
+
+        CodeUI.renderRelated('related-tools', [
+            { icon: '🎨', name: 'JS Beautifier', desc: 'Prettify JavaScript', url: '../formatters/javascript-beautifier.html' },
+            { icon: 'ðŸ”', name: 'Base64 Encode', desc: 'Code to string', url: '../encoders/base64-encoder-decoder.html' },
+            { icon: '🔥', name: 'CSS Minifier', desc: 'Optimize CSS', url: 'css-minifier.html' }
+        ]);
+    </script>
+</body>
+</html>

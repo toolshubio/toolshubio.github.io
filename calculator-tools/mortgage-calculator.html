@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium mortgage calculator with refinancing break-even, tax benefit estimates, and PMI modeling. Professional real estate analysis.">
+    <title>High-End Mortgage & Real Estate Intelligence | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Calculators</a> &gt;
+                <span>🏠 Mortgage Intelligence</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">🏠 Mortgage Intelligence</h1>
+                <p class="tool-description">Advanced real estate modeling, refinancing break-even, and fiscal benefit
+                    analysis.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<div class="mortgage-hero">
+<div class="glass-panel p-8">
+<h3 class="panel-title mb-6">Property &amp; Loan</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="input-group">
+<label class="input-label">Home Price</label>
+<input class="calc-input" id="price" oninput="calculate()" type="number" value="450000"/>
+</div>
+<div class="input-group">
+<label class="input-label">Down Payment (%)</label>
+<input class="calc-input" id="down" oninput="calculate()" type="number" value="20"/>
+</div>
+<div class="input-group">
+<label class="input-label">Interest Rate (%)</label>
+<input class="calc-input" id="rate" oninput="calculate()" step="0.1" type="number" value="6.5"/>
+</div>
+<div class="input-group">
+<label class="input-label">Loan Term (Years)</label>
+<select class="calc-select" id="term" onchange="calculate()">
+<option value="15">15 Years</option>
+<option selected="" value="30">30 Years</option>
+</select>
+</div>
+</div>
+</div>
+<div class="payment-dial glass-panel">
+<div class="text-secondary font-bold uppercase tracking-widest text-xs mb-2">Total Monthly PITI
+                    </div>
+<div class="payment-val" id="res-payment">$2,850</div>
+<div class="breakdown-bar" id="piti-bar">
+<!-- JS generated -->
+</div>
+<div class="grid grid-cols-2 gap-4 text-left mt-4">
+<div class="text-xs">
+<span class="text-secondary">P&amp;I:</span> <span class="font-bold" id="res-pi">$2,275</span>
+</div>
+<div class="text-xs">
+<span class="text-secondary">Tax/Ins:</span> <span class="font-bold" id="res-ti">$575</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+<!-- Refinancing & Benefits -->
+<div class="lg:col-span-2 glass-panel p-6">
+<h3 class="panel-title mb-6">Intelligence Modules</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h4 class="text-sm font-bold uppercase mb-4 text-primary">Refinancing Break-Even</h4>
+<div class="space-y-3">
+<div class="input-group">
+<label class="text-xs text-secondary">Current Monthly Payment</label>
+<input class="calc-input" id="refi-old" oninput="calculateRefi()" type="number" value="3200"/>
+</div>
+<div class="text-xs text-secondary italic" id="refi-status">Payoff in 42 months at
+                                    current rates</div>
+</div>
+</div>
+<div>
+<h4 class="text-sm font-bold uppercase mb-4 text-success">Tax Benefit Estimate</h4>
+<div class="text-2xl font-bold" id="tax-benefit">$4,200 / yr</div>
+<div class="text-xs text-secondary mt-1">Estimated federal interest deduction based on 22%
+                                bracket.</div>
+</div>
+</div>
+</div>
+<!-- PMI Impact -->
+<div class="glass-panel p-6 border-warning">
+<h3 class="panel-title mb-4 flex items-center gap-2">
+<span>🛡️</span> PMI Monitoring
+                    </h3>
+<div class="text-center py-4">
+<div class="text-3xl font-bold" id="res-pmi">$0</div>
+<div class="text-secondary text-sm mt-1">Monthly Insurance Cost</div>
+<div class="mt-4 p-3 bg-tertiary rounded-lg text-xs" id="pmi-advice">
+                            LTV is at 80.0%. No PMI required for this scenario.
+                        </div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex gap-4">
+<button class="btn btn-secondary flex-1" onclick="exportData('pdf')">Export Closing Disclosure
+                    (PDF)</button>
+<button class="btn btn-secondary flex-1" onclick="exportData('csv')">Export Schedule (CSV)</button>
+</div>
+</div>
+<section class="seo-article" data-tool="mortgage-calculator">
+<article class="tool-article">
+<h2>Mortgage Calculator — See the True Cost of Your Home Loan</h2>
+
+<p>When I was helping my brother shop for his first house, every listing site showed him the same tempting number: the principal-and-interest payment. The actual check he would write each month was nearly 40% higher. Property taxes, homeowner's insurance, and mortgage insurance do not appear in that headline figure, and neither do closing costs or the lifetime interest total. A mortgage calculator worth using shows the full picture — the real monthly payment, not just the loan part — so the biggest purchase of your life stops being a surprise.</p>
+
+<h3>What a Mortgage Payment Actually Includes</h3>
+
+<p>Your monthly mortgage payment is rarely just the loan. Lenders and buyers talk about <strong>PITI</strong>: Principal and Interest (the loan itself), property Taxes, and homeowner's Insurance. Those last two are usually collected monthly into an escrow account and paid on your behalf, which is why the number that leaves your bank account is bigger than the amortization formula's output.</p>
+
+<p>Then there is <strong>PMI</strong> — private mortgage insurance. If your down payment is less than 20% of the home price, most conventional lenders require PMI, which protects them (not you) if you default. PMI typically costs 0.3–1.5% of the loan amount per year and gets added to your monthly payment until your equity reaches 20%. A good calculator flags it automatically based on your down payment instead of letting you discover it at closing.</p>
+
+<p>Beyond the monthly number, there is <strong>cash to close</strong>: down payment plus closing costs (2–5% of the price for lender fees, title insurance, appraisals, prepaid taxes and insurance). Buyers who budget only the down payment get an unpleasant call from their lender weeks before closing. The calculator estimates this too.</p>
+
+<h3>How Mortgage Payments Are Calculated</h3>
+
+<p>The loan portion uses the standard amortization formula:</p>
+
+<p><strong>Monthly P&I = P × r × (1+r)<sup>n</sup> ÷ ((1+r)<sup>n</sup> − 1)</strong></p>
+
+<p>Where P is the loan amount (price minus down payment), r is the monthly interest rate, and n is the total number of payments. Taxes and insurance are then added on top: monthly property tax is usually estimated as (home price × annual tax rate) ÷ 12, and insurance is your quoted annual premium ÷ 12.</p>
+
+<p>A worked example: a $400,000 home with 10% down ($40,000) leaves a $360,000 loan. At 6.5% for 30 years, the P&I payment is about $2,275. Add property taxes of $4,800/year ($400/month), insurance of $1,800/year ($150/month), and PMI of roughly 0.6%/year ($180/month, since the down payment is under 20%). The real monthly payment: about $3,005 — a third higher than the $2,275 headline. The total interest over 30 years exceeds $458,000, which is why the lifetime-cost column matters as much as the monthly one.</p>
+
+<table>
+<thead><tr><th>Component</th><th>Monthly</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Principal &amp; Interest</td><td>$2,275</td><td>From the amortization formula</td></tr>
+<tr><td>Property Taxes</td><td>$400</td><td>Escrowed; varies by location</td></tr>
+<tr><td>Homeowner's Insurance</td><td>$150</td><td>Escrowed; shop for quotes</td></tr>
+<tr><td>PMI</td><td>$180</td><td>Required while down payment &lt; 20%</td></tr>
+<tr><td><strong>Total (PITI + PMI)</strong></td><td><strong>$3,005</strong></td><td><strong>The real monthly number</strong></td></tr>
+</tbody>
+</table>
+
+<h3>How to Use the Mortgage Calculator</h3>
+
+<p>Start with the home, not the loan — the price and down payment drive everything downstream.</p>
+
+<p><strong>Step 1 — Enter the home price and down payment.</strong> The loan amount fills in automatically. The calculator checks whether your down payment clears the 20% threshold and applies PMI if it does not.</p>
+
+<p><strong>Step 2 — Enter the interest rate and loan term.</strong> Use a quoted rate if you have one, or a market rate to compare scenarios. Common terms are 30, 20, and 15 years — run all three to see the trade-off between monthly comfort and lifetime interest.</p>
+
+<p><strong>Step 3 — Add taxes, insurance, and PMI.</strong> Enter your annual property tax estimate and insurance premium. The tool adds PMI automatically when applicable and shows the full PITI breakdown in a visual split, so you see exactly where each dollar goes.</p>
+
+<p><strong>Step 4 — Read the real payment and lifetime totals.</strong> You get the true monthly payment, total interest over the loan's life, and estimated cash needed to close. Adjust the down payment by a few percent and watch PMI fall off at 20% — a threshold worth knowing before you finalize savings.</p>
+
+<p><strong>Step 5 — Compare refinancing.</strong> Enter your current loan's rate and remaining balance in the refinance view to see whether a lower rate actually saves money after closing costs. A rate drop of even 0.5% can be worth it on a large balance; the tool shows the break-even point instead of leaving you to guess.</p>
+
+<h3>Affordability: How Much House Can You Buy?</h3>
+
+<p>The classic rule is the <strong>28/36 rule</strong>: spend no more than 28% of your gross monthly income on housing (the full PITI payment, not just P&I), and no more than 36% on all debts combined. Lenders formalize this as your debt-to-income (DTI) ratio, and it is one of the main numbers behind mortgage approval.</p>
+
+<p>Run the calculator backward: plug in candidate home prices until the total monthly payment sits under 28% of your income, with your actual taxes and insurance included. This keeps you from the common trap of qualifying for more than you can comfortably pay. Remember that taxes and insurance rise over time while the P&I portion stays fixed — buying at the very top of your budget leaves no room for those increases.</p>
+
+<h3>Who Uses a Mortgage Calculator?</h3>
+
+<p><strong>First-time homebuyers</strong> use it to find out what they can actually afford — translating a salary and savings into a realistic price range before falling in love with a listing.</p>
+
+<p><strong>Move-up buyers and refinancers</strong> compare offers and rate scenarios: 15-year vs 30-year terms, rate buy-downs, and whether refinancing beats the closing costs.</p>
+
+<p><strong>Real estate investors</strong> check whether rental income covers the full PITI payment plus a margin — a property that cash-flows on P&I alone can fail on the real number.</p>
+
+<p><strong>Financial advisors</strong> walk clients through the lifetime interest column during planning sessions, because nothing illustrates the cost of a longer term like a six-figure difference in total interest.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Full PITI breakdown</strong> — principal & interest plus taxes, insurance, and PMI in one real monthly figure.</li>
+<li><strong>Automatic PMI detection</strong> — applies and explains mortgage insurance when your down payment is under 20%.</li>
+<li><strong>Cash-to-close estimate</strong> — down payment plus closing costs, so closing day holds no surprises.</li>
+<li><strong>Lifetime interest totals</strong> — the true cost of the loan over 15, 20, or 30 years.</li>
+<li><strong>Refinance comparison</strong> — pit your current loan against a new rate with break-even math.</li>
+<li><strong>Tax benefit view</strong> — see how mortgage interest deductions affect your effective cost.</li>
+<li><strong>Free and private</strong> — no signup, nothing leaves your browser.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is included in a mortgage payment?</h4>
+<p>PITI: principal and interest on the loan, plus property taxes and homeowner's insurance (usually escrowed). Add PMI if your down payment is under 20%.</p>
+
+<h4>How is the monthly mortgage payment calculated?</h4>
+<p>The loan portion uses the amortization formula P × r × (1+r)<sup>n</sup> ÷ ((1+r)<sup>n</sup> − 1); taxes, insurance, and PMI are added monthly on top.</p>
+
+<h4>What is PMI and when do I pay it?</h4>
+<p>Private mortgage insurance protects the lender when your down payment is below 20%. It typically costs 0.3–1.5% of the loan per year until you reach 20% equity.</p>
+
+<h4>How much house can I afford?</h4>
+<p>The 28/36 rule: keep total housing costs under 28% of gross monthly income and all debts under 36%. Enter candidate prices in the calculator to test affordability with real taxes and insurance.</p>
+
+<h4>What are closing costs?</h4>
+<p>Lender fees, title insurance, appraisals, and prepaid taxes/insurance — typically 2–5% of the home price, due at closing on top of your down payment.</p>
+
+<h4>Should I refinance my mortgage?</h4>
+<p>It depends on the rate drop, your remaining balance, and closing costs. Enter your current loan in the refinance view — the calculator shows whether you save money and when you break even.</p>
+
+<h4>Is a 15-year or 30-year mortgage better?</h4>
+<p>A 15-year term has higher monthly payments but far less total interest and usually a lower rate. A 30-year term costs less monthly but much more over time. Compare both in the calculator.</p>
+
+<h4>Is this mortgage calculator free?</h4>
+<p>Yes — completely free, no account needed, and your numbers stay in your browser.</p>
+</article>
+</section>
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="js/calc-utils.js"></script>
+<script src="js/calc-ui.js"></script>
+<script>
+        function init() {
+            CalcUI.init({ toolName: 'mortgage-calculator' });
+            calculate();
+        }
+
+        function calculate() {
+            const price = parseFloat(document.getElementById('price').value) || 0;
+            const downPercent = parseFloat(document.getElementById('down').value) || 0;
+            const rate = (parseFloat(document.getElementById('rate').value) || 0) / 12 / 100;
+            const term = parseInt(document.getElementById('term').value) * 12;
+
+            if (price <= 0 || rate <= 0 || term <= 0) return;
+
+            const principal = price * (1 - downPercent / 100);
+            const pi = (principal * rate * Math.pow(1 + rate, term)) / (Math.pow(1 + rate, term) - 1);
+
+            // Estimates for taxes/ins
+            const propertyTax = (price * 0.012) / 12; // 1.2% avg
+            const homeIns = (price * 0.0035) / 12; // 0.35% avg
+
+            let pmi = 0;
+            if (downPercent < 20) {
+                pmi = (principal * 0.005) / 12; // 0.5% PMI
+            }
+
+            const total = pi + propertyTax + homeIns + pmi;
+
+            document.getElementById('res-payment').textContent = CalcUtils.formatCurrency(total, 'USD', 0);
+            document.getElementById('res-pi').textContent = CalcUtils.formatCurrency(pi, 'USD', 0);
+            document.getElementById('res-ti').textContent = CalcUtils.formatCurrency(propertyTax + homeIns, 'USD', 0);
+            document.getElementById('res-pmi').textContent = CalcUtils.formatCurrency(pmi, 'USD', 0);
+
+            // Bar
+            const bar = document.getElementById('piti-bar');
+            bar.innerHTML = `
+                <div class="breakdown-segment" style="width: ${(pi / total) * 100}%; background: var(--primary)"></div>
+                <div class="breakdown-segment" style="width: ${(propertyTax / total) * 100}%; background: #10b981"></div>
+                <div class="breakdown-segment" style="width: ${(homeIns / total) * 100}%; background: #f59e0b"></div>
+                <div class="breakdown-segment" style="width: ${(pmi / total) * 100}%; background: #ef4444"></div>
+            `;
+
+            // Advice
+            document.getElementById('pmi-advice').innerHTML = downPercent < 20
+                ? `LTV is ${(100 - downPercent).toFixed(1)}%. PMI is active. Increase down payment to 20% to save ${CalcUtils.formatCurrency(pmi)}/mo.`
+                : `LTV is ${(100 - downPercent).toFixed(1)}%. You have achieved the 20% equity threshold. No PMI required.`;
+
+            // Tax Benefit
+            const firstYearInterest = principal * rate * 12;
+            document.getElementById('tax-benefit').textContent = CalcUtils.formatCurrency(firstYearInterest * 0.22, 'USD', 0) + ' / yr';
+
+            calculateRefi();
+        }
+
+        function calculateRefi() {
+            const currentTotal = parseFloat(document.getElementById('res-payment').textContent.replace(/[^0-9.]/g, '')) || 0;
+            const oldTotal = parseFloat(document.getElementById('refi-old').value) || 0;
+
+            const diff = oldTotal - currentTotal;
+            const status = document.getElementById('refi-status');
+
+            if (diff > 0) {
+                const closingCosts = 5000;
+                const breakEven = Math.ceil(closingCosts / diff);
+                status.textContent = `Refinancing saves ${CalcUtils.formatCurrency(diff)}/mo. Break-even in ${breakEven} months.`;
+                status.className = 'text-xs text-success font-bold mt-2';
+            } else {
+                status.textContent = `Current rates would increase payments by ${CalcUtils.formatCurrency(Math.abs(diff))}/mo.`;
+                status.className = 'text-xs text-danger mt-2';
+            }
+        }
+
+        function exportData(format) {
+            const data = {
+                title: 'Mortgage Intelligence Report',
+                payment: document.getElementById('res-payment').textContent,
+                interest_deduction: document.getElementById('tax-benefit').textContent
+            };
+            CalcUI.exportResult(data, 'mortgage-report', format);
+        }
+
+        init();
+    </script>
+</body>
+</html>

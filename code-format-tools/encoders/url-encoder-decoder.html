@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free, pro URL encoder and decoder. Convert URLs to percent-encoded format and vice-versa 100% client-side.">
+    <title>URL Encoder / Decoder - Percent Encoding | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../../image-tools/css/global.css">
+    <link rel="stylesheet" href="../../image-tools/css/components.css">
+    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../../about-us.html">About</a>
+                <a class="nav-link" href="../../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> &gt;
+                <a href="../index.html">Code & Formatters</a> &gt;
+                <span>URL Encoder / Decoder</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">URL Encoder / Decoder</h1>
+                <p class="tool-description">Ensure your URLs are safe for the web by encoding special characters into
+                    percent-encoded format.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<div class="tool-workspace">
+<div class="code-workspace">
+<div class="editor-container">
+<div class="editor-header">
+<span class="editor-title">Input Text / URL</span>
+<button class="btn btn-sm btn-secondary" onclick="document.getElementById('input-area').value = ''">Clear</button>
+</div>
+<textarea class="code-area" id="input-area" placeholder="Enter URL or text here..."></textarea>
+</div>
+<div class="editor-container">
+<div class="editor-header">
+<span class="editor-title">Result Output</span>
+<button class="btn btn-sm btn-primary" onclick="CodeUI.copyToClipboard('output-area', this)">Copy Result</button>
+</div>
+<textarea class="code-area" id="output-area" placeholder="Output will appear here..." readonly=""></textarea>
+</div>
+</div>
+<div class="action-bar">
+<button class="btn btn-primary btn-lg" onclick="encode()"> Encode URL</button>
+<button class="btn btn-secondary btn-lg" onclick="decode()">Decode URL</button>
+</div>
+<section class="tool-content mt-12">
+<div class="content-grid">
+<div class="main-text">
+<h2>What is Percent Encoding?</h2>
+<p>URL encoding, also known as percent-encoding, is a mechanism for encoding information in
+                                a Uniform Resource Identifier (URI). Characters that are not allowed in a URL must be
+                                encoded so that they can be transmitted safely over the internet.</p>
+<h3>Common Encoded Characters</h3>
+<ul>
+<li><strong>Space</strong> becomes `%20` or `+`</li>
+<li><strong>&amp;</strong> becomes `%26`</li>
+<li><strong>?</strong> becomes `%3F`</li>
+<li><strong>=</strong> becomes `%3D`</li>
+</ul>
+</div>
+<div class="faq-section">
+<h3>Developer Notes</h3>
+<div class="faq-item">
+<strong>Why use this instead of the browser bar?</strong>
+<p>Browsers often auto-decode URLs in the address bar, making it hard to see the raw
+                                    encoded string for debugging API calls or redirect parameters. This tool gives you
+                                    the exact raw output.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+            </div>
+            <section class="seo-article" data-tool="url-encoder-decoder">
+<article class="tool-article">
+<h2>URL Encoder Decoder — Make Any Text Safe for Web Addresses</h2>
+
+<p>I once shared a link to a file named "Q3 report (final) & approved.pdf" and watched it break in spectacular fashion — the ampersand split the URL in two, the parentheses confused the server, and the spaces turned into a mess. The link worked for me and for nobody else. That was my introduction to percent-encoding: URLs can only safely carry a limited set of characters, and everything else — spaces, ampersands, accented letters, emoji — has to be rewritten in a form every browser and server reads the same way. This tool does that rewriting in both directions.</p>
+
+<h3>What URL Encoding Is</h3>
+
+<p>URL encoding (also called <strong>percent-encoding</strong>) replaces any character that isn't safe in a web address with a <code>%</code> sign followed by two hexadecimal digits representing the character's code. A space becomes <code>%20</code>, an ampersand becomes <code>%26</code>, a question mark becomes <code>%3F</code>. Non-ASCII characters — accented letters, Chinese, Arabic, emoji — are first converted to their UTF-8 bytes, and each byte is percent-encoded, so a single Chinese character can expand to nine encoded characters.</p>
+
+<p>Why does this matter? Because characters like <code>&</code>, <code>=</code>, <code>?</code>, and <code>#</code> have structural jobs inside a URL: <code>&</code> separates query parameters, <code>#</code> starts a fragment. If your search term contains a literal <code>&</code> ("fish & chips"), the server reads it as a parameter separator and your query breaks in half. Encoding turns the data <code>&</code> into <code>%26</code> — inert data instead of structure — and the link survives intact.</p>
+
+<h3>encodeURIComponent vs encodeURI</h3>
+
+<p>This is the distinction that causes most encoding bugs, and the tool offers both methods because they solve different problems:</p>
+
+<table>
+<thead><tr><th>Method</th><th>What It Encodes</th><th>Use It For</th></tr></thead>
+<tbody>
+<tr><td><code>encodeURIComponent</code></td><td>Everything except <code>A-Z a-z 0-9 - _ . ! ~ * ' ( )</code></td><td>A <strong>value</strong> inside a URL — query parameters, path segments, form data</td></tr>
+<tr><td><code>encodeURI</code></td><td>Only unsafe characters; preserves <code>:// / ? # &amp; =</code></td><td>A <strong>whole URL</strong> that already has structure</td></tr>
+</tbody>
+</table>
+
+<p>In practice:</p>
+
+<p><code>encodeURIComponent("hello world &amp; goodbye")</code><br>→ <code>hello%20world%20%26%20goodbye</code></p>
+
+<p><code>encodeURI("https://example.com/search?q=hello world")</code><br>→ <code>https://example.com/search?q=hello%20world</code></p>
+
+<p>Notice the difference: the component encoder escaped the <code>&</code> (it's data), while the full-URL encoder left <code>://</code>, <code>?</code> and <code>=</code> alone (they're structure). Use the wrong one and you either break the URL's structure or leave dangerous characters unescaped. When in doubt: encoding a <em>piece</em> of a URL → component; encoding a <em>complete</em> address → full URL.</p>
+
+<h3>How to Use the URL Encoder Decoder</h3>
+
+<p>Paste, pick a direction and method, copy the result. The output updates as you type.</p>
+
+<p><strong>Step 1 — Paste your text.</strong> A full URL, a query parameter value, form data, or any text with special characters.</p>
+
+<p><strong>Step 2 — Choose Encode or Decode, and the method.</strong> Encode converts text to percent-encoded form; Decode reverses <code>%XX</code> sequences back to readable characters. Pick the component method for values and the full-URL method for complete addresses.</p>
+
+<p><strong>Step 3 — Read the result.</strong> The encoded or decoded output appears instantly, with character counts showing how much the string grew — useful when you're working near URL length limits (browsers cap URLs around 2,048 characters).</p>
+
+<p><strong>Step 4 — Copy and use.</strong> One click copies the result for pasting into code, links, API calls, or redirect targets.</p>
+
+<p>A note on the plus sign: in HTML form data (<code>application/x-www-form-urlencoded</code>), spaces are traditionally written as <code>+</code> rather than <code>%20</code>. When decoding form submissions, treat <code>+</code> as a space; when encoding for general URLs, <code>%20</code> is correct. Mixing these up is a classic source of "why is there a plus in my search term" bugs.</p>
+
+<h3>Common Encoded Characters</h3>
+
+<table>
+<thead><tr><th>Character</th><th>Encoded</th><th>Why It Needs Encoding</th></tr></thead>
+<tbody>
+<tr><td>space</td><td><code>%20</code></td><td>Not allowed raw in URLs</td></tr>
+<tr><td><code>&amp;</code></td><td><code>%26</code></td><td>Separates query parameters</td></tr>
+<tr><td><code>=</code></td><td><code>%3D</code></td><td>Separates parameter names from values</td></tr>
+<tr><td><code>?</code></td><td><code>%3F</code></td><td>Starts the query string</td></tr>
+<tr><td><code>#</code></td><td><code>%23</code></td><td>Starts the fragment</td></tr>
+<tr><td><code>+</code></td><td><code>%2B</code></td><td>Means "space" in form data</td></tr>
+<tr><td><code>/</code></td><td><code>%2F</code></td><td>Separates path segments</td></tr>
+<tr><td><code>%</code></td><td><code>%25</code></td><td>The escape character itself</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses a URL Encoder Decoder?</h3>
+
+<p><strong>Web developers</strong> encode query parameters, build redirect URLs, and debug API calls — the most common daily use by far.</p>
+
+<p><strong>SEO and marketing folks</strong> fix broken tracking links and UTM parameters, where one unencoded <code>&</code> silently corrupts campaign data.</p>
+
+<p><strong>API testers</strong> decode percent-encoded URLs from logs to read the actual parameters that were passed.</p>
+
+<p><strong>Anyone sharing links</strong> with spaces, parentheses, or non-English characters encodes them so the link works for every recipient, not just the sender.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Two encoding methods</strong> — component encoding for values, full-URL encoding that preserves structure.</li>
+<li><strong>Bidirectional</strong> — encode text to percent-form and decode <code>%XX</code> sequences back.</li>
+<li><strong>Real-time conversion</strong> — output updates as you type.</li>
+<li><strong>Full UTF-8 support</strong> — Chinese, Arabic, emoji, and all Unicode handled correctly.</li>
+<li><strong>Size comparison</strong> — see original vs encoded character counts.</li>
+<li><strong>Copy and swap</strong> — one-click copy; swap input/output for quick round-trips.</li>
+<li><strong>Private and free</strong> — runs entirely in your browser; URLs and tokens never leave your device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is percent-encoding?</h4>
+<p>Writing a character as <code>%</code> plus two hexadecimal digits (e.g., space → <code>%20</code>, <code>&amp;</code> → <code>%26</code>). It lets URLs safely carry characters that would otherwise break their structure.</p>
+
+<h4>When should I use encodeURIComponent vs encodeURI?</h4>
+<p>Use <code>encodeURIComponent</code> for a <em>value</em> inside a URL (query parameters, path segments) — it encodes everything structural. Use <code>encodeURI</code> for a <em>complete</em> URL — it preserves <code>://</code>, <code>/</code>, <code>?</code>, <code>&amp;</code>, and <code>=</code>.</p>
+
+<h4>Why did my link break when it contained an &amp;?</h4>
+<p>The server read your literal <code>&amp;</code> as a query-parameter separator, splitting your value in two. Encode it as <code>%26</code> so it's treated as data.</p>
+
+<h4>What is the difference between + and %20 for spaces?</h4>
+<p>In HTML form data, <code>+</code> traditionally represents a space. In general URLs, <code>%20</code> is correct. When decoding form submissions, convert <code>+</code> back to spaces.</p>
+
+<h4>How are non-English characters encoded?</h4>
+<p>They're converted to UTF-8 bytes first, then each byte is percent-encoded. One Chinese character typically becomes nine encoded characters (e.g., <code>%E4%B8%8A</code>).</p>
+
+<h4>Can I decode a URL to read its parameters?</h4>
+<p>Yes — paste the encoded URL and decode it. Percent sequences revert to readable characters, revealing the actual query values and redirect targets.</p>
+
+<h4>Is URL encoding the same as encryption?</h4>
+<p>No. Like Base64, it's a reversible encoding with no key and no security — anyone can decode it. It exists for safe transport, not secrecy.</p>
+
+<h4>Is this URL encoder free?</h4>
+<p>Yes — free, no signup, and nothing you paste leaves your browser.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../../about-us.html">About Us</a>
+                    <a class="footer-link" href="../../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../js/code-utils.js"></script>
+<script src="../js/code-ui.js"></script>
+<script>
+        CodeUI.init({ toolName: 'url-tool' });
+
+        function encode() {
+            const input = document.getElementById('input-area').value;
+            if (!input) return;
+            document.getElementById('output-area').value = CodeUtils.urlEncode(input);
+        }
+
+        function decode() {
+            const input = document.getElementById('input-area').value;
+            if (!input) return;
+            try {
+                document.getElementById('output-area').value = CodeUtils.urlDecode(input);
+            } catch (e) {
+                alert('Decoding error: Invalid URL encoding sequence detected.');
+            }
+        }
+
+        CodeUI.renderRelated('related-tools', [
+            { icon: 'ðŸ”', name: 'Base64 Encoder', desc: 'Safe data encoding', url: 'base64-encoder-decoder.html' },
+            { icon: 'ðŸ”¥', name: 'JS Minifier', desc: 'Optimize code', url: '../minifiers/javascript-minifier.html' },
+            { icon: 'âœ…', name: 'JSON Validator', desc: 'Validate syntax', url: '../validators/json-validator.html' }
+        ]);
+    </script>
+</body>
+</html>

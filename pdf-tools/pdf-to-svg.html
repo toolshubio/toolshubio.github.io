@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert PDF pages to scalable SVG vector graphics. Batch extraction, perfect scaling, and instant conversion. 100% secure, browser-based.">
+    <title>PDF to SVG - Extract Pages as Vector Graphics Online | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">PDF Tools</a> &gt;
+                <span>PDF to SVG Advanced</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">PDF to SVG Advanced</h1>
+                <p class="tool-description">Convert your PDF pages into scalable vector graphics (SVG) for perfect clarity at any size.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<div class="pdf-tool-container">
+<!-- Main Content Area -->
+<div class="tool-main">
+<div class="pdf-upload-zone" id="drop-zone">
+<span class="pdf-upload-icon"><i class="fa-solid fa-file-arrow-up"></i></span>
+<h2>Upload PDF to Export</h2>
+<p>Select the file to extract SVG graphics from</p>
+<input accept=".pdf" id="file-input" style="display: none;" type="file"/>
+</div>
+<div class="pdf-page-grid" id="preview-grid" style="display: none; margin-top: 2rem;">
+<!-- Previews will appear here -->
+</div>
+</div>
+<!-- Sidebar Settings -->
+<aside class="pdf-settings-panel">
+<div class="setting-group">
+<label>Extraction Type</label>
+<select class="form-control" id="extract-type">
+<option value="pages">Convert Entire Pages</option>
+</select>
+</div>
+<div class="setting-group">
+<label>Scalability</label>
+<select class="form-control" id="scale-option">
+<option value="1">100% (Original Size)</option>
+<option value="1.5">150% (Large)</option>
+<option value="2">200% (Extra Large)</option>
+</select>
+</div>
+<div class="setting-group">
+<label>Vector Format</label>
+<select class="form-control" id="format">
+<option value="svg">SVG (Scalable Vector)</option>
+</select>
+</div>
+<button class="btn btn-pdf" disabled="" id="export-btn">
+<i class="fa-solid fa-wand-magic-sparkles"></i> Extract SVGs Now
+                </button>
+<a class="btn-download" href="#" id="download-btn" style="display: none;">
+<i class="fa-solid fa-download"></i> Download Graphics (ZIP)
+                </a>
+</aside>
+</div>
+ Features Info 
+<section class="tool-features-info" style="margin-top: 5rem;">
+<div class="features-grid">
+<div class="feature-card">
+<h3 class="feature-title">True Vector Scaling</h3>
+<p class="feature-desc">SVG preserves text and paths as vectors, ensuring your graphics remain sharp
+                        regardless of zoom levels or screen resolution.</p>
+</div>
+<div class="feature-card">
+<h3 class="feature-title">Edit Ready</h3>
+<p class="feature-desc">The extracted SVGs are compatible with major design tools like Adobe
+                        Illustrator, Figma, and Inkscape.</p>
+</div>
+</div>
+</section>
+
+
+ Scripts
+            </div>
+            <section class="seo-article" data-tool="pdf-to-svg">
+<article class="tool-article">
+<h2>PDF to SVG Converter — Turn PDF Pages Into Scalable Vector Graphics</h2>
+
+<p>A designer friend once sent me a logo trapped inside a PDF brand-guideline document. She needed it as an SVG for a website — infinitely scalable, tiny file size, editable in Figma. Screenshotting it would have produced a blurry raster image; converting the PDF page to SVG gave her the actual vector paths, crisp at any size. A PDF to SVG converter extracts the vector content of your pages — text, shapes, lines, curves — into SVG files that scale forever without losing sharpness.</p>
+
+<h3>What Makes SVG Different From JPG and PNG</h3>
+
+<p>JPG and PNG are raster formats: grids of pixels. Enlarge them and they blur. SVG is vector: mathematical descriptions of shapes, lines, and text. Enlarge an SVG ten times and every edge stays razor sharp, because the image is redrawn from its geometry rather than stretched. For logos, icons, diagrams, and typography, this is transformative — one file serves a favicon and a billboard.</p>
+
+<p>SVGs are also tiny for the content they suit. A logo that is 2 MB as a PNG might be 20 KB as an SVG. And they are editable: open one in Illustrator, Figma, or even a text editor, and you can recolor shapes, adjust curves, and change text. Try that with a JPG.</p>
+
+<p>The honest caveat: SVG conversion only produces true vectors from vector content. If your PDF page is a scan — a photograph of a page — there are no vectors inside to extract, and the "SVG" will just be the raster image wrapped in an SVG container. It will work, but it will not scale magically. Vector PDFs (exported from Illustrator, InDesign, CAD, or Office apps) are where this tool shines.</p>
+
+<h3>How to Use the PDF to SVG Converter</h3>
+
+<p>Drop your PDF into the tool and select the pages you want — SVG conversion is usually a page-at-a-time or selected-pages affair, since each page becomes its own SVG file. Hit Convert and download the results.</p>
+
+<p>My check: open the SVG in a browser and zoom in hard — 400%, 800%. True vector content stays perfectly sharp at any zoom; if edges blur, the source page was raster and you have an embedded image, not vectors. Also open it in a vector editor if you plan to edit: text may come through as editable text or as outlined paths depending on the tool, and knowing which saves surprises later.</p>
+
+<p>For web use, run the SVG through an optimizer afterward if file size matters — converters sometimes emit verbose SVGs, and a quick optimization pass can halve the size with no visual change.</p>
+
+<h3>Vector vs. Raster: Know Your Source</h3>
+
+<table>
+<thead><tr><th>PDF source</th><th>SVG result</th><th>Scales infinitely?</th></tr></thead>
+<tbody>
+<tr><td>Exported from Illustrator/InDesign</td><td>True vectors — paths, shapes, text</td><td>Yes</td></tr>
+<tr><td>Exported from Word/PowerPoint</td><td>Mostly vector — shapes and text</td><td>Yes</td></tr>
+<tr><td>CAD / technical drawings</td><td>True vectors — lines and curves</td><td>Yes</td></tr>
+<tr><td>Scanned document</td><td>Raster image in an SVG wrapper</td><td>No</td></tr>
+<tr><td>Phone photo of a page</td><td>Raster image in an SVG wrapper</td><td>No</td></tr>
+</tbody>
+</table>
+
+<p>The rule is simple: vectors in, vectors out. If the PDF was born digital from design software, expect excellent SVGs. If it was born from a scanner, use PNG instead.</p>
+
+<h3>Common Uses for PDF-to-SVG Conversion</h3>
+
+<p><strong>Logo extraction.</strong> Pulling logos out of brand-guideline PDFs as editable, scalable SVGs for web and print use.</p>
+
+<p><strong>Web development.</strong> Converting PDF diagrams and icons into lightweight SVGs that scale crisply on retina displays and stay tiny.</p>
+
+<p><strong>Icon sets.</strong> Extracting icon pages from PDF asset sheets into individual SVG files for design systems.</p>
+
+<p><strong>Technical drawings.</strong> CAD-exported PDFs become SVGs that engineers can view, measure, and annotate in vector tools.</p>
+
+<p><strong>Print design.</strong> Moving vector artwork from a PDF into Illustrator or Inkscape for editing and repurposing.</p>
+
+<h3>Who Converts PDFs to SVG?</h3>
+
+<p><strong>Web developers</strong> needing crisp, lightweight graphics that scale on every screen.</p>
+
+<p><strong>Designers</strong> extracting and editing vector assets trapped in PDFs.</p>
+
+<p><strong>Marketing teams</strong> pulling logos from brand documents for campaigns.</p>
+
+<p><strong>Engineers</strong> working with vector drawings that need to stay precise at any zoom.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>True vector output</strong> — paths, shapes, and text extracted as editable SVG geometry.</li>
+<li><strong>Infinite scalability</strong> — sharp at favicon size and billboard size alike.</li>
+<li><strong>Tiny file sizes</strong> — vector SVGs are a fraction of equivalent raster images.</li>
+<li><strong>Page selection</strong> — convert the pages you need, each as its own SVG.</li>
+<li><strong>Editable results</strong> — open in Figma, Illustrator, or Inkscape and modify.</li>
+<li><strong>100% client-side</strong> — your documents never leave your browser.</li>
+<li><strong>Free, unlimited, no watermark</strong> — no signup, no payment, clean output.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Will my SVG scale without losing quality?</h4>
+<p>Yes, if the PDF contained vector content — shapes and text redraw perfectly at any size. Scanned pages become embedded raster images and will not scale.</p>
+
+<h4>Can I edit the SVG afterward?</h4>
+<p>Yes. Open it in any vector editor (Figma, Illustrator, Inkscape) to recolor, reshape, and retype. Text may arrive as editable text or outlined paths.</p>
+
+<h4>Why is my SVG blurry when zoomed?</h4>
+<p>The source page was raster (a scan or photo), so the SVG just wraps that image. True vectors never blur — check your PDF's origin.</p>
+
+<h4>Is SVG good for photographs?</h4>
+<p>No. SVG excels at logos, icons, diagrams, and text. Photographs should stay JPG or PNG.</p>
+
+<h4>Can I convert only one page?</h4>
+<p>Yes — select individual pages or a range; each becomes its own SVG file.</p>
+
+<h4>Is it safe for confidential documents?</h4>
+<p>With a client-side tool, yes — the file is processed in your browser and never uploaded anywhere.</p>
+
+<h4>Is it free?</h4>
+<p>Completely free — no signup, no limits, no watermark.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="js/pdf-logic.js"></script>
+<script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropZone = document.getElementById('drop-zone');
+            const fileInput = document.getElementById('file-input');
+            const previewGrid = document.getElementById('preview-grid');
+            const exportBtn = document.getElementById('export-btn');
+            const downloadBtn = document.getElementById('download-btn');
+
+            let currentFile = null;
+            let resultBlob = null;
+
+            dropZone.addEventListener('click', () => fileInput.click());
+            fileInput.addEventListener('change', async (e) => {
+                const file = e.target.files[0];
+                if (file && file.type === 'application/pdf') {
+                    currentFile = file;
+                    dropZone.style.display = 'none';
+                    previewGrid.style.display = 'grid';
+                    exportBtn.disabled = false;
+                    await renderPreview(file);
+                }
+            });
+
+            async function renderPreview(file) {
+                previewGrid.innerHTML = '<div style="grid-column: 1/-1; text-align: center;"><i class="fa-solid fa-sync fa-spin"></i> Rendering Preview...</div>';
+                const arrayBuffer = await file.arrayBuffer();
+                const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+                const numPages = Math.min(pdf.numPages, 10);
+
+                previewGrid.innerHTML = '';
+                for (let i = 1; i <= numPages; i++) {
+                    const page = await pdf.getPage(i);
+                    const viewport = page.getViewport({ scale: 0.15 });
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+                    await page.render({ canvasContext: context, viewport: viewport }).promise;
+
+                    const item = document.createElement('div');
+                    item.className = 'pdf-page-item';
+                    item.innerHTML = `
+                        <div class="pdf-page-number">${i}</div>
+                        <img src="${canvas.toDataURL()}" style="width: 100%; border-radius: 4px;">
+                    `;
+                    previewGrid.appendChild(item);
+                }
+            }
+
+            exportBtn.addEventListener('click', async () => {
+                if (!currentFile) return;
+
+                exportBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Converting to Vector...';
+                exportBtn.disabled = true;
+
+                try {
+                    const zip = new JSZip();
+                    const arrayBuffer = await currentFile.arrayBuffer();
+                    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+
+                    for (let i = 1; i <= pdf.numPages; i++) {
+                        const page = await pdf.getPage(i);
+                        const viewport = page.getViewport({ scale: 1.0 });
+
+                        // Use PDF.js SVG Back-end
+                        const operatorList = await page.getOperatorList();
+                        const svgGfx = new pdfjsLib.SVGGraphics(page.commonObjs, page.objs);
+                        const svgElement = await svgGfx.getSVG(operatorList, viewport);
+
+                        // Serialize SVG to string
+                        const svgString = new XMLSerializer().serializeToString(svgElement);
+                        zip.file(`page_${i}.svg`, svgString);
+                    }
+
+                    resultBlob = await zip.generateAsync({ type: "blob" });
+
+                    exportBtn.innerHTML = '<i class="fa-solid fa-check"></i> Conversion Complete';
+                    downloadBtn.style.display = 'block';
+                } catch (err) {
+                    console.error(err);
+                    alert('Error during vector extraction.');
+                    exportBtn.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles"></i> Extract SVGs Now';
+                    exportBtn.disabled = false;
+                }
+            });
+
+            downloadBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (resultBlob) {
+                    PDFTools.downloadBlob(resultBlob, `extracted_svg_${Date.now()}.zip`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

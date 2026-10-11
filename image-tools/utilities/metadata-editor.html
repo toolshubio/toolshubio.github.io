@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Image Metadata Editor. Edit EXIF, IPTC, and Photographer details for JPEGs. Batch apply copyright templates and clean files for professional delivery.">
+    <title>Metadata Editor - Edit Photo EXIF & Copyright | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../../image-tools/css/global.css">
+    <link rel="stylesheet" href="../../image-tools/css/components.css">
+    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<script src="https://cdn.jsdelivr.net/npm/piexifjs"></script>
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../../about-us.html">About</a>
+                <a class="nav-link" href="../../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> &gt;
+                <a href="../index.html">Image Tools</a> &gt;
+                <span>✏️ Image Metadata Editor</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">✏️ Image Metadata Editor</h1>
+                <p class="tool-description">Professional metadata tagging for photographers. Edit Author, Copyright, and
+                    Software tags in batch. Save your details as templates for instant application.</p>
+                <div class="tool-badges"><span class="badge badge-primary">EXIF Writing</span><span class="badge badge-primary">Batch Edit</span><span class="badge badge-secondary">Pro Templates</span></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<section class="preview-area">
+<div id="upload-zone"></div>
+<div id="editor-results" style="display: none; margin-top: 20px;">
+<h3 style="font-size: 1rem; margin-bottom: 15px;">Preview Changes (First Image)</h3>
+<table class="meta-compare-table" id="compare-table">
+<thead>
+<tr>
+<th>Tag</th>
+<th>Original</th>
+<th>Modified</th>
+</tr>
+</thead>
+<tbody>
+<!-- Rows injected here -->
+</tbody>
+</table>
+<p class="status-text mt-4">Note: EXIF editing is currently optimized for JPEG format. Other
+                            formats will be preserved but tags may not apply.</p>
+</div>
+</section>
+<aside class="control-panel">
+<div class="control-section">
+<h3 class="control-section-title">📄 Author &amp; Legal</h3>
+<div class="control-group">
+<label class="control-label">Photographer / Artist</label>
+<input class="form-input" id="meta-artist" placeholder="Enter name..." type="text"/>
+</div>
+<div class="control-group">
+<label class="control-label">Copyright Notice</label>
+<input class="form-input" id="meta-copyright" placeholder="© 2025 All rights reserved" type="text"/>
+</div>
+</div>
+<div class="control-section">
+<h3 class="control-section-title">⚙️ Software &amp; Date</h3>
+<div class="control-group">
+<label class="control-label">Software Name</label>
+<input class="form-input" id="meta-software" type="text" value="TOOLSHUB Image Engine"/>
+</div>
+<div class="control-group">
+<label class="control-label">Image Description</label>
+<input class="form-input" id="meta-desc" placeholder="Brief description..." type="text"/>
+</div>
+</div>
+<div class="control-section">
+<h3 class="control-section-title">📂 Templates</h3>
+<div class="template-grid">
+<button class="template-btn" data-artist="John Doe" data-copyright="© 2025 John Doe Photography">Professional</button>
+<button class="template-btn" data-artist="Anonymous" data-copyright="Public Domain">Public
+                                Domain</button>
+<button class="template-btn" data-artist="Studio X" data-copyright="© Studio X Inc.">Commercial</button>
+<button class="template-btn" data-artist="" data-copyright="">Clear All</button>
+</div>
+</div>
+<div class="control-section">
+<button class="btn btn-primary w-full" disabled="" id="apply-btn"><span>✏️</span> Apply &amp; Process
+                            All</button>
+<button class="btn btn-premium-download w-full mt-3" id="download-all-btn" style="display: none;"><span>📥</span> Download All</button>
+<button class="btn btn-secondary w-full mt-2" id="reset-btn" style="display: none;"><span>🔄</span> Start Over</button>
+</div>
+</aside>
+</div>
+</div>
+</main>
+            </div>
+            <section class="seo-article" data-tool="metadata-editor">
+<article class="tool-article">
+<h2>Metadata Editor — Edit Photo EXIF Data Online, Free</h2>
+
+<p>Sometimes you do not want to delete your photo's metadata — you want to fix it. The camera clock was an hour off after a flight, so every timestamp in the wedding album is wrong. The GPS pinned your home address instead of the park. The copyright field is empty on a client delivery that should carry your name. A metadata editor lets you change individual EXIF fields — dates, locations, camera info, copyright — without touching a single pixel of the image. View, edit, or remove tags, then download the updated photo.</p>
+
+<h3>What Is a Photo Metadata Editor?</h3>
+
+<p>Every digital photo carries hidden EXIF data: camera make and model, exposure settings, capture date, GPS coordinates, software used. An <strong>EXIF viewer</strong> shows you these fields; a metadata editor lets you change them. Browse the tags by category — General, Camera, GPS — edit any field, and save the photo with the corrections applied. The pixels stay identical; only the metadata changes.</p>
+
+<p>The key judgment call is edit vs. strip. Edit when the file should still carry useful tags: a corrected date for a catalog, a copyright line for a client delivery, city-level GPS instead of a home address. Strip everything only when the destination — a marketplace listing, a forum post, a dating profile — should see pixels and nothing else. Stock and press workflows almost always want IPTC creator and copyright kept; privacy sharing almost always wants GPS gone. Different jobs, different tools.</p>
+
+<p>I learned this distinction the hard way: I once stripped a whole shoot "for privacy" and lost the copyright and caption data a client needed. Now I edit surgically and strip only when the destination truly warrants it.</p>
+
+<h3>How to Edit Photo Metadata Online</h3>
+
+<p><strong>Step 1 — Upload your photo.</strong> Drag a JPEG or TIFF into the editor. Browser-based tools process locally — your photo never leaves your device.</p>
+
+<p><strong>Step 2 — Browse the tags.</strong> Fields are grouped by category: camera and lens info (make, model, serial number, software), exposure settings (ISO, aperture, shutter speed, white balance), GPS location, and dates.</p>
+
+<p><strong>Step 3 — Edit the fields.</strong> Fix the timestamp, update or remove GPS coordinates, correct camera details, add your name and copyright. Existing values come pre-filled so you edit rather than retype everything.</p>
+
+<p><strong>Step 4 — Download the updated photo.</strong> The edited metadata is written back into the file; the image itself is untouched. Verify with an EXIF viewer if the fields matter.</p>
+
+<p>Habit worth building: edit from a copy when experimenting. Metadata edits are easy to redo, but a clean workflow habit saves confusion when you manage many files.</p>
+
+<h3>Common Fixes People Make</h3>
+
+<table>
+<thead><tr><th>Problem</th><th>Field to edit</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>Camera clock wrong after travel</td><td>DateTimeOriginal</td><td>Fixes every timestamp in the set at once</td></tr>
+<tr><td>GPS shows home address</td><td>GPS latitude/longitude</td><td>Replace with city-level or remove entirely</td></tr>
+<tr><td>No copyright on client files</td><td>IPTC Creator / Copyright</td><td>Protects your work in stock and press workflows</td></tr>
+<tr><td>Wrong camera listed</td><td>Make / Model</td><td>Catalog accuracy for multi-camera shoots</td></tr>
+<tr><td>Software tag leaks editor</td><td>Software</td><td>Clean the editing trail when it matters</td></tr>
+<tr><td>Batch needs uniform dates</td><td>Date fields (batch edit)</td><td>Consistent archives and timelines</td></tr>
+</tbody>
+</table>
+
+<h3>Who Edits Metadata?</h3>
+
+<p><strong>Photographers</strong> correct timestamps after timezone travel, fix camera clocks, and add copyright and caption data to client deliveries and stock submissions.</p>
+
+<p><strong>Archivists and organizers</strong> standardize dates across scanned and imported collections so timelines sort correctly — a batch date fix beats renaming a thousand files.</p>
+
+<p><strong>Privacy-conscious sharers</strong> replace precise home GPS with a city — or remove location entirely — before posting, keeping useful tags while dropping the risky ones.</p>
+
+<p><strong>Real estate and marketplace sellers</strong> clean metadata from listing photos, removing personal device info while keeping the images themselves pristine.</p>
+
+<h3>Practical Tips for Clean Metadata</h3>
+
+<ul>
+<li><strong>Edit, do not nuke, by default.</strong> Keep the tags that serve you (copyright, dates) and remove only the risky ones (precise GPS).</li>
+<li><strong>Fix the camera clock at the source.</strong> One settings change before a trip beats editing a thousand timestamps after.</li>
+<li><strong>Use city-level GPS.</strong> When location adds context but home coordinates are too precise, generalize rather than delete.</li>
+<li><strong>Add copyright before delivery.</strong> IPTC creator and copyright fields travel with the file — free attribution on every client handoff.</li>
+<li><strong>Batch when you can.</strong> A whole shoot with the same wrong timestamp is one batch fix, not five hundred individual ones.</li>
+<li><strong>Verify after editing.</strong> Re-open the file in an <strong>EXIF viewer</strong> to confirm the changes landed — thirty seconds of checking beats a wrong-date archive.</li>
+<li><strong>Keep a pre-edit copy.</strong> Original metadata is provenance; archive one untouched copy before systematic edits.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this metadata editor free?</h4>
+<p>Yes — free, no signup, no installation.</p>
+
+<h4>What EXIF data can I edit?</h4>
+<p>Camera and lens info (make, model, serial number), exposure settings (ISO, aperture, shutter speed, white balance), GPS location, capture dates, author name, copyright, and software tags.</p>
+
+<h4>Will editing metadata change my photo?</h4>
+<p>No. Only the metadata tags change — the pixel data stays exactly the same. Your image looks identical; its hidden information is corrected.</p>
+
+<h4>Can I change the GPS location in a photo?</h4>
+<p>Yes. Edit the latitude/longitude to reflect the correct place, generalize to city level, or remove GPS entirely for privacy.</p>
+
+<h4>When should I edit EXIF instead of stripping it?</h4>
+<p>Edit when the file should still carry useful tags — corrected dates for archives, copyright for client work, IPTC data for stock. Strip everything only when the destination should see pixels and nothing else.</p>
+
+<h4>Are my photos uploaded to a server?</h4>
+<p>Browser-based editors process locally — nothing leaves your device. (Some server-based tools process on their servers and delete after; check the tool you use.)</p>
+
+<h4>Can I edit metadata in batches?</h4>
+<p>Many editors support batch operations — fixing the same timestamp or removing GPS across a whole folder at once, which is the realistic way to handle a shoot.</p>
+
+<h4>How do I verify my edits worked?</h4>
+<p>Re-open the downloaded file in an EXIF viewer and check the fields you changed. If a date or GPS value matters — for archives, legal, or client work — verification is worth the thirty seconds.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../../about-us.html">About Us</a>
+                    <a class="footer-link" href="../../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../js/shared/unified-input.js"></script>
+<script src="../js/utils/image-loader.js"></script>
+<script>
+        class MetadataEditor {
+            constructor() {
+                this.files = [];
+                this.results = [];
+                this.init();
+            }
+
+            init() {
+                this.unifiedInput = new UnifiedInput({
+                    containerId: 'upload-zone',
+                    toolIcon: '✏️',
+                    toolName: 'Metadata Editor',
+                    acceptTypes: 'image/jpeg',
+                    onFilesLoaded: (files) => this.handleFilesLoaded(files)
+                });
+
+                document.querySelectorAll('.template-btn').forEach(btn => {
+                    btn.onclick = () => {
+                        document.getElementById('meta-artist').value = btn.dataset.artist;
+                        document.getElementById('meta-copyright').value = btn.dataset.copyright;
+                        this.updatePreview();
+                    };
+                });
+
+                const inputs = ['meta-artist', 'meta-copyright', 'meta-software', 'meta-desc'];
+                inputs.forEach(id => document.getElementById(id).addEventListener('input', () => this.updatePreview()));
+
+                document.getElementById('apply-btn').onclick = () => this.processAll();
+                document.getElementById('download-all-btn').onclick = () => this.downloadAll();
+                document.getElementById('reset-btn').onclick = () => location.reload();
+            }
+
+            handleFilesLoaded(files) {
+                this.files = files;
+                document.getElementById('apply-btn').disabled = files.length === 0;
+                if (files.length > 0) this.updatePreview();
+            }
+
+            async updatePreview() {
+                if (this.files.length === 0) return;
+                document.getElementById('upload-zone').style.display = 'none';
+                document.getElementById('editor-results').style.display = 'block';
+
+                const firstFile = this.files[0];
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    try {
+                        const exif = piexif.load(e.target.result);
+                        this.renderTable(exif);
+                    } catch (err) {
+                        console.error("No EXIF in preview file");
+                        this.renderTable({});
+                    }
+                };
+                reader.readAsDataURL(firstFile);
+            }
+
+            renderTable(exif) {
+                const tbody = document.querySelector('#compare-table tbody');
+                tbody.innerHTML = '';
+
+                const tags = [
+                    { label: 'Artist', ifd: '0th', tag: piexif.ImageIFD.Artist, val: document.getElementById('meta-artist').value },
+                    { label: 'Copyright', ifd: '0th', tag: piexif.ImageIFD.Copyright, val: document.getElementById('meta-copyright').value },
+                    { label: 'Software', ifd: '0th', tag: piexif.ImageIFD.Software, val: document.getElementById('meta-software').value },
+                    { label: 'Image Description', ifd: '0th', tag: piexif.ImageIFD.ImageDescription, val: document.getElementById('meta-desc').value }
+                ];
+
+                tags.forEach(t => {
+                    const original = exif[t.ifd] && exif[t.ifd][t.tag] ? exif[t.ifd][t.tag] : '-';
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${t.label}</td>
+                        <td class="val-before">${original}</td>
+                        <td class="val-after">${t.val || '-'}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            }
+
+            async processAll() {
+                const btn = document.getElementById('apply-btn');
+                btn.disabled = true;
+                btn.textContent = 'Processing...';
+
+                this.results = [];
+
+                for (let i = 0; i < this.files.length; i++) {
+                    const file = this.files[i];
+                    try {
+                        const blob = await this.modifyExif(file);
+                        this.results.push({ blob, name: "tagged_" + file.name });
+                        this.unifiedInput.setFileStatus(i, 'done');
+                    } catch (e) {
+                        console.error(e);
+                        this.unifiedInput.setFileStatus(i, 'error');
+                    }
+                }
+
+                btn.style.display = 'none';
+                document.getElementById('download-all-btn').style.display = 'block';
+                document.getElementById('reset-btn').style.display = 'block';
+            }
+
+            modifyExif(file) {
+                return new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        try {
+                            const data = e.target.result;
+                            let exif = { "0th": {}, "Exif": {}, "GPS": {}, "1st": {}, "thumbnail": null };
+
+                            try { exif = piexif.load(data); } catch (ex) { /* start fresh */ }
+
+                            // Update Tags
+                            exif["0th"][piexif.ImageIFD.Artist] = document.getElementById('meta-artist').value;
+                            exif["0th"][piexif.ImageIFD.Copyright] = document.getElementById('meta-copyright').value;
+                            exif["0th"][piexif.ImageIFD.Software] = document.getElementById('meta-software').value;
+                            exif["0th"][piexif.ImageIFD.ImageDescription] = document.getElementById('meta-desc').value;
+                            exif["0th"][piexif.ImageIFD.DateTime] = new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '').replace(/-/g, ':');
+
+                            const exifStr = piexif.dump(exif);
+                            const newJpeg = piexif.insert(exifStr, data);
+
+                            // Convert back to Blob
+                            const bin = atob(newJpeg.split(',')[1]);
+                            const buf = new Uint8Array(bin.length);
+                            for (let i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+                            resolve(new Blob([buf], { type: "image/jpeg" }));
+                        } catch (err) {
+                            reject(err);
+                        }
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }
+
+            async downloadAll() {
+                for (const res of this.results) {
+                    const a = document.createElement('a');
+                    a.href = URL.createObjectURL(res.blob);
+                    a.download = res.name;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    await new Promise(resolve => setTimeout(resolve, 150));
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => new MetadataEditor());
+    </script>
+</body>
+</html>

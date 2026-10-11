@@ -1,0 +1,779 @@
+/* CVPro AI - CV Builder Styles */
+
+/* ========== Wizard Navigation ========== */
+.cv-wizard {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.cv-wizard-steps {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: 0.5rem;
+    overflow-x: auto;
+}
+
+.cv-wizard-step {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    white-space: nowrap;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    position: relative;
+}
+
+.cv-wizard-step::after {
+    content: '→';
+    position: absolute;
+    right: -0.25rem;
+    color: var(--text-tertiary);
+    font-size: 0.75rem;
+}
+
+.cv-wizard-step:last-child::after {
+    display: none;
+}
+
+.cv-wizard-step.active {
+    background: var(--primary-gradient);
+    color: white;
+}
+
+.cv-wizard-step.completed {
+    background: rgba(76, 175, 80, 0.15);
+    color: #4CAF50;
+}
+
+.cv-wizard-step-number {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--bg-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+.cv-wizard-step.active .cv-wizard-step-number {
+    background: rgba(255,255,255,0.25);
+}
+
+.cv-wizard-step.completed .cv-wizard-step-number {
+    background: #4CAF50;
+    color: white;
+}
+
+/* ========== Step Panels ========== */
+.cv-step-panel {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.cv-step-panel.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== Input Method Cards ========== */
+.cv-input-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.cv-input-card {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.cv-input-card:hover {
+    border-color: #667eea;
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.cv-input-card.selected {
+    border-color: #667eea;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+}
+
+.cv-input-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.cv-input-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.cv-input-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* ========== Form Sections ========== */
+.cv-form-section {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #667eea;
+}
+
+.cv-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.cv-section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cv-section-toggle {
+    font-size: 1.25rem;
+    color: var(--text-tertiary);
+    transition: transform 0.2s;
+}
+
+.cv-form-section.collapsed .cv-section-content {
+    display: none;
+}
+
+.cv-form-section.collapsed .cv-section-toggle {
+    transform: rotate(-90deg);
+}
+
+/* ========== Form Fields ========== */
+.cv-form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cv-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.cv-form-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.cv-form-input,
+.cv-form-textarea,
+.cv-form-select {
+    padding: 0.75rem 1rem;
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    transition: all var(--transition-base);
+}
+
+.cv-form-input:focus,
+.cv-form-textarea:focus,
+.cv-form-select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.cv-form-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* AI Buttons */
+.cv-ai-btn {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: transform 0.2s;
+}
+
+.cv-ai-btn:hover {
+    transform: scale(1.05);
+}
+
+/* ========== Dynamic Entries ========== */
+.cv-entry-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cv-entry-item {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    position: relative;
+    color: var(--text-primary);
+}
+
+.cv-entry-remove {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: #ff4757;
+    color: white;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cv-entry-remove:hover {
+    background: #e74c3c;
+}
+
+.cv-add-entry-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: transparent;
+    border: 2px dashed var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.cv-add-entry-btn:hover {
+    border-color: #667eea;
+    color: #667eea;
+    background: rgba(102, 126, 234, 0.05);
+}
+
+/* ========== Skills Input ========== */
+.cv-skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    min-height: 50px;
+}
+
+.cv-skill-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.75rem;
+    background: var(--primary-gradient);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.cv-skill-remove {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.cv-skill-remove:hover {
+    opacity: 1;
+}
+
+.cv-skill-input {
+    border: none;
+    background: transparent;
+    outline: none;
+    flex: 1;
+    min-width: 150px;
+    color: var(--text-primary);
+}
+
+/* ========== Template Gallery ========== */
+.cv-template-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.cv-template-card {
+    background: var(--bg-secondary);
+    border: 3px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.cv-template-card:hover {
+    border-color: #667eea;
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.cv-template-card.selected {
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+}
+
+.cv-template-preview {
+    aspect-ratio: 3/4;
+    background: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.cv-template-info {
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.cv-template-name {
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.cv-template-category {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+}
+
+/* ========== Color Schemes ========== */
+.cv-color-schemes {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+}
+
+.cv-color-option {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-sm);
+}
+
+.cv-color-option:hover {
+    transform: scale(1.1);
+}
+
+.cv-color-option.selected {
+    border-color: var(--text-primary);
+    box-shadow: 0 0 0 3px var(--bg-secondary);
+}
+
+/* ========== Live Preview ========== */
+.cv-preview-container {
+    background: #f5f5f5;
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    min-height: 600px;
+    overflow: auto;
+}
+
+.cv-preview-document {
+    background: white;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    min-height: 1000px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #333;
+}
+
+[data-theme="dark"] .cv-preview-container {
+    background: #252525;
+}
+
+[data-theme="dark"] .cv-preview-document {
+    background: #ffffff; /* Keep white for actual CV preview to represent paper */
+    color: #333;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+}
+
+/* ========== Action Buttons ========== */
+.cv-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.cv-btn {
+    padding: 0.875rem 1.75rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cv-btn-primary {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+}
+
+.cv-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.cv-btn-secondary {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+}
+
+.cv-btn-secondary:hover {
+    border-color: var(--text-tertiary);
+    background: var(--bg-tertiary);
+}
+
+.cv-btn-success {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    border: none;
+}
+
+.cv-btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+/* ========== Advanced Tools Panel ========== */
+.cv-advanced-tools {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.cv-tool-card {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.cv-tool-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.cv-tool-icon {
+    font-size: 1.5rem;
+}
+
+.cv-tool-title {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.cv-tool-content {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* ========== ATS Score Meter ========== */
+.cv-ats-meter {
+    margin: 1rem 0;
+}
+
+.cv-ats-bar {
+    height: 12px;
+    background: var(--bg-tertiary);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.cv-ats-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.5s ease;
+}
+
+.cv-ats-score {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+}
+
+/* ========== Export Options ========== */
+.cv-export-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.cv-export-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.25rem;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.cv-export-btn:hover {
+    border-color: #667eea;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+}
+
+.cv-export-icon {
+    font-size: 2rem;
+}
+
+.cv-export-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* ========== Industry Selection ========== */
+.cv-industry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.cv-industry-card {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.cv-industry-card:hover {
+    border-color: #667eea;
+    transform: translateY(-2px);
+}
+
+.cv-industry-card.selected {
+    border-color: #667eea;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+}
+
+.cv-industry-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.cv-industry-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* ========== Photo Upload ========== */
+.cv-photo-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cv-photo-preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: var(--bg-tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 3px solid var(--border-color);
+}
+
+.cv-photo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cv-photo-placeholder {
+    font-size: 3rem;
+    color: var(--text-tertiary);
+}
+
+/* ========== Progress Indicator ========== */
+.cv-progress {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-md);
+    margin-bottom: 1rem;
+}
+
+.cv-progress-bar {
+    flex: 1;
+    height: 8px;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.cv-progress-fill {
+    height: 100%;
+    background: var(--primary-gradient);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.cv-progress-text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    min-width: 50px;
+    text-align: right;
+}
+
+/* ========== Responsive ========== */
+/* ========== Modals ========== */
+.cv-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.cv-modal-content {
+    background: var(--bg-primary);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    max-width: 600px;
+    width: 90%;
+    box-shadow: var(--shadow-lg);
+}
+
+.cv-modal-content h3 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+/* ========== Drag Handles (Visual) ========== */
+.cv-drag-handle {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    cursor: grab;
+    color: var(--text-tertiary);
+    font-size: 1.2rem;
+}
+
+.cv-entry-item {
+    padding-left: 2.5rem !important; /* Make room for handle */
+}
+
+/* ========== Account Button ========== */
+.account-btns {
+    display: flex;
+    gap: 1rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+@media (max-width: 768px) {
+    .cv-wizard-steps {
+        flex-direction: column;
+    }
+    
+    .cv-wizard-step::after {
+        display: none;
+    }
+    
+    .cv-actions {
+        flex-direction: column;
+    }
+    
+    .cv-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .cv-template-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .account-btns {
+        position: static;
+        margin-bottom: 1rem;
+        justify-content: center;
+    }
+}

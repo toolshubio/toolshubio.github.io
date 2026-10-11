@@ -1,0 +1,255 @@
+:root {
+    --gen-primary: #6366f1;
+    --gen-primary-dark: #4f46e5;
+    --gen-secondary: #ec4899;
+    --gen-accent: #8b5cf6;
+    --gen-bg: #f8fafc;
+    --gen-surface: #ffffff;
+    --gen-text: #1e293b;
+    --gen-text-muted: #64748b;
+    --gen-border: #e2e8f0;
+    --gen-glass: rgba(255, 255, 255, 0.7);
+    --gen-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --sidebar-width: 260px;
+    --header-height: 70px;
+    --trans-speed: 0.3s;
+}
+
+[data-theme="dark"] {
+    --gen-bg: #0f172a;
+    --gen-surface: #1e293b;
+    --gen-text: #f8fafc;
+    --gen-text-muted: #94a3b8;
+    --gen-border: #334155;
+    --gen-glass: rgba(30, 41, 59, 0.7);
+    --gen-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+    background-color: var(--gen-bg);
+    color: var(--gen-text);
+    /* height: 100vh; Removed to allow scroll */
+    /* overflow: hidden; Removed to allow scroll */
+    min-height: 100vh;
+}
+
+/* Dashboard Layout Overrides for Full Page Flow */
+.dashboard-container {
+    display: block;
+    /* Changed from grid to block */
+    min-height: 100vh;
+    padding-bottom: 50px;
+    /* Space for footer */
+}
+
+/* Sidebar - Hidden as requested previously, keeping specific rule just in case */
+.sidebar {
+    display: none !important;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--gen-primary);
+    margin-bottom: 2.5rem;
+    text-decoration: none;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    color: var(--gen-text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background: linear-gradient(135deg, var(--gen-primary), var(--gen-accent));
+    color: white;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.nav-item i {
+    font-size: 1.25rem;
+    width: 24px;
+    text-align: center;
+}
+
+/* Header */
+/* LEGACY HEADER STYLES REMOVED */
+/* The header is now handled by the global shared header.js and main.css */
+
+/* Ensure injected global header sticks to top */
+header.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-content-area {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-bottom: 80px;
+    /* Space for footer */
+}
+
+/* Breadcrumb Styles */
+.breadcrumb-container {
+    max-width: 1200px;
+    margin: 0 auto 3rem !important;
+    /* Increased margin for Gap */
+    padding: 0 1rem;
+    padding-top: 20px;
+}
+
+.breadcrumb-item a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.breadcrumb-item.active span {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+
+.action-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--gen-border);
+    background: var(--gen-surface);
+    color: var(--gen-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.action-btn:hover {
+    background: var(--gen-text);
+    color: var(--gen-bg);
+}
+
+/* Main Content */
+.main-content-area {
+    grid-area: content;
+    padding: 2rem;
+    overflow-y: auto;
+    position: relative;
+}
+
+.tool-card {
+    background: var(--gen-surface);
+    border-radius: 1.5rem;
+    box-shadow: var(--gen-shadow);
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Shared UI Components */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--gen-primary), var(--gen-accent));
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(99, 102, 241, 0.3);
+}
+
+.history-panel {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 320px;
+    height: 100vh;
+    background: var(--gen-surface);
+    border-left: 1px solid var(--gen-border);
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.history-panel.open {
+    right: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "content";
+    }
+
+    .sidebar {
+        position: fixed;
+        left: -260px;
+        height: 100vh;
+        z-index: 50;
+    }
+
+    .sidebar.active {
+        left: 0;
+        box-shadow: 100px 0 0 rgba(0, 0, 0, 0.2);
+        /* Backdrop simulation */
+    }
+}

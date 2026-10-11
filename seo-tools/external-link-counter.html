@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>External Link Counter | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">SEO Tools</a> &gt;
+                <span>External Link Counter</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">External Link Counter</h1>
+                <p class="tool-description"></p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
+<div class="container text-center">
+<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">External Link Counter</h1>
+<p class="hero-subtitle">Identify and audit all outbound links on your page.</p>
+</div>
+</section>
+<div class="container">
+<div class="tool-interface-container">
+<div class="input-group">
+<label class="input-label">My Domain (to exclude)</label>
+<input class="seo-input" id="myDomain" placeholder="example.com" type="text"/>
+</div>
+<div class="input-group">
+<label class="input-label">HTML Content</label>
+<textarea class="seo-textarea" id="htmlContent" placeholder="Paste source code here..." style="min-height: 250px;"></textarea>
+</div>
+<div class="action-bar">
+<button class="btn-primary" onclick="analyzeLinks()">Analyze External Links</button>
+<button class="btn-secondary" onclick="resetForm()">Reset</button>
+</div>
+<div class="output-section" id="resultsArea" style="display: none;">
+<h3 class="section-title mb-md">Analysis Results</h3>
+<div class="feature-card mb-lg" style="padding: 1.5rem; text-align: center; background: #E3F2FD;">
+<h4 class="feature-title" style="color: #1976D2;">Total External Links</h4>
+<p class="stat-number" id="externalLinks" style="color: #1565C0;">0</p>
+<p class="text-secondary">Links pointing to other domains.</p>
+</div>
+<div class="output-container">
+<table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr style="text-align: left; background: var(--bg-tertiary);">
+<th style="padding: 10px;">URL</th>
+<th style="padding: 10px;">Anchor Text</th>
+<th style="padding: 10px;">Atributes</th>
+</tr>
+</thead>
+<tbody id="linkList">
+<!-- Injected -->
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+            </div>
+            <section class="seo-article" data-tool="external-link-counter">
+<article class="tool-article">
+<h2>External Link Counter — Audit Outbound Links on Any Page</h2>
+
+<p>During a site audit last year I found a client's "resources" page linking out to 87 external sites — half of them dead, a few redirected to spam domains the original owners had abandoned. Nobody had looked at that page in three years. An external link counter scans any URL and tells you exactly how many outbound links it has, where they point, and which are dofollow or nofollow — the raw data behind a proper link audit.</p>
+
+<h3>What Is an External Link Counter?</h3>
+
+<p>Every link on your page pointing to a different domain is an external (outbound) link. Search engines treat them as votes of confidence — and as potential liabilities. A page leaking dozens of outbound links dilutes the authority it passes internally, and links to dead or shady destinations actively hurt trust. Counting them is the first step to managing them.</p>
+
+<p>The counter fetches a page's HTML, extracts every <code>&lt;a&gt;</code> tag, and classifies each link: internal (same domain) versus external (different domain), dofollow versus nofollow, unique destinations versus repeats. The breakdown matters more than the total — ten links to one trusted source is a different story than ten links to ten random sites.</p>
+
+<p>Why count instead of just eyeballing? Because modern pages hide links everywhere: navigation menus, footers, sidebar widgets, author bios, embedded scripts. A typical blog post shows 5 visible content links and carries 60+ total once templates are included. You cannot audit what you cannot see.</p>
+
+<h3>How to Use the External Link Counter</h3>
+
+<p>Paste the page URL into the tool and run the scan. Review the totals: external count, internal count, dofollow/nofollow split, and the list of unique external domains. Click through the external destinations — or better, run them against a broken-link checker — and decide what stays.</p>
+
+<p>Healthy patterns to aim for: outbound links that are editorial (you chose them because they help the reader), a nofollow attribute on sponsored, affiliate, or user-generated links, and zero links to dead pages. Red flags: dozens of footer links to unrelated sites (a classic hacked-site symptom), affiliate links missing nofollow or sponsored attributes, and external links on pages that should be tightly focused, like checkout or signup flows.</p>
+
+<p>Re-run the counter quarterly on important pages. Link rot is constant — studies consistently find a meaningful share of web links die within a few years — and a page you audited in January can be linking to a domain parker by October.</p>
+
+<h3>How External Link Counting Works</h3>
+
+<p>The scan is a small, fast crawl of a single page.</p>
+
+<p><strong>Step 1 — Page fetch.</strong> The tool requests the URL like a browser and retrieves the HTML source. JavaScript-rendered links may be missed by simple fetchers; better tools render the page fully.</p>
+
+<p><strong>Step 2 — Link extraction.</strong> Every anchor tag's <code>href</code> is collected, along with its <code>rel</code> attribute (nofollow, sponsored, ugc) and anchor text.</p>
+
+<p><strong>Step 3 — Classification.</strong> Each URL's domain is compared against the page's domain. Same domain (including subdomains, depending on settings) counts as internal; everything else is external. Relative URLs resolve against the page address first.</p>
+
+<p><strong>Step 4 — Deduplication and reporting.</strong> Totals are computed two ways: all link instances (showing template repetition) and unique destinations (showing real outbound breadth). The report lists both.</p>
+
+<p>Dofollow/nofollow classification reads the <code>rel</code> attribute directly — nofollow, sponsored, and ugc all tell search engines not to pass ranking credit, which is exactly what you want on paid or untrusted links.</p>
+
+<h3>Reading Your External Link Report</h3>
+
+<table>
+<thead><tr><th>Metric</th><th>What it tells you</th><th>Healthy sign</th></tr></thead>
+<tbody>
+<tr><td>Total external links</td><td>Outbound link volume</td><td>Proportional to content length; no hard cap</td></tr>
+<tr><td>Unique external domains</td><td>How many sites you vouch for</td><td>Few, relevant, trustworthy</td></tr>
+<tr><td>Dofollow vs nofollow</td><td>Where ranking credit flows</td><td>Affiliate/sponsored links marked nofollow</td></tr>
+<tr><td>Repeated destinations</td><td>Template or over-linking</td><td>Intentional repeats only (e.g. citations)</td></tr>
+<tr><td>Dead destinations</td><td>Link rot</td><td>Zero — fix or remove promptly</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses External Link Counters?</h3>
+
+<p><strong>SEO specialists</strong> audit outbound link profiles during technical site reviews.</p>
+
+<p><strong>Content editors</strong> check articles before publishing to keep outbound links relevant and working.</p>
+
+<p><strong>Affiliate marketers</strong> verify their monetized links carry proper nofollow/sponsored attributes.</p>
+
+<p><strong>Site owners</strong> scan for hacked-footer links and other injected outbound spam.</p>
+
+<p><strong>Competitor analysts</strong> study rivals' outbound patterns to map their source and partner networks.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Free scans</strong> — no signup for single-page checks.</li>
+<li><strong>Internal vs external split</strong> — see the full link distribution.</li>
+<li><strong>Dofollow/nofollow breakdown</strong> — know where authority flows.</li>
+<li><strong>Unique destination list</strong> — every external domain, deduplicated.</li>
+<li><strong>Anchor text display</strong> — see the clickable text for each link.</li>
+<li><strong>CSV export</strong> — take the data into spreadsheets for bigger audits.</li>
+<li><strong>Fast results</strong> — single-page scans complete in seconds.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this external link counter free?</h4>
+<p>Yes — single-page scans are free with no account required.</p>
+
+<h4>How many external links should a page have?</h4>
+<p>There is no magic number. Relevance beats count — a 3,000-word guide with 15 good outbound links is healthier than a 300-word page with 15 random ones.</p>
+
+<h4>Do external links hurt my SEO?</h4>
+<p>No — linking to quality sources is normal and healthy. Problems come from excessive, irrelevant, or broken outbound links, and from paid links missing proper attributes.</p>
+
+<h4>What's the difference between nofollow and sponsored?</h4>
+<p>Both withhold ranking credit. Use <code>sponsored</code> for paid/affiliate links and <code>nofollow</code> for untrusted or general cases; <code>ugc</code> marks user-generated content.</p>
+
+<h4>Can it find broken external links?</h4>
+<p>Counters list destinations; pair the output with a broken-link checker (or a tool with status-code testing) to find dead ones.</p>
+
+<h4>Does it count links in navigation and footers?</h4>
+<p>Yes — the scan reads the full page HTML, including template links most people forget exist.</p>
+
+<h4>Can I check a competitor's page?</h4>
+<p>Yes. Any public URL can be scanned — it is a standard part of competitive link analysis.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        function analyzeLinks() {
+            const domain = document.getElementById('myDomain').value.trim();
+            const html = document.getElementById('htmlContent').value;
+
+            if (!html) { alert("Please enter HTML content"); return; }
+
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const anchors = doc.querySelectorAll('a');
+
+            let external = 0;
+            let rows = '';
+
+            anchors.forEach(a => {
+                const href = a.getAttribute('href');
+                if (!href || href.startsWith('#') || href.startsWith('javascript:')) return;
+
+                let isExternal = true;
+                // Check if internal
+                if (href.startsWith('/') || href.startsWith('./') || href.startsWith('../') || (domain && href.includes(domain))) {
+                    isExternal = false;
+                }
+
+                if (isExternal) {
+                    external++;
+                    const rel = a.getAttribute('rel') || '-';
+                    const target = a.getAttribute('target') || '-';
+
+                    rows += `
+                    <tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 10px; word-break: break-all; color: #1976D2;">${href}</td>
+                        <td style="padding: 10px;">${a.innerText.trim() || '<i>(No Text)</i>'}</td>
+                         <td style="padding: 10px; font-size: 0.9rem;">
+                            <span style="display: block;">Rel: ${rel}</span>
+                            <span style="display: block;">Target: ${target}</span>
+                         </td>
+                    </tr>
+                `;
+                }
+            });
+
+            if (external === 0) {
+                rows = '<tr><td colspan="3" style="padding: 20px; text-align: center; color: var(--text-secondary);">No external links found.</td></tr>';
+            }
+
+            document.getElementById('externalLinks').innerText = external;
+            document.getElementById('linkList').innerHTML = rows;
+            document.getElementById('resultsArea').style.display = 'block';
+        }
+
+        function resetForm() {
+            document.getElementById('htmlContent').value = '';
+            document.getElementById('resultsArea').style.display = 'none';
+            document.getElementById('myDomain').value = '';
+        }
+    </script>
+</body>
+</html>

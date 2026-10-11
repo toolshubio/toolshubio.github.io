@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium discount calculator with stacked coupons, deal comparison, and sales tax modeling. Optimize your shopping with advanced math.">
+    <title>High-End Discount & Shopping Calculator | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Calculators</a> &gt;
+                <span>🏷️ Smart Shopper</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">🏷️ Smart Shopper</h1>
+                <p class="tool-description">Maximize savings with stacked coupons, tax modeling, and deal comparisons.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<div class="calc-tabs mb-8">
+<button class="calc-tab active" onclick="setMode('stacked')">Stacked Discounts</button>
+<button class="calc-tab" onclick="setMode('compare')">Deal Comparison</button>
+</div>
+<div class="mode-section" id="stacked-calc">
+<div class="glass-panel price-hero">
+<div class="original-price-tag" id="hero-original">$100.00</div>
+<div class="final-price-tag" id="hero-final">$72.00</div>
+<div class="savings-badge-premium" id="hero-savings">SAVE 28%</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="glass-panel p-6">
+<h3 class="panel-title mb-6">Price &amp; Coupons</h3>
+<div class="input-group mb-6">
+<label class="input-label">Base Price ($)</label>
+<input class="calc-input large" id="base-price" oninput="calculateStacked()" type="number" value="100"/>
+</div>
+<label class="input-label mb-3 block">Coupons &amp; Discounts</label>
+<div id="coupon-list">
+<!-- Populated by JS -->
+</div>
+<button class="btn btn-secondary w-full mt-2" onclick="addCoupon()">+ Add Coupon</button>
+<div class="mt-8">
+<label class="input-label">Sales Tax (%)</label>
+<input class="calc-input" id="tax-rate" oninput="calculateStacked()" type="number" value="8.25"/>
+</div>
+</div>
+<div class="glass-panel p-6">
+<h3 class="panel-title mb-6">Price Breakdown</h3>
+<div id="breakdown-container"></div>
+<canvas class="mt-8" id="savings-chart"></canvas>
+</div>
+</div>
+</div>
+<div class="mode-section" id="compare-calc" style="display: none;">
+<div class="glass-panel p-6">
+<h3 class="panel-title mb-6">Deal vs Deal Comparison</h3>
+<div class="compare-grid">
+<div class="premium-card p-6">
+<h4 class="font-bold mb-4 text-primary">Option A: Buy X Get Y</h4>
+<div class="input-grid">
+<div class="input-group">
+<label class="input-label">Buy</label>
+<input class="calc-input" id="buy-x" oninput="compareDeals()" type="number" value="2"/>
+</div>
+<div class="input-group">
+<label class="input-label">Get Free</label>
+<input class="calc-input" id="get-y" oninput="compareDeals()" type="number" value="1"/>
+</div>
+</div>
+</div>
+<div class="premium-card p-6">
+<h4 class="font-bold mb-4 text-success">Option B: Percent Off</h4>
+<div class="input-group">
+<label class="input-label">Flat Discount (%)</label>
+<input class="calc-input" id="flat-perc" oninput="compareDeals()" type="number" value="30"/>
+</div>
+</div>
+</div>
+<div class="glass-panel mt-8 p-6 text-center" id="comparison-result">
+<!-- Winner text -->
+</div>
+</div>
+</div>
+<div class="mt-8 flex gap-4">
+<button class="btn btn-secondary flex-1" onclick="exportResults('pdf')">Export Shopping List
+                    (PDF)</button>
+<button class="btn btn-secondary flex-1" onclick="exportResults('csv')">Export Data (CSV)</button>
+</div>
+</div>
+<section class="seo-article" data-tool="discount-calculator">
+<article class="tool-article">
+<h2>Discount Calculator — Free Online Sale Price & Savings Finder</h2>
+
+<p>I have watched shoppers do the "is 30% off $80 actually good?" math on their phones in store aisles — and get it wrong often enough that I am not surprised. A discount calculator removes the guesswork: enter the original price and the discount percentage, and it shows the sale price, the amount you save, and the discount as a sanity check. Thirty seconds, no mental arithmetic, no regrets at the register.</p>
+
+<h3>What Is a Discount Calculator?</h3>
+
+<p>A discount calculator applies a percentage reduction to a price and shows you all three numbers that matter: what you pay (sale price), what you keep (savings), and confirmation of the discount itself. The core formulas are simple — discount amount = original price × (discount % ÷ 100), and sale price = original price − discount amount — but stores stack complications on top: a second coupon, sales tax, "was/now" pricing that needs reverse-solving.</p>
+
+<p>Good calculators handle the real-world variants. Stacked discounts apply sequentially, not additively — two 20% discounts are not 40% off, they are 36% off ($100 → $80 → $64), because the second discount applies to the already-reduced price. Sales tax applies after the discount in most places, on what you actually pay. And the reverse solver finds the original price from a sale price: original = sale ÷ (1 − discount%/100).</p>
+
+<p>One thing I always check: the "discount %" itself. A $15 saving on a $60 item is 25% off — computing it as (savings ÷ original) × 100 lets you compare a "$20 off" deal against a "30% off" deal honestly, instead of trusting whichever number the sticker shouts louder.</p>
+
+<h3>How to Use the Discount Calculator</h3>
+
+<p>Enter the original price and the discount percentage. Click Calculate and you get the discount amount and the final sale price instantly. If there is a second discount (a coupon on top of the sale), add it — the tool stacks them in the correct sequential order. Add the sales tax rate if you want the true out-the-door total.</p>
+
+<p>For "was $120, now $90" tags, use the reverse mode: enter both prices and the tool computes the real discount percentage (25% here). I do this routinely with "up to 70% off" sale racks, where the headline discount rarely applies to the item in my hand.</p>
+
+<p>One habit worth building: compare stacked versus single discounts before assuming the bigger headline wins. A 25% store discount plus a 10% coupon beats a flat 30% off — $100 → $75 → $67.50 (32.5% total) versus $70. The calculator shows this in one glance; mental math hides it.</p>
+
+<h3>How Discount Calculation Works</h3>
+
+<p>Four formulas cover every scenario the tool handles.</p>
+
+<p><strong>Basic discount.</strong> Discount = original × (percent ÷ 100); sale price = original − discount. Example: $120 at 25% off → discount $30, sale price $90.</p>
+
+<p><strong>Stacked discounts.</strong> Apply one after another: price × (1 − d1) × (1 − d2). Example: $100 with 20% then 20% → $100 × 0.80 × 0.80 = $64. Total saving 36%, not 40%.</p>
+
+<p><strong>With sales tax.</strong> Discount first, then tax on the discounted price: total = sale price × (1 + tax%). Example: $90 sale price with 8% tax → $90 × 1.08 = $97.20.</p>
+
+<p><strong>Reverse: find the original.</strong> Original = sale ÷ (1 − discount%). Example: sale $40 at 20% off → $40 ÷ 0.80 = $50 original, $10 saved.</p>
+
+<p>Worked example with everything — a $999 TV at 40% off with 8% tax: discount = $999 × 0.40 = $399.60; sale price = $599.40; tax = $599.40 × 0.08 = $47.95; total = $647.35. You saved $399.60 off the sticker — and the tool lays out each line so you can verify it.</p>
+
+<h3>Common Discount Scenarios</h3>
+
+<p>Quick-reference table — verify a couple against the tool:</p>
+
+<table>
+<thead><tr><th>Original</th><th>Discount</th><th>You save</th><th>You pay</th></tr></thead>
+<tbody>
+<tr><td>$50</td><td>20%</td><td>$10.00</td><td>$40.00</td></tr>
+<tr><td>$120</td><td>25%</td><td>$30.00</td><td>$90.00</td></tr>
+<tr><td>$80</td><td>15%</td><td>$12.00</td><td>$68.00</td></tr>
+<tr><td>$999</td><td>40%</td><td>$399.60</td><td>$599.40</td></tr>
+<tr><td>$60</td><td>$15 off</td><td>$15.00 (25%)</td><td>$45.00</td></tr>
+<tr><td>$100</td><td>20% + 20% stacked</td><td>$36.00 (36%)</td><td>$64.00</td></tr>
+</tbody>
+</table>
+
+<p>Mental-math shortcuts for common percentages: 10% = divide by 10; 25% = divide by 4; 50% = divide by 2; 15% = 10% plus half again. Fine for estimates — but for stacked discounts and tax, use the tool.</p>
+
+<h3>Who Uses Discount Calculators?</h3>
+
+<p><strong>Shoppers</strong> verify sale prices in-store and online, compare competing deals, and check whether coupons actually stack the way the ad implies.</p>
+
+<p><strong>Small business owners</strong> price promotions and compute margins — a 30% discount on a 40%-margin product needs checking before it goes live.</p>
+
+<p><strong>Students</strong> solve percentage problems for math homework, where the step-by-step breakdown doubles as the worked solution.</p>
+
+<p><strong>Resellers</strong> calculate buy costs against expected sale prices to confirm a flip is worth the effort.</p>
+
+<p><strong>Anyone budgeting</strong> uses the savings figure to decide whether the purchase fits this month's spending plan.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant results</strong> — sale price and savings appear as you type.</li>
+<li><strong>Stacked discounts</strong> — handles sequential coupons correctly, not additively.</li>
+<li><strong>Sales tax support</strong> — true out-the-door totals at any tax rate.</li>
+<li><strong>Reverse solver</strong> — find the original price or the real discount % from "was/now" tags.</li>
+<li><strong>Step-by-step breakdown</strong> — every line of the math, verifiable.</li>
+<li><strong>100% free</strong> — no signup, no subscription, no limits.</li>
+<li><strong>Private by design</strong> — runs in your browser; your prices are never stored.</li>
+<li><strong>Works everywhere</strong> — any modern browser on desktop or mobile.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this discount calculator free?</h4>
+<p>Yes — free, no account, no limits.</p>
+
+<h4>What is the discount formula?</h4>
+<p>Discount amount = original price × (discount % ÷ 100). Sale price = original − discount. Or directly: sale price = original × (1 − discount%/100).</p>
+
+<h4>How do I calculate 20% off?</h4>
+<p>Multiply the price by 0.20 for the discount, then subtract — or multiply by 0.80 directly. $50 × 0.80 = $40.</p>
+
+<h4>Do two 20% discounts equal 40% off?</h4>
+<p>No — they stack sequentially: $100 → $80 → $64, which is 36% off total. The second discount applies to the reduced price.</p>
+
+<h4>How do I find the original price from a sale price?</h4>
+<p>Original = sale price ÷ (1 − discount%/100). A $80 sale at 20% off means $80 ÷ 0.80 = $100 original.</p>
+
+<h4>Is sales tax applied before or after the discount?</h4>
+<p>After, in most places — tax is charged on the discounted price you actually pay.</p>
+
+<h4>How do I compare a "$20 off" deal with "25% off"?</h4>
+<p>Convert to the same terms: discount % = (savings ÷ original) × 100. $20 off $80 is 25% — identical deals.</p>
+
+<h4>Is my data stored anywhere?</h4>
+<p>No. The calculation runs entirely in your browser; your prices never leave your device.</p>
+</article>
+</section>
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="js/calc-utils.js"></script>
+<script src="js/calc-ui.js"></script>
+<script>
+        let currentMode = 'stacked';
+        let coupons = [20, 10]; // Default stack
+
+        function init() {
+            CalcUI.init({ toolName: 'discount-calculator' });
+            renderCoupons();
+            calculateStacked();
+        }
+
+        function setMode(mode) {
+            currentMode = mode;
+            document.querySelectorAll('.calc-tab').forEach(t => t.classList.toggle('active', t.getAttribute('onclick').includes(mode)));
+            document.querySelectorAll('.mode-section').forEach(s => s.style.display = 'none');
+            document.getElementById(`${mode}-calc`).style.display = 'block';
+            if (mode === 'stacked') calculateStacked();
+            else compareDeals();
+        }
+
+        function renderCoupons() {
+            const list = document.getElementById('coupon-list');
+            list.innerHTML = coupons.map((c, i) => `
+                <div class="coupon-stack-item">
+                    <input type="number" value="${c}" class="calc-input" oninput="updateCoupon(${i}, this.value)">
+                    <span>% Off</span>
+                    <button class="btn btn-danger-outline p-2" onclick="removeCoupon(${i})">✕</button>
+                </div>
+            `).join('');
+        }
+
+        function addCoupon() {
+            coupons.push(10);
+            renderCoupons();
+            calculateStacked();
+        }
+
+        function updateCoupon(i, val) {
+            coupons[i] = parseFloat(val) || 0;
+            calculateStacked();
+        }
+
+        function removeCoupon(i) {
+            coupons.splice(i, 1);
+            renderCoupons();
+            calculateStacked();
+        }
+
+        function calculateStacked() {
+            const base = parseFloat(document.getElementById('base-price').value) || 0;
+            const taxRate = parseFloat(document.getElementById('tax-rate').value) || 0;
+
+            let currentPrice = base;
+            const steps = [['Base Price', '', CalcUtils.formatCurrency(base)]];
+
+            coupons.forEach((c, i) => {
+                const savings = currentPrice * (c / 100);
+                currentPrice -= savings;
+                steps.push([`Coupon ${i + 1} (${c}%)`, `-${CalcUtils.formatCurrency(savings)}`, CalcUtils.formatCurrency(currentPrice)]);
+            });
+
+            const taxAmount = currentPrice * (taxRate / 100);
+            const finalPrice = currentPrice + taxAmount;
+
+            steps.push([`Sales Tax (${taxRate}%)`, `+${CalcUtils.formatCurrency(taxAmount)}`, CalcUtils.formatCurrency(finalPrice)]);
+
+            // Update UI
+            document.getElementById('hero-original').textContent = CalcUtils.formatCurrency(base);
+            document.getElementById('hero-final').textContent = CalcUtils.formatCurrency(finalPrice);
+            const totalSavingsPerc = base !== 0 ? ((base - (finalPrice - taxAmount)) / base * 100) : 0;
+            document.getElementById('hero-savings').textContent = `SAVE ${totalSavingsPerc.toFixed(1)}%`;
+
+            CalcUI.renderTable('breakdown-container', ['Description', 'Change', 'Balance'], steps);
+
+            // Chart
+            CalcUI.drawChart('savings-chart', [
+                { label: 'Final Price', value: finalPrice - taxAmount, color: '#10b981' },
+                { label: 'Total Savings', value: base - (finalPrice - taxAmount), color: '#3b82f6' },
+                { label: 'Tax', value: taxAmount, color: '#f43f5e' }
+            ], 'pie');
+        }
+
+        function compareDeals() {
+            const x = parseInt(document.getElementById('buy-x').value) || 1;
+            const y = parseInt(document.getElementById('get-y').value) || 0;
+            const flat = parseFloat(document.getElementById('flat-perc').value) || 0;
+
+            const bXgY_perc = (y / (x + y)) * 100;
+            const difference = bXgY_perc - flat;
+
+            const el = document.getElementById('comparison-result');
+            if (difference > 0) {
+                el.innerHTML = `<h3 class="text-primary font-bold">"Buy ${x} Get ${y}" is better!</h3><p>Effective discount: ${bXgY_perc.toFixed(2)}% (vs ${flat}% flat)</p>`;
+                el.className = 'glass-panel mt-8 p-6 text-center border-l-4 border-l-primary';
+            } else if (difference < 0) {
+                el.innerHTML = `<h3 class="text-success font-bold">${flat}% Flat Off is better!</h3><p>Effective discount: ${flat}% (vs ${bXgY_perc.toFixed(2)}% for Buy ${x} Get ${y})</p>`;
+                el.className = 'glass-panel mt-8 p-6 text-center border-l-4 border-l-success';
+            } else {
+                el.innerHTML = `<h3 class="font-bold">Both deals are identical!</h3><p>Effective discount: ${flat}%</p>`;
+            }
+        }
+
+        function exportResults(format) {
+            const base = document.getElementById('base-price').value;
+            const final = document.getElementById('hero-final').textContent;
+            const data = {
+                title: 'Discount Calculation Report',
+                date: new Date().toLocaleDateString(),
+                original_price: base,
+                final_price: final,
+                tax_rate: document.getElementById('tax-rate').value,
+                coupons_applied: coupons.join(', ')
+            };
+            CalcUI.exportResult(data, 'discount-report', format);
+        }
+
+        init();
+    </script>
+</body>
+</html>

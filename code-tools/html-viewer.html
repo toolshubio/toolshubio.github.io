@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Html Viewer - Code Tools | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Code Tools</a> &gt;
+                <span>Html Viewer</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Html Viewer</h1>
+                <p class="tool-description"></p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+<div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+<div class="tool-workspace">
+<div id="drag-overlay"></div>
+<div id="drag-help">Ab is element ko pakad kar drag karein. Targets highlight honge.</div>
+<input accept="image/*" id="local-img-input" style="display:none" type="file"/>
+<div class="container">
+<div class="code-panel">
+<div class="editor-tabs">
+<button class="tab active" onclick="switchTab('html')">HTML</button>
+<button class="tab" onclick="switchTab('css')">CSS</button>
+<button class="tab" onclick="switchTab('js')">JS</button>
+</div>
+<div class="editor-container active" id="html-editor"><textarea class="editor" id="html-code"></textarea></div>
+<div class="editor-container" id="css-editor"><textarea class="editor" id="css-code"></textarea></div>
+<div class="editor-container" id="js-editor"><textarea class="editor" id="js-code"></textarea></div>
+</div>
+<div class="preview-panel">
+<div class="toolbar">
+<button class="toolbar-btn" id="lock-btn" onclick="toggleLock()">1. 🔒 Lock Mode</button>
+<button class="toolbar-btn" onclick="updatePreview()">2. 🔄 Refresh</button>
+<button class="toolbar-btn" onclick="saveHTML()">3. 💾 Save</button>
+<button class="toolbar-btn" onclick="execCmd('bold')">4. B (Bold)</button>
+<button class="toolbar-btn" onclick="execCmd('italic')">5. I (Italic)</button>
+<button class="toolbar-btn" onclick="execCmd('underline')">6. U (Underline)</button>
+<button class="toolbar-btn" onclick="smartColorPicker()">7. 🎨 Text Color</button>
+<button class="toolbar-btn" onclick="bgColorPicker()">8. 🟦 BG Color</button>
+<button class="toolbar-btn" onclick="duplicateElement()">9. 📋 Clone</button>
+<button class="toolbar-btn" onclick="deleteElement()">10. 🗑️ Delete</button>
+<button class="toolbar-btn" onclick="toggleMobile()">11. 📱 Mobile View</button>
+<button class="toolbar-btn" onclick="execCmd('justifyLeft')">12. ⬅️ Left</button>
+<button class="toolbar-btn" onclick="execCmd('justifyCenter')">13. ↔️ Center</button>
+<button class="toolbar-btn" onclick="execCmd('justifyRight')">14. ➡️ Right</button>
+<button class="toolbar-btn" onclick="execCmd('formatBlock', 'H1')">15. H1</button>
+<button class="toolbar-btn" onclick="execCmd('formatBlock', 'H2')">16. H2</button>
+<button class="toolbar-btn" onclick="execCmd('formatBlock', 'H3')">17. H3</button>
+<button class="toolbar-btn" onclick="execCmd('formatBlock', 'P')">18. Text</button>
+<button class="toolbar-btn" onclick="execCmd('undo')">19. ↩️ Undo</button>
+<button class="toolbar-btn" onclick="execCmd('redo')">20. ↪️ Redo</button>
+<button class="toolbar-btn" onclick="addLink()">21. 🔗 Link</button>
+<button class="toolbar-btn highlight" onclick="addLiveImage()">22. 🌐 Image (URL)</button>
+<button class="toolbar-btn highlight" onclick="triggerLocalImage()">23. 📂 Image (Local)</button>
+<button class="toolbar-btn" onclick="addSection()">24. ➕ New Section</button>
+<button class="toolbar-btn danger-btn" onclick="clearCanvas()">25. 🧨 Clear All</button>
+</div>
+<div class="preview-container" id="pc">
+<div class="iframe-wrapper" id="iw">
+<iframe id="preview-iframe"></iframe>
+<div id="resizer-tool">
+<div class="move-handle" title="Drag this element">✥</div>
+<div id="element-info">0 x 0</div>
+<div class="dot tl"></div><div class="dot tc"></div><div class="dot tr"></div>
+<div class="dot rc"></div><div class="dot br"></div><div class="dot bc"></div>
+<div class="dot bl"></div><div class="dot lc"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section class="seo-article" data-tool="html-viewer">
+<article class="tool-article">
+<h2>HTML Viewer — Preview and Test HTML in Your Browser</h2>
+
+<p>AI coding assistants now generate complete web pages in seconds — but generated code deserves the same skepticism as any stranger's code. Before I paste AI-written HTML into a project, I run it through a viewer: paste, look, click around, check for anything suspicious. An HTML viewer renders your markup in a sandboxed preview pane, showing you exactly what the code does without letting it touch your real browser. It is part prototyping tool, part safety net, and I use it more now than at any point in my career.</p>
+
+<h3>What Is an HTML Viewer?</h3>
+
+<p>An HTML viewer takes raw markup and renders it as a live web page inside your browser — no file saving, no local server. You paste code on one side; the rendered result appears on the other, updating as you type. Headings render as headings, forms as working forms, scripts execute, styles apply. What you see is what any browser would show.</p>
+
+<p>The key architectural detail: the preview runs in a sandboxed iframe, isolated from the rest of the page. Scripts in the previewed code cannot read the viewer's cookies, localStorage, or your other tabs. That sandbox is what makes it safe to preview code from untrusted sources — a snippet from a forum, an email template from a vendor, AI-generated markup you have not audited yet.</p>
+
+<p>Most viewers pair the render with a syntax-highlighted source view, so you see code and result simultaneously. Change a value, watch the page respond — the tightest feedback loop in front-end work.</p>
+
+<h3>How to Use the HTML Viewer</h3>
+
+<p>Paste your HTML into the code panel, including any inline <code>&lt;style&gt;</code> and <code>&lt;script&gt;</code> blocks. The preview renders immediately — live as you type, or on clicking a render button. Experiment freely: tweak colors, resize containers, rewrite copy, test interactions. Every change reflects instantly.</p>
+
+<p>Use the view toggles to switch between rendered output and highlighted source. Some viewers offer device-width presets — check your layout at mobile widths without resizing your browser. When the page looks right, copy the code out or download it as an .html file.</p>
+
+<p>For AI-generated code, my routine: preview first, read the source second, test interactions third. The preview catches visual problems; reading the source catches suspicious scripts; clicking everything catches broken behavior. Only then does the code earn a place in my project.</p>
+
+<h3>Previewing Safely: The Sandbox</h3>
+
+<table>
+<thead><tr><th>Sandbox Protection</th><th>What It Blocks</th><th>Why It Matters</th></tr></thead>
+<tbody>
+<tr><td>No same-origin access</td><td>Preview scripts reading viewer cookies/storage</td><td>Pasted code cannot steal your session</td></tr>
+<tr><td>Isolated execution</td><td>Scripts affecting the parent page</td><td>Malicious code stays contained</td></tr>
+<tr><td>Controlled popups</td><td>Unwanted windows and redirects</td><td>Annoying snippets cannot escape</td></tr>
+<tr><td>Local-only processing</td><td>Your code leaving the device</td><td>Proprietary snippets stay private</td></tr>
+</tbody>
+</table>
+
+<p>The sandbox does not make malicious code harmless to <em>run</em> — it makes it harmless to <em>you</em>. A crypto miner in the preview would still burn your CPU while the tab is open, so do not preview code you actively distrust without glancing at the source first. But for the everyday case — testing your own work, vendor templates, AI output — the isolation is exactly the right level of protection.</p>
+
+<h3>Common Preview Workflows</h3>
+
+<p><strong>Prototyping components.</strong> Build a pricing table, hero section, or form in isolation, where no existing stylesheet can interfere. When it looks right, move it into the project.</p>
+
+<p><strong>Debugging email templates.</strong> Email HTML is a dialect of nested tables and inline styles; the only way to know it renders correctly is to render it constantly while editing.</p>
+
+<p><strong>Auditing generated code.</strong> Paste AI or third-party HTML, preview the result, then read the source with fresh eyes — the preview tells you what it <em>does</em>, the source tells you what it <em>is</em>.</p>
+
+<p><strong>Teaching and demos.</strong> Show code and result side by side — students connect markup to output instantly, which beats any amount of explanation.</p>
+
+<p><strong>Testing responsive behavior.</strong> Resize the preview pane through mobile, tablet, and desktop widths to catch breakpoints that misbehave.</p>
+
+<h3>Viewer Limitations to Know</h3>
+
+<p>External resources do not resolve: relative paths like <code>images/logo.png</code> have no file system behind them, so use absolute URLs or inline assets as data URIs. Server-side code (PHP, template tags) will not execute — the viewer renders client-side HTML only. And very large documents can feel sluggish in the live-update mode; for those, prefer a render-on-demand button over per-keystroke updates.</p>
+
+<h3>Who Uses HTML Viewers?</h3>
+
+<p><strong>Developers</strong> prototype snippets and audit unfamiliar code — increasingly AI-generated — before integrating it.</p>
+
+<p><strong>Email developers</strong> live-preview templates throughout the build, catching rendering issues at the moment they are introduced.</p>
+
+<p><strong>Marketers and content creators</strong> preview embed codes, landing page sections, and newsletter HTML without developer help.</p>
+
+<p><strong>Teachers</strong> demonstrate HTML live in classrooms, with code and output visible simultaneously.</p>
+
+<p><strong>QA testers</strong> reproduce rendering bugs in isolation, confirming whether the markup or the surrounding application is at fault.</p>
+
+<h3>Tips for Effective Previewing</h3>
+
+<p>Inline your assets for faithful previews — relative paths are the number one cause of "it works in the viewer but not really" confusion. Test interactions, not just static appearance: click the buttons, submit the forms, trigger the scripts. Keep the source visible alongside the render when debugging; the visual gap between expectation and reality usually points at the exact broken tag. And treat the viewer as a sandbox, not a deployment target — build and verify there, then move finished code into your real project files.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Live rendering</strong> — preview updates the moment your code changes.</li>
+<li><strong>Sandboxed iframe</strong> — untrusted code cannot touch your browser or data.</li>
+<li><strong>Source + preview split</strong> — syntax-highlighted code beside the rendered page.</li>
+<li><strong>Full document support</strong> — HTML, inline CSS, JavaScript, and SVG.</li>
+<li><strong>Responsive testing</strong> — resize the preview to check mobile layouts.</li>
+<li><strong>No files or setup</strong> — works instantly on any device, nothing to install.</li>
+<li><strong>Copy and download</strong> — export finished code as an .html file.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
+<li><strong>100% free</strong> — no signup, no limits.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this HTML viewer free?</h4>
+<p>Yes — completely free, no account needed, and no limits on how much code you can preview.</p>
+
+<h4>Is it safe to preview code I do not trust?</h4>
+<p>Yes, for practical purposes. The preview runs sandboxed — scripts cannot access your cookies, storage, or other tabs. Glance at the source first for anything actively suspicious.</p>
+
+<h4>Will my JavaScript run in the preview?</h4>
+<p>Yes — scripts execute normally inside the sandbox. Buttons, alerts, animations, and DOM manipulation all work.</p>
+
+<h4>Why are my images or styles missing?</h4>
+<p>Relative paths do not resolve without a file system. Use absolute URLs or inline assets as data URIs for faithful previews.</p>
+
+<h4>Can I preview PHP or server-side code?</h4>
+<p>No — the viewer renders client-side HTML, CSS, and JavaScript only. Server code needs a real server environment.</p>
+
+<h4>Can I test mobile layouts?</h4>
+<p>Yes. Resize the preview pane or use device-width presets to see how your design responds at different screen sizes.</p>
+
+<h4>Is my code data secure?</h4>
+<p>Yes. Rendering happens entirely in your browser — your HTML never leaves your device or touches a server.</p>
+
+<h4>How is this different from just opening an HTML file?</h4>
+<p>No file needed, instant live updates as you type, and the sandbox isolates untrusted code — three things a plain file open cannot offer.</p>
+</article>
+</section>
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+    const htmlEditor = document.getElementById('html-code');
+    const iframe = document.getElementById('preview-iframe');
+    const resizer = document.getElementById('resizer-tool');
+    const lockBtn = document.getElementById('lock-btn');
+    const dragOverlay = document.getElementById('drag-overlay');
+    const dragHelp = document.getElementById('drag-help');
+    const localImgInput = document.getElementById('local-img-input');
+    
+    let selectedElement = null;
+    let isLocked = true;
+    let isResizing = false;
+    let currentHandle = null;
+    let startX, startY, startW, startH, startScale;
+
+    htmlEditor.value = `<div style="padding:40px; border:2px solid #ddd; width:100%; max-width:800px; background:#fff; margin: 40px auto; text-align: center; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+    <h1 style="color:#333; margin-bottom:15px; font-size: 32px;">Visual Builder Pro</h1>
+    <p style="color:#555; margin-bottom: 25px;">Drag handle (✥) use karein elements ko move karne ke liye. H1-H3 se headings set karein.</p>
+    <div style="background:#f9fafb; padding:20px; border-radius:8px; border: 1px dashed #ccc;">
+        <p style="color:#777;">Image upload (Local/Live) features ab working hain.</p>
+    </div>
+</div>`;
+
+    function smartColorPicker() {
+        const color = prompt("Enter Text Color (Name or Hex):", "#000000");
+        if (color) {
+            execCmd('foreColor', color);
+            if (selectedElement && !iframe.contentWindow.getSelection().toString()) {
+                selectedElement.style.color = color;
+                syncCode();
+            }
+        }
+    }
+
+    function bgColorPicker() {
+        const color = prompt("Enter Background Color (Name or Hex):", "#ffffff");
+        if (color && selectedElement) {
+            selectedElement.style.backgroundColor = color;
+            syncCode();
+        } else if (color) {
+            iframe.contentWindow.document.body.style.backgroundColor = color;
+            syncCode();
+        }
+    }
+
+    function addLiveImage() {
+        const url = prompt("Enter Image Live URL:", "https://");
+        if (url) {
+            insertImage(url);
+        }
+    }
+
+    function triggerLocalImage() {
+        localImgInput.click();
+    }
+
+    localImgInput.onchange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                insertImage(event.target.result);
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+
+    function insertImage(src) {
+        const imgTag = `<img src="${src}" style="width:100%; max-width:400px; margin:20px auto; display:block; border-radius:8px; cursor:pointer;">`;
+        iframe.contentWindow.document.body.innerHTML += imgTag;
+        syncCode();
+        updatePreview();
+    }
+
+    function addSection() {
+        const section = `<section style="padding:40px; margin:20px 0; border:1px solid #eee; background:#fff;"><h2>New Section</h2><p>Apna content yahan add karein.</p></section>`;
+        iframe.contentWindow.document.body.innerHTML += section;
+        syncCode();
+        updatePreview();
+    }
+
+    function clearCanvas() { if(confirm("Clear everything?")) { iframe.contentWindow.document.body.innerHTML = ""; syncCode(); resizer.style.display='none'; } }
+    function addLink() { const url = prompt("URL:", "https://"); if(url) execCmd('createLink', url); }
+
+    function updatePreview() {
+        const content = `<html><head><style>
+            body{ min-height: 100vh; padding: 40px; background: #fff; font-family: 'Segoe UI', sans-serif; } 
+            [contenteditable]:focus { outline: none; }
+            .dragging { opacity: 0.5; outline: 2px dashed #007acc !important; }
+            .drop-target { background: rgba(0, 122, 204, 0.1) !important; outline: 2px solid #007acc !important; min-height: 40px; }
+            img { max-width: 100%; height: auto; }
+            * { transition: background 0.1s; }
+        </style></head>
+        <body contenteditable="true">${htmlEditor.value}</body></html>`;
+        iframe.srcdoc = content;
+        resizer.style.display = 'none';
+        dragHelp.style.display = 'none';
+    }
+
+    function toggleLock() {
+        isLocked = !isLocked;
+        lockBtn.innerHTML = isLocked ? "1. 🔒 Lock Mode" : "1. 🔓 Unlocked (Resize/Move)";
+        lockBtn.classList.toggle('unlocked', !isLocked);
+        if(isLocked) {
+            resizer.classList.remove('active-resizer');
+            if(selectedElement) selectedElement.removeAttribute('draggable');
+        } else if(selectedElement) {
+            resizer.classList.add('active-resizer');
+        }
+    }
+
+    function syncCode() { htmlEditor.value = iframe.contentWindow.document.body.innerHTML; }
+
+    function updateResizerPosition() {
+        if(!selectedElement) return;
+        const r = selectedElement.getBoundingClientRect();
+        resizer.style.display = 'block';
+        resizer.style.top = r.top + 'px'; resizer.style.left = r.left + 'px';
+        resizer.style.width = r.width + 'px'; resizer.style.height = r.height + 'px';
+        document.getElementById('element-info').innerText = `${Math.round(r.width)}x${Math.round(r.height)}`;
+        if(!isLocked) resizer.classList.add('active-resizer');
+    }
+
+    document.querySelectorAll('.dot').forEach(dot => {
+        dot.onmousedown = (e) => {
+            if(isLocked || !selectedElement) return;
+            isResizing = true;
+            currentHandle = e.target.classList[1];
+            startX = e.clientX; startY = e.clientY;
+            const r = selectedElement.getBoundingClientRect();
+            startW = r.width; startH = r.height;
+            dragOverlay.style.display = 'block';
+            e.stopPropagation(); e.preventDefault();
+        };
+    });
+
+    window.onmousemove = (e) => {
+        if (!isResizing || !selectedElement) return;
+        let dx = e.clientX - startX;
+        let dy = e.clientY - startY;
+        
+        if (currentHandle.includes('r')) selectedElement.style.width = (startW + dx) + 'px';
+        if (currentHandle.includes('b')) selectedElement.style.height = (startH + dy) + 'px';
+        if (currentHandle.includes('l')) selectedElement.style.width = (startW - dx) + 'px';
+        if (currentHandle.includes('t')) selectedElement.style.height = (startH - dy) + 'px';
+        
+        updateResizerPosition();
+    };
+
+    window.onmouseup = () => { if(isResizing) { isResizing = false; dragOverlay.style.display = 'none'; syncCode(); } };
+
+    document.querySelector('.move-handle').onmousedown = () => {
+        if(isLocked || !selectedElement) return;
+        selectedElement.setAttribute('draggable', 'true');
+        dragHelp.style.display = 'block';
+    };
+
+    iframe.onload = () => {
+        const doc = iframe.contentWindow.document;
+        doc.body.onmousedown = (e) => {
+            if(isLocked) return;
+            if(e.target !== doc.body) {
+                if(selectedElement) selectedElement.removeAttribute('draggable');
+                selectedElement = e.target.closest('div, section, img, h1, h2, h3, h4, h5, h6, p, button') || e.target;
+                updateResizerPosition();
+            } else {
+                resizer.style.display = 'none';
+                if(selectedElement) selectedElement.removeAttribute('draggable');
+                selectedElement = null;
+                dragHelp.style.display = 'none';
+            }
+        };
+
+        doc.addEventListener('dragstart', (e) => {
+            if(isLocked || !selectedElement) { e.preventDefault(); return; }
+            selectedElement.classList.add('dragging');
+        });
+
+        doc.addEventListener('dragend', () => {
+            if(selectedElement) {
+                selectedElement.classList.remove('dragging');
+                selectedElement.removeAttribute('draggable');
+                syncCode();
+                setTimeout(updateResizerPosition, 10);
+            }
+            dragHelp.style.display = 'none';
+            doc.querySelectorAll('.drop-target').forEach(el => el.classList.remove('drop-target'));
+        });
+
+        doc.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            const target = e.target.closest('div, section, body');
+            if(target && target !== selectedElement) target.classList.add('drop-target');
+        });
+
+        doc.addEventListener('dragleave', (e) => {
+            const target = e.target.closest('div, section, body');
+            if(target) target.classList.remove('drop-target');
+        });
+
+        doc.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const target = e.target.closest('div, section, body');
+            if(selectedElement && target && target !== selectedElement) {
+                const rect = target.getBoundingClientRect();
+                const mid = rect.top + rect.height / 2;
+                if(target === doc.body) target.appendChild(selectedElement);
+                else if(e.clientY < mid) target.parentNode.insertBefore(selectedElement, target);
+                else target.parentNode.insertBefore(selectedElement, target.nextSibling);
+                syncCode();
+                setTimeout(updateResizerPosition, 50);
+            }
+        });
+
+        doc.body.oninput = syncCode;
+        iframe.contentWindow.onscroll = updateResizerPosition;
+    };
+
+    function execCmd(c,v=null) { iframe.contentWindow.document.execCommand(c,false,v); syncCode(); }
+    function deleteElement() { if(selectedElement) { selectedElement.remove(); resizer.style.display='none'; syncCode(); } }
+    function duplicateElement() { if(selectedElement) { const clone = selectedElement.cloneNode(true); selectedElement.after(clone); syncCode(); updatePreview(); } }
+    function toggleMobile() { document.getElementById('iw').style.width = (document.getElementById('iw').style.width === '375px') ? '100%' : '375px'; setTimeout(updateResizerPosition, 300); }
+    function saveHTML() { const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([htmlEditor.value],{type:'text/html'})); a.download='index.html'; a.click(); }
+    function switchTab(t) {
+        document.querySelectorAll('.tab, .editor-container').forEach(el => el.classList.remove('active'));
+        event.target.classList.add('active');
+        document.getElementById(t + '-editor').classList.add('active');
+    }
+    htmlEditor.oninput = updatePreview;
+    updatePreview();
+</script>
+</body>
+</html>

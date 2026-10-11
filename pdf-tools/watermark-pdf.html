@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Add watermarks to your PDF files. Dynamic user data, smart placement, and batch processing. 100% secure, client-side.">
+    <title>Watermark PDF - Add Text or Images to PDF | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">PDF Tools</a> &gt;
+                <span>Watermark PDF Advanced</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Watermark PDF Advanced</h1>
+                <p class="tool-description">Brand your documents with dynamic text or image watermarks using AI smart placement.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<div class="pdf-tool-container">
+<!-- Main Content Area -->
+<div class="tool-main">
+<div class="pdf-upload-zone" id="drop-zone">
+<span class="pdf-upload-icon"><i class="fa-solid fa-file-signature"></i></span>
+<h2>Upload PDF to Watermark</h2>
+<p>Select your file to begin branding</p>
+<input accept=".pdf" id="file-input" style="display: none;" type="file"/>
+</div>
+<div id="editor-view" style="display: none;">
+<div class="watermark-preview" id="preview-box">
+<div id="dummy-text" style="color: #eee; text-align: center;">
+<i class="fa-solid fa-file-pdf" style="font-size: 5rem;"></i><br/>
+                            Page 1 Preview
+                        </div>
+<div class="watermark-overlay" id="overlay-text">CONFIDENTIAL</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Settings -->
+<aside class="pdf-settings-panel">
+<div class="setting-group">
+<label>Watermark Type</label>
+<select class="form-control" id="wm-type">
+<option value="text">Text Watermark</option>
+<option value="image">Image Watermark</option>
+</select>
+</div>
+<div id="text-settings">
+<div class="setting-group">
+<label>Watermark Text</label>
+<input class="form-control" id="wm-text" type="text" value="CONFIDENTIAL"/>
+</div>
+<div class="setting-group">
+<label>Opacity (%): <span id="opacity-val">30</span>%</label>
+<input class="form-control" id="wm-opacity" max="100" min="0" type="range" value="30"/>
+</div>
+</div>
+<div class="setting-group">
+<label>Smart Placement</label>
+<select class="form-control" id="wm-placement">
+<option value="center">Center</option>
+<option value="tiled">Tiled (Full Page)</option>
+<option value="ai">AI Balanced (Avoid Text)</option>
+</select>
+</div>
+<button class="btn btn-pdf" disabled="" id="apply-btn">
+<i class="fa-solid fa-stamp"></i> Apply Watermark
+                </button>
+<a class="btn-download" href="#" id="download-btn">
+<i class="fa-solid fa-download"></i> Download Watermarked PDF
+                </a>
+</aside>
+</div>
+ Features Info 
+<section class="tool-features-info" style="margin-top: 5rem;">
+<div class="features-grid">
+<div class="feature-card">
+<h3 class="feature-title">Fast Conversion</h3>
+<p class="feature-desc">Our client-side engine combines your images into a professional PDF
+                        instantly, without uploading your photos to a server.</p>
+</div>
+<div class="feature-card">
+<h3 class="feature-title">Privacy First</h3>
+<p class="feature-desc">All processing happens in your browser. Your images remain private and under
+                        your control throughout the process.</p>
+</div>
+</div>
+</section>
+
+
+ Scripts
+            </div>
+            <section class="seo-article" data-tool="watermark-pdf">
+<article class="tool-article">
+<h2>Watermark PDF — Stamp Documents With Text or Logos in Seconds</h2>
+
+<p>A freelancer friend of mine once sent a full project deliverable to a client "for review" — and never got paid, while the work showed up on the client's site a month later. A watermark would not have guaranteed payment, but it would have made that theft awkward. A PDF watermark tool stamps text like DRAFT, CONFIDENTIAL, or your company name across every page — visible, professional, and traveling with the file wherever it goes.</p>
+
+<h3>What Is a PDF Watermark?</h3>
+
+<p>A watermark is a semi-transparent mark layered over (or under) page content. The classic form is diagonal text across the page center — CONFIDENTIAL in light gray — but modern tools support much more: your logo in a corner, a "SAMPLE" stamp, page-numbered Bates-style marks, even tiled repeating patterns.</p>
+
+<p>Watermarks serve three jobs. <strong>Status marking</strong> tells readers what they are looking at: DRAFT, FINAL, FOR REVIEW. <strong>Ownership marking</strong> ties the document to you: your name, company, or website, deterring casual reuse. <strong>Confidentiality marking</strong> warns handlers: INTERNAL USE ONLY, DO NOT DISTRIBUTE. None of these are encryption — a determined person can remove a watermark — but as a social and visual signal, they work remarkably well.</p>
+
+<p>Placement and opacity are the craft. A watermark at 15–25% opacity over the page center is readable but never blocks the text. Corner logos at higher opacity brand without interfering. The mistake is going too dark — a watermark that fights the content for attention makes the whole document look amateur.</p>
+
+<h3>How to Use the Watermark PDF Tool</h3>
+
+<p>Upload your PDF. Type your watermark text — or upload a logo image for an image watermark. Choose position (center diagonal is the classic; corners work for branding), set the font size and opacity, and pick which pages get marked (all pages, or a range). Preview the result, adjust until it looks right, then download.</p>
+
+<p>Dial in the opacity first, size second. Start around 20% opacity and increase only if the mark disappears against busy backgrounds. For text watermarks, a clean sans-serif at large size reads best; script fonts turn to mush at low opacity. For logos, use a PNG with transparency so the page shows through cleanly.</p>
+
+<p>Think about page coverage. Stamping every page is standard for confidentiality marks. For drafts under review, some people watermark only the cover and footer — enough signal without shouting on every page. Match the intensity to the message.</p>
+
+<h3>How PDF Watermarking Works</h3>
+
+<p>The tool edits the PDF's page content, not just its metadata.</p>
+
+<p><strong>Step 1 — Content parsing.</strong> Each page's content stream is read so the tool knows the page dimensions and existing elements.</p>
+
+<p><strong>Step 2 — Watermark rendering.</strong> Your text or image is rendered as new page content: positioned, rotated (typically 45° for diagonal marks), scaled, and set to the chosen opacity using PDF transparency groups.</p>
+
+<p><strong>Step 3 — Layering.</strong> The watermark is inserted either behind the existing content (a true background watermark, text flows over it) or in front (a stamp effect, slightly more prominent). Behind is the classic choice for readability.</p>
+
+<p><strong>Step 4 — Finalization.</strong> Pages are rewritten with the watermark baked in and the PDF is saved. The mark is now part of the document — it prints, it copies with the file, and it survives format conversions that preserve page rendering.</p>
+
+<p>Because the watermark becomes real page content, it cannot be toggled off by the reader. Removing it requires editing the PDF — possible, but far more effort than ignoring a filename.</p>
+
+<h3>Watermark Styles and When to Use Them</h3>
+
+<table>
+<thead><tr><th>Style</th><th>Best for</th><th>Typical settings</th></tr></thead>
+<tbody>
+<tr><td>Diagonal center text</td><td>DRAFT, CONFIDENTIAL</td><td>45° rotation, 15–25% opacity, large font</td></tr>
+<tr><td>Corner logo</td><td>Branding client deliverables</td><td>Top-right or bottom-right, 60–80% opacity</td></tr>
+<tr><td>Footer text</td><td>Subtle ownership marks</td><td>Small font, centered, 40% opacity</td></tr>
+<tr><td>Tiled pattern</td><td>Maximum deterrence on sensitive docs</td><td>Repeating small text, 10–15% opacity</td></tr>
+<tr><td>Page-edge stamp</td><td>FOR REVIEW, APPROVED</td><td>Bold, high contrast, one corner</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses PDF Watermarks?</h3>
+
+<p><strong>Freelancers</strong> stamp deliverables until final payment clears.</p>
+
+<p><strong>Law firms</strong> mark drafts and confidential filings before circulation.</p>
+
+<p><strong>HR departments</strong> label internal documents to control distribution.</p>
+
+<p><strong>Photographers and designers</strong> brand proof sheets and portfolios shared online.</p>
+
+<p><strong>Publishers</strong> mark review copies and galleys so leaks are traceable.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Free watermarking</strong> — no signup, no watermark on the watermark (no pun intended).</li>
+<li><strong>Text and image marks</strong> — type text or upload a logo.</li>
+<li><strong>Full styling control</strong> — font, size, color, rotation, opacity, position.</li>
+<li><strong>Page selection</strong> — stamp all pages or a specific range.</li>
+<li><strong>Live preview</strong> — see the result before downloading.</li>
+<li><strong>Secure processing</strong> — encrypted uploads, auto-deleted files.</li>
+<li><strong>Browser-based</strong> — works on desktop and mobile.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this PDF watermark tool free?</h4>
+<p>Yes — free with no account required.</p>
+
+<h4>Will the watermark obscure my text?</h4>
+<p>Not at proper settings. Keep opacity around 15–25% and place the mark behind content — readable, never blocking.</p>
+
+<h4>Can I use my logo as a watermark?</h4>
+<p>Yes. Upload a PNG (transparent background works best) and position it as an image watermark.</p>
+
+<h4>Can watermarks be removed?</h4>
+<p>They are baked into the page, so removal requires PDF editing software and real effort — enough to deter casual misuse, though not a determined forger.</p>
+
+<h4>Can I watermark only some pages?</h4>
+<p>Yes. Select a page range or individual pages instead of stamping the entire document.</p>
+
+<h4>Does watermarking work on scanned PDFs?</h4>
+<p>Yes. Scanned pages are treated like any other pages — the mark layers over the scan image normally.</p>
+
+<h4>Will the watermark print?</h4>
+<p>Yes. It is part of the page content, so it appears in print exactly as on screen.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="js/pdf-logic.js"></script>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropZone = document.getElementById('drop-zone');
+            const fileInput = document.getElementById('file-input');
+            const editorView = document.getElementById('editor-view');
+            const wmTextInput = document.getElementById('wm-text');
+            const wmOpacityInput = document.getElementById('wm-opacity');
+            const overlayText = document.getElementById('overlay-text');
+            const applyBtn = document.getElementById('apply-btn');
+            const downloadBtn = document.getElementById('download-btn');
+
+            let currentFile = null;
+            let resultBlob = null;
+
+            dropZone.addEventListener('click', () => fileInput.click());
+            fileInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    currentFile = file;
+                    dropZone.style.display = 'none';
+                    editorView.style.display = 'flex';
+                    applyBtn.disabled = false;
+                }
+            });
+
+            wmTextInput.addEventListener('input', (e) => {
+                overlayText.textContent = e.target.value;
+            });
+
+            wmOpacityInput.addEventListener('input', (e) => {
+                const val = e.target.value;
+                document.getElementById('opacity-val').textContent = val;
+                overlayText.style.opacity = val / 100;
+            });
+
+            applyBtn.addEventListener('click', async () => {
+                if (!currentFile) return;
+
+                applyBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
+                applyBtn.disabled = true;
+
+                try {
+                    const text = wmTextInput.value || "CONFIDENTIAL";
+                    const opacity = parseFloat(wmOpacityInput.value) / 100;
+
+                    const watermarkedBytes = await PDFTools.watermarkPDF(currentFile, text, {
+                        opacity: opacity,
+                        fontSize: 60
+                    });
+
+                    resultBlob = new Blob([watermarkedBytes], { type: 'application/pdf' });
+
+                    applyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Watermark Applied';
+                    downloadBtn.style.display = 'block';
+                } catch (err) {
+                    console.error(err);
+                    alert('Error applying watermark.');
+                    applyBtn.innerHTML = '<i class="fa-solid fa-stamp"></i> Apply Watermark';
+                    applyBtn.disabled = false;
+                }
+            });
+
+            downloadBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (resultBlob) {
+                    PDFTools.downloadBlob(resultBlob, `watermarked_${currentFile.name}`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

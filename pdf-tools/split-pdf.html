@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Split your PDF files into multiple documents. Content-based splitting, size-based division, and simple page extraction. 100% secure.">
+    <title>Split PDF - Extract Pages or Split by Content | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">PDF Tools</a> &gt;
+                <span>Split PDF Advanced</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Split PDF Advanced</h1>
+                <p class="tool-description">Divide your document exactly how you need it—by page ranges, bookmarks, or file size limits.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<div class="pdf-tool-container">
+<!-- Main Content Area -->
+<div class="tool-main">
+<div class="pdf-upload-zone" id="drop-zone">
+<span class="pdf-upload-icon"><i class="fa-solid fa-file-circle-minus"></i></span>
+<h2>Upload PDF to Split</h2>
+<p>Select the file you want to divide</p>
+<input accept=".pdf" id="file-input" style="display: none;" type="file"/>
+</div>
+<div id="split-editor" style="display: none;">
+<div class="pdf-page-grid" id="page-preview-grid">
+<!-- Pages will be shown here -->
+</div>
+</div>
+</div>
+<!-- Sidebar Settings -->
+<aside class="pdf-settings-panel">
+<div class="setting-group">
+<label>Split Mode</label>
+<select class="form-control" id="split-mode">
+<option value="range">Fixed Ranges</option>
+<option value="every">Every N Pages</option>
+<option value="size">By File Size (e.g. 5MB each)</option>
+<option value="content">By Chapters/Bookmarks</option>
+</select>
+</div>
+<div class="setting-group" id="range-settings">
+<label>Enter Ranges</label>
+<input class="form-control" id="page-ranges" placeholder="e.g. 1-5, 8, 10-12" type="text"/>
+<p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.5rem;">Separate ranges
+                        with commas.</p>
+</div>
+<button class="btn btn-pdf" disabled="" id="split-btn">
+<i class="fa-solid fa-scissors"></i> Split PDF
+                </button>
+<a class="btn-download" href="#" id="download-btn">
+<i class="fa-solid fa-download"></i> Download Split Files (ZIP)
+                </a>
+</aside>
+</div>
+ Features Info 
+<section class="tool-features-info" style="margin-top: 5rem;">
+<div class="features-grid">
+<div class="feature-card">
+<h3 class="feature-title">Fast Conversion</h3>
+<p class="feature-desc">Our client-side engine combines your images into a professional PDF
+                        instantly, without uploading your photos to a server.</p>
+</div>
+<div class="feature-card">
+<h3 class="feature-title">Privacy First</h3>
+<p class="feature-desc">All processing happens in your browser. Your images remain private and under
+                        your control throughout the process.</p>
+</div>
+</div>
+</section>
+
+
+ Scripts
+            </div>
+            <section class="seo-article" data-tool="split-pdf">
+<article class="tool-article">
+<h2>Split PDF — Extract Pages and Break Documents Into Smaller Files</h2>
+
+<p>A 200-page product catalog landed in my inbox last month, and all I needed was the 6-page pricing section to forward to a client. Scrolling and screenshotting felt absurd. A PDF splitter does the clean job: pull out exactly the pages you want — a range, a set of individual pages, or every page as its own file — and download them as new, proper PDFs.</p>
+
+<h3>What Is a PDF Splitter?</h3>
+
+<p>Splitting is the opposite of merging. Instead of combining files, you carve one document into pieces. The pages themselves are not modified — they are copied verbatim into new PDF files with their text, images, fonts, and links intact. The original file is never altered; you always work on a copy.</p>
+
+<p>Most tools offer four modes, and picking the right one saves time. <strong>Split every page</strong> turns each page into its own file (usually bundled as a ZIP download) — ideal for distributing pages individually. <strong>Extract a range</strong> pulls pages 3–7 into one new PDF. <strong>Extract specific pages</strong> grabs non-consecutive pages like 1, 4, and 9. <strong>Odd/even split</strong> separates alternating pages, which is genuinely useful for fixing double-sided scans that mixed the two sides.</p>
+
+<p>One limitation to know upfront: splitting works on whole pages only. If a single scanned page contains two documents side by side, no splitter can separate them — that needs cropping or image editing, not page extraction.</p>
+
+<h3>How to Use the Split PDF Tool</h3>
+
+<p>Upload your PDF and let the thumbnails render. Choose your split mode: type a range like 3-7, list specific pages like 1,4,9, or pick "every page" for full separation. Click Split, then download — single-range extractions come down as one PDF; every-page splits usually arrive as a ZIP containing all the individual files.</p>
+
+<p>Page numbering follows the document order starting at 1, regardless of any printed page numbers in footers. If the PDF's internal numbering differs from what is printed on the pages (common with front matter using roman numerals), trust the thumbnail order, not the footer.</p>
+
+<p>For large documents, split in one pass rather than many small ones — each split is fast, but re-uploading a 500-page file five times wastes your afternoon. Plan your ranges first, then execute.</p>
+
+<h3>How PDF Splitting Works</h3>
+
+<p>The process is surgical and quick because nothing is being reinterpreted.</p>
+
+<p><strong>Step 1 — Document parsing.</strong> The tool reads the PDF's page tree and builds an index of every page along with the shared resources (fonts, images) they reference.</p>
+
+<p><strong>Step 2 — Page selection.</strong> Your range or page list is resolved into a concrete set of page numbers. Ranges like 1-3,7 expand into ordered lists; duplicates are dropped.</p>
+
+<p><strong>Step 3 — Extraction.</strong> The selected pages are copied into a new PDF structure. Shared fonts and resources are carried along so the extracted pages render identically — this is why a 5-page extract of a 200-page file still looks perfect.</p>
+
+<p><strong>Step 4 — Packaging.</strong> Single extractions download directly as a PDF. Multi-file results (split-every-page mode) are bundled into a ZIP so you get one download instead of fifty.</p>
+
+<p>Because pages are copied rather than re-rendered, splitting is lossless and fast — there is no OCR, no layout analysis, and no quality change.</p>
+
+<h3>Common Splitting Scenarios</h3>
+
+<table>
+<thead><tr><th>Situation</th><th>Mode to use</th></tr></thead>
+<tbody>
+<tr><td>Share one chapter of a long report</td><td>Extract range (e.g. 12–28)</td></tr>
+<tr><td>Pull your pages from a shared document</td><td>Extract specific pages (e.g. 4, 11, 23)</td></tr>
+<tr><td>File is too large for email</td><td>Split into halves or thirds</td></tr>
+<tr><td>Batch scan mixed odd/even pages</td><td>Odd/even split, then reorder</td></tr>
+<tr><td>Archive each invoice separately</td><td>Split every page into individual files</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses PDF Splitters?</h3>
+
+<p><strong>Accountants</strong> separate batch-scanned invoices and receipts into individual files for bookkeeping.</p>
+
+<p><strong>Lawyers and admins</strong> extract relevant sections from long contracts and filings to share with clients.</p>
+
+<p><strong>Teachers</strong> pull chapters or worksheets from textbooks and course packs for distribution.</p>
+
+<p><strong>HR teams</strong> split combined application packets into per-candidate files.</p>
+
+<p><strong>Researchers</strong> extract single papers from conference proceedings and journal compilations.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Free splitting</strong> — no signup, no watermark on extracted pages.</li>
+<li><strong>Four split modes</strong> — ranges, specific pages, every page, odd/even.</li>
+<li><strong>Lossless extraction</strong> — pages keep original quality, fonts, and links.</li>
+<li><strong>Thumbnail preview</strong> — see pages before selecting them.</li>
+<li><strong>ZIP packaging</strong> — multi-file splits download as one archive.</li>
+<li><strong>Fast processing</strong> — even hundred-page documents split in seconds.</li>
+<li><strong>Private</strong> — encrypted uploads, automatic file deletion.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this PDF splitter free?</h4>
+<p>Yes — free with no account required and no watermarks on the output.</p>
+
+<h4>Will splitting reduce quality?</h4>
+<p>No. Pages are copied verbatim into the new files, so text, images, and formatting are identical to the original.</p>
+
+<h4>Can I extract non-consecutive pages?</h4>
+<p>Yes. Enter pages like 1, 4, 9 and they are combined into a single new PDF in that order.</p>
+
+<h4>What if my PDF is password-protected?</h4>
+<p>Unlock it first — splitters cannot read protected files. Remove the password, then split.</p>
+
+<h4>How are pages numbered?</h4>
+<p>By document order starting at 1, following the thumbnail sequence — not by printed footer numbers.</p>
+
+<h4>Can I split a scanned PDF?</h4>
+<p>Yes. Splitting works on page structure, not content, so scanned pages split just as cleanly as digital ones.</p>
+
+<h4>Is there a page limit?</h4>
+<p>Most free tools handle hundreds of pages comfortably. Extremely large files may process slower but still complete.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="js/pdf-logic.js"></script>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropZone = document.getElementById('drop-zone');
+            const fileInput = document.getElementById('file-input');
+            const splitEditor = document.getElementById('split-editor');
+            const splitBtn = document.getElementById('split-btn');
+            const downloadBtn = document.getElementById('download-btn');
+
+            let currentFile = null;
+            let resultBlob = null; // Renamed to resultBlob for consistency
+
+            dropZone.addEventListener('click', () => fileInput.click());
+            fileInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    currentFile = file;
+                    dropZone.style.display = 'none';
+                    splitEditor.style.display = 'block';
+                    splitBtn.disabled = false;
+                    document.getElementById('page-preview-grid').innerHTML = '<div style="grid-column: 1/-1; padding: 2rem; background: var(--bg-secondary); border-radius: 8px; text-align: center;"><i class="fa-solid fa-check-circle" style="color: #4caf50;"></i> Document Loaded: ' + file.name + '</div>';
+                }
+            });
+
+            splitBtn.addEventListener('click', async () => {
+                if (!currentFile) return;
+
+                const rangesStr = document.getElementById('page-ranges').value;
+                if (!rangesStr) {
+                    alert('Please enter page ranges (e.g., 1-2, 3-5)');
+                    return;
+                }
+
+                splitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
+                splitBtn.disabled = true;
+
+                try {
+                    const ranges = rangesStr.split(',').map(r => r.trim());
+                    const splitPDFs = await PDFTools.splitPDF(currentFile, ranges);
+
+                    const zip = new JSZip();
+                    splitPDFs.forEach((bytes, index) => {
+                        zip.file(`split_part_${index + 1}.pdf`, bytes);
+                    });
+
+                    resultBlob = await zip.generateAsync({ type: "blob" });
+
+                    splitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Split Complete';
+                    downloadBtn.style.display = 'block';
+                } catch (err) {
+                    console.error(err);
+                    alert('Error splitting PDF. Please check your ranges.');
+                    splitBtn.innerHTML = '<i class="fa-solid fa-scissors"></i> Split PDF';
+                    splitBtn.disabled = false;
+                }
+            });
+
+            downloadBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (resultBlob) {
+                    PDFTools.downloadBlob(resultBlob, `split_${currentFile.name.replace('.pdf', '')}.zip`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

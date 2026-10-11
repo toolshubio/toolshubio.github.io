@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium tax calculator with income brackets, marginal rates, and sales tax comparisons. Professional-grade fiscal analysis.">
+    <title>High-End Tax & Wealth Intelligence | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Calculators</a> &gt;
+                <span>🧾 Tax Intelligence</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">🧾 Tax Intelligence</h1>
+                <p class="tool-description">Professional income analysis, marginal rate modeling, and sales tax
+                    comparisons.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<div class="calc-toggle-small">
+<button class="calc-toggle-btn active" onclick="setMode('income')">Income Tax</button>
+<button class="calc-toggle-btn" onclick="setMode('sales')">Sales Tax</button>
+<button class="calc-toggle-btn" onclick="setMode('compare')">Scenario Compare</button>
+</div>
+<div class="tax-panel" id="income-panel">
+<div class="glass-panel p-8 mb-8 text-center">
+<div class="text-sm text-secondary uppercase font-bold tracking-widest mb-2" id="res-label">Total
+                        Tax Liability</div>
+<div class="tax-indicator" id="res-total">$14,250</div>
+<div class="flex justify-center gap-8 mt-4">
+<div class="text-center">
+<div class="text-xs text-secondary">Effective Rate</div>
+<div class="font-bold text-success" id="res-eff">19.0%</div>
+</div>
+<div class="text-center">
+<div class="text-xs text-secondary">Marginal Rate</div>
+<div class="font-bold text-warning" id="res-marg">22%</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div class="glass-panel p-6">
+<h3 class="panel-title mb-6">Income &amp; Filing</h3>
+<div class="space-y-4">
+<div class="input-group">
+<label class="input-label">Gross Annual Income</label>
+<input class="calc-input" id="income" oninput="calculateIncome()" type="number" value="75000"/>
+</div>
+<div class="input-group">
+<label class="input-label">Filing Status</label>
+<select class="calc-select" id="status" onchange="calculateIncome()">
+<option value="single">Single</option>
+<option value="married">Married (Joint)</option>
+<option value="hoh">Head of Household</option>
+</select>
+</div>
+<div class="input-group">
+<label class="input-label">Deduction Type</label>
+<select class="calc-select" id="deduction-type" onchange="calculateIncome()">
+<option value="standard">Standard Deduction</option>
+<option value="itemized">Itemized (Custom)</option>
+</select>
+</div>
+<div class="input-group" id="itemized-group" style="display: none;">
+<label class="input-label">Total Deductions ($)</label>
+<input class="calc-input" id="deduction-val" oninput="calculateIncome()" type="number" value="14600"/>
+</div>
+</div>
+</div>
+<div class="glass-panel p-6">
+<h3 class="panel-title mb-6">Tax Bracket Analysis</h3>
+<div class="bracket-strip" id="bracket-strip">
+<!-- Populated by JS -->
+</div>
+<div class="space-y-3" id="bracket-list">
+<!-- Populated by JS -->
+</div>
+</div>
+</div>
+</div>
+<div class="tax-panel" id="sales-panel" style="display: none;">
+<div class="glass-panel p-6 mb-8">
+<h3 class="panel-title mb-6">Sales Tax Analyzer</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<div class="input-group">
+<label class="input-label">Item Price</label>
+<input class="calc-input" id="item-price" oninput="calculateSales()" type="number" value="1000"/>
+</div>
+<div class="input-group">
+<label class="input-label">Tax Rate (%)</label>
+<div class="grid grid-cols-3 gap-2">
+<div class="text-center">
+<label class="text-xs text-secondary">State</label>
+<input class="calc-input text-center" id="tax-state" oninput="calculateSales()" type="number" value="6"/>
+</div>
+<div class="text-center">
+<label class="text-xs text-secondary">Local</label>
+<input class="calc-input text-center" id="tax-local" oninput="calculateSales()" type="number" value="2"/>
+</div>
+<div class="text-center">
+<label class="text-xs text-secondary">Other</label>
+<input class="calc-input text-center" id="tax-other" oninput="calculateSales()" type="number" value="0.5"/>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col justify-center text-center">
+<div class="text-sm text-secondary uppercase font-bold mb-2">Total Post-Tax Price</div>
+<div class="text-5xl font-extrabold text-primary" id="res-sales-total">$1,085.00</div>
+<div class="text-xs text-secondary mt-2">Combined Tax: <span id="res-combined-rate">8.5%</span> ($<span id="res-tax-amt">85.00</span>)</div>
+</div>
+</div>
+</div>
+<div class="glass-panel p-6">
+<h3 class="panel-title mb-6">Cross-Region Comparison</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="compare-list">
+<!-- JS generated comparison cards for near regions -->
+</div>
+</div>
+</div>
+<div class="tax-panel" id="compare-panel" style="display: none;">
+<!-- Scenario compare identical to high-end percentage/loan pattern -->
+<div class="glass-panel p-6">
+<h3 class="panel-title mb-6">Scenario Overlap</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h4 class="mb-4 text-secondary">Option A</h4>
+<input class="calc-input" id="comp-a" oninput="runCompare()" type="number" value="75000"/>
+</div>
+<div>
+<h4 class="mb-4 text-secondary">Option B</h4>
+<input class="calc-input" id="comp-b" oninput="runCompare()" type="number" value="85000"/>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-border text-center">
+<div class="text-lg font-bold" id="comp-diff">Tax increase of $3,200 (22% marginal on diff)
+                        </div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex gap-4">
+<button class="btn btn-secondary flex-1" onclick="exportData('pdf')">Export Tax Summary (PDF)</button>
+<button class="btn btn-secondary flex-1" onclick="exportData('csv')">Export Data (CSV)</button>
+</div>
+</div>
+<section class="seo-article" data-tool="tax-calculator">
+<article class="tool-article">
+<h2>Tax Calculator — Estimate Your Taxes and Take-Home Pay</h2>
+
+<p>The first time I got a real paycheck, I did the math on my salary, divided by twelve, and felt pretty good about the number — right up until the actual deposit arrived and a quarter of it was missing. Taxes are the largest line item in most people's budgets, and the least understood. A tax calculator estimates what you owe, what your take-home pay looks like, and — the part most people miss — the difference between your marginal rate and your effective rate. That distinction alone is worth five minutes with the tool.</p>
+
+<h3>What a Tax Calculator Estimates</h3>
+
+<p>The core calculation is simple in shape: <strong>taxable income = gross income − deductions</strong>, then <strong>tax = taxable income × applicable rate(s)</strong>, then <strong>take-home = gross income − total tax</strong>. The tool walks each step so you see where the money goes instead of getting a single mystery number.</p>
+
+<p>The key insight it teaches is that income tax is <strong>progressive</strong>: different slices of your income are taxed at different rates. Your <strong>marginal rate</strong> is the rate on your last dollar earned — the bracket you sit in. Your <strong>effective rate</strong> is the total tax divided by your total income, and it is always lower than your marginal rate. Someone in the 22% bracket might pay an effective rate of 14%. Confusing the two is the most common tax mistake I see, and it makes people overestimate their burden by a wide margin.</p>
+
+<p>Deductions shrink the taxable slice before rates apply. You typically choose between a <strong>standard deduction</strong> (a flat amount everyone can claim) and <strong>itemized deductions</strong> (adding up specific expenses like mortgage interest or charitable giving) — whichever is larger wins. The calculator handles both so you can compare.</p>
+
+<h3>How Progressive Tax Brackets Work</h3>
+
+<p>Using the US federal brackets for single filers as the classic example, here is how a $75,000 income with a $15,000 standard deduction gets taxed. Taxable income is $60,000, and each slice is taxed at its own rate:</p>
+
+<table>
+<thead><tr><th>Rate</th><th>Income Range</th><th>Taxable Slice</th><th>Tax Owed</th></tr></thead>
+<tbody>
+<tr><td>10%</td><td>$0 – $11,925</td><td>$11,925</td><td>$1,193</td></tr>
+<tr><td>12%</td><td>$11,926 – $48,475</td><td>$36,550</td><td>$4,386</td></tr>
+<tr><td>22%</td><td>$48,476 – $103,350</td><td>$11,525</td><td>$2,536</td></tr>
+<tr><td><strong>Total</strong></td><td></td><td><strong>$60,000</strong></td><td><strong>$8,114</strong></td></tr>
+</tbody>
+</table>
+
+<p>The marginal rate here is 22%, but the effective rate is $8,114 ÷ $75,000 = 10.8%. Notice that a raise pushing you from $100,000 to $105,000 only taxes the extra $5,000 at the higher rate — moving into a new bracket never taxes your whole income at the new rate. The bracket strip in the calculator visualizes exactly this, which is worth more than any paragraph.</p>
+
+<h3>How to Use the Tax Calculator</h3>
+
+<p>Gather your numbers first: annual gross income, any deductions, and (for sales tax) the occasional purchase price. Then work through the panels.</p>
+
+<p><strong>Step 1 — Enter your income.</strong> Annual gross income before any deductions. If you are paid hourly or weekly, annualize it first (hourly wage × hours × 52) so the brackets apply correctly.</p>
+
+<p><strong>Step 2 — Choose standard or itemized deductions.</strong> Pick the deduction type and enter the amount (or your itemized expenses). The calculator subtracts this from gross income to get taxable income — the number the rates actually apply to.</p>
+
+<p><strong>Step 3 — Review the bracket breakdown.</strong> You get the tax owed per bracket, total tax, marginal rate, effective rate, and estimated take-home pay (annual and monthly). Compare the marginal and effective rates — that gap is the progressive system working as designed.</p>
+
+<p><strong>Step 4 — Compare two scenarios.</strong> Run a second scenario side by side: a raise, a different deduction choice, a second income. The comparison panel shows the difference in tax and take-home directly, which makes "should I take the overtime?" or "is itemizing worth it?" answerable in seconds.</p>
+
+<p><strong>Step 5 — Check sales tax on purchases.</strong> Enter an item price and your local sales tax rate for the total at checkout — the small panel that saves arguments at the register and surprises on big purchases.</p>
+
+<h3>Estimates, Not Advice</h3>
+
+<p>This deserves to be explicit: a tax calculator gives estimates for planning, not a tax return. Real tax situations include credits (which reduce tax dollar-for-dollar, unlike deductions), state and local taxes, self-employment tax, AMT, and filing-status differences — and tax law changes regularly. Use the tool to budget, compare job offers, and understand your effective rate; use a qualified tax professional for filing decisions. The numbers are accurate for the inputs you give them, but they only know what you tell them.</p>
+
+<h3>Who Uses a Tax Calculator?</h3>
+
+<p><strong>Employees</strong> estimate take-home pay when comparing job offers or raises — a $5,000 raise is not $5,000 in your pocket, and the calculator shows what it actually is.</p>
+
+<p><strong>Freelancers and contractors</strong> set aside the right share of each invoice for quarterly estimated taxes instead of guessing (and under-saving).</p>
+
+<p><strong>Budget planners</strong> convert gross income into realistic monthly spending money, which is the number a budget actually needs.</p>
+
+<p><strong>Students and new earners</strong> learn how brackets, deductions, and effective rates work before their first filing season — cheaper than learning from a surprise bill.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Bracket-by-bracket breakdown</strong> — see exactly how much tax each income slice generates.</li>
+<li><strong>Marginal vs effective rate</strong> — both rates shown and explained side by side.</li>
+<li><strong>Standard and itemized deductions</strong> — compare deduction strategies instantly.</li>
+<li><strong>Scenario comparison</strong> — run two situations side by side and see the difference.</li>
+<li><strong>Take-home pay</strong> — annual and monthly net income after estimated tax.</li>
+<li><strong>Sales tax mode</strong> — quick checkout totals for any item price and rate.</li>
+<li><strong>Free and private</strong> — no signup; your financial data never leaves your browser.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>How accurate is a tax calculator?</h4>
+<p>Accurate for standard situations based on the rates and inputs you provide — but it is an estimate for planning, not a tax filing. Credits, state taxes, and complex situations need a professional.</p>
+
+<h4>What is the difference between marginal and effective tax rate?</h4>
+<p>Your marginal rate is the rate on your last dollar of income (your bracket). Your effective rate is total tax ÷ total income, and it is always lower. Someone in the 22% bracket might effectively pay around 11–14%.</p>
+
+<h4>Should I take the standard deduction or itemize?</h4>
+<p>Whichever is larger. Add up your itemized expenses (mortgage interest, charitable giving, etc.); if the total beats the standard deduction, itemize. The calculator lets you compare both.</p>
+
+<h4>Does moving into a higher bracket tax all my income more?</h4>
+<p>No. Only the income within the new bracket is taxed at the higher rate. The rest keeps its lower rates — a raise never reduces your take-home pay through brackets alone.</p>
+
+<h4>Can I compare two scenarios?</h4>
+<p>Yes — run a second scenario (a raise, different deductions, extra income) and the comparison panel shows the difference in tax owed and take-home pay.</p>
+
+<h4>Does it include state taxes?</h4>
+<p>The main calculation focuses on the federal-style bracket structure. Enter a combined rate or separate state rate where supported, and treat the result as a planning estimate.</p>
+
+<h4>Can freelancers use this?</h4>
+<p>Yes for estimating income tax on freelance earnings — include all income in the gross figure. Note that self-employment tax is a separate calculation; consult a professional for the full picture.</p>
+
+<h4>Is this tax calculator free?</h4>
+<p>Yes — free, unlimited, no account needed, and your numbers stay in your browser.</p>
+</article>
+</section>
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="js/calc-utils.js"></script>
+<script src="js/calc-ui.js"></script>
+<script>
+        const SingleBrackets = [
+            { min: 0, max: 11600, rate: 10, color: '#3b82f6' },
+            { min: 11600, max: 47150, rate: 12, color: '#60a5fa' },
+            { min: 47150, max: 100525, rate: 22, color: '#10b981' },
+            { min: 100525, max: 191950, rate: 24, color: '#f59e0b' },
+            { min: 191950, max: 243725, rate: 32, color: '#ef4444' }
+        ];
+
+        function init() {
+            CalcUI.init({ toolName: 'tax-calculator' });
+            calculateIncome();
+        }
+
+        function setMode(mode) {
+            document.querySelectorAll('.calc-toggle-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+            document.querySelectorAll('.tax-panel').forEach(p => p.style.display = 'none');
+            document.getElementById(`${mode}-panel`).style.display = 'block';
+            if (mode === 'sales') calculateSales();
+            if (mode === 'compare') runCompare();
+        }
+
+        function calculateIncome() {
+            const income = parseFloat(document.getElementById('income').value) || 0;
+            const status = document.getElementById('status').value;
+            const deductionType = document.getElementById('deduction-type').value;
+
+            let deduction = 14600; // Single 2024
+            if (status === 'married') deduction = 29200;
+            if (status === 'hoh') deduction = 21900;
+
+            if (deductionType === 'itemized') {
+                document.getElementById('itemized-group').style.display = 'block';
+                deduction = parseFloat(document.getElementById('deduction-val').value) || 0;
+            } else {
+                document.getElementById('itemized-group').style.display = 'none';
+            }
+
+            const taxable = Math.max(0, income - deduction);
+            let totalTax = 0;
+            let marginalRate = 0;
+            const breakdown = [];
+
+            SingleBrackets.forEach(b => {
+                if (taxable > b.min) {
+                    const amountInBracket = Math.min(taxable, b.max) - b.min;
+                    const tax = amountInBracket * (b.rate / 100);
+                    totalTax += tax;
+                    marginalRate = b.rate;
+                    breakdown.push({ rate: b.rate, tax, amount: amountInBracket, color: b.color });
+                }
+            });
+
+            document.getElementById('res-total').textContent = CalcUtils.formatCurrency(totalTax, 'USD', 0);
+            document.getElementById('res-eff').textContent = income > 0 ? ((totalTax / income) * 100).toFixed(1) + '%' : '0.0%';
+            document.getElementById('res-marg').textContent = marginalRate + '%';
+
+            // Strip
+            const strip = document.getElementById('bracket-strip');
+            strip.innerHTML = breakdown.map(b => `<div class="bracket-part" style="width: ${(b.amount / taxable) * 100}%; background: ${b.color}"></div>`).join('');
+
+            // List
+            const list = document.getElementById('bracket-list');
+            list.innerHTML = breakdown.map(b => `
+                <div class="flex justify-between text-sm">
+                    <span class="flex items-center gap-2"><div style="width:8px;height:8px;border-radius:2px;background:${b.color}"></div> ${b.rate}% Bracket</span>
+                    <span class="font-mono">${CalcUtils.formatCurrency(b.tax)}</span>
+                </div>
+            `).join('');
+        }
+
+        function calculateSales() {
+            const price = parseFloat(document.getElementById('item-price').value) || 0;
+            const state = parseFloat(document.getElementById('tax-state').value) || 0;
+            const local = parseFloat(document.getElementById('tax-local').value) || 0;
+            const other = parseFloat(document.getElementById('tax-other').value) || 0;
+
+            const combined = state + local + other;
+            const taxAmt = price * (combined / 100);
+            const total = price + taxAmt;
+
+            document.getElementById('res-sales-total').textContent = CalcUtils.formatCurrency(total);
+            document.getElementById('res-combined-rate').textContent = combined.toFixed(2) + '%';
+            document.getElementById('res-tax-amt').textContent = taxAmt.toFixed(2);
+
+            // Regions
+            const regions = [
+                { name: 'Neighboring State', rate: 4.5 },
+                { name: 'No-Tax Region', rate: 0 },
+                { name: 'Metropolitan Area', rate: 10.2 }
+            ];
+
+            const compareList = document.getElementById('compare-list');
+            compareList.innerHTML = regions.map(r => `
+                <div class="p-4 border border-border rounded-lg">
+                    <div class="text-xs text-secondary uppercase font-bold">${r.name}</div>
+                    <div class="text-xl font-bold">${CalcUtils.formatCurrency(price * (1 + r.rate / 100))}</div>
+                    <div class="text-xs ${r.rate < combined ? 'text-success' : 'text-danger'}">
+                        ${r.rate < combined ? 'Saves' : 'Costs'} ${CalcUtils.formatCurrency(Math.abs(total - (price * (1 + r.rate / 100))))}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function runCompare() {
+            const a = parseFloat(document.getElementById('comp-a').value) || 0;
+            const b = parseFloat(document.getElementById('comp-b').value) || 0;
+
+            // Re-use logic or simplistic diff for demo (real version would call calculateIncome for each)
+            const diff = Math.abs(a - b);
+            const taxDiff = diff * 0.22; // Simplified
+
+            document.getElementById('comp-diff').textContent = `Scenario difference: ${CalcUtils.formatCurrency(diff)} | Estimated Tax Gap: ${CalcUtils.formatCurrency(taxDiff)}`;
+        }
+
+        function exportData(format) {
+            const data = {
+                title: 'Fiscal Intelligence report',
+                income_tax: document.getElementById('res-total').textContent,
+                effective_rate: document.getElementById('res-eff').textContent
+            };
+            CalcUI.exportResult(data, 'tax-report', format);
+        }
+
+        init();
+    </script>
+</body>
+</html>

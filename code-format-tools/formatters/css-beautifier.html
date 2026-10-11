@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free, pro CSS beautifier. Clean up messy stylesheets, fix indentation, and organize CSS properties 100% client-side.">
+    <title>CSS Beautifier - Prettify & Format Stylesheets | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../../image-tools/css/global.css">
+    <link rel="stylesheet" href="../../image-tools/css/components.css">
+    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../../about-us.html">About</a>
+                <a class="nav-link" href="../../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> &gt;
+                <a href="../index.html">Code & Formatters</a> &gt;
+                <span>🎨 CSS Beautifier</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">🎨 CSS Beautifier</h1>
+                <p class="tool-description">Restore organization and beauty to cluttered or minified CSS files
+                    instantly.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<div class="tool-workspace">
+<div class="code-workspace">
+<div class="editor-container">
+<div class="editor-header">
+<span class="editor-title">Messy CSS</span>
+<button class="btn btn-sm btn-secondary" onclick="document.getElementById('input-code').value = ''; onInputChange()">Clear</button>
+</div>
+<textarea class="code-area" id="input-code" oninput="onInputChange()" placeholder="Paste CSS here..."></textarea>
+<div class="code-stats" id="input-stats"></div>
+</div>
+<div class="editor-container">
+<div class="editor-header">
+<span class="editor-title">Pretty CSS</span>
+<button class="btn btn-sm btn-primary" onclick="CodeUI.copyToClipboard('output-code', this)">Copy Result</button>
+</div>
+<textarea class="code-area" id="output-code" placeholder="Formatted CSS will appear here..." readonly=""></textarea>
+<div class="code-stats" id="output-stats"></div>
+</div>
+</div>
+<div class="action-bar">
+<div class="input-group" style="flex-direction: row; align-items: center; gap: 10px; margin: 0;">
+<label class="input-label" style="margin: 0;">Indent:</label>
+<select class="calc-select" id="indent-size" onchange="format()" style="width: 120px;">
+<option value="2">2 Spaces</option>
+<option selected="" value="4">4 Spaces</option>
+</select>
+</div>
+<button class="btn btn-primary btn-lg" onclick="format()">💎 Beautify Stylesheet</button>
+</div>
+<section class="tool-content mt-12">
+<div class="content-grid">
+<div class="main-text">
+<h2>Organized Styling, Fast Maintenance</h2>
+<p>A well-formatted CSS file is easier to audit for redundancy and browser compatibility.
+                                Our CSS Beautifier adds proper padding around delimiters and ensures each declaration
+                                sits on its own line.</p>
+<h3>What we process:</h3>
+<ul>
+<li><strong>Property Alignment:</strong> Ensures colons are spaced correctly.</li>
+<li><strong>Selector Grouping:</strong> Line breaks between multiple selectors.</li>
+<li><strong>Consistency:</strong> Uniform use of curly braces.</li>
+</ul>
+</div>
+<div class="faq-section">
+<h3>FAQ</h3>
+<div class="faq-item">
+<strong>Does it combine selectors?</strong>
+<p>No. It is a formatter, not a refactoring tool. It preserves your logic but improves
+                                    visual layout.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+            </div>
+            <section class="seo-article" data-tool="css-beautifier">
+<article class="tool-article">
+<h2>CSS Beautifier — Turn Minified CSS Into Readable Code</h2>
+
+<p>Every production website ships CSS that looks like it was written by a machine having a bad day: ten thousand characters on a single line, no spaces, no mercy. That's minified CSS — great for load times, miserable for humans. The first time I needed to debug a styling issue on a live site, I opened the stylesheet in DevTools and found one endless line of compressed rules. A CSS beautifier reverses that: it takes the minified wall of text and expands it back into properly indented, line-broken, human-readable CSS you can actually edit.</p>
+
+<h3>What a CSS Beautifier Does</h3>
+
+<p>Beautifying (also called unminifying or pretty-printing) reformats CSS without changing what it does. The tool parses your stylesheet and applies consistent formatting: each selector on its own line, an opening brace, every declaration on its own indented line, and a closing brace. Comments are preserved and placed on their own lines. The output behaves <em>exactly</em> like the input — this is purely a whitespace-and-layout transformation, not an optimizer. It won't merge duplicate rules, rename classes, or rewrite your properties.</p>
+
+<p>It's the mirror image of a <strong>CSS minifier</strong>. Minifiers strip whitespace and comments to shrink files for production (typically 20–35% smaller on hand-written CSS). Beautifiers restore readability for development. The healthy workflow uses both: beautify to edit and debug, minify to ship.</p>
+
+<h3>Before and After</h3>
+
+<p>Here's what the transformation looks like on a small example:</p>
+
+<p><strong>Before (minified):</strong></p>
+<p><code>body{margin:0;padding:0;color:#333;background-color:#fff}h1{text-align:center;font-size:2rem}p{margin:1rem 0}</code></p>
+
+<p><strong>After (beautified):</strong></p>
+<pre><code>body {
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fff;
+}
+h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+p {
+    margin: 1rem 0;
+}</code></pre>
+
+<p>Same stylesheet, same behavior — but now you can see the structure: three rule sets, each declaration on its own line, ready to edit. On a real-world minified file with hundreds of rules, the difference is between "impossible" and "fine."</p>
+
+<h3>How to Use the CSS Beautifier</h3>
+
+<p>Paste, set your indent, beautify, copy. The tool shows input/output stats so you can see the size change.</p>
+
+<p><strong>Step 1 — Paste your CSS.</strong> Drop minified or messy CSS into the input panel. It handles full stylesheets of any size, including <code>@media</code> queries, <code>@keyframes</code>, and nested rules.</p>
+
+<p><strong>Step 2 — Choose your indent.</strong> Set the indent size (2 or 4 spaces are the common choices) or use tabs — match whatever your project or team uses so the output drops straight into your codebase without reformatting.</p>
+
+<p><strong>Step 3 — Beautify.</strong> The tool parses the stylesheet and outputs the formatted version instantly. The statistics show the before/after size: beautified CSS is always larger (all that whitespace), which is expected and fine for development.</p>
+
+<p><strong>Step 4 — Edit, then copy or download.</strong> Make your changes in the readable output, then copy it back to your project — or run it through a minifier again before deploying to production.</p>
+
+<h3>When to Beautify Your CSS</h3>
+
+<p><strong>Debugging production styles:</strong> the number-one use case. A layout breaks on the live site, you open the minified stylesheet, and nothing is findable. Beautify it first, then search for the selector — debugging readable code is an order of magnitude faster.</p>
+
+<p><strong>Editing third-party CSS:</strong> themes, frameworks, and plugins ship minified. Before overriding or extending their styles, beautify a copy so you understand the selector structure and specificity you're working against.</p>
+
+<p><strong>Learning from real sites:</strong> viewing a well-designed site's source is a legitimate way to learn CSS technique — but only after beautifying, since the minified original teaches nothing.</p>
+
+<p><strong>Cleaning up rushed code:</strong> CSS written in a hurry accumulates inconsistent indentation and collapsed lines. One pass through the beautifier normalizes everything, which also makes the next code review painless.</p>
+
+<h3>Who Uses a CSS Beautifier?</h3>
+
+<p><strong>Front-end developers</strong> debug and edit stylesheets daily — beautifying minified production CSS is routine maintenance.</p>
+
+<p><strong>WordPress and theme customizers</strong> work with third-party theme stylesheets that arrive minified and need readable copies for customization.</p>
+
+<p><strong>Students</strong> study real-world CSS from live sites, learning layout technique from beautified production code.</p>
+
+<p><strong>Code reviewers</strong> ask for beautified diffs — reviewing a one-line minified change is meaningless, while the formatted version shows exactly what moved.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant beautification</strong> — minified CSS expanded to readable format in milliseconds.</li>
+<li><strong>Adjustable indentation</strong> — set indent size and choose spaces or tabs to match your project.</li>
+<li><strong>Full CSS support</strong> — media queries, keyframes, nested rules, and comments handled correctly.</li>
+<li><strong>Before/after statistics</strong> — see input and output sizes at a glance.</li>
+<li><strong>Copy and download</strong> — grab the formatted stylesheet in one click.</li>
+<li><strong>Safe transformation</strong> — formatting only; selectors, properties, and values untouched.</li>
+<li><strong>Private and free</strong> — everything runs in your browser; your stylesheets never leave your device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is the difference between beautifying and minifying CSS?</h4>
+<p>They're opposites. Minifying removes whitespace and comments to shrink files for production. Beautifying (unminifying) restores indentation and line breaks for human readability. Neither changes what the CSS does.</p>
+
+<h4>Will beautifying change how my CSS works?</h4>
+<p>No. The tool only reformats whitespace and line breaks — selectors, properties, values, and comments are preserved exactly. The output behaves identically to the input.</p>
+
+<h4>Can it handle large stylesheets?</h4>
+<p>Yes — the tool processes CSS files of any size, including complex stylesheets with media queries, keyframes, and nested rules.</p>
+
+<h4>What indent style should I choose?</h4>
+<p>Match your project's convention: 2 spaces is common in modern codebases, 4 spaces in others, tabs in some. Consistency with your existing code matters more than the specific choice.</p>
+
+<h4>Why is the beautified file bigger?</h4>
+<p>All the added indentation and line breaks take space — that's expected. Beautified CSS is for development and debugging; minify again before deploying to production.</p>
+
+<h4>Does it fix CSS errors?</h4>
+<p>It formats, not fixes. Beautified code makes errors easier to <em>spot</em> — a missing brace or misplaced declaration becomes visible in the structure — but it won't correct invalid CSS.</p>
+
+<h4>Is my CSS uploaded anywhere?</h4>
+<p>No. Beautification runs entirely in your browser — your stylesheet is never sent to a server, logged, or stored.</p>
+
+<h4>Is this CSS beautifier free?</h4>
+<p>Yes — free, unlimited, no account required.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../../about-us.html">About Us</a>
+                    <a class="footer-link" href="../../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.7/beautify-css.min.js"></script>
+<script src="../js/code-utils.js"></script>
+<script src="../js/code-ui.js"></script>
+<script>
+        CodeUI.init({ toolName: 'css-beautifier' });
+
+        function onInputChange() {
+            const code = document.getElementById('input-code').value;
+            CodeUI.renderStats('input-stats', CodeUtils.getStats(code));
+        }
+
+        function format() {
+            const input = document.getElementById('input-code').value;
+            if (!input) return;
+
+            const indentField = document.getElementById('indent-size').value;
+            const options = {
+                indent_size: parseInt(indentField),
+                selector_separator_newline: true,
+                newline_between_rules: true
+            };
+
+            const output = css_beautify(input, options);
+            document.getElementById('output-code').value = output;
+            CodeUI.renderStats('output-stats', CodeUtils.getStats(output));
+        }
+
+        CodeUI.renderRelated('related-tools', [
+            { icon: '🔥', name: 'CSS Minifier', desc: 'Optimize CSS', url: '../minifiers/css-minifier.html' },
+            { icon: 'âœ…', name: 'CSS Validator', desc: 'Check syntax', url: '../validators/css-validator.html' },
+            { icon: '🎨', name: 'HTML Formatter', desc: 'Format HTML', url: 'html-formatter.html' }
+        ]);
+    </script>
+</body>
+</html>

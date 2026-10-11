@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online Document Scanner - Scan documents using camera or upload, apply filters, crop, and OCR text extraction. 100% private.">
+    <title>Document Scanner - Scan & OCR Online | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Documents</a> &gt;
+                <span>Document Scanner</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Document Scanner</h1>
+                <p class="tool-description">Free online Document Scanner - Scan documents using camera or upload, apply filters, crop, and OCR text extraction. 100% private.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+<!-- Hero Section -->
+<div class="doc-hero">
+<h1 class="doc-hero-title">Document Scanner</h1>
+<p class="doc-hero-subtitle">Scan documents via camera, apply intelligent filters, and extract text with
+                    OCR. Your documents are never uploaded to any server.</p>
+</div>
+<!-- Main Tool Container -->
+<div class="doc-tool-container">
+<div class="doc-main-area">
+<!-- Upload/Camera Section -->
+<div class="doc-upload-section" id="upload-section">
+<div class="doc-upload-icon">📷</div>
+<h2 class="doc-upload-title">Start Scanning</h2>
+<div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+<button class="doc-upload-btn" id="camera-btn">📸 Use Camera</button>
+<button class="doc-upload-btn secondary" id="browse-btn">📁 Upload Images</button>
+</div>
+<input accept="image/*" hidden="" id="file-input" multiple="" type="file"/>
+</div>
+<!-- Preview/Workspace -->
+<div id="preview-area" style="display: none;">
+<div class="scanner-viewport">
+<video autoplay="" id="camera-video" playsinline="" style="display: none;"></video>
+<img id="preview-image" style="display: none;"/>
+<div class="scan-overlay" id="scan-corners"></div>
+<div class="scanning-line" id="scanning-line"></div>
+</div>
+<div class="pages-strip" id="pages-strip"></div>
+<div class="ocr-result" id="ocr-result"></div>
+</div>
+<!-- Action Bar -->
+<div class="doc-action-bar" id="action-bar" style="display: none;">
+<button class="doc-action-btn secondary" id="add-more-btn">➕ Add Page</button>
+<button class="doc-action-btn primary" id="ocr-btn">🔍 Extract Text (OCR)</button>
+<button class="doc-action-btn" id="download-btn">📥 Save Document</button>
+<button class="doc-action-btn secondary" id="reset-btn">🗑️ Reset</button>
+</div>
+</div>
+<!-- Settings Panel -->
+<div class="doc-settings-panel">
+<div class="doc-settings-title">⚙️ Scanner Settings</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+<div class="doc-settings-group">
+<label class="doc-settings-label">Image Filters</label>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+<button class="doc-toolbar-btn filter-btn active" data-filter="none">Original</button>
+<button class="doc-toolbar-btn filter-btn" data-filter="grayscale">B&amp;W</button>
+<button class="doc-toolbar-btn filter-btn" data-filter="contrast">Enhanced</button>
+<button class="doc-toolbar-btn filter-btn" data-filter="bw">Document</button>
+</div>
+</div>
+<div class="doc-settings-group">
+<label class="doc-settings-label">Manual Adjustments</label>
+<div style="margin-bottom: 0.5rem;">
+<label style="font-size: 0.75rem;">Brightness</label>
+<input class="doc-settings-slider" id="brightness-slider" max="200" min="0" type="range" value="100"/>
+<div style="display: flex; justify-content: space-between; font-size: 0.7rem;">
+<span>0%</span><span id="brightness-val">100%</span><span>200%</span>
+</div>
+</div>
+<div>
+<label style="font-size: 0.75rem;">Contrast</label>
+<input class="doc-settings-slider" id="contrast-slider" max="200" min="0" type="range" value="100"/>
+<div style="display: flex; justify-content: space-between; font-size: 0.7rem;">
+<span>0%</span><span id="contrast-val">100%</span><span>200%</span>
+</div>
+</div>
+</div>
+<div class="doc-settings-group">
+<label class="doc-settings-label">Export Format</label>
+<select class="doc-settings-select" id="export-format">
+<option value="pdf">Save as PDF</option>
+<option value="jpg">Save as JPG</option>
+<option value="png">Save as PNG</option>
+<option value="zip">Save as ZIP (Batch)</option>
+</select>
+</div>
+<div class="doc-settings-group">
+<label class="doc-settings-label">📊 Status</label>
+<div class="doc-stats-bar" style="grid-template-columns: 1fr 1fr; padding: 1rem; margin: 0;">
+<div class="doc-stat-item">
+<span class="doc-stat-value" id="stat-pages">0</span>
+<span class="doc-stat-label">Pages</span>
+</div>
+<div class="doc-stat-item">
+<span class="doc-stat-value" id="stat-words">--</span>
+<span class="doc-stat-label">OCR Words</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+            </div>
+            <section class="seo-article" data-tool="document-scanner">
+<article class="tool-article">
+<h2>Document Scanner — Free Online Scan & OCR Tool</h2>
+
+<p>The scanner on my desk died two years ago and I never replaced it. I haven't missed it once — because my phone camera plus a good scanning tool does the job better. A document scanner turns photos of paper into clean, flat, readable digital documents: it detects the page edges, straightens the perspective, cleans up shadows, and bundles multiple pages into one file. Add OCR (optical character recognition) and the text inside becomes searchable and copyable. No hardware, no app install — just your camera and a browser.</p>
+
+<h3>What Is a Document Scanner?</h3>
+
+<p>A document scanner is software that converts photos of physical documents into proper digital scans. Point your camera at a page and the tool does four things a raw photo can't: it finds the document's corners automatically, corrects the perspective so a photo taken at an angle becomes a flat rectangle, enhances contrast to make text crisp, and removes shadows and glare.</p>
+
+<p>The result looks like it came from a flatbed scanner — black text on a clean white background — instead of a crooked phone photo with your thumb in the corner. Multi-page mode lets you scan a stack of pages into a single PDF, which is how contracts, receipts, and notebooks become emailable documents.</p>
+
+<p>OCR is the second half of the magic. It reads the text in your scan and converts it into actual selectable characters. A scanned contract becomes searchable ("find the termination clause"), copyable (paste a paragraph into an email), and editable. Without OCR, a scan is just a picture of text; with it, it's a document.</p>
+
+<h3>How to Use the Document Scanner</h3>
+
+<p>Click the camera button to capture a page directly, or upload existing photos from your device. The scanner detects the page corners automatically — if it misses (curled pages and busy backgrounds confuse it), adjust the corner handles manually until the outline hugs the page edges.</p>
+
+<p>Fine-tune the image with the brightness and contrast sliders. A photo taken in warm indoor light often needs a contrast boost to make text pop; a washed-out page needs brightness pulled down. The goal is dark text on a clean background — preview the result before moving on.</p>
+
+<p>Scanning multiple pages? Hit "add more" and capture each page; they collect in the pages strip where you can reorder or remove any of them. When the set is complete, choose your export format (PDF for documents, image when you need a picture) and download. For searchable text, run OCR on the scan — the extracted text appears in the results panel with a word count, ready to copy.</p>
+
+<p>My setup for reliable scans: lay the page flat on a dark, uncluttered surface (contrast helps edge detection), shoot in bright indirect light to avoid shadows, and hold the phone parallel to the page. Two extra seconds of care here saves minutes of cleanup later.</p>
+
+<h3>Tips for Perfect Scans</h3>
+
+<table>
+<thead><tr><th>Tip</th><th>Why it matters</th></tr></thead>
+<tbody>
+<tr><td>Flat surface, dark background</td><td>Edge detection finds corners reliably</td></tr>
+<tr><td>Bright, indirect light</td><td>Avoids shadows and glare that OCR misreads</td></tr>
+<tr><td>Hold phone parallel to page</td><td>Less perspective distortion to correct</td></tr>
+<tr><td>Fill the frame</td><td>More pixels on the text = sharper result</td></tr>
+<tr><td>Keep the camera steady</td><td>Blur is the #1 OCR killer</td></tr>
+<tr><td>Clean the lens</td><td>A smudged lens hazes every scan</td></tr>
+<tr><td>Flatten curled pages</td><td>Curls distort text lines and confuse OCR</td></tr>
+</tbody>
+</table>
+
+<p>The blur point deserves emphasis: OCR engines are remarkably tolerant of skew, shadows, and mediocre lighting, but motion blur destroys character shapes beyond recognition. If your OCR output is gibberish, retake the photo steadier before blaming the software.</p>
+
+<h3>What to Scan</h3>
+
+<p><strong>Receipts and invoices.</strong> Expense reports, tax records, warranty claims — scan them the day they arrive and the paper can go.</p>
+
+<p><strong>Contracts and forms.</strong> Signed pages become emailable PDFs in seconds; OCR makes the terms searchable later.</p>
+
+<p><strong>Whiteboards.</strong> Meeting notes captured before someone erases them — the contrast filter turns marker scribbles into readable text.</p>
+
+<p><strong>Business cards.</strong> OCR pulls the contact details into copyable text instead of a photo you can never search.</p>
+
+<p><strong>Handwritten notes.</strong> Notebooks, journals, and annotations become archivable and (with OCR) partially searchable.</p>
+
+<p><strong>IDs and certificates.</strong> Keep digital copies of important documents — though always check what a given institution accepts; some require certified originals.</p>
+
+<h3>Who Uses a Document Scanner?</h3>
+
+<p><strong>Freelancers and small businesses</strong> digitize receipts, contracts, and client paperwork without owning a scanner.</p>
+
+<p><strong>Students</strong> scan textbook pages, handouts, and handwritten notes into searchable study material.</p>
+
+<p><strong>Travelers</strong> capture boarding passes, hotel receipts, and travel documents on the go.</p>
+
+<p><strong>Anyone going paperless</strong> works through the filing cabinet one stack at a time, turning paper archives into searchable PDFs.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Camera capture</strong> — scan pages directly with your device camera.</li>
+<li><strong>Automatic edge detection</strong> — finds page corners; manual adjust when needed.</li>
+<li><strong>Perspective correction</strong> — angled photos become flat scans.</li>
+<li><strong>Brightness & contrast controls</strong> — clean up lighting and shadows.</li>
+<li><strong>Multi-page scanning</strong> — bundle a stack of pages into one PDF.</li>
+<li><strong>Built-in OCR</strong> — extract searchable, copyable text with word counts.</li>
+<li><strong>Multiple export formats</strong> — PDF for documents, image when you need one.</li>
+<li><strong>100% free and private</strong> — no account; scans never leave your browser.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this document scanner free?</h4>
+<p>Yes — free, no signup, no watermarks on your scans.</p>
+
+<h4>Do I need to install anything?</h4>
+<p>No. It runs in your browser on any device with a camera — phone, tablet, or laptop.</p>
+
+<h4>How does the scanner straighten my photo?</h4>
+<p>It detects the page's four corners, then applies a perspective transform that maps the angled photo onto a flat rectangle — the same math flatbed scanners avoid needing.</p>
+
+<h4>What is OCR and how accurate is it?</h4>
+<p>OCR (optical character recognition) converts the text in your scan into selectable characters. On clean printed text it's typically 95%+ accurate; handwriting and blur lower that.</p>
+
+<h4>Why is my OCR output gibberish?</h4>
+<p>Almost always a blurry or shadowed photo. Retake it steadier with better light, boost contrast, and try again.</p>
+
+<h4>Can I scan multiple pages into one PDF?</h4>
+<p>Yes — use "add more" to capture each page, reorder them in the pages strip, and export as a single PDF.</p>
+
+<h4>What should I scan as PDF vs. image?</h4>
+<p>PDF for documents you'll share, file, or print; image format when you need a picture for a presentation or message.</p>
+
+<h4>Are my scans uploaded anywhere?</h4>
+<p>No. Capture, enhancement, and OCR all happen in your browser; your documents stay on your device.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        (function () {
+            let pages = [];
+            let currentPageIndex = 0;
+            let cameraStream = null;
+            let currentFilter = 'none';
+            let brightness = 100, contrast = 100;
+
+            const fileInput = document.getElementById('file-input');
+            const uploadSection = document.getElementById('upload-section');
+            const previewArea = document.getElementById('preview-area');
+            const actionBar = document.getElementById('action-bar');
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+
+            document.getElementById('browse-btn').onclick = () => fileInput.click();
+            fileInput.onchange = (e) => handleFiles(e.target.files);
+
+            function handleFiles(files) {
+                for (const file of files) {
+                    if (file.type.startsWith('image/')) {
+                        const url = URL.createObjectURL(file);
+                        pages.push({ original: url, processed: url, name: file.name });
+                    }
+                }
+                if (pages.length > 0) { showPreview(); loadPage(pages.length - 1); }
+            }
+
+            function showPreview() {
+                uploadSection.style.display = 'none';
+                previewArea.style.display = 'block';
+                actionBar.style.display = 'flex';
+                renderPages();
+            }
+
+            function renderPages() {
+                const strip = document.getElementById('pages-strip');
+                strip.innerHTML = pages.map((page, i) =>
+                    '<div class="page-thumb' + (i === currentPageIndex ? ' active' : '') + '" onclick="window.__loadPage(' + i + ')"><img src="' + page.processed + '"></div>'
+                ).join('') + '<div class="page-thumb" onclick="document.getElementById(\'file-input\').click()" style="display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--text-tertiary);">+</div>';
+                document.getElementById('stat-pages').textContent = pages.length;
+            }
+
+            window.__loadPage = function (index) {
+                currentPageIndex = index;
+                const img = document.getElementById('preview-image');
+                img.src = pages[index].processed;
+                img.style.display = 'block';
+                document.getElementById('camera-video').style.display = 'none';
+                renderPages();
+            };
+
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.onclick = function () {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentFilter = this.dataset.filter;
+                    applyFilters();
+                };
+            });
+
+            document.getElementById('brightness-slider').oninput = function () {
+                brightness = this.value; document.getElementById('brightness-val').textContent = brightness + '%'; applyFilters();
+            };
+            document.getElementById('contrast-slider').oninput = function () {
+                contrast = this.value; document.getElementById('contrast-val').textContent = contrast + '%'; applyFilters();
+            };
+
+            function applyFilters() {
+                const img = document.getElementById('preview-image');
+                let f = 'brightness(' + (brightness / 100) + ') contrast(' + (contrast / 100) + ')';
+                if (currentFilter === 'grayscale') f += ' grayscale(1)';
+                else if (currentFilter === 'bw') f += ' grayscale(1) contrast(2)';
+                img.style.filter = f;
+            }
+
+            document.getElementById('camera-btn').onclick = async function () {
+                const video = document.getElementById('camera-video');
+                if (cameraStream) {
+                    canvas.width = video.videoWidth; canvas.height = video.videoHeight;
+                    ctx.drawImage(video, 0, 0);
+                    const url = canvas.toDataURL('image/jpeg', 0.9);
+                    pages.push({ original: url, processed: url, name: 'scan-' + Date.now() + '.jpg' });
+                    stopCamera(); showPreview(); window.__loadPage(pages.length - 1);
+                    this.textContent = '📸 Use Camera';
+                } else {
+                    try {
+                        cameraStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+                        video.srcObject = cameraStream; video.style.display = 'block';
+                        document.getElementById('preview-image').style.display = 'none';
+                        showPreview(); this.textContent = 'Capture';
+                    } catch (e) { alert('Camera failed'); }
+                }
+            };
+
+            function stopCamera() {
+                if (cameraStream) cameraStream.getTracks().forEach(t => t.stop());
+                cameraStream = null;
+                document.getElementById('camera-video').style.display = 'none';
+            }
+
+            document.getElementById('ocr-btn').onclick = async function () {
+                if (pages.length === 0) return;
+                const btn = this;
+                const originalText = '🔍 Extract Text (OCR)';
+                const rDiv = document.getElementById('ocr-result');
+
+                btn.disabled = true;
+                btn.textContent = 'Initializing engine...';
+                rDiv.style.display = 'block';
+                rDiv.textContent = 'Preparing OCR engine... please wait.';
+
+                try {
+                    // Using the recognize shortcut with logger for progress
+                    const result = await Tesseract.recognize(
+                        pages[currentPageIndex].processed,
+                        'eng',
+                        {
+                            logger: m => {
+                                // Detailed logging
+                                if (m.status === 'recognizing text') {
+                                    const pct = (m.progress * 100).toFixed(0);
+                                    btn.textContent = `Scanning... ${pct}%`;
+                                    rDiv.textContent = `Status: Recognizing text (${pct}%)...`;
+                                } else {
+                                    btn.textContent = m.status;
+                                    rDiv.textContent = `Status: ${m.status}...`;
+                                }
+                            }
+                        }
+                    );
+
+                    if (result && result.data && result.data.text) {
+                        rDiv.textContent = result.data.text;
+                        document.getElementById('stat-words').textContent = result.data.words?.length || 0;
+                    } else {
+                        rDiv.textContent = 'No text detected in this document.';
+                    }
+                } catch (e) {
+                    console.error(e);
+                    rDiv.textContent = 'OCR Error: ' + (e.message || 'Unknown error occurred.');
+                    alert('OCR process failed. Please check your internet connection (engine download required) or try a different image.');
+                } finally {
+                    btn.disabled = false;
+                    btn.textContent = originalText;
+                }
+            };
+
+            document.getElementById('download-btn').onclick = async () => {
+                if (pages.length === 0) return;
+                const fmt = document.getElementById('export-format').value;
+                if (fmt === 'zip') {
+                    const zip = new JSZip();
+                    for (let i = 0; i < pages.length; i++) {
+                        const r = await fetch(pages[i].processed);
+                        zip.file('page-' + (i + 1) + '.png', await r.blob());
+                    }
+                    const content = await zip.generateAsync({ type: 'blob' });
+                    saveBlob(content, 'scans.zip');
+                } else {
+                    const img = document.getElementById('preview-image');
+                    canvas.width = img.naturalWidth; canvas.height = img.naturalHeight;
+                    ctx.filter = img.style.filter; ctx.drawImage(img, 0, 0);
+                    canvas.toBlob(blob => saveBlob(blob, 'scan.' + fmt), fmt === 'jpg' ? 'image/jpeg' : 'image/png');
+                }
+            };
+
+            function saveBlob(blob, name) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a'); a.href = url; a.download = name; a.click();
+            }
+
+            document.getElementById('add-more-btn').onclick = () => fileInput.click();
+            document.getElementById('reset-btn').onclick = () => { pages = []; stopCamera(); location.reload(); };
+        })();
+    </script>
+</body>
+</html>

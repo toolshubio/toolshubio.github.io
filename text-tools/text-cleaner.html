@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Text Cleaner | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Text & Writing</a> &gt;
+                <span>🧹 Text Cleaner</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">🧹 Text Cleaner</h1>
+                <p class="tool-description">Remove extra spaces, HTML tags, numbers, and special characters.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<div class="tool-workspace">
+<section class="input-section">
+<div class="section-header">
+<h2 class="section-title">📝 Input</h2>
+</div>
+<textarea class="text-area" id="input-text" placeholder="Paste messy text..."></textarea>
+</section>
+<section class="settings-panel">
+<h2 class="section-title">⚙️ Cleaning Options</h2>
+<div class="preset-buttons">
+<button class="preset-btn" onclick="clean('spaces')">Extra Spaces</button>
+<button class="preset-btn" onclick="clean('html')">HTML Tags</button>
+<button class="preset-btn" onclick="clean('numbers')">Numbers</button>
+<button class="preset-btn" onclick="clean('special')">Special Chars</button>
+<button class="preset-btn" onclick="clean('empty')">Empty Lines</button>
+<button class="preset-btn" onclick="clean('trim')">Trim Lines</button>
+<button class="preset-btn" onclick="clean('all')">All of Above</button>
+</div>
+</section>
+<section class="output-section">
+<div class="section-header">
+<h2 class="section-title">✨ Clean Output</h2>
+<button class="btn btn-primary" onclick="ToolUI.copyOutput()">📋 Copy</button>
+</div>
+<textarea class="text-area" id="output-text" readonly=""></textarea>
+<div class="stats-panel">
+<div class="stat-item"><span class="stat-label">Removed</span><span class="stat-value highlight" id="stat-removed">0 chars</span></div>
+</div>
+</section>
+</div>
+            </div>
+            <section class="seo-article" data-tool="text-cleaner">
+<article class="tool-article">
+<h2>Text Cleaner — Remove Messy Formatting From Any Text</h2>
+
+<p>Copy text out of a PDF and you get lines broken mid-sentence. Copy out of Word and invisible formatting rides along. Copy out of a chat app and you inherit weird spacing nobody can see but every system can feel. I have wasted real hours hunting a "mismatch" that turned out to be a zero-width character hiding at the end of a string. A text cleaner strips all of that junk in one pass: extra spaces, stray line breaks, invisible characters, HTML tags, smart quotes — leaving plain, honest text behind.</p>
+
+<h3>What Is a Text Cleaner?</h3>
+
+<p>A text cleaner is an online tool that removes unwanted formatting and invisible junk from pasted text. You choose which fixes to apply — collapse extra spaces, remove line breaks, strip HTML tags, delete invisible characters, normalize quotes — and it returns clean plain text. Each fix is usually a separate toggle, so you can collapse spacing without joining paragraphs, or strip invisible characters without touching anything else.</p>
+
+<p>The problems it solves are the ones you cannot see. Doubled spaces, tabs masquerading as alignment, zero-width Unicode characters, curly quotes that break code, email reply markers (>) stacked ten deep — all invisible, all capable of breaking comparisons, imports, and layouts.</p>
+
+<h3>How to Use the Text Cleaner</h3>
+
+<p>Paste your messy text into the input box. Turn on the fixes you want — start with the obvious ones like collapsing extra spaces and trimming each line. Click clean, review the result, and copy it. If you are unsure which options you need, enable them one at a time and watch what changes; the preview makes it easy to learn what each fix does.</p>
+
+<p>One habit that pays off: clean before you paste into your final destination, not after. Cleaning a CMS editor or a spreadsheet cell after the fact means fighting the tool's own formatting on top of the original mess.</p>
+
+<h3>What It Cleans</h3>
+
+<table>
+<thead><tr><th>Problem</th><th>Where It Comes From</th><th>The Fix</th></tr></thead>
+<tbody>
+<tr><td>Extra spaces</td><td>PDFs, sloppy typing</td><td>Collapse multiples into one</td></tr>
+<tr><td>Stray line breaks</td><td>PDF columns, wrapped text</td><td>Join lines into paragraphs</td></tr>
+<tr><td>Empty lines</td><td>Copy-paste gaps</td><td>Delete blank lines</td></tr>
+<tr><td>Invisible characters</td><td>Web pages, chat apps</td><td>Remove zero-width and control chars</td></tr>
+<tr><td>HTML tags</td><td>Copying from web pages</td><td>Strip tags, keep the text</td></tr>
+<tr><td>Smart quotes &amp; dashes</td><td>Word, Google Docs</td><td>Normalize to straight quotes and hyphens</td></tr>
+<tr><td>Email indents (&gt;)</td><td>Forwarded email chains</td><td>Strip leading reply markers</td></tr>
+<tr><td>Trailing whitespace</td><td>Editors, forms</td><td>Trim each line</td></tr>
+</tbody>
+</table>
+
+<h3>When Cleaning Saves You</h3>
+
+<p><strong>Text copied from PDFs.</strong> PDFs break lines wherever the column ended, so sentences arrive chopped into fragments. Removing line breaks and collapsing spaces reassembles them into readable paragraphs.</p>
+
+<p><strong>Strings that will not match.</strong> A trailing space or zero-width character is invisible but breaks comparisons, lookups, and database imports. Stripping invisible characters usually fixes the "but they look identical!" mystery instantly.</p>
+
+<p><strong>Pasting into a CMS.</strong> Copying from a word processor drags formatting artifacts into the editor — odd spacing, mystery characters, broken lists. Cleaning first keeps the published page tidy.</p>
+
+<p><strong>Cleaning AI output.</strong> Text pasted from chatbots often carries markdown symbols, extra blank lines, and hidden characters. A cleaner turns it into plain text ready for email, documents, or forms.</p>
+
+<p><strong>Preparing data.</strong> Lists, CSV content, and form entries with inconsistent spacing clean up into uniform input that imports and sorts correctly.</p>
+
+<h3>Tips for Safe Cleaning</h3>
+
+<ul>
+<li><strong>Clean in passes.</strong> Apply one or two fixes, check the result, then continue. Blanket-cleaning everything at once can remove structure you wanted.</li>
+<li><strong>Do not remove all line breaks unless you mean it.</strong> Joining lines is great for PDF text but destroys intentional lists and addresses.</li>
+<li><strong>Keep a copy of the original.</strong> Cleaning is one-way — if you strip something you needed, you will want the uncleaned version.</li>
+<li><strong>Watch code and preformatted text.</strong> Indentation matters in code; only run whitespace fixes on prose, not on snippets where spacing is meaningful.</li>
+<li><strong>Normalize quotes before importing.</strong> Curly quotes break JSON, CSV parsers, and code — straighten them when text is headed for a system.</li>
+</ul>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Granular fixes</strong> — each cleanup is a separate toggle you control.</li>
+<li><strong>Instant preview</strong> — see the cleaned result as you enable options.</li>
+<li><strong>Invisible character removal</strong> — kills zero-width and control characters.</li>
+<li><strong>100% free</strong> — no signup, no limits.</li>
+<li><strong>Private by design</strong> — cleaning runs in your browser; sensitive text never leaves your device.</li>
+<li><strong>One-click copy</strong> — take the clean text anywhere.</li>
+<li><strong>Works everywhere</strong> — desktop and mobile browsers.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What does a text cleaner do?</h4>
+<p>It removes unwanted formatting from pasted text — extra spaces, stray line breaks, invisible characters, HTML tags, smart quotes, and more — returning clean plain text.</p>
+
+<h4>Is the text cleaner free?</h4>
+<p>Yes. No account, no payment, and no limits on how much text you clean.</p>
+
+<h4>Why does my copied text have weird line breaks?</h4>
+<p>PDFs and some web layouts break lines at fixed widths, so sentences arrive chopped. The line-break removal fix joins them back into proper paragraphs.</p>
+
+<h4>What are invisible characters?</h4>
+<p>Unicode characters like zero-width spaces that take up no visible room but exist in the text. They break string comparisons, searches, and imports — the cleaner removes them.</p>
+
+<h4>Will cleaning remove my paragraph breaks?</h4>
+<p>Only if you enable that option. Fixes are separate toggles, so you can collapse extra spaces while keeping your paragraphs intact.</p>
+
+<h4>Can it strip HTML from copied web text?</h4>
+<p>Yes. The HTML-tag stripping option removes all tags and leaves just the readable text content.</p>
+
+<h4>Is it safe to clean sensitive text?</h4>
+<p>Yes. Cleaning happens locally in your browser — nothing is uploaded, so contracts, drafts, and private notes stay on your device.</p>
+
+<h4>Will it mess up my code snippets?</h4>
+<p>It can if you apply whitespace fixes to code, where indentation is meaningful. Clean prose and code separately, and skip spacing fixes on code blocks.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="js/text-utils.js"></script>
+<script src="js/tool-ui.js"></script>
+<script>
+        ToolUI.init({ toolName: 'text-cleaner' });
+        function clean(op) {
+            let input = document.getElementById('input-text').value;
+            const origLen = input.length;
+            switch (op) {
+                case 'spaces': input = TextUtils.removeExtraSpaces(input); break;
+                case 'html': input = TextUtils.removeHtmlTags(input); break;
+                case 'numbers': input = TextUtils.removeNumbers(input); break;
+                case 'special': input = TextUtils.removeSpecialChars(input); break;
+                case 'empty': input = TextUtils.removeEmptyLines(input); break;
+                case 'trim': input = TextUtils.trimLines(input); break;
+                case 'all':
+                    input = TextUtils.removeHtmlTags(input);
+                    input = TextUtils.removeExtraSpaces(input);
+                    input = TextUtils.removeEmptyLines(input);
+                    input = TextUtils.trimLines(input);
+                    break;
+            }
+            document.getElementById('output-text').value = input;
+            document.getElementById('stat-removed').textContent = (origLen - input.length) + ' chars';
+        }
+    </script>
+</body>
+</html>

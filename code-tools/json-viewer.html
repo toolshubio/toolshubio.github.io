@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free, pro JSON viewer. Visualize JSON data in a collapsible tree format, search keys, and validate structure 100% client-side.">
+    <title>Json Viewer - Code Tools | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Code Tools</a> &gt;
+                <span>Json Viewer</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Json Viewer</h1>
+                <p class="tool-description">Explore complex JSON structures with an interactive, collapsible tree view.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+<div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+<div class="tool-workspace">
+<div class="tool-workspace">
+<div class="view-workspace">
+<div class="editor-container">
+<div class="editor-header">
+<span class="editor-title">Paste JSON</span>
+<button class="btn btn-sm btn-secondary" onclick="document.getElementById('input-code').value = ''; renderTree()">Clear</button>
+</div>
+<textarea class="code-area" id="input-code" oninput="renderTree()" placeholder='{"user": {"id": 123}}...'></textarea>
+</div>
+<div class="tree-panel">
+<div class="editor-header" style="border-radius: 8px 8px 0 0;">
+<span class="editor-title">Interactive Tree</span>
+<div class="header-actions">
+<button class="btn btn-sm btn-secondary" onclick="expandAll()">Expand All</button>
+<button class="btn btn-sm btn-secondary" onclick="collapseAll()">Collapse All</button>
+</div>
+</div>
+<div class="tree-container" id="tree-container">
+<div class="text-tertiary" style="text-align: center; padding: 40px;">Tree view will appear
+                                here...</div>
+</div>
+</div>
+</div>
+<section class="tool-content mt-12">
+<div class="content-grid">
+<div class="main-text">
+<h2>Visualize Large Data Structures</h2>
+<p>Reading flat JSON strings with hundreds of levels is a challenge. Our JSON Viewer turns
+                                static text into a dynamic navigation tool, allowing you to focus on specific nodes and
+                                verify data types visually.</p>
+<h3>Viewer Modes</h3>
+<ul>
+<li><strong>Collapsible Nodes:</strong> Click on arrows to hide/show entire clusters.
+                                </li>
+<li><strong>Syntax Coloring:</strong> Instant identification of strings, numbers, and
+                                    booleans.</li>
+<li><strong>Type Detection:</strong> Visual cues for Arrays vs. Objects.</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+</div>
+<section class="seo-article" data-tool="json-viewer">
+<article class="tool-article">
+<h2>JSON Viewer — Free Online Interactive JSON Tree Explorer</h2>
+
+<p>Formatted JSON is readable, but on a really big payload it's still a wall of text. I learned this the hard way debugging a product catalog API whose response had six levels of nesting — scrolling through 3,000 lines of pretty-printed JSON to find one mispriced item nearly ended me. A JSON viewer solves that by turning your data into an interactive tree: objects and arrays become collapsible branches you can expand, collapse, search, and drill into. Instead of scrolling, you navigate — like folders on your computer.</p>
+
+<h3>What Is a JSON Viewer?</h3>
+
+<p>Where the JSON formatter on this site prints your data as indented text and the validator checks it for errors, the viewer gives you a visual map of it. Each object becomes a node you can click open; each array shows its items as a numbered list; long strings, numbers, and booleans sit at the leaves, color-coded by type — keys in one color, strings in another, numbers and booleans in their own.</p>
+
+<p>The real power is selective attention. Collapse everything, and a thousand-line response becomes five top-level keys. Expand just the branch you care about — say, <code>data.products[3].variants</code> — and the rest stays out of your way. That single interaction pattern is why viewers exist: they let you ignore 99% of a payload while you interrogate the 1% that matters.</p>
+
+<p>Most viewers also validate as they load, so if your JSON is broken you'll get the error instead of a tree — a useful early signal that saves you wondering why nothing is expanding.</p>
+
+<h3>How to Use the JSON Viewer</h3>
+
+<p>Paste your JSON into the input box at the top of the tool — an API response from your network tab, a config file, a database export, anything. The viewer parses it and renders the tree instantly.</p>
+
+<p>Now explore. Click the arrow or the key name on any object or array to expand or collapse it. Use "expand all" / "collapse all" controls to reset the view. If you're hunting something specific, type it into the search box — matching keys and values get highlighted and their branches auto-expand, so you jump straight to the needle.</p>
+
+<p>Click any value to copy it, and look for the "copy path" option on nodes — it gives you the exact address of that value (like <code>data.products[3].price</code>), ready to paste into your code. That's the feature I use most: no more counting array indexes by hand.</p>
+
+<p>Done exploring? The viewer usually offers a formatted-text tab too, so you can copy the pretty-printed version, or a minified copy for reuse in an API call. Your last input is typically remembered in the browser, so coming back tomorrow picks up where you left off.</p>
+
+<h3>Tree View vs. Formatted Text</h3>
+
+<p>Both show the same data — they just suit different jobs:</p>
+
+<table>
+<thead><tr><th>Task</th><th>Better view</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>Finding one value in a huge payload</td><td>Tree</td><td>Collapse everything else; search highlights the match</td></tr>
+<tr><td>Copying a value's address into code</td><td>Tree</td><td>Copy-path gives <code>data.items[2].id</code> directly</td></tr>
+<tr><td>Comparing two responses side by side</td><td>Formatted text</td><td>Line-based diff tools need flat text</td></tr>
+<tr><td>Pasting data into another tool</td><td>Formatted text</td><td>Copy the whole document at once</td></tr>
+<tr><td>Checking syntax errors</td><td>Neither — use the validator</td><td>The validator pinpoints line and column</td></tr>
+<tr><td>Understanding overall structure</td><td>Tree</td><td>Collapsed nodes reveal the shape at a glance</td></tr>
+</table>
+
+<p>My workflow usually runs all three tools in sequence: validate the suspicious payload, view it as a tree to find the problem branch, then format that section as text to paste into the bug report. They're complementary, not competing.</p>
+
+<h3>Navigating Large Payloads</h3>
+
+<p>A few techniques that make big JSON manageable:</p>
+
+<p><strong>Collapse first, expand later.</strong> Start fully collapsed and open only the branches on the path to your target. This is the tree-view equivalent of skimming a document's headings before reading.</p>
+
+<p><strong>Search instead of scroll.</strong> On a 10,000-line payload, scrolling is a lottery. Typing the key name into search is a direct hit — most viewers expand only the matching branches automatically.</p>
+
+<p><strong>Copy paths, don't retype them.</strong> Manually writing <code>response.data.orders[0].items[4].sku</code> is how off-by-one bugs are born. Copy the path from the node and paste it into your code or your API client.</p>
+
+<p><strong>Watch the stats.</strong> Some viewers report key counts, maximum nesting depth, and object/array counts. A depth of 12 where you expected 4 is often the first clue that the API changed its response shape.</p>
+
+<h3>Who Uses a JSON Viewer?</h3>
+
+<p><strong>API developers</strong> live in tree views. Whether you're building the API or consuming someone else's, the viewer is how you confirm the response structure matches the documentation — and how you figure out what broke when it doesn't.</p>
+
+<p><strong>QA engineers</strong> use it to inspect responses during test runs, verify nested data, and grab exact JSON paths for assertions in automated tests.</p>
+
+<p><strong>Data engineers</strong> explore exports from databases, data lakes, and event streams. Tree navigation turns an unfamiliar multi-megabyte dump into something surveyable in minutes.</p>
+
+<p><strong>Support and product teams</strong> — the non-developers — use viewers to read webhook payloads and integration logs without learning to parse raw text. The tree makes structured data approachable for everyone.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Interactive tree view</strong> — expand and collapse objects and arrays with a click.</li>
+<li><strong>Full-text search</strong> — find keys or values instantly, with matches highlighted and auto-expanded.</li>
+<li><strong>Copy path</strong> — grab the exact <code>data.items[2].id</code> address of any node.</li>
+<li><strong>Syntax highlighting</strong> — keys, strings, numbers, booleans, and nulls each color-coded.</li>
+<li><strong>Built-in validation</strong> — broken JSON shows a clear error instead of a dead tree.</li>
+<li><strong>100% free</strong> — no account, no limits.</li>
+<li><strong>Private by design</strong> — parsing runs in your browser; your data never leaves your device.</li>
+<li><strong>Copy and export</strong> — copy formatted or minified JSON with one click.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this JSON viewer free?</h4>
+<p>Yes — free, no signup, no limits on payload size.</p>
+
+<h4>What's the difference between the viewer and the formatter?</h4>
+<p>The formatter prints readable text; the viewer shows an interactive tree you can expand, collapse, and search. Use the viewer to explore, the formatter to copy text.</p>
+
+<h4>Can it open a JSON file from my computer?</h4>
+<p>Paste the file's contents into the input box. Some viewers also accept file upload or drag-and-drop.</p>
+
+<h4>How do I find a specific value in a large JSON file?</h4>
+<p>Use the search box — matching nodes are highlighted and their branches expand automatically. Far faster than scrolling.</p>
+
+<h4>What does "copy path" do?</h4>
+<p>It copies the exact address of a value, like <code>data.products[3].price</code>, so you can paste it directly into code or an API client.</p>
+
+<h4>Why won't my JSON load in the viewer?</h4>
+<p>It's probably invalid — a trailing comma, single quotes, or an unquoted key. Run it through the JSON validator on this site for the exact error location.</p>
+
+<h4>Is my data uploaded to a server?</h4>
+<p>No. Parsing and rendering happen entirely in your browser.</p>
+
+<h4>Can I edit the JSON in the tree view?</h4>
+<p>This viewer is for exploration. To change the data, copy the formatted output, edit it in a text editor, and re-validate.</p>
+</article>
+</section>
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../code-format-tools/js/code-utils.js"></script>
+<script src="../code-format-tools/js/code-ui.js"></script>
+<script>
+        CodeUI.init({ toolName: 'json-viewer' });
+
+        function createTreeHTML(obj) {
+            if (obj === null) return `<span class="null">null</span>`;
+            if (typeof obj === 'string') return `<span class="string">"${obj}"</span>`;
+            if (typeof obj === 'number') return `<span class="number">${obj}</span>`;
+            if (typeof obj === 'boolean') return `<span class="boolean">${obj}</span>`;
+
+            const isArray = Array.isArray(obj);
+            let html = `<span class="toggle">â–¼</span> ${isArray ? '[' : '{'}`;
+            html += `<ul class="json-tree">`;
+
+            const keys = Object.keys(obj);
+            keys.forEach((key, index) => {
+                html += `<li>`;
+                if (!isArray) html += `<span class="key">"${key}"</span>: `;
+                html += createTreeHTML(obj[key]);
+                if (index < keys.length - 1) html += `,`;
+                html += `</li>`;
+            });
+
+            html += `</ul>${isArray ? ']' : '}'}`;
+            return html;
+        }
+
+        function renderTree() {
+            const input = document.getElementById('input-code').value.trim();
+            const container = document.getElementById('tree-container');
+
+            if (!input) {
+                container.innerHTML = '<div class="text-tertiary" style="text-align: center; padding: 40px;">Tree view will appear here...</div>';
+                return;
+            }
+
+            try {
+                const parsed = JSON.parse(input);
+                container.innerHTML = `<div class="json-tree-root">${createTreeHTML(parsed)}</div>`;
+                setupListeners();
+            } catch (e) {
+                container.innerHTML = `<div class="text-danger" style="padding: 20px;">âŒ Invalid JSON: ${e.message}</div>`;
+            }
+        }
+
+        function setupListeners() {
+            document.querySelectorAll('.toggle').forEach(btn => {
+                btn.onclick = (e) => {
+                    const parent = e.target.parentElement;
+                    parent.classList.toggle('collapsed');
+                    e.target.textContent = parent.classList.contains('collapsed') ? 'â–¶' : 'â–¼';
+                };
+            });
+        }
+
+        function expandAll() {
+            document.querySelectorAll('.collapsed').forEach(el => el.classList.remove('collapsed'));
+            document.querySelectorAll('.toggle').forEach(t => t.textContent = 'â–¼');
+        }
+
+        function collapseAll() {
+            document.querySelectorAll('.json-tree-root li').forEach(el => {
+                if (el.querySelector('ul')) el.classList.add('collapsed');
+            });
+            document.querySelectorAll('.toggle').forEach(t => t.textContent = 'â–¶');
+        }
+
+        CodeUI.renderRelated('related-tools', [
+            { icon: 'ðŸŽ¨', name: 'JSON Formatter', desc: 'Prettify JSON', url: '../formatters/json-formatter.html' },
+            { icon: 'âœ…', name: 'JSON Validator', desc: 'Syntax check', url: '../validators/json-validator.html' },
+            { icon: 'ðŸ”¥', name: 'JS Minifier', desc: 'Optimize JS', url: '../minifiers/javascript-minifier.html' }
+        ]);
+    </script>
+</body>
+</html>

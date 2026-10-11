@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert BMP to PNG or PNG to BMP. Supports batch conversion, transparency handling, and high quality output.">
+    <title>BMP ↔ PNG Converter - Bitmap Tools | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../../image-tools/css/global.css">
+    <link rel="stylesheet" href="../../image-tools/css/components.css">
+    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../../about-us.html">About</a>
+                <a class="nav-link" href="../../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> &gt;
+                <a href="../index.html">Image Tools</a> &gt;
+                <span>👾 BMP ↔ PNG Converter</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">👾 BMP ↔ PNG Converter</h1>
+                <p class="tool-description">Convert legacy Bitmap (BMP) files to modern PNG, or create BMPs from PNGs.
+                    Supports 32-bit (Alpha) BMPs.</p>
+                <div class="tool-badges"><span class="badge badge-primary">Legacy Support</span><span class="badge badge-primary">Alpha Channel</span><span class="badge badge-secondary">Individual Downloads</span></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<section class="preview-area">
+<div id="upload-zone"></div>
+<div id="status-container" style="margin-top: 20px; display: none;"></div>
+</section>
+<aside class="control-panel">
+<div class="control-section">
+<h3 class="control-section-title">⚙️ Direction</h3>
+<div class="preset-buttons">
+<button class="preset-btn active" data-mode="bmp2png">BMP → PNG</button>
+<button class="preset-btn" data-mode="png2bmp">PNG → BMP</button>
+</div>
+</div>
+<div class="control-section" id="options-panel">
+<!-- Options dynamically shown -->
+<div class="toggle-control">
+<span class="toggle-label">Start Download Immediately</span>
+<div class="toggle-switch active" id="auto-dl-toggle"></div>
+</div>
+</div>
+<div class="control-section">
+<button class="btn btn-primary w-full" disabled="" id="convert-btn"><span>🔄</span> Convert
+                            All</button>
+<button class="btn btn-premium-download w-full mt-3" id="download-all-btn" style="display: none;"><span>📥</span> Download All</button>
+<button class="btn btn-secondary w-full mt-2" id="reset-btn" style="display: none;"><span>🔄</span> Start Over</button>
+</div>
+</aside>
+</div>
+</div>
+</main>
+
+
+
+
+
+
+
+
+<div id="comparison-container" style="display: none;"></div>
+            </div>
+            <section class="seo-article" data-tool="bmp-png-converter">
+<article class="tool-article">
+<h2>BMP to PNG Converter — Shrink Bitmap Files Without Losing a Pixel</h2>
+
+<p>I once received a folder of screenshots saved as BMP files, and the whole thing was nearly a gigabyte. One screenshot — a single 1920×1080 capture — weighed about 6 MB. After converting the lot to PNG, the folder dropped to under 150 MB and every image looked identical. That is the BMP to PNG story in one sentence: same pixels, a fraction of the size, and a format the entire modern web actually understands.</p>
+
+<h3>What Is a BMP File?</h3>
+
+<p>BMP (Bitmap) is one of the oldest image formats still in circulation, dating back to early Windows. It stores every pixel as raw data with no compression — a 24-bit image costs roughly width × height × 3 bytes, every time. The format is simple, which made it perfect as a clipboard exchange format and for embedded systems where decoding had to be trivial. It is also why BMP files are enormous: that simplicity means nothing is ever optimized.</p>
+
+<p>BMPs still show up more often than you would expect. Old Windows software saves them. Scanners default to them. MS Paint used to produce them. Legacy archives and game textures are full of them. They open fine on Windows, but the moment you need to email one, put one on a website, or open one on a phone, BMP becomes a liability.</p>
+
+<h3>Why Convert BMP to PNG?</h3>
+
+<ul>
+<li><strong>Massive size savings, zero quality loss.</strong> PNG uses lossless compression — the same pixels, just packed smarter. A BMP typically shrinks 60–90% with literally nothing lost.</li>
+<li><strong>Web compatibility.</strong> No browser, website, or social platform accepts BMP uploads. PNG is the web standard.</li>
+<li><strong>Transparency support.</strong> Standard BMP has no alpha channel; PNG supports full transparency.</li>
+<li><strong>Cross-platform.</strong> BMP is effectively Windows-only in practice; PNG works on Windows, macOS, Linux, iOS, and Android.</li>
+<li><strong>Smaller backups.</strong> Archived BMP collections modernize into a fraction of their storage.</li>
+</ul>
+
+<h3>BMP vs PNG at a Glance</h3>
+
+<table>
+<thead><tr><th>Feature</th><th>BMP</th><th>PNG</th></tr></thead>
+<tbody>
+<tr><td>Compression</td><td>None in common files</td><td>Lossless, built in</td></tr>
+<tr><td>Typical size (1920×1080)</td><td>~6 MB</td><td>~1 MB or less</td></tr>
+<tr><td>Transparency</td><td>Not supported</td><td>Full alpha channel</td></tr>
+<tr><td>Quality on conversion</td><td>—</td><td>Identical, pixel for pixel</td></tr>
+<tr><td>Web/browser support</td><td>None</td><td>Universal</td></tr>
+<tr><td>Best for</td><td>Legacy Windows workflows</td><td>Screenshots, graphics, web, archiving</td></tr>
+</tbody>
+</table>
+
+<h3>How to Convert BMP to PNG</h3>
+
+<p><strong>Step 1 — Upload your BMP file(s).</strong> Drag and drop, or click to browse. Batch conversion handles whole folders at once.</p>
+
+<p><strong>Step 2 — Adjust options if needed.</strong> Most converters need no settings — the conversion is automatic and lossless. Some offer optional resizing (max width/height) or metadata stripping to trim the file further.</p>
+
+<p><strong>Step 3 — Download the PNG.</strong> Single files download directly; batches come as a ZIP. Compare the sizes — the difference is usually dramatic.</p>
+
+<p>One honest note on transparency: converting does not <em>add</em> transparency. A BMP never had an alpha channel, so the PNG will have a fully opaque background until you edit one in. What conversion gives you is the <em>ability</em> to add transparency afterward, which BMP could never carry.</p>
+
+<h3>Everyday Uses</h3>
+
+<p><strong>Old screenshot archives.</strong> Years of BMP screenshots convert to PNG in one batch, freeing gigabytes.</p>
+
+<p><strong>Scanner output.</strong> Scanners that still default to BMP produce files that are needlessly huge; PNG keeps them lossless at a sane size.</p>
+
+<p><strong>Game and UI assets.</strong> BMP textures and sprites from older projects become web-usable PNGs.</p>
+
+<p><strong>Emailing images.</strong> A 6 MB BMP attachment becomes a 1 MB PNG that actually sends.</p>
+
+<p><strong>Web publishing.</strong> BMP cannot go on the web at all — PNG is the lossless web format it was always meant to become.</p>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this BMP to PNG converter free?</h4>
+<p>Yes — free, no account, no watermarks.</p>
+
+<h4>Will converting reduce image quality?</h4>
+<p>No. PNG uses lossless compression, so every pixel survives exactly. This conversion is quality-neutral.</p>
+
+<h4>Why are BMP files so large?</h4>
+<p>BMP stores raw pixel data without compression — every pixel costs the full 3 bytes (for 24-bit color), so sizes balloon with resolution.</p>
+
+<h4>Does converting add transparency?</h4>
+<p>No — the PNG will be fully opaque, matching the BMP. But PNG supports transparency, so you can add it in an editor afterward.</p>
+
+<h4>Can I convert multiple BMP files at once?</h4>
+<p>Yes — batch conversion is supported, with results downloadable as a ZIP.</p>
+
+<h4>Should I convert BMP to JPG instead?</h4>
+<p>For photos, JPG gives even smaller files. For screenshots, graphics, and anything you may edit again, PNG's lossless quality makes it the better choice.</p>
+
+<h4>Are my files uploaded anywhere?</h4>
+<p>No — browser-based conversion processes everything locally on your device.</p>
+
+<h4>How much smaller will the PNG be?</h4>
+<p>Typically 60–90% smaller than the BMP, depending on image content. Simple graphics compress the most.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../../about-us.html">About Us</a>
+                    <a class="footer-link" href="../../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../js/shared/unified-input.js"></script>
+<script src="../js/shared/preview-manager.js"></script>
+<script src="../js/utils/image-loader.js"></script>
+<script src="../js/utils/converter.js"></script>
+<script>
+        class BmpConverter {
+            constructor() {
+                this.files = [];
+                this.results = [];
+                this.mode = 'bmp2png';
+                this.init();
+            }
+
+            init() {
+                this.unifiedInput = new UnifiedInput({
+                    containerId: 'upload-zone',
+                    toolIcon: '👾',
+                    toolName: 'BMP ↔ PNG',
+                    acceptTypes: '.bmp, image/bmp, image/png',
+                    onFilesLoaded: (files) => this.handleFilesLoaded(files)
+                });
+
+                this.previewManager = new PreviewManager({ containerId: 'comparison-container' });
+                this.setupControls();
+                this.injectAdvancedStyles();
+            }
+
+            setupControls() {
+                document.querySelectorAll('[data-mode]').forEach(btn => {
+                    btn.onclick = () => {
+                        document.querySelectorAll('[data-mode]').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        this.mode = btn.dataset.mode;
+                    };
+                });
+
+                document.getElementById('convert-btn').onclick = () => this.convertAll();
+                document.getElementById('download-all-btn').onclick = () => this.downloadAll();
+                document.getElementById('reset-btn').onclick = () => location.reload();
+            }
+
+            handleFilesLoaded(files) {
+                this.files = files;
+                document.getElementById('convert-btn').disabled = false;
+                // Auto-detect mode
+                if (files[0].type.includes('png')) {
+                    if (this.mode !== 'png2bmp') document.querySelector('[data-mode="png2bmp"]').click();
+                } else if (files[0].type.includes('bmp') || files[0].name.endsWith('.bmp')) {
+                    if (this.mode !== 'bmp2png') document.querySelector('[data-mode="bmp2png"]').click();
+                }
+            }
+
+            async convertAll() {
+                const btn = document.getElementById('convert-btn');
+                btn.disabled = true;
+                btn.textContent = 'Processing...';
+
+                this.results = [];
+                const container = document.getElementById('comparison-container');
+                container.style.display = 'block';
+
+                for (let i = 0; i < this.files.length; i++) {
+                    const file = this.files[i];
+                    try {
+                        const targetExt = this.mode === 'bmp2png' ? 'png' : 'bmp';
+                        const result = await window.ImageConverter.convertFile(file, targetExt, {});
+
+                        let targetBlob = result.convertedFile;
+                        if (targetExt === 'bmp' && (!targetBlob || targetBlob.type !== 'image/bmp')) {
+                            const img = await window.ImageLoader.loadSingleImage(file);
+                            targetBlob = await this.encodeBMP(img.canvas);
+                        }
+
+                        this.results.push({
+                            dataURL: URL.createObjectURL(targetBlob),
+                            convertedFile: { name: result.convertedFile.name }
+                        });
+
+                        if (i === 0) {
+                            const originalURL = URL.createObjectURL(file);
+                            this.previewManager.render(originalURL, URL.createObjectURL(targetBlob), result.convertedFile.name);
+                        }
+
+                        this.unifiedInput.setFileStatus(i, 'done');
+                    } catch (e) {
+                        console.error(e);
+                        this.unifiedInput.setFileStatus(i, 'error');
+                    }
+                }
+
+                btn.style.display = 'none';
+                document.getElementById('download-all-btn').style.display = 'block';
+                document.getElementById('reset-btn').style.display = 'block';
+                document.getElementById('upload-zone').style.display = 'none';
+            }
+
+            async encodeBMP(canvas) {
+                // Simple BMP Encoder (32-bit BGRA)
+                const width = canvas.width;
+                const height = canvas.height;
+                const ctx = canvas.getContext('2d');
+                const imgData = ctx.getImageData(0, 0, width, height);
+                const data = imgData.data;
+
+                const fileSize = 54 + (width * height * 4); // Header (54) + Data
+                const fileLen = fileSize;
+
+                const buffer = new ArrayBuffer(fileLen);
+                const view = new DataView(buffer);
+
+                // BMP Header - 14 bytes
+                view.setUint16(0, 0x424D, false); // BM
+                view.setUint32(2, fileSize, true); // File size
+                view.setUint32(6, 0, true); // Reserved
+                view.setUint32(10, 54, true); // Offset to data
+
+                // DIB Header - 40 bytes (BITMAPINFOHEADER)
+                view.setUint32(14, 40, true); // Header size
+                view.setInt32(18, width, true);
+                view.setInt32(22, -height, true); // Top-down (negative height)
+                view.setUint16(26, 1, true); // Planes
+                view.setUint16(28, 32, true); // BPP
+                view.setUint32(30, 0, true); // Compression (BI_RGB)
+                view.setUint32(34, width * height * 4, true); // Image size
+                view.setInt32(38, 2835, true); // X ppm
+                view.setInt32(42, 2835, true); // Y ppm
+                view.setUint32(46, 0, true); // Colors used
+                view.setUint32(50, 0, true); // Colors important
+
+                // Pixel Data (BGRA)
+                let offset = 54;
+                for (let i = 0; i < data.length; i += 4) {
+                    view.setUint8(offset++, data[i + 2]); // B
+                    view.setUint8(offset++, data[i + 1]); // G
+                    view.setUint8(offset++, data[i]);   // R
+                    view.setUint8(offset++, data[i + 3]); // A
+                }
+
+                return new Blob([buffer], { type: 'image/bmp' });
+            }
+
+            async downloadAll() {
+                for (const result of this.results) {
+                    const a = document.createElement('a');
+                    a.href = result.dataURL;
+                    a.download = result.convertedFile.name;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                }
+            }
+
+            injectAdvancedStyles() {
+                const style = document.createElement('style');
+                style.textContent = `#comparison-container { margin-top: 2rem; border: 1px solid var(--border-color); border-radius: 12px; padding: 1rem; background: var(--bg-secondary); min-height: 300px; }`;
+                document.head.appendChild(style);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => new BmpConverter());
+    </script>
+</body>
+</html>

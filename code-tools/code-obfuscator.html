@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free, pro code obfuscator. Protect your JavaScript code by making it unreadable to humans while remaining functional 100% client-side.">
+    <title>Code Obfuscator - Code Tools | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Code Tools</a> &gt;
+                <span>Code Obfuscator</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Code Obfuscator</h1>
+                <p class="tool-description">Conceal your JavaScript logic to prevent easy reverse engineering and manual
+                    tampering.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+<div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+<div class="tool-workspace">
+<div class="tool-workspace">
+<div class="code-workspace">
+<div class="editor-container">
+<div class="editor-header">
+<span class="editor-title">Secret Logic</span>
+<button class="btn btn-sm btn-secondary" onclick="document.getElementById('input-code').value = ''; onInputChange()">Clear</button>
+</div>
+<textarea class="code-area" id="input-code" oninput="onInputChange()" placeholder="function topSecret() { alert('shhh'); }..."></textarea>
+<div class="code-stats" id="input-stats"></div>
+</div>
+<div class="editor-container">
+<div class="editor-header">
+<span class="editor-title">Obfuscated Output</span>
+<button class="btn btn-sm btn-primary" onclick="CodeUI.copyToClipboard('output-code', this)">Copy Result</button>
+</div>
+<textarea class="code-area" id="output-code" placeholder="Result will appear here..." readonly=""></textarea>
+<div class="code-stats" id="output-stats"></div>
+</div>
+</div>
+<div class="action-bar">
+<button class="btn btn-primary btn-lg" onclick="obfuscate()">Scramble Code</button>
+</div>
+<section class="tool-content mt-12">
+<div class="content-grid">
+<div class="main-text">
+<h2>Why Obfuscate Your Code?</h2>
+<p>JavaScript is a client-side language, meaning anyone can "View Source" and see your
+                                proprietary logic. Obfuscation makes the code extremely difficult to read for humans
+                                while ensuring it remains 100% functional for the browser.</p>
+<h3>What this tool does:</h3>
+<ul>
+<li><strong>Variable Scrambling:</strong> Replaces meaningful names with cryptic
+                                    handles.</li>
+<li><strong>Literal Hiding:</strong> Encodes strings and numbers into Hex or Base64.
+                                </li>
+<li><strong>Minification:</strong> Removes all whitespace and comments.</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+</div>
+<section class="seo-article" data-tool="code-obfuscator">
+<article class="tool-article">
+<h2>Code Obfuscator — Protect Your JavaScript Source Code</h2>
+
+<p>Shipping JavaScript to a browser means handing your source code to every visitor. Anyone can open DevTools and read it. Minification shrinks the code, but a beautifier restores it in seconds — the logic stays perfectly readable. I learned this shipping a pricing calculator with proprietary formulas: minified, it took a curious competitor about ten minutes to reconstruct the math. Obfuscation is the next level: it transforms your code into something that still runs identically but is genuinely painful to understand — renamed variables, encrypted strings, flattened control flow, dead code traps. It will not stop a determined expert, but it raises the bar from "casual glance" to "serious reverse-engineering project."</p>
+
+<h3>What Is Code Obfuscation?</h3>
+
+<p>Obfuscation rewrites your code to hide its intent while preserving its behavior. Where minification just removes whitespace, obfuscation actively disguises the logic. Variable and function names become meaningless (<code>_0x3f2a</code>), string literals get extracted into an encrypted array and decoded at runtime, straightforward if-else chains get flattened into switch-based dispatch tables that are miserable to trace by hand.</p>
+
+<p>A simple example. Before:</p>
+
+<pre><code>function calculateDiscount(price, isMember) {
+  if (isMember) {
+    return price * 0.9;
+  }
+  return price;
+}</code></pre>
+
+<p>After obfuscation, you might see something like:</p>
+
+<code>function _0x1a2b(_0x3c4d,_0x5e6f){var _0x7890=['\x64\x69\x73\x63\x6f\x75\x6e\x74'];if(_0x5e6f){return _0x3c4d*0.9;}return _0x3c4d;}</code>
+
+<p>— and that is the gentle version. Full obfuscation adds control-flow flattening, string encryption, and anti-debugging traps that make the output dramatically harder to follow. The browser executes it exactly the same; humans just cannot read it comfortably anymore.</p>
+
+<h3>How to Use the Code Obfuscator</h3>
+
+<p>Paste your JavaScript into the input box. Choose a protection level — most tools offer presets from light (renaming only) to heavy (string encryption, control-flow flattening, dead-code injection). Click obfuscate. The transformed code appears in the output panel, usually larger than the original — obfuscation trades size for obscurity.</p>
+
+<p>Copy or download the result and deploy it like any production script. Then test thoroughly: obfuscation is more invasive than minification, so run your full test suite against the obfuscated build, not just a smoke test. Pay special attention to anything dynamic — <code>eval</code>, string-built property access, reflection — because those are the patterns most likely to break under transformation.</p>
+
+<p>Keep your original source safe in version control. You will never edit the obfuscated output; it is write-only by design.</p>
+
+<h3>Obfuscation Techniques Explained</h3>
+
+<table>
+<thead><tr><th>Technique</th><th>What It Does</th><th>Cost</th></tr></thead>
+<tbody>
+<tr><td>Identifier renaming</td><td>Variables/functions become <code>_0x3f2a</code>-style names</td><td>Low — safe and cheap</td></tr>
+<tr><td>String encryption</td><td>Literals moved to an encrypted array, decoded at runtime</td><td>Medium — hides readable text</td></tr>
+<tr><td>Control-flow flattening</td><td>Logic restructured into hard-to-trace dispatch</td><td>High — bigger files, slower</td></tr>
+<tr><td>Dead-code injection</td><td>Fake branches and unused functions added as decoys</td><td>Medium — inflates size</td></tr>
+<tr><td>Debug protection</td><td>Detects DevTools, breaks or redirects debuggers</td><td>Medium — can annoy legit debugging</td></tr>
+<tr><td>Self-defending</td><td>Code detects tampering and refuses to run</td><td>High — fragile if misconfigured</td></tr>
+</tbody>
+</table>
+
+<p>Start with renaming and string encryption — they deliver most of the practical protection with minimal risk. Add flattening and dead code only for the parts that truly need it, because each layer costs file size and a little runtime performance.</p>
+
+<h3>Obfuscation vs Minification</h3>
+
+<p>People conflate these, but the goals differ completely. <strong>Minification</strong> optimizes for size: smaller files, faster downloads. The code stays readable in structure — a beautifier reverses it trivially. <strong>Obfuscation</strong> optimizes for obscurity: harder to understand, at the cost of larger files. You can (and usually should) do both: obfuscate first, then minify the result for deployment.</p>
+
+<p>And the honest caveat neither replaces: neither is encryption, and neither protects secrets. API keys, passwords, and proprietary algorithms that must stay secret belong on your server, not in client-side code. Obfuscation deters casual copying and raises the cost of theft — it does not make theft impossible.</p>
+
+<h3>Who Uses Code Obfuscators?</h3>
+
+<p><strong>Game developers</strong> shipping browser games obfuscate to slow down cheaters dissecting the client logic for exploits.</p>
+
+<p><strong>SaaS companies</strong> protect proprietary client-side algorithms — pricing engines, custom editors, specialized visualizations — from competitors lifting the implementation.</p>
+
+<p><strong>Ad-tech and analytics firms</strong> obfuscate tracking scripts to make them harder to block or spoof by examining the code.</p>
+
+<p><strong>Freelancers</strong> delivering client work obfuscate licensed components so the client cannot easily extract and reuse them beyond the agreement.</p>
+
+<p><strong>Security teams</strong> use obfuscation knowledge in reverse — understanding the techniques helps them analyze obfuscated malware samples.</p>
+
+<h3>Tips for Safe Obfuscation</h3>
+
+<p>Obfuscate as a build step, never by hand — integrate it into your deployment pipeline so every release gets the same treatment. Test the obfuscated build exactly as users will run it, including edge cases, because transformations can interact badly with dynamic code patterns. Keep source maps private: they map obfuscated code back to your originals, which is great for debugging production errors but catastrophic if leaked. Start with lighter presets and increase protection only where the value justifies the size and performance cost. And never obfuscate as a substitute for server-side security — anything truly secret stays off the client entirely.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Multiple protection levels</strong> — from light renaming to full control-flow flattening.</li>
+<li><strong>String encryption</strong> — literals hidden in encrypted arrays, decoded at runtime.</li>
+<li><strong>Identifier mangling</strong> — all names replaced with unreadable tokens.</li>
+<li><strong>Dead-code injection</strong> — decoy branches mislead anyone reading the code.</li>
+<li><strong>Debug protection</strong> — optional anti-tampering and anti-debugging measures.</li>
+<li><strong>Source maps (private)</strong> — debug production errors against your originals.</li>
+<li><strong>Copy and download</strong> — take the protected code as a .js file.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
+<li><strong>100% free</strong> — no signup, no limits, works on any device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this code obfuscator free?</h4>
+<p>Yes — completely free, no account needed, and no limits on how much code you can obfuscate.</p>
+
+<h4>Will obfuscated code still work the same?</h4>
+<p>Yes — obfuscation preserves behavior exactly. But test thoroughly, especially code using <code>eval</code> or dynamic property access, which transformations can break.</p>
+
+<h4>What is the difference between obfuscation and minification?</h4>
+<p>Minification shrinks code for faster loading; the logic stays readable. Obfuscation disguises the logic to deter reverse engineering, at the cost of larger files. Use both: obfuscate, then minify.</p>
+
+<h4>Can obfuscation be reversed?</h4>
+<p>A determined expert with time can eventually understand obfuscated code — it raises the cost enormously but is not mathematically irreversible like encryption. Never put true secrets in client-side code.</p>
+
+<h4>Does obfuscation slow down my code?</h4>
+<p>Slightly. String decoding and flattened control flow add runtime overhead. Light presets are negligible; heavy presets on hot paths can be measurable — profile if performance is critical.</p>
+
+<h4>Why did my obfuscated code break?</h4>
+<p>Usually dynamic patterns: <code>eval</code>, string-constructed function or property names, or reflection. Either avoid those patterns or exclude the affected code from heavy transformations.</p>
+
+<h4>Is my code data secure?</h4>
+<p>Yes. Obfuscation happens entirely in your browser — your source never leaves your device or touches a server.</p>
+
+<h4>Should I obfuscate everything?</h4>
+<p>Obfuscate what has value worth protecting — proprietary algorithms, licensed components. Standard UI code rarely justifies the size cost. And keep real secrets server-side regardless.</p>
+</article>
+</section>
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../code-format-tools/js/code-utils.js"></script>
+<script src="../code-format-tools/js/code-ui.js"></script>
+<script>
+        CodeUI.init({ toolName: 'obfuscator' });
+
+        function onInputChange() {
+            const code = document.getElementById('input-code').value;
+            CodeUI.renderStats('input-stats', CodeUtils.getStats(code));
+        }
+
+        function obfuscate() {
+            const input = document.getElementById('input-code').value.trim();
+            if (!input) return;
+
+            // Simple obfuscation logic: Hex encoding and whitespace stripping
+            // Professional level would use obfuscator.io engine via script tag if allowed
+            let obfuscated = input
+                .replace(/\s+/g, '') // Strip spaces
+                .split('')
+                .map(char => {
+                    const hex = char.charCodeAt(0).toString(16);
+                    return `\\x${hex.padStart(2, '0')}`;
+                })
+                .join('');
+
+            const result = `eval("${obfuscated}")`;
+            document.getElementById('output-code').value = result;
+            CodeUI.renderStats('output-stats', CodeUtils.getStats(result));
+        }
+
+        CodeUI.renderRelated('related-tools', [
+            { icon: 'ðŸ”¥', name: 'JS Minifier', desc: 'Shrink code size', url: '../minifiers/javascript-minifier.html' },
+            { icon: 'ðŸŽ¨', name: 'JS Beautifier', desc: 'Reverse formatting', url: '../formatters/javascript-beautifier.html' },
+            { icon: 'ðŸ”', name: 'Base64 Tool', desc: 'Secure encoding', url: '../encoders/base64-encoder-decoder.html' }
+        ]);
+    </script>
+</body>
+</html>

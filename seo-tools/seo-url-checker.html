@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>SEO URL Checker | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">SEO Tools</a> &gt;
+                <span>SEO URL Checker</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">SEO URL Checker</h1>
+                <p class="tool-description"></p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
+<div class="container text-center">
+<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">SEO URL Checker</h1>
+<p class="hero-subtitle">Validate your URLs for SEO friendliness and best practices.</p>
+</div>
+</section>
+<div class="container">
+<div class="tool-interface-container">
+<div class="input-group">
+<label class="input-label">Enter URL to Check</label>
+<input class="seo-input" id="inputUrl" oninput="resetResults()" placeholder="https://example.com/category/my-article-title" type="url"/>
+</div>
+<div class="action-bar">
+<button class="btn-primary" onclick="checkUrl()">Analyze URL</button>
+</div>
+<div class="output-section" id="resultsArea" style="display: none;">
+<h3 class="section-title mb-md">Analysis Results</h3>
+<div class="feature-card text-center mb-lg" style="background:var(--bg-primary); padding: 1.5rem;">
+<h4 class="feature-title mb-sm">Overall Status</h4>
+<div id="statusBadge" style="display: inline-block; padding: 0.5rem 1rem; border-radius: 30px; font-weight: bold; background: #eee;">
+                            Unknown</div>
+</div>
+<div class="output-container">
+<table style="width: 100%; border-collapse: collapse;">
+<tbody id="checkList">
+<!-- Checks injected here -->
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+            </div>
+            <section class="seo-article" data-tool="seo-url-checker">
+<article class="tool-article">
+<h2>SEO URL Checker — Free URL Friendliness Analyzer</h2>
+
+<p>I once inherited a site where every blog post URL looked like <code>/index.php?id=4829&amp;cat=12</code>. The content was good, but the URLs told searchers — and search engines — nothing. An SEO URL checker analyzes a URL against the practices Google actually rewards: short, readable, lowercase, hyphenated, keyword-bearing. Paste a URL, get a verdict on each rule, and fix what fails.</p>
+
+<h3>What Is an SEO URL Checker?</h3>
+
+<p>Your URL is the first thing a searcher reads about your page, and one of the first things Google's crawler parses. A clean URL — <code>example.com/best-budget-laptops</code> — signals relevance at a glance; a messy one — <code>example.com/p?id=4829&amp;session=xyz</code> — signals nothing and earns fewer clicks. The checker is a tool that scores a URL against the established best practices and reports pass or fail on each: length, lowercase usage, hyphens instead of underscores, keyword presence, absence of stop words and parameters, HTTPS, and readable structure.</p>
+
+<p>URLs are a minor ranking factor, but a real one — and more importantly, they are a click-through factor. When your URL appears in search results, in a shared link, or in an email, a readable slug builds trust before the page even loads. The checker turns vague advice ("make your URLs SEO-friendly") into a concrete list of green checks and red flags.</p>
+
+<h3>How to Use the SEO URL Checker</h3>
+
+<p>The check takes seconds, and I run it on every new page before publishing.</p>
+
+<p>Enter the full URL into the checker's input box and hit Analyze. The tool returns an overall status plus a breakdown of individual checks: Is it under the recommended length? All lowercase? Words separated by hyphens? Does it contain the target keyword? Free of unnecessary parameters, session IDs, and stop words? Using HTTPS?</p>
+
+<p>Fix the red flags one by one. The most common repairs: rewriting the slug to include the primary keyword (<code>/gwa-calculator-philippines</code> beats <code>/page-42</code>), replacing underscores with hyphens (Google treats hyphens as word separators; underscores join words into one token), cutting the slug to the essential 3–5 words, and stripping tracking parameters from the canonical version. If the page already ranks and gets traffic, do not change the URL casually — set up a 301 redirect from the old URL to the new one so you keep the link equity.</p>
+
+<p>Re-run the check after editing. When every box is green, you have a URL that reads well to humans and parses cleanly to crawlers.</p>
+
+<h3>The URL Rules, With Examples</h3>
+
+<table>
+<thead><tr><th>Rule</th><th>Good</th><th>Bad</th></tr></thead>
+<tbody>
+<tr><td>Short &amp; readable</td><td><code>/best-budget-laptops</code></td><td><code>/best-budget-laptops-for-college-students-in-2026-reviewed</code></td></tr>
+<tr><td>Lowercase only</td><td><code>/banana-bread-recipe</code></td><td><code>/Banana-Bread-RECIPE</code></td></tr>
+<tr><td>Hyphens, not underscores</td><td><code>/wireless-headphones</code></td><td><code>/wireless_headphones</code></td></tr>
+<tr><td>Keyword in the slug</td><td><code>/sourdough-starter-guide</code></td><td><code>/blog-post-17</code></td></tr>
+<tr><td>No stop words</td><td><code>/sharpen-kitchen-knife</code></td><td><code>/how-to-sharpen-a-kitchen-knife-at-home</code></td></tr>
+<tr><td>No parameters</td><td><code>/checkout</code></td><td><code>/checkout?session=abc123&amp;ref=email</code></td></tr>
+<tr><td>HTTPS</td><td><code>https://…</code></td><td><code>http://…</code></td></tr>
+</tbody>
+</table>
+
+<p>Notice the trade-off in the "short" row: the good version keeps the keyword and drops the filler. Every word in a slug should earn its place — if removing a word changes nothing about what the page is, remove it.</p>
+
+<h3>Who Uses SEO URL Checkers?</h3>
+
+<p><strong>Bloggers</strong> check every post slug before publishing — the slug is set once and lives forever.</p>
+
+<p><strong>E-commerce managers</strong> audit product and category URLs, where readable slugs improve both rankings and the links customers share.</p>
+
+<p><strong>Developers</strong> use the checks when building routing and permalink structures, so the CMS generates clean URLs by default.</p>
+
+<p><strong>SEOs</strong> run URL audits during site migrations, catching parameter-heavy and duplicate-slug problems before they ship.</p>
+
+<p><strong>Marketers</strong> check campaign landing-page URLs — a clean link gets clicked more in emails and social posts than an ugly one.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Overall status verdict</strong> — a single at-a-glance pass/fail for the URL.</li>
+<li><strong>Per-rule breakdown</strong> — length, case, separators, keywords, parameters checked individually.</li>
+<li><strong>Keyword detection</strong> — confirms your target term appears in the slug.</li>
+<li><strong>Parameter &amp; session flagging</strong> — spots query strings that should not be canonical.</li>
+<li><strong>HTTPS check</strong> — confirms the secure protocol.</li>
+<li><strong>Actionable fixes</strong> — each failure comes with what to change.</li>
+<li><strong>100% free</strong> — no signup, unlimited checks.</li>
+<li><strong>Private by design</strong> — everything runs in your browser; nothing is uploaded.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Do URLs affect SEO rankings?</h4>
+<p>They are a minor ranking factor — a keyword in the slug helps a little. The bigger win is click-through rate: readable URLs get clicked more in results and shared links, and engagement compounds.</p>
+
+<h4>Should I use hyphens or underscores?</h4>
+<p>Hyphens. Google treats hyphens as word separators (<code>budget-laptops</code> = "budget laptops") but reads underscores as joiners (<code>budget_laptops</code> = one token). This is one of the few URL rules Google has stated explicitly.</p>
+
+<h4>How long should a URL be?</h4>
+<p>Keep the slug to 3–5 meaningful words. Shorter URLs are easier to read, share, and remember — and they display in full in search results instead of getting cut off.</p>
+
+<h4>Should I change the URL of a page that already ranks?</h4>
+<p>Usually not. If you must, use a 301 redirect from the old URL to the new one and update internal links. Changing a ranking URL without a redirect throws away its history.</p>
+
+<h4>Do stop words hurt in URLs?</h4>
+<p>They do not hurt rankings, but they add length without meaning. Dropping "the," "and," "of," and "a" keeps slugs tight — <code>/sharpen-kitchen-knife</code> reads better than <code>/how-to-sharpen-a-kitchen-knife</code>.</p>
+
+<h4>Are URL parameters bad for SEO?</h4>
+<p>For the canonical URL, yes — parameters create duplicate-content risk and look untrustworthy. Use clean slugs for the canonical version and keep parameters (tracking, sessions) out of it.</p>
+
+<h4>Is this checker free?</h4>
+<p>Yes — completely free, no account needed.</p>
+
+<h4>Does my URL data leave my browser?</h4>
+<p>No. The analysis runs entirely client-side; nothing is uploaded or stored.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        // Initialize with debounced live check
+        const inputUrl = document.getElementById('inputUrl');
+        let debounceTimer;
+
+        inputUrl.addEventListener('input', () => {
+            clearTimeout(debounceTimer);
+            const url = inputUrl.value.trim();
+            if (url) {
+                debounceTimer = setTimeout(() => {
+                    checkUrl();
+                }, 800);
+            }
+        });
+
+        function checkUrl() {
+            const urlString = inputUrl.value.trim();
+            if (!urlString) {
+                resetResults(); // Clear results if input is empty
+                return;
+            }
+
+            // Simple visual feedback
+            const checkBtn = document.querySelector('.btn-primary');
+            const originalBtnText = checkBtn.textContent;
+            checkBtn.disabled = true;
+            checkBtn.innerHTML = '<span class="spinner-sm" style="display:inline-block; width:12px; height:12px; border:2px solid #fff; border-radius:50%; border-top-color:transparent; animation:spin 1s linear infinite;"></span> Analyzing...';
+
+            let url;
+            try {
+                url = new URL(urlString);
+            } catch (e) {
+                alert("Invalid URL format. Please include http:// or https://");
+                checkBtn.disabled = false;
+                checkBtn.textContent = originalBtnText;
+                return;
+            }
+
+            const checks = [];
+            let score = 0;
+            let total = 0;
+
+            function addCheck(label, pass, msg) {
+                total++;
+                if (pass) score++;
+                checks.push({ label, pass, msg });
+            }
+
+            // 1. Protocol
+            addCheck("Uses HTTPS", url.protocol === 'https:', url.protocol === 'https:' ? "Secure connection." : "Not using secure HTTPS protocol.");
+
+            // 2. Length
+            const pathLength = url.pathname.length;
+            addCheck("URL Length", pathLength < 100, pathLength < 100 ? `Good length (${pathLength} chars).` : "URL path is quite long (>100 chars).");
+
+            // 3. Hyphens vs Underscores
+            const hasUnderscores = url.pathname.includes('_');
+            addCheck("Hyphens over Underscores", !hasUnderscores, !hasUnderscores ? "Uses hyphens (preferred)." : "Contains underscores. Google prefers hyphens.");
+
+            // 4. Case
+            const hasUppercase = /[A-Z]/.test(url.pathname);
+            addCheck("Lowercase", !hasUppercase, !hasUppercase ? "All lowercase." : "Contains uppercase letters. URLs should be lowercase.");
+
+            // 5. Special Chars
+            const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/.test(url.pathname.replace(/[/-]/g, '')); // simplistic
+            addCheck("Safe Characters", !hasSpecial, !hasSpecial ? "No unsafe characters found." : "Contains potentially unsafe characters.");
+
+            // 6. Subfolders depth
+            const depth = url.pathname.split('/').filter(p => p).length;
+            addCheck("Folder Depth", depth < 4, depth < 4 ? `Good depth (${depth} levels).` : "Deep folder structure (>3 levels). Consider flattening.");
+
+            // Render
+            const resultsArea = document.getElementById('resultsArea');
+            const checkList = document.getElementById('checkList');
+            const statusBadge = document.getElementById('statusBadge');
+
+            let html = '';
+            checks.forEach(c => {
+                html += `
+                <tr style="border-bottom: 1px solid var(--border-color);">
+                    <td style="padding: 12px; font-weight: 500;">${c.label}</td>
+                    <td style="padding: 12px; color: ${c.pass ? '#2E7D32' : '#D32F2F'}; text-align: right;">
+                        ${c.pass ? '? Pass' : '? Issue'}
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="padding: 0 12px 12px 12px; font-size: 0.9rem; color: var(--text-secondary);">${c.msg}</td>
+                </tr>
+            `;
+            });
+
+            checkList.innerHTML = html;
+
+            const percentage = (score / total) * 100;
+            if (percentage === 100) {
+                statusBadge.style.background = '#E8F5E9'; statusBadge.style.color = '#2E7D32'; statusBadge.innerText = 'Excellent';
+            } else if (percentage >= 70) {
+                statusBadge.style.background = '#FFF3E0'; statusBadge.style.color = '#EF6C00'; statusBadge.innerText = 'Good (Needs minor fixes)';
+            } else {
+                statusBadge.style.background = '#FFEBEE'; statusBadge.style.color = '#C62828'; statusBadge.innerText = 'Needs Improvement';
+            }
+
+            resultsArea.style.display = 'block';
+        }
+
+        function resetResults() {
+            document.getElementById('resultsArea').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

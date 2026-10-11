@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ultimate Batch Image Converter. Convert hundreds of images between PNG, JPG, WebP, AVIF, and SVG in one go. 100% private.">
+    <title>Batch Image Converter - Universal Multi-Format | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../../image-tools/css/global.css">
+    <link rel="stylesheet" href="../../image-tools/css/components.css">
+    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../../about-us.html">About</a>
+                <a class="nav-link" href="../../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> &gt;
+                <a href="../index.html">Image Tools</a> &gt;
+                <span>🔄 Universal Batch Converter</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">🔄 Universal Batch Converter</h1>
+                <p class="tool-description">The ultimate conversion logic. Select multiple input images and multiple
+                    output formats. We'll handle the rest.</p>
+                <div class="tool-badges"><span class="badge badge-primary">Multi-Format Output</span><span class="badge badge-primary">High-Performance</span><span class="badge badge-secondary">Fast Download</span></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+
+<div class="batch-workspace">
+<section class="files-area" id="upload-zone">
+<h3 class="control-section-title">📂 Input Files</h3>
+<div id="file-list" style="margin-top: 15px;">
+<!-- Files will appear here -->
+</div>
+<div id="drop-prompt" style="text-align: center; padding: 60px 0;">
+<div style="font-size: 48px; margin-bottom: 15px;">📥</div>
+<h3>Drop images to start batching</h3>
+<p>Any format, any size. No limits.</p>
+</div>
+</section>
+<aside class="control-panel">
+<div class="control-section">
+<h3 class="control-section-title">🎯 Output Formats</h3>
+<p style="font-size: 11px; color: var(--text-tertiary); margin-bottom: 15px;">Select all formats
+                            you want to generate:</p>
+<div class="output-formats-grid">
+<div class="format-selector active" data-format="jpg">
+<span class="format-label">JPG</span>
+<span class="format-ext">.jpg</span>
+</div>
+<div class="format-selector" data-format="png">
+<span class="format-label">PNG</span>
+<span class="format-ext">.png</span>
+</div>
+<div class="format-selector" data-format="webp">
+<span class="format-label">WebP</span>
+<span class="format-ext">.webp</span>
+</div>
+<div class="format-selector" data-format="avif">
+<span class="format-label">AVIF</span>
+<span class="format-ext">.avif</span>
+</div>
+</div>
+</div>
+<div class="control-section">
+<h3 class="control-section-title">⚙️ Global Settings</h3>
+<div class="control-group">
+<label class="control-label">Quality (JPG/WebP)</label>
+<input class="slider-input" id="batch-quality" max="100" min="1" type="range" value="85"/>
+</div>
+<div class="toggle-control">
+<span class="toggle-label">Maintain Folder Structure</span>
+<div class="toggle-switch active"></div>
+</div>
+</div>
+<div class="progress-container" id="progress-box" style="display: none;">
+<div style="display: flex; justify-content: space-between; font-size: 12px;">
+<span id="progress-label">Converting...</span>
+<span id="progress-percent">0%</span>
+</div>
+<div class="progress-bar-bg">
+<div class="progress-bar-fill" id="progress-fill"></div>
+</div>
+</div>
+<div class="control-section">
+<button class="btn btn-primary w-full" disabled="" id="convert-btn"><span>🔄</span>
+                            Convert</button>
+<button class="btn btn-secondary w-full mt-2" onclick="location.reload()"><span>🔄</span>
+                            Reset</button>
+</div>
+</aside>
+</div>
+</div>
+</main>
+            </div>
+            <section class="seo-article" data-tool="batch-converter">
+<article class="tool-article">
+<h2>Batch Converter — Convert Hundreds of Images in One Go</h2>
+
+<p>I once inherited a folder with 400 product photos — a mix of PNGs, BMPs, and TIFFs — that all needed to become web-ready JPGs before lunch. Converting them one at a time would have eaten my entire morning. Instead I dragged the whole folder into a batch converter, picked JPG, and had a ZIP of finished files in minutes. That is the entire point of batch conversion: the same settings, applied to every file, in a single pass.</p>
+
+<h3>What Is a Batch Converter?</h3>
+
+<p>A batch converter processes multiple image files at once instead of one by one. You upload dozens or hundreds of images, choose a target format (JPG, PNG, WebP, and others), optionally set quality or resize options, and the tool converts every file with identical settings. The results download individually or as a single ZIP archive.</p>
+
+<p>The difference from a single-file converter is purely operational — one settings screen, one click, one download — but the time savings scale brutally. Five images? Barely matters. Fifty? You just saved an hour of repetitive clicking. Five hundred? You just saved your week.</p>
+
+<h3>How to Use the Batch Converter</h3>
+
+<p><strong>Step 1 — Select all your images.</strong> Drag and drop the whole set onto the page, or click to multi-select. Most tools accept mixed input formats in a single batch — JPGs, PNGs, BMPs, TIFFs, WebP, HEIC — and convert them all to one target format.</p>
+
+<p><strong>Step 2 — Choose format and options.</strong> Pick your output format, set the quality slider (80–90 for a good balance), and optionally resize — by percentage or to a maximum width. Resize-at-convert is the quiet killer feature: it turns 24-megapixel originals into lean web images in the same pass.</p>
+
+<p><strong>Step 3 — Convert and download.</strong> One click starts the whole batch. Progress is shown per file, and when everything finishes you download each image separately or grab the full set as a ZIP.</p>
+
+<h3>When Batch Conversion Pays Off</h3>
+
+<table>
+<thead><tr><th>Scenario</th><th>Batch Setup</th></tr></thead>
+<tbody>
+<tr><td>Product photos for an online store</td><td>RAW/TIFF → JPG at quality 85, resize to 1600px wide</td></tr>
+<tr><td>Website migration</td><td>PNG screenshots → WebP for smaller page weight</td></tr>
+<tr><td>Emailing a photo folder</td><td>Large originals → JPG at quality 75, resize to 1920px</td></tr>
+<tr><td>Archiving scanned documents</td><td>BMP/TIFF scans → PNG (lossless) or compressed JPG</td></tr>
+<tr><td>Phone photos for upload forms</td><td>HEIC → JPG, since forms rarely accept HEIC</td></tr>
+<tr><td>Social media scheduling</td><td>Mixed formats → JPG, uniform 1080px width</td></tr>
+</tbody>
+</table>
+
+<h3>Supported Formats</h3>
+
+<p>A good batch converter reads broadly and writes to the formats that matter. Typical input: JPG, PNG, WebP, GIF, BMP, TIFF, ICO, SVG, HEIC, and AVIF. Typical output: JPG, PNG, and WebP cover nearly every real-world need — JPG for photos and compatibility, PNG for graphics and transparency, WebP for the smallest web-ready files.</p>
+
+<p>Note the conversion direction matters for quality. Converting <em>between</em> lossless formats (BMP → PNG, TIFF → PNG) loses nothing. Converting <em>to</em> a lossy format (anything → JPG) discards some data permanently. Keep your originals archived before running a batch — a bulk operation applied to your only copies is a bulk mistake.</p>
+
+<h3>Tips for Large Batches</h3>
+
+<p><strong>Test on three files first.</strong> Convert a small sample, zoom in, and check the quality before unleashing the settings on 500 images. A wrong quality choice is cheap to fix on three files and painful on three hundred.</p>
+
+<p><strong>Mind your browser's memory.</strong> Browser-based converters process locally, which is private and fast — but a hundred 20 MB photos can strain a low-RAM device. Split giant batches into chunks of 30–50 if things slow down.</p>
+
+<p><strong>Name files sensibly before converting.</strong> "IMG_20261011_094231.jpg" tells you nothing six months later. Rename the batch with a project prefix before you convert, so the ZIP you download is already organized.</p>
+
+<p><strong>Strip metadata for public files.</strong> Photos carry EXIF data — camera model, date, sometimes GPS location. Stripping it before publishing is basic hygiene; keeping it is right for archives. Decide per batch.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Unlimited multi-file upload</strong> — drag dozens or hundreds of images at once.</li>
+<li><strong>Mixed input formats</strong> — BMP, TIFF, HEIC, PNG, WebP all accepted in one batch.</li>
+<li><strong>Per-batch settings</strong> — one format, quality, and resize rule for everything.</li>
+<li><strong>ZIP download</strong> — one archive with every converted file.</li>
+<li><strong>Quality control</strong> — slider from 1–100 plus sensible presets.</li>
+<li><strong>Resize on convert</strong> — cap width/height in the same pass.</li>
+<li><strong>Private processing</strong> — browser-local conversion, nothing uploaded.</li>
+<li><strong>Per-file progress</strong> — see exactly which files are done.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is the batch converter free?</h4>
+<p>Yes — free, with no account or signup required.</p>
+
+<h4>How many images can I convert at once?</h4>
+<p>Dozens to hundreds, depending on file sizes and your device's memory. Split very large batches into smaller groups if needed.</p>
+
+<h4>Can I mix formats in one batch?</h4>
+<p>Yes. Upload PNGs, BMPs, TIFFs, and WebPs together — they all convert to your chosen output format.</p>
+
+<h4>Will quality be reduced?</h4>
+<p>Only when converting to a lossy format like JPG. Converting between lossless formats (BMP → PNG) loses nothing. Quality slider controls the tradeoff.</p>
+
+<h4>Are my images uploaded to a server?</h4>
+<p>No — conversion runs locally in your browser, so your files never leave your device.</p>
+
+<h4>How do I download the results?</h4>
+<p>Download files individually or all at once as a single ZIP archive.</p>
+
+<h4>Can I resize images during conversion?</h4>
+<p>Yes — set a maximum width, height, or percentage scale and it applies to the whole batch.</p>
+
+<h4>Should I batch-convert my originals?</h4>
+<p>No. Always work on copies and keep your originals archived — especially before lossy conversion.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../../about-us.html">About Us</a>
+                    <a class="footer-link" href="../../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../js/shared/unified-input.js"></script>
+<script src="../js/utils/image-loader.js"></script>
+<script>
+        class BatchConverter {
+            constructor() {
+                this.files = [];
+                this.selectedFormats = ['jpg'];
+                this.quality = 0.85;
+
+                this.init();
+            }
+
+            init() {
+                this.setupUnifiedInput();
+                this.setupControls();
+                document.getElementById('convert-btn').onclick = () => this.process();
+            }
+
+            setupUnifiedInput() {
+                this.unifiedInput = new UnifiedInput({
+                    containerId: 'upload-zone',
+                    toolIcon: '🔄',
+                    toolName: 'Batch Converter',
+                    acceptTypes: 'image/*',
+                    showList: false, // Custom UI used
+                    onFilesLoaded: (files, newFiles) => this.handleFiles(files, newFiles)
+                });
+            }
+
+            setupControls() {
+                document.querySelectorAll('.format-selector').forEach(el => {
+                    el.onclick = () => {
+                        el.classList.toggle('active');
+                        this.selectedFormats = Array.from(document.querySelectorAll('.format-selector.active'))
+                            .map(e => e.dataset.format);
+                        document.getElementById('convert-btn').disabled = this.files.length === 0 || this.selectedFormats.length === 0;
+                    };
+                });
+
+                document.getElementById('batch-quality').oninput = (e) => {
+                    this.quality = parseInt(e.target.value) / 100;
+                };
+            }
+
+            async handleFiles(allFiles, newFiles) {
+                this.files = allFiles;
+                document.getElementById('convert-btn').disabled = this.selectedFormats.length === 0;
+
+                const list = document.getElementById('file-list');
+                // Only render new files
+                newFiles.forEach(file => {
+                    const card = document.createElement('div');
+                    card.className = 'job-card';
+                    card.innerHTML = `
+                        <div class="job-info">
+                            <div class="job-name">${file.name}</div>
+                            <div class="job-meta">${(file.size / 1024).toFixed(1)} KB</div>
+                        </div>
+                        <div class="job-status status-ready">Ready</div>
+                    `;
+                    list.appendChild(card);
+                });
+            }
+
+            async process() {
+                const btn = document.getElementById('convert-btn');
+                btn.disabled = true;
+                btn.textContent = 'Processing...';
+
+                document.getElementById('progress-box').style.display = 'block';
+                const fill = document.getElementById('progress-fill');
+                const pLabel = document.getElementById('progress-percent');
+
+                const results = [];
+                const totalFiles = this.files.length;
+                const totalFormats = this.selectedFormats.length;
+                const totalJobs = totalFiles * totalFormats;
+                let doneJobs = 0;
+
+                for (let i = 0; i < this.files.length; i++) {
+                    const file = this.files[i];
+                    const jobCards = document.querySelectorAll('.job-card');
+                    const cardStatus = jobCards[i].querySelector('.job-status');
+
+                    try {
+                        for (const format of this.selectedFormats) {
+                            const result = await window.ImageConverter.convertFile(file, format, {
+                                quality: this.quality
+                            });
+                            results.push(result);
+
+                            doneJobs++;
+                            const p = Math.round((doneJobs / totalJobs) * 100);
+                            fill.style.width = `${p}%`;
+                            pLabel.textContent = `${p}%`;
+                        }
+
+                        cardStatus.textContent = 'Done';
+                        cardStatus.className = 'job-status status-done';
+                    } catch (e) {
+                        console.error(e);
+                        cardStatus.textContent = 'Error';
+                        cardStatus.className = 'job-status status-error';
+                    }
+                }
+
+                this.results = results;
+                btn.textContent = `📥 Download All`;
+                btn.classList.remove('btn-primary');
+                btn.classList.add('btn-premium-download');
+                btn.onclick = () => this.downloadAll();
+                btn.disabled = false;
+            }
+
+            async downloadAll() {
+                for (const result of this.results) {
+                    const a = document.createElement('a');
+                    a.href = result.dataURL;
+                    a.download = result.convertedFile.name;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    // Small delay to ensure browser handles multiple downloads
+                    await new Promise(resolve => setTimeout(resolve, 150));
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => new BatchConverter());
+    </script>
+</body>
+</html>

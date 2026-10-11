@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online Excel Viewer - View XLSX spreadsheets with charts, formulas, freeze panes, and CSV export. 100% client-side.">
+    <title>Excel Viewer - View Spreadsheets Online | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Documents</a> &gt;
+                <span>Excel Viewer</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Excel Viewer</h1>
+                <p class="tool-description">Free online Excel Viewer - View XLSX spreadsheets with charts, formulas, freeze panes, and CSV export. 100% client-side.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+<!-- Hero Section -->
+<div class="doc-hero">
+<h1 class="doc-hero-title">Excel Viewer</h1>
+<p class="doc-hero-subtitle">View XLSX spreadsheets online with multi-sheet tabs, charts, formulas, and
+                    CSV export. 100% private, browser-based processing.</p>
+</div>
+<!-- Main Tool Container -->
+<div class="doc-tool-container">
+<!-- Top: Upload / Preview Area -->
+<div class="doc-main-area">
+<!-- Upload Section -->
+<div class="doc-upload-section" id="upload-section">
+<div class="doc-upload-icon">📊</div>
+<h2 class="doc-upload-title">Upload Your Excel File</h2>
+<p class="doc-upload-subtitle">Drag and drop your file here or click to browse</p>
+<button class="doc-upload-btn" id="browse-btn">Choose File</button>
+<p class="doc-upload-formats">Supported formats: .xlsx, .xls, .csv</p>
+<input accept=".xlsx,.xls,.csv" hidden="" id="file-input" type="file"/>
+</div>
+<!-- Preview Area -->
+<div class="doc-preview-area" id="preview-area" style="display: none;">
+<div class="doc-preview-toolbar">
+<button class="doc-toolbar-btn" id="formula-btn">ƒx Formulas</button>
+<button class="doc-toolbar-btn" id="chart-btn">📈 Chart</button>
+<div class="doc-toolbar-divider"></div>
+<button class="doc-toolbar-btn" id="freeze-btn">❄️ Freeze</button>
+<div style="flex: 1;"></div>
+<button class="doc-toolbar-btn" id="export-btn">📥 Export CSV</button>
+</div>
+<div class="doc-toolbar-divider"></div>
+<select class="doc-settings-select" id="sheet-selector" style="width: auto; min-width: 150px;">
+<option disabled="" selected="" value="">Select Sheet</option>
+</select>
+</div>
+<div class="spreadsheet-wrapper" id="spreadsheet-wrapper">
+<div class="spreadsheet-wrapper" id="spreadsheet-wrapper">
+<table class="spreadsheet-table" id="spreadsheet-table"></table>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="doc-action-bar" id="action-bar" style="display: none;">
+<button class="doc-action-btn secondary" id="new-file-btn">📤 Upload New File</button>
+<button class="doc-action-btn primary" id="download-btn">📥 Download as CSV</button>
+</div>
+</div>
+<!-- Bottom: Settings Panel -->
+<div class="doc-settings-panel">
+<div class="doc-settings-title">⚙️ Viewer Options</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+<div class="doc-settings-group">
+<label class="doc-settings-label">Cell Inspector</label>
+<div style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;">
+<input class="doc-settings-select" id="cell-address" readonly="" style="width: 60px; font-family: monospace; text-align: center;" type="text" value="A1"/>
+<input class="doc-settings-select" id="cell-value" placeholder="Value..." readonly="" style="flex: 1;" type="text"/>
+</div>
+</div>
+<div class="doc-settings-group">
+<div class="doc-settings-label" style="margin-bottom: 0.75rem;">Display Options</div>
+<div class="doc-settings-toggle">
+<span>Show Gridlines</span>
+<div class="doc-toggle-switch active" id="toggle-grid"></div>
+</div>
+<div class="doc-settings-toggle">
+<span>Zebra Stripes</span>
+<div class="doc-toggle-switch active" id="toggle-zebra"></div>
+</div>
+</div>
+<div class="doc-settings-group">
+<div class="doc-settings-label" style="margin-bottom: 1rem;">📊 Spreadsheet Stats</div>
+<div class="doc-stats-bar" style="grid-template-columns: 1fr 1fr; padding: 1rem; margin: 0;">
+<div class="doc-stat-item">
+<span class="doc-stat-value" id="stat-rows">--</span>
+<span class="doc-stat-label">Rows</span>
+</div>
+<div class="doc-stat-item">
+<span class="doc-stat-value" id="stat-cols">--</span>
+<span class="doc-stat-label">Columns</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+ Chart Modal 
+<div class="chart-modal" id="chart-modal">
+<div class="chart-modal-content">
+<div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+<h3>📈 Spreadsheet Chart</h3>
+<button onclick="document.getElementById('chart-modal').classList.remove('open')" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">×</button>
+</div>
+<div class="chart-container">
+<canvas id="chart-canvas"></canvas>
+</div>
+</div>
+</div>
+            </div>
+            <section class="seo-article" data-tool="excel-viewer">
+<article class="tool-article">
+<h2>Excel Viewer — Free Online XLSX File Viewer</h2>
+
+<p>An .xlsx lands in your inbox and you need to check one number. You don't have Excel on this machine, you don't want to upload a confidential budget to someone's cloud just to peek at it, and installing a 2 GB office suite for a thirty-second glance is absurd. An Excel viewer is the right tool for that moment: upload the workbook and read it in your browser — all sheets, formulas, and formatting intact — without changing a single cell. It's read-only by design, which is exactly why it's safe.</p>
+
+<h3>What Is an Excel Viewer?</h3>
+
+<p>An Excel viewer opens spreadsheet files (.xlsx, .xls, and often .csv) for inspection without editing capabilities. You see the workbook as its author intended: multiple sheets navigable via tabs, formatted cells, calculated values, and charts rendered in place.</p>
+
+<p>The read-only nature is a feature, not a limitation. When you're auditing a financial model, reviewing a colleague's budget, or verifying data before an import, the last thing you want is an accidental keystroke changing a formula. A viewer lets you sort, search, and inspect freely with zero risk of corrupting the file.</p>
+
+<p>Two inspection tools do the heavy lifting. The <strong>formula toggle</strong> switches between showing calculated values and the underlying formulas — essential for understanding how a spreadsheet actually works. The <strong>cell inspector</strong> shows any cell's exact address and raw value, which is how you verify what's really in a cell versus how it's displayed (dates and rounded numbers are the classic cases).</p>
+
+<h3>How to Use the Excel Viewer</h3>
+
+<p>Drag your Excel file onto the upload area or click to browse. The workbook opens with the first sheet displayed and sheet tabs along the bottom (or top) for navigating multi-sheet files — switch between them exactly like you would in Excel.</p>
+
+<p>Explore with the view controls: click column headers to sort, use search to find values across the sheet, freeze the header row to keep it visible while scrolling through thousands of rows, and toggle grid lines or zebra striping for readability. The stats bar shows row and column counts per sheet — a quick check that the file loaded completely.</p>
+
+<p>Want to understand the logic? Toggle the formula view to reveal the expressions behind the numbers — <code>=SUM(B2:B40)</code> instead of <code>12,450</code>. Need a visual? The chart button renders numeric columns as charts without leaving the page. When you're done, export the sheet to CSV or download a copy.</p>
+
+<p>My audit routine for any unfamiliar workbook: check the sheet tabs first (hidden sheets often hold the assumptions), toggle formulas on the totals row, and sort the key column to spot blanks and outliers. Five minutes in a viewer tells you whether you can trust the file.</p>
+
+<h3>Viewer vs. Editor vs. Desktop Excel</h3>
+
+<table>
+<thead><tr><th>Need</th><th>Best tool</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>Quickly read a received file</td><td>Viewer</td><td>Fastest; zero risk of accidental changes</td></tr>
+<tr><td>Audit formulas and structure</td><td>Viewer</td><td>Formula toggle reveals the logic safely</td></tr>
+<tr><td>Change values or add rows</td><td>Editor</td><td>That's what the Excel editor on this site is for</td></tr>
+<tr><td>Complex models, macros, pivots</td><td>Desktop Excel</td><td>Full feature set for heavy work</td></tr>
+<tr><td>Shared/public computer</td><td>Viewer</td><td>Nothing installed, nothing left behind</td></tr>
+<tr><td>Confidential file, no cloud</td><td>Viewer</td><td>Processes locally; never uploaded</td></tr>
+</tbody>
+</table>
+
+<h3>When a Viewer Is the Right Call</h3>
+
+<p><strong>Email attachments.</strong> Someone sends a spreadsheet; you need to check figures, not edit them. The viewer opens it in seconds.</p>
+
+<p><strong>Auditing before import.</strong> Before loading a supplier's price list or a client's data into your system, inspect it: row counts, column structure, formula sanity. The viewer is your pre-flight check.</p>
+
+<p><strong>Shared computers.</strong> Libraries, hotel business centers, client offices — view the file with nothing to install and no trace left behind.</p>
+
+<p><strong>Mobile checks.</strong> On a phone where Excel isn't installed, the viewer renders the workbook readably in a mobile browser.</p>
+
+<p><strong>Privacy-sensitive files.</strong> Payroll, budgets, cap tables — files you'd rather not upload to a cloud service just to read. Local processing keeps them on your device.</p>
+
+<h3>Who Uses an Excel Viewer?</h3>
+
+<p><strong>Managers</strong> review reports and budgets sent by their teams without needing to edit them.</p>
+
+<p><strong>Auditors and accountants</strong> inspect workbooks and verify formula logic during reviews.</p>
+
+<p><strong>Operations teams</strong> check inventory sheets, rosters, and schedules shared as Excel files.</p>
+
+<p><strong>Anyone without Office</strong> — students, freelancers, Linux users — opens Excel files freely without buying or installing anything.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant workbook view</strong> — upload an .xlsx and read it immediately.</li>
+<li><strong>Multi-sheet navigation</strong> — tab through every sheet in the workbook.</li>
+<li><strong>Formula toggle</strong> — switch between calculated values and underlying formulas.</li>
+<li><strong>Cell inspector</strong> — see any cell's address and exact raw value.</li>
+<li><strong>Sort and search</strong> — explore large sheets quickly.</li>
+<li><strong>Freeze headers</strong> — keep column names visible while scrolling.</li>
+<li><strong>Chart view</strong> — visualize numeric data without leaving the page.</li>
+<li><strong>Export options</strong> — download as CSV or grab a copy of the file.</li>
+<li><strong>100% free and private</strong> — no account; files never leave your browser.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this Excel viewer free?</h4>
+<p>Yes — free, no signup, no limits.</p>
+
+<h4>Do I need Microsoft Excel installed?</h4>
+<p>No. The viewer runs entirely in your browser on any device.</p>
+
+<h4>Can I edit the spreadsheet?</h4>
+<p>No — the viewer is read-only by design, so you can't accidentally change anything. Use the Excel editor on this site when you need to modify a file.</p>
+
+<h4>How do I see the formulas instead of the results?</h4>
+<p>Use the formula toggle to switch between calculated values and the underlying expressions.</p>
+
+<h4>Can it open files with multiple sheets?</h4>
+<p>Yes — navigate between all sheets using the sheet tabs, just like in Excel.</p>
+
+<h4>What file formats are supported?</h4>
+<p>XLSX and XLS workbooks, plus CSV files.</p>
+
+<h4>Why do numbers look different than in Excel?</h4>
+<p>Cell formatting (currency symbols, date formats, decimal places) renders as the author set it. The cell inspector shows the raw underlying value.</p>
+
+<h4>Is my file uploaded to a server?</h4>
+<p>No. The workbook is parsed locally in your browser; your data never leaves your device.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        (function () {
+            let workbook = null;
+            let currentSheet = null;
+            let showFormulas = false;
+            let chart = null;
+
+            const fileInput = document.getElementById('file-input');
+            const uploadSection = document.getElementById('upload-section');
+            const previewArea = document.getElementById('preview-area');
+            const actionBar = document.getElementById('action-bar');
+            const sheetSelector = document.getElementById('sheet-selector');
+
+            // Expose globally for HTML attributes
+            window.__renderSheet = renderSheet;
+            window.__selectCell = selectCell;
+
+            document.getElementById('browse-btn').onclick = () => fileInput.click();
+            uploadSection.onclick = () => fileInput.click();
+            uploadSection.ondragover = (e) => { e.preventDefault(); uploadSection.classList.add('dragover'); };
+            uploadSection.ondragleave = () => uploadSection.classList.remove('dragover');
+            uploadSection.ondrop = (e) => {
+                e.preventDefault();
+                uploadSection.classList.remove('dragover');
+                if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+            };
+            fileInput.onchange = (e) => { if (e.target.files[0]) handleFile(e.target.files[0]); };
+
+            // Sheet Dropdown Listener
+            sheetSelector.onchange = (e) => {
+                renderSheet(e.target.value);
+            };
+
+            async function handleFile(file) {
+                try {
+                    const arrayBuffer = await file.arrayBuffer();
+                    workbook = XLSX.read(arrayBuffer, { type: 'array', cellFormula: true });
+                    updateSheetDropdown();
+                    renderSheet(workbook.SheetNames[0]);
+                    uploadSection.style.display = 'none';
+                    previewArea.style.display = 'block';
+                    actionBar.style.display = 'flex';
+                } catch (error) {
+                    console.error(error);
+                    alert('Error reading file: ' + error.message);
+                }
+            }
+
+            function updateSheetDropdown() {
+                sheetSelector.innerHTML = workbook.SheetNames.map(name =>
+                    `<option value="${name}">${name}</option>`
+                ).join('');
+                sheetSelector.value = workbook.SheetNames[0];
+            }
+
+            function getColName(n) {
+                let s = "";
+                while (n >= 0) {
+                    s = String.fromCharCode(n % 26 + 65) + s;
+                    n = Math.floor(n / 26) - 1;
+                }
+                return s;
+            }
+
+            function renderSheet(sheetName) {
+                try {
+                    currentSheet = sheetName;
+                    sheetSelector.value = sheetName; // Sync dropdown
+
+                    const sheet = workbook.Sheets[sheetName];
+                    const range = XLSX.utils.decode_range(sheet['!ref'] || "A1");
+                    const totalRows = range.e.r - range.s.r + 1;
+
+                    // Large file safety check
+                    if (totalRows > 5000 && !confirm(`This sheet has ${totalRows} rows. Rendering might take a while. Continue?`)) {
+                        return;
+                    }
+
+                    const data = XLSX.utils.sheet_to_json(sheet, { header: 1, raw: !showFormulas });
+                    const maxCols = Math.max(...data.map(r => r.length), 1);
+
+                    let html = '<thead><tr><th class="corner"></th>';
+                    for (let c = 0; c < maxCols; c++) { html += '<th>' + getColName(c) + '</th>'; }
+                    html += '</tr></thead><tbody>';
+
+                    data.forEach((row, r) => {
+                        html += '<tr><td class="row-num">' + (r + 1) + '</td>';
+                        for (let c = 0; c < maxCols; c++) {
+                            const val = row[c] !== undefined ? row[c] : '';
+                            const safeVal = String(val).replace(/'/g, "\\'");
+                            html += `<td onclick="window.__selectCell(${r}, ${c}, '${safeVal}')">${val}</td>`;
+                        }
+                        html += '</tr>';
+                    });
+                    html += '</tbody>';
+
+                    document.getElementById('spreadsheet-table').innerHTML = html;
+                    document.getElementById('stat-rows').textContent = data.length;
+                    document.getElementById('stat-cols').textContent = maxCols;
+                } catch (e) {
+                    console.error("Render Error:", e);
+                    alert("Error rendering sheet: " + e.message);
+                }
+            }
+
+            function selectCell(row, col, value) {
+                document.querySelectorAll('.cell-selected').forEach(c => c.classList.remove('cell-selected'));
+                const cell = document.querySelector('#spreadsheet-table tr:nth-child(' + (row + 2) + ') td:nth-child(' + (col + 2) + ')');
+                if (cell) cell.classList.add('cell-selected');
+                document.getElementById('cell-address').value = getColName(col) + (row + 1);
+                document.getElementById('cell-value').value = value;
+            }
+
+            document.getElementById('formula-btn').onclick = function () {
+                showFormulas = !showFormulas;
+                this.classList.toggle('active', showFormulas);
+                if (currentSheet) renderSheet(currentSheet);
+            };
+
+            document.getElementById('chart-btn').onclick = () => {
+                if (!currentSheet) return;
+                const sheet = workbook.Sheets[currentSheet];
+                const data = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+                if (data.length < 2) return alert('Need at least 2 rows for chart');
+                const labels = data.slice(1).map(r => r[0] || '');
+                const values = data.slice(1).map(r => parseFloat(r[1]) || 0);
+                if (chart) chart.destroy();
+                chart = new Chart(document.getElementById('chart-canvas'), {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: data[0]?.[1] || 'Values',
+                            data: values,
+                            backgroundColor: 'rgba(0, 150, 136, 0.6)',
+                            borderColor: 'rgb(0, 150, 136)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false }
+                });
+                document.getElementById('chart-modal').classList.add('open');
+            };
+
+            document.getElementById('export-btn').onclick = () => {
+                if (!currentSheet) return;
+                const sheet = workbook.Sheets[currentSheet];
+                const csv = XLSX.utils.sheet_to_csv(sheet);
+                const blob = new Blob([csv], { type: 'text/csv' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url; a.download = currentSheet + '.csv';
+                a.click(); URL.revokeObjectURL(url);
+            };
+
+            document.querySelectorAll('.doc-toggle-switch').forEach(toggle => {
+                toggle.onclick = function () { this.classList.toggle('active'); };
+            });
+
+            document.getElementById('new-file-btn').onclick = () => {
+                uploadSection.style.display = 'flex';
+                previewArea.style.display = 'none';
+                actionBar.style.display = 'none';
+                workbook = null; currentSheet = null;
+                sheetSelector.innerHTML = '<option value="" disabled selected>Select Sheet</option>';
+            };
+            document.getElementById('download-btn').onclick = () => document.getElementById('export-btn').click();
+        })();
+    </script>
+</body>
+</html>

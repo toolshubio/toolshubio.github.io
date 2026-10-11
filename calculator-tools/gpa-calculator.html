@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium GPA calculator with grade forecasting, weighted analysis, and cumulative tracking. Optimize your academic performance.">
+    <title>High-End GPA & Academic Intelligence | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Calculators</a> &gt;
+                <span>🎓 Academic Intelligence</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">🎓 Academic Intelligence</h1>
+                <p class="tool-description">Advanced GPA forecasting, weighted analysis, and cumulative tracking.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<div class="calc-tabs mb-8">
+<button class="calc-tab active" onclick="setMode('semester')">Semester Mode</button>
+<button class="calc-tab" onclick="setMode('forecast')">Grade Forecast</button>
+<button class="calc-tab" onclick="setMode('cumulative')">Cumulative</button>
+</div>
+<div class="mode-section" id="semester-calc">
+<div class="glass-panel gpa-hero">
+<div class="text-sm text-secondary uppercase font-bold tracking-widest mb-2">Estimated Semester GPA
+                    </div>
+<div class="gpa-display-val" id="res-gpa">4.00</div>
+<div class="mt-4 flex justify-center gap-6">
+<div class="text-center">
+<div class="text-xs text-secondary">Total Credits</div>
+<div class="font-bold" id="res-credits">0</div>
+</div>
+<div class="text-center">
+<div class="text-xs text-secondary">Honors Points</div>
+<div class="font-bold" id="res-points">0.0</div>
+</div>
+</div>
+</div>
+<div class="glass-panel p-6 mb-8">
+<div class="flex justify-between items-center mb-6">
+<h3 class="panel-title">Course Workload</h3>
+<div class="flex gap-2">
+<select class="calc-select" id="scale" onchange="calculate()">
+<option value="4.0">Standard 4.0</option>
+<option value="5.0">Weighted 5.0 (AP/IB)</option>
+</select>
+</div>
+</div>
+<div id="course-list">
+<!-- Populated by JS -->
+</div>
+<button class="btn btn-secondary w-full mt-4" onclick="addCourse()">+ Add Course</button>
+</div>
+</div>
+<div class="mode-section" id="forecast-calc" style="display: none;">
+<div class="glass-panel p-6">
+<h3 class="panel-title mb-6">What do you need for a <span id="target-label">3.80</span>?</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-6">
+<div class="input-group">
+<label class="input-label">Current GPA</label>
+<input class="calc-input" id="f-curr-gpa" oninput="runForecast()" step="0.01" type="number" value="3.5"/>
+</div>
+<div class="input-group">
+<label class="input-label">Current Credits</label>
+<input class="calc-input" id="f-curr-cred" oninput="runForecast()" type="number" value="60"/>
+</div>
+<div class="input-group">
+<label class="input-label">Target GPA</label>
+<input class="calc-input" id="f-target-gpa" oninput="runForecast()" step="0.01" type="number" value="3.7"/>
+</div>
+<div class="input-group">
+<label class="input-label">Upcoming Credits</label>
+<input class="calc-input" id="f-next-cred" oninput="runForecast()" type="number" value="15"/>
+</div>
+</div>
+<div class="flex flex-col justify-center">
+<div class="forecast-card text-center">
+<div class="text-sm text-secondary uppercase font-bold mb-2">Required Average Grade
+                                </div>
+<div class="text-5xl font-extrabold text-success" id="res-req-gpa">4.00</div>
+<div class="text-xs text-secondary mt-2" id="res-status">Achievable with A grades</div>
+</div>
+<canvas class="mt-8" id="forecast-chart"></canvas>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex gap-4">
+<button class="btn btn-secondary flex-1" onclick="exportData('pdf')">Export Academic Report
+                    (PDF)</button>
+<button class="btn btn-secondary flex-1" onclick="exportData('csv')">Export Data (CSV)</button>
+</div>
+</div>
+<section class="seo-article" data-tool="gpa-calculator">
+<article class="tool-article">
+<h2>GPA Calculator — Know Your Grade Point Average in Seconds</h2>
+
+<p>I still remember the end of my first semester in college, sitting with a spreadsheet and a calculator, trying to work out what my grades actually meant. Three courses were 3 credits, one was 4, and a lab counted differently — by the time I finished, I had more confidence in my arithmetic than in the final number. A GPA calculator removes all of that. You enter your courses, grades, and credit hours, and it gives you your grade point average instantly, without the crossed-out rows and second-guessing.</p>
+
+<h3>What Is a GPA?</h3>
+
+<p>GPA stands for grade point average, and it is the standard way schools in the US (and many universities worldwide) summarize your academic performance in a single number. Every letter grade you earn gets converted into grade points — an A is worth 4.0 points, a B is 3.0, a C is 2.0, a D is 1.0, and an F earns nothing. Those points are then weighted by how many credit hours each course carries, because a 4-credit class should count more than a 1-credit lab.</p>
+
+<p>Most schools use the 4.0 scale, which means the highest possible GPA is 4.0. A 3.0 is considered good, 3.5 is very good, and anything above 3.7 puts you in strong territory for scholarships and honors. Your GPA shows up on transcripts, and it is one of the first things admissions offices, scholarship committees, and sometimes employers look at — which is exactly why it is worth knowing where you stand.</p>
+
+<p>The two flavors you will see most are semester GPA (one term only) and cumulative GPA (everything you have completed so far). Both use the same math; cumulative just folds your previous record into the calculation, which is why each new semester moves the total less once you have dozens of credits behind you.</p>
+
+<h3>How GPA Is Calculated</h3>
+
+<p>The formula looks intimidating on a transcript page but is straightforward once you see it in action. For each course, multiply the grade's point value by the course's credit hours — that product is called quality points. Add up the quality points from every course, add up all the credit hours, then divide.</p>
+
+<p><strong>GPA = Total Quality Points ÷ Total Credit Hours</strong></p>
+
+<p>Here is a worked example. Say you took three courses: a 3-credit course where you earned an A (4.0), a 4-credit course with a B (3.0), and a 3-credit course with a B+ (3.3). Quality points: 4.0 × 3 = 12, 3.0 × 4 = 12, 3.3 × 3 = 9.9. That is 33.9 total quality points across 10 credits. 33.9 ÷ 10 = 3.39 GPA.</p>
+
+<p>Notice how the 4-credit B pulled its weight more than the 3-credit B+. Credit hours act like weights in the average — the same grade moves your GPA more in a heavier course. This is the exact math the calculator runs, and it matches the weighted method most universities publish.</p>
+
+<table>
+<thead><tr><th>Letter Grade</th><th>Grade Points</th><th>Typical Percentage</th></tr></thead>
+<tbody>
+<tr><td>A+ / A</td><td>4.0</td><td>93–100%</td></tr>
+<tr><td>A−</td><td>3.7</td><td>90–92%</td></tr>
+<tr><td>B+</td><td>3.3</td><td>87–89%</td></tr>
+<tr><td>B</td><td>3.0</td><td>83–86%</td></tr>
+<tr><td>B−</td><td>2.7</td><td>80–82%</td></tr>
+<tr><td>C+</td><td>2.3</td><td>77–79%</td></tr>
+<tr><td>C</td><td>2.0</td><td>73–76%</td></tr>
+<tr><td>C−</td><td>1.7</td><td>70–72%</td></tr>
+<tr><td>D+</td><td>1.3</td><td>67–69%</td></tr>
+<tr><td>D</td><td>1.0</td><td>63–66%</td></tr>
+<tr><td>D−</td><td>0.7</td><td>60–62%</td></tr>
+<tr><td>F</td><td>0.0</td><td>Below 60%</td></tr>
+</tbody>
+</table>
+
+<p>Keep in mind that grade scales vary slightly between schools — some skip A+, some weight honors or AP courses above 4.0 — so treat the table as the standard reference and check your institution's policy if yours is different.</p>
+
+<h3>How to Use the GPA Calculator</h3>
+
+<p>The tool is built around how you actually think about a semester: courses, grades, credits. You do not need to know the formula or pre-compute anything.</p>
+
+<p><strong>Step 1 — Add your courses.</strong> For each class, type the course name (optional, but it keeps things organized), enter the credit hours, and pick the letter grade from the dropdown. Add as many rows as you need — the list grows with your schedule.</p>
+
+<p><strong>Step 2 — Check your semester GPA.</strong> The calculator totals your credits and quality points and shows your semester GPA right away, along with the per-course breakdown so you can see which class pulled the number up or down.</p>
+
+<p><strong>Step 3 — Fold in your history for cumulative GPA.</strong> Enter your current cumulative GPA and the credits you have already completed. The tool blends those with your current courses and projects your new cumulative total — useful when you are deciding how much the current term actually moves the needle.</p>
+
+<p><strong>Step 4 — Set a target and work backward.</strong> This is the part I wish I had in college. Enter your target GPA and upcoming credit hours, and the calculator forecasts the average grade you need this term to hit it. Playing with expected grades ("what if I get a B in chemistry but an A in everything else?") turns vague anxiety into a concrete plan.</p>
+
+<h3>Semester GPA vs Cumulative GPA</h3>
+
+<p>These two numbers answer different questions, and mixing them up causes most of the confusion I see.</p>
+
+<p><strong>Semester GPA</strong> covers a single term. It is the number that determines whether you made the Dean's List or landed on academic probation, since schools evaluate each term on its own. Every semester starts fresh here.</p>
+
+<p><strong>Cumulative GPA</strong> is the running average across every term you have completed. Because it carries more credit hours behind it, each new semester has a smaller effect on it — a strong term moves a freshman's cumulative GPA a lot and a senior's only a little. That is why students protecting a scholarship (which usually requires staying above 3.0 or 3.5) watch the cumulative number so closely.</p>
+
+<p>The target-GPA forecast bridges the two: it tells you what semester performance is required to land your cumulative GPA at a specific number. If you need a 3.5 cumulative and you have 60 credits at 3.3, the math will show exactly how many A's the next 15 credits need to carry.</p>
+
+<h3>Who Uses a GPA Calculator?</h3>
+
+<p><strong>College and high school students</strong> are the obvious audience — checking the semester result before it posts, or testing "what-if" grade combinations during finals week. It turns grade guessing into a planning exercise.</p>
+
+<p><strong>Transfer applicants and graduate-school hopefuls</strong> use it to project their final cumulative GPA before deadlines, since many programs list a minimum GPA and decisions get made on numbers that are still in motion.</p>
+
+<p><strong>Scholarship students</strong> track whether they are safely above their renewal threshold. A 3.25 requirement with a 3.3 cumulative is closer than it feels, and seeing the exact margin helps you decide where to focus study time.</p>
+
+<p><strong>Parents and academic advisors</strong> use it during advising sessions to show students the real cost of a weak semester — and the equally real effect of a strong one — in concrete numbers rather than warnings.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant results</strong> — your GPA, credits, and quality points update the moment you enter grades.</li>
+<li><strong>Semester and cumulative modes</strong> — one-term snapshots or your full academic history.</li>
+<li><strong>Target GPA forecasting</strong> — enter a goal and see the average grade your next term needs.</li>
+<li><strong>Standard 4.0 scale</strong> — full plus/minus grade support from A+ through F.</li>
+<li><strong>Unlimited courses</strong> — add and remove rows to match your real schedule.</li>
+<li><strong>Per-course breakdown</strong> — see each class's quality points so nothing is a black box.</li>
+<li><strong>Private by design</strong> — everything runs in your browser; grades never leave your device.</li>
+<li><strong>100% free</strong> — no signup, no limits, works on desktop and mobile.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>How is GPA calculated?</h4>
+<p>Multiply each course's grade points by its credit hours to get quality points, sum all quality points, and divide by total credit hours. For example, an A (4.0) in a 3-credit course plus a B (3.0) in a 4-credit course gives (4×3 + 3×4) ÷ 7 = 3.43.</p>
+
+<h4>What grade scale does this calculator use?</h4>
+<p>The standard 4.0 scale: A=4.0, A−=3.7, B+=3.3, B=3.0, B−=2.7, C+=2.3, C=2.0, C−=1.7, D+=1.3, D=1.0, D−=0.7, F=0.0. Check your school's policy if it uses a different scale.</p>
+
+<h4>What is a good GPA?</h4>
+<p>A 3.0 or above is generally considered good. A 3.5+ is very good, and 3.8+ is excellent and competitive for most scholarships and graduate programs.</p>
+
+<h4>Can I calculate cumulative GPA across multiple semesters?</h4>
+<p>Yes. Enter your current cumulative GPA and completed credits, add your current courses, and the calculator projects your new cumulative total.</p>
+
+<h4>How do I figure out what grades I need to reach a target GPA?</h4>
+<p>Enter your target GPA and the credit hours you will take. The calculator works backward to show the average grade you need this term.</p>
+
+<h4>Does the calculator handle weighted (honors/AP) grades?</h4>
+<p>Weighted scales vary by school, so enter your institution's grade-point values if they differ from the standard 4.0 table.</p>
+
+<h4>Is my grade data stored anywhere?</h4>
+<p>No. All calculations happen locally in your browser — nothing is uploaded or stored on any server.</p>
+
+<h4>Is this GPA calculator free?</h4>
+<p>Yes — completely free, no account needed, no limit on calculations.</p>
+</article>
+</section>
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="js/calc-utils.js"></script>
+<script src="js/calc-ui.js"></script>
+<script>
+        let courses = [
+            { name: 'Advanced Mathematics', grade: 4.0, credits: 4 },
+            { name: 'Physics I', grade: 3.7, credits: 4 },
+            { name: 'World History', grade: 4.0, credits: 3 }
+        ];
+
+        function init() {
+            CalcUI.init({ toolName: 'gpa-calculator' });
+            renderCourses();
+            calculate();
+        }
+
+        function setMode(mode) {
+            document.querySelectorAll('.calc-tab').forEach(t => t.classList.toggle('active', t.getAttribute('onclick').includes(mode)));
+            document.querySelectorAll('.mode-section').forEach(s => s.style.display = 'none');
+            document.getElementById(`${mode}-calc`).style.display = 'block';
+            if (mode === 'forecast') runForecast();
+        }
+
+        function renderCourses() {
+            const list = document.getElementById('course-list');
+            list.innerHTML = courses.map((c, i) => `
+                <div class="course-row-premium">
+                    <input type="text" value="${c.name}" class="calc-input" style="border:none;background:transparent" 
+                           onchange="updateCourse(${i}, 'name', this.value)" placeholder="Course Name">
+                    <select class="calc-select" style="border:none;background:transparent" onchange="updateCourse(${i}, 'grade', this.value)">
+                        <option value="4.0" ${c.grade == 4.0 ? 'selected' : ''}>A (4.0)</option>
+                        <option value="3.7" ${c.grade == 3.7 ? 'selected' : ''}>A- (3.7)</option>
+                        <option value="3.3" ${c.grade == 3.3 ? 'selected' : ''}>B+ (3.3)</option>
+                        <option value="3.0" ${c.grade == 3.0 ? 'selected' : ''}>B (3.0)</option>
+                        <option value="2.7" ${c.grade == 2.7 ? 'selected' : ''}>B- (2.7)</option>
+                        <option value="2.0" ${c.grade == 2.0 ? 'selected' : ''}>C (2.0)</option>
+                        <option value="0.0" ${c.grade == 0.0 ? 'selected' : ''}>F (0.0)</option>
+                    </select>
+                    <input type="number" value="${c.credits}" class="calc-input" style="border:none;background:transparent;text-align:center"
+                           oninput="updateCourse(${i}, 'credits', this.value)">
+                    <button class="btn btn-danger-outline p-2" onclick="removeCourse(${i})">✕</button>
+                </div>
+            `).join('');
+        }
+
+        function addCourse() {
+            courses.push({ name: '', grade: 4.0, credits: 3 });
+            renderCourses();
+            calculate();
+        }
+
+        function updateCourse(i, prop, val) {
+            courses[i][prop] = (prop === 'name') ? val : parseFloat(val) || 0;
+            calculate();
+        }
+
+        function removeCourse(i) {
+            courses.splice(i, 1);
+            renderCourses();
+            calculate();
+        }
+
+        function calculate() {
+            let totalPoints = 0;
+            let totalCredits = 0;
+            const scale = parseFloat(document.getElementById('scale').value);
+
+            courses.forEach(c => {
+                totalPoints += c.grade * c.credits;
+                totalCredits += c.credits;
+            });
+
+            const gpa = totalCredits > 0 ? (totalPoints / totalCredits) : 0;
+            // Adjustment for 5.0 scale (weighted)
+            const adjustedGpa = (scale === 5.0) ? (gpa + 1.0) : gpa;
+
+            document.getElementById('res-gpa').textContent = Math.min(adjustedGpa, scale).toFixed(2);
+            document.getElementById('res-credits').textContent = totalCredits;
+            document.getElementById('res-points').textContent = totalPoints.toFixed(1);
+        }
+
+        function runForecast() {
+            const currentGpa = parseFloat(document.getElementById('f-curr-gpa').value) || 0;
+            const currentCred = parseFloat(document.getElementById('f-curr-cred').value) || 0;
+            const targetGpa = parseFloat(document.getElementById('f-target-gpa').value) || 0;
+            const nextCred = parseFloat(document.getElementById('f-next-cred').value) || 0;
+
+            const totalCred = currentCred + nextCred;
+            const reqPoints = (targetGpa * totalCred) - (currentGpa * currentCred);
+            const reqGpa = reqPoints / nextCred;
+
+            const resEl = document.getElementById('res-req-gpa');
+            const statusEl = document.getElementById('res-status');
+
+            resEl.textContent = reqGpa > 0 ? reqGpa.toFixed(2) : "0.00";
+
+            if (reqGpa > 4.0) {
+                statusEl.textContent = "Mathematical impossibility for 4.0 limit";
+                statusEl.className = "text-xs text-danger mt-2";
+                resEl.style.color = "var(--danger)";
+            } else if (reqGpa <= 0) {
+                statusEl.textContent = "Already achieved!";
+                statusEl.className = "text-xs text-success mt-2";
+                resEl.style.color = "var(--success)";
+            } else {
+                statusEl.textContent = `Requires approx. ${reqGpa > 3.7 ? 'A' : reqGpa > 3.3 ? 'A-' : 'B'} average`;
+                statusEl.className = "text-xs text-secondary mt-2";
+                resEl.style.color = "var(--success)";
+            }
+
+            CalcUI.drawChart('forecast-chart', [
+                { label: 'Current Points', value: currentGpa * currentCred, color: '#3b82f6' },
+                { label: 'Points Needed', value: Math.max(0, reqPoints), color: '#10b981' }
+            ], 'pie');
+        }
+
+        function exportData(format) {
+            const data = {
+                title: 'Academic Intelligence Report',
+                current_gpa: document.getElementById('res-gpa').textContent,
+                total_credits: document.getElementById('res-credits').textContent
+            };
+            CalcUI.exportResult(data, 'academic-report', format);
+        }
+
+        init();
+    </script>
+</body>
+</html>

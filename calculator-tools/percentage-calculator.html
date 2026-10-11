@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium percentage calculator with batch processing, profit/loss analysis, and tax modeling. Fully offline and ad-free.">
+    <title>High-End Percentage & Profit Calculator | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Calculators</a> &gt;
+                <span>% Percentage Elite</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">% Percentage Elite</h1>
+                <p class="tool-description">Advanced percentage tools for business, finance, and batch analysis.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<div class="calc-tabs mb-8">
+<button class="calc-tab active" onclick="setMode('standard')">Standard</button>
+<button class="calc-tab" onclick="setMode('batch')">Batch Processing</button>
+<button class="calc-tab" onclick="setMode('profit')">Profit &amp; Loss</button>
+<button class="calc-tab" onclick="setMode('tax')">Tax (VAT/GST)</button>
+</div>
+<div class="mode-section" id="standard-calc">
+<div class="glass-panel p-6 mb-6">
+<h3 class="panel-title mb-4">Quick Calculations</h3>
+<div class="input-grid">
+<div class="input-group">
+<label class="input-label">What is <span id="perc-label">25</span>% of</label>
+<div class="flex gap-2">
+<input class="calc-input" id="std-perc" oninput="calculateStandard()" type="number" value="25"/>
+<input class="calc-input" id="std-val" oninput="calculateStandard()" type="number" value="200"/>
+</div>
+</div>
+<div class="input-group">
+<label class="input-label">Result</label>
+<div class="result-highlight" id="std-result">50.00</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mode-section" id="batch-calc" style="display: none;">
+<div class="glass-panel p-6">
+<h3 class="panel-title mb-4">Apply % to Multiple Values</h3>
+<div class="input-group mb-4">
+<label class="input-label">Percentage to Apply</label>
+<input class="calc-input w-32" id="batch-perc" oninput="calculateBatch()" type="number" value="10"/>
+</div>
+<div class="input-group mb-4">
+<label class="input-label">Enter Values (one per line)</label>
+<textarea class="batch-area" id="batch-input" oninput="calculateBatch()" placeholder="100
+200
+350.50"></textarea>
+</div>
+<div id="batch-table-container"></div>
+</div>
+</div>
+<div class="mode-section" id="profit-calc" style="display: none;">
+<div class="glass-panel p-6">
+<h3 class="panel-title mb-4">Margin &amp; Markup Analysis</h3>
+<div class="input-grid">
+<div class="input-group">
+<label class="input-label">Cost Price ($)</label>
+<input class="calc-input" id="prof-cost" oninput="calculateProfit()" type="number" value="80"/>
+</div>
+<div class="input-group">
+<label class="input-label">Selling Price ($)</label>
+<input class="calc-input" id="prof-sell" oninput="calculateProfit()" type="number" value="120"/>
+</div>
+</div>
+<div class="stats-grid mt-6">
+<div class="stat-card">
+<div class="label">Profit</div>
+<div class="value success" id="prof-amount">$40.00</div>
+</div>
+<div class="stat-card">
+<div class="label">Margin</div>
+<div class="value info" id="prof-margin">33.33%</div>
+</div>
+<div class="stat-card">
+<div class="label">Markup</div>
+<div class="value highlight" id="prof-markup">50.00%</div>
+</div>
+</div>
+<canvas id="profit-chart"></canvas>
+</div>
+</div>
+<div class="mode-section" id="tax-calc" style="display: none;">
+<div class="glass-panel p-6">
+<h3 class="panel-title mb-4">Tax Inclusive/Exclusive</h3>
+<div class="input-grid">
+<div class="input-group">
+<label class="input-label">Amount ($)</label>
+<input class="calc-input" id="tax-amount" oninput="calculateTax()" type="number" value="100"/>
+</div>
+<div class="input-group">
+<label class="input-label">Tax Rate (%)</label>
+<input class="calc-input" id="tax-rate" oninput="calculateTax()" type="number" value="15"/>
+</div>
+</div>
+<div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="premium-card p-4">
+<h4 class="font-bold mb-2">Adding Tax</h4>
+<p class="text-sm text-secondary mb-4">Amount is pre-tax (net)</p>
+<div class="flex justify-between items-center bg-black/5 p-3 rounded">
+<span>Gross Total:</span>
+<span class="font-bold" id="tax-inc-total">$115.00</span>
+</div>
+</div>
+<div class="premium-card p-4">
+<h4 class="font-bold mb-2">Removing Tax</h4>
+<p class="text-sm text-secondary mb-4">Amount is tax-inclusive (gross)</p>
+<div class="flex justify-between items-center bg-black/5 p-3 rounded">
+<span>Net Amount:</span>
+<span class="font-bold" id="tax-exc-total">$86.96</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex gap-4">
+<button class="btn btn-secondary flex-1" onclick="exportData('pdf')">Export PDF</button>
+<button class="btn btn-secondary flex-1" onclick="exportData('csv')">Export CSV</button>
+</div>
+</div>
+<section class="seo-article" data-tool="percentage-calculator">
+<article class="tool-article">
+<h2>Percentage Calculator — Percentages Without the Mental Math</h2>
+
+<p>I once watched a friend argue with a cashier for five minutes about whether "30% off, then an extra 20% off" meant half price. (It doesn't — it's 44% off, and the cashier was right.) Percentages show up in discounts, tips, exam scores, tax bills, and profit margins, and they are just awkward enough to do in your head that most people either guess or pull out their phone. A percentage calculator removes the guessing: pick the kind of calculation, enter two numbers, and read the answer with the formula shown so you can trust it.</p>
+
+<h3>What a Percentage Calculator Does</h3>
+
+<p>Despite the simple name, there are really five different calculations hiding under "percentages," and mixing them up is where most errors happen:</p>
+
+<p><strong>X% of Y</strong> — the classic. "What is 15% of 200?" Answer: 30. Use it for discounts, tips, and tax amounts.</p>
+
+<p><strong>X is what % of Y</strong> — the reverse. "45 is what percent of 200?" Answer: 22.5%. Use it for exam scores (450 ÷ 500 × 100 = 90%), grade checks, and budget shares.</p>
+
+<p><strong>Increase/decrease by a percentage</strong> — "Increase 150 by 20%" gives 180; "decrease 250 by 10%" gives 225. Shopping sale prices and salary raises live here.</p>
+
+<p><strong>Percentage change</strong> — "My bill went from $150 to $180; what is the increase?" Answer: 20%. The tool handles increases and decreases and shows the direction.</p>
+
+<p><strong>Reverse percentage</strong> — "I paid $1,350 after a 10% discount; what was the original price?" Since $1,350 is 90% of the original, the answer is $1,500. Handy for back-calculating before-tax or pre-discount prices.</p>
+
+<p>This calculator covers all five in a standard mode, then goes further with dedicated modes for batch work, profit analysis, and tax — which is why it earns a permanent spot in people's bookmarks.</p>
+
+<h3>The Formulas Behind Each Mode</h3>
+
+<p>You never need to memorize these — the tool shows the matching formula note with every result — but seeing them once makes the modes click:</p>
+
+<table>
+<thead><tr><th>Calculation</th><th>Formula</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td>X% of Y</td><td>(X ÷ 100) × Y</td><td>15% of 200 = 30</td></tr>
+<tr><td>X is what % of Y</td><td>(X ÷ Y) × 100</td><td>45 is 22.5% of 200</td></tr>
+<tr><td>Increase Y by X%</td><td>Y × (1 + X ÷ 100)</td><td>150 + 20% = 180</td></tr>
+<tr><td>Decrease Y by X%</td><td>Y × (1 − X ÷ 100)</td><td>250 − 10% = 225</td></tr>
+<tr><td>Percentage change</td><td>((New − Old) ÷ Old) × 100</td><td>150 → 180 = +20%</td></tr>
+<tr><td>Reverse percentage</td><td>Paid ÷ (1 − Discount ÷ 100)</td><td>$1,350 at 10% off → $1,500</td></tr>
+</tbody>
+</table>
+
+<p>The one people get wrong most often is stacked discounts. "30% off then 20% off" is not 50% off: the second discount applies to the already-reduced price, so 100 × 0.70 × 0.80 = 56, meaning you pay 56% and save 44%. Run it through the increase/decrease mode twice and you will never argue with a cashier again.</p>
+
+<h3>How to Use the Percentage Calculator</h3>
+
+<p>Pick the mode first — the two input fields change meaning depending on which calculation you choose.</p>
+
+<p><strong>Step 1 — Choose the calculation type.</strong> Standard mode covers the five calculations above. Batch mode handles lists of values at once. Profit &amp; Loss mode is for margins and markups. Tax mode handles VAT/GST.</p>
+
+<p><strong>Step 2 — Enter the two values.</strong> For "X% of Y," enter the percentage first and the base amount second. For percentage change, enter the old value first and the new value second — order matters here. The labels update per mode so you always know which box is which.</p>
+
+<p><strong>Step 3 — Read the result and the formula note.</strong> The answer appears instantly, with the formula that produced it shown alongside. That note is the trust mechanism: it tells you exactly how the number was computed, so you can verify it by hand if you want.</p>
+
+<p><strong>Step 4 — Export when needed.</strong> Batch results can be exported to CSV or PDF — useful when you are checking a column of invoice figures or sharing discount math with a team.</p>
+
+<h3>Profit Margin vs Markup (Profit &amp; Loss Mode)</h3>
+
+<p>This mode exists because margin and markup are the most confused pair in small-business math. <strong>Markup</strong> is profit as a percentage of cost: buy at $80, sell at $100, and the markup is ($100 − $80) ÷ $80 = 25%. <strong>Margin</strong> is profit as a percentage of the selling price: the same $20 profit is $20 ÷ $100 = 20% margin.</p>
+
+<p>The distinction matters because a 25% markup is not a 25% margin — using the wrong one silently misprices your products. Enter cost and selling price (or either one plus the target percentage) and the calculator returns both figures side by side, so you price with the number you actually mean.</p>
+
+<h3>Batch Processing and Tax Mode</h3>
+
+<p><strong>Batch mode</strong> applies one percentage to a whole list of values — paste a column of prices, enter the discount once, and get every result in a table. Retail staff repricing inventory and accountants checking invoice lines use this constantly; doing fifty values one at a time is exactly the kind of tedium the tool exists to kill.</p>
+
+<p><strong>Tax mode</strong> handles VAT and GST both ways: add tax to a net amount or strip tax out of a gross amount. A $100 item with 18% GST costs $118 gross; working backward, $118 gross at 18% GST means a net of $100. E-commerce sellers and freelancers quoting clients in tax-inclusive markets use this daily.</p>
+
+<h3>Who Uses a Percentage Calculator?</h3>
+
+<p><strong>Shoppers</strong> check sale prices, compare stacked discounts, and split tips — the everyday stuff that used to involve phone calculators and squinting.</p>
+
+<p><strong>Students</strong> verify exam percentages and grade calculations: 450 out of 500 is 90%, and knowing the formula pattern helps with homework too.</p>
+
+<p><strong>Business owners and freelancers</strong> compute margins, markups, VAT/GST, and price changes in the profit and tax modes, often exporting batch results for records.</p>
+
+<p><strong>Finance and office workers</strong> run percentage changes on reports — revenue growth, cost increases, budget variances — where the change formula and batch export do the heavy lifting.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Five standard calculations</strong> — percent of, what percent, increase, decrease, change, and reverse percentage.</li>
+<li><strong>Profit &amp; Loss mode</strong> — margin and markup computed side by side from cost and price.</li>
+<li><strong>VAT/GST tax mode</strong> — add tax to net or extract tax from gross amounts.</li>
+<li><strong>Batch processing</strong> — apply one percentage to a list of values at once.</li>
+<li><strong>Formula shown with every result</strong> — verify exactly how each answer was computed.</li>
+<li><strong>CSV and PDF export</strong> — save or share batch calculations.</li>
+<li><strong>Free and private</strong> — no signup; everything runs in your browser.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>How do I calculate 15% of 200?</h4>
+<p>Choose "X% of Y," enter 15 and 200. The result is 30, because 200 × 15 ÷ 100 = 30.</p>
+
+<h4>How do I find what percent one number is of another?</h4>
+<p>Use "X is what % of Y": divide the part by the whole and multiply by 100. For exam scores, 450 ÷ 500 × 100 = 90%.</p>
+
+<h4>How do I calculate a percentage increase or decrease?</h4>
+<p>Percentage change = ((New − Old) ÷ Old) × 100. A bill rising from $150 to $180 is a 20% increase; a $1,200 phone dropping to $900 is a 25% decrease.</p>
+
+<h4>What is the difference between margin and markup?</h4>
+<p>Markup is profit ÷ cost (25% on an $80→$100 sale); margin is profit ÷ selling price (20% on the same sale). The calculator shows both from the same inputs.</p>
+
+<h4>How do I add or remove VAT/GST?</h4>
+<p>Tax mode adds tax to a net amount (net × (1 + rate)) or strips it from a gross amount (gross ÷ (1 + rate)). Enter your local VAT/GST rate.</p>
+
+<h4>Can I calculate percentages for many values at once?</h4>
+<p>Yes — batch mode takes a list of values, applies one percentage to all of them, and exports the table to CSV or PDF.</p>
+
+<h4>Why isn't 30% off plus 20% off equal to 50% off?</h4>
+<p>Because the second discount applies to the reduced price: 100 × 0.70 × 0.80 = 56, so you save 44%, not 50%. Run each discount through the decrease mode to see it.</p>
+
+<h4>Is this percentage calculator free?</h4>
+<p>Yes — free, unlimited, no account needed, and nothing you enter leaves your browser.</p>
+</article>
+</section>
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="js/calc-utils.js"></script>
+<script src="js/calc-ui.js"></script>
+<script>
+        let currentMode = 'standard';
+
+        function init() {
+            CalcUI.init({ toolName: 'percentage-calculator' });
+            calculateStandard();
+        }
+
+        function setMode(mode) {
+            currentMode = mode;
+            document.querySelectorAll('.calc-tab').forEach(t => t.classList.toggle('active', t.getAttribute('onclick').includes(mode)));
+            document.querySelectorAll('.mode-section').forEach(s => s.style.display = 'none');
+            document.getElementById(`${mode}-calc`).style.display = 'block';
+
+            if (mode === 'standard') calculateStandard();
+            if (mode === 'batch') calculateBatch();
+            if (mode === 'profit') calculateProfit();
+            if (mode === 'tax') calculateTax();
+        }
+
+        function calculateStandard() {
+            const perc = parseFloat(document.getElementById('std-perc').value) || 0;
+            const val = parseFloat(document.getElementById('std-val').value) || 0;
+            const res = (perc / 100) * val;
+            document.getElementById('std-result').textContent = CalcUtils.formatNumber(res, 2);
+        }
+
+        function calculateBatch() {
+            const perc = parseFloat(document.getElementById('batch-perc').value) || 0;
+            const input = document.getElementById('batch-input').value;
+            const lines = input.split('\n').filter(l => l.trim() !== '');
+
+            const rows = lines.map(l => {
+                const val = parseFloat(l) || 0;
+                const added = val * (1 + perc / 100);
+                const deducted = val * (1 - perc / 100);
+                return [
+                    CalcUtils.formatNumber(val, 2),
+                    CalcUtils.formatNumber(added, 2),
+                    CalcUtils.formatNumber(deducted, 2)
+                ];
+            });
+
+            CalcUI.renderTable('batch-table-container', ['Original', `+${perc}%`, `-${perc}%`], rows);
+        }
+
+        function calculateProfit() {
+            const cost = parseFloat(document.getElementById('prof-cost').value) || 0;
+            const sell = parseFloat(document.getElementById('prof-sell').value) || 0;
+
+            const profit = sell - cost;
+            const margin = sell !== 0 ? (profit / sell) * 100 : 0;
+            const markup = cost !== 0 ? (profit / cost) * 100 : 0;
+
+            document.getElementById('prof-amount').textContent = CalcUtils.formatCurrency(profit);
+            document.getElementById('prof-margin').textContent = margin.toFixed(2) + '%';
+            document.getElementById('prof-markup').textContent = markup.toFixed(2) + '%';
+
+            document.getElementById('prof-amount').className = profit >= 0 ? 'value success' : 'value danger';
+
+            // Draw Profitability Chart
+            CalcUI.drawChart('profit-chart', [
+                { label: 'Cost', value: cost, color: '#94a3b8' },
+                { label: 'Profit', value: Math.max(0, profit), color: '#10b981' }
+            ], 'pie');
+        }
+
+        function calculateTax() {
+            const amount = parseFloat(document.getElementById('tax-amount').value) || 0;
+            const rate = parseFloat(document.getElementById('tax-rate').value) || 0;
+
+            const incTotal = amount * (1 + rate / 100);
+            const excTotal = amount / (1 + rate / 100);
+
+            document.getElementById('tax-inc-total').textContent = CalcUtils.formatCurrency(incTotal);
+            document.getElementById('tax-exc-total').textContent = CalcUtils.formatCurrency(excTotal);
+        }
+
+        function exportData(format) {
+            let data = {};
+            if (currentMode === 'batch') {
+                const perc = document.getElementById('batch-perc').value;
+                const input = document.getElementById('batch-input').value;
+                data = { mode: 'Batch Processing', percentage: perc, input: input };
+            } else if (currentMode === 'profit') {
+                data = {
+                    mode: 'Profit Analysis',
+                    cost: document.getElementById('prof-cost').value,
+                    sell: document.getElementById('prof-sell').value,
+                    profit: document.getElementById('prof-amount').textContent,
+                    margin: document.getElementById('prof-margin').textContent
+                };
+            }
+            CalcUI.exportResult(data, `percentage-${currentMode}`, format);
+        }
+
+        init();
+    </script>
+</body>
+</html>

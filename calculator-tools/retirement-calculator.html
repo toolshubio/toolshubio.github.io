@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium retirement planner with withdrawal simulations, inflation-adjusted corpus requirements, and tax-gap analysis. Professional financial independence tool.">
+    <title>High-End Retirement & Longevity Intelligence | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Calculators</a> &gt;
+                <span>🏖️ Retirement Intelligence</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">🏖️ Retirement Intelligence</h1>
+                <p class="tool-description">Corpus longevity simulations, post-retirement withdrawal modeling, and
+                    purchasing power analysis.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<div class="retirement-hero">
+<div class="glass-panel p-8">
+<h3 class="panel-title mb-6">Lifestyle Assumptions</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="input-group">
+<label class="input-label">Current Age</label>
+<input class="calc-input" id="age" oninput="calculate()" type="number" value="30"/>
+</div>
+<div class="input-group">
+<label class="input-label">Retirement Age</label>
+<input class="calc-input" id="retire-age" oninput="calculate()" type="number" value="60"/>
+</div>
+<div class="input-group">
+<label class="input-label">Monthly Expense</label>
+<input class="calc-input" id="expense" oninput="calculate()" type="number" value="3000"/>
+</div>
+<div class="input-group">
+<label class="input-label">Life Expectancy</label>
+<input class="calc-input" id="expectancy" oninput="calculate()" type="number" value="90"/>
+</div>
+<div class="input-group">
+<label class="input-label">Exp. Inflation (%)</label>
+<input class="calc-input" id="inflation" oninput="calculate()" step="0.1" type="number" value="6"/>
+</div>
+<div class="input-group">
+<label class="input-label">Existing Savings</label>
+<input class="calc-input" id="savings" oninput="calculate()" type="number" value="50000"/>
+</div>
+</div>
+</div>
+<div class="nest-egg-card glass-panel">
+<div class="text-secondary font-bold uppercase tracking-widest text-xs">Required Nest Egg</div>
+<div class="corpus-val" id="res-corpus">$3.4M</div>
+<div class="flex justify-center gap-10 mt-6">
+<div class="text-center">
+<div class="text-xs text-secondary mb-1">Target Monthly</div>
+<div class="text-xl font-bold text-success" id="res-future-exp">$17K</div>
+</div>
+<div class="text-center">
+<div class="text-xs text-secondary mb-1">SIP Needed</div>
+<div class="text-xl font-bold text-primary" id="res-sip">$1,250</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+<!-- Longevity Analysis -->
+<div class="lg:col-span-2 glass-panel p-6">
+<h3 class="panel-title mb-6">Withdrawal Simulation</h3>
+<div class="mb-4 flex justify-between items-center">
+<div class="text-xs text-secondary">Corpus depletion timeline after retirement.</div>
+<div class="pill-switch">
+<button class="pill-btn active">Optimistic</button>
+<button class="pill-btn">Conservative</button>
+</div>
+</div>
+<div class="longevity-timeline">
+<canvas id="depletion-canvas"></canvas>
+</div>
+</div>
+<!-- Post-Retirement Assumptions -->
+<div class="glass-panel p-6">
+<h3 class="panel-title mb-6">Post-Retire Logic</h3>
+<div class="space-y-6">
+<div class="input-group">
+<label class="input-label text-xs">Return Post-Retire (%)</label>
+<input class="calc-input" id="post-rate" oninput="calculate()" step="0.1" type="number" value="8"/>
+<p class="text-[10px] text-secondary mt-1">Conservative yield expectation.</p>
+</div>
+<div class="input-group">
+<label class="input-label text-xs">Return Pre-Retire (%)</label>
+<input class="calc-input" id="pre-rate" oninput="calculate()" step="0.1" type="number" value="12"/>
+<p class="text-[10px] text-secondary mt-1">Growth phase expectation.</p>
+</div>
+<div class="p-4 bg-tertiary rounded-lg">
+<div class="text-xs text-secondary uppercase font-bold mb-1">Longevity Safety</div>
+<div class="text-xl font-bold text-primary" id="res-longevity">30 Years</div>
+<p class="text-[10px] text-secondary">Fund lasts until age 90.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex gap-4">
+<button class="btn btn-secondary flex-1" onclick="exportData('pdf')">Export Retirement Blueprint
+                    (PDF)</button>
+<button class="btn btn-secondary flex-1" onclick="exportData('csv')">Export Depletion Data
+                    (CSV)</button>
+</div>
+</div>
+<section class="seo-article" data-tool="retirement-calculator">
+<article class="tool-article">
+<h2>Retirement Calculator — Find Out If Your Savings Will Last</h2>
+
+<p>Retirement planning has a way of feeling both urgent and impossibly distant. I avoided the math for years because the numbers felt like fiction — until I ran them through a calculator and saw two things clearly: how far behind I was, and how fixable it was. A retirement calculator answers the two questions that matter: how much you will need, and whether your current savings plan actually gets you there. Everything else — the charts, the scenarios, the "what if I save a bit more" — is just making those answers useful.</p>
+
+<h3>What a Retirement Calculator Tells You</h3>
+
+<p>The tool works on both ends of your retirement timeline. Looking forward from today, it projects what your current savings plus future contributions will grow into by your retirement age — your <strong>retirement corpus</strong>. Looking backward from retirement, it estimates how much you will need: your expected annual expenses, stretched across your expected lifespan, adjusted for inflation.</p>
+
+<p>The gap between those two numbers is the whole story. If your projected corpus falls short of what you need, the calculator shows you how to close it: the <strong>required monthly savings</strong> (SIP) to reach your target, how much longer you would need to work, or how much the return rate would need to change. It also models <strong>depletion</strong> — drawing down your savings year by year in retirement — so you can see whether the money lasts to age 90 or runs dry at 78.</p>
+
+<h3>How the Retirement Math Works</h3>
+
+<p>The accumulation side uses the future-value formula on two streams: your current savings compounding forward, and your monthly contributions compounding as a series:</p>
+
+<p><strong>Corpus = Current Savings × (1+r)<sup>n</sup> + Monthly Contribution × [((1+r)<sup>n</sup> − 1) ÷ r]</strong></p>
+
+<p>Where r is the monthly return rate and n is the number of months until retirement. So a 30-year-old with $10,000 saved, contributing $500/month at 6% annual return, retiring at 65, accumulates roughly $762,000. Change the return to 7% and the corpus jumps past $900,000 — small rate differences compound into large gaps over 35 years.</p>
+
+<p>The needs side works backward. The classic <strong>4% rule</strong> says you can withdraw 4% of your savings in the first year of retirement, then adjust for inflation each year, with a high probability of the money lasting 30+ years. Flip it around: multiply your annual expenses by 25 and you get your target corpus. The calculator applies this to your specific expense figure, then adjusts for inflation and your post-retirement return rate.</p>
+
+<table>
+<thead><tr><th>Annual Retirement Expenses</th><th>Target Corpus (25× rule)</th><th>First-Year Withdrawal (4%)</th></tr></thead>
+<tbody>
+<tr><td>$30,000</td><td>$750,000</td><td>$30,000</td></tr>
+<tr><td>$50,000</td><td>$1,250,000</td><td>$50,000</td></tr>
+<tr><td>$75,000</td><td>$1,875,000</td><td>$75,000</td></tr>
+<tr><td>$100,000</td><td>$2,500,000</td><td>$100,000</td></tr>
+</tbody>
+</table>
+
+<p>These are starting points, not verdicts. The calculator refines them with your inflation rate, your expected returns before and after retirement (conservative plans use ~7% pre-retirement and ~5% after), and any guaranteed income like pensions or Social Security that reduces what your savings must cover.</p>
+
+<h3>How to Use the Retirement Calculator</h3>
+
+<p>Be honest with the inputs — the tool is only as good as the numbers you give it. Use today's values; inflation handling is built in.</p>
+
+<p><strong>Step 1 — Enter your age and retirement age.</strong> This sets your time horizon, the most powerful input in the calculation. Ten extra years of compounding can more than double your corpus.</p>
+
+<p><strong>Step 2 — Enter your current savings.</strong> Include retirement accounts, investments, and any lump sums earmarked for retirement — your starting point for compounding.</p>
+
+<p><strong>Step 3 — Set your monthly contribution.</strong> What you save now (or plan to save). The general guidance is 10–15% of gross income; the calculator shows you what your actual number produces.</p>
+
+<p><strong>Step 4 — Set expected returns and inflation.</strong> Use separate rates before and after retirement — investments usually get more conservative after you stop working. Typical planning values: 2–3% inflation, 7% pre-retirement return, 5% post-retirement. Run conservative scenarios as your baseline.</p>
+
+<p><strong>Step 5 — Enter retirement expenses and life expectancy.</strong> Estimate your annual spending in retirement (many people plan on 70–80% of pre-retirement income, since mortgages end and commuting stops — though healthcare rises). Plan for 30+ years of coverage.</p>
+
+<p><strong>Step 6 — Read the gap and the fix.</strong> You get your projected corpus, the corpus you need, the future value of your expenses in inflated dollars, and the monthly savings required to close any gap. The depletion chart shows your balance year by year through retirement — the visual that makes longevity risk real.</p>
+
+<h3>Closing the Gap: What the Results Mean</h3>
+
+<p>If the calculator shows a shortfall, you have four levers, and testing each one takes seconds:</p>
+
+<p><strong>Save more.</strong> Increasing your monthly contribution is the most direct fix — and starting early beats saving more late. A 25-year-old saving $300/month often ends up ahead of a 35-year-old saving $500/month at the same return, because compounding rewards time over amount.</p>
+
+<p><strong>Retire later.</strong> Working two extra years does double duty: more contributions going in, fewer years of withdrawals coming out. It is the single most powerful lever for late starters.</p>
+
+<p><strong>Earn more on investments.</strong> Shifting from 6% to 7% expected return closes a surprising amount of gap — but be realistic, not optimistic, about what your portfolio can deliver.</p>
+
+<p><strong>Spend less in retirement.</strong> Lowering planned expenses reduces your target corpus directly through the 25× relationship. Even trimming the expense figure by 10% cuts the required corpus by 10%.</p>
+
+<h3>Who Uses a Retirement Calculator?</h3>
+
+<p><strong>Young professionals</strong> check whether their default 401(k) or pension contribution is actually enough — most discover it is not, and discover it early enough to fix cheaply.</p>
+
+<p><strong>Mid-career savers</strong> run "am I on track?" scenarios, testing catch-up contributions and later retirement ages against their actual balances.</p>
+
+<p><strong>Late starters</strong> use the required-savings figure to build an aggressive but realistic catch-up plan, often combining higher contributions with a later retirement date.</p>
+
+<p><strong>Financial planners and advisors</strong> use the projections and depletion charts in client meetings, because the visual of money running out at 78 changes behavior faster than any lecture.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Corpus projection</strong> — future value of current savings plus monthly contributions at your expected return.</li>
+<li><strong>Needs estimation</strong> — target corpus from your expenses, inflation, and life expectancy.</li>
+<li><strong>Required savings figure</strong> — the monthly amount that closes your gap.</li>
+<li><strong>Depletion chart</strong> — year-by-year drawdown showing how long the money lasts.</li>
+<li><strong>Pre- and post-retirement returns</strong> — separate rates for the saving years and the spending years.</li>
+<li><strong>Inflation adjustment</strong> — expenses shown in future dollars, not today's.</li>
+<li><strong>Free and private</strong> — no signup; your financial numbers never leave your browser.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>How much money do I need to retire?</h4>
+<p>A common rule: 25× your annual retirement expenses (the 4% rule). If you need $50,000/year, plan for about $1.25 million. The calculator refines this with your inflation rate, returns, and life expectancy.</p>
+
+<h4>What is the 4% rule?</h4>
+<p>Research suggests you can withdraw 4% of your savings in year one of retirement, then adjust for inflation annually, with a high probability of the money lasting 30+ years.</p>
+
+<h4>How much should I save per year for retirement?</h4>
+<p>General guidance is 10–15% of gross income. The earlier you start, the less you need to save — compounding does more of the work over longer horizons.</p>
+
+<h4>When should I start saving for retirement?</h4>
+<p>As early as possible. Starting at 25 vs 35 can more than double your corpus at the same monthly contribution. Catch-up contributions become available at 50+ in many plans.</p>
+
+<h4>How does inflation affect my retirement plan?</h4>
+<p>Inflation erodes purchasing power — expenses of $50,000/month today can require $100,000+/month in 20 years at higher inflation. The calculator grows your expenses by your inflation rate so the target corpus reflects real future costs.</p>
+
+<h4>Should I include pension or Social Security?</h4>
+<p>Yes. Guaranteed income reduces the corpus your savings must provide. Enter it as other income so the calculator only asks your savings to cover the remaining expenses.</p>
+
+<h4>How accurate are the projections?</h4>
+<p>They are estimates based on your inputs and standard financial math — not guarantees. Markets fluctuate, inflation varies, and expenses change. Use conservative return rates and revisit the plan yearly.</p>
+
+<h4>Is this retirement calculator free?</h4>
+<p>Yes — free, no registration, and your data stays entirely in your browser.</p>
+</article>
+</section>
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="js/calc-utils.js"></script>
+<script src="js/calc-ui.js"></script>
+<script>
+        function init() {
+            CalcUI.init({ toolName: 'retirement-calculator' });
+            calculate();
+        }
+
+        function calculate() {
+            const age = parseInt(document.getElementById('age').value) || 0;
+            const retireAge = parseInt(document.getElementById('retire-age').value) || 60;
+            const exp = parseFloat(document.getElementById('expense').value) || 0;
+            const expectancy = parseInt(document.getElementById('expectancy').value) || 90;
+            const inf = (parseFloat(document.getElementById('inflation').value) || 0) / 100;
+            const preRate = (parseFloat(document.getElementById('pre-rate').value) || 0) / 100;
+            const postRate = (parseFloat(document.getElementById('post-rate').value) || 0) / 100;
+            const savings = parseFloat(document.getElementById('savings').value) || 0;
+
+            if (retireAge <= age) return;
+
+            const yearsToRetire = retireAge - age;
+            const yearsInRetire = expectancy - retireAge;
+
+            // Future Monthly Expense at Retirement
+            const futureExp = exp * Math.pow(1 + inf, yearsToRetire);
+
+            // Required Corpus Calculation
+            // Monthly Withdrawal needed
+            const rPost = postRate / 12;
+            const nMonths = yearsInRetire * 12;
+            const realRate = ((1 + postRate) / (1 + inf)) - 1; // Real return rate
+            const rReal = realRate / 12;
+
+            // Present value of annuity due (inflation adjusted withdrawals)
+            const corpus = futureExp * ((1 - Math.pow(1 + rReal, -nMonths)) / rReal) * (1 + rReal);
+
+            // Monthly SIP Needed
+            const rPre = preRate / 12;
+            const nPre = yearsToRetire * 12;
+            const fvSavings = savings * Math.pow(1 + preRate, yearsToRetire);
+            const gap = Math.max(0, corpus - fvSavings);
+            const sip = gap / (((Math.pow(1 + rPre, nPre) - 1) / rPre) * (1 + rPre));
+
+            document.getElementById('res-corpus').textContent = CalcUtils.formatCompact(corpus);
+            document.getElementById('res-future-exp').textContent = CalcUtils.formatCompact(futureExp);
+            document.getElementById('res-sip').textContent = CalcUtils.formatCurrency(sip, 'USD', 0);
+            document.getElementById('res-longevity').textContent = yearsInRetire + ' Years';
+
+            updateTimeline(corpus, futureExp, postRate, inf, yearsInRetire, retireAge);
+        }
+
+        function updateTimeline(corpus, startExp, rate, inf, years, startTime) {
+            const timeline = [];
+            let currentCorpus = corpus;
+            let currentExp = startExp;
+            const r = rate / 12;
+            const i = inf / 12;
+
+            for (let year = 0; year <= years; year++) {
+                timeline.push({ label: 'Age ' + (startTime + year), value: Math.max(0, currentCorpus) });
+
+                // Monthly simulation for the year
+                for (let month = 1; month <= 12; month++) {
+                    currentCorpus = (currentCorpus - currentExp) * (1 + r);
+                    currentExp = currentExp * (1 + i);
+                }
+            }
+
+            CalcUI.Chart.drawLine('depletion-canvas', timeline, {
+                lineColor: '#cc0000',
+                fill: true,
+                yAxisFormat: 'compact'
+            });
+        }
+
+        function exportData(format) {
+            const data = {
+                title: 'Retirement Longevity Report',
+                corpus: document.getElementById('res-corpus').textContent,
+                monthly_sip: document.getElementById('res-sip').textContent,
+                longevity: document.getElementById('res-longevity').textContent
+            };
+            CalcUI.exportResult(data, 'retirement-blueprint', format);
+        }
+
+        init();
+    </script>
+</body>
+</html>

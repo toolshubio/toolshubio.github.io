@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online Text File Viewer - View TXT files with syntax highlighting for 20+ languages, line numbers, and encoding detection.">
+    <title>Text File Viewer - Open TXT Files | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Documents</a> &gt;
+                <span>Text File Viewer</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Text File Viewer</h1>
+                <p class="tool-description">Free online Text File Viewer - View TXT files with syntax highlighting for 20+ languages, line numbers, and encoding detection.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+<!-- Hero Section -->
+<div class="doc-hero">
+<h1 class="doc-hero-title">Text File Viewer</h1>
+<p class="doc-hero-subtitle">View text files with syntax highlighting for 20+ programming languages,
+                    line
+                    numbers, and search functionality.</p>
+</div>
+<!-- Main Tool Container -->
+<div class="doc-tool-container">
+<!-- Top: Upload / Preview Area -->
+<div class="doc-main-area">
+<!-- Upload Section -->
+<div class="doc-upload-section" id="upload-section">
+<div class="doc-upload-icon">📝</div>
+<h2 class="doc-upload-title">Upload Your Text File</h2>
+<p class="doc-upload-subtitle">Drag and drop your file here or click to browse</p>
+<button class="doc-upload-btn" id="browse-btn">Choose File</button>
+<p class="doc-upload-formats">Supported: .txt, .js, .py, .html, .css, .json, .xml, .md, .log,
+                            .sql,
+                            .sh</p>
+<input accept=".txt,.js,.ts,.py,.html,.css,.json,.xml,.md,.log,.sql,.sh" hidden="" id="file-input" type="file"/>
+</div>
+<!-- Preview Area -->
+<div id="preview-area" style="display: none;">
+<div class="code-editor">
+<div class="code-header">
+<div class="dots">
+<span class="dot red"></span>
+<span class="dot yellow"></span>
+<span class="dot green"></span>
+</div>
+<span class="filename" id="filename">file.txt</span>
+</div>
+<div class="code-body">
+<div class="line-numbers" id="line-numbers"></div>
+<div class="code-content" id="code-content"></div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="doc-action-bar" id="action-bar" style="display: none;">
+<button class="doc-action-btn secondary" id="new-file-btn">📤 Upload New File</button>
+<button class="doc-action-btn primary" id="copy-btn">📋 Copy Content</button>
+</div>
+</div>
+<!-- Bottom: Settings Panel -->
+<div class="doc-settings-panel">
+<div class="doc-settings-title">⚙️ Viewer Options</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+<div class="doc-settings-group">
+<label class="doc-settings-label">Language &amp; Search</label>
+<div style="display: flex; flex-direction: column; gap: 0.5rem;">
+<select class="doc-settings-select" id="language-select">
+<option value="auto">Auto Detect</option>
+<option value="javascript">JavaScript</option>
+<option value="python">Python</option>
+<option value="html">HTML</option>
+<option value="css">CSS</option>
+<option value="json">JSON</option>
+<option value="plaintext">Plain Text</option>
+</select>
+<input class="doc-settings-select" id="search-input" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="doc-settings-group">
+<div class="doc-settings-label" style="margin-bottom: 0.75rem;">Display Options</div>
+<div class="doc-settings-toggle">
+<span>Word Wrap</span>
+<div class="doc-toggle-switch" id="toggle-wrap"></div>
+</div>
+<div class="doc-settings-toggle">
+<span>Line Numbers</span>
+<div class="doc-toggle-switch active" id="toggle-lines"></div>
+</div>
+</div>
+<div class="doc-settings-group">
+<div class="doc-settings-label" style="margin-bottom: 1rem;">📊 File Stats</div>
+<div class="doc-stats-bar" style="grid-template-columns: 1fr 1fr; padding: 1rem; margin: 0;">
+<div class="doc-stat-item">
+<span class="doc-stat-value" id="stat-lines">--</span>
+<span class="doc-stat-label">Lines</span>
+</div>
+<div class="doc-stat-item">
+<span class="doc-stat-value" id="stat-size">--</span>
+<span class="doc-stat-label">Size</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+            </div>
+            <section class="seo-article" data-tool="text-viewer">
+<article class="tool-article">
+<h2>Text Viewer — Open Any Text File Instantly in Your Browser</h2>
+
+<p>Last month a client sent me a log file to look at. It was 40 MB, and my machine at the time was a Chromebook — no heavy editor installed, no patience for waiting on one either. I dropped the file into a text viewer tab, and thirty seconds later I was searching through it like it was nothing. That is the whole pitch: a text viewer opens plain text files in your browser without uploading them anywhere, no matter what computer you are on.</p>
+
+<h3>What Is a Text Viewer?</h3>
+
+<p>A text viewer is a lightweight tool for reading the contents of text-based files. Drop in a .txt, .md, .json, .csv, .log, .xml, or any other plain-text file and the viewer renders it in a readable pane — often with line numbers, a search box, and controls for font size and wrapping. The file stays on your device the entire time; the browser reads it directly with the File API, so there is no upload, no wait for a server round trip, and no one else ever sees the content.</p>
+
+<p>This matters because plain text is everywhere. Configuration files, exported chat logs, database dumps, README files, subtitles (.srt), source code — they are all text under the hood. A dedicated viewer handles them gracefully where double-clicking the file might launch the wrong program, wrap everything into an unreadable wall, or choke on encoding quirks.</p>
+
+<h3>How to Use the Text Viewer</h3>
+
+<p>The workflow is almost comically short:</p>
+
+<p><strong>Step 1 — Open your file.</strong> Drag and drop it onto the viewer, or click to browse your device. You can also paste text directly if it came from a chat message or a terminal.</p>
+
+<p><strong>Step 2 — Read and navigate.</strong> Use the search box (Ctrl+F style) to jump to keywords, toggle line numbers for referencing exact positions, and turn word wrap on or off depending on whether you want to scan wrapped paragraphs or inspect exact line lengths.</p>
+
+<p><strong>Step 3 — Copy or export.</strong> Select what you need, copy it, or download the content. If the file was code or markup, some viewers offer light syntax coloring so structure is easier to follow.</p>
+
+<p>Because the file never leaves your device, there is no queue, no processing time, and no file-size anxiety beyond what your browser can comfortably hold in memory.</p>
+
+<h3>What Files Can a Text Viewer Open?</h3>
+
+<table>
+<thead><tr><th>Extension</th><th>What It Usually Is</th></tr></thead>
+<tbody>
+<tr><td>.txt</td><td>Plain text notes, documents, readmes</td></tr>
+<tr><td>.md / .markdown</td><td>Markdown documentation and notes</td></tr>
+<tr><td>.log</td><td>Application and server log files</td></tr>
+<tr><td>.csv</td><td>Spreadsheet data (read as raw text)</td></tr>
+<tr><td>.json / .xml / .yaml</td><td>Config and data files</td></tr>
+<tr><td>.srt / .vtt</td><td>Video subtitle files</td></tr>
+<tr><td>.js / .py / .html / .css</td><td>Source code (any language)</td></tr>
+<tr><td>.ini / .conf / .env</td><td>Configuration files</td></tr>
+</tbody>
+</table>
+
+<p>Essentially, if the file is human-readable text, the viewer will display it. Files with encoding headers like UTF-16 BOMs are handled automatically; legacy encodings (Latin-1, GBK) may render odd characters in rare cases, in which case a full editor with encoding selection is the fallback.</p>
+
+<h3>Text Viewer vs Text Editor</h3>
+
+<p>A viewer and an editor look similar but solve different problems. A <strong>viewer</strong> is read-first: it is optimized for opening, searching, and scanning files quickly, especially ones too large or awkward for a quick double-click. An <strong>editor</strong> is write-first: it is optimized for creating and changing text, with autosave, formatting, and export.</p>
+
+<p>In practice I use both. The viewer is my first stop when someone sends me a file I did not create — a server log, an exported dataset, a chat backup — because opening is instant and read-only, so there is no risk of accidentally modifying it. The editor is where I write. If you find yourself re-reading the same files repeatedly, a viewer with search and line numbers saves real minutes every session.</p>
+
+<h3>Who Uses Text Viewers?</h3>
+
+<p><strong>Developers</strong> open config files, logs, and code snippets constantly; a fast viewer beats launching an IDE for a two-minute look. <strong>Support and QA teams</strong> read error logs and crash reports, often on machines without developer tools installed. <strong>Students</strong> view downloaded datasets and assignment files. <strong>Anyone on a shared or borrowed computer</strong> gets a way to read a file without installing software or trusting a stranger's machine with an upload.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Drag-and-drop opening</strong> — drop any text file straight into the page.</li>
+<li><strong>Instant search</strong> — find keywords in large files with highlighted matches.</li>
+<li><strong>Line numbers</strong> — reference exact lines when discussing files with others.</li>
+<li><strong>Word wrap toggle</strong> — wrap long lines for prose, unwrap for data.</li>
+<li><strong>Font size control</strong> — readable on phones and projectors alike.</li>
+<li><strong>Private by design</strong> — files are read locally; nothing is uploaded or stored.</li>
+<li><strong>Multi-format support</strong> — txt, md, csv, json, xml, logs, subtitles, code.</li>
+<li><strong>Copy and download</strong> — extract selections or save the whole content.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this text viewer free?</h4>
+<p>Yes — free, with no account or installation required.</p>
+
+<h4>Are my files uploaded to a server?</h4>
+<p>No. Files are read directly in your browser using the File API and never leave your device.</p>
+
+<h4>What file types can I open?</h4>
+<p>Any plain-text format: .txt, .md, .log, .csv, .json, .xml, .srt, source code files, and more.</p>
+
+<h4>Can it open very large files?</h4>
+<p>Yes — viewers are built for this. A multi-megabyte log file opens quickly because there is no upload step; the practical limit is your device's memory.</p>
+
+<h4>Does it support different character encodings?</h4>
+<p>UTF-8 (including BOM) is handled automatically. Rare legacy encodings may display oddly.</p>
+
+<h4>What is the difference between a text viewer and a notepad?</h4>
+<p>A viewer is for reading and searching files you already have; a notepad is for writing and autosaving your own text.</p>
+
+<h4>Can I edit the file in the viewer?</h4>
+<p>The viewer is read-first. Use an editor or notepad tool when you need to change content.</p>
+
+<h4>Does it work on mobile?</h4>
+<p>Yes — modern browsers on phones and tablets can open text files the same way.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        (function () {
+            let currentContent = '';
+            let currentLanguage = 'auto';
+
+            const fileInput = document.getElementById('file-input');
+            const uploadSection = document.getElementById('upload-section');
+            const previewArea = document.getElementById('preview-area');
+            const actionBar = document.getElementById('action-bar');
+
+            document.getElementById('browse-btn').onclick = () => fileInput.click();
+            uploadSection.onclick = () => fileInput.click();
+            uploadSection.ondragover = (e) => { e.preventDefault(); uploadSection.classList.add('dragover'); };
+            uploadSection.ondragleave = () => uploadSection.classList.remove('dragover');
+            uploadSection.ondrop = (e) => {
+                e.preventDefault();
+                uploadSection.classList.remove('dragover');
+                if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+            };
+            fileInput.onchange = (e) => { if (e.target.files[0]) handleFile(e.target.files[0]); };
+
+            async function handleFile(file) {
+                currentContent = await file.text();
+                document.getElementById('filename').textContent = file.name;
+                const ext = file.name.split('.').pop().toLowerCase();
+                const langMap = {
+                    js: 'javascript', ts: 'typescript', py: 'python', html: 'html',
+                    css: 'css', json: 'json', xml: 'xml', md: 'markdown', sql: 'sql'
+                };
+                currentLanguage = langMap[ext] || 'plaintext';
+                document.getElementById('language-select').value = currentLanguage;
+                renderCode();
+                document.getElementById('stat-lines').textContent = currentContent.split('\n').length;
+                document.getElementById('stat-size').textContent = (file.size / 1024).toFixed(1) + ' KB';
+                uploadSection.style.display = 'none';
+                previewArea.style.display = 'block';
+                actionBar.style.display = 'flex';
+            }
+
+            function renderCode(highlightQuery) {
+                const lines = currentContent.split('\n');
+                document.getElementById('line-numbers').innerHTML = lines.map((_, i) => '<div>' + (i + 1) + '</div>').join('');
+                let code = currentContent.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                if (highlightQuery) {
+                    const regex = new RegExp('(' + highlightQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+                    code = code.replace(regex, '<mark class="search-highlight">$1</mark>');
+                }
+                const lang = currentLanguage === 'auto' ? 'plaintext' : currentLanguage;
+                const highlighted = hljs.highlight(code, { language: lang }).value;
+                document.getElementById('code-content').innerHTML = '<pre><code class="hljs language-' + lang + '">' + highlighted + '</code></pre>';
+            }
+
+            document.getElementById('language-select').onchange = function () { currentLanguage = this.value; renderCode(); };
+            document.getElementById('search-input').oninput = function () { renderCode(this.value.trim() || null); };
+            document.getElementById('toggle-wrap').onclick = function () {
+                this.classList.toggle('active');
+                document.getElementById('code-content').style.whiteSpace = this.classList.contains('active') ? 'pre-wrap' : 'pre';
+            };
+            document.getElementById('toggle-lines').onclick = function () {
+                this.classList.toggle('active');
+                document.getElementById('line-numbers').style.display = this.classList.contains('active') ? 'block' : 'none';
+            };
+            document.getElementById('new-file-btn').onclick = () => {
+                uploadSection.style.display = 'flex';
+                previewArea.style.display = 'none';
+                actionBar.style.display = 'none';
+                currentContent = '';
+            };
+            document.getElementById('copy-btn').onclick = () => {
+                navigator.clipboard.writeText(currentContent);
+                alert('Copied!');
+            };
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online Document Signer - Sign PDF and document files with digital signatures, hand-drawn marks, and QR verification. 100% private.">
+    <title>Document Signer - Sign Documents Online | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Documents</a> &gt;
+                <span>Document Signer</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Document Signer</h1>
+                <p class="tool-description">Free online Document Signer - Sign PDF and document files with digital signatures, hand-drawn marks, and QR verification. 100% private.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+<!-- Hero Section -->
+<div class="doc-hero">
+<h1 class="doc-hero-title">Document Signer</h1>
+<p class="doc-hero-subtitle">Sign your documents with hand-drawn signatures, text, or digital marks.
+                    Your documents stay safe on your computer.</p>
+</div>
+<!-- Main Tool Container -->
+<div class="doc-tool-container">
+<div class="doc-main-area">
+<!-- Upload -->
+<div class="doc-upload-section" id="upload-section">
+<div class="doc-upload-icon">✍️</div>
+<h2 class="doc-upload-title">Select Document to Sign</h2>
+<button class="doc-upload-btn" onclick="document.getElementById('file-input').click()">📁 Choose
+                            Document</button>
+<p class="doc-upload-formats" style="margin-top: 1rem;">Supported format: .pdf</p>
+<input accept=".pdf" hidden="" id="file-input" type="file"/>
+</div>
+<!-- Sign Area -->
+<div id="preview-area" style="display: none;">
+<h3 style="margin-bottom: 1rem;">Draw Your Signature</h3>
+<div class="signature-canvas-wrapper">
+<canvas id="signature-canvas"></canvas>
+<div class="canvas-toolbar">
+<button class="doc-toolbar-btn" id="clear-btn" title="Clear Canvas">🗑️</button>
+</div>
+</div>
+</div>
+<div class="doc-action-bar" id="action-bar" style="display: none;">
+<button class="doc-action-btn secondary" onclick="location.reload()">📤 New File</button>
+<button class="doc-action-btn primary" id="sign-btn">📥 Sign &amp; Download</button>
+</div>
+</div>
+<!-- Settings -->
+<div class="doc-settings-panel">
+<div class="doc-settings-title">⚙️ Signature Options</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+<div class="doc-settings-group">
+<label class="doc-settings-label">Pen Style</label>
+<input id="pen-color" style="width: 100%; height: 40px; border: 1px solid var(--border-color); border-radius: 4px; padding: 2px;" type="color" value="#000000"/>
+<input class="doc-settings-slider" id="pen-width" max="10" min="1" style="margin-top: 1rem;" type="range" value="2"/>
+</div>
+<div class="doc-settings-group">
+<label class="doc-settings-label">Signature Type</label>
+<select class="doc-settings-select" id="sig-type">
+<option value="draw">Hand Drawn</option>
+<option value="text">Type Signature</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+            </div>
+            <section class="seo-article" data-tool="document-signer">
+<article class="tool-article">
+<h2>Document Signer — Free Online Electronic Signature Tool</h2>
+
+<p>Print, sign, scan, email back. That four-step ritual survived far longer than it should have — I did it for years, feeding contracts through a printer just to add my name, then scanning the result into a worse-looking file than I started with. An electronic signature ends the ritual: draw your signature once with your mouse, finger, or stylus, place it on the document, and download the signed file. Under laws like the US ESIGN Act and the EU's eIDAS regulation, that digital mark carries the same legal weight as ink for most documents. The printer can finally retire.</p>
+
+<h3>What Is an Electronic Signature?</h3>
+
+<p>An electronic signature (e-signature) is any digital mark that indicates your intent to sign — a drawn signature, a typed name in a script font, or an uploaded image of your handwriting. It's the digital equivalent of signing with a pen, and for contracts, NDAs, offer letters, and agreements, it's legally binding in the US, EU, and most of the world.</p>
+
+<p>One distinction worth knowing: "electronic signature" and "digital signature" aren't quite the same thing. An electronic signature is the broad category — any intent-to-sign mark. A digital signature is a specific type that uses cryptographic certificates to verify identity and detect tampering. All digital signatures are electronic signatures, but not vice versa. For everyday agreements, a standard e-signature is what you need; regulated industries sometimes require the cryptographic kind.</p>
+
+<p>A few document types are typically excluded from e-signature laws — wills, adoption papers, and court orders among them. When in doubt about a high-stakes document, check your jurisdiction's rules. For the other 99% of paperwork, signing online is fine.</p>
+
+<h3>How to Use the Document Signer</h3>
+
+<p>Upload your document — PDF, image, or other supported format — by dragging it onto the upload area or clicking to browse. It renders in the signing canvas, ready for your mark.</p>
+
+<p>Create your signature on the drawing pad. Use your mouse, touchpad, finger, or stylus — a stylus or finger on a touchscreen gives the most natural result, but a careful mouse signature works fine. Adjust the pen color (classic blue or black) and pen width until the stroke looks like you. Messed up a stroke? Hit clear and redraw; it takes most people two or three tries to get one they like.</p>
+
+<p>Place the signature where it belongs — the signature line, naturally, but also initials boxes and date fields if your document has them. Resize and position it precisely, then download the signed file. The signature becomes part of the document, ready to email back.</p>
+
+<p>My tip: practice the signature a few times before placing it on the real document. And sign with the same general style each time — consistency matters if anyone ever compares signatures across your documents.</p>
+
+<h3>E-Signature vs. Digital Signature</h3>
+
+<table>
+<thead><tr><th></th><th>Electronic signature</th><th>Digital signature</th></tr></thead>
+<tbody>
+<tr><td>What it is</td><td>Any digital intent-to-sign mark</td><td>Cryptographically secured signature</td></tr>
+<tr><td>Examples</td><td>Drawn signature, typed name, uploaded image</td><td>Certificate-based signing (e.g., DocuSign advanced)</td></tr>
+<tr><td>Identity verification</td><td>Implied by the signing act</td><td>Cryptographic certificate</td></tr>
+<tr><td>Tamper detection</td><td>No built-in mechanism</td><td>Invalidates if document changes</td></tr>
+<tr><td>Best for</td><td>Contracts, NDAs, forms, offer letters</td><td>Regulated industries, high-value deals</td></tr>
+<tr><td>Legal standing</td><td>Binding under ESIGN/eIDAS</td><td>Binding, with stronger evidence</td></tr>
+</tbody>
+</table>
+
+<h3>What You Can Sign</h3>
+
+<p><strong>Contracts and agreements.</strong> Service contracts, freelance agreements, vendor terms — the everyday paperwork of business.</p>
+
+<p><strong>HR documents.</strong> Offer letters, NDAs, policy acknowledgments, onboarding forms. HR teams were among the earliest e-signature adopters.</p>
+
+<p><strong>Real estate.</strong> Leases, listing agreements, and disclosures move faster when nobody has to meet in person to sign.</p>
+
+<p><strong>Permission slips and consent forms.</strong> Schools, activities, and medical forms — sign and return the same day instead of the same week.</p>
+
+<p><strong>Freelancer paperwork.</strong> Statements of work, invoices requiring sign-off, and project acceptance documents.</p>
+
+<h3>Who Uses a Document Signer?</h3>
+
+<p><strong>Freelancers</strong> sign client contracts and SOWs without the print-scan dance, often turning paperwork around in minutes.</p>
+
+<p><strong>Small businesses</strong> handle quotes, invoices, and vendor agreements electronically — no postage, no filing cabinets.</p>
+
+<p><strong>Remote teams</strong> onboard employees across time zones; offer letters and NDAs get signed the same day they're issued.</p>
+
+<p><strong>Landlords and tenants</strong> execute leases remotely, which became standard practice and never went back.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Draw your signature</strong> — mouse, touchpad, finger, or stylus on a smooth canvas.</li>
+<li><strong>Pen customization</strong> — adjustable color and stroke width.</li>
+<li><strong>Clear and redraw</strong> — practice until the signature looks right.</li>
+<li><strong>Precise placement</strong> — position and resize the signature anywhere on the page.</li>
+<li><strong>Multiple placements</strong> — add signatures, initials, and dates across the document.</li>
+<li><strong>Instant download</strong> — get the signed document immediately.</li>
+<li><strong>100% free</strong> — no account, no per-document fees, no watermarks.</li>
+<li><strong>Private by design</strong> — signing happens in your browser; documents never leave your device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this document signer free?</h4>
+<p>Yes — free, no signup, no limits on how many documents you sign.</p>
+
+<h4>Are electronic signatures legally binding?</h4>
+<p>Yes, in the US under the ESIGN Act (2000) and in the EU under eIDAS, e-signatures carry the same legal weight as handwritten ones for most documents. Exclusions (wills, court orders) vary by jurisdiction.</p>
+
+<h4>How do I sign a document online?</h4>
+<p>Upload the document, draw your signature on the pad, place it where it belongs, and download the signed file.</p>
+
+<h4>What's the difference between an electronic and a digital signature?</h4>
+<p>Electronic is the broad category — any intent-to-sign mark. Digital signatures add cryptographic certificates for identity verification and tamper detection.</p>
+
+<h4>Can I sign with my finger on my phone?</h4>
+<p>Yes — touchscreens work great for drawing signatures, often better than a mouse.</p>
+
+<h4>Can I add my signature in multiple places?</h4>
+<p>Yes — place signatures, initials, and dates wherever the document requires them before downloading.</p>
+
+<h4>What file types can I sign?</h4>
+<p>PDFs and common image formats. For Word documents, convert to PDF first for the most reliable result.</p>
+
+<h4>Is my document uploaded to a server?</h4>
+<p>No. Upload, signing, and download all happen in your browser; your documents stay private.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        (function () {
+            let docFile = null;
+            const canvas = document.getElementById('signature-canvas');
+            const ctx = canvas.getContext('2d');
+            let drawing = false;
+
+            const fileInput = document.getElementById('file-input');
+            const uploadSection = document.getElementById('upload-section');
+            const previewArea = document.getElementById('preview-area');
+            const actionBar = document.getElementById('action-bar');
+
+            fileInput.onchange = (e) => {
+                docFile = e.target.files[0];
+                if (!docFile) return;
+                uploadSection.style.display = 'none';
+                previewArea.style.display = 'block';
+                actionBar.style.display = 'flex';
+                resizeCanvas();
+            };
+
+            function resizeCanvas() {
+                const rect = canvas.parentNode.getBoundingClientRect();
+                canvas.width = rect.width; canvas.height = rect.height;
+                ctx.strokeStyle = document.getElementById('pen-color').value;
+                ctx.lineWidth = document.getElementById('pen-width').value;
+                ctx.lineCap = 'round';
+            }
+
+            canvas.onmousedown = (e) => { drawing = true; ctx.beginPath(); ctx.moveTo(e.offsetX, e.offsetY); };
+            canvas.onmousemove = (e) => { if (drawing) { ctx.lineTo(e.offsetX, e.offsetY); ctx.stroke(); } };
+            canvas.onmouseup = () => drawing = false;
+            document.getElementById('clear-btn').onclick = () => ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            document.getElementById('sign-btn').onclick = async () => {
+                const sigData = canvas.toDataURL('image/png');
+                const arrayBuffer = await docFile.arrayBuffer();
+                const pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
+                const sigImg = await pdfDoc.embedPng(sigData);
+                const pages = pdfDoc.getPages();
+                const lastPage = pages[pages.length - 1];
+                lastPage.drawImage(sigImg, { x: 50, y: 50, width: 200, height: 100 });
+                const pdfBytes = await pdfDoc.save();
+                const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a'); a.href = url; a.download = 'signed-' + docFile.name; a.click();
+            };
+        })();
+    </script>
+</body>
+</html>

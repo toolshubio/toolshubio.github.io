@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online Text Case Changer - Convert text to UPPERCASE, lowercase, Title Case, Sentence case, camelCase, PascalCase, snake_case, kebab-case and more. 100% client-side, no data upload.">
+    <title>Text Case Changer - Convert Text Case Online | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Text & Writing</a> &gt;
+                <span>🔤 Text Case Changer</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">🔤 Text Case Changer</h1>
+                <p class="tool-description">Convert your text to any case format instantly. Supports 15+ case types including UPPERCASE,
+                    lowercase, Title Case, camelCase, and more.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+Theme Toggle 
+
+
+
+ Breadcrumb 
+
+ Tool Header 
+
+ Tool Workspace 
+<div class="tool-workspace">
+<!-- Input Section -->
+<section class="input-section">
+<div class="section-header">
+<h2 class="section-title">📝 Input Text</h2>
+<button class="btn btn-secondary" onclick="document.getElementById('input-text').value = ''; updateOutput();">
+<span class="btn-icon">🗑️</span> Clear
+                        </button>
+</div>
+<textarea class="text-area" id="input-text" oninput="updateOutput()" placeholder="Paste or type your text here..."></textarea>
+</section>
+<!-- Settings Panel (Below Input) -->
+<section class="settings-panel">
+<div class="section-header">
+<h2 class="section-title">⚙️ Case Type</h2>
+</div>
+<div class="preset-buttons" id="case-buttons">
+<button class="preset-btn active" data-case="upper">UPPERCASE</button>
+<button class="preset-btn" data-case="lower">lowercase</button>
+<button class="preset-btn" data-case="title">Title Case</button>
+<button class="preset-btn" data-case="sentence">Sentence case</button>
+<button class="preset-btn" data-case="camel">camelCase</button>
+<button class="preset-btn" data-case="pascal">PascalCase</button>
+<button class="preset-btn" data-case="snake">snake_case</button>
+<button class="preset-btn" data-case="kebab">kebab-case</button>
+<button class="preset-btn" data-case="constant">CONSTANT_CASE</button>
+<button class="preset-btn" data-case="dot">dot.case</button>
+<button class="preset-btn" data-case="path">path/case</button>
+<button class="preset-btn" data-case="alternating">aLtErNaTiNg</button>
+<button class="preset-btn" data-case="inverse">iNVERSE cASE</button>
+</div>
+<!-- Advanced Settings -->
+<div class="settings-grid" style="margin-top: 1.5rem;">
+<div class="setting-group">
+<div class="toggle-wrapper">
+<span class="setting-label">Live Preview</span>
+<div class="toggle-switch active" id="live-toggle"></div>
+</div>
+</div>
+<div class="setting-group">
+<div class="toggle-wrapper">
+<span class="setting-label">Preserve Line Breaks</span>
+<div class="toggle-switch active" id="preserve-lines-toggle"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Output Section -->
+<section class="output-section">
+<div class="section-header">
+<h2 class="section-title">✨ Output</h2>
+<div style="display: flex; gap: 0.5rem;">
+<button class="btn btn-secondary" onclick="ToolUI.copyOutput()">
+<span class="btn-icon">📋</span> Copy
+                            </button>
+<button class="btn btn-secondary" onclick="ToolUI.downloadText(document.getElementById('output-text').value, 'converted-text.txt')">
+<span class="btn-icon">💾</span> Download
+                            </button>
+</div>
+</div>
+<textarea class="text-area" id="output-text" placeholder="Converted text will appear here..." readonly=""></textarea>
+<!-- Stats Panel -->
+<div class="stats-panel">
+<div class="stat-item">
+<span class="stat-label">Characters</span>
+<span class="stat-value" id="stat-chars">0</span>
+</div>
+<div class="stat-item">
+<span class="stat-label">Words</span>
+<span class="stat-value" id="stat-words">0</span>
+</div>
+<div class="stat-item">
+<span class="stat-label">Lines</span>
+<span class="stat-value" id="stat-lines">0</span>
+</div>
+<div class="stat-item">
+<span class="stat-label">Case Type</span>
+<span class="stat-value highlight" id="stat-case">UPPERCASE</span>
+</div>
+</div>
+</section>
+</div>
+ History Panel 
+<section class="history-panel">
+<div class="section-header">
+<h3 class="history-title">🕐 History</h3>
+<button class="btn btn-secondary" onclick="ToolUI.clearHistory()">Clear</button>
+</div>
+<div class="history-list" id="history-list">
+<p style="color: var(--text-tertiary); font-size: 0.875rem;">No history yet. Start converting text!
+                    </p>
+</div>
+</section>
+ Related Tools 
+<section class="related-tools">
+<h3 class="related-tools-title">🔗 Related Tools</h3>
+<div class="related-tools-grid">
+<a class="related-tool-card" href="character-counter.html">
+<span class="related-tool-icon">📊</span>
+<span class="related-tool-name">Character Counter</span>
+</a>
+<a class="related-tool-card" href="text-cleaner.html">
+<span class="related-tool-icon">🧹</span>
+<span class="related-tool-name">Text Cleaner</span>
+</a>
+<a class="related-tool-card" href="bold-text-generator.html">
+<span class="related-tool-icon">𝐁</span>
+<span class="related-tool-name">Bold Text Generator</span>
+</a>
+<a class="related-tool-card" href="small-caps-generator.html">
+<span class="related-tool-icon">ᴀʙᴄ</span>
+<span class="related-tool-name">Small Caps Generator</span>
+</a>
+</div>
+</section>
+ SEO Content 
+<section class="seo-content" style="margin-top: 3rem; padding: 2rem; background: var(--bg-primary); border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+<h2 style="margin-bottom: 1rem;">About Text Case Changer</h2>
+<p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    Our free Text Case Changer tool helps you instantly convert text between different case formats.
+                    Whether you need to capitalize headings, format code variables, or clean up copied text, this tool
+                    has you covered.
+                </p>
+<h3 style="margin: 1.5rem 0 0.75rem;">Supported Case Types:</h3>
+<ul style="color: var(--text-secondary); padding-left: 1.5rem;">
+<li><strong>UPPERCASE</strong> - ALL LETTERS IN CAPS</li>
+<li><strong>lowercase</strong> - all letters in small</li>
+<li><strong>Title Case</strong> - First Letter Of Each Word Capitalized</li>
+<li><strong>Sentence case</strong> - First letter of each sentence capitalized</li>
+<li><strong>camelCase</strong> - For JavaScript variables</li>
+<li><strong>PascalCase</strong> - For class names</li>
+<li><strong>snake_case</strong> - For Python variables</li>
+<li><strong>kebab-case</strong> - For CSS classes and URLs</li>
+</ul>
+<p style="color: var(--text-secondary); margin-top: 1rem;">
+                    All processing happens in your browser. Your text is never uploaded to any server.
+                </p>
+</section>
+
+
+ Scripts
+            </div>
+            <section class="seo-article" data-tool="text-case-changer">
+<article class="tool-article">
+<h2>Text Case Changer — Switch Between Uppercase, Lowercase, and More</h2>
+
+<p>We have all done it: typed a whole paragraph with caps lock on, noticed too late, and faced the choice of retyping everything or leaving it looking like you are shouting. I used to retype. Then I found case changer tools, and that particular misery ended forever. Paste your text, click a button, and it converts to UPPERCASE, lowercase, Title Case, Sentence case, or even programmer styles like camelCase — instantly, with zero retyping.</p>
+
+<h3>What Is a Text Case Changer?</h3>
+
+<p>A text case changer is an online tool that converts the capitalization of your text in one click. It takes whatever you paste — a sentence, a paragraph, a whole document — and reformats the letter casing to the style you choose. Fixing a caps-lock accident takes one click instead of ten minutes of retyping, and standardizing headings across a document takes seconds.</p>
+
+<p>Beyond the basics, good case changers handle the formats developers and writers actually need: Title Case for headlines, Sentence case for body text, and code styles like camelCase, PascalCase, snake_case, and kebab-case for variable names, CSS classes, and URL slugs.</p>
+
+<h3>How to Use the Text Case Changer</h3>
+
+<p>Paste or type your text into the input box, then click the case style you want. The converted text appears immediately — most tools update live with no extra button. Copy the result and paste it into your document, code editor, email, or post.</p>
+
+<p>Going back and forth is harmless: you can flip text to UPPERCASE, then to lowercase, then to Title Case, experimenting until it looks right. Nothing is lost in the process except the original casing, so keep a copy if the original mattered.</p>
+
+<h3>Case Formats Explained</h3>
+
+<table>
+<thead><tr><th>Case Type</th><th>Example Output</th><th>Common Use</th></tr></thead>
+<tbody>
+<tr><td>UPPERCASE</td><td><code>HELLO WORLD</code></td><td>Acronyms, emphasis, warnings</td></tr>
+<tr><td>lowercase</td><td><code>hello world</code></td><td>Email addresses, casual text, URL slugs</td></tr>
+<tr><td>Title Case</td><td><code>Hello World</code></td><td>Headlines, book titles, headings</td></tr>
+<tr><td>Sentence case</td><td><code>Hello world</code></td><td>Normal paragraphs, body text</td></tr>
+<tr><td>camelCase</td><td><code>helloWorld</code></td><td>JavaScript variables and functions</td></tr>
+<tr><td>PascalCase</td><td><code>HelloWorld</code></td><td>Class names, components</td></tr>
+<tr><td>snake_case</td><td><code>hello_world</code></td><td>Python variables, database columns</td></tr>
+<tr><td>kebab-case</td><td><code>hello-world</code></td><td>CSS classes, URL slugs</td></tr>
+</tbody>
+</table>
+
+<p>The first four are for human readers; the last four are for machines. A headline in camelCase looks broken to a reader, and a variable named "Hello World" with a space breaks code — matching the case to the context is the whole skill.</p>
+
+<h3>When Each Case Fits</h3>
+
+<p><strong>Fixing caps-lock accidents.</strong> The classic use: a paragraph typed in ALL CAPS becomes clean Sentence case in one click.</p>
+
+<p><strong>Headlines and titles.</strong> Title Case gives headlines their standard polished look without capitalizing every word by hand.</p>
+
+<p><strong>Cleaning data.</strong> Names, addresses, and spreadsheet columns typed inconsistently ("JOHN smith", "john SMITH") become uniform with Title Case or proper case conversion.</p>
+
+<p><strong>Writing code.</strong> Convert a descriptive phrase like "user login data" into userLoginData, UserLoginData, user_login_data, or user-login-data depending on the language and convention.</p>
+
+<p><strong>URL slugs and file names.</strong> Lowercase plus kebab-case turns "My Great Article" into "my-great-article" — clean, link-safe, and SEO-friendly.</p>
+
+<h3>Tips for Clean Case Conversion</h3>
+
+<ul>
+<li><strong>Check proper nouns after converting.</strong> Automated Title Case capitalizes every word, including ones style guides keep lowercase like "and" or "the" — adjust to taste.</li>
+<li><strong>Sentence case needs sentence boundaries.</strong> The tool capitalizes after periods, so make sure your punctuation is correct first.</li>
+<li><strong>Acronyms may need manual fixing.</strong> Converting "NASA launched" to lowercase gives "nasa launched" — restore acronyms by hand.</li>
+<li><strong>Pick the code style your language expects.</strong> JavaScript favors camelCase, Python favors snake_case, CSS favors kebab-case. Consistency matters more than preference.</li>
+</ul>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>One-click conversion</strong> — paste text, click a style, done.</li>
+<li><strong>8+ case formats</strong> — from UPPERCASE to kebab-case.</li>
+<li><strong>Instant results</strong> — conversion happens as you click.</li>
+<li><strong>100% free</strong> — no signup, no character limits for normal use.</li>
+<li><strong>Private by design</strong> — everything runs in your browser.</li>
+<li><strong>One-click copy</strong> — take the result anywhere.</li>
+<li><strong>Works everywhere</strong> — desktop and mobile browsers.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>How do I change text from uppercase to lowercase?</h4>
+<p>Paste your text into the case changer and click the lowercase button. Every capital letter converts instantly, and you can copy the result.</p>
+
+<h4>Is the text case changer free?</h4>
+<p>Yes — free to use with no account needed and no practical limits on text length.</p>
+
+<h4>What is Title Case?</h4>
+<p>Capitalizing the first letter of each major word, like "The Quick Brown Fox." It is the standard style for headlines, book titles, and headings.</p>
+
+<h4>What is the difference between Title Case and Sentence case?</h4>
+<p>Title Case capitalizes every word ("Hello World"); Sentence case capitalizes only the first word of each sentence ("Hello world"). Use Sentence case for body text and Title Case for headings.</p>
+
+<h4>Can it convert to camelCase for programming?</h4>
+<p>Yes. Paste a phrase like "user login data" and choose camelCase to get "userLoginData" — ready to use as a variable name.</p>
+
+<h4>Will it fix text I typed with caps lock on?</h4>
+<p>Exactly what it is for. Paste the shouty text, click Sentence case or lowercase, and it is fixed in one click.</p>
+
+<h4>Is my text uploaded anywhere?</h4>
+<p>No. Conversion happens locally in your browser, so your text never leaves your device.</p>
+
+<h4>Does it handle very long documents?</h4>
+<p>Yes — most case changers handle thousands of characters without trouble. For extremely long documents, converting in sections keeps things snappy.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="js/text-utils.js"></script>
+<script src="js/tool-ui.js"></script>
+<script>
+        // Current case type
+        let currentCase = 'upper';
+        let isLivePreview = true;
+
+        // Initialize Tool UI
+        ToolUI.init({ toolName: 'text-case-changer' });
+
+        // Setup case buttons
+        document.querySelectorAll('#case-buttons .preset-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('#case-buttons .preset-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentCase = btn.dataset.case;
+                document.getElementById('stat-case').textContent = btn.textContent;
+                updateOutput();
+            });
+        });
+
+        // Setup toggles
+        ToolUI.setupToggle('live-toggle', (active) => {
+            isLivePreview = active;
+        });
+
+        // Case transformation functions
+        function transformCase(text, caseType) {
+            switch (caseType) {
+                case 'upper': return TextUtils.toUpperCase(text);
+                case 'lower': return TextUtils.toLowerCase(text);
+                case 'title': return TextUtils.toTitleCase(text);
+                case 'sentence': return TextUtils.toSentenceCase(text);
+                case 'camel': return TextUtils.toCamelCase(text);
+                case 'pascal': return TextUtils.toPascalCase(text);
+                case 'snake': return TextUtils.toSnakeCase(text);
+                case 'kebab': return TextUtils.toKebabCase(text);
+                case 'constant': return TextUtils.toConstantCase(text);
+                case 'dot': return TextUtils.toDotCase(text);
+                case 'path': return TextUtils.toPathCase(text);
+                case 'alternating': return TextUtils.toAlternatingCase(text);
+                case 'inverse': return TextUtils.toInverseCase(text);
+                default: return text;
+            }
+        }
+
+        // Update output
+        function updateOutput() {
+            if (!isLivePreview) return;
+
+            const input = document.getElementById('input-text').value;
+            const output = transformCase(input, currentCase);
+            document.getElementById('output-text').value = output;
+
+            // Update stats
+            document.getElementById('stat-chars').textContent = TextUtils.countCharacters(input);
+            document.getElementById('stat-words').textContent = TextUtils.countWords(input);
+            document.getElementById('stat-lines').textContent = TextUtils.countLines(input);
+
+            // Add to history
+            if (input.length > 0) {
+                ToolUI.addToHistory(input, output, { case: currentCase });
+            }
+        }
+
+        // Initial setup
+        document.addEventListener('DOMContentLoaded', () => {
+            updateOutput();
+        });
+    </script>
+</body>
+</html>

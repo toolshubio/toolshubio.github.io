@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free, pro Regex tester. Test regular expressions in real-time with full support for JavaScript regex engine 100% client-side.">
+    <title>Regular Expression Tester - Code Tools | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Code Tools</a> &gt;
+                <span>Regular Expression Tester</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Regular Expression Tester</h1>
+                <p class="tool-description">Build and test regular expressions with real-time highlighting and match
+                    groups.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+<div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+<div class="tool-workspace">
+<div class="regex-header">
+<div class="regex-input-row">
+<span style="font-size: 1.5rem; color: var(--text-tertiary);">/</span>
+<input class="regex-field" id="regex-pattern" oninput="testRegex()" placeholder="[a-z0-9._%+-]+@[a-z0-9.-]+" type="text"/>
+<span style="font-size: 1.5rem; color: var(--text-tertiary);">/</span>
+<input class="regex-flags" id="regex-flags" oninput="testRegex()" placeholder="flags" type="text" value="g"/>
+</div>
+</div>
+<div class="tool-workspace">
+<div class="editor-container">
+<div class="editor-header">
+<span class="editor-title">Test String</span>
+<button class="btn btn-sm btn-secondary" onclick="loadSample()">Sample</button>
+</div>
+<div id="highlight-overlay" style="position: absolute; pointer-events: none; padding: var(--space-4); white-space: pre-wrap; font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; line-height: 1.6; color: transparent; width: 100%;">
+</div>
+<textarea class="code-area" id="test-string" oninput="testRegex()" placeholder="Paste text here to test against your regex..."></textarea>
+</div>
+<div class="validator-results mt-6" id="results-panel">
+<h3 class="panel-title" id="match-count">0 Matches Found</h3>
+<div class="mt-4" id="match-list"></div>
+</div>
+<section class="cheat-sheet">
+<div class="cheat-card"><code>.</code> Any character</div>
+<div class="cheat-card"><code>\d</code> Digit [0-9]</div>
+<div class="cheat-card"><code>\w</code> Word char [a-zA-Z0-9_]</div>
+<div class="cheat-card"><code>\s</code> Whitespace</div>
+<div class="cheat-card"><code>+</code> 1 or more</div>
+<div class="cheat-card"><code>*</code> 0 or more</div>
+<div class="cheat-card"><code>?</code> 0 or 1</div>
+<div class="cheat-card"><code>^</code> Start of line</div>
+<div class="cheat-card"><code>$</code> End of line</div>
+</section>
+</div>
+</div>
+<section class="seo-article" data-tool="regular-expression-tester">
+<article class="tool-article">
+<h2>Regular Expression Tester — Free Online Regex Tester & Debugger</h2>
+
+<p>Regular expressions are the closest thing programming has to a spell that sometimes works. I've written patterns I was sure were correct, run them, and watched them match everything except what I wanted — then spent twenty minutes changing one character at a time, re-running, squinting. A regex tester breaks that loop: type your pattern, paste your test string, and every match lights up instantly as you edit. No console logs, no re-running scripts, no guessing. It's the difference between developing a pattern blind and watching it work live.</p>
+
+<h3>What Is a Regular Expression Tester?</h3>
+
+<p>A regular expression (regex) is a compact pattern language for searching text — <code>\d+</code> means "one or more digits," <code>[a-z]+</code> means "one or more lowercase letters." Testers let you write one of these patterns and immediately see what it matches in a block of sample text, without running any code.</p>
+
+<p>Good testers do more than highlight. They show each match's position, break out capture groups (the parts in parentheses, like <code>(\d+)</code> inside a date pattern), and flag syntax errors the moment you type them. Since this one runs on your browser's JavaScript regex engine, the behavior you see is exactly what your JavaScript code will do — no engine mismatch surprises when you copy the pattern into your project.</p>
+
+<p>One honest caveat: regex flavors differ slightly between languages. The fundamentals transfer everywhere, but exotic features (lookbehind, named groups, Unicode properties) may behave differently in Python or PHP than in JavaScript. Test in the flavor you ship in.</p>
+
+<h3>How to Use the Regular Expression Tester</h3>
+
+<p>Type your pattern into the expression field — no surrounding slashes needed, just the pattern itself, like <code>[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}</code> for an email. Toggle the flags you need (more on those below).</p>
+
+<p>Paste your test string into the text box. Matches highlight instantly as you type, and the match count updates in the corner. The results panel lists every match with its position in the text and each capture group's contents — including named groups like <code>(?&lt;year&gt;\d{4})</code>, which show up labeled.</p>
+
+<p>Working on a find-and-replace? The substitution panel lets you test replacements too, using <code>$1</code> for the first capture group or <code>$&lt;name&gt;</code> for a named one. That's how you prototype a data-cleaning step — reformat dates, mask phone numbers — before committing it to a script.</p>
+
+<p>Starting from zero? Load a ready-made pattern from the common-patterns library (email, URL, IPv4, hex color, dates) and adapt it. I almost never write an email pattern from scratch; I start from a known-good one and tighten it.</p>
+
+<h3>Regex Flags Cheat Sheet</h3>
+
+<p>Flags change how the whole pattern behaves. Here are the six JavaScript flags:</p>
+
+<table>
+<thead><tr><th>Flag</th><th>Name</th><th>What it does</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td><code>g</code></td><td>Global</td><td>Find all matches, not just the first</td><td><code>/cat/g</code> on "cat cat" → 2 matches</td></tr>
+<tr><td><code>i</code></td><td>Ignore case</td><td><code>Cat</code> matches <code>cat</code></td><td><code>/cat/i</code> matches "CAT"</td></tr>
+<tr><td><code>m</code></td><td>Multiline</td><td><code>^</code> and <code>$</code> match each line, not just the string ends</td><td><code>/^\d+/m</code> per line</td></tr>
+<tr><td><code>s</code></td><td>Dotall</td><td><code>.</code> also matches newlines</td><td><code>/a.*b/s</code> spans lines</td></tr>
+<tr><td><code>u</code></td><td>Unicode</td><td>Full Unicode support (emoji, astral symbols)</td><td><code>/\p{L}/u</code> any letter</td></tr>
+<tr><td><code>y</code></td><td>Sticky</td><td>Match only at the current position</td><td>Used in tokenizers</td></tr>
+</tbody>
+</table>
+
+<p>The two beginners forget most often: <code>g</code> (without it you only ever see the first match, which makes a working pattern look broken) and <code>m</code> (without it, <code>^</code> only matches the very start of your text, not each line).</p>
+
+<h3>Common Patterns to Try</h3>
+
+<p>These are the patterns people reach for most — paste each into the tester with a matching test string and watch them work:</p>
+
+<table>
+<thead><tr><th>Task</th><th>Pattern</th><th>Test string</th></tr></thead>
+<tbody>
+<tr><td>Email</td><td><code>[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}</code></td><td>Contact me at sara@example.com today</td></tr>
+<tr><td>IPv4 address</td><td><code>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b</code></td><td>Server at 192.168.1.1 responded</td></tr>
+<tr><td>Date (YYYY-MM-DD)</td><td><code>\d{4}-\d{2}-\d{2}</code></td><td>Report due 2026-10-15</td></tr>
+<tr><td>Hex color</td><td><code>#[0-9a-fA-F]{6}\b</code></td><td>Brand color is #FF5733</td></tr>
+<tr><td>URL</td><td><code>https?://[^\s]+</code></td><td>Visit https://example.com/page now</td></tr>
+<tr><td>Digits</td><td><code>\d+</code></td><td>Order 4821 has 3 items</td></tr>
+</tbody>
+</table>
+
+<p>A note on the email pattern: it catches the overwhelmingly common cases but email addresses have genuinely weird legal forms. For validation in production, prefer a simpler sanity check plus a confirmation email over an ever-more-complex pattern.</p>
+
+<h3>Who Uses a Regex Tester?</h3>
+
+<p><strong>Web developers</strong> prototype form validation — emails, phone numbers, passwords, zip codes — in the tester before wiring patterns into their forms. Seeing the matches live catches the classic mistake of a pattern that's too strict or too loose.</p>
+
+<p><strong>Data engineers</strong> test extraction patterns against log files and CSV dumps. Pulling order IDs or timestamps out of messy text is a regex job, and the tester is where the pattern gets proven.</p>
+
+<p><strong>QA testers</strong> verify that validation rules actually accept and reject the right inputs, building test strings of edge cases and watching the highlights.</p>
+
+<p><strong>Students</strong> learning regex finally get feedback faster than the write-run-squint cycle. The cheat sheet and pattern library turn an intimidating syntax into something explorable.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Live match highlighting</strong> — matches update as you type, no run button needed.</li>
+<li><strong>Full flag support</strong> — toggle <code>g i m s u y</code> with one click.</li>
+<li><strong>Match inspector</strong> — positions plus numbered and named capture groups per match.</li>
+<li><strong>Substitution panel</strong> — test find-and-replace with <code>$1</code> and <code>$&lt;name&gt;</code>.</li>
+<li><strong>Pattern library</strong> — ready-made email, URL, IPv4, date, and hex-color patterns.</li>
+<li><strong>Cheat sheet</strong> — clickable token reference for when you're stuck.</li>
+<li><strong>100% free</strong> — no account, no limits.</li>
+<li><strong>Private by design</strong> — runs on your browser's regex engine; nothing leaves your device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this regex tester free?</h4>
+<p>Yes — free, no signup, unlimited testing.</p>
+
+<h4>Which regex engine does it use?</h4>
+<p>Your browser's JavaScript engine, so patterns behave exactly as they will in JavaScript code.</p>
+
+<h4>Why is my pattern only matching the first occurrence?</h4>
+<p>You need the <code>g</code> (global) flag. Without it, matching stops after the first hit.</p>
+
+<h4>How do I match across multiple lines?</h4>
+<p>Use the <code>m</code> flag so <code>^</code> and <code>$</code> work per line, and the <code>s</code> flag so <code>.</code> matches newlines too.</p>
+
+<h4>What are capture groups?</h4>
+<p>Parts of the pattern in parentheses, like <code>(\d+)</code>. The tester shows what each group captured per match, and you can reference them as <code>$1</code>, <code>$2</code> in substitutions or <code>$&lt;name&gt;</code> for named groups.</p>
+
+<h4>Will my regex work in Python too?</h4>
+<p>Mostly — the basics are universal. But test exotic features in your target language, since flavors differ on lookbehind, named groups, and Unicode handling.</p>
+
+<h4>Can I test find-and-replace?</h4>
+<p>Yes — the substitution panel lets you preview replacements using captured groups before using the pattern in code.</p>
+
+<h4>Is my test data sent anywhere?</h4>
+<p>No. Everything runs locally in your browser.</p>
+</article>
+</section>
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../code-format-tools/js/code-utils.js"></script>
+<script src="../code-format-tools/js/code-ui.js"></script>
+<script>
+        CodeUI.init({ toolName: 'regex-tester' });
+
+        function testRegex() {
+            const pattern = document.getElementById('regex-pattern').value;
+            const flags = document.getElementById('regex-flags').value;
+            const text = document.getElementById('test-string').value;
+            const overlay = document.getElementById('highlight-overlay');
+            const matchTitle = document.getElementById('match-count');
+
+            if (!pattern || !text) {
+                overlay.innerHTML = '';
+                matchTitle.textContent = '0 Matches Found';
+                return;
+            }
+
+            try {
+                const re = new RegExp(pattern, flags);
+                let matches = [...text.matchAll(re)];
+
+                matchTitle.textContent = `${matches.length} Matches Found`;
+                matchTitle.style.color = matches.length > 0 ? 'var(--success)' : 'var(--text-secondary)';
+
+                // Visual Highlighting logic
+                let highlighted = text.replace(re, (match) => `<span class="match-highlight">${match}</span>`);
+                overlay.innerHTML = highlighted;
+
+            } catch (e) {
+                matchTitle.textContent = 'Invalid Regex';
+                matchTitle.style.color = 'var(--danger)';
+                overlay.innerHTML = '';
+            }
+        }
+
+        function loadSample() {
+            document.getElementById('regex-pattern').value = '\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}\\b';
+            document.getElementById('regex-flags').value = 'gi';
+            document.getElementById('test-string').value = 'Send your feedback to support@toolshub.com or admin@example.org. This regex will find all emails.';
+            testRegex();
+        }
+
+        CodeUI.renderRelated('related-tools', [
+            { icon: 'ðŸ‘ï¸', name: 'JS Beautifier', desc: 'Prettify scripts', url: '../formatters/javascript-beautifier.html' },
+            { icon: 'ðŸ”¥', name: 'JS Minifier', desc: 'Shrink code', url: '../minifiers/javascript-minifier.html' },
+            { icon: 'ðŸ”', name: 'Base64 Tool', desc: 'Encode data', url: '../encoders/base64-encoder-decoder.html' }
+        ]);
+    </script>
+</body>
+</html>

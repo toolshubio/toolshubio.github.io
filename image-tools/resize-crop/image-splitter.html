@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Image Splitter. Split images into grids, tiles, or equal slices for social media carousels and large format printing.">
+    <title>Image Splitter - Grid & Tile Cutter | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../../image-tools/css/global.css">
+    <link rel="stylesheet" href="../../image-tools/css/components.css">
+    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../../about-us.html">About</a>
+                <a class="nav-link" href="../../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> &gt;
+                <a href="../index.html">Image Tools</a> &gt;
+                <span>✂️ Advanced Image Splitter</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">✂️ Advanced Image Splitter</h1>
+                <p class="tool-description">Split images into grids, strips, or custom slices. Perfect for Instagram
+                    carousels, website tiles, and large prints.</p>
+                <div class="tool-badges"><span class="badge badge-primary">Grid Mode</span><span class="badge badge-primary">Individual Downloads</span><span class="badge badge-secondary">Custom Dimensions</span></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+
+<div class="split-workspace">
+<section class="preview-container" id="upload-zone">
+<div class="image-wrapper" id="image-wrapper" style="display: none;">
+<img alt="Preview" id="preview-img"/>
+<div class="grid-overlay" id="grid-overlay"></div>
+</div>
+</section>
+<aside class="control-panel">
+<div class="control-section">
+<div class="mode-switch">
+<button class="mode-btn active" data-mode="grid">Grid Mode</button>
+<button class="mode-btn" data-mode="parts">Fixed Parts</button>
+</div>
+<!-- GRID MODE INPUTS -->
+<div id="grid-controls">
+<div class="grid-inputs">
+<div class="control-group">
+<label class="control-label">Rows</label>
+<input class="form-input" id="grid-rows" max="20" min="1" type="number" value="3"/>
+</div>
+<div class="control-group">
+<label class="control-label">Columns</label>
+<input class="form-input" id="grid-cols" max="20" min="1" type="number" value="3"/>
+</div>
+</div>
+</div>
+<!-- PARTS MODE INPUTS -->
+<div id="parts-controls" style="display: none;">
+<div class="grid-inputs">
+<div class="control-group">
+<label class="control-label">Width (px)</label>
+<input class="form-input" id="part-width" type="number" value="1080"/>
+</div>
+<div class="control-group">
+<label class="control-label">Height (px)</label>
+<input class="form-input" id="part-height" type="number" value="1080"/>
+</div>
+</div>
+</div>
+<div class="control-group mt-4">
+<label class="control-label">Format</label>
+<select class="form-select" id="output-format">
+<option value="png">PNG (Lossless)</option>
+<option value="jpeg">JPG (Small Size)</option>
+<option value="webp">WebP (Modern)</option>
+</select>
+</div>
+</div>
+<div class="result-stats">
+<div class="stat-row">
+<span>Total Slices:</span>
+<span class="stat-val" id="total-slices">9</span>
+</div>
+<div class="stat-row">
+<span>Slice Size:</span>
+<span class="stat-val" id="slice-size">--</span>
+</div>
+</div>
+<div class="slice-preview-grid" id="slice-preview-container"></div>
+<div class="control-section">
+<button class="btn btn-premium-download w-full" disabled="" id="split-btn"><span>✂️</span> Split &amp;
+                            Download
+                            All</button>
+<button class="btn btn-secondary w-full mt-2" onclick="location.reload()"><span>🔄</span>
+                            Reset</button>
+</div>
+</aside>
+</div>
+</div>
+</main>
+            </div>
+            <section class="seo-article" data-tool="image-splitter">
+<article class="tool-article">
+<h2>Image Splitter — Split Photos Into Equal Parts Online Free</h2>
+
+<p>That seamless 9-tile grid on an Instagram profile — one big image spread across nine posts — is not nine separate designs. It is one image, sliced into nine squares. An image splitter does the slicing: upload a photo, choose rows and columns, and download the pieces individually or as a ZIP. This free tool runs the whole job in your browser, supports grids up to 50 × 50, and keeps every piece at full original resolution.</p>
+
+<h3>What Is an Image Splitter?</h3>
+
+<p>An image splitter divides one picture into multiple equal parts. The classic setup is a grid — 3 × 3 for the nine-tile Instagram feed, 2 × 2 for four quadrants — but it also handles plain horizontal strips (top/bottom halves) and vertical columns (left/right slices), and some tools even offer angled cuts with parallel slanted lines.</p>
+
+<p>The use cases are more varied than I expected. Social media grids are the headline, but print shops slice posters into printable sections, teachers split maps and diagrams for classroom walls, game developers cut sprite sheets into predictable tiles, and photographers divide panoramas for multi-frame wall displays. Anywhere one image needs to become many equal files, this is the tool.</p>
+
+<p>Each piece downloads as its own image — named in reading order, so photo-part-1 is the top-left tile — and everything keeps the full resolution of its area. Nothing is re-compressed into softness; a tile is exactly as sharp as the region it came from.</p>
+
+<h3>How to Split an Image Online</h3>
+
+<p><strong>Step 1 — Upload your image.</strong> Drop the file or click to select. JPG, PNG, WebP, GIF, and BMP all work.</p>
+
+<p><strong>Step 2 — Pick rows and columns.</strong> The default 3 × 3 gives nine equal squares — the standard Instagram feed grid. Set any configuration from 1 × 1 up to 50 × 50 (yes, a full 2500-cell tile mosaic is possible).</p>
+
+<p><strong>Step 3 — Adjust the crop area.</strong> Move and zoom the cropper to choose which part of the image gets split. The aspect-ratio lock keeps the cropper proportional so the cells come out even — important when the source is not the same shape as your grid.</p>
+
+<p><strong>Step 4 — Preview and download.</strong> The preview shows numbered thumbnails of every piece. Download each part on its own or grab the whole set as one ZIP file.</p>
+
+<p>For uneven needs, drag individual split lines — most tools let you move a line anywhere between 5% and 95% of the image, so you can cut a big hero piece with smaller tiles beside it rather than a perfectly even grid.</p>
+
+<h3>Popular Split Layouts</h3>
+
+<table>
+<thead><tr><th>Layout</th><th>Pieces</th><th>Best for</th></tr></thead>
+<tbody>
+<tr><td>3 × 3 grid</td><td>9</td><td>Instagram profile feed grid</td></tr>
+<tr><td>1 × 3 strip</td><td>3</td><td>Swipeable carousel panorama</td></tr>
+<tr><td>2 × 2 grid</td><td>4</td><td>Photo quadrants, comparison sets</td></tr>
+<tr><td>1 × 2 / 2 × 1</td><td>2</td><td>Halves for diptychs or banners</td></tr>
+<tr><td>4 × 4 or 5 × 5</td><td>16 / 25</td><td>Photo walls, tile mosaics</td></tr>
+<tr><td>Angled cuts</td><td>Varies</td><td>Diagonal collage effects</td></tr>
+</tbody>
+</table>
+
+<p>The Instagram grid has one quirk worth knowing: post the pieces in <strong>reverse order</strong> — start with piece #9 and end with piece #1 — so they land correctly on your profile grid. This trips up first-timers constantly.</p>
+
+<h3>Who Splits Images?</h3>
+
+<p><strong>Social media managers and creators</strong> are the core users — feed grids, panorama carousels, and square post sequences from one large design are daily work.</p>
+
+<p><strong>Photographers and print shops</strong> slice large prints into sections for multi-frame wall displays and multi-page printing, where each tile becomes a physical piece.</p>
+
+<p><strong>Teachers and designers</strong> split diagrams, maps, and reference sheets for classroom walls, crafts, and visual planning.</p>
+
+<p><strong>Game and web developers</strong> cut sprite sheets, textures, and concept art into predictable tiles for engines and asset pipelines.</p>
+
+<h3>Practical Tips for Clean Splits</h3>
+
+<ul>
+<li><strong>Start from high resolution.</strong> Nine tiles from a 1080px image are 360px each — fine for a feed grid, weak for print. Bigger source, better tiles.</li>
+<li><strong>Mind the gaps.</strong> Instagram shows tiny gutters between grid tiles; keep important details away from tile edges so nothing critical gets visually cut.</li>
+<li><strong>Number your exports.</strong> Reading-order naming (part-1 = top-left) keeps posting order obvious — download the ZIP and post in sequence.</li>
+<li><strong>Choose format deliberately.</strong> PNG for graphics and text-heavy designs (lossless edges), JPG for photos (smaller files), WebP for web use.</li>
+<li><strong>Sharpen before splitting.</strong> A light <strong>sharpness</strong> pass on the full image carries through to every tile uniformly.</li>
+<li><strong>Resize tiles after, not before.</strong> Split at full resolution, then <strong>bulk resize</strong> the pieces if a platform wants specific tile dimensions.</li>
+<li><strong>Test-print one row.</strong> For physical mosaics, print a single row at low quality first to verify alignment before the full high-quality run.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is the image splitter free?</h4>
+<p>Yes — 100% free, no signup, no watermarks on the downloaded pieces, no limit on how many images you split.</p>
+
+<h4>How do I split an image into 9 parts for Instagram?</h4>
+<p>Upload your photo, keep the default 3 × 3 grid, download the nine pieces as a ZIP, then post them in reverse order (piece #9 first, piece #1 last) so they display correctly on your profile.</p>
+
+<h4>Are my images uploaded to a server?</h4>
+<p>No. Splitting runs entirely in your browser via JavaScript — your photos never leave your device, so nothing about them exists anywhere but on your own machine.</p>
+
+<h4>Can I split an image into unequal parts?</h4>
+<p>Yes. Drag individual split lines to reposition them (typically anywhere from 5% to 95% of the image), so you can cut, for example, one large hero piece with smaller tiles beside it.</p>
+
+<h4>What formats can I upload and download?</h4>
+<p>Upload JPG, PNG, WebP, GIF, or BMP. Download pieces as PNG (lossless, best for graphics), JPG (smallest for photos), or WebP (best balance for web).</p>
+
+<h4>Do the pieces keep full quality?</h4>
+<p>Yes — every piece is saved at the full original resolution of its area. A tile is exactly as sharp as the region it came from.</p>
+
+<h4>Can I split an image vertically or horizontally only?</h4>
+<p>Yes. Horizontal mode divides the image into stacked sections (top/bottom), vertical mode into columns (left/right), and grid mode into rows × columns. Angled parallel cuts are available in some tools.</p>
+
+<h4>Can I merge the parts back together later?</h4>
+<p>Yes — an <strong>image merger</strong> rejoins tiles into one file. Just keep the pieces at matching sizes and the seam will be invisible.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../../about-us.html">About Us</a>
+                    <a class="footer-link" href="../../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../js/shared/unified-input.js"></script>
+<script src="../js/utils/image-loader.js"></script>
+<script>
+        class ImageSplitter {
+            constructor() {
+                this.imgData = null;
+                this.settings = {
+                    mode: 'grid',
+                    rows: 3,
+                    cols: 3,
+                    partW: 1080,
+                    partH: 1080,
+                    format: 'png',
+                    results: []
+                };
+
+                this.init();
+            }
+
+            init() {
+                this.setupUnifiedInput();
+                this.setupControls();
+                document.getElementById('split-btn').onclick = () => this.split();
+            }
+
+            setupUnifiedInput() {
+                this.unifiedInput = new UnifiedInput({
+                    containerId: 'upload-zone',
+                    toolIcon: '✂️',
+                    toolName: 'Image Splitter',
+                    acceptTypes: 'image/*',
+                    showList: false,
+                    onFilesLoaded: (files) => this.handleFile(files[0])
+                });
+            }
+
+            setupControls() {
+                // Mode switch
+                document.querySelectorAll('.mode-btn').forEach(btn => {
+                    btn.onclick = () => {
+                        document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        this.settings.mode = btn.dataset.mode;
+                        document.getElementById('grid-controls').style.display = this.settings.mode === 'grid' ? 'block' : 'none';
+                        document.getElementById('parts-controls').style.display = this.settings.mode === 'parts' ? 'block' : 'none';
+                        this.updateGrid();
+                    };
+                });
+
+                // Inputs
+                ['rows', 'cols'].forEach(id => {
+                    document.getElementById(`grid-${id}`).oninput = (e) => {
+                        this.settings[id] = parseInt(e.target.value) || 1;
+                        this.updateGrid();
+                    };
+                });
+
+                ['width', 'height'].forEach(id => {
+                    const key = id === 'width' ? 'partW' : 'partH';
+                    document.getElementById(`part-${id}`).oninput = (e) => {
+                        this.settings[key] = parseInt(e.target.value) || 1;
+                        this.updateGrid();
+                    };
+                });
+
+                document.getElementById('output-format').onchange = (e) => {
+                    this.settings.format = e.target.value;
+                };
+            }
+
+            async handleFile(file) {
+                this.imgData = await window.ImageLoader.loadSingleImage(file);
+                document.getElementById('preview-img').src = this.imgData.canvas.toDataURL();
+                document.getElementById('image-wrapper').style.display = 'block';
+                document.getElementById('split-btn').disabled = false;
+
+                this.updateGrid();
+            }
+
+            updateGrid() {
+                if (!this.imgData) return;
+
+                const overlay = document.getElementById('grid-overlay');
+                overlay.innerHTML = '';
+
+                let rows, cols, w, h;
+
+                if (this.settings.mode === 'grid') {
+                    rows = this.settings.rows;
+                    cols = this.settings.cols;
+                    w = this.imgData.width / cols;
+                    h = this.imgData.height / rows;
+                } else {
+                    w = this.settings.partW;
+                    h = this.settings.partH;
+                    cols = Math.ceil(this.imgData.width / w);
+                    rows = Math.ceil(this.imgData.height / h);
+                }
+
+                document.getElementById('total-slices').textContent = rows * cols;
+                document.getElementById('slice-size').textContent = `${Math.round(w)} x ${Math.round(h)} px`;
+
+                // Draw vertical lines
+                for (let i = 1; i < cols; i++) {
+                    const line = document.createElement('div');
+                    line.className = 'grid-line-v';
+                    line.style.left = `${(i / cols) * 100}%`;
+                    overlay.appendChild(line);
+                }
+
+                // Draw horizontal lines
+                for (let i = 1; i < rows; i++) {
+                    const line = document.createElement('div');
+                    line.className = 'grid-line-h';
+                    line.style.top = `${(i / rows) * 100}%`;
+                    overlay.appendChild(line);
+                }
+            }
+
+            async split() {
+                const btn = document.getElementById('split-btn');
+                btn.disabled = true;
+                btn.textContent = 'Processing...';
+
+                this.settings.results = [];
+
+                let rows, cols, w, h;
+                if (this.settings.mode === 'grid') {
+                    rows = this.settings.rows;
+                    cols = this.settings.cols;
+                    w = this.imgData.width / cols;
+                    h = this.imgData.height / rows;
+                } else {
+                    w = this.settings.partW;
+                    h = this.settings.partH;
+                    cols = Math.ceil(this.imgData.width / w);
+                    rows = Math.ceil(this.imgData.height / h);
+                }
+
+                const canvas = document.createElement('canvas');
+                canvas.width = w;
+                canvas.height = h;
+                const ctx = canvas.getContext('2d');
+
+                for (let r = 0; r < rows; r++) {
+                    for (let c = 0; c < cols; c++) {
+                        ctx.clearRect(0, 0, w, h);
+                        ctx.drawImage(this.imgData.canvas, c * w, r * h, w, h, 0, 0, w, h);
+
+                        const dataURL = canvas.toDataURL(`image/${this.settings.format}`);
+                        this.settings.results.push({
+                            dataURL: dataURL,
+                            fileName: `slice_${r + 1}_${c + 1}.${this.settings.format}`
+                        });
+                    }
+                }
+
+                for (const res of this.settings.results) {
+                    const a = document.createElement('a');
+                    a.href = res.dataURL;
+                    a.download = res.fileName;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    await new Promise(resolve => setTimeout(resolve, 150));
+                }
+
+                btn.disabled = false;
+                btn.textContent = '✂️ Split & Download All';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => new ImageSplitter());
+    </script>
+</body>
+</html>

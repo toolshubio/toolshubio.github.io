@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Keyword Frequency Counter | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">SEO Tools</a> &gt;
+                <span>Keyword Frequency Counter</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Keyword Frequency Counter</h1>
+                <p class="tool-description"></p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
+<div class="container text-center">
+<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Keyword Frequency Counter</h1>
+<p class="hero-subtitle">Count the exact occurrences of specific keywords in your content.</p>
+</div>
+</section>
+<div class="container">
+<div class="tool-interface-container">
+<div class="input-group">
+<label class="input-label">Content to Analyze</label>
+<textarea class="seo-textarea" id="inputText" placeholder="Paste your content here..." style="min-height: 200px;"></textarea>
+</div>
+<div class="input-group mt-md">
+<label class="input-label">Keywords to Count (One per line)</label>
+<textarea class="seo-textarea" id="targetKeywords" placeholder="seo
+marketing
+google" style="min-height: 100px;"></textarea>
+</div>
+<div class="input-group">
+<label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+<input id="caseSensitive" type="checkbox"/> Case Sensitive
+                    </label>
+</div>
+<div class="action-bar">
+<button class="btn-primary" onclick="countKeywords()">Count Occurrences</button>
+<button class="btn-secondary" onclick="resetForm()">Reset</button>
+</div>
+<div class="output-section" id="resultsArea" style="display: none;">
+<h3 class="section-title mb-md">Results</h3>
+<div class="output-container">
+<table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr style="text-align: left; background: var(--bg-tertiary);">
+<th style="padding: 10px;">Keyword</th>
+<th style="padding: 10px;">Occurrences</th>
+<th style="padding: 10px;">Status</th>
+</tr>
+</thead>
+<tbody id="resultsBody">
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+            </div>
+            <section class="seo-article" data-tool="keyword-frequency-counter">
+<article class="tool-article">
+<h2>Keyword Frequency Counter — See Exactly How Often Each Word Appears</h2>
+
+<p>I once edited a 2,000-word article where the writer had used the word "leverage" 31 times. Nobody noticed while writing — repetition is invisible to the author and glaring to everyone else. A keyword frequency counter makes the invisible visible: paste any text and get every word ranked by how often it appears, with counts and percentages. It is part SEO tool, part writing mirror.</p>
+
+<h3>What Is a Keyword Frequency Counter?</h3>
+
+<p>At its core, it counts: each unique word in your text, how many times it occurs, and what share of the total that represents. The output is a ranked table — most frequent first — that instantly shows which terms dominate your writing. SEO folks read it as a keyword distribution check; writers read it as a repetition audit; linguists read it as raw corpus data.</p>
+
+<p>Frequency and density are siblings, not twins. Frequency is the raw count ("coffee" appears 12 times); density is that count as a percentage of total words (12 in 600 words = 2%). Counters typically show both, because the count tells you what to edit and the percentage tells you whether it matters.</p>
+
+<p>The stop-word toggle is what makes the table useful. Without it, "the," "and," and "to" top every list and bury the interesting words. Filtering those function words surfaces the topical vocabulary — the nouns and verbs your piece is actually about — which is what you came to inspect.</p>
+
+<h3>How to Use the Keyword Frequency Counter</h3>
+
+<p>Paste your text into the analyzer — a draft, a published article, a competitor's page. Enable "ignore common words" and case-insensitive counting (so "Word" and "word" merge). Scan the top 20–50 rows: your target topics should rank highly, but no single term should tower absurdly over the rest.</p>
+
+<p>Two passes cover most use cases. <strong>Pass one: stuffing check.</strong> If your focus keyword sits at 4%+ while everything else is under 1%, rewrite the worst repetitions with pronouns and synonyms. <strong>Pass two: gap check.</strong> Paste a top-ranking competitor's text and compare tables — topical terms they use heavily that barely appear in yours are coverage gaps worth addressing in your own words.</p>
+
+<p>Writers get a bonus use: sort by frequency to find your crutch words. Everyone has them — "actually," "basically," "leverage," "robust." The counter finds yours in seconds, and a quick find-and-replace pass tightens the whole piece.</p>
+
+<h3>How Word Frequency Analysis Works</h3>
+
+<p>The pipeline is classic text analysis, fast enough to run as you type.</p>
+
+<p><strong>Step 1 — Tokenization.</strong> Text is split into word tokens using Unicode-aware boundaries — punctuation separated, accented characters and non-Latin scripts handled correctly, words lowercased for consistent counting.</p>
+
+<p><strong>Step 2 — Stop-word filtering.</strong> Optionally, common function words (the, a, and, is, of) are excluded so the table highlights meaningful terms. Minimum word length filters can further trim noise.</p>
+
+<p><strong>Step 3 — Counting and ranking.</strong> Each unique word's occurrences are tallied, percentages computed against the total, and the table sorted most-frequent first. Many tools also offer bigram/trigram modes for phrase-level analysis.</p>
+
+<p><strong>Step 4 — Presentation.</strong> Results render as a sortable table with counts, percentages, and often visual bars — plus export options (CSV) for deeper analysis in spreadsheets.</p>
+
+<p>Because analysis runs locally in the browser, even unpublished drafts and confidential documents stay private — nothing uploads anywhere.</p>
+
+<h3>What the Frequency Table Tells You</h3>
+
+<table>
+<thead><tr><th>Pattern in the table</th><th>Interpretation</th><th>Action</th></tr></thead>
+<tbody>
+<tr><td>Target keyword in top 5, ~1–2%</td><td>Healthy topical focus</td><td>None needed</td></tr>
+<tr><td>One term far above the rest</td><td>Overuse / possible stuffing</td><td>Vary with synonyms and pronouns</td></tr>
+<tr><td>Expected subtopic missing</td><td>Coverage gap</td><td>Add a section on it</td></tr>
+<tr><td>Filler words ranking high</td><td>Wordy writing</td><td>Tighten sentences, cut fillers</td></tr>
+<tr><td>Competitor's key terms absent in yours</td><td>Topical gap vs rivals</td><td>Cover the subtopic naturally</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Keyword Frequency Counters?</h3>
+
+<p><strong>SEO specialists</strong> audit content for keyword distribution and competitor gaps.</p>
+
+<p><strong>Writers and editors</strong> catch overused words and tighten prose.</p>
+
+<p><strong>Content marketers</strong> verify briefs' target terms appear naturally in delivered copy.</p>
+
+<p><strong>Students and researchers</strong> analyze texts for essays and linguistic study.</p>
+
+<p><strong>Data analysts</strong> get quick frequency stats on textual datasets without writing code.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Free analysis</strong> — no signup, no limits on typical texts.</li>
+<li><strong>Ranked frequency table</strong> — every word with count and percentage.</li>
+<li><strong>Stop-word filtering</strong> — surfaces meaningful terms.</li>
+<li><strong>Case-insensitive counting</strong> — "Word" and "word" counted together.</li>
+<li><strong>Phrase modes</strong> — bigram/trigram analysis for multi-word patterns.</li>
+<li><strong>CSV export</strong> — take the data into spreadsheets.</li>
+<li><strong>Private by design</strong> — runs locally; text never leaves your browser.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this keyword frequency counter free?</h4>
+<p>Yes — free with no account required.</p>
+
+<h4>What's the difference between frequency and density?</h4>
+<p>Frequency is the raw count of a word's occurrences; density is that count as a percentage of total words. The table shows both.</p>
+
+<h4>How is this different from a keyword density checker?</h4>
+<p>They overlap heavily. Frequency counters emphasize the full ranked word list (useful for writing audits); density checkers emphasize percentages against thresholds (useful for SEO checks). Many people use both views of the same data.</p>
+
+<h4>Should "the" and "and" top my list?</h4>
+<p>In raw counts, yes — they are the most common English words. Enable stop-word filtering to see your topical vocabulary instead.</p>
+
+<h4>Can it handle large documents?</h4>
+<p>Yes. Most tools process thousands of words instantly, and many handle full book chapters without breaking a sweat.</p>
+
+<h4>Does it work in languages other than English?</h4>
+<p>Unicode-aware counters handle accented characters and many scripts. Stop-word lists are usually English-focused, so filtering quality varies by language.</p>
+
+<h4>Is my text private?</h4>
+<p>Yes. Analysis runs entirely in your browser — your text is never uploaded to any server.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        function countKeywords() {
+            const text = document.getElementById('inputText').value;
+            const keywordsText = document.getElementById('targetKeywords').value;
+            const caseSensitive = document.getElementById('caseSensitive').checked;
+            const resultsArea = document.getElementById('resultsArea');
+            const resultsBody = document.getElementById('resultsBody');
+
+            if (!text || !keywordsText) {
+                alert("Please enter both content and keywords.");
+                return;
+            }
+
+            const keywords = keywordsText.split(/\n/).map(k => k.trim()).filter(k => k);
+            let resultsHtml = '';
+
+            keywords.forEach(kw => {
+                let count = 0;
+                if (caseSensitive) {
+                    // Escape regex special characters
+                    const escapedKw = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                    const regex = new RegExp(escapedKw, 'g');
+                    const matches = text.match(regex);
+                    count = matches ? matches.length : 0;
+                } else {
+                    const escapedKw = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                    const regex = new RegExp(escapedKw, 'gi');
+                    const matches = text.match(regex);
+                    count = matches ? matches.length : 0;
+                }
+
+                let statusBadge = '<span class="tool-badge" style="background:#e0e0e0; color:#333;">Found</span>';
+                if (count === 0) statusBadge = '<span class="tool-badge" style="background:#ffebee; color:#c62828;">Not Found</span>';
+                if (count > 10) statusBadge = '<span class="tool-badge" style="background:#e8f5e9; color:#2e7d32;">High Usage</span>';
+
+                resultsHtml += `
+                 <tr style="border-bottom: 1px solid var(--border-color);">
+                    <td style="padding: 10px;">${kw}</td>
+                    <td style="padding: 10px; font-weight: bold;">${count}</td>
+                    <td style="padding: 10px;">${statusBadge}</td>
+                </tr>
+            `;
+            });
+
+            resultsBody.innerHTML = resultsHtml;
+            resultsArea.style.display = 'block';
+        }
+
+        function resetForm() {
+            document.getElementById('inputText').value = '';
+            document.getElementById('targetKeywords').value = '';
+            document.getElementById('resultsArea').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

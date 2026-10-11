@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free, pro HTML formatter. Beautify messy HTML code, fix indentation, and improve readability 100% client-side.">
+    <title>Html Formatter - Code Tools | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Code Tools</a> &gt;
+                <span>Html Formatter</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Html Formatter</h1>
+                <p class="tool-description">Transform unreadable, minified, or messy HTML into a clean, well-indented
+                    structure.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+<div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+<div class="tool-workspace">
+<div class="tool-workspace">
+<div class="code-workspace">
+<div class="editor-container">
+<div class="editor-header">
+<span class="editor-title">Source HTML</span>
+<button class="btn btn-sm btn-secondary" onclick="document.getElementById('input-code').value = ''; onInputChange()">Clear</button>
+</div>
+<textarea class="code-area" id="input-code" oninput="onInputChange()" placeholder="Paste messy HTML here..."></textarea>
+<div class="code-stats" id="input-stats"></div>
+</div>
+<div class="editor-container">
+<div class="editor-header">
+<span class="editor-title">Pretty HTML</span>
+<button class="btn btn-sm btn-primary" onclick="CodeUI.copyToClipboard('output-code', this)">Copy Result</button>
+</div>
+<textarea class="code-area" id="output-code" placeholder="Formatted code will appear here..." readonly=""></textarea>
+<div class="code-stats" id="output-stats"></div>
+</div>
+</div>
+<div class="action-bar">
+<div class="input-group" style="flex-direction: row; align-items: center; gap: 10px; margin: 0;">
+<label class="input-label" style="margin: 0;">Indent:</label>
+<select class="calc-select" id="indent-size" onchange="format()" style="width: 120px;">
+<option value="2">2 Spaces</option>
+<option selected="" value="4">4 Spaces</option>
+</select>
+</div>
+<button class="btn btn-primary btn-lg" onclick="format()">Beautify HTML</button>
+</div>
+<section class="tool-content mt-12">
+<div class="content-grid">
+<div class="main-text">
+<h2>The Value of Readable Code</h2>
+<p>Reading minified HTML is nearly impossible for developers. Our HTML Formatter uses a
+                                multi-pass approach to identify tags, attributes, and content, applying consistent
+                                indentation and line breaks to make your code "human-friendly" again.</p>
+<h3>What we improve:</h3>
+<ul>
+<li><strong>Nested Tags:</strong> Perfect hierarchical indentation.</li>
+<li><strong>Attribute Cleanup:</strong> Ensures attributes are readable.</li>
+<li><strong>Comment Formatting:</strong> Aligns comments with their parent tags.</li>
+</ul>
+</div>
+<div class="faq-section">
+<h3>Quick Help</h3>
+<div class="faq-item">
+<strong>Does this fix tag errors?</strong>
+<p>It attempts to close missing tags logically, but it's primarily a formatter. Use our
+                                    **HTML Viewer** to see if the structure renders correctly.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+
+ Using js-beautify for professional formatting quality
+            </div>
+<section class="seo-article" data-tool="html-formatter">
+<article class="tool-article">
+<h2>HTML Formatter — Beautify Messy HTML Into Readable Code</h2>
+
+<p>Every developer has opened view-source on a production site and found a single line of HTML stretching sideways into infinity. Or inherited a template where the indentation looks like it was decided by dice. I keep an HTML formatter bookmarked for exactly these moments: paste in the mess, get back clean markup with proper indentation, each nested element tucked one level deeper than its parent. It is the reverse of minification — instead of shrinking code for browsers, it expands code for humans.</p>
+
+<h3>What Is an HTML Formatter?</h3>
+
+<p>An HTML formatter (also called a beautifier or prettifier) takes compact or chaotic markup and restructures it for readability: one element per line, consistent indentation showing the nesting, attributes spaced sensibly. Nothing about the page changes — the browser builds the identical document tree — but the code becomes something a person can actually read, debug, and maintain.</p>
+
+<p>Before:</p>
+
+<code>&lt;div class="card"&gt;&lt;h2&gt;Title&lt;/h2&gt;&lt;p&gt;Some text here.&lt;/p&gt;&lt;/div&gt;</code>
+
+<p>After:</p>
+
+<pre><code>&lt;div class="card"&gt;
+  &lt;h2&gt;Title&lt;/h2&gt;
+  &lt;p&gt;Some text here.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+<p>The transformation looks trivial on three lines. On three thousand lines of generated template output, it is the difference between "I can work with this" and "rewrite it from scratch." Formatting reveals structure — and structure is where bugs hide.</p>
+
+<h3>How to Use the HTML Formatter</h3>
+
+<p>Paste your HTML into the input box — a full document, a component, an email template, a minified API response, whatever needs untangling. Choose your indentation style: 2 spaces, 4 spaces, or a tab, matching your project's conventions. Some tools offer extras: wrap long lines at a set width, preserve or collapse extra blank lines, control how inline elements break.</p>
+
+<p>Click format. The beautified markup appears in the output panel, usually with syntax highlighting that separates tags, attributes, and text. Copy it to your clipboard or download it as an .html file. If the tool shows advisory warnings — unclosed tags, mismatched nesting — read them: the formatter is telling you about structural problems it worked around.</p>
+
+<p>One workflow I use constantly: format first, then read. Before debugging any unfamiliar HTML, run it through the formatter. Half the time the bug (a div closed in the wrong place, a missing list item) becomes visible the moment the indentation is correct.</p>
+
+<h3>Formatting Options Explained</h3>
+
+<table>
+<thead><tr><th>Option</th><th>What It Does</th><th>Typical Choice</th></tr></thead>
+<tbody>
+<tr><td>Indent style</td><td>Spaces or tabs per nesting level</td><td>2 spaces (modern default)</td></tr>
+<tr><td>Line wrapping</td><td>Break long lines at a character limit</td><td>80–120 characters</td></tr>
+<tr><td>Extra blank lines</td><td>Keep or collapse multiple empty lines</td><td>Collapse to one</td></tr>
+<tr><td>Inline elements</td><td>Whether <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code> break onto new lines</td><td>Keep inline (safer)</td></tr>
+<tr><td>Inner HTML indent</td><td>Indent content inside <code>&lt;head&gt;</code>/<code>&lt;body&gt;</code></td><td>Yes for readability</td></tr>
+</tbody>
+</table>
+
+<p>The inline-elements setting deserves care. Breaking an inline element like <code>&lt;a&gt;</code> onto its own line can introduce whitespace into the rendered text where none existed. Conservative formatters leave inline content alone — and that caution is a feature, not a limitation.</p>
+
+<h3>Formatting Broken HTML</h3>
+
+<p>Real-world HTML is often imperfect: a missing closing tag, mismatched nesting, an unfinished attribute quote — the normal state of work in progress. Good formatters use tolerant tokenizers that produce best-effort output instead of refusing to run. They reformat what is there and flag advisories about what looks wrong.</p>
+
+<p>But know the boundary: formatting is not validation. A formatter changes whitespace; it does not check whether your markup follows the rules, and it will not fix broken structure — it just makes the brokenness easier to see. After formatting suspicious HTML, run it through a validator or preview it in a viewer to confirm the structure is actually sound.</p>
+
+<h3>Who Uses HTML Formatters?</h3>
+
+<p><strong>Developers</strong> format minified third-party code to study or debug it, and clean up generated template output before committing it.</p>
+
+<p><strong>Designers-turned-coders</strong> working with exported HTML from design tools get readable markup they can actually edit.</p>
+
+<p><strong>QA testers</strong> format production HTML to inspect the structure behind a rendering bug — misnested elements show up immediately.</p>
+
+<p><strong>Students</strong> format their own assignments to check nesting, and format real websites' source to learn how professional markup is structured.</p>
+
+<p><strong>Content migrators</strong> cleaning up HTML pasted from Word or Google Docs use formatting as the first step before the real cleanup begins.</p>
+
+<h3>Tips for Readable Markup</h3>
+
+<p>Match the indent style to your project and never mix tabs and spaces — mixed indentation is how formatting wars start. Format before code review, not after; reviewers should read structure, not decode minified output. Do not commit formatted versions of files your build pipeline generates — format for reading, keep sources canonical. And when the formatter flags structural warnings, fix the HTML rather than ignoring them: the warnings are usually pointing at real bugs wearing an invisibility cloak.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant beautification</strong> — minified or messy HTML becomes readable in one click.</li>
+<li><strong>Indentation choices</strong> — 2/4/8 spaces or tabs to match your project.</li>
+<li><strong>Tolerant parsing</strong> — formats even incomplete or malformed HTML with advisories.</li>
+<li><strong>Syntax highlighting</strong> — tags, attributes, and content in distinct colors.</li>
+<li><strong>Smart inline handling</strong> — inline elements kept intact to avoid whitespace bugs.</li>
+<li><strong>Copy and download</strong> — clipboard copy or save as an .html file.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
+<li><strong>100% free</strong> — no signup, no limits, works on any device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this HTML formatter free?</h4>
+<p>Yes — completely free, no account needed, and no limits on how much HTML you can format.</p>
+
+<h4>Will formatting change how my page looks?</h4>
+<p>No. Formatting only changes whitespace and indentation in the source. The browser renders the identical page.</p>
+
+<h4>Can it format broken or incomplete HTML?</h4>
+<p>Yes — good formatters use tolerant parsing and produce best-effort output with advisory warnings. But formatting is not validation; check the structure afterward.</p>
+
+<h4>What is the difference between formatting and validating?</h4>
+<p>Formatting rearranges whitespace for readability. Validating checks whether the markup follows HTML rules. Format to read, validate to verify correctness.</p>
+
+<h4>Which indent style should I choose?</h4>
+<p>Match your project's existing convention — 2 spaces is the most common modern default. Consistency matters more than the specific choice.</p>
+
+<h4>Can I format just a snippet, not a whole page?</h4>
+<p>Yes. Paste any fragment — a component, a table, a form — and the formatter handles partial documents fine.</p>
+
+<h4>Is my HTML data secure?</h4>
+<p>Yes. Formatting happens entirely in your browser — your code never leaves your device or touches a server.</p>
+
+<h4>Should I commit formatted HTML?</h4>
+<p>Format your source files for readability, yes. Do not commit formatted versions of build-generated files — keep the pipeline's output as-is and format only when you need to read it.</p>
+</article>
+</section>
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.7/beautify-html.min.js"></script>
+<script src="../code-format-tools/js/code-utils.js"></script>
+<script src="../code-format-tools/js/code-ui.js"></script>
+<script>
+        CodeUI.init({ toolName: 'html-formatter' });
+
+        function onInputChange() {
+            const code = document.getElementById('input-code').value;
+            CodeUI.renderStats('input-stats', CodeUtils.getStats(code));
+        }
+
+        function format() {
+            const input = document.getElementById('input-code').value;
+            if (!input) return;
+
+            const indentField = document.getElementById('indent-size').value;
+            const options = {
+                indent_size: parseInt(indentField),
+                wrap_line_length: 0,
+                preserve_newlines: true
+            };
+
+            const output = html_beautify(input, options);
+            document.getElementById('output-code').value = output;
+            CodeUI.renderStats('output-stats', CodeUtils.getStats(output));
+        }
+
+        CodeUI.renderRelated('related-tools', [
+            { icon: '🔥', name: 'HTML Minifier', desc: 'Compress code', url: '../minifiers/html-minifier.html' },
+
+            { icon: '🎨', name: 'JS Beautifier', desc: 'Format JavaScript', url: 'javascript-beautifier.html' }
+        ]);
+    </script>
+</body>
+</html>

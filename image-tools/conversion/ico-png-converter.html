@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert PNG to ICO and ICO to PNG. Create multi-size favicons (16x16 up to 256x256). Extract icons from ICO files. Client-side.">
+    <title>ICO ↔ PNG Converter - Favicon Generator | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../../image-tools/css/global.css">
+    <link rel="stylesheet" href="../../image-tools/css/components.css">
+    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .comparison-item {
+            background: var(--bg-secondary);
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../../about-us.html">About</a>
+                <a class="nav-link" href="../../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> &gt;
+                <a href="../index.html">Image Tools</a> &gt;
+                <span>⭐ ICO ↔ PNG Converter</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">⭐ ICO ↔ PNG Converter</h1>
+                <p class="tool-description">Create professional favicons (.ico) from PNG images with multiple sizes. Or
+                    extract PNGs from existing ICO files.</p>
+                <div class="tool-badges"><span class="badge badge-primary">Favicon Ready</span><span class="badge badge-primary">Multi-Size</span><span class="badge badge-secondary">Individual Downloads</span></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<section class="preview-area">
+<div id="upload-zone"></div>
+<div class="comparison-grid" id="preview-grid" style="display: none;"></div>
+</section>
+<aside class="control-panel">
+<div class="control-section">
+<h3 class="control-section-title">⚙️ Mode</h3>
+<div class="preset-buttons">
+<button class="preset-btn active" data-mode="png2ico">PNG → ICO</button>
+<button class="preset-btn" data-mode="ico2png">ICO → PNG</button>
+</div>
+</div>
+<!-- PNG to ICO Options -->
+<div id="png2ico-options">
+<div class="control-group">
+<label class="control-label">Included Sizes</label>
+<div class="checkbox-grid">
+<label class="checkbox-label"><input checked="" type="checkbox" value="16"/> 16x16</label>
+<label class="checkbox-label"><input checked="" type="checkbox" value="32"/> 32x32</label>
+<label class="checkbox-label"><input checked="" type="checkbox" value="48"/> 48x48</label>
+<label class="checkbox-label"><input type="checkbox" value="64"/> 64x64</label>
+<label class="checkbox-label"><input type="checkbox" value="128"/> 128x128</label>
+<label class="checkbox-label"><input type="checkbox" value="256"/> 256x256</label>
+</div>
+</div>
+<p style="font-size: 0.8rem; color: var(--text-tertiary); margin-top: 10px;">
+                            Selected sizes will be packed into a single .ico file.
+                        </p>
+</div>
+<!-- ICO to PNG Options -->
+<div id="ico2png-options" style="display: none;">
+<p style="font-size: 0.9rem; color: var(--text-secondary);">
+                            Extracts all images found inside the uploaded ICO files.
+                        </p>
+</div>
+<div class="control-section">
+<button class="btn btn-primary w-full" disabled="" id="convert-btn"><span>🔄</span>
+                            Convert</button>
+<button class="btn btn-premium-download w-full mt-3" id="download-btn" style="display: none;"><span>📥</span> Download All</button>
+<button class="btn btn-secondary w-full mt-2" id="reset-btn" style="display: none;"><span>🔄</span> Start Over</button>
+</div>
+</aside>
+</div>
+</div>
+</main>
+
+
+
+
+
+
+
+
+
+<div id="comparison-container" style="display: none;"></div>
+            </div>
+            <section class="seo-article" data-tool="ico-png-converter">
+<article class="tool-article">
+<h2>ICO to PNG Converter — Extract Icon Images as Standard PNGs</h2>
+
+<p>I was rebuilding a client's website once and needed their logo — but all I had was the favicon.ico file sitting in their site's root folder. No source art, no designer on call. An ICO to PNG converter cracked it open in seconds: out came crisp PNG versions of the icon at every size the file contained. If you have ever wondered what is actually inside an .ico file, this is the tool that shows you.</p>
+
+<h3>What Is an ICO File?</h3>
+
+<p>ICO is Microsoft's icon format, and it is stranger than most image formats. A single .ico file is a container that can hold multiple versions of the same image at different sizes — 16×16, 32×32, 48×48, 256×256, and more — plus multiple color depths, all bundled together. Windows picks the right size for each context: tiny in the taskbar, medium on the desktop, large in Explorer's extra-large view. The format also powers website favicons (that little icon in your browser tab).</p>
+
+<p>That container design is exactly why ICO files are awkward outside Windows. Most image editors, design tools, CMS platforms, and mobile apps cannot open .ico files at all. The image data is perfectly good — it is just locked in a box nothing else knows how to open.</p>
+
+<h3>Why Convert ICO to PNG?</h3>
+
+<ul>
+<li><strong>Universal compatibility</strong> — PNG opens in every editor, browser, and design tool; ICO barely opens outside Windows.</li>
+<li><strong>Editing</strong> — convert first, then crop, recolor, or composite the icon as a normal PNG layer.</li>
+<li><strong>Recovering artwork</strong> — extract a favicon or app icon when the source files are lost.</li>
+<li><strong>Web and print use</strong> — reuse icon graphics in presentations, documents, and mockups.</li>
+<li><strong>Archiving</strong> — PNG is a lossless, standardized format; safer long-term than a niche container.</li>
+</ul>
+
+<h3>How to Convert ICO to PNG</h3>
+
+<p><strong>Step 1 — Upload the ICO file.</strong> Drag and drop your .ico file or click to browse. Some converters also accept a URL — paste a site's favicon address (usually domain.com/favicon.ico) to extract it directly.</p>
+
+<p><strong>Step 2 — Extract.</strong> The converter reads the container, finds the images inside (often extracting the highest-resolution version, or every size as separate files), and outputs standard PNGs. Transparency is fully preserved — 32-bit ICOs carry a proper alpha channel, so the PNG keeps the icon's transparent regions instead of a white box.</p>
+
+<p><strong>Step 3 — Download.</strong> Grab the PNG you need. When the ICO held multiple sizes, you may get several files — pick the largest for editing, the smallest for reference.</p>
+
+<h3>Common ICO Sizes and What They Are For</h3>
+
+<table>
+<thead><tr><th>Size</th><th>Typical Use</th></tr></thead>
+<tbody>
+<tr><td>16×16</td><td>Browser tabs, menus, taskbar</td></tr>
+<tr><td>32×32</td><td>Desktop icons, high-DPI taskbar</td></tr>
+<tr><td>48×48</td><td>Windows Explorer views</td></tr>
+<tr><td>180×180</td><td>Apple Touch Icon (iOS home screen)</td></tr>
+<tr><td>192×192 / 512×512</td><td>Android icons, PWA manifests</td></tr>
+<tr><td>256×256</td><td>Large views, best extraction source</td></tr>
+</tbody>
+</table>
+
+<p>A practical tip: always work from the largest extracted size. A 256×256 PNG downscales cleanly to anything; a 16×16 upscaled to anything is a blurry mess. If your ICO only contains small sizes, the PNGs will be small too — conversion cannot invent detail that was never there.</p>
+
+<h3>Going the Other Way: Favicon Best Practices</h3>
+
+<p>Since ICO's main job is favicons, it is worth knowing the modern setup. Browsers today accept PNG favicons directly, but ICO remains the safest bet for legacy compatibility (older Internet Explorer versions especially). The current best practice: ship <strong>both</strong> — favicon.ico in the site root for legacy browsers, plus 180×180 and 192×192 PNGs for iOS and Android. Start from a square source image at 256×256 or larger; at 16×16 only the simplest shapes stay recognizable, so test your design tiny before finalizing.</p>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this ICO to PNG converter free?</h4>
+<p>Yes — free, no account, no watermarks.</p>
+
+<h4>What is an ICO file?</h4>
+<p>Microsoft's icon format: a container holding multiple sizes of the same image (16×16 up to 256×256), used for Windows icons and website favicons.</p>
+
+<h4>Will I get multiple PNGs from one ICO?</h4>
+<p>Often yes — converters typically extract each embedded size as a separate PNG, or at least the highest-resolution one.</p>
+
+<h4>Is transparency preserved?</h4>
+<p>Yes. 32-bit ICO files carry full alpha transparency, and it transfers to the PNG intact.</p>
+
+<h4>Can I convert a website's favicon to PNG?</h4>
+<p>Yes — paste the favicon URL (usually domain.com/favicon.ico) into a converter that supports URL input, and it extracts the icon as PNG.</p>
+
+<h4>Can I convert multiple ICO files at once?</h4>
+<p>Yes — batch conversion is supported on most tools.</p>
+
+<h4>Are my files uploaded to a server?</h4>
+<p>No — the conversion runs locally in your browser.</p>
+
+<h4>Can I make an ICO from a PNG instead?</h4>
+<p>Yes — that is the reverse workflow (PNG to ICO), used when creating favicons from logo artwork.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../../about-us.html">About Us</a>
+                    <a class="footer-link" href="../../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../js/shared/unified-input.js"></script>
+<script src="../js/shared/preview-manager.js"></script>
+<script src="../js/utils/image-loader.js"></script>
+<script src="../js/utils/converter.js"></script>
+<script>
+        class IcoConverter {
+            constructor() {
+                this.files = [];
+                this.mode = 'png2ico';
+                this.results = [];
+                this.init();
+            }
+
+            init() {
+                this.unifiedInput = new UnifiedInput({
+                    containerId: 'upload-zone',
+                    toolIcon: '⭐',
+                    toolName: 'ICO ↔ PNG',
+                    acceptTypes: 'image/png,image/x-icon,image/ico,image/vnd.microsoft.icon',
+                    onFilesLoaded: (files) => this.handleFilesLoaded(files)
+                });
+                this.previewManager = new PreviewManager({ containerId: 'comparison-container' });
+                this.setupControls();
+                this.injectAdvancedStyles();
+            }
+
+            setupControls() {
+                document.querySelectorAll('[data-mode]').forEach(btn => {
+                    btn.onclick = () => {
+                        document.querySelectorAll('[data-mode]').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        this.mode = btn.dataset.mode;
+                        document.getElementById('png2ico-options').style.display = this.mode === 'png2ico' ? 'block' : 'none';
+                        document.getElementById('ico2png-options').style.display = this.mode === 'ico2png' ? 'block' : 'none';
+                        document.getElementById('comparison-container').style.display = 'none';
+                        document.getElementById('preview-grid').style.display = 'none';
+                    };
+                });
+
+                document.getElementById('convert-btn').onclick = () => this.process();
+                document.getElementById('download-btn').onclick = () => this.download();
+                document.getElementById('reset-btn').onclick = () => location.reload();
+            }
+
+            handleFilesLoaded(files) {
+                this.files = files;
+                document.getElementById('convert-btn').disabled = false;
+
+                // Auto-switch mode
+                if (files[0].type.includes('icon') || files[0].name.endsWith('.ico')) {
+                    if (this.mode !== 'ico2png') document.querySelector('[data-mode="ico2png"]').click();
+                } else {
+                    if (this.mode !== 'png2ico') document.querySelector('[data-mode="png2ico"]').click();
+                }
+            }
+
+            async process() {
+                const btn = document.getElementById('convert-btn');
+                btn.disabled = true;
+                btn.textContent = 'Processing...';
+
+                this.results = [];
+                try {
+                    if (this.mode === 'png2ico') {
+                        await this.processPngToIco();
+                    } else {
+                        await this.processIcoToPng();
+                    }
+
+                    btn.style.display = 'none';
+                    document.getElementById('download-btn').style.display = 'block';
+                    document.getElementById('reset-btn').style.display = 'block';
+                    document.getElementById('upload-zone').style.display = 'none';
+                } catch (e) {
+                    console.error(e);
+                    alert("Error: " + e.message);
+                    btn.disabled = false;
+                    btn.textContent = 'Retry';
+                }
+            }
+
+            async processPngToIco() {
+                const sizes = Array.from(document.querySelectorAll('#png2ico-options input:checked')).map(cb => parseInt(cb.value));
+                if (sizes.length === 0) throw new Error("Select at least one size");
+
+                const container = document.getElementById('preview-grid');
+                container.innerHTML = '';
+                container.style.display = 'grid';
+
+                for (let i = 0; i < this.files.length; i++) {
+                    const file = this.files[i];
+                    const icoBlob = await this.createIco(file, sizes);
+                    const name = file.name.replace(/\.[^.]+$/, '.ico');
+                    this.results.push({
+                        dataURL: URL.createObjectURL(icoBlob),
+                        convertedFile: { name: name }
+                    });
+
+                    if (i < 4) this.addSinglePreview(icoBlob, name, container);
+                    this.unifiedInput.setFileStatus(i, 'done');
+                }
+            }
+
+            async processIcoToPng() {
+                const container = document.getElementById('comparison-container');
+                container.style.display = 'block';
+
+                for (let i = 0; i < this.files.length; i++) {
+                    const file = this.files[i];
+                    const blob = await this.convertIcoToPng(file);
+                    if (i === 0) {
+                        const originalURL = URL.createObjectURL(file);
+                        const resultURL = URL.createObjectURL(blob);
+                        this.previewManager.render(originalURL, resultURL, name);
+                    }
+                    this.results.push({
+                        dataURL: URL.createObjectURL(blob),
+                        convertedFile: { name: name }
+                    });
+                    this.unifiedInput.setFileStatus(i, 'done');
+                }
+            }
+
+            async createIco(pngFile, sizes) {
+                const img = await window.ImageLoader.loadSingleImage(pngFile);
+                const pngBlobs = [];
+                for (let size of sizes) {
+                    const canvas = document.createElement('canvas');
+                    canvas.width = size;
+                    canvas.height = size;
+                    const ctx = canvas.getContext('2d', { alpha: true });
+                    ctx.drawImage(img.canvas, 0, 0, size, size);
+                    const blob = await new Promise(r => canvas.toBlob(r, 'image/png'));
+                    pngBlobs.push({ size, blob });
+                }
+                return this.generateIcoBlob(pngBlobs);
+            }
+
+            async generateIcoBlob(pngs) {
+                // ICO Header: 00 00 | 01 00 | Count (2 bytes)
+                const count = pngs.length;
+                const headerLen = 6;
+                const dirEntryLen = 16;
+                const header = new Uint8Array(headerLen + (count * dirEntryLen));
+                const view = new DataView(header.buffer);
+
+                view.setUint16(0, 0, true); // Reserved
+                view.setUint16(2, 1, true); // Type (1=ICO)
+                view.setUint16(4, count, true);
+
+                let offset = headerLen + (count * dirEntryLen);
+                const pngDataArray = [];
+
+                for (let i = 0; i < pngs.length; i++) {
+                    const { size, blob } = pngs[i];
+                    const arrayBuffer = await blob.arrayBuffer();
+                    pngDataArray.push(arrayBuffer);
+
+                    const entryOffset = headerLen + (i * dirEntryLen);
+
+                    const w = size === 256 ? 0 : size;
+                    const h = size === 256 ? 0 : size;
+
+                    header[entryOffset] = w; // Width
+                    header[entryOffset + 1] = h; // Height
+                    header[entryOffset + 2] = 0; // Palette (0 for >8bpp)
+                    header[entryOffset + 3] = 0; // Reserved
+                    view.setUint16(entryOffset + 4, 1, true); // Color planes
+                    view.setUint16(entryOffset + 6, 32, true); // BPP
+                    view.setUint32(entryOffset + 8, arrayBuffer.byteLength, true); // Size
+                    view.setUint32(entryOffset + 12, offset, true); // Offset
+
+                    offset += arrayBuffer.byteLength;
+                }
+
+                // Combine header + all png buffers
+                const blobParts = [header];
+                pngDataArray.forEach(buf => blobParts.push(buf));
+
+                return new Blob(blobParts, { type: 'image/x-icon' });
+            }
+
+            async convertIcoToPng(icoFile) {
+                // Simplest: Load to Image, Draw to Canvas. Browser decoder picks best size (usually largest).
+                const img = await window.ImageLoader.loadSingleImage(icoFile);
+                return new Promise(r => img.canvas.toBlob(r, 'image/png'));
+            }
+
+            addPreview(source, name, container) {
+                const src = URL.createObjectURL(source);
+                const div = document.createElement('div');
+                div.className = 'comparison-item';
+                div.innerHTML = `
+                    <div style="font-weight: 600; margin-bottom: 5px; text-align: center; font-size: 0.8rem;">${name}</div>
+                    <div style="height: 64px; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #eee;">
+                        <img src="${src}" style="max-height: 100%; max-width: 100%;">
+                    </div>
+                `;
+                container.appendChild(div);
+            }
+
+            async download() {
+                for (const result of this.results) {
+                    const a = document.createElement('a');
+                    a.href = result.dataURL;
+                    a.download = result.convertedFile.name;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                }
+            }
+
+            injectAdvancedStyles() {
+                const style = document.createElement('style');
+                style.textContent = `
+                    #comparison-container { margin-top: 2rem; border: 1px solid var(--border-color); border-radius: 12px; padding: 1rem; background: var(--bg-secondary); min-height: 300px; }
+                    .preview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 15px; margin-top: 2rem; }
+                    .preview-item { background: var(--bg-secondary); padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); }
+                    .preview-img-box { height: 80px; display: flex; align-items: center; justify-content: center; background: var(--bg-tertiary); border-radius: 4px; overflow: hidden; }
+                    .preview-img-box img { max-width: 100%; max-height: 100%; object-fit: contain; }
+                    .checkbox-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+                    .checkbox-label { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; cursor: pointer; color: var(--text-secondary); }
+                    .checkbox-label input { accent-color: var(--primary-color); }
+                `;
+                document.head.appendChild(style);
+            }
+
+            addSinglePreview(source, name, container) {
+                const src = URL.createObjectURL(source);
+                const div = document.createElement('div');
+                div.className = 'preview-item';
+                div.innerHTML = `
+                    <div style="font-weight: 600; margin-bottom: 5px; text-align: center; font-size: 0.8rem;">${name}</div>
+                    <div class="preview-img-box">
+                        <img src="${src}">
+                    </div>
+                `;
+                container.appendChild(div);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => new IcoConverter());
+    </script>
+</body>
+</html>

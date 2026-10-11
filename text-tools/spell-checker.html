@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Spell Checker | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Text & Writing</a> &gt;
+                <span>✏️ Spell Checker</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">✏️ Spell Checker</h1>
+                <p class="tool-description">Check for common spelling mistakes and auto-correct.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<div class="tool-workspace">
+<section class="input-section">
+<div class="section-header">
+<h2 class="section-title">📝 Input</h2>
+</div>
+<textarea class="text-area" id="input-text" placeholder="Enter text to check..."></textarea>
+</section>
+<section class="settings-panel">
+<button class="btn btn-primary" onclick="check()">🔍 Check Spelling</button>
+</section>
+<section class="output-section">
+<div class="section-header">
+<h2 class="section-title">✅ Corrected</h2>
+<button class="btn btn-secondary" onclick="ToolUI.copyOutput()">📋 Copy</button>
+</div>
+<textarea class="text-area" id="output-text" readonly=""></textarea>
+<div id="corrections" style="margin-top:1rem;font-size:0.875rem;"></div>
+</section>
+</div>
+            </div>
+            <section class="seo-article" data-tool="spell-checker">
+<article class="tool-article">
+<h2>Spell Checker — Catch Typos Before Anyone Else Does</h2>
+
+<p>I have a personal rule now: nothing important leaves my screen without a spell check. It was born the day I emailed forty people about a "pubic" announcement instead of a "public" one. Spell checkers exist for exactly this — they scan your text, flag words that look wrong, and suggest corrections in seconds. It is the simplest writing tool there is, and skipping it is how typos end up in print.</p>
+
+<h3>What Is a Spell Checker?</h3>
+
+<p>A spell checker is an online tool that compares every word in your text against a dictionary and highlights the ones that do not match or look suspicious. Click a flagged word to see suggested corrections, accept the right one, and move on. The whole process takes seconds and catches the typos your eyes glide over — especially in text you have already read three times.</p>
+
+<p>Modern checkers do more than dictionary lookup. They spot doubled words ("the the"), flag common misspellings with smart suggestions ranked by likelihood, and many now catch basic grammar slips too. But the core job stays the same: find the wrong words before your readers do.</p>
+
+<h3>How to Use the Spell Checker</h3>
+
+<p>Paste or type your text into the box and run the check. Misspelled words get underlined or highlighted; click each one to see suggestions and pick the correction. When the text is clean, copy it back to your document, email, or post.</p>
+
+<p>For longer documents, check in sections rather than all at once — it is easier to review suggestions carefully when you are not staring at fifty flags. And remember the golden rule: the checker suggests, you decide. It does not know your character names, your brand terms, or your industry jargon, so legitimate words will get flagged. That is normal.</p>
+
+<h3>How Spell Checking Works</h3>
+
+<p>The process is straightforward. First, the tool splits your text into individual words. Each word is looked up in a dictionary — if it is found, the checker moves on. If not, the tool generates a list of candidate corrections by measuring how "close" dictionary words are to what you typed: one swapped letter, one missing letter, one extra letter. The closest matches become the suggestions you see.</p>
+
+<p>Smarter checkers add a second layer: context. "I will meet you their" passes a pure dictionary check because "their" is a real word — but a context-aware checker notices the sentence wants "there." This is where modern tools earn their keep, catching the errors that look right at a glance.</p>
+
+<h3>What a Spell Checker Catches</h3>
+
+<table>
+<thead><tr><th>Error Type</th><th>Example</th><th>Why It Matters</th></tr></thead>
+<tbody>
+<tr><td>Simple typo</td><td>"recieve" → "receive"</td><td>The classic — everyone does it</td></tr>
+<tr><td>Doubled word</td><td>"the the report"</td><td>Invisible to tired eyes, obvious to readers</td></tr>
+<tr><td>Wrong word, right spelling</td><td>"their" vs "there" vs "they're"</td><td>Needs context-aware checking</td></tr>
+<tr><td>Capitalization slip</td><td>"i went to paris"</td><td>Looks careless in formal writing</td></tr>
+<tr><td>Missing letter</td><td>"goverment" → "government"</td><td>Common in fast typing</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Spell Checkers?</h3>
+
+<p><strong>Students</strong> clean up essays and assignments before submission — spelling errors are the easiest marks to lose and the easiest to prevent.</p>
+
+<p><strong>Professionals</strong> check emails, reports, and presentations because typos in work communication quietly undermine credibility.</p>
+
+<p><strong>Writers and bloggers</strong> run drafts through as a first pass, clearing mechanical errors before the real editing begins.</p>
+
+<p><strong>Job seekers</strong> check resumes and cover letters, where a single typo can end a candidacy.</p>
+
+<p><strong>Non-native speakers</strong> use it as a safety net while writing in a second language, catching the spelling patterns that differ from their first.</p>
+
+<h3>Tips for Reliable Spell Checking</h3>
+
+<ul>
+<li><strong>Check last, not first.</strong> Fix your ideas and structure first; spell-check the near-final draft so you are not polishing sentences you will delete.</li>
+<li><strong>Add words to your dictionary.</strong> Names, brands, and technical terms you use often should be saved so they stop getting flagged.</li>
+<li><strong>Watch homophones.</strong> Their/there/they're, your/you're, its/it's — dictionary checkers miss these; context-aware ones catch most.</li>
+<li><strong>Read it once yourself.</strong> No checker catches everything. A final human read is still the gold standard.</li>
+<li><strong>Check in your target language variant.</strong> US and UK spellings differ (color/colour, organize/organise) — make sure the checker matches your audience.</li>
+</ul>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant scanning</strong> — errors highlighted the moment you paste.</li>
+<li><strong>Smart suggestions</strong> — likely corrections ranked for one-click fixing.</li>
+<li><strong>Doubled-word detection</strong> — catches the repeats your eyes skip.</li>
+<li><strong>100% free</strong> — no signup, no limits.</li>
+<li><strong>Private by design</strong> — checking runs in your browser.</li>
+<li><strong>Works everywhere</strong> — desktop, tablet, or phone, nothing to install.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this spell checker free?</h4>
+<p>Yes. Paste your text and check as much as you like — no account or payment required.</p>
+
+<h4>How accurate are online spell checkers?</h4>
+<p>Very good for standard spelling errors — well-built checkers catch the vast majority of typos. Context-based errors like wrong homophones need a smarter, context-aware checker.</p>
+
+<h4>Why is a correct word being flagged?</h4>
+<p>Probably a proper noun, brand name, or technical term that is not in the checker's dictionary. If the word is right, ignore the flag or add it to your personal dictionary.</p>
+
+<h4>Does it check grammar too?</h4>
+<p>Basic grammar slips, yes — many spell checkers now flag simple grammar issues alongside spelling. For deep grammar analysis, use a dedicated sentence or grammar checker.</p>
+
+<h4>Can it check documents in other languages?</h4>
+<p>Many checkers support multiple languages. Make sure the tool is set to the language you are writing in, or it will flag every word.</p>
+
+<h4>Is my text uploaded to a server?</h4>
+<p>No. The check runs locally in your browser, so your text stays on your device.</p>
+
+<h4>Should I still proofread after spell checking?</h4>
+<p>Yes. Spell checkers miss wrong-word errors, tone problems, and factual mistakes. Think of it as a safety net, not a replacement for reading your own work.</p>
+
+<h4>What is the difference between a spell checker and a grammar checker?</h4>
+<p>A spell checker verifies individual words against a dictionary; a grammar checker analyzes how words work together in sentences. Many tools now do both.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="js/text-utils.js"></script>
+<script src="js/tool-ui.js"></script>
+<script>
+        ToolUI.init({ toolName: 'spell-checker' });
+        function check() {
+            const result = TextUtils.spellCheck(document.getElementById('input-text').value);
+            document.getElementById('output-text').value = result.text;
+            document.getElementById('corrections').innerHTML = result.corrections.length > 0
+                ? '<strong>Corrections:</strong> ' + result.corrections.map(c => `${c.wrong} → ${c.right}`).join(', ')
+                : '<span style="color:var(--success);">No errors found!</span>';
+        }
+    </script>
+</body>
+</html>

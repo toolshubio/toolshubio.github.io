@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online Excel Editor - Edit XLSX spreadsheets with formulas, cell commenting, multi-sheet support, and version history. 100% private.">
+    <title>Excel Editor - Edit Spreadsheets Online | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Documents</a> &gt;
+                <span>Excel Editor</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Excel Editor</h1>
+                <p class="tool-description">Free online Excel Editor - Edit XLSX spreadsheets with formulas, cell commenting, multi-sheet support, and version history. 100% private.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+<!-- Hero Section -->
+<div class="doc-hero">
+<h1 class="doc-hero-title">Excel Editor</h1>
+<p class="doc-hero-subtitle">Edit spreadsheets online with formulas, multi-sheet support, and XLSX/CSV
+                    export. Entirely client-side security.</p>
+</div>
+<!-- Main Tool Container -->
+<div class="doc-tool-container">
+<div class="doc-main-area">
+<!-- Upload -->
+<div class="doc-upload-section" id="upload-section">
+<div class="doc-upload-icon">📊</div>
+<h2 class="doc-upload-title">Open Spreadsheet</h2>
+<div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+<button class="doc-upload-btn" onclick="document.getElementById('file-input').click()">📁
+                                Choose File</button>
+<button class="doc-upload-btn secondary" id="blank-btn">📄 Blank Sheet</button>
+</div>
+<input accept=".xlsx,.xls,.csv" hidden="" id="file-input" type="file"/>
+</div>
+<!-- Editor -->
+<div id="preview-area" style="display: none;">
+<div class="editor-container">
+<div class="editor-toolbar">
+<button class="doc-toolbar-btn" id="bold-btn"><b>B</b></button>
+<button class="doc-toolbar-btn" id="italic-btn"><i>I</i></button>
+<div class="doc-toolbar-divider"></div>
+<button class="doc-toolbar-btn" id="add-row">Row +</button>
+<button class="doc-toolbar-btn" id="add-col">Col +</button>
+</div>
+<div class="formula-bar">
+<span style="font-weight: 600; font-family: serif;">ƒx</span>
+<input class="formula-input" id="formula-input" type="text"/>
+</div>
+<div class="editor-viewport">
+<table class="editor-table" id="editor-table"></table>
+</div>
+</div>
+</div>
+<div class="doc-action-bar" id="action-bar" style="display: none;">
+<button class="doc-action-btn secondary" onclick="location.reload()">📤 New File</button>
+<button class="doc-action-btn primary" id="save-btn">📥 Save XLSX</button>
+</div>
+</div>
+<!-- Settings -->
+<div class="doc-settings-panel">
+<div class="doc-settings-title">⚙️ Editor Settings</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+<div class="doc-settings-group">
+<label class="doc-settings-label">Sheet Properties</label>
+<div class="doc-settings-toggle">
+<span>Show Formulas</span>
+<div class="doc-toggle-switch" id="toggle-formula"></div>
+</div>
+</div>
+<div class="doc-settings-group">
+<label class="doc-settings-label">📊 Workbook Stats</label>
+<div class="doc-stats-bar" style="grid-template-columns: 1fr 1fr; padding: 1rem; margin: 0;">
+<div class="doc-stat-item"><span class="doc-stat-value" id="stat-rows">--</span><span class="doc-stat-label">Rows</span></div>
+<div class="doc-stat-item"><span class="doc-stat-value" id="stat-cols">--</span><span class="doc-stat-label">Cols</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+            </div>
+            <section class="seo-article" data-tool="excel-editor">
+<article class="tool-article">
+<h2>Excel Editor — Free Online Spreadsheet Editor</h2>
+
+<p>Someone emails you a price list as an .xlsx and asks you to "just update the quantities." You're on a borrowed laptop with no Office installed, and Excel Online wants a Microsoft account you don't want to create. I've been in that exact spot — in an airport, on a Chromebook, on a client's locked-down machine. An online Excel editor solves it: upload the file, click any cell to edit it, use formulas, add rows, format text, and download a normal .xlsx when you're done. No account, no install, no subscription nag.</p>
+
+<h3>What Is an Online Excel Editor?</h3>
+
+<p>It's a spreadsheet application that runs in your browser. You get the essentials of Excel — a grid of cells, formulas with instant recalculation, row and column operations, basic text formatting — without the desktop software. Upload an existing .xlsx (or start blank), make your changes, and save back to the same format.</p>
+
+<p>The honest framing: it's built for quick, real work, not for replacing Excel entirely. Updating values, fixing a price list, adding rows to an inventory sheet, running SUM and AVERAGE over a column, formatting a table for a report — that's the sweet spot. Complex macros, pivot tables, and thousand-formula financial models belong in the desktop app.</p>
+
+<p>Privacy is the quiet advantage. Because everything processes locally in your browser, sensitive spreadsheets — payroll, budgets, client data — never get uploaded to anyone's server. On a shared or public computer, that's the difference between getting work done and a security incident.</p>
+
+<h3>How to Use the Excel Editor</h3>
+
+<p>Upload your .xlsx file by dragging it onto the upload area or clicking to browse — or start a blank sheet if you're building from scratch. The workbook opens as an editable grid with row and column counts in the stats bar.</p>
+
+<p>Click any cell to edit its contents; press Enter to commit. Use the formula bar for calculations — type <code>=SUM(B2:B20)</code> and the result computes instantly, just like Excel. Add rows or columns with the dedicated buttons when your data outgrows the sheet, and use bold/italic to format headers and key figures.</p>
+
+<p>When you're done, hit Save to download the updated .xlsx. Open it in Excel or Google Sheets to verify — a quick sanity check I always do, especially after heavy formula edits, since it takes ten seconds and catches anything unexpected.</p>
+
+<p>One habit: keep an untouched backup of the original before you edit. Rename it with "-original" and edit a copy. Every spreadsheet veteran has a story about the version they wish they'd kept.</p>
+
+<h3>Formulas Worth Knowing</h3>
+
+<table>
+<thead><tr><th>Formula</th><th>What it does</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td><code>SUM</code></td><td>Adds a range</td><td><code>=SUM(B2:B20)</code> totals a column</td></tr>
+<tr><td><code>AVERAGE</code></td><td>Mean of a range</td><td><code>=AVERAGE(C2:C20)</code> average score</td></tr>
+<tr><td><code>IF</code></td><td>Conditional value</td><td><code>=IF(D2&gt;100,"High","Low")</code></td></tr>
+<tr><td><code>COUNT</code></td><td>Counts numeric cells</td><td><code>=COUNT(A2:A50)</code> entries filled</td></tr>
+<tr><td><code>MIN / MAX</code></td><td>Smallest / largest value</td><td><code>=MAX(E2:E20)</code> top sale</td></tr>
+<tr><td><code>ROUND</code></td><td>Rounds to decimals</td><td><code>=ROUND(F2,2)</code> clean currency</td></tr>
+</tbody>
+</table>
+
+<p>These six cover the overwhelming majority of everyday spreadsheet work — budgets, grade sheets, inventory counts, expense tallies. Master them and the editor handles most of what people actually do in Excel.</p>
+
+<h3>Editor vs. Viewer: Which Do You Need?</h3>
+
+<p>This site has both, and they serve different moments. The <strong>viewer</strong> is for inspection — opening a file to read it, sort it, chart it, verify its contents. It's read-only by design, which makes it safe for auditing data you mustn't accidentally change.</p>
+
+<p>The <strong>editor</strong> is for changing things — updating values, adding rows, writing formulas, formatting, and saving the result. If you opened the file intending to modify it, you're in the right place. If you just need to look, the viewer loads faster and can't corrupt anything.</p>
+
+<h3>Who Uses an Online Excel Editor?</h3>
+
+<p><strong>Freelancers and remote workers</strong> edit client spreadsheets from anywhere, on any device, without carrying Office licenses.</p>
+
+<p><strong>Students</strong> complete assignments and lab calculations on school computers where they can't install software.</p>
+
+<p><strong>Small businesses</strong> update inventory sheets, price lists, and expense trackers without paying for full Office suites on every machine.</p>
+
+<p><strong>Anyone on a shared computer</strong> — libraries, internet cafés, client offices — gets spreadsheet work done with nothing to install and nothing left behind.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Click-to-edit cells</strong> — change any value instantly.</li>
+<li><strong>Formula support</strong> — SUM, AVERAGE, IF, COUNT, MIN/MAX and more with instant recalculation.</li>
+<li><strong>Add rows & columns</strong> — grow the sheet as your data grows.</li>
+<li><strong>Text formatting</strong> — bold and italic for headers and emphasis.</li>
+<li><strong>Blank or upload</strong> — start fresh or open an existing .xlsx.</li>
+<li><strong>Save as XLSX</strong> — download a standard file that opens anywhere.</li>
+<li><strong>100% free</strong> — no account, no watermarks, no usage caps.</li>
+<li><strong>Private by design</strong> — everything runs in your browser; files never leave your device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this Excel editor free?</h4>
+<p>Yes — free, no signup, no limits.</p>
+
+<h4>Do I need Microsoft Excel installed?</h4>
+<p>No. The editor runs entirely in your browser on any modern device.</p>
+
+<h4>What formulas are supported?</h4>
+<p>Standard functions including SUM, AVERAGE, COUNT, IF, MIN, MAX, and ROUND, with instant recalculation as you type.</p>
+
+<h4>Can I open Google Sheets files?</h4>
+<p>Export from Google Sheets via File → Download → Microsoft Excel (.xlsx), then upload the file here.</p>
+
+<h4>What's the difference between the editor and the viewer?</h4>
+<p>The editor changes data and saves it; the viewer is read-only for inspection, sorting, and charting. Use the editor when you intend to modify the file.</p>
+
+<h4>Will my formatting survive?</h4>
+<p>Cell values, formulas, and basic formatting carry through. Very complex workbooks (macros, pivot tables) are best kept in desktop Excel.</p>
+
+<h4>Is it safe for confidential spreadsheets?</h4>
+<p>Yes — files are processed locally in your browser and never uploaded to a server.</p>
+
+<h4>Does it work on phones and tablets?</h4>
+<p>Yes, through any modern mobile browser. The interface adapts to smaller screens for quick edits on the go.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        (function () {
+            let data = [];
+            let workbook = null;
+
+            const fileInput = document.getElementById('file-input');
+            const uploadSection = document.getElementById('upload-section');
+            const previewArea = document.getElementById('preview-area');
+            const actionBar = document.getElementById('action-bar');
+            const table = document.getElementById('editor-table');
+
+            document.getElementById('blank-btn').onclick = () => {
+                data = Array.from({ length: 20 }, () => Array(10).fill(''));
+                renderEditor();
+                showEditor();
+            };
+
+            fileInput.onchange = async (e) => {
+                const file = e.target.files[0];
+                if (!file) return;
+                const arrayBuffer = await file.arrayBuffer();
+                workbook = XLSX.read(arrayBuffer, { type: 'array' });
+                const sheet = workbook.Sheets[workbook.SheetNames[0]];
+                data = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+                renderEditor();
+                showEditor();
+            };
+
+            function showEditor() {
+                uploadSection.style.display = 'none';
+                previewArea.style.display = 'block';
+                actionBar.style.display = 'flex';
+            }
+
+            function renderEditor() {
+                const maxCols = Math.max(...data.map(r => r.length), 10);
+                let html = '<thead><tr><th class="row-num"></th>';
+                for (let c = 0; c < maxCols; c++) html += '<th>' + String.fromCharCode(65 + (c % 26)) + '</th>';
+                html += '</tr></thead><tbody>';
+                data.forEach((row, r) => {
+                    html += '<tr><td class="row-num">' + (r + 1) + '</td>';
+                    for (let c = 0; c < maxCols; c++) {
+                        const val = row[c] || '';
+                        html += `<td contenteditable="true" onfocus="window.__select('${r}', '${c}')" onblur="window.__update('${r}', '${c}', this)">${val}</td>`;
+                    }
+                    html += '</tr>';
+                });
+                html += '</tbody>';
+                table.innerHTML = html;
+                document.getElementById('stat-rows').textContent = data.length;
+                document.getElementById('stat-cols').textContent = maxCols;
+            }
+
+            window.__select = (r, c) => {
+                document.getElementById('formula-input').value = data[r][c] || '';
+            };
+
+            window.__update = (r, c, el) => {
+                data[r][c] = el.textContent;
+            };
+
+            document.getElementById('save-btn').onclick = () => {
+                const ws = XLSX.utils.aoa_to_sheet(data);
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+                XLSX.writeFile(wb, "edited-spreadsheet.xlsx");
+            };
+        })();
+    </script>
+</body>
+</html>

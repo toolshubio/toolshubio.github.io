@@ -1,0 +1,54 @@
+.breadcrumb {
+    margin: 100px auto 1.5rem;
+    /* Added 100px top margin */
+    position: relative;
+    z-index: 10;
+}
+
+.breadcrumb-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2, 0.5rem);
+    list-style: none;
+    padding: var(--space-3, 0.75rem) var(--space-4, 1rem);
+    background: var(--bg-primary, #ffffff);
+    border-radius: var(--radius-md, 10px);
+    box-shadow: var(--shadow-sm, 0 1px 2px rgba(0, 0, 0, 0.05));
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2, 0.5rem);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.breadcrumb-item:not(:last-child)::after {
+    content: "›";
+    color: var(--text-tertiary, #94a3b8);
+    font-weight: normal;
+}
+
+.breadcrumb a {
+    color: var(--primary, #667eea);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-weight: 600;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.breadcrumb span {
+    color: var(--text-tertiary, #94a3b8);
+}
+
+.breadcrumb span:last-child {
+    font-weight: 600;
+    color: var(--text-primary);
+}

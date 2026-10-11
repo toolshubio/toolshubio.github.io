@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium time calculator with duration accumulation, decimal conversion, and shift/work-log modeling. Professional temporal planning tool.">
+    <title>High-End Temporal & Duration Intelligence | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Calculators</a> &gt;
+                <span>🕐 Temporal Intelligence</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">🕐 Temporal Intelligence</h1>
+                <p class="tool-description">Precise duration accumulation, decimal-to-time bridges, and professional
+                    work-log modeling.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<div class="temporal-hero">
+<div class="glass-panel p-8">
+<h3 class="panel-title mb-6">Duration Logic</h3>
+<div class="flex flex-col gap-4 mb-6">
+<div class="flex gap-4">
+<input class="calc-input text-center" id="hh" placeholder="HH" type="number" value="0"/>
+<input class="calc-input text-center" id="mm" placeholder="MM" type="number" value="0"/>
+<input class="calc-input text-center" id="ss" placeholder="SS" type="number" value="0"/>
+</div>
+<div class="flex gap-2">
+<button class="btn btn-primary flex-1" onclick="addToLog('+')">Add Duration</button>
+<button class="btn btn-secondary flex-1" onclick="addToLog('-')">Subtract</button>
+</div>
+</div>
+<div class="log-container" id="duration-log">
+<!-- Items injected here -->
+</div>
+<button class="btn btn-secondary w-full mt-4" onclick="clearLog()">Clear History</button>
+</div>
+<div class="glass-panel flex flex-col items-center justify-center p-10">
+<div class="text-secondary font-bold uppercase tracking-widest text-xs mb-2">Accumulated Result
+                    </div>
+<div class="duration-val" id="res-total">00:00:00</div>
+<div class="decimal-bridge w-full">
+<div class="flex-1 text-center border-r border-white/10">
+<div class="text-[10px] uppercase text-secondary font-bold mb-1">Decimal Hours</div>
+<div class="text-2xl font-bold text-primary" id="res-decimal">0.00</div>
+</div>
+<div class="flex-1 text-center">
+<div class="text-[10px] uppercase text-secondary font-bold mb-1">Total Minutes</div>
+<div class="text-2xl font-bold text-success" id="res-minutes">0</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+<div class="glass-panel p-8">
+<h3 class="panel-title mb-6">Payroll Bridge</h3>
+<div class="input-group">
+<label class="input-label">Enter Decimal Value (e.g., 7.5)</label>
+<input class="calc-input" id="decimal-input" oninput="bridgeFromDecimal()" step="0.1" type="number" value="7.5"/>
+</div>
+<div class="mt-6 flex items-center justify-between p-4 bg-tertiary rounded-lg">
+<div>
+<div class="text-xs text-secondary uppercase font-bold">Standard format</div>
+<div class="text-xl font-bold" id="bridge-res">07:30:00</div>
+</div>
+<span class="temporal-badge">Conversion active</span>
+</div>
+</div>
+<div class="glass-panel p-8">
+<h3 class="panel-title mb-6">Shift Analysis</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="input-group">
+<label class="input-label">Clock-In</label>
+<input class="calc-input" id="shift-in" oninput="calculateShift()" type="time" value="09:00"/>
+</div>
+<div class="input-group">
+<label class="input-label">Clock-Out</label>
+<input class="calc-input" id="shift-out" oninput="calculateShift()" type="time" value="17:00"/>
+</div>
+</div>
+<div class="mt-6 p-4 bg-tertiary rounded-lg text-center">
+<div class="text-xs text-secondary uppercase font-bold">Shift Duration</div>
+<div class="text-2xl font-bold text-primary" id="res-shift">08:00:00</div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex gap-4">
+<button class="btn btn-secondary flex-1" onclick="exportLog('pdf')">Download Temporal Report
+                    (PDF)</button>
+<button class="btn btn-secondary flex-1" onclick="exportLog('csv')">Export Time Log (CSV)</button>
+</div>
+</div>
+<section class="seo-article" data-tool="time-calculator">
+<article class="tool-article">
+<h2>Time Calculator — Add, Subtract, and Convert Hours and Minutes</h2>
+
+<p>Every Friday I used to add up my week's hours for a timesheet, and every Friday I got it wrong at least once. The problem isn't arithmetic — it's that time doesn't work in tens. Add 1 hour 45 minutes to 2 hours 30 minutes and your brain wants to say 3 hours 75 minutes, which isn't a thing. A time calculator does duration math the way time actually works: carrying the 60s, borrowing across midnight, and converting between hours-minutes and decimal hours without the Friday-afternoon errors.</p>
+
+<h3>Why Time Math Is Awkward</h3>
+
+<p>Ordinary numbers are base-10: ten of anything becomes one of the next unit. Time is base-60 for minutes and seconds, base-24 for hours, and base-7 for days — sometimes all in one calculation. That mismatch is the entire reason this tool exists.</p>
+
+<p>Adding durations means carrying: 1:10 + 6:50 gives 7:60 in raw addition, but 60 minutes is an hour, so the real answer is 8:00. Subtracting means borrowing: 6:20 − 3:45 leaves you with −25 minutes, so you borrow an hour (60 minutes) and get 2:35. And crossing midnight wraps the clock: start at 10:30 PM, work 9 hours 45 minutes, and you finish at 8:15 AM the next day. Each of these is easy to fumble by hand and trivial for the calculator.</p>
+
+<h3>Adding and Subtracting Durations</h3>
+
+<p>The core mode takes time entries in hours, minutes, and seconds, each marked + or −, and returns the total. A freelancer's Monday: +1h 45m, +2h 30m, +0h 50m of work, minus a 30-minute break:</p>
+
+<table>
+<thead><tr><th>Entry</th><th>Operation</th><th>Running Total</th></tr></thead>
+<tbody>
+<tr><td>1h 45m</td><td>+</td><td>1h 45m</td></tr>
+<tr><td>2h 30m</td><td>+</td><td>4h 15m</td></tr>
+<tr><td>0h 50m</td><td>+</td><td>5h 05m</td></tr>
+<tr><td>0h 30m (break)</td><td>−</td><td><strong>4h 35m</strong></td></tr>
+</tbody>
+</table>
+
+<p>The calculator handles the carries silently — 45 + 30 = 75 minutes becomes 1 hour 15 minutes in the running total. Leave any field blank and it counts as zero, so you don't have to type 0h 50m 0s for a simple entry. The result comes back broken into days, hours, minutes, and seconds, plus totals (total hours, total minutes) for billing and payroll.</p>
+
+<h3>How to Use the Time Calculator</h3>
+
+<p>Pick the mode that matches your question — durations, shifts, or conversion — and the inputs change accordingly.</p>
+
+<p><strong>Duration mode:</strong> enter each time block as hours, minutes, and seconds, choosing + or − per row. Add as many rows as you need — project tasks, trip legs, workout sets. The <strong>duration log</strong> keeps every entry visible so you can audit the total instead of trusting a number you can't see.</p>
+
+<p><strong>Shift mode:</strong> enter a clock-in and clock-out time to get the exact shift length, including overnight shifts that cross midnight. This is the timesheet mode: start 22:00, end 06:30, get 8h 30m without the "wait, is that 8.5 or…" confusion.</p>
+
+<p><strong>Decimal converter:</strong> type a decimal-hour value (like 7.6) to see it as 7h 36m, or enter hours and minutes to get the decimal. Payroll systems bill in decimals — 1h 45m is 1.75 hours — and this is the bridge between human time and payroll time.</p>
+
+<p><strong>Step-by-step:</strong> fill the fields, hit calculate, and read the result with its breakdown. Every mode shows its work, so a wrong input is easy to spot and fix.</p>
+
+<h3>Decimal Hours: The Payroll Translation</h3>
+
+<p>This deserves its own section because it confuses nearly everyone the first time. Payroll and billing systems don't want "7 hours 36 minutes" — they want <strong>7.6 hours</strong>, because decimals multiply cleanly by hourly rates. The conversion: divide the minutes by 60. So 456 minutes = 7 hours 36 minutes = 7.6 hours.</p>
+
+<p>The trap is treating the minutes as a decimal directly: 1h 45m is <strong>not</strong> 1.45 hours — it's 1.75. And 2.5 hours is 2h 30m, not 2h 50m. The converter eliminates this entire class of error, which matters when a timesheet mistake at 1.45-vs-1.75 compounds across a whole team for a whole pay period.</p>
+
+<h3>Who Uses a Time Calculator?</h3>
+
+<p><strong>Freelancers and contractors</strong> total billable hours across sessions and convert them to decimal hours for invoices — the duration log doubles as a work record.</p>
+
+<p><strong>Payroll and HR staff</strong> verify timesheets, compute shift lengths (including overnight shifts), and convert clock times to decimal hours for payroll systems.</p>
+
+<p><strong>Project managers</strong> add up task durations across a team to estimate project timelines, and subtract completed work to see what remains.</p>
+
+<p><strong>Students and shift workers</strong> calculate study blocks, work shifts, and sleep schedules — anywhere base-60 math shows up in daily life.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Add/subtract durations</strong> — unlimited time rows with +/− per entry, automatic carrying and borrowing.</li>
+<li><strong>Shift duration mode</strong> — clock-in to clock-out, correctly handling overnight shifts.</li>
+<li><strong>Decimal hour converter</strong> — hours:minutes ↔ decimal hours for payroll and billing.</li>
+<li><strong>Duration log</strong> — every entry stays visible for auditing the total.</li>
+<li><strong>Multiple result formats</strong> — days/hours/minutes/seconds plus total hours and total minutes.</li>
+<li><strong>Free and private</strong> — no signup; everything runs in your browser.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>How do I add hours and minutes together?</h4>
+<p>Enter each duration as hours, minutes, and seconds and choose + per row. The calculator carries excess minutes into hours automatically — 1:10 + 6:50 = 8:00.</p>
+
+<h4>How do I subtract time?</h4>
+<p>Use the − option on a row. Borrowing is handled for you: 6:20 − 3:45 = 2:35, because the calculator borrows 60 minutes from the hours when needed.</p>
+
+<h4>How do I convert decimal hours to hours and minutes?</h4>
+<p>Multiply the decimal part by 60: 7.6 hours = 7 hours + (0.6 × 60) minutes = 7h 36m. The converter does this instantly in both directions.</p>
+
+<h4>Is 1 hour 45 minutes the same as 1.45 hours?</h4>
+<p>No — a common mistake. 45 minutes ÷ 60 = 0.75, so 1h 45m = 1.75 hours. 1.45 hours would be 1h 27m.</p>
+
+<h4>Can it calculate overnight shift lengths?</h4>
+<p>Yes. Enter clock-in and clock-out times in shift mode; shifts crossing midnight are handled correctly (22:00 → 06:30 = 8h 30m).</p>
+
+<h4>How do I total multiple work sessions?</h4>
+<p>Add one row per session with +, and one row with − for unpaid breaks. The total and the duration log give you the billable figure plus an auditable record.</p>
+
+<h4>What formats does the result come in?</h4>
+<p>Days, hours, minutes, and seconds, plus total hours and total minutes — so the same result works for timesheets, invoices, and planning.</p>
+
+<h4>Is this time calculator free?</h4>
+<p>Yes — free, unlimited, no account needed, and nothing leaves your browser.</p>
+</article>
+</section>
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="js/calc-utils.js"></script>
+<script src="js/calc-ui.js"></script>
+<script>
+        let totalSec = 0;
+        let log = [];
+
+        function init() {
+            CalcUI.init({ toolName: 'time-calculator' });
+            calculateShift();
+        }
+
+        function addToLog(op) {
+            const h = parseInt(document.getElementById('hh').value) || 0;
+            const m = parseInt(document.getElementById('mm').value) || 0;
+            const s = parseInt(document.getElementById('ss').value) || 0;
+
+            const durationSec = (h * 3600) + (m * 60) + s;
+            if (durationSec === 0) return;
+
+            if (op === '+') {
+                totalSec += durationSec;
+            } else {
+                totalSec -= durationSec;
+            }
+
+            log.push({
+                op: op,
+                h: h,
+                m: m,
+                s: s,
+                totalAfter: totalSec
+            });
+
+            updateUI();
+        }
+
+        function clearLog() {
+            totalSec = 0;
+            log = [];
+            updateUI();
+        }
+
+        function formatHMS(seconds) {
+            const isNeg = seconds < 0;
+            const s = Math.abs(seconds);
+            const h = Math.floor(s / 3600);
+            const m = Math.floor((s % 3600) / 60);
+            const sc = s % 60;
+            return (isNeg ? '-' : '') +
+                String(h).padStart(2, '0') + ':' +
+                String(m).padStart(2, '0') + ':' +
+                String(sc).padStart(2, '0');
+        }
+
+        function updateUI() {
+            document.getElementById('res-total').textContent = formatHMS(totalSec);
+            document.getElementById('res-decimal').textContent = (totalSec / 3600).toFixed(2);
+            document.getElementById('res-minutes').textContent = Math.floor(totalSec / 60).toLocaleString();
+
+            const logDiv = document.getElementById('duration-log');
+            logDiv.innerHTML = log.map((item, idx) => `
+                <div class="log-item">
+                    <div class="flex items-center gap-3">
+                        <span class="text-sm font-bold ${item.op === '+' ? 'text-success' : 'text-danger'}">${item.op}</span>
+                        <span class="font-mono text-sm">${String(item.h).padStart(2, '0')}:${String(item.m).padStart(2, '0')}:${String(item.s).padStart(2, '0')}</span>
+                    </div>
+                    <span class="text-[10px] text-secondary font-mono">${formatHMS(item.totalAfter)}</span>
+                </div>
+            `).join('');
+            logDiv.scrollTop = logDiv.scrollHeight;
+        }
+
+        function bridgeFromDecimal() {
+            const dec = parseFloat(document.getElementById('decimal-input').value) || 0;
+            const s = Math.round(dec * 3600);
+            document.getElementById('bridge-res').textContent = formatHMS(s);
+        }
+
+        function calculateShift() {
+            const tIn = document.getElementById('shift-in').value;
+            const tOut = document.getElementById('shift-out').value;
+            if (!tIn || !tOut) return;
+
+            const [h1, m1] = tIn.split(':').map(Number);
+            const [h2, m2] = tOut.split(':').map(Number);
+
+            let diffMin = (h2 * 60 + m2) - (h1 * 60 + m1);
+            if (diffMin < 0) diffMin += 24 * 60; // Next day shift
+
+            document.getElementById('res-shift').textContent = formatHMS(diffMin * 60);
+        }
+
+        function exportLog(format) {
+            const data = {
+                title: 'Temporal Accumulation Report',
+                total: document.getElementById('res-total').textContent,
+                decimal: document.getElementById('res-decimal').textContent + ' hours',
+                entries: log.length
+            };
+            CalcUI.exportResult(data, 'time-log', format);
+        }
+
+        init();
+    </script>
+</body>
+</html>

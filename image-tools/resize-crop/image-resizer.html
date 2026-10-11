@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced Image Resizer. Resize by Pixels, Percentage, Centimeters, Millimeters, or Inches. Set DPI for print-ready images. Batch processing supported.">
+    <title>Image Resizer - Convert to CM, MM, Inch | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../../image-tools/css/global.css">
+    <link rel="stylesheet" href="../../image-tools/css/components.css">
+    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../../about-us.html">About</a>
+                <a class="nav-link" href="../../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> &gt;
+                <a href="../index.html">Image Tools</a> &gt;
+                <span>📐 Advanced Image Resizer</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">📐 Advanced Image Resizer</h1>
+                <p class="tool-description">Resize images with precision using Pixels, Percentage, or Physical units
+                    (CM, MM, Inch). Perfect for print and web.</p>
+                <div class="tool-badges"><span class="badge badge-primary">Multi-Unit</span><span class="badge badge-primary">DPI Control</span><span class="badge badge-secondary">Grid Overlay</span></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<section class="preview-area">
+<div id="preview-container" style="display: none; margin-bottom: 2rem; position: relative; max-width: 100%; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+<img id="preview-img" style="display: block; max-width: 100%; height: auto;"/>
+<div id="grid-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; display: none;">
+<!-- Grid lines generated via CSS/JS -->
+<div style="width: 33.33%; height: 100%; position: absolute; left: 33.33%; border-left: 1px solid rgba(255,255,255,0.5); border-right: 1px solid rgba(255,255,255,0.5);">
+</div>
+<div style="width: 100%; height: 33.33%; position: absolute; top: 33.33%; border-top: 1px solid rgba(255,255,255,0.5); border-bottom: 1px solid rgba(255,255,255,0.5);">
+</div>
+</div>
+</div>
+<div id="upload-zone"></div>
+</section>
+<aside class="control-panel">
+<div class="control-section">
+<h3 class="control-section-title">⚙️ Resize Settings</h3>
+<!-- Unit Selection -->
+<div class="control-group">
+<label class="control-label">Unit</label>
+<select class="form-select" id="unit-select">
+<option value="px">Pixels (px)</option>
+<option value="%">Percentage (%)</option>
+<option value="cm">Centimeters (cm)</option>
+<option value="mm">Millimeters (mm)</option>
+<option value="in">Inches (in)</option>
+</select>
+</div>
+<!-- DPI (Physical units only) -->
+<div class="control-group" id="dpi-group" style="display: none;">
+<label class="control-label">DPI (Pixels Per Inch)</label>
+<input class="form-input" id="dpi-input" max="2400" min="72" type="number" value="300"/>
+<p class="tool-description" style="font-size: 0.8rem; margin-top: 5px;">Required for
+                                physical size calculation.</p>
+</div>
+<!-- Dimensions -->
+<div class="control-group">
+<div style="display: flex; gap: 10px; align-items: flex-end;">
+<div style="flex: 1;">
+<label class="control-label">Width</label>
+<input class="form-input" id="width-input" min="1" type="number"/>
+</div>
+<div style="flex: 1;">
+<label class="control-label">Height</label>
+<input class="form-input" id="height-input" min="1" type="number"/>
+</div>
+</div>
+<div class="toggle-control" style="margin-top: 10px;">
+<span class="toggle-label">Lock Aspect Ratio</span>
+<div class="toggle-switch active" id="lock-aspect"></div>
+</div>
+</div>
+</div>
+<div class="control-section">
+<div class="toggle-control">
+<span class="toggle-label">Show Grid Overlay</span>
+<div class="toggle-switch" id="grid-toggle"></div>
+</div>
+<div class="control-group">
+<label class="control-label">Output Format &amp; Quality</label>
+<select class="form-select" id="format-select" style="margin-bottom: 10px;">
+<option value="image/jpeg">JPG</option>
+<option value="image/png">PNG</option>
+<option value="image/webp">WebP</option>
+</select>
+<input class="slider-input" id="quality-slider" max="100" min="1" type="range" value="92"/>
+<div style="text-align: right; font-size: 0.8rem; color: var(--text-tertiary);">Quality:
+                                <span id="quality-val">92%</span>
+</div>
+</div>
+</div>
+<div class="control-section">
+<button class="btn btn-primary w-full" disabled="" id="convert-btn"><span>📐</span> Resize</button>
+<button class="btn btn-premium-download w-full mt-3" id="download-all-btn" style="display: none;"><span>📥</span> Download All</button>
+<button class="btn btn-secondary w-full mt-2" id="reset-btn" style="display: none;"><span>🔄</span> Start Over</button>
+</div>
+</aside>
+</div>
+</div>
+</main>
+            </div>
+            <section class="seo-article" data-tool="image-resizer">
+<article class="tool-article">
+<h2>Image Resizer — Resize Photos to Exact Dimensions Online Free</h2>
+
+<p>"Please upload a profile photo, 400 × 400 pixels." "Listing images must be 1200 × 1200." "Your attachment exceeds 5MB." Every platform has opinions about image size, and your camera does not care about any of them. An image resizer bridges that gap: upload a photo, set the exact pixel dimensions (or a percentage), and download a file that fits the requirement. This one is free, runs in your browser, and handles exact pixels, percentages, and platform presets with an aspect-ratio lock to keep proportions honest.</p>
+
+<h3>What Is an Image Resizer?</h3>
+
+<p>A resizer changes an image's pixel dimensions — say, from a 4032 × 3024 phone photo down to a 1080 × 1080 square. It does not remove parts of the photo (that is <strong>cropping</strong>) and it does not add space around it (that is <strong>canvas extension</strong>). Every pixel of the original is still there, just represented at a different size.</p>
+
+<p>There is a distinction people miss: resizing vs. compressing. Resizing changes pixel dimensions, which usually shrinks the file. Compressing reduces file size without changing dimensions, by encoding pixel data more efficiently. For the smallest possible file — the one that loads fastest on a webpage — resize first to match your display dimensions, then compress the result. An <strong>image compressor</strong> handles the second step.</p>
+
+<p>Also worth settling: DPI. When people search for "image resolution changers" they usually mean pixel dimensions, not the DPI metadata number. DPI only matters for printing; a 1200px-wide image is 1200px wide on screen regardless of what the DPI field says.</p>
+
+<h3>How to Resize an Image Online</h3>
+
+<p><strong>Step 1 — Upload your image.</strong> Drag and drop or browse. JPG, PNG, WebP, AVIF, BMP, HEIC, GIF, and TIFF are commonly supported — the tool reads the original dimensions and shows them so you know your starting point.</p>
+
+<p><strong>Step 2 — Choose how to resize.</strong> Three modes: enter <strong>exact pixels</strong> (width × height), pick a <strong>percentage</strong> (25% for thumbnails, 50% for half-size), or grab a <strong>preset</strong> — Full HD 1920 × 1080, Instagram Square 1080 × 1080, YouTube Thumbnail 1280 × 720, OG Image 1200 × 630, Story 1080 × 1920.</p>
+
+<p><strong>Step 3 — Lock the aspect ratio.</strong> Keep it on. With the lock enabled, entering a width auto-calculates the correct height — proportions stay honest and nothing stretches. Turn it off only when a spec demands exact dimensions regardless of shape.</p>
+
+<p><strong>Step 4 — Download.</strong> The result keeps the input's format by default — a transparent PNG stays a transparent PNG — or you can convert during export (to JPG, PNG, or WebP). Adjust the quality slider for lossy formats: 90%+ for portfolio work, ~80% for everyday web use.</p>
+
+<p>Habit worth building: when the required shape does not match your photo's shape, <strong>crop</strong> to the ratio first, then resize to exact pixels. Never stretch an image to fit — distortion is always visible.</p>
+
+<h3>Common Image Sizes for Every Platform</h3>
+
+<p>These are the numbers I look up most often:</p>
+
+<table>
+<thead><tr><th>Platform</th><th>Type</th><th>Dimensions</th></tr></thead>
+<tbody>
+<tr><td>Instagram</td><td>Square post</td><td>1080 × 1080</td></tr>
+<tr><td>Instagram</td><td>Story / Reel</td><td>1080 × 1920</td></tr>
+<tr><td>Facebook</td><td>Shared image / link preview</td><td>1200 × 630</td></tr>
+<tr><td>Facebook</td><td>Cover photo</td><td>820 × 312</td></tr>
+<tr><td>X (Twitter)</td><td>In-stream photo</td><td>1200 × 675</td></tr>
+<tr><td>YouTube</td><td>Thumbnail</td><td>1280 × 720</td></tr>
+<tr><td>LinkedIn</td><td>Cover image</td><td>1584 × 396</td></tr>
+<tr><td>Pinterest</td><td>Pin</td><td>1000 × 1500</td></tr>
+<tr><td>E-commerce</td><td>Product square</td><td>800 × 800</td></tr>
+<tr><td>Web</td><td>Full HD</td><td>1920 × 1080</td></tr>
+</tbody>
+</table>
+
+<h3>Who Resizes Images?</h3>
+
+<p><strong>Job seekers and freelancers</strong> resize profile photos and portfolio pieces to the exact pixels a platform demands — one rejection from an upload form is enough to make this a habit.</p>
+
+<p><strong>Bloggers and site owners</strong> resize hero images and inline photos to match templates. Correctly-sized images are also a Core Web Vitals win — lighter pages, faster loads, better rankings.</p>
+
+<p><strong>E-commerce sellers</strong> standardize product photos to uniform squares (800 × 800 is the classic) so listings look deliberate instead of assembled.</p>
+
+<p><strong>Students and office workers</strong> shrink photos for email attachments, slide decks, and reports — a presentation with raw 12MP phone photos is a file nobody enjoys opening.</p>
+
+<p><strong>Developers</strong> resize image assets during builds, then convert to WebP — batch tools handle the volume, but single-file precision work still starts here.</p>
+
+<h3>Practical Tips for Clean Resizes</h3>
+
+<ul>
+<li><strong>Downscale, do not upscale.</strong> Shrinking loses information permanently but looks clean; enlarging resamples without adding detail and looks soft. Always work from the largest original.</li>
+<li><strong>Enable "don't enlarge."</strong> If a tool offers it, turn it on — accidental upscaling is the most common quality killer.</li>
+<li><strong>Sharpen after resizing.</strong> Downscaling softens edges slightly; a light <strong>sharpness</strong> pass on the final size restores crispness.</li>
+<li><strong>Crop to ratio first.</strong> Mismatched aspect ratios should be solved with a crop, never with stretching.</li>
+<li><strong>Match format to purpose.</strong> PNG for graphics and transparency, JPG for photos, WebP for web — converting at export saves a second step.</li>
+<li><strong>Resize before compressing.</strong> Dimensions and file size are different levers; hit the pixel target first, then squeeze the bytes.</li>
+<li><strong>Test one, then batch.</strong> For many files, dial in settings on a single image, then run the <strong>bulk resizer</strong> for the rest.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this image resizer free?</h4>
+<p>Yes — 100% free, no signup, no watermarks on your resized images. It runs entirely in your browser, so there is nothing to charge for.</p>
+
+<h4>Will resizing reduce image quality?</h4>
+<p>Downscaling with high-quality resampling (bicubic) preserves visible detail well. Upscaling cannot add detail and will look softer — always resize down from a larger original when possible.</p>
+
+<h4>How do I resize an image for Instagram?</h4>
+<p>Pick the Instagram preset: 1080 × 1080 for square posts, 1080 × 1920 for Stories/Reels. Upload, select the preset, and download — the dimensions are set for you.</p>
+
+<h4>What is the difference between resizing and compressing?</h4>
+<p>Resizing changes pixel dimensions (e.g. 4000 × 3000 → 1200 × 900). Compressing reduces file size without changing dimensions. For the smallest file, resize first, then compress.</p>
+
+<h4>Does resizing up improve quality?</h4>
+<p>No. It makes the image bigger, not better — the detail limit is set by the original. For genuine enlargement, use an AI upscaler, which reconstructs detail rather than just stretching pixels.</p>
+
+<h4>Are my images uploaded to a server?</h4>
+<p>No. Processing runs locally in your browser via the Canvas API; your files never leave your device.</p>
+
+<h4>Can I keep transparency when resizing?</h4>
+<p>Yes — the output keeps the input's format by default, so a transparent PNG stays a transparent PNG. Avoid exporting to JPG if you need the alpha channel.</p>
+
+<h4>How do I keep proportions while resizing?</h4>
+<p>Leave the aspect-ratio lock on and change just the width or the height — the other side calculates automatically. Unlocking it lets you set both freely, which stretches the image.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../../about-us.html">About Us</a>
+                    <a class="footer-link" href="../../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../js/shared/unified-input.js"></script>
+<script src="../js/shared/preview-manager.js"></script>
+<script src="../js/utils/image-loader.js"></script>
+<script src="../js/utils/converter.js"></script>
+<script>
+        class ImageResizer {
+            constructor() {
+                this.files = [];
+                this.results = [];
+                this.aspectRatio = 1;
+                this.isAspectLocked = true;
+                this.originalWidth = 0;
+                this.originalHeight = 0;
+                this.settings = {
+                    unit: 'px',
+                    dpi: 300,
+                    format: 'image/jpeg',
+                    quality: 0.92
+                };
+                this.init();
+            }
+
+            init() {
+                this.unifiedInput = new UnifiedInput({
+                    containerId: 'upload-zone',
+                    toolIcon: '📐',
+                    toolName: 'Image Resizer',
+                    acceptTypes: 'image/*',
+                    onFilesLoaded: (files) => this.handleFilesLoaded(files)
+                });
+
+                this.previewManager = new PreviewManager({ containerId: 'preview-container' });
+                this.setupControls();
+                this.injectAdvancedStyles();
+            }
+
+            setupControls() {
+                const wInput = document.getElementById('width-input');
+                const hInput = document.getElementById('height-input');
+
+                document.getElementById('unit-select').onchange = (e) => {
+                    this.settings.unit = e.target.value;
+                    const isPhysical = ['cm', 'mm', 'in'].includes(this.settings.unit);
+                    document.getElementById('dpi-group').style.display = isPhysical ? 'block' : 'none';
+                    if (this.files.length > 0) this.recalculateDimensions();
+                };
+
+                document.getElementById('dpi-input').oninput = (e) => {
+                    this.settings.dpi = parseInt(e.target.value) || 72;
+                    if (['cm', 'mm', 'in'].includes(this.settings.unit) && this.files.length > 0) this.recalculateDimensions();
+                };
+
+                wInput.oninput = (e) => {
+                    if (this.isAspectLocked && this.aspectRatio) {
+                        const val = parseFloat(e.target.value);
+                        if (val) hInput.value = (val / this.aspectRatio).toFixed(2);
+                    }
+                };
+
+                hInput.oninput = (e) => {
+                    if (this.isAspectLocked && this.aspectRatio) {
+                        const val = parseFloat(e.target.value);
+                        if (val) wInput.value = (val * this.aspectRatio).toFixed(2);
+                    }
+                };
+
+                document.getElementById('lock-aspect').onclick = (e) => {
+                    e.target.classList.toggle('active');
+                    this.isAspectLocked = e.target.classList.contains('active');
+                };
+
+                document.getElementById('grid-toggle').onclick = (e) => {
+                    e.target.classList.toggle('active');
+                    document.getElementById('grid-overlay').style.display = e.target.classList.contains('active') ? 'block' : 'none';
+                };
+
+                document.getElementById('quality-slider').oninput = (e) => {
+                    this.settings.quality = e.target.value / 100;
+                    document.getElementById('quality-val').textContent = e.target.value + '%';
+                };
+
+                document.getElementById('convert-btn').onclick = () => this.resizeAll();
+                document.getElementById('download-all-btn').onclick = () => this.downloadAll();
+                document.getElementById('reset-btn').onclick = () => location.reload();
+            }
+
+            async handleFilesLoaded(files) {
+                this.files = files;
+                if (files.length > 0) {
+                    const img = await window.ImageLoader.loadSingleImage(files[0]);
+                    this.originalWidth = img.width;
+                    this.originalHeight = img.height;
+                    this.aspectRatio = img.width / img.height;
+
+                    document.getElementById('preview-container').style.display = 'block';
+                    this.previewManager.render(img.canvas.toDataURL());
+                    this.recalculateDimensions();
+                    document.getElementById('convert-btn').disabled = false;
+                }
+            }
+
+            recalculateDimensions() {
+                const { unit, dpi } = this.settings;
+                let w = this.originalWidth;
+                let h = this.originalHeight;
+
+                if (unit === '%') { w = 100; h = 100; }
+                else if (unit === 'in') { w = this.originalWidth / dpi; h = this.originalHeight / dpi; }
+                else if (unit === 'cm') { w = (this.originalWidth / dpi) * 2.54; h = (this.originalHeight / dpi) * 2.54; }
+                else if (unit === 'mm') { w = (this.originalWidth / dpi) * 25.4; h = (this.originalHeight / dpi) * 25.4; }
+
+                document.getElementById('width-input').value = unit === 'px' ? Math.round(w) : w.toFixed(2);
+                document.getElementById('height-input').value = unit === 'px' ? Math.round(h) : h.toFixed(2);
+            }
+
+            getPixelDimensions(file) {
+                const { unit, dpi } = this.settings;
+                let wValue = parseFloat(document.getElementById('width-input').value);
+                let hValue = parseFloat(document.getElementById('height-input').value);
+
+                if (unit === '%') return { w: Math.round(file.width * (wValue / 100)), h: Math.round(file.height * (hValue / 100)) };
+                if (unit === 'in') return { w: Math.round(wValue * dpi), h: Math.round(hValue * dpi) };
+                if (unit === 'cm') return { w: Math.round((wValue / 2.54) * dpi), h: Math.round((hValue / 2.54) * dpi) };
+                if (unit === 'mm') return { w: Math.round((wValue / 25.4) * dpi), h: Math.round((hValue / 25.4) * dpi) };
+                return { w: Math.round(wValue), h: Math.round(hValue) };
+            }
+
+            async resizeAll() {
+                const btn = document.getElementById('convert-btn');
+                btn.disabled = true;
+                btn.textContent = 'Processing...';
+                this.results = [];
+
+                for (let i = 0; i < this.files.length; i++) {
+                    const file = this.files[i];
+                    const img = await window.ImageLoader.loadSingleImage(file);
+                    const dims = this.getPixelDimensions({ width: img.width, height: img.height });
+
+                    const formatStr = document.getElementById('format-select').value;
+                    const format = formatStr.split('/')[1];
+                    const result = await window.ImageConverter.convertFile(file, format, {
+                        width: dims.w,
+                        height: dims.h,
+                        quality: this.settings.quality
+                    });
+
+                    this.results.push(result);
+                    this.unifiedInput.setFileStatus(i, 'done');
+
+                    if (i === 0) {
+                        this.previewManager.render(URL.createObjectURL(file), result.dataURL, result.convertedFile.name);
+                    }
+                }
+
+                btn.style.display = 'none';
+                document.getElementById('download-all-btn').style.display = 'block';
+                document.getElementById('reset-btn').style.display = 'block';
+                document.getElementById('upload-zone').style.display = 'none';
+            }
+
+            async downloadAll() {
+                for (const result of this.results) {
+                    const a = document.createElement('a');
+                    a.href = result.dataURL;
+                    a.download = result.convertedFile.name;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    await new Promise(resolve => setTimeout(resolve, 150));
+                }
+            }
+
+            injectAdvancedStyles() {
+                const style = document.createElement('style');
+                style.textContent = `
+                    #preview-container { margin-top: 2rem; border: 1px solid var(--border-color); border-radius: 12px; padding: 1rem; background: var(--bg-secondary); min-height: 400px; position: relative; }
+                    #grid-overlay { position: absolute; inset: 0; pointer-events: none; }
+                `;
+                document.head.appendChild(style);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => new ImageResizer());
+    </script>
+</body>
+</html>

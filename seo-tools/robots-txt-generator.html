@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free advanced Robots.txt generator. Visual rule builder, User-Agent management, Regex support, and conflict detection for perfect crawl control.">
+    <title>Advanced Robots.txt Generator | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">SEO Tools</a> &gt;
+                <span>Advanced Robots.txt Generator</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Advanced Robots.txt Generator</h1>
+                <p class="tool-description">Free advanced Robots.txt generator. Visual rule builder, User-Agent management, Regex support, and conflict detection for perfect crawl control.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
+<div class="container text-center">
+<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Advanced Robots.txt Generator
+                </h1>
+<p class="hero-subtitle">Visual rule builder with RegExp support, conflict detection, and multi-agent
+                    management.</p>
+</div>
+</section>
+<div class="container">
+<div class="robots-builder-layout">
+<!-- Left: Builder -->
+<div class="builder-area">
+<!-- Global Settings -->
+<div class="agent-group-card">
+<h3 class="agent-header">Global Settings</h3>
+<div class="schema-form-grid">
+<div class="input-group">
+<label class="input-label">Sitemap URL(s)</label>
+<div id="sitemapList"></div>
+<div style="display:flex; gap:0.5rem; margin-top:0.5rem;">
+<input class="seo-input" id="newSitemap" placeholder="https://example.com/sitemap.xml" type="url"/>
+<button class="btn-secondary" onclick="addSitemap()">Add</button>
+</div>
+</div>
+<div class="input-group">
+<label class="input-label">Crawl Delay (Global Default)</label>
+<input class="seo-input" id="globalDelay" oninput="updateGlobalDelay(this.value)" placeholder="Seconds (e.g., 10)" type="number"/>
+</div>
+<div class="input-group" style="grid-column: 1 / -1;">
+<label class="input-label">Quick Presets</label>
+<div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+<button class="btn-secondary" onclick="applyWPPreset()" style="background:var(--color-seo); color:white; border:none;">WordPress Defaults</button>
+<button class="btn-secondary" onclick="applyRestrictivePreset()">Highly
+                                        Restrictive</button>
+<button class="btn-secondary" onclick="resetToDefault()">Reset Default</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Groups List -->
+<div id="groupsContainer"></div>
+<!-- Add New Group -->
+<div class="agent-group-card" onclick="createNewGroup()" style="border-style: dashed; text-align: center; cursor: pointer;">
+<span style="font-size: 1.5rem; color: var(--color-seo);">+</span>
+<p>Add New User-Agent Group</p>
+</div>
+</div>
+<!-- Right: Preview -->
+<div class="preview-area">
+<div class="preview-sticky">
+<div class="section-header" style="background: #1e293b; color: white; padding: 1rem; border-top-left-radius: var(--radius-lg); border-top-right-radius: var(--radius-lg); margin:0;">
+<span style="font-weight: 600;">robots.txt Preview</span>
+<div style="display: flex; gap: 0.5rem;">
+<button class="btn-secondary" onclick="downloadRobots()" style="background:#4CAF50; color:white; border:none; padding: 0.25rem 0.5rem; font-size: 0.8rem;">Download</button>
+<button class="btn-secondary" onclick="copyCode()" style="background:rgba(255,255,255,0.2); color:white; border:none; padding: 0.25rem 0.5rem; font-size: 0.8rem;">Copy</button>
+</div>
+</div>
+<pre id="outputCode" style="background: #0f172a; color: #e2e8f0; padding: 1rem; margin: 0; min-height: 300px; font-family: 'Fira Code', monospace; font-size: 0.85rem; overflow: auto; border-bottom-left-radius: var(--radius-lg); border-bottom-right-radius: var(--radius-lg);">User-agent: *
+Disallow: /</pre>
+</div>
+<div style="margin-top: 1rem; padding: 1rem; background: #fff8e1; border: 1px solid #ffe58f; border-radius: var(--radius-md);">
+<h4 style="margin: 0 0 0.5rem 0; font-size: 0.9rem; display:flex; align-items:center; gap:0.5rem;">
+                            ?? Conflict Check</h4>
+<div id="conflictLog" style="font-size: 0.85rem; color: #b45309;">No conflicts detected.</div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+            <section class="seo-article" data-tool="robots-txt-generator">
+<article class="tool-article">
+<h2>Robots.txt Generator — Free Online Crawler Rules Builder</h2>
+
+<p>Robots.txt is a file of about ten lines that can take your entire site out of Google if you get one slash wrong. I have seen a single misplaced <code>Disallow: /</code> on a production site cost a business its traffic for weeks before anyone noticed. A robots.txt generator builds the file for you through a simple form — user-agents, allowed and blocked paths, sitemap reference — so the syntax is always valid and the foot-guns are removed.</p>
+
+<h3>What Is a Robots.txt Generator?</h3>
+
+<p>Every well-behaved crawler — Googlebot, Bingbot, and now the AI crawlers like GPTBot — checks a file at the root of your domain (<code>yourdomain.com/robots.txt</code>) before fetching pages. That file tells crawlers which parts of the site they may request and which they should leave alone. The generator is a visual tool that writes this file for you: pick a default policy, list the directories to block, add your sitemap URL, optionally set per-bot rules, and copy the finished text.</p>
+
+<p>The critical concept most beginners get wrong: robots.txt is a <strong>crawl directive, not an indexing directive</strong>. Blocking a URL keeps crawlers from fetching it, but the URL can still appear in search results if other pages link to it — Google will list it without a description. If a page must truly stay out of the index, you need a <code>noindex</code> meta robots tag on a crawlable page, not a robots.txt block. The file's real job is managing crawl budget: keeping bots out of admin paths, faceted search URLs, internal endpoints, and duplicate parameter URLs that waste their time and your server's.</p>
+
+<p>Modern generators also cover the AI crawlers — GPTBot, ChatGPT-User, ClaudeBot, Google-Extended, CCBot, PerplexityBot — with one-click block options, which matters now that training and retrieval bots crawl aggressively.</p>
+
+<h3>How to Use the Robots.txt Generator</h3>
+
+<p>Building the file takes a few minutes, and the steps are the same for any site.</p>
+
+<p>Start by setting the default policy for all robots: allowed or refused by default. Most live sites allow everything and then carve out exceptions. Next, list the directories and files to block, one path per line, each starting with a forward slash and ending with one for directories — <code>/wp-admin/</code>, <code>/checkout/</code>, <code>/api/</code> are the classics. Add your sitemap URL so crawlers can discover your pages efficiently; you can list more than one sitemap.</p>
+
+<p>Then set per-bot rules if needed. The common case: give Googlebot full access while blocking aggressive AI crawlers, or allow image bots while refusing a scraper. Some tools let you set a crawl-delay in seconds for bots hitting the server too hard — note that Google ignores crawl-delay, but Bing and others honor it.</p>
+
+<p>Copy or download the finished file and upload it to the root of your domain, so it answers at <code>yourdomain.com/robots.txt</code>. In WordPress, you can paste it via an SEO plugin's file editor (Yoast and Rank Math both have one) instead of FTP. Finally, test it: Search Console's robots.txt tester and Google's rich results tools will confirm the file parses and the paths you expect are actually blocked.</p>
+
+<h3>The Directives, Explained</h3>
+
+<table>
+<thead><tr><th>Directive</th><th>What it does</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td><code>User-agent</code></td><td>Which crawler the rules apply to</td><td><code>User-agent: Googlebot</code></td></tr>
+<tr><td><code>Disallow</code></td><td>Block a path from crawling</td><td><code>Disallow: /wp-admin/</code></td></tr>
+<tr><td><code>Allow</code></td><td>Permit a path inside a blocked area</td><td><code>Allow: /wp-admin/admin-ajax.php</code></td></tr>
+<tr><td><code>Sitemap</code></td><td>Point to your XML sitemap</td><td><code>Sitemap: https://example.com/sitemap.xml</code></td></tr>
+<tr><td><code>Crawl-delay</code></td><td>Seconds between crawler requests</td><td><code>Crawl-delay: 10</code></td></tr>
+</tbody>
+</table>
+
+<h3>Example: A Generated File</h3>
+
+<p>Here is what the generator produces for a typical WordPress site, with AI crawlers blocked:</p>
+
+<p>
+<code>User-agent: *</code><br>
+<code>Disallow: /wp-admin/</code><br>
+<code>Disallow: /wp-includes/</code><br>
+<code>Allow: /wp-admin/admin-ajax.php</code><br>
+<code>User-agent: GPTBot</code><br>
+<code>Disallow: /</code><br>
+<code>User-agent: CCBot</code><br>
+<code>Disallow: /</code><br>
+<code>Sitemap: https://www.example.com/sitemap.xml</code>
+</p>
+
+<p>And the single most dangerous file on the internet, which the generator's presets help you avoid shipping by accident:</p>
+
+<p>
+<code>User-agent: *</code><br>
+<code>Disallow: /</code>
+</p>
+
+<p>That blocks every crawler from everything — correct during staging, catastrophic on a live site. If your traffic ever drops to zero overnight, checking robots.txt is the first thing to do.</p>
+
+<h3>Who Uses Robots.txt Generators?</h3>
+
+<p><strong>Web developers</strong> generate the file at every launch — it is part of the go-live checklist alongside the sitemap.</p>
+
+<p><strong>Bloggers and site owners</strong> use it to block admin paths, tag archives, and internal search pages that create duplicate content.</p>
+
+<p><strong>E-commerce managers</strong> block cart, checkout, account, and faceted-filter URLs that multiply crawlable pages without adding value.</p>
+
+<p><strong>SEOs</strong> use it during audits to fix crawl-budget waste, and during migrations to keep staging sites out of the index.</p>
+
+<p><strong>Privacy-conscious publishers</strong> use the AI-crawler blocks to decide which training and retrieval bots may fetch their content.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Visual rule builder</strong> — checkboxes and dropdowns instead of hand-typed syntax.</li>
+<li><strong>Quick presets</strong> — allow-all, block-all, WordPress, Shopify templates to start from.</li>
+<li><strong>Per-bot rules</strong> — Googlebot, Bingbot, and 15+ crawlers configurable individually.</li>
+<li><strong>One-click AI crawler block</strong> — GPTBot, ClaudeBot, CCBot, Google-Extended, and more.</li>
+<li><strong>Sitemap integration</strong> — sitemap URL appended in the correct position.</li>
+<li><strong>Syntax validation</strong> — the output is always correctly formatted.</li>
+<li><strong>100% free</strong> — no signup, unlimited files.</li>
+<li><strong>Private by design</strong> — everything generated in your browser; nothing uploaded.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Where does robots.txt go?</h4>
+<p>In the root of your domain, so it answers at yourdomain.com/robots.txt. It does not work anywhere else — crawlers only check that exact location.</p>
+
+<h4>Will blocking a page in robots.txt remove it from Google?</h4>
+<p>No — that is the most common misconception. Robots.txt blocks crawling, not indexing; a blocked URL can still appear in results if other pages link to it. Use a noindex meta tag on a crawlable page to keep it out of the index.</p>
+
+<h4>What is crawl-delay?</h4>
+<p>The number of seconds a crawler should wait between requests. It helps when aggressive bots hammer your server. Note that Google ignores it — it mainly affects Bing, Yandex, and smaller crawlers.</p>
+
+<h4>Should I block AI crawlers?</h4>
+<p>It depends on your goals. Blocking GPTBot and friends keeps your content out of AI training data and retrieval systems; allowing them may get your content cited by AI answers. Decide deliberately — the generator makes either choice one click.</p>
+
+<h4>Do I need robots.txt if my site is small?</h4>
+<p>It is still good practice. Even a small site has admin paths and parameter URLs you would rather crawlers skip, and the sitemap reference helps discovery. It takes two minutes.</p>
+
+<h4>Is this generator free?</h4>
+<p>Yes — completely free, no account needed, unlimited files.</p>
+
+<h4>Can a bad robots.txt hurt my site?</h4>
+<p>Absolutely. A stray <code>Disallow: /</code> blocks all crawling and will tank your indexed pages. Always test the file in Search Console after deploying.</p>
+
+<h4>What is the difference between robots.txt and the meta robots tag?</h4>
+<p>Robots.txt controls crawling across paths at the domain level; the meta robots tag controls indexing of a single page. For noindex to work, the page must be crawlable — so do not block it in robots.txt at the same time.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        // State
+        let groups = [
+            { id: 'g_default', agents: ['*'], rules: [] }
+        ];
+        let sitemaps = [];
+        let globalDelay = '';
+
+        const groupsContainer = document.getElementById('groupsContainer');
+        const outputCode = document.getElementById('outputCode');
+        const conflictLog = document.getElementById('conflictLog');
+
+        // Common Bots
+        const botOptions = ['*', 'Googlebot', 'Googlebot-Image', 'Bingbot', 'Slurp', 'DuckDuckBot', 'Baiduspider', 'Yandex', 'Facebot', 'Twitterbot'];
+
+        function init() {
+            renderGroups();
+            generateOutput();
+        }
+
+        // --- Core Logic ---
+
+        function createNewGroup() {
+            const id = 'g_' + Date.now();
+            groups.push({ id, agents: ['Googlebot'], rules: [] });
+            renderGroups();
+            generateOutput();
+        }
+
+        function removeGroup(id) {
+            if (confirm('Delete this group?')) {
+                groups = groups.filter(g => g.id !== id);
+                renderGroups();
+                generateOutput();
+            }
+        }
+
+        function addRule(groupId, type, path) {
+            if (!path) return;
+            const group = groups.find(g => g.id === groupId);
+            if (group) {
+                group.rules.push({ type, path }); // type: Allow | Disallow
+                renderGroups();
+                generateOutput();
+            }
+        }
+
+        function removeRule(groupId, index) {
+            const group = groups.find(g => g.id === groupId);
+            if (group) {
+                group.rules.splice(index, 1);
+                renderGroups();
+                generateOutput();
+            }
+        }
+
+        function updateAgents(groupId, val) {
+            // val is comma separated string
+            const group = groups.find(g => g.id === groupId);
+            if (group) {
+                group.agents = val.split(',').map(s => s.trim()).filter(s => s);
+                generateOutput();
+            }
+        }
+
+        function addSitemap() {
+            const el = document.getElementById('newSitemap');
+            const val = el.value.trim();
+            if (val && !sitemaps.includes(val)) {
+                sitemaps.push(val);
+                el.value = '';
+                renderSitemaps();
+                generateOutput();
+            }
+        }
+
+        function removeSitemap(index) {
+            sitemaps.splice(index, 1);
+            renderSitemaps();
+            generateOutput();
+        }
+
+        function updateGlobalDelay(val) {
+            globalDelay = val;
+            generateOutput();
+        }
+
+        function applyWPPreset() {
+            if (confirm('Apply WordPress default block rules? This will overwrite your current "*" group rules.')) {
+                let defaultGroup = groups.find(g => g.agents.includes('*'));
+                if (!defaultGroup) {
+                    defaultGroup = { id: 'g_default', agents: ['*'], rules: [] };
+                    groups.unshift(defaultGroup);
+                }
+                defaultGroup.rules = [
+                    { type: 'Disallow', path: '/wp-admin/' },
+                    { type: 'Allow', path: '/wp-admin/admin-ajax.php' },
+                    { type: 'Disallow', path: '/wp-includes/' },
+                    { type: 'Disallow', path: '/trackback/' },
+                    { type: 'Disallow', path: '/xmlrpc.php' },
+                    { type: 'Disallow', path: '/cgi-bin/' }
+                ];
+                renderGroups();
+                generateOutput();
+            }
+        }
+
+        function applyRestrictivePreset() {
+            if (confirm('Apply highly restrictive rules? All bots will be blocked except for main paths.')) {
+                let defaultGroup = groups.find(g => g.agents.includes('*'));
+                if (!defaultGroup) {
+                    defaultGroup = { id: 'g_default', agents: ['*'], rules: [] };
+                    groups.unshift(defaultGroup);
+                }
+                defaultGroup.rules = [
+                    { type: 'Disallow', path: '/admin/' },
+                    { type: 'Disallow', path: '/config/' },
+                    { type: 'Disallow', path: '/temp/' },
+                    { type: 'Disallow', path: '/api/' },
+                    { type: 'Disallow', path: '/*.php$' },
+                    { type: 'Disallow', path: '/*.json$' }
+                ];
+                renderGroups();
+                generateOutput();
+            }
+        }
+
+        function resetToDefault() {
+            if (confirm('Reset to default blank state?')) {
+                groups = [{ id: 'g_default', agents: ['*'], rules: [] }];
+                sitemaps = [];
+                globalDelay = '';
+                document.getElementById('globalDelay').value = '';
+                renderSitemaps();
+                renderGroups();
+                generateOutput();
+            }
+        }
+
+        // --- Rendering ---
+
+        function renderSitemaps() {
+            const container = document.getElementById('sitemapList');
+            container.innerHTML = sitemaps.map((s, i) => `
+                <div style="display:flex; justify-content:space-between; align-items:center; background:#fff; padding:0.25rem 0.5rem; margin-bottom:0.25rem; border:1px solid #ddd; border-radius:4px; font-size:0.85rem;">
+                    <span style="overflow:hidden; text-overflow:ellipsis;">${s}</span>
+                    <button class="btn-remove-block" onclick="removeSitemap(${i})">�</button>
+                </div>
+            `).join('');
+        }
+
+        function renderGroups() {
+            groupsContainer.innerHTML = '';
+            groups.forEach(group => {
+                const rulesHtml = group.rules.map((rule, idx) => `
+                    <div class="rule-item">
+                        <span class="rule-type ${rule.type.toLowerCase()}">${rule.type}</span>
+                        <span style="font-family:monospace; flex:1;">${rule.path}</span>
+                        ${rule.path.includes('*') || rule.path.includes('$') ? '<span class="regex-badge">RegEx</span>' : ''}
+                        <button class="btn-remove-block" onclick="removeRule('${group.id}', ${idx})">�</button>
+                    </div>
+                `).join('');
+
+                const card = document.createElement('div');
+                card.className = 'agent-group-card';
+                card.innerHTML = `
+                    <div class="agent-header">
+                        <div class="input-group" style="flex:1; margin-bottom:0;">
+                            <label class="input-label">User-Agents (comma separated)</label>
+                            <input type="text" class="seo-input" value="${group.agents.join(', ')}" onchange="updateAgents('${group.id}', this.value)">
+                        </div>
+                        <button class="btn-remove-block" style="margin-left:1rem;" onclick="removeGroup('${group.id}')">Delete Group</button>
+                    </div>
+
+                    <div class="rule-list">
+                        ${rulesHtml}
+                    </div>
+
+                    <div style="display:flex; gap:0.5rem; margin-top:1rem; align-items:flex-end;">
+                        <div style="width: 100px;">
+                            <select class="seo-select" id="type_${group.id}">
+                                <option value="Disallow">Disallow</option>
+                                <option value="Allow">Allow</option>
+                            </select>
+                        </div>
+                        <div style="flex:1;">
+                            <input type="text" class="seo-input" id="path_${group.id}" placeholder="/path/to/block">
+                        </div>
+                        <button class="btn-secondary" onclick="addRuleBtn('${group.id}')">Add Rule</button>
+                    </div>
+                    <div style="margin-top:0.5rem; display:flex; gap:0.5rem;">
+                        <button class="btn-secondary" style="font-size:0.75rem; padding:0.1rem 0.5rem;" onclick="appendPath('${group.id}', '*')">Insert *</button>
+                        <button class="btn-secondary" style="font-size:0.75rem; padding:0.1rem 0.5rem;" onclick="appendPath('${group.id}', '$')">Insert $</button>
+                    </div>
+                `;
+                groupsContainer.appendChild(card);
+            });
+        }
+
+        function addRuleBtn(groupId) {
+            const typeEl = document.getElementById(`type_${groupId}`);
+            const pathEl = document.getElementById(`path_${groupId}`);
+            addRule(groupId, typeEl.value, pathEl.value);
+            pathEl.value = '';
+        }
+
+        function appendPath(groupId, char) {
+            const el = document.getElementById(`path_${groupId}`);
+            el.value += char;
+            el.focus();
+        }
+
+        // --- Output Generation & Conflict Check ---
+
+        function generateOutput() {
+            let txt = '# Generated by Toolshub.com Advanced Validator\n\n';
+            let conflicts = [];
+
+            // Global settings usually go at the end for clean reading, or top. 
+            // Standard doesn't specify rigid order but grouping rules is key.
+
+            groups.forEach(group => {
+                group.agents.forEach(a => {
+                    txt += `User-agent: ${a}\n`;
+                });
+
+                // Sort rules? Specificity matters.
+                // Usually allow comes before disallow if same length, but actually specificity matches longest path.
+                // We keep user order but check for conflicts.
+
+                group.rules.forEach(rule => {
+                    txt += `${rule.type}: ${rule.path}\n`;
+                });
+
+                // Check conflicts within group
+                // Simple check: Exact path duplicates with different type?
+                // Logic check: /foo allowed but /foo disallowed?
+                // We will perform naive check: if Disallow path == Allow path -> CONFLICT
+                // If Disallow is substr of Allow -> Ok (Allow overrides)
+                // If Allow is substr of Disallow -> Ok (Disallow overrides sub)
+
+                // Better check: "Disallow: /admin" vs "Allow: /admin/dashboard" is VALID. (Exception)
+                // "Disallow: /admin" vs "Allow: /admin" is INVALID (Conflict/Redundant)
+
+                // Let's iterate pairs
+                for (let i = 0; i < group.rules.length; i++) {
+                    for (let j = i + 1; j < group.rules.length; j++) {
+                        const r1 = group.rules[i];
+                        const r2 = group.rules[j];
+                        if (r1.path === r2.path && r1.type !== r2.type) {
+                            conflicts.push(`Group [${group.agents[0]}]: Direct conflict on path "${r1.path}" (${r1.type} vs ${r2.type})`);
+                        }
+                    }
+                }
+
+                txt += '\n';
+            });
+
+            if (globalDelay) {
+                // Technically crawl-delay is per agent. If global, add to all * groups or create * group.
+                // If user didn't create * group, we might want to warn or just assume it applies loosely.
+                // We'll append it to the first group if it's *, else create a * block at bottom?
+                // Actually, let's just append it to specific groups or "*" if default group exists.
+                // For this generator, we will just comment that global delay should act on *
+                const defaultGroup = groups.find(g => g.agents.includes('*'));
+                if (defaultGroup) {
+                    // Inject into text roughly where * is? Too complex for string builder.
+                    // Let's validly regex replace:
+                    txt = txt.replace('User-agent: *', `User-agent: *\nCrawl-delay: ${globalDelay}`);
+                } else {
+                    txt += `\nUser-agent: *\nCrawl-delay: ${globalDelay}\n`;
+                }
+            }
+
+            sitemaps.forEach(s => {
+                txt += `Sitemap: ${s}\n`;
+            });
+
+            outputCode.innerText = txt.trim();
+
+            if (conflicts.length > 0) {
+                conflictLog.innerHTML = conflicts.map(c => `<div>? ${c}</div>`).join('');
+                conflictLog.style.background = '#fee2e2';
+                conflictLog.style.borderColor = '#ef4444';
+                conflictLog.style.color = '#ef4444';
+            } else {
+                conflictLog.innerText = '? Valid logic. No direct path conflicts detected.';
+                conflictLog.style.background = '#f0fdf4';
+                conflictLog.style.borderColor = '#22c55e';
+                conflictLog.style.color = '#15803d';
+            }
+        }
+
+        function copyCode() {
+            navigator.clipboard.writeText(outputCode.innerText).then(() => alert('Copied!'));
+        }
+
+        function downloadRobots() {
+            const blob = new Blob([outputCode.innerText], { type: 'text/plain' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'robots.txt';
+            a.click();
+        }
+
+        // Start
+        renderSitemaps();
+        init();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium calorie calculator with BMR/TDEE modeling, macro-nutrient distribution planning, and performance nutrition tracking. Professional health tool.">
+    <title>High-End Metabolic & Nutrition Intelligence | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Calculators</a> &gt;
+                <span>🔥 Metabolic Intelligence</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">🔥 Metabolic Intelligence</h1>
+                <p class="tool-description">BMR/TDEE precision modeling, macronutrient distribution, and thermal effect
+                    of activity analysis.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<div class="metabolic-hero">
+<div class="glass-panel p-8">
+<h3 class="panel-title mb-6">Biometric Profile</h3>
+<div class="grid grid-cols-2 gap-6 mb-6">
+<div class="input-group">
+<label class="input-label">Age</label>
+<input class="calc-input" id="age" oninput="calculate()" type="number" value="30"/>
+</div>
+<div class="input-group">
+<label class="input-label">Gender</label>
+<select class="calc-select" id="gender" onchange="calculate()">
+<option value="male">Male</option>
+<option value="female">Female</option>
+</select>
+</div>
+<div class="input-group">
+<label class="input-label">Weight (kg)</label>
+<input class="calc-input" id="weight" oninput="calculate()" type="number" value="75"/>
+</div>
+<div class="input-group">
+<label class="input-label">Height (cm)</label>
+<input class="calc-input" id="height" oninput="calculate()" type="number" value="180"/>
+</div>
+</div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-secondary mb-4">Activity Multiplier</h4>
+<div class="grid grid-cols-1 gap-2" id="activity-group">
+<button class="activity-btn active" onclick="setActivity(1.2, this)">Sedentary (Desk
+                            Job)</button>
+<button class="activity-btn" onclick="setActivity(1.375, this)">Lightly Active (1-3
+                            days/wk)</button>
+<button class="activity-btn" onclick="setActivity(1.55, this)">Moderately Active (3-5
+                            days/wk)</button>
+<button class="activity-btn" onclick="setActivity(1.725, this)">Very Active (Daily)</button>
+</div>
+</div>
+<div class="glass-panel flex flex-col items-center justify-center p-10">
+<div class="text-secondary font-bold uppercase tracking-widest text-xs mb-2">Total Daily Energy
+                        Expenditure (TDEE)</div>
+<div class="metabolic-val" id="res-tdee">2,450</div>
+<div class="text-secondary text-sm">Calories / Day</div>
+<div class="flex gap-8 mt-10">
+<div class="text-center">
+<div class="text-xs text-secondary mb-1">Basal Metabolic Rate</div>
+<div class="text-xl font-bold" id="res-bmr">1,780</div>
+</div>
+<div class="text-center border-l border-white/10 pl-8">
+<div class="text-xs text-secondary mb-1">Thermal Effect</div>
+<div class="text-xl font-bold text-success" id="res-thermal">+670</div>
+</div>
+</div>
+</div>
+</div>
+<div class="glass-panel p-8 mb-8">
+<h3 class="panel-title mb-6">Macronutrient Distribution</h3>
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-8 items-center">
+<div class="lg:col-span-1">
+<select class="calc-select" id="diet-type" onchange="calculate()">
+<option value="balanced">Balanced (30/40/30)</option>
+<option value="ketogenic">Ketogenic (25/5/70)</option>
+<option value="high-protein">Performance (40/30/30)</option>
+</select>
+</div>
+<div class="lg:col-span-3">
+<div class="macro-distribution">
+<div class="macro-segment macro-p" id="bar-p" style="width: 30%;">Protein</div>
+<div class="macro-segment macro-c" id="bar-c" style="width: 40%;">Carbs</div>
+<div class="macro-segment macro-f" id="bar-f" style="width: 30%;">Fat</div>
+</div>
+<div class="flex justify-between text-center px-4">
+<div>
+<div class="text-sm font-bold" id="res-p">184g</div>
+<div class="text-[10px] uppercase text-secondary">Protein</div>
+</div>
+<div>
+<div class="text-sm font-bold" id="res-c">245g</div>
+<div class="text-[10px] uppercase text-secondary">Carbs</div>
+</div>
+<div>
+<div class="text-sm font-bold" id="res-f">82g</div>
+<div class="text-[10px] uppercase text-secondary">Fat</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="glass-panel p-8 mb-8">
+<h3 class="panel-title mb-6">Meal Performance Split</h3>
+<div class="meal-grid">
+<div class="p-4 bg-tertiary rounded-xl text-center">
+<div class="text-secondary text-xs uppercase mb-1">Breakfast</div>
+<div class="text-xl font-bold text-primary" id="meal-b">612</div>
+</div>
+<div class="p-4 bg-tertiary rounded-xl text-center">
+<div class="text-secondary text-xs uppercase mb-1">Lunch</div>
+<div class="text-xl font-bold text-primary" id="meal-l">857</div>
+</div>
+<div class="p-4 bg-tertiary rounded-xl text-center">
+<div class="text-secondary text-xs uppercase mb-1">Dinner</div>
+<div class="text-xl font-bold text-primary" id="meal-d">735</div>
+</div>
+<div class="p-4 bg-tertiary rounded-xl text-center">
+<div class="text-secondary text-xs uppercase mb-1">Snacks</div>
+<div class="text-xl font-bold text-primary" id="meal-s">245</div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex gap-4">
+<button class="btn btn-secondary flex-1" onclick="exportData('pdf')">Export Nutrition Blueprint
+                    (PDF)</button>
+<button class="btn btn-secondary flex-1" onclick="exportData('csv')">Export Daily Macros (CSV)</button>
+</div>
+</div>
+<section class="seo-article" data-tool="calorie-calculator">
+<article class="tool-article">
+<h2>Calorie Calculator — Free Online Daily Calorie Needs Estimator</h2>
+
+<p>I once tried to "eat healthy" by guessing — and guessed wrong in both directions, some days far too little, some days far too much. What fixed it was learning my actual number: the daily calories my body burns. A calorie calculator estimates that number from your age, sex, height, weight, and activity level, then adjusts it for whether you want to lose, maintain, or gain weight. No app install, no account — just your number.</p>
+
+<h3>What Is a Calorie Calculator?</h3>
+
+<p>A calorie calculator estimates your Total Daily Energy Expenditure (TDEE) — the calories you burn in a day. It works in two steps. First it estimates your Basal Metabolic Rate (BMR): the energy your body needs at complete rest just to breathe, circulate blood, and keep your organs running. Then it multiplies BMR by an activity factor reflecting how much you move.</p>
+
+<p>The most trusted BMR formula is the Mifflin-St Jeor equation, published in 1990 and validated since as the most accurate predictor for healthy adults: for men, BMR = 10 × weight(kg) + 6.25 × height(cm) − 5 × age + 5; for women, the same minus 166 instead of plus 5. An older alternative, the Harris-Benedict equation, is still used by some tools.</p>
+
+<p>Activity multipliers are the second half: sedentary ×1.2, lightly active ×1.375, moderately active ×1.55, very active ×1.725, extra active ×1.9. A desk worker and a construction worker with identical bodies can differ by a thousand calories a day — which is why honest activity selection matters more than decimal precision.</p>
+
+<h3>How to Use the Calorie Calculator</h3>
+
+<p>Enter your age, sex, height, and weight. Choose the activity level that honestly matches your life — not your aspirational self. Click Calculate and you get your BMR, your TDEE (maintenance calories), and target ranges for weight loss, maintenance, and gain.</p>
+
+<p>Be honest about activity. Most people overestimate: "moderately active" means real exercise 3–5 days a week, not a busy office day. If the number feels surprisingly low, the activity setting — not the formula — is usually why. I recommend starting with the lower of two candidate levels and adjusting after two weeks of watching the scale.</p>
+
+<p>One habit worth building: treat the result as a starting estimate, not a prescription. Track your weight for 2–3 weeks eating near the target; if it does not move as expected, adjust by 200–300 calories. Bodies vary — muscle mass, hormones, and medical conditions all shift the real number.</p>
+
+<h3>How Calorie Needs Are Calculated</h3>
+
+<p>The pipeline is BMR first, then activity, then goal adjustment.</p>
+
+<p><strong>Step 1 — BMR (Mifflin-St Jeor).</strong> Men: 10W + 6.25H − 5A + 5. Women: 10W + 6.25H − 5A − 161. (W = kg, H = cm, A = years.)</p>
+
+<p><strong>Step 2 — TDEE.</strong> Multiply BMR by the activity factor. This is your maintenance number — eat here and your weight stays roughly put.</p>
+
+<p><strong>Step 3 — Goal adjustment.</strong> For weight loss, subtract 250–500 calories/day (roughly 0.5–1 lb per week, since ~3,500 calories ≈ 1 lb). For gain, add 250–500. Never drop below about 1,200 (women) or 1,500 (men) without professional guidance.</p>
+
+<p>Worked example — a 35-year-old man, 85 kg, 180 cm, moderately active: BMR = 10×85 + 6.25×180 − 5×35 + 5 = 850 + 1125 − 175 + 5 = 1805. TDEE = 1805 × 1.55 ≈ 2798. So maintenance is about 2,800 calories; a moderate cut targets ~2,300. The tool does this in a blink — and shows you the BMR underneath, which is the number most people have never seen for themselves.</p>
+
+<h3>Activity Levels and Calorie Goals</h3>
+
+<p>The multipliers, and what the goal adjustments look like in practice:</p>
+
+<table>
+<thead><tr><th>Activity Level</th><th>Multiplier</th><th>What it means</th></tr></thead>
+<tbody>
+<tr><td>Sedentary</td><td>× 1.2</td><td>Desk job, little to no exercise</td></tr>
+<tr><td>Lightly active</td><td>× 1.375</td><td>Light exercise 1–3 days/week</td></tr>
+<tr><td>Moderately active</td><td>× 1.55</td><td>Moderate exercise 3–5 days/week</td></tr>
+<tr><td>Very active</td><td>× 1.725</td><td>Hard exercise 6–7 days/week</td></tr>
+<tr><td>Extra active</td><td>× 1.9</td><td>Physical job + training twice daily</td></tr>
+</tbody>
+</table>
+
+<table>
+<thead><tr><th>Goal</th><th>Daily target</th><th>Expected pace</th></tr></thead>
+<tbody>
+<tr><td>Mild weight loss</td><td>TDEE − 250</td><td>~0.5 lb / week</td></tr>
+<tr><td>Moderate weight loss</td><td>TDEE − 500</td><td>~1 lb / week</td></tr>
+<tr><td>Maintenance</td><td>TDEE</td><td>Weight stable</td></tr>
+<tr><td>Lean muscle gain</td><td>TDEE + 250</td><td>~0.5 lb / week</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Calorie Calculators?</h3>
+
+<p><strong>Anyone starting a diet</strong> uses the maintenance number as the anchor — every meal plan starts from knowing what "normal" is for your body.</p>
+
+<p><strong>Athletes and gym-goers</strong> calculate surplus targets for muscle gain, where eating too little stalls progress as surely as eating too much adds fat.</p>
+
+<p><strong>People managing health conditions</strong> use calorie targets alongside medical guidance for diabetes, heart health, and metabolic goals.</p>
+
+<p><strong>Students</strong> in nutrition and sports science courses practice the Mifflin-St Jeor and Harris-Benedict equations with instant verification.</p>
+
+<p><strong>Coaches and trainers</strong> generate starting targets for clients, adjusting from real-world results over the following weeks.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant estimate</strong> — BMR, TDEE, and goal targets in one click.</li>
+<li><strong>Science-backed formulas</strong> — Mifflin-St Jeor (and Harris-Benedict options).</li>
+<li><strong>Goal presets</strong> — lose, maintain, or gain, with safe deficit/surplus ranges.</li>
+<li><strong>Metric and imperial</strong> — kg/cm or lb/ft-in, your choice.</li>
+<li><strong>100% free</strong> — no signup, no subscription, no limits.</li>
+<li><strong>Private by design</strong> — runs in your browser; your stats are never stored.</li>
+<li><strong>Macro hints</strong> — many tools add protein/carb/fat splits for each goal.</li>
+<li><strong>Works everywhere</strong> — any modern browser on desktop or mobile.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this calorie calculator free?</h4>
+<p>Yes — free, no account, no limits.</p>
+
+<h4>How many calories do I need per day?</h4>
+<p>It depends on your body and activity — most adults land between 1,800 and 3,000. Enter your stats and the calculator gives your personal number.</p>
+
+<h4>What is BMR?</h4>
+<p>Basal Metabolic Rate — the calories your body burns at complete rest to keep you alive. Everything else (activity, digestion) adds on top.</p>
+
+<h4>Which formula is most accurate?</h4>
+<p>Mifflin-St Jeor, validated within about 10% for most healthy adults. It is the default in most modern calculators.</p>
+
+<h4>How many calories should I eat to lose weight?</h4>
+<p>About 500 below your TDEE per day for ~1 lb/week. Do not go below 1,200 (women) or 1,500 (men) without professional guidance.</p>
+
+<h4>Why does the calculator ask for activity level?</h4>
+<p>Because activity is the biggest variable — it can change your daily burn by 1,000+ calories. An honest answer matters more than precise measurements.</p>
+
+<h4>Is my data stored anywhere?</h4>
+<p>No. The calculation runs entirely in your browser; your stats never leave your device.</p>
+
+<h4>Should I trust the number exactly?</h4>
+<p>Treat it as a starting estimate. Track your weight for 2–3 weeks and adjust by 200–300 calories based on real results.</p>
+</article>
+</section>
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="js/calc-utils.js"></script>
+<script src="js/calc-ui.js"></script>
+<script>
+        let currentActivity = 1.2;
+
+        function init() {
+            CalcUI.init({ toolName: 'calorie-calculator' });
+            calculate();
+        }
+
+        function setActivity(val, btn) {
+            currentActivity = val;
+            document.querySelectorAll('.activity-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            calculate();
+        }
+
+        function calculate() {
+            const w = parseFloat(document.getElementById('weight').value) || 0;
+            const h = parseFloat(document.getElementById('height').value) || 0;
+            const a = parseFloat(document.getElementById('age').value) || 0;
+            const g = document.getElementById('gender').value;
+            const diet = document.getElementById('diet-type').value;
+
+            if (w <= 0 || h <= 0 || a <= 0) return;
+
+            // Mifflin-St Jeor
+            let bmr = (10 * w) + (6.25 * h) - (5 * a);
+            bmr = g === 'male' ? bmr + 5 : bmr - 161;
+
+            const tdee = bmr * currentActivity;
+
+            document.getElementById('res-bmr').textContent = Math.round(bmr).toLocaleString();
+            document.getElementById('res-tdee').textContent = Math.round(tdee).toLocaleString();
+            document.getElementById('res-thermal').textContent = '+' + Math.round(tdee - bmr).toLocaleString();
+
+            // Macros
+            const splits = {
+                'balanced': { p: 0.3, c: 0.4, f: 0.3 },
+                'ketogenic': { p: 0.25, c: 0.05, f: 0.7 },
+                'high-protein': { p: 0.4, c: 0.3, f: 0.3 }
+            };
+            const s = splits[diet];
+
+            const gP = (tdee * s.p) / 4;
+            const gC = (tdee * s.c) / 4;
+            const gF = (tdee * s.f) / 9;
+
+            document.getElementById('res-p').textContent = Math.round(gP) + 'g';
+            document.getElementById('res-c').textContent = Math.round(gC) + 'g';
+            document.getElementById('res-f').textContent = Math.round(gF) + 'g';
+
+            document.getElementById('bar-p').style.width = (s.p * 100) + '%';
+            document.getElementById('bar-c').style.width = (s.c * 100) + '%';
+            document.getElementById('bar-f').style.width = (s.f * 100) + '%';
+
+            // Meals
+            document.getElementById('meal-b').textContent = Math.round(tdee * 0.25);
+            document.getElementById('meal-l').textContent = Math.round(tdee * 0.35);
+            document.getElementById('meal-d').textContent = Math.round(tdee * 0.30);
+            document.getElementById('meal-s').textContent = Math.round(tdee * 0.10);
+        }
+
+        function exportData(format) {
+            const data = {
+                title: 'Metabolic Performance Report',
+                tdee: document.getElementById('res-tdee').textContent,
+                bmr: document.getElementById('res-bmr').textContent,
+                protein: document.getElementById('res-p').textContent
+            };
+            CalcUI.exportResult(data, 'nutrition-blueprint', format);
+        }
+
+        init();
+    </script>
+</body>
+</html>

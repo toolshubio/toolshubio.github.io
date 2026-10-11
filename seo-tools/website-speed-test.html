@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced Website Speed Meter - Get Lab & Field performance data, Core Web Vitals, and technical SEO insights using Google's official infrastructure.">
+    <title>Website Speed Meter Pro | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">SEO Tools</a> &gt;
+                <span>Website Speed Meter Pro</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Website Speed Meter Pro</h1>
+                <p class="tool-description">Advanced Website Speed Meter - Get Lab & Field performance data, Core Web Vitals, and technical SEO insights using Google's official infrastructure.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main" style="margin-top: 100px;">
+<div class="container">
+<!-- Manual breadcrumb removed as shared script is now used -->
+<div class="doc-hero">
+<h1 class="doc-hero-title">Website Speed Meter Pro</h1>
+<p class="doc-hero-subtitle">High-fidelity performance analysis using Google Lighthouse Engine and real
+                    user data (CruX).</p>
+</div>
+<div class="speed-dashboard">
+<!-- Input Panel -->
+<div class="url-input-container">
+<div class="url-input-wrapper">
+<span class="url-icon">🌐</span>
+<input autocomplete="url" class="url-input" id="url-input" placeholder="https://example.com" required="" type="url"/>
+</div>
+<button class="analyze-btn" id="analyze-btn">
+<span>🚀</span> Analyze Speed
+                    </button>
+<button class="analyze-btn" id="print-btn" style="background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-color); display: none;">
+<span>🖨️</span> Report
+                    </button>
+</div>
+<!-- Results Panel -->
+<div class="results-container" id="results-area">
+<div class="device-tabs">
+<button class="device-tab active" data-strategy="mobile">📱 Mobile</button>
+<button class="device-tab" data-strategy="desktop">💻 Desktop</button>
+</div>
+<div id="dynamic-content">
+<!-- Success or Error UI injected here -->
+</div>
+</div>
+<!-- History -->
+<div class="history-section" id="history-section" style="display: none;">
+<h3>📜 Analysis History</h3>
+<div class="history-list" id="history-list"></div>
+</div>
+</div>
+</div>
+</main>
+
+ Loading UI 
+<div class="loading-overlay" id="loading-overlay">
+<div class="progress-card">
+<h2 id="p-status">Initiating Analysis...</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">Connecting to Google's performance
+                infrastructure</p>
+<div class="p-bar">
+<div class="p-fill" id="p-fill"></div>
+</div>
+<div class="step-log">
+<div class="step" id="step-0">
+<div class="s-spin"></div><span class="s-check">✅</span><span class="s-cross">❌</span> Handshaking
+                    with PageSpeed API...
+                </div>
+<div class="step" id="step-1">
+<div class="s-spin"></div><span class="s-check">✅</span><span class="s-cross">❌</span> Mobile Audit
+                    (Strategy: Mobile)
+                </div>
+<div class="step" id="step-2">
+<div class="s-spin"></div><span class="s-check">✅</span><span class="s-cross">❌</span> Desktop Audit
+                    (Strategy: Desktop)
+                </div>
+<div class="step" id="step-3">
+<div class="s-spin"></div><span class="s-check">✅</span><span class="s-cross">❌</span> Finalizing
+                    Detailed Report...
+                </div>
+</div>
+<p id="p-fallback-msg" style="margin-top: 2rem; font-size: 0.85rem; color: #ffa400; display: none; background: rgba(255,164,0,0.1); padding: 0.75rem; border-radius: 8px;">
+                ⚠️ Live audit is slow; attempting real-user data fallback...
+            </p>
+</div>
+</div>
+ Templates 
+<template id="tmpl-success">
+<div class="perf-header">
+<div class="vitals-summary">
+<div class="data-source-badge" id="source-badge"></div>
+<h2 id="v-title">Performance Score</h2>
+<p id="v-desc">This score represents the overall user experience based on Lighthouse metrics.</p>
+<div style="margin-top: 1.5rem; display: flex; gap: 1rem; font-size: 0.8rem; font-weight: 600;">
+<span style="color: var(--score-poor)">● 0-49 POOR</span>
+<span style="color: var(--score-average)">● 50-89 AVG</span>
+<span style="color: var(--score-good)">● 90-100 GOOD</span>
+</div>
+</div>
+<div class="gauge-wrapper">
+<div class="gauge-container">
+<svg class="gauge-svg" viewbox="0 0 200 200">
+<circle class="gauge-bg" cx="100" cy="100" r="85"></circle>
+<circle class="gauge-progress" cx="100" cy="100" id="g-progress" r="85"></circle>
+</svg>
+<div class="gauge-center">
+<div class="score-num" id="s-num">--</div>
+<div class="score-tag">SCORE</div>
+</div>
+</div>
+</div>
+</div>
+<div class="metrics-grid" id="m-grid"></div>
+<div class="category-scores" id="cat-scores" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; justify-content: center;"></div>
+<div class="screenshot-section" id="pwa-status" style="display: none; border-left: 5px solid var(--color-seo);">
+<h3 style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                📱 PWA Readiness &amp; Mobile Health
+            </h3>
+<div id="pwa-checklist" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+<!-- PWA checks injected here -->
+</div>
+</div>
+<div class="screenshot-section" id="screenshot-section" style="display: none;">
+<h3 style="margin-bottom: 1.5rem;">📸 Page Screenshot</h3>
+<div class="screenshot-container">
+<img alt="Page Screenshot" class="screenshot-img" id="full-screenshot" src=""/>
+</div>
+</div>
+<div class="audit-container" id="a-container">
+<div class="audit-head">
+<h3>💡 Comprehensive Audit Report</h3>
+<div class="badge badge-secondary" id="a-count">0 Issues Detected</div>
+</div>
+<div class="table-responsive" style="overflow-x: auto;">
+<table class="audit-table" style="width: 100%; border-collapse: collapse; min-width: 1000px;">
+<thead>
+<tr style="background: var(--bg-tertiary); text-align: left;">
+<th style="padding: 1rem; border-bottom: 2px solid var(--border-color);">Screenshot / Impact
+                            </th>
+<th style="padding: 1rem; border-bottom: 2px solid var(--border-color);">Feature / Check
+                            </th>
+<th style="padding: 1rem; border-bottom: 2px solid var(--border-color);">Metric / Indicator
+                            </th>
+<th style="padding: 1rem; border-bottom: 2px solid var(--border-color);">Location</th>
+<th style="padding: 1rem; border-bottom: 2px solid var(--border-color);">Fix Recommendation
+                            </th>
+<th style="padding: 1rem; border-bottom: 2px solid var(--border-color);">Severity</th>
+</tr>
+</thead>
+<tbody id="a-list"></tbody>
+</table>
+</div>
+</div>
+</template>
+<template id="tmpl-error">
+<div class="error-board">
+<div style="font-size: 4rem; margin-bottom: 1rem;">🛰️</div>
+<h2 style="color: var(--score-poor); margin-bottom: 1rem;">Complete Analysis Timeout</h2>
+<p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem auto;">
+                Google's engine failed to paint the page content (NO_FCP). This usually happens if the site blocks bots
+                or the server is unresponsive.
+            </p>
+<div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+<button class="analyze-btn" onclick="location.reload()" style="background: var(--bg-tertiary); color: var(--text-primary); border: 1px solid var(--border-color);">
+                    Try New URL
+                </button>
+<button class="analyze-btn" id="retry-light-btn" onclick="retryLight()" style="background: var(--color-seo); color: white;">
+                    🚀 Try Light Audit (Fast)
+                </button>
+</div>
+</div>
+</template>
+            </div>
+            <section class="seo-article" data-tool="website-speed-test">
+<article class="tool-article">
+<h2>Website Speed Test — Free Core Web Vitals Checker</h2>
+
+<p>I once watched a client lose a third of their checkout traffic after adding a chat widget and two tracking scripts. Nothing looked different — the page just took four seconds to become usable instead of one. A website speed test would have caught it the day it shipped. Enter a URL, get your load time plus the three Core Web Vitals Google uses as ranking signals, and see exactly what is slowing the page down.</p>
+
+<h3>What Is a Website Speed Test?</h3>
+
+<p>A speed test loads your page the way a visitor's browser would and measures what matters: how fast the main content appears, how quickly the page responds to input, and how stable the layout is while loading. The headline metrics are Google's <strong>Core Web Vitals</strong>: <strong>LCP (Largest Contentful Paint)</strong> — how fast the largest visible element renders; <strong>INP (Interaction to Next Paint)</strong> — how responsive the page feels during clicks and taps; and <strong>CLS (Cumulative Layout Shift)</strong> — how much the layout jumps around while loading. Google uses all three as ranking signals.</p>
+
+<p>Good tests report two kinds of data. <strong>Field data</strong> comes from real Chrome users over the past 28 days (the Chrome User Experience Report) — this is what Google actually ranks on. <strong>Lab data</strong> comes from a controlled simulated test — useful for diagnosing problems on new or low-traffic pages where field data does not exist yet. The best free tools (PageSpeed Insights at pagespeed.web.dev) show both, for mobile and desktop separately, plus a list of specific fixes with estimated time savings.</p>
+
+<h3>How to Use the Website Speed Test</h3>
+
+<p>Running the test is easy; reading it correctly is the skill.</p>
+
+<p>Enter your page's full URL and run the test — it takes 10–30 seconds. Check the <strong>mobile</strong> tab first: Google uses mobile-first indexing, and mobile scores are almost always worse than desktop. Look at the Core Web Vitals assessment badge — Pass or Fail — then the individual numbers: LCP should be 2.5 seconds or under, INP 200 milliseconds or under, CLS 0.1 or under.</p>
+
+<p>Then read the diagnostics below the scores. The tool lists specific opportunities — unoptimized images, unused JavaScript, render-blocking resources, missing text compression — each with an estimated savings. Work the list in order of impact, not ease: a 2-second image fix beats five 50-millisecond script tweaks. After each round of fixes, re-run the test to confirm the improvement in lab data.</p>
+
+<p>For the real verdict, check Google Search Console's Core Web Vitals report (Experience section) a few weeks later. It shows field data across your URLs, grouped by issue — that is the measurement that actually moves rankings, and it updates over a rolling 28-day window.</p>
+
+<h3>The Three Core Web Vitals, Plainly</h3>
+
+<table>
+<thead><tr><th>Metric</th><th>What it measures</th><th>Good</th><th>Needs work</th><th>Poor</th></tr></thead>
+<tbody>
+<tr><td><strong>LCP</strong> — Largest Contentful Paint</td><td>When the main content becomes visible</td><td>≤ 2.5s</td><td>2.5–4.0s</td><td>&gt; 4.0s</td></tr>
+<tr><td><strong>INP</strong> — Interaction to Next Paint</td><td>How fast the page responds to clicks/taps</td><td>≤ 200ms</td><td>200–500ms</td><td>&gt; 500ms</td></tr>
+<tr><td><strong>CLS</strong> — Cumulative Layout Shift</td><td>How much the layout jumps while loading</td><td>≤ 0.1</td><td>0.1–0.25</td><td>&gt; 0.25</td></tr>
+</tbody>
+</table>
+
+<p>The common fixes map neatly to metrics: LCP is usually images (compress them, convert to WebP, never lazy-load the hero) and slow servers (TTFB — time to first byte — is often a hosting problem). INP is usually heavy JavaScript — defer non-essential scripts and audit plugins. CLS is usually images without width/height attributes and ads or widgets loading without reserved space. Fix in the order LCP → INP → CLS and you will cover the biggest ranking impact first.</p>
+
+<h3>Who Uses Website Speed Tests?</h3>
+
+<p><strong>Site owners</strong> run them to find out why traffic or conversions dipped — speed regressions are silent killers.</p>
+
+<p><strong>Developers</strong> use them at every deploy, catching the chat widget or tracking script that tanks performance before it ships.</p>
+
+<p><strong>E-commerce managers</strong> test product and checkout pages, where every extra second of load time measurably costs sales.</p>
+
+<p><strong>Bloggers</strong> check their themes and plugins — a bloated theme is the most common speed problem on WordPress.</p>
+
+<p><strong>SEOs</strong> include speed in every technical audit, since Core Web Vitals are a direct ranking signal and clients understand "your site is slow" better than most findings.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Core Web Vitals scores</strong> — LCP, INP, and CLS with pass/fail thresholds.</li>
+<li><strong>Mobile and desktop tests</strong> — separate scores for each, since they differ wildly.</li>
+<li><strong>Field + lab data</strong> — real-user metrics alongside controlled diagnostics.</li>
+<li><strong>Actionable opportunities</strong> — specific fixes ranked by estimated time savings.</li>
+<li><strong>Performance, SEO, accessibility scores</strong> — the full Lighthouse picture in one run.</li>
+<li><strong>Waterfall analysis</strong> — see exactly which resource blocks what.</li>
+<li><strong>100% free</strong> — Google's own tools cost nothing and need no signup.</li>
+<li><strong>Repeatable</strong> — re-run after every fix to verify the gain.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is a good website speed?</h4>
+<p>Aim for LCP under 2.5 seconds, INP under 200 milliseconds, and CLS under 0.1. Those are Google's "Good" thresholds for Core Web Vitals — the band where speed stops costing you rankings.</p>
+
+<h4>Does page speed affect SEO?</h4>
+<p>Yes — Core Web Vitals are a direct Google ranking signal. Beyond that, slow pages lose visitors before they convert: speed affects both rankings and revenue.</p>
+
+<h4>What is the difference between field data and lab data?</h4>
+<p>Field data comes from real Chrome users over 28 days and determines your ranking signal. Lab data comes from a controlled instant test and is best for diagnosing problems. Fix using lab data; judge using field data.</p>
+
+<h4>Why is my mobile score worse than desktop?</h4>
+<p>Phones have slower processors, slower networks, and smaller screens — the test simulates a mid-range device on a mobile connection. Since Google ranks on mobile experience, the mobile score is the one that matters.</p>
+
+<h4>What is TTFB?</h4>
+<p>Time To First Byte — how long your server takes to start responding. It is mostly a hosting problem, not a code problem. A slow TTFB on shared hosting often means an overloaded server.</p>
+
+<h4>Will the test work on a new site with no traffic?</h4>
+<p>Lab data works immediately — you get a full diagnostic. Field data appears once enough real Chrome users visit, which can take weeks on a new site. Use lab data until then.</p>
+
+<h4>Why did the test fail for my site?</h4>
+<p>Usually the URL is unreachable: the site blocks crawlers, requires a login, is not publicly reachable, or is extremely slow to respond. Double-check the full URL and try again.</p>
+
+<h4>Is this speed test free?</h4>
+<p>Yes — Google's PageSpeed Insights is free with no signup, and most third-party speed tools offer free tiers.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        const API_KEY = 'AIzaSyBKfScKJX1T2POTmF--IHcRbGtG8reqJQo';
+        const ENDPOINT = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
+
+        let appState = {
+            busy: false,
+            data: { mobile: null, desktop: null },
+            strategy: 'mobile'
+        };
+
+        const DOM = {
+            input: document.getElementById('url-input'),
+            btn: document.getElementById('analyze-btn'),
+            overlay: document.getElementById('loading-overlay'),
+            fill: document.getElementById('p-fill'),
+            results: document.getElementById('results-area'),
+            content: document.getElementById('dynamic-content')
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadHistory();
+            DOM.btn.addEventListener('click', startProcess);
+            DOM.input.addEventListener('keypress', e => e.key === 'Enter' && startProcess());
+
+            document.querySelectorAll('.device-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    if (appState.busy) return;
+                    document.querySelectorAll('.device-tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    appState.strategy = tab.dataset.strategy;
+                    renderView(appState.strategy);
+                });
+            });
+        });
+
+        async function startProcess() {
+            const url = DOM.input.value.trim();
+            if (!isValidUrl(url)) return alert("Please enter a valid public URL.");
+
+            appState.busy = true;
+            appState.light = false; // Reset to full audit by default
+            toggleOverlay(true);
+            resetSteps();
+            DOM.results.classList.remove('active');
+
+            try {
+                // Step 0: Warmup
+                setStep(0, 'active');
+                await wait(600);
+                setStep(0, 'done');
+                updateProgress(10);
+
+                // Sequential Audits to reduce load
+                setStep(1, 'active');
+                const mob = await fetchWrapped(url, 'mobile', 1);
+                appState.data.mobile = mob;
+                updateProgress(50);
+                await wait(1000); // Breathe between requests
+
+                setStep(2, 'active');
+                const dsk = await fetchWrapped(url, 'desktop', 2);
+                appState.data.desktop = dsk;
+                updateProgress(90);
+
+                setStep(3, 'active');
+                await wait(400);
+
+                // Resilience Logic: Check if we need retry
+                if (!mob.hasData && !dsk.hasData) {
+                    const isTimeoutOrNoFcp = mob.error === 'AbortError' || dsk.error === 'AbortError' || mob.error === 'NO_FCP' || dsk.error === 'NO_FCP';
+
+                    if (isTimeoutOrNoFcp) {
+                        // Attempt AUTO FALLBACK to Light Audit if not already tried
+                        return await startLightProcess(url);
+                    }
+
+                    const errorMsg = mob.error === 'AbortError' || dsk.error === 'AbortError'
+                        ? "The analysis timed out. Google's engine took too long to audit this site. Try a 'Light Audit' instead."
+                        : (mob.error || dsk.error || "Target site unresponsive to all audit methods.");
+                    throw new Error(errorMsg);
+                }
+
+                // Auto-switch to first available success
+                appState.strategy = mob.hasData ? 'mobile' : 'desktop';
+                document.querySelectorAll('.device-tab').forEach(t => t.classList.toggle('active', t.dataset.strategy === appState.strategy));
+
+                if (mob.hasData) saveHistory(url, mob.score);
+
+                renderView(appState.strategy);
+                updateProgress(100);
+                setStep(3, 'done');
+                await wait(600);
+
+                DOM.results.classList.add('active');
+                document.getElementById('print-btn').style.display = 'flex';
+
+            } catch (err) {
+                console.error(err);
+                const tmpl = document.getElementById('tmpl-error').content.cloneNode(true);
+                tmpl.querySelector('h2').textContent = err.message.includes('timeout') ? "Analysis Timeout" : "Analysis Failed";
+                tmpl.querySelector('p').textContent = err.message;
+                DOM.content.innerHTML = '';
+                DOM.content.appendChild(tmpl);
+                DOM.results.classList.add('active');
+
+                // Expose retry function to window
+                window.retryLight = () => {
+                    DOM.results.classList.remove('active');
+                    startLightProcess(url);
+                };
+            } finally {
+                appState.busy = false;
+                toggleOverlay(false);
+            }
+        }
+
+        async function startLightProcess(url) {
+            document.getElementById('p-fallback-msg').style.display = 'block';
+            document.getElementById('p-fallback-msg').textContent = '⚠️ Full audit timed out. Retrying with Light Audit (Performance only)...';
+            resetSteps();
+            updateProgress(10);
+
+            appState.light = true;
+
+            const mob = await fetchWrapped(url, 'mobile', 1);
+            appState.data.mobile = mob;
+            updateProgress(50);
+
+            const dsk = await fetchWrapped(url, 'desktop', 2);
+            appState.data.desktop = dsk;
+            updateProgress(90);
+
+            if (mob.hasData) saveHistory(url, mob.score);
+
+            if (!mob.hasData && !dsk.hasData) {
+                throw new Error("Target site unresponsive even to Light Audit. It may be blocking automated bots.");
+            }
+
+            appState.strategy = mob.hasData ? 'mobile' : 'desktop';
+            renderView(appState.strategy);
+            updateProgress(100);
+            setStep(3, 'done');
+            DOM.results.classList.add('active');
+        }
+
+        async function fetchWrapped(url, strategy, idx) {
+            setStep(idx, 'active');
+            try {
+                const response = await fetchWithRetry(url, strategy);
+                setStep(idx, 'done');
+                return response;
+            } catch (e) {
+                console.warn(`${strategy} audit failed:`, e);
+                setStep(idx, 'fail');
+                return { hasData: false, error: e.message };
+            }
+        }
+
+        async function fetchWithRetry(url, strategy) {
+            // Attempt 1: Normal
+            try {
+                return await doFetch(url, strategy);
+            } catch (err) {
+                // If it's a render error (NO_FCP), we don't retry same URL immediately,
+                // we trust the fallback logic inside doFetch
+                throw err;
+            }
+        }
+
+        async function doFetch(url, strategy) {
+            const categories = appState.light
+                ? ['performance']
+                : ['performance', 'accessibility', 'best-practices', 'seo', 'pwa'];
+
+            const params = new URLSearchParams({
+                url, strategy, key: API_KEY, locale: 'en'
+            });
+            categories.forEach(c => params.append('category', c));
+
+            const controller = new AbortController();
+            const timer = setTimeout(() => {
+                controller.abort();
+                document.getElementById('p-fallback-msg').style.display = 'block';
+                document.getElementById('p-fallback-msg').textContent = '⚠️ API is responding slowly. Still waiting...';
+            }, 180000);
+
+            try {
+                const res = await fetch(`${ENDPOINT}?${params}`, { signal: controller.signal });
+                clearTimeout(timer);
+                const json = await res.json();
+
+                if (!res.ok) throw new Error(json.error?.message || "API Error");
+
+                const result = {
+                    hasData: true,
+                    isLab: true,
+                    score: 0,
+                    metrics: [],
+                    audits: [],
+                    raw: json
+                };
+
+                // Case A: Lighthouse Succeeded
+                if (!json.lighthouseResult.runtimeError) {
+                    const lh = json.lighthouseResult;
+                    result.score = Math.round(lh.categories.performance.score * 100);
+                    result.categoryScores = {};
+
+                    const catMap = {
+                        performance: 'performance',
+                        accessibility: 'accessibility',
+                        bestPractices: 'best-practices',
+                        seo: 'seo',
+                        pwa: 'pwa'
+                    };
+
+                    for (const [key, id] of Object.entries(catMap)) {
+                        if (lh.categories[id]) {
+                            result.categoryScores[key] = Math.round(lh.categories[id].score * 100);
+                        }
+                    }
+
+                    result.metrics = extractLabMetrics(lh);
+                    result.audits = extractDetailedAudits(lh);
+                    result.screenshot = lh.fullPageScreenshot?.screenshot?.data;
+                }
+                // Case B: Lighthouse Failed but Field Data exists! (CruX)
+                else if (json.loadingExperience && json.loadingExperience.metrics) {
+                    processFieldData(result, json.loadingExperience);
+                }
+                // Case C: Absolute failure
+                else {
+                    throw new Error(json.lighthouseResult.runtimeError.code || "ERR_NO_DATA");
+                }
+
+                return result;
+            } catch (err) {
+                clearTimeout(timer);
+                if (err.name === 'AbortError') throw new Error('AbortError');
+                throw err;
+            }
+        }
+
+        function processFieldData(result, field) {
+            result.isLab = false;
+            // Calculate a synthetic score if only field data exists (FCP, LCP, CLS)
+            const fcp = field.metrics.FIRST_CONTENTFUL_PAINT_MS?.percentile || 0;
+            const lcp = field.metrics.LARGEST_CONTENTFUL_PAINT_MS?.percentile || 0;
+            const cls = field.metrics.CUMULATIVE_LAYOUT_SHIFT_SCORE?.percentile || 0;
+
+            // Heuristic scoring for field data
+            let score = 100;
+            if (lcp > 2500) score -= 40; if (lcp > 4000) score -= 30;
+            if (cls > 10) score -= 20; if (cls > 25) score -= 10;
+            result.score = Math.max(0, score);
+
+            result.metrics = [
+                { id: 'fcp', label: 'Field FCP', value: (fcp / 1000).toFixed(2) + 's', score: scoreClass(fcp, 1800, 3000) },
+                { id: 'lcp', label: 'Field LCP', value: (lcp / 1000).toFixed(2) + 's', score: scoreClass(lcp, 2500, 4000) },
+                { id: 'cls', label: 'Field CLS', value: (cls / 100).toFixed(2), score: scoreClass(cls, 10, 25) }
+            ];
+            result.audits = []; // Field data doesn't provide specific audits
+        }
+
+        function extractLabMetrics(lh) {
+            const m = lh.audits;
+            return [
+                { id: 'fcp', label: 'First Contentful Paint', value: m['first-contentful-paint'].displayValue, score: lhScore(m['first-contentful-paint'].score) },
+                { id: 'lcp', label: 'Largest Contentful Paint', value: m['largest-contentful-paint'].displayValue, score: lhScore(m['largest-contentful-paint'].score) },
+                { id: 'tbt', label: 'Total Blocking Time', value: m['total-blocking-time'].displayValue, score: lhScore(m['total-blocking-time'].score) },
+                { id: 'cls', label: 'Cumulative Layout Shift', value: m['cumulative-layout-shift'].displayValue, score: lhScore(m['cumulative-layout-shift'].score) },
+                { id: 'si', label: 'Speed Index', value: m['speed-index'].displayValue, score: lhScore(m['speed-index'].score) },
+                { id: 'tti', label: 'Time to Interactive', value: m['interactive'].displayValue, score: lhScore(m['interactive'].score) }
+            ];
+        }
+
+        function extractDetailedAudits(lh) {
+            const audits = [];
+            const categories = ['performance', 'accessibility', 'best-practices', 'seo', 'pwa'];
+
+            // Map audits to metrics
+            const metricMap = {};
+            if (lh.categories.performance) {
+                lh.categories.performance.auditRefs.forEach(ref => {
+                    if (ref.acronym) metricMap[ref.id] = ref.acronym;
+                });
+            }
+
+            categories.forEach(catId => {
+                const category = lh.categories[catId];
+                if (!category) return;
+
+                category.auditRefs.forEach(ref => {
+                    const audit = lh.audits[ref.id];
+                    if (!audit || audit.score === null || audit.score >= 0.9) return;
+
+                    // Extract location if available
+                    let location = "N/A";
+                    let codeSnippet = "";
+                    if (audit.details?.items && audit.details.items.length > 0) {
+                        const firstItem = audit.details.items[0];
+                        if (firstItem.url) location = `<a href="${firstItem.url}" target="_blank" style="color:var(--color-seo); font-size:0.8rem; word-break:break-all;">${firstItem.url}</a>`;
+                        else if (firstItem.node?.snippet) {
+                            location = "HTML Element";
+                            codeSnippet = firstItem.node.snippet;
+                        }
+                        else if (firstItem.source?.url) location = `<a href="${firstItem.source.url}" target="_blank" style="color:var(--color-seo); font-size:0.8rem;">${firstItem.source.url.split('/').pop()}:${firstItem.source.line || ''}</a>`;
+                    }
+
+                    // Extract Impact Estimate
+                    let impact = null;
+                    if (audit.details?.overallSavingsMs) impact = `Saves ~${Math.round(audit.details.overallSavingsMs)}ms`;
+                    else if (audit.details?.overallSavingsBytes) impact = `Saves ~${(audit.details.overallSavingsBytes / 1024).toFixed(1)}KB`;
+
+                    audits.push({
+                        category: catId.toUpperCase().replace('-', ' '),
+                        id: audit.id,
+                        title: audit.title,
+                        desc: audit.description,
+                        score: audit.score,
+                        severity: audit.score < 0.5 ? 'High' : (audit.score < 0.9 ? 'Medium' : 'Low'),
+                        location: location,
+                        codeSnippet: codeSnippet,
+                        impact: impact,
+                        metric: metricMap[audit.id] || "",
+                        fix: getEnhancedFix(audit.id, audit.description)
+                    });
+                });
+            });
+
+            return audits.sort((a, b) => (a.score || 0) - (b.score || 0));
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function getEnhancedFix(id, defaultDesc) {
+            const fixes = {
+                'render-blocking-resources': 'Identify critical CSS/JS and inline it. Defer the rest using <code>rel="preload"</code> or <code>defer/async</code> attributes.',
+                'uses-optimized-images': 'Convert images to WebP or AVIF formats. Use tools like Squoosh or ImageMagick for compression.',
+                'offscreen-images': 'Add <code>loading="lazy"</code> to <code>&lt;img&gt;</code> and <code>&lt;iframe&gt;</code> elements that are not in the initial viewport.',
+                'unused-javascript': 'Use code-splitting to ship only the code needed for the initial page load. Shave down bloated dependencies.',
+                'unused-css-rules': 'Remove dead styles from stylesheets and defer loading of non-critical CSS.',
+                'modern-image-formats': 'Serve images in WebP or AVIF. These formats provide better compression than PNG or JPEG.',
+                'uses-responsive-images': 'Serve appropriately sized images based on the user\'s screen resolution using <code>srcset</code>.',
+                'server-response-time': 'Optimize database queries, upgrade your hosting, or implement a CDN (Content Delivery Network).',
+                'redirects': 'Eliminate unnecessary redirects to shorten the request chain and speed up page load.',
+                'font-display': 'Add <code>font-display: swap</code> to your <code>@font-face</code> declarations to ensure text remains visible while fonts load.',
+                // SEO & Accessibility
+                'image-alt': 'Add descriptive <code>alt</code> attributes to all <code>&lt;img&gt;</code> tags to improve accessibility and SEO.',
+                'meta-description': 'Ensure every page has a unique, compelling meta description between 140-160 characters.',
+                'link-name': 'Use descriptive text for links (e.g., "View our services" instead of "Click here") to help screen readers.',
+                'color-contrast': 'Ensure background and foreground colors have a sufficient contrast ratio (at least 4.5:1).',
+                'document-title': 'Give each page a unique, descriptive <code>&lt;title&gt;</code> tag containing relevant keywords.'
+            };
+            return fixes[id] || defaultDesc.split('[')[0];
+        }
+
+        function renderView(strat) {
+            const data = appState.data[strat];
+            DOM.content.innerHTML = '';
+
+            if (!data.hasData) {
+                DOM.content.innerHTML = `<div class="error-board"><h3>${strat.toUpperCase()} Audit Failed</h3><p>${data.error}</p></div>`;
+                return;
+            }
+
+            const template = document.getElementById('tmpl-success').content.cloneNode(true);
+
+            // Header Info
+            const badge = template.getElementById('source-badge');
+            badge.className = `data-source-badge ${data.isLab ? 'source-lab' : 'source-field'}`;
+            badge.innerHTML = data.isLab ? '🧪 Lab Data Successfully Filtered' : '👥 Real-User Field Data Fallback';
+
+            template.getElementById('s-num').textContent = data.score;
+            template.getElementById('v-desc').textContent = data.isLab
+                ? "Simulated audit results using a controlled headless browser (Lighthouse)."
+                : "Aggregated performance data from real Chrome users over the last 28 days (CruX).";
+
+            // Grid
+            const grid = template.getElementById('m-grid');
+            data.metrics.forEach(m => {
+                grid.innerHTML += `
+                    <div class="metric-card" style="border-top-color:${m.score}">
+                        <div class="m-header"><span class="m-title">${m.label}</span></div>
+                        <div class="m-value">${m.value}</div>
+                    </div>
+                `;
+            });
+
+            // Category Scores
+            const catScores = template.getElementById('cat-scores');
+            if (data.categoryScores) {
+                Object.entries(data.categoryScores).forEach(([cat, score]) => {
+                    const color = score >= 90 ? 'var(--score-good)' : (score >= 50 ? 'var(--score-average)' : 'var(--score-poor)');
+                    catScores.innerHTML += `
+                        <div style="background: var(--bg-card); padding: 0.5rem 1rem; border-radius: 50px; border: 1px solid var(--border-color); display: flex; align-items: center; gap: 0.5rem;">
+                            <span style="font-size: 0.75rem; font-weight: 700; color: var(--text-tertiary); text-transform: uppercase;">${cat}</span>
+                            <span style="font-weight: 800; color: ${color}">${score}</span>
+                        </div>
+                    `;
+                });
+            }
+
+            // PWA & Mobile Health
+            const pwaStatus = template.getElementById('pwa-status');
+            const pwaChecklist = template.getElementById('pwa-checklist');
+            if (data.raw?.lighthouseResult?.categories?.pwa) {
+                pwaStatus.style.display = 'block';
+                const pwaAudits = data.raw.lighthouseResult.categories.pwa.auditRefs;
+                const importantPwa = ['service-worker', 'installable-manifest', 'is-on-https', 'viewport'];
+
+                importantPwa.forEach(id => {
+                    const audit = data.raw.lighthouseResult.audits[id];
+                    if (!audit) return;
+                    const pass = audit.score === 1;
+                    pwaChecklist.innerHTML += `
+                        <div style="display: flex; align-items: center; gap: 0.75rem; padding: 0.5rem; background: var(--bg-tertiary); border-radius: 8px;">
+                            <span style="font-size: 1.2rem;">${pass ? '✅' : '❌'}</span>
+                            <div style="font-size: 0.85rem; font-weight: 600;">${audit.title}</div>
+                        </div>
+                    `;
+                });
+            }
+
+            // Screenshot handling
+            if (data.screenshot) {
+                const ssSection = template.getElementById('screenshot-section');
+                const ssImg = template.getElementById('full-screenshot');
+                ssSection.style.display = 'block';
+                ssImg.src = data.screenshot;
+            }
+
+            // Audits
+            const aList = template.getElementById('a-list');
+            const aCount = template.getElementById('a-count');
+            if (data.audits.length === 0) {
+                template.getElementById('a-container').style.display = data.isLab ? 'block' : 'none';
+                aList.innerHTML = '<tr><td colspan="6" style="padding:2rem; text-align:center;">Great job! No major optimization detected.</td></tr>';
+            } else {
+                aCount.textContent = `${data.audits.length} Issues Detected`;
+                data.audits.forEach(a => {
+                    const tr = document.createElement('tr');
+                    tr.style.borderBottom = '1px solid var(--border-color)';
+                    const sevColor = a.severity === 'High' ? 'var(--score-poor)' : (a.severity === 'Medium' ? 'var(--score-average)' : 'var(--score-good)');
+
+                    tr.innerHTML = `
+                        <td style="padding: 1rem; width: 140px;">
+                            ${a.impact ? `<div class="impact-badge">${a.impact}</div>` : ''}
+                            ${data.screenshot ? `<img src="${data.screenshot}" class="audit-thumbnail" alt="Audit context">` : ''}
+                        </td>
+                        <td style="padding: 1rem;">
+                            <div style="font-weight: 700; margin-bottom: 0.25rem;">${a.title}</div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">${a.desc.split('[')[0]}</div>
+                            <div style="font-size: 0.75rem; color: var(--text-tertiary); margin-top: 4px;">Category: ${a.category}</div>
+                        </td>
+                        <td style="padding: 1rem;">
+                            <div style="font-weight: 600;">Core Metric</div>
+                            ${a.metric ? `<span class="metric-acronym">${a.metric}</span>` : '<span style="color:var(--text-tertiary); font-size:0.8rem;">General Health</span>'}
+                        </td>
+                        <td style="padding: 1rem; font-family: var(--font-mono); font-size: 0.8rem; max-width: 250px; overflow-wrap: break-word;">
+                            ${a.location}
+                            ${a.codeSnippet ? `<pre style="margin-top:0.5rem; background:var(--bg-tertiary); padding:0.5rem; border-radius:4px; max-height:100px; overflow:auto; font-size:0.7rem;"><code>${escapeHtml(a.codeSnippet)}</code></pre>` : ''}
+                        </td>
+                        <td style="padding: 1rem; font-size: 0.9rem;">
+                            <div style="line-height: 1.5;">${a.fix}</div>
+                        </td>
+                        <td style="padding: 1rem;">
+                            <span style="background: ${sevColor}15; color: ${sevColor}; padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 700;">${a.severity}</span>
+                        </td>
+                    `;
+                    aList.appendChild(tr);
+                });
+            }
+
+            DOM.content.appendChild(template);
+
+            // Animate Gauge
+            setTimeout(() => {
+                const g = document.getElementById('g-progress');
+                const circ = 2 * Math.PI * 85;
+                g.style.strokeDashoffset = circ - (data.score / 100) * circ;
+                g.style.stroke = data.score >= 90 ? '#0cce6b' : (data.score >= 50 ? '#ffa400' : '#ff4e42');
+            }, 100);
+        }
+
+        // --- Helpers ---
+        function toggleOverlay(s) { DOM.overlay.classList.toggle('active', s); }
+        function updateProgress(p) { DOM.fill.style.width = p + '%'; }
+        function setStep(i, s) { document.getElementById('step-' + i).className = 'step ' + s; }
+        function resetSteps() { for (let i = 0; i < 4; i++) setStep(i, ''); updateProgress(0); }
+        function wait(ms) { return new Promise(r => setTimeout(r, ms)); }
+        function isValidUrl(s) { try { new URL(s); return true; } catch { return false; } }
+        function lhScore(s) { if (s >= 0.9) return '#0cce6b'; if (s >= 0.5) return '#ffa400'; return '#ff4e42'; }
+        function scoreClass(val, good, poor) { if (val <= good) return '#0cce6b'; if (val <= poor) return '#ffa400'; return '#ff4e42'; }
+
+        function saveHistory(url, score) {
+            let h = JSON.parse(localStorage.getItem('speed_meter_v3') || '[]');
+            h.unshift({ url, score, date: new Date().toLocaleDateString() });
+            localStorage.setItem('speed_meter_v3', JSON.stringify(h.slice(0, 5)));
+            loadHistory();
+        }
+
+        function loadHistory() {
+            let h = JSON.parse(localStorage.getItem('speed_meter_v3') || '[]');
+            if (!h.length) return;
+            const hs = document.getElementById('history-section');
+            hs.style.display = 'block';
+            document.getElementById('history-list').innerHTML = h.map(i => `
+                <div class="history-item">
+                    <div><strong>${i.url}</strong><br><small>${i.date}</small></div>
+                    <div style="font-weight:900; font-size:1.4rem; color:${lhScore(i.score / 100)}">${i.score}</div>
+                </div>
+            `).join('');
+        }
+
+        function getFix(id) {
+            const m = {
+                'render-blocking-resources': 'Defer non-critical JS/CSS and inline critical styles.',
+                'uses-optimized-images': 'Serve images in WebP/AVIF and compress them.',
+                'offscreen-images': 'Use <code>loading="lazy"</code> for images below the fold.',
+                'unused-javascript': 'Remove dead code and implement code-splitting.',
+                'total-byte-weight': 'Reduce page size by minifying assets and optimizing media.',
+                'server-response-time': 'Optimize backend logic, DB queries, or use a CDN.'
+            };
+            return m[id] || "Run an in-depth audit on PageSpeed Insights for detailed technical instructions.";
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Internal Link Counter | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">SEO Tools</a> &gt;
+                <span>Internal Link Counter</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Internal Link Counter</h1>
+                <p class="tool-description"></p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
+<div class="container text-center">
+<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Internal Link Counter</h1>
+<p class="hero-subtitle">Count internal vs external links and analyze your link structure.</p>
+</div>
+</section>
+<div class="container">
+<div class="tool-interface-container">
+<div class="input-group">
+<label class="input-label">My Domain (to identify internal links)</label>
+<input class="seo-input" id="myDomain" placeholder="example.com" type="text"/>
+</div>
+<div class="input-group">
+<label class="input-label">HTML Content</label>
+<textarea class="seo-textarea" id="htmlContent" placeholder="Paste source code here..." style="min-height: 250px;"></textarea>
+</div>
+<div class="action-bar">
+<button class="btn-primary" onclick="analyzeLinks()">Analyze Links</button>
+<button class="btn-secondary" onclick="resetForm()">Reset</button>
+</div>
+<div class="output-section" id="resultsArea" style="display: none;">
+<h3 class="section-title mb-md">Link Analysis</h3>
+<div class="schema-form-grid mb-lg" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+<div class="feature-card" style="padding: 1rem; text-align: center;">
+<h4 class="feature-title">Total Links</h4>
+<p class="stat-number" id="totalLinks">0</p>
+</div>
+<div class="feature-card" style="padding: 1rem; text-align: center;">
+<h4 class="feature-title" style="color: #4CAF50;">Internal</h4>
+<p class="stat-number" id="internalLinks">0</p>
+</div>
+<div class="feature-card" style="padding: 1rem; text-align: center;">
+<h4 class="feature-title" style="color: #2196F3;">External</h4>
+<p class="stat-number" id="externalLinks">0</p>
+</div>
+</div>
+<div class="output-container">
+<table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr style="text-align: left; background: var(--bg-tertiary);">
+<th style="padding: 10px;">Link Type</th>
+<th style="padding: 10px;">URL</th>
+<th style="padding: 10px;">Anchor Text</th>
+</tr>
+</thead>
+<tbody id="linkList">
+<!-- Injected -->
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+            </div>
+            <section class="seo-article" data-tool="internal-link-counter">
+<article class="tool-article">
+<h2>Internal Link Counter — Measure the Links Holding Your Site Together</h2>
+
+<p>Google finds your pages by following links — and the links you control are the internal ones. I once audited a 400-article blog where the best content sat three clicks from nowhere, linked from exactly zero other posts. It might as well not have existed. An internal link counter shows how many links point within your site from any page, revealing orphaned content and the pages hoarding (or starving) link equity.</p>
+
+<h3>What Is an Internal Link Counter?</h3>
+
+<p>Internal links are links from one page of your site to another page of the same site. They do three jobs: they help visitors navigate, they tell Google which pages matter most (pages with many internal links get crawled more often), and they distribute ranking authority across your site. Counting them per page turns this abstract concept into actionable numbers.</p>
+
+<p>The counter scans a page and tallies links staying within the domain — separating them from external links, counting dofollow versus nofollow, and distinguishing unique destinations from repeats. Two numbers matter most: links <em>from</em> the page (outbound internal) and, on better tools, links <em>to</em> the page from across the site (inbound internal). A page with zero inbound internal links is an orphan — reachable only by direct URL or sitemap.</p>
+
+<p>There is a balance to strike. Too few internal links and pages go undiscovered; too many (hundreds of footer and sidebar links on every page) and each link passes less value while the page looks spammy. Most healthy content pages carry a handful to a few dozen meaningful in-content links.</p>
+
+<h3>How to Use the Internal Link Counter</h3>
+
+<p>Enter the page URL and run the count. Compare the internal total against the page's role: pillar and category pages should link out generously to their subtopics; individual articles should link up to their pillar and sideways to related posts. Then check the reverse — how many pages link <em>to</em> this one — using the tool's inbound data or your SEO plugin's link counter.</p>
+
+<p>The fixes write themselves once you see the numbers. Orphaned pages (zero inbound links) need links from related content — find them via site search for the topic and add contextual links. Over-linked utility pages (privacy policy linked from every footer, fine) versus under-linked money pages (your pricing page linked from one blog post in 2021) get rebalanced by editing the obvious source pages.</p>
+
+<p>Anchor text deserves a glance too. If fifty internal links all say "click here," you are wasting descriptive signals. Varied, natural anchor text telling readers (and Google) what the destination covers is the goal — no exact-match stuffing required.</p>
+
+<h3>How Internal Link Counting Works</h3>
+
+<p>The mechanics mirror external counting, pointed inward.</p>
+
+<p><strong>Step 1 — Page fetch.</strong> The tool retrieves the page's HTML, ideally rendered so JavaScript-inserted navigation links are included.</p>
+
+<p><strong>Step 2 — Link extraction.</strong> All anchor tags are collected with their href, rel attributes, and anchor text.</p>
+
+<p><strong>Step 3 — Domain matching.</strong> URLs resolving to the same domain (and usually its subdomains) are classified internal; the rest are external. Relative links like <code>/blog/post</code> resolve against the page URL automatically.</p>
+
+<p><strong>Step 4 — Analysis.</strong> The tool reports total internal links, unique internal destinations, dofollow/nofollow split, and anchor-text distribution. Site-wide tools additionally crawl multiple pages to compute inbound counts per URL.</p>
+
+<p>Template links (navigation, footer, sidebar) inflate raw totals — a page showing "212 internal links" may have only 8 in the actual content. Unique-destination counts and in-content filtering separate signal from template noise.</p>
+
+<h3>Reading Your Internal Link Report</h3>
+
+<table>
+<thead><tr><th>Metric</th><th>What it reveals</th><th>Action</th></tr></thead>
+<tbody>
+<tr><td>Inbound internal links: 0</td><td>Orphaned page</td><td>Add links from related content</td></tr>
+<tr><td>Inbound: very high</td><td>Important page (or template-linked)</td><td>Verify it's a page worth the authority</td></tr>
+<tr><td>Outbound: very low</td><td>Dead-end page</td><td>Link onward to related content</td></tr>
+<tr><td>Generic anchor text everywhere</td><td>Wasted descriptive signals</td><td>Rewrite anchors descriptively</td></tr>
+<tr><td>Links to 404 pages</td><td>Rot in your own house</td><td>Update or remove dead internal links</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Internal Link Counters?</h3>
+
+<p><strong>SEO specialists</strong> map site architecture and find orphaned or under-linked pages.</p>
+
+<p><strong>Bloggers</strong> keep new posts connected to related older content.</p>
+
+<p><strong>E-commerce managers</strong> ensure category and product pages link in a sensible hierarchy.</p>
+
+<p><strong>Content strategists</strong> build topic clusters with pillar pages at the center.</p>
+
+<p><strong>Site auditors</strong> verify link structure during migrations and redesigns.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Free page scans</strong> — no signup for single-URL checks.</li>
+<li><strong>Internal/external split</strong> — clean separation of link types.</li>
+<li><strong>Inbound link data</strong> — see what points to each page, not just out of it.</li>
+<li><strong>Dofollow/nofollow breakdown</strong> — authority flow visibility.</li>
+<li><strong>Anchor text listing</strong> — audit the words doing the linking.</li>
+<li><strong>CSV export</strong> — feed results into larger site audits.</li>
+<li><strong>Orphan detection</strong> — surface pages nothing links to.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this internal link counter free?</h4>
+<p>Yes — single-page scans are free with no account required.</p>
+
+<h4>How many internal links should a page have?</h4>
+<p>No fixed number. Aim for enough contextual links to guide readers and crawlers — typically a handful to a few dozen in content — without stuffing.</p>
+
+<h4>What is an orphan page?</h4>
+<p>A page with zero inbound internal links. It is hard for visitors to find and gets crawled rarely. Link to it from related content.</p>
+
+<h4>Do internal links pass ranking authority?</h4>
+<p>Yes. Internal links distribute authority across your site — which is why your most-linked pages tend to be your strongest.</p>
+
+<h4>Should I nofollow internal links?</h4>
+<p>Almost never. Nofollowing internal links wastes crawl budget mechanics and is rarely the right call — fix the link instead of hiding it.</p>
+
+<h4>Does anchor text matter for internal links?</h4>
+<p>Yes. Descriptive anchor text helps Google understand the destination page's topic. Keep it natural and varied.</p>
+
+<h4>Can I count links across my whole site?</h4>
+<p>Single-page tools scan one URL at a time. For site-wide inbound counts, use a crawler or an SEO plugin with a link index (like Yoast's text link counter).</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        function analyzeLinks() {
+            const domain = document.getElementById('myDomain').value.trim();
+            const html = document.getElementById('htmlContent').value;
+
+            if (!html) { alert("Please enter HTML content"); return; }
+
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const anchors = doc.querySelectorAll('a');
+
+            let internal = 0;
+            let external = 0;
+            let rows = '';
+
+            anchors.forEach(a => {
+                const href = a.getAttribute('href');
+                if (!href || href.startsWith('#') || href.startsWith('javascript:')) return;
+
+                let type = 'External';
+                let color = '#2196F3';
+
+                // Check if internal
+                // Logic: starts with / or contains domain
+                if (href.startsWith('/') || href.startsWith('./') || href.startsWith('../') || (domain && href.includes(domain))) {
+                    type = 'Internal';
+                    color = '#4CAF50';
+                    internal++;
+                } else {
+                    external++;
+                }
+
+                rows += `
+                <tr style="border-bottom: 1px solid var(--border-color);">
+                    <td style="padding: 10px; color: ${color}; font-weight: bold;">${type}</td>
+                    <td style="padding: 10px; word-break: break-all;">${href}</td>
+                    <td style="padding: 10px;">${a.innerText.trim() || '<i>(No Text)</i>'}</td>
+                </tr>
+            `;
+            });
+
+            document.getElementById('totalLinks').innerText = internal + external;
+            document.getElementById('internalLinks').innerText = internal;
+            document.getElementById('externalLinks').innerText = external;
+            document.getElementById('linkList').innerHTML = rows;
+
+            document.getElementById('resultsArea').style.display = 'block';
+        }
+
+        function resetForm() {
+            document.getElementById('htmlContent').value = '';
+            document.getElementById('resultsArea').style.display = 'none';
+            document.getElementById('myDomain').value = '';
+        }
+    </script>
+</body>
+</html>

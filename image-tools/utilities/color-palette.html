@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Image Color Palette Generator. Extract dominant colors from photos, check WCAG accessibility, and export palette as CSS, Tailwind, or JSON. Batch processing supported.">
+    <title>Color Palette Generator - Extract Design Colors | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../../image-tools/css/global.css">
+    <link rel="stylesheet" href="../../image-tools/css/components.css">
+    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../../about-us.html">About</a>
+                <a class="nav-link" href="../../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> &gt;
+                <a href="../index.html">Image Tools</a> &gt;
+                <span>🎨 Color Palette Generator</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">🎨 Color Palette Generator</h1>
+                <p class="tool-description">Extract professional color palettes from any image. Check accessible
+                    contrast ratios and export design tokens for CSS and Tailwind.</p>
+                <div class="tool-badges"><span class="badge badge-primary">Dominant Quantization</span><span class="badge badge-primary">WCAG Checker</span><span class="badge badge-secondary">Batch Export</span></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<section class="preview-area">
+<div id="upload-zone"></div>
+<div id="result-content" style="display: none; margin-top: 20px;">
+<img id="source-img" style="max-width: 100%; max-height: 200px; border-radius: 8px; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto;"/>
+<h3 style="font-size: 1rem; margin-bottom: 15px;">Extracted Palette</h3>
+<div class="palette-grid" id="palette-grid"></div>
+<div class="harmony-section" id="harmony-area">
+<h3 style="font-size: 1rem; margin-bottom: 15px;">Suggested Harmonies</h3>
+<div id="harmonies-container"></div>
+</div>
+</div>
+</section>
+<aside class="control-panel">
+<div class="control-section">
+<h3 class="control-section-title">⚙️ Palette Settings</h3>
+<div class="control-group">
+<label class="control-label">Max Colors: <span id="val-count">6</span></label>
+<input class="slider-input" id="adj-count" max="10" min="3" type="range" value="6"/>
+</div>
+</div>
+<div class="control-section" id="export-panel" style="display: none;">
+<h3 class="control-section-title">📥 Export Options</h3>
+<select class="form-select" id="export-type">
+<option value="css">CSS Variables</option>
+<option value="tailwind">Tailwind Config</option>
+<option value="json">JSON Metadata</option>
+</select>
+<div class="code-preview" id="code-output"></div>
+<button class="btn btn-secondary w-full mt-3" id="copy-code-btn">📋 Copy Code</button>
+<button class="btn btn-primary w-full mt-2" id="download-all-btn" style="display: none;"><span>📥</span> Download All Palettes</button>
+</div>
+<div class="control-section">
+<button class="btn btn-secondary w-full" id="reset-btn" style="display: none;"><span>🔄</span>
+                            Start Over</button>
+</div>
+</aside>
+</div>
+</div>
+</main>
+            </div>
+            <section class="seo-article" data-tool="color-palette">
+<article class="tool-article">
+<h2>Color Palette — Extract a Color Palette From Any Image, Free</h2>
+
+<p>You see a photo with a color scheme you love — the warm dusk tones in a travel shot, the exact blue in a competitor's logo, the muted greens of a product photo — and you want those colors in your own project. Eyeballing hex codes never quite lands. A color palette extractor analyzes the image and pulls out its dominant colors as ready-to-use swatches with hex, RGB, and HSL values. Upload the image, get the palette, copy what you need — free, in seconds, in your browser.</p>
+
+<h3>What Is a Color Palette Extractor?</h3>
+
+<p>It is a tool that turns any picture into a usable set of colors. Under the hood, the technique is called <strong>color quantization</strong>: the tool samples pixels from a downscaled copy of your image, groups similar colors into clusters, and surfaces the dominant ones ranked by visual weight. Each swatch earns its place — no filler shades.</p>
+
+<p>Designers call it many names: image color picker, dominant color extractor, photo color scheme generator, color grabber. Whatever the name, the output is the same — a balanced palette you can drop into a design system, brand guide, CSS file, or mood board instead of guessing.</p>
+
+<p>When I first used one, what struck me was how it removed arguments. Two people can debate "which blue is in that photo" forever; the extractor just shows you the data. For teams, that is worth more than the time saved.</p>
+
+<h3>How to Extract Colors From an Image</h3>
+
+<p><strong>Step 1 — Upload your image.</strong> Drag and drop, click to browse, or paste straight from your clipboard. JPG, PNG, GIF, WebP, and BMP all work.</p>
+
+<p><strong>Step 2 — Set the color count.</strong> Choose how many swatches you want — anywhere from 2 to 12 or even 30 depending on the tool. Start with 6–8 for a balanced palette; go lower for focused UI themes, higher for illustration work. A diversity setting can force more visually distinct shades instead of near-identical neighbors.</p>
+
+<p><strong>Step 3 — Review and copy.</strong> Click any swatch to copy its hex code instantly; most tools also show RGB, HSL, and sometimes OKLCH or Lab values. Lock favorites and re-extract if you want a different mix.</p>
+
+<p><strong>Step 4 — Export.</strong> Download the palette in the format your workflow expects: CSS variables, Tailwind config, JSON tokens, SVG strip, PNG swatches, or professional formats like Adobe .aco/.ase, Procreate .swatches, and GIMP .gpl.</p>
+
+<p>Habit worth building: ignore-white and transparent-background options. Product photos on white backgrounds will otherwise hand you five shades of off-white as your "palette."</p>
+
+<h3>What You Can Do With an Extracted Palette</h3>
+
+<table>
+<thead><tr><th>Use case</th><th>How the palette helps</th></tr></thead>
+<tbody>
+<tr><td>Brand identity</td><td>Build a color system from an existing logo or photography</td></tr>
+<tr><td>Web design</td><td>Match UI colors to artwork; export as CSS variables</td></tr>
+<tr><td>Social content</td><td>Keep thumbnails and posts visually consistent</td></tr>
+<tr><td>Illustration</td><td>Keep new artwork consistent with existing visuals</td></tr>
+<tr><td>Mood boards</td><td>Generate gradients and backgrounds from a mood image</td></tr>
+<tr><td>Accessibility</td><td>Run WCAG contrast checks before committing colors to production</td></tr>
+</tbody>
+</table>
+
+<p>The accessibility angle deserves emphasis: some extractors include built-in contrast checks per swatch, so you can verify text legibility on a color before it ships. A beautiful palette that fails contrast is a liability — check early.</p>
+
+<h3>Who Extracts Color Palettes?</h3>
+
+<p><strong>Designers</strong> pull palettes from client logos, reference photos, and mood images to ground new work in colors that already exist in the brand world.</p>
+
+<p><strong>Developers</strong> convert extracted colors into design tokens — CSS custom properties, Tailwind configs, JSON — and wire them straight into a codebase.</p>
+
+<p><strong>Content creators</strong> keep thumbnails, channel art, and merch visually consistent by sampling from their own best-performing images.</p>
+
+<p><strong>Marketers</strong> build campaign palettes from product photography so ads, landing pages, and social posts share one coherent color story.</p>
+
+<h3>Practical Tips for Better Palettes</h3>
+
+<ul>
+<li><strong>Pick images with clear color stories.</strong> A sunset photo yields a gorgeous palette; a cluttered screenshot yields mud.</li>
+<li><strong>Exclude backgrounds.</strong> Use the ignore-white/transparent option so backdrops do not dominate the swatches.</li>
+<li><strong>Nudge toward brand colors.</strong> Extracted colors are editable — shift a swatch slightly toward your existing brand before exporting.</li>
+<li><strong>Test at real sizes.</strong> A color that sings as a swatch can overwhelm as a full background — mock it in context.</li>
+<li><strong>Check contrast.</strong> Run swatches through a WCAG checker before using them for text or UI elements.</li>
+<li><strong>Export, do not screenshot.</strong> Copy the actual hex values or export tokens — eyeballing from a screenshot reintroduces the guessing you just eliminated.</li>
+<li><strong>Sample multiple images.</strong> One photo gives a palette; three photos from the same shoot give a system.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is the color palette extractor free?</h4>
+<p>Yes — completely free, no account required.</p>
+
+<h4>How are the palette colors chosen?</h4>
+<p>The tool samples pixels from a downscaled copy of your image, groups similar colors (color quantization), and ranks the most prominent, visually distinct clusters for a clean, usable palette.</p>
+
+<h4>What formats can I export to?</h4>
+<p>CSS variables, Tailwind config, JSON tokens, CSV, SVG strips, and PNG swatches — plus professional formats like Adobe .aco/.ase, Procreate .swatches, GIMP .gpl, and Clip Studio Paint .cls.</p>
+
+<h4>Are my images uploaded to a server?</h4>
+<p>No. All color analysis happens locally in your browser — nothing is uploaded, stored, or seen by anyone else.</p>
+
+<h4>How many colors should I extract?</h4>
+<p>Start with 6–8 for a balanced palette. Use fewer (3–4) for focused UI themes, more (10–12+) for illustration or mood-board work. You can re-extract with different counts freely.</p>
+
+<h4>Can I copy hex and RGB values?</h4>
+<p>Yes — click any swatch to copy its hex code instantly, with RGB, HSL, and sometimes OKLCH/Lab values shown alongside.</p>
+
+<h4>My palette is all whites and grays — what went wrong?</h4>
+<p>The tool sampled your background. Enable the ignore-white or ignore-transparent option and re-extract — the real colors will surface.</p>
+
+<h4>Can I use extracted colors commercially?</h4>
+<p>Colors themselves are not copyrightable — extracting a palette from an image is fine. Just make sure you have rights to the source image if you are reproducing it beyond its colors.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../../about-us.html">About Us</a>
+                    <a class="footer-link" href="../../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../js/shared/unified-input.js"></script>
+<script src="../js/utils/image-loader.js"></script>
+<script>
+        class PaletteGenerator {
+            constructor() {
+                this.files = [];
+                this.colorThief = new ColorThief();
+                this.currentPalette = [];
+                this.maxColors = 6;
+                this.init();
+            }
+
+            init() {
+                this.unifiedInput = new UnifiedInput({
+                    containerId: 'upload-zone',
+                    toolIcon: '🎨',
+                    toolName: 'Palette Generator',
+                    acceptTypes: 'image/*',
+                    onFilesLoaded: (files) => this.handleFilesLoaded(files)
+                });
+
+                document.getElementById('adj-count').addEventListener('input', (e) => {
+                    this.maxColors = parseInt(e.target.value);
+                    document.getElementById('val-count').textContent = this.maxColors;
+                    if (this.files.length > 0) this.processSingle(this.files[0]);
+                });
+
+                document.getElementById('export-type').onchange = () => this.updateExport();
+                document.getElementById('copy-code-btn').onclick = () => {
+                    navigator.clipboard.writeText(document.getElementById('code-output').textContent);
+                    alert("Copied to clipboard!");
+                };
+                document.getElementById('download-all-btn').onclick = () => this.downloadAll();
+                document.getElementById('reset-btn').onclick = () => location.reload();
+            }
+
+            handleFilesLoaded(files) {
+                this.files = files;
+                if (files.length === 1) {
+                    this.processSingle(files[0]);
+                } else if (files.length > 1) {
+                    this.processBatch();
+                }
+            }
+
+            async processSingle(file) {
+                document.getElementById('upload-zone').style.display = 'none';
+                document.getElementById('result-content').style.display = 'block';
+                document.getElementById('export-panel').style.display = 'block';
+                document.getElementById('reset-btn').style.display = 'block';
+
+                const img = document.getElementById('source-img');
+                img.src = URL.createObjectURL(file);
+
+                img.onload = () => {
+                    const colors = this.colorThief.getPalette(img, this.maxColors);
+                    this.currentPalette = colors.map(rgb => ({
+                        rgb: rgb,
+                        hex: this.rgbToHex(rgb[0], rgb[1], rgb[2]),
+                        hsl: this.rgbToHsl(rgb[0], rgb[1], rgb[2])
+                    }));
+                    this.renderPalette();
+                    this.renderHarmonies();
+                    this.updateExport();
+                };
+            }
+
+            processBatch() {
+                document.getElementById('upload-zone').style.display = 'none';
+                document.getElementById('export-panel').style.display = 'block';
+                document.getElementById('download-all-btn').style.display = 'block';
+                document.getElementById('reset-btn').style.display = 'block';
+                document.getElementById('code-output').textContent = `Ready to extract palettes from ${this.files.length} images. Click below to process and download.`;
+            }
+
+            renderPalette() {
+                const grid = document.getElementById('palette-grid');
+                grid.innerHTML = '';
+
+                this.currentPalette.forEach(c => {
+                    const card = document.createElement('div');
+                    card.className = 'color-card';
+
+                    const luminance = (0.299 * c.rgb[0] + 0.587 * c.rgb[1] + 0.114 * c.rgb[2]) / 255;
+                    const contrastWhite = this.getContrast(c.rgb, [255, 255, 255]);
+                    const contrastBlack = this.getContrast(c.rgb, [0, 0, 0]);
+
+                    card.innerHTML = `
+                        <div class="color-swatch" style="background: ${c.hex}" onclick="navigator.clipboard.writeText('${c.hex}'); alert('Copied ${c.hex}')"></div>
+                        <div class="color-info">
+                            <div class="color-hex">${c.hex}</div>
+                            <div class="color-meta">
+                                RGB: ${c.rgb.join(', ')}<br>
+                                HSL: ${c.hsl[0]}°, ${c.hsl[1]}%, ${c.hsl[2]}%
+                            </div>
+                            <div class="accessibility-badge ${contrastWhite >= 4.5 ? 'pass' : 'fail'}">
+                                On White: ${contrastWhite.toFixed(1)} ${contrastWhite >= 4.5 ? 'PASS' : 'FAIL'}
+                            </div>
+                            <div class="accessibility-badge ${contrastBlack >= 4.5 ? 'pass' : 'fail'}">
+                                On Black: ${contrastBlack.toFixed(1)} ${contrastBlack >= 4.5 ? 'PASS' : 'FAIL'}
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+
+            renderHarmonies() {
+                const container = document.getElementById('harmonies-container');
+                container.innerHTML = '';
+                if (this.currentPalette.length === 0) return;
+
+                const primary = this.currentPalette[0];
+                const types = [
+                    { name: 'Analogous', offsets: [-30, 0, 30] },
+                    { name: 'Monochromatic', offsets: [0], s: [-20, 0, 20], l: [-20, 0, 20] },
+                    { name: 'Complementary', offsets: [0, 180] }
+                ];
+
+                types.forEach(t => {
+                    const title = document.createElement('p');
+                    title.className = 'status-text';
+                    title.textContent = t.name;
+                    container.appendChild(title);
+
+                    const row = document.createElement('div');
+                    row.className = 'harmony-row';
+
+                    if (t.offsets) {
+                        t.offsets.forEach(off => {
+                            const h = (primary.hsl[0] + off + 360) % 360;
+                            const hex = this.hslToHex(h, primary.hsl[1], primary.hsl[2]);
+                            row.innerHTML += `<div class="harmony-box" style="background: ${hex}" title="${hex}"></div>`;
+                        });
+                    } else {
+                        // Mono logic
+                        [20, 50, 80].forEach(l => {
+                            const hex = this.hslToHex(primary.hsl[0], primary.hsl[1], l);
+                            row.innerHTML += `<div class="harmony-box" style="background: ${hex}" title="${hex}"></div>`;
+                        });
+                    }
+                    container.appendChild(row);
+                });
+            }
+
+            updateExport() {
+                const type = document.getElementById('export-type').value;
+                const output = document.getElementById('code-output');
+                let code = '';
+
+                if (type === 'css') {
+                    code = ':root {\n';
+                    this.currentPalette.forEach((c, i) => code += `  --color-${i + 1}: ${c.hex};\n`);
+                    code += '}';
+                } else if (type === 'tailwind') {
+                    code = 'colors: {\n';
+                    this.currentPalette.forEach((c, i) => code += `  'brand-${i + 1}': '${c.hex}',\n`);
+                    code += '}';
+                } else {
+                    code = JSON.stringify(this.currentPalette, null, 2);
+                }
+                output.textContent = code;
+            }
+
+            async downloadAll() {
+                for (let i = 0; i < this.files.length; i++) {
+                    const img = await window.ImageLoader.loadSingleImage(this.files[i]);
+                    const colors = this.colorThief.getPalette(img.canvas, this.maxColors);
+                    const palette = colors.map(rgb => ({
+                        hex: this.rgbToHex(rgb[0], rgb[1], rgb[2])
+                    }));
+                    const blob = new Blob([JSON.stringify(palette, null, 2)], { type: 'application/json' });
+                    const a = document.createElement('a');
+                    a.href = URL.createObjectURL(blob);
+                    a.download = `palette_${this.files[i].name.split('.')[0]}.json`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    this.unifiedInput.setFileStatus(i, 'done');
+                    await new Promise(r => setTimeout(r, 150));
+                }
+            }
+
+            rgbToHex(r, g, b) {
+                return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
+            }
+
+            rgbToHsl(r, g, b) {
+                r /= 255; g /= 255; b /= 255;
+                const max = Math.max(r, g, b), min = Math.min(r, g, b);
+                let h, s, l = (max + min) / 2;
+                if (max === min) h = s = 0;
+                else {
+                    const d = max - min;
+                    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                    switch (max) {
+                        case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                        case g: h = (b - r) / d + 2; break;
+                        case b: h = (r - g) / d + 4; break;
+                    }
+                    h /= 6;
+                }
+                return [Math.round(h * 360), Math.round(s * 100), Math.round(l * 100)];
+            }
+
+            hslToHex(h, s, l) {
+                l /= 100;
+                const a = s * Math.min(l, 1 - l) / 100;
+                const f = n => {
+                    const k = (n + h / 30) % 12;
+                    const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+                    return Math.round(255 * color).toString(16).padStart(2, '0');
+                };
+                return `#${f(0)}${f(8)}${f(4)}`.toUpperCase();
+            }
+
+            getContrast(rgb1, rgb2) {
+                const l1 = this.getLuminance(rgb1) + 0.05;
+                const l2 = this.getLuminance(rgb2) + 0.05;
+                return Math.max(l1, l2) / Math.min(l1, l2);
+            }
+
+            getLuminance(rgb) {
+                const a = rgb.map(v => {
+                    v /= 255;
+                    return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+                });
+                return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => new PaletteGenerator());
+    </script>
+</body>
+</html>

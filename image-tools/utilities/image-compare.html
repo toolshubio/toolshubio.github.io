@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional Image Comparison Tool. Compare two images side-by-side or with a slider. Analyze pixel differences, check PSNR quality, and sync zoom/pan for detailed inspection.">
+    <title>Image Compare Tool - Side-by-Side & Pixel Diff | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../../image-tools/css/global.css">
+    <link rel="stylesheet" href="../../image-tools/css/components.css">
+    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../../about-us.html">About</a>
+                <a class="nav-link" href="../../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> &gt;
+                <a href="../index.html">Image Tools</a> &gt;
+                <span>⚖️ Image Comparison Tool</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">⚖️ Image Comparison Tool</h1>
+                <p class="tool-description">Advanced visual analysis. Compare revisions, check compression quality, and
+                    visualize pixel-level differences with synchronized zoom and pan.</p>
+                <div class="tool-badges"><span class="badge badge-primary">Sync Pan/Zoom</span><span class="badge badge-primary">Pixel Diff</span><span class="badge badge-secondary">PSNR Metrics</span></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<section class="preview-area">
+<div id="upload-zone"></div>
+<div id="compare-workspace" style="display: none;">
+<!-- Multi-Mode Results -->
+<div class="compare-grid" id="grid-mode">
+<div class="compare-viewport" id="vp-1">
+<span class="viewport-label">Image A (Original)</span>
+<canvas id="cvs-A"></canvas>
+</div>
+<div class="compare-viewport" id="vp-2">
+<span class="viewport-label">Image B (Modified)</span>
+<canvas id="cvs-B"></canvas>
+</div>
+</div>
+<div class="slider-wrapper" id="slider-mode">
+<canvas id="cvs-slider"></canvas>
+<div class="slider-line" id="slider-line">
+<div class="slider-handle">↔</div>
+</div>
+</div>
+<div class="compare-viewport" id="diff-mode" style="display: none; height: 500px; margin-top: 20px;">
+<span class="viewport-label">Pixel Difference Heatmap</span>
+<canvas id="cvs-diff"></canvas>
+</div>
+<div class="diff-stats">
+<div class="stat-card">
+<span class="stat-val" id="stat-psnr">- dB</span>
+<span class="stat-lbl">PSNR Quality</span>
+</div>
+<div class="stat-card">
+<span class="stat-val" id="stat-diff">0%</span>
+<span class="stat-lbl">Pixels Changed</span>
+</div>
+<div class="stat-card">
+<span class="stat-val" id="stat-dim">-</span>
+<span class="stat-lbl">Dimensions</span>
+</div>
+</div>
+</div>
+</section>
+<aside class="control-panel">
+<div class="control-section">
+<h3 class="control-section-title">🕹️ Comparison Mode</h3>
+<div class="preset-buttons" id="view-mode">
+<button class="preset-btn active" data-mode="grid">Side-by-Side</button>
+<button class="preset-btn" data-mode="slider">Slider</button>
+<button class="preset-btn" data-mode="diff">Difference</button>
+</div>
+</div>
+<div class="control-section">
+<h3 class="control-section-title">📈 Color Histograms</h3>
+<div class="hist-comp">
+<canvas class="hist-canvas" id="hist-A"></canvas>
+<canvas class="hist-canvas" id="hist-B"></canvas>
+</div>
+</div>
+<div class="control-section">
+<h3 class="control-section-title">🔍 Navigation</h3>
+<button class="btn btn-secondary w-full mb-2" id="btn-reset-zoom">Reset Zoom &amp; Pan</button>
+<p class="status-text">Scroll to Zoom. Click and Drag to Pan both images in sync.</p>
+</div>
+<div class="control-section">
+<button class="btn btn-secondary w-full" id="reset-btn" style="display: none;"><span>🔄</span>
+                            Change Images</button>
+</div>
+</aside>
+</div>
+</div>
+</main>
+            </div>
+            <section class="seo-article" data-tool="image-compare">
+<article class="tool-article">
+<h2>Image Compare — Compare Two Images Side by Side Online Free</h2>
+
+<p>Did my edit actually improve this photo, or did I just stare at it too long? Is the compressed version visibly worse than the original? Spot the difference between these two product shots. An image compare tool answers these by placing two pictures side by side — or layered under a draggable slider — so your eyes judge the difference directly instead of your memory. Free, no signup, and your images never leave your browser.</p>
+
+<h3>What Is an Image Compare Tool?</h3>
+
+<p>It is a viewer built for one job: judging the difference between two images. The basic mode puts them side by side with synchronized zoom and pan — zoom into a corner of one and the other follows, so you are always looking at the same region of both. More advanced tools offer multiple views of the same pair: a draggable reveal slider (the classic before-and-after), a fade cross-dissolve, a flicker mode that alternates the two rapidly so changes appear to jump, and a subtract view that renders identical pixels black so any difference glows.</p>
+
+<p>There are two different problems people bring here. The first is <strong>qualitative</strong>: which edit looks better, did the retouch work, where did the designer change the mockup. The second is <strong>quantitative</strong>: pixel-by-pixel diffing that produces a change log — regions grouped and listed beside the image, per-channel error counts, difference percentages. Methods like SSIM measure structural similarity the way humans perceive it; PSNR scores compression quality; plain pixel counting (AE) tells you exactly how many pixels changed.</p>
+
+<p>When I first used one, the flicker mode surprised me most. Differences I could not see side by side became obvious the moment the images alternated — motion is something human vision is built to catch.</p>
+
+<h3>How to Compare Two Images Online</h3>
+
+<p><strong>Step 1 — Upload both images.</strong> Drop Image 1 (original) and Image 2 (changed) into the tool. PNG, JPG, WebP, GIF, and HEIC all work, even mixed formats.</p>
+
+<p><strong>Step 2 — Pick a comparison view.</strong> Side by side for general judging; slider for before-and-after reveals; fade for easing between versions; flicker for spotting moved elements; subtract or highlight for pixel-level change detection.</p>
+
+<p><strong>Step 3 — Inspect.</strong> Use synchronized zoom to check fine detail — compression artifacts cluster at object boundaries and fine textures, exactly where zooming pays off. For overlay modes, both images should have the same dimensions; pixels are read in position, so a resized copy reads as a whole-image change.</p>
+
+<p><strong>Step 4 — Export if needed.</strong> Some tools export the comparison as a shareable PNG — the before/after slider baked into one image — or a diff report with error percentages.</p>
+
+<p>Habit worth building: for before-and-after work, use two images of the same dimensions. Same-size pairs stay pixel-aligned, which makes fine detail easy to judge honestly.</p>
+
+<h3>Comparison Views and What Each Reveals</h3>
+
+<table>
+<thead><tr><th>View</th><th>How it works</th><th>Best for</th></tr></thead>
+<tbody>
+<tr><td>Side by side</td><td>Both images next to each other, synced zoom/pan</td><td>General comparison, design revisions</td></tr>
+<tr><td>Slider / reveal</td><td>Drag a divider to reveal one beneath the other</td><td>Before-and-after edits, retouching</td></tr>
+<tr><td>Fade</td><td>Cross-dissolve controlled by a slider</td><td>Easing between versions, subtle color shifts</td></tr>
+<tr><td>Flicker</td><td>Alternates rapidly between the two</td><td>Spotting moved or added elements</td></tr>
+<tr><td>Subtract / highlight</td><td>Identical pixels go black; differences glow</td><td>Pixel-level diffing, compression analysis</td></tr>
+<tr><td>Text compare</td><td>OCR reads both images, compares as text</td><td>When the change is in wording, not pixels</td></tr>
+</tbody>
+</table>
+
+<h3>Who Compares Images?</h3>
+
+<p><strong>Photographers and retouchers</strong> judge before/after edits — did the <strong>sharpening</strong> help, did the denoise soften too much, did the color grade go too far. The slider view is their daily driver.</p>
+
+<p><strong>Designers</strong> compare mockup revisions with clients. A slider comparison communicates "here is what changed" better than two separate files ever will.</p>
+
+<p><strong>Developers and QA testers</strong> diff UI screenshots between builds. Pixel-subtract views catch the one-pixel shift that a human scan misses — and SSIM scores quantify compression quality objectively.</p>
+
+<p><strong>Content creators</strong> compare AI upscales against sources, game mods against vanilla, and compression settings against originals — anywhere the claim is "this looks better," the comparison is the proof.</p>
+
+<h3>Practical Tips for Honest Comparisons</h3>
+
+<ul>
+<li><strong>Match dimensions first.</strong> Overlay modes need same-size images — <strong>resize</strong> both to identical pixels before comparing, or scaling itself shows as a diff.</li>
+<li><strong>Use PNG for diffs.</strong> JPEG noise shows up as false differences in subtract views; PNG keeps the comparison clean.</li>
+<li><strong>Zoom to 100%.</strong> Compression artifacts hide at fit-to-screen and show at actual size — judge detail at 1:1.</li>
+<li><strong>Try flicker for motion.</strong> Anything that moved between shots jumps visibly in flicker mode when side-by-side looks identical.</li>
+<li><strong>Label your sides.</strong> "Before" and "After" labels (or filenames) prevent the classic embarrassment of judging the wrong direction.</li>
+<li><strong>Compare text as text.</strong> If the change is wording on a screenshot, the OCR text-compare view beats pixel staring.</li>
+<li><strong>Export the proof.</strong> When a client asks "what changed," a baked before/after PNG answers better than a paragraph.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this image compare tool free?</h4>
+<p>Yes — free, no signup, no watermark on exports.</p>
+
+<h4>Do the two images need the same dimensions?</h4>
+<p>For overlay and diff modes, yes — pixels are compared in position, so a resized or shifted copy reads as a whole-image change. Align, <strong>crop</strong>, or resize the pair first; side-by-side viewing is more forgiving.</p>
+
+<h4>What is the difference view showing me?</h4>
+<p>It subtracts one image from the other pixel by pixel. Identical areas render flat black; any difference glows — including differences too faint to see side by side.</p>
+
+<h4>Can I compare compression quality?</h4>
+<p>Yes. Upload the original as image one and the compressed version as image two, then use SSIM (structural similarity, closest to human perception) or PSNR (a single numeric quality score). The diff shows exactly where artifacts appear.</p>
+
+<h4>Are my images uploaded to a server?</h4>
+<p>Browser-based tools process locally — nothing leaves your device. Some tools offer shareable links and embeds, which do host the images; check each tool's retention policy.</p>
+
+<h4>Can I embed a comparison on my website?</h4>
+<p>Some tools provide an embed snippet that drops the interactive slider straight into your page, sized to your image — handy for portfolio before/afters.</p>
+
+<h4>What is flicker mode for?</h4>
+<p>It alternates the two images rapidly in place. Anything that moved, appeared, or disappeared seems to jump — the fastest way to spot changes your eyes glide past.</p>
+
+<h4>How is this different from an image merger?</h4>
+<p>A compare tool helps you <em>judge differences</em> between two images; a <strong>merger</strong> combines multiple images into one file. Different jobs, often used in sequence — merge for presentation, compare for evaluation.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../../about-us.html">About Us</a>
+                    <a class="footer-link" href="../../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../js/shared/unified-input.js"></script>
+<script src="../js/utils/image-loader.js"></script>
+<script>
+        class ImageCompare {
+            constructor() {
+                this.images = []; // { img, cvs, ctx }
+                this.zoom = 1;
+                this.offsetX = 0;
+                this.offsetY = 0;
+                this.isPanning = false;
+                this.lastMouse = { x: 0, y: 0 };
+                this.sliderPos = 0.5;
+                this.currentMode = 'grid';
+                this.init();
+            }
+
+            init() {
+                this.unifiedInput = new UnifiedInput({
+                    containerId: 'upload-zone',
+                    toolIcon: '⚖️',
+                    toolName: 'Compare Tool',
+                    acceptTypes: 'image/*',
+                    maxFiles: 2,
+                    onFilesLoaded: (files) => this.handleFilesLoaded(files)
+                });
+
+                document.querySelectorAll('#view-mode .preset-btn').forEach(btn => {
+                    btn.onclick = () => {
+                        document.querySelectorAll('#view-mode .preset-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        this.switchMode(btn.dataset.mode);
+                    };
+                });
+
+                document.getElementById('btn-reset-zoom').onclick = () => this.resetNavigation();
+                document.getElementById('reset-btn').onclick = () => location.reload();
+
+                // Viewport Events
+                const vps = ['vp-1', 'vp-2', 'diff-mode', 'slider-mode'];
+                vps.forEach(id => {
+                    const el = document.getElementById(id);
+                    el.addEventListener('wheel', (e) => this.handleWheel(e), { passive: false });
+                    el.addEventListener('mousedown', (e) => this.handleStart(e));
+                });
+                window.addEventListener('mousemove', (e) => this.handleMove(e));
+                window.addEventListener('mouseup', () => this.isPanning = false);
+
+                // Slider Line Move
+                const sLine = document.getElementById('slider-line');
+                sLine.addEventListener('mousedown', () => this.isSliding = true);
+                window.addEventListener('mousemove', (e) => {
+                    if (!this.isSliding) return;
+                    const rect = document.getElementById('slider-mode').getBoundingClientRect();
+                    this.sliderPos = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+                    sLine.style.left = (this.sliderPos * 100) + '%';
+                    this.draw();
+                });
+                window.addEventListener('mouseup', () => this.isSliding = false);
+            }
+
+            async handleFilesLoaded(files) {
+                if (files.length < 2) return;
+                document.getElementById('upload-zone').style.display = 'none';
+                document.getElementById('compare-workspace').style.display = 'block';
+                document.getElementById('reset-btn').style.display = 'block';
+
+                const imgA = await window.ImageLoader.loadSingleImage(files[0]);
+                const imgB = await window.ImageLoader.loadSingleImage(files[1]);
+
+                this.images = [
+                    { img: imgA.image, cvs: document.getElementById('cvs-A'), ctx: document.getElementById('cvs-A').getContext('2d') },
+                    { img: imgB.image, cvs: document.getElementById('cvs-B'), ctx: document.getElementById('cvs-B').getContext('2d') }
+                ];
+
+                this.setupCanvases();
+                this.calculateMetrics();
+                this.drawHistograms();
+                this.draw();
+            }
+
+            setupCanvases() {
+                const w = this.images[0].img.width;
+                const h = this.images[0].img.height;
+                document.getElementById('stat-dim').textContent = `${w} x ${h}`;
+
+                this.images.forEach(data => {
+                    data.cvs.width = w;
+                    data.cvs.height = h;
+                });
+
+                const cvsDiff = document.getElementById('cvs-diff');
+                cvsDiff.width = w; cvsDiff.height = h;
+
+                const cvsSlider = document.getElementById('cvs-slider');
+                cvsSlider.width = w; cvsSlider.height = h;
+            }
+
+            switchMode(mode) {
+                this.currentMode = mode;
+                document.getElementById('grid-mode').style.display = mode === 'grid' ? 'grid' : 'none';
+                document.getElementById('slider-mode').style.display = mode === 'slider' ? 'block' : 'none';
+                document.getElementById('diff-mode').style.display = mode === 'diff' ? 'block' : 'none';
+                this.draw();
+            }
+
+            handleWheel(e) {
+                e.preventDefault();
+                const delta = e.deltaY > 0 ? 0.9 : 1.1;
+                this.zoom *= delta;
+                this.zoom = Math.max(0.1, Math.min(20, this.zoom));
+                this.draw();
+            }
+
+            handleStart(e) {
+                this.isPanning = true;
+                this.lastMouse = { x: e.clientX, y: e.clientY };
+            }
+
+            handleMove(e) {
+                if (!this.isPanning) return;
+                const dx = (e.clientX - this.lastMouse.x) / this.zoom;
+                const dy = (e.clientY - this.lastMouse.y) / this.zoom;
+                this.offsetX += dx;
+                this.offsetY += dy;
+                this.lastMouse = { x: e.clientX, y: e.clientY };
+                this.draw();
+            }
+
+            resetNavigation() {
+                this.zoom = 1; this.offsetX = 0; this.offsetY = 0;
+                this.draw();
+            }
+
+            draw() {
+                if (this.images.length === 0) return;
+
+                const drawOnCvs = (ctx, img) => {
+                    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+                    ctx.save();
+                    ctx.translate(ctx.canvas.width / 2, ctx.canvas.height / 2);
+                    ctx.scale(this.zoom, this.zoom);
+                    ctx.translate(-ctx.canvas.width / 2 + this.offsetX, -ctx.canvas.height / 2 + this.offsetY);
+                    ctx.drawImage(img, 0, 0);
+                    ctx.restore();
+                };
+
+                if (this.currentMode === 'grid') {
+                    drawOnCvs(this.images[0].ctx, this.images[0].img);
+                    drawOnCvs(this.images[1].ctx, this.images[1].img);
+                } else if (this.currentMode === 'slider') {
+                    const ctx = document.getElementById('cvs-slider').getContext('2d');
+                    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+                    ctx.save();
+                    ctx.translate(ctx.canvas.width / 2, ctx.canvas.height / 2);
+                    ctx.scale(this.zoom, this.zoom);
+                    ctx.translate(-ctx.canvas.width / 2 + this.offsetX, -ctx.canvas.height / 2 + this.offsetY);
+
+                    // Draw Image B
+                    ctx.drawImage(this.images[1].img, 0, 0);
+
+                    // Clip and Draw Image A
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.rect(0, 0, ctx.canvas.width * this.sliderPos, ctx.canvas.height);
+                    ctx.clip();
+                    ctx.drawImage(this.images[0].img, 0, 0);
+                    ctx.restore();
+
+                    ctx.restore();
+                } else if (this.currentMode === 'diff') {
+                    this.drawDiff();
+                }
+            }
+
+            drawDiff() {
+                const cvs = document.getElementById('cvs-diff');
+                const ctx = cvs.getContext('2d');
+                ctx.clearRect(0, 0, cvs.width, cvs.height);
+
+                const offCvs = document.createElement('canvas');
+                offCvs.width = cvs.width; offCvs.height = cvs.height;
+                const offCtx = offCvs.getContext('2d');
+
+                // Draw A
+                offCtx.drawImage(this.images[0].img, 0, 0);
+                const dataA = offCtx.getImageData(0, 0, cvs.width, cvs.height).data;
+
+                // Draw B
+                offCtx.clearRect(0, 0, cvs.width, cvs.height);
+                offCtx.drawImage(this.images[1].img, 0, 0);
+                const dataB = offCtx.getImageData(0, 0, cvs.width, cvs.height).data;
+
+                const out = offCtx.createImageData(cvs.width, cvs.height);
+                for (let i = 0; i < dataA.length; i += 4) {
+                    const r = Math.abs(dataA[i] - dataB[i]);
+                    const g = Math.abs(dataA[i + 1] - dataB[i + 1]);
+                    const b = Math.abs(dataA[i + 2] - dataB[i + 2]);
+                    const diff = (r + g + b) / 3;
+
+                    out.data[i] = diff * 5; // Emphasize
+                    out.data[i + 1] = 0;
+                    out.data[i + 2] = 0;
+                    out.data[i + 3] = 255;
+                }
+
+                offCtx.putImageData(out, 0, 0);
+
+                ctx.save();
+                ctx.translate(cvs.width / 2, cvs.height / 2);
+                ctx.scale(this.zoom, this.zoom);
+                ctx.translate(-cvs.width / 2 + this.offsetX, -cvs.height / 2 + this.offsetY);
+                ctx.drawImage(offCvs, 0, 0);
+                ctx.restore();
+            }
+
+            calculateMetrics() {
+                const w = this.images[0].img.width;
+                const h = this.images[0].img.height;
+                const cvs = document.createElement('canvas');
+                cvs.width = w; cvs.height = h;
+                const ctx = cvs.getContext('2d');
+
+                ctx.drawImage(this.images[0].img, 0, 0);
+                const d1 = ctx.getImageData(0, 0, w, h).data;
+                ctx.clearRect(0, 0, w, h);
+                ctx.drawImage(this.images[1].img, 0, 0);
+                const d2 = ctx.getImageData(0, 0, w, h).data;
+
+                let mse = 0;
+                let diffCount = 0;
+                for (let i = 0; i < d1.length; i += 4) {
+                    const r = d1[i] - d2[i];
+                    const g = d1[i + 1] - d2[i + 1];
+                    const b = d1[i + 2] - d2[i + 2];
+                    mse += (r * r + g * g + b * b);
+                    if (r !== 0 || g !== 0 || b !== 0) diffCount++;
+                }
+                mse /= (w * h * 3);
+                const psnr = 10 * Math.log10((255 * 255) / (mse || 0.0001));
+
+                document.getElementById('stat-psnr').textContent = psnr === Infinity ? 'Exact Match' : psnr.toFixed(1) + ' dB';
+                document.getElementById('stat-diff').textContent = ((diffCount / (w * h)) * 100).toFixed(2) + '%';
+            }
+
+            drawHistograms() {
+                const render = (img, cvsId) => {
+                    const cvs = document.getElementById(cvsId);
+                    const ctx = cvs.getContext('2d');
+                    const w = 50, h = 50; // Temp sample
+                    const off = document.createElement('canvas'); off.width = w; off.height = h;
+                    const offCtx = off.getContext('2d');
+                    offCtx.drawImage(img, 0, 0, w, h);
+                    const data = offCtx.getImageData(0, 0, w, h).data;
+
+                    const bins = new Array(256).fill(0);
+                    for (let i = 0; i < data.length; i += 4) {
+                        const gray = Math.round(data[i] * 0.3 + data[i + 1] * 0.59 + data[i + 2] * 0.11);
+                        bins[gray]++;
+                    }
+
+                    const max = Math.max(...bins);
+                    ctx.clearRect(0, 0, cvs.width, cvs.height);
+                    ctx.fillStyle = '#6366f1';
+                    bins.forEach((v, i) => {
+                        const x = (i / 256) * cvs.width;
+                        const barH = (v / max) * cvs.height;
+                        ctx.fillRect(x, cvs.height - barH, 1, barH);
+                    });
+                };
+
+                render(this.images[0].img, 'hist-A');
+                render(this.images[1].img, 'hist-B');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => new ImageCompare());
+    </script>
+</body>
+</html>

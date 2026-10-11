@@ -1,0 +1,258 @@
+/* ===================================
+   RESPONSIVE DESIGN
+   Mobile-First Approach
+   =================================== */
+
+/* Base styles are mobile-first (375px+) */
+
+/* ===================================
+   SMALL TABLETS & LARGE PHONES
+   =================================== */
+
+@media (min-width: 768px) {
+
+    /* Typography adjustments */
+    h1 {
+        font-size: var(--text-5xl);
+    }
+
+    h2 {
+        font-size: var(--text-4xl);
+    }
+
+    h3 {
+        font-size: var(--text-3xl);
+    }
+
+    /* Container spacing */
+    .container {
+        padding: 0 var(--space-6);
+    }
+
+    /* Grid utilities */
+    .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Flex utilities */
+    .md\:flex-row {
+        flex-direction: row;
+    }
+
+    /* Upload zone */
+    .upload-zone {
+        padding: var(--space-10);
+    }
+
+    /* Tool card grid */
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ===================================
+   TABLETS & SMALL DESKTOPS
+   =================================== */
+
+@media (min-width: 1024px) {
+
+    /* Container */
+    .container {
+        padding: 0 var(--space-8);
+    }
+
+    /* Grid utilities */
+    .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .lg\:grid-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Tool card grid */
+    .tools-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Modal */
+    .modal {
+        max-width: 800px;
+    }
+}
+
+/* ===================================
+   LARGE DESKTOPS
+   =================================== */
+
+@media (min-width: 1440px) {
+
+    /* Tool card grid */
+    .tools-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Container max width */
+    .container {
+        max-width: 1440px;
+    }
+}
+
+/* ===================================
+   MOBILE-SPECIFIC STYLES
+   =================================== */
+
+@media (max-width: 767px) {
+
+    /* Stack navigation */
+    .nav-menu {
+        flex-direction: column;
+    }
+
+    /* Full width buttons on mobile */
+    .btn-mobile-full {
+        width: 100%;
+    }
+
+    /* Smaller padding */
+    .card {
+        padding: var(--space-4);
+    }
+
+    /* Modal takes full screen on mobile */
+    .modal {
+        border-radius: 0;
+        max-height: 100vh;
+        width: 100vw;
+    }
+
+    /* Adjust text sizes */
+    .text-2xl {
+        font-size: var(--text-xl);
+    }
+
+    .text-3xl {
+        font-size: var(--text-2xl);
+    }
+
+    /* Hide on mobile */
+    .hide-mobile {
+        display: none !important;
+    }
+
+    /* Show only on mobile */
+    .show-mobile {
+        display: block !important;
+    }
+}
+
+/* ===================================
+   TOUCH DEVICES
+   =================================== */
+
+@media (hover: none) and (pointer: coarse) {
+
+    /* Larger touch targets */
+    .btn {
+        min-height: 44px;
+        padding: var(--space-3) var(--space-5);
+    }
+
+    .btn-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    /* Remove hover effects */
+    .hover-lift:hover {
+        transform: none;
+        box-shadow: var(--shadow-sm);
+    }
+
+    /* Disable tooltips on touch devices */
+    .tooltip::after {
+        display: none;
+    }
+}
+
+/* ===================================
+   PRINT STYLES
+   =================================== */
+
+@media print {
+
+    /* Hide non-essential elements */
+    header,
+    footer,
+    .btn,
+    .upload-zone {
+        display: none;
+    }
+
+    /* Ensure content is visible */
+    body {
+        background: white;
+        color: black;
+    }
+
+    /* Remove shadows and effects */
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+}
+
+/* ===================================
+   REDUCED MOTION
+   =================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ===================================
+   HIGH CONTRAST MODE
+   =================================== */
+
+@media (prefers-contrast: high) {
+    :root {
+        --border-color: #000000;
+    }
+
+    [data-theme="dark"] {
+        --border-color: #ffffff;
+    }
+
+    .btn {
+        border: 2px solid currentColor;
+    }
+}
+
+/* ===================================
+   LANDSCAPE ORIENTATION
+   =================================== */
+
+@media (max-width: 767px) and (orientation: landscape) {
+
+    /* Reduce vertical spacing */
+    .upload-zone {
+        padding: var(--space-4);
+    }
+
+    /* Adjust modal height */
+    .modal {
+        max-height: 90vh;
+    }
+}

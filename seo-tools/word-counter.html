@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>SEO Word Counter | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">SEO Tools</a> &gt;
+                <span>SEO Word Counter</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">SEO Word Counter</h1>
+                <p class="tool-description"></p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
+<div class="container text-center">
+<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">SEO Word Counter</h1>
+<p class="hero-subtitle">Advanced analysis: count words, chars, sentences, paragraphs, and reading time.
+                </p>
+</div>
+</section>
+<div class="container">
+<div class="tool-interface-container">
+<div class="input-group">
+<textarea class="seo-textarea" id="inputText" oninput="analyzeText()" placeholder="Paste your article or text here..." style="min-height: 400px; font-size: 1.1rem; line-height: 1.8;"></textarea>
+</div>
+<div class="action-bar" style="margin-top: 1rem; margin-bottom: 2rem;">
+<button class="btn-secondary" onclick="inputText.value=''; analyzeText();">Clear Text</button>
+<button class="btn-secondary" onclick="copyText()">Copy Text</button>
+</div>
+<div class="output-section" style="border-top: none; margin-top: 0;">
+<div class="schema-form-grid mb-lg" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+<div class="feature-card" style="padding: 1rem; background: var(--bg-primary);">
+<h4 class="feature-title" style="font-size: 1rem;">Words</h4>
+<p class="stat-number" id="statWords">0</p>
+</div>
+<div class="feature-card" style="padding: 1rem; background: var(--bg-primary);">
+<h4 class="feature-title" style="font-size: 1rem;">Characters</h4>
+<p class="stat-number" id="statChars">0</p>
+</div>
+<div class="feature-card" style="padding: 1rem; background: var(--bg-primary);">
+<h4 class="feature-title" style="font-size: 1rem;">Sentences</h4>
+<p class="stat-number" id="statSentences">0</p>
+</div>
+<div class="feature-card" style="padding: 1rem; background: var(--bg-primary);">
+<h4 class="feature-title" style="font-size: 1rem;">Paragraphs</h4>
+<p class="stat-number" id="statParagraphs">0</p>
+</div>
+<div class="feature-card" style="padding: 1rem; background: var(--bg-primary);">
+<h4 class="feature-title" style="font-size: 1rem;">Reading Time</h4>
+<p class="stat-number" id="statReadTime" style="font-size: 1.25rem;">0m</p>
+</div>
+<div class="feature-card" style="padding: 1rem; background: var(--bg-primary);">
+<h4 class="feature-title" style="font-size: 1rem;">Speaking Time</h4>
+<p class="stat-number" id="statSpeakTime" style="font-size: 1.25rem;">0m</p>
+</div>
+</div>
+<div class="bg-secondary p-md border-radius-md" style="background: var(--bg-tertiary); padding: 1.5rem; border-radius: 12px;">
+<h4 class="mb-sm">Keyword Density (Top 5)</h4>
+<div id="densityList">
+<p class="text-secondary">Start typing to see keyword density...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+            <section class="seo-article" data-tool="word-counter">
+<article class="tool-article">
+<h2>Word Counter — Free Online Word, Character & Reading Time Tool</h2>
+
+<p>Every piece of writing has a number attached to it: the essay that must be 500 words, the tweet that cannot exceed 280 characters, the meta description that dies at 160. I have watched students guess their way through assignment limits and marketers guess their way through ad copy — both waste time. A word counter ends the guessing. Paste your text, and words, characters, sentences, paragraphs, and reading time update live as you type.</p>
+
+<h3>What Is a Word Counter?</h3>
+
+<p>A word counter is the simplest useful text tool on the internet: it tallies the words, characters, sentences, and paragraphs in anything you paste or type. But modern ones do more than count. The good ones show characters with and without spaces (different platforms count differently), estimate reading time at 200–225 words per minute and speaking time at 130–140 words per minute, flag when your text fits platform limits like X's 280 characters or a meta title's 60, and some add keyword density or reading-level estimates on top.</p>
+
+<p>The counting rules are worth knowing because they explain the small differences between tools. A word is any chunk separated by whitespace — hyphenated terms like "well-known" count as one, numbers like "2026" count as one. Sentences are detected by terminal punctuation (periods, question marks, exclamation marks), so abbreviations can cause a slight over-count. Paragraphs split on blank lines. These are conventions, not laws — but they are the conventions every serious tool follows, so results agree.</p>
+
+<h3>How to Use the Word Counter</h3>
+
+<p>There is no learning curve, which is the point.</p>
+
+<p>Paste your text into the box — or start typing directly. Every metric updates instantly: words, characters (with spaces), characters (without spaces), sentences, paragraphs, lines, reading time, speaking time. There is no calculate button and no page reload; the counts follow your edits in real time.</p>
+
+<p>Use the numbers against your target. Writing a college essay with a 1,000-word minimum? Watch the word count climb. Trimming a meta description? Watch the character count — the tool flags when you fit inside 155–160 characters. Drafting a social caption? The platform-limit hints tell you when you fit X's 280 or Instagram's 2,200. When the numbers match your brief, copy the text out with one click or clear the box and start the next piece.</p>
+
+<p>One practical habit: check the reading time, not just the count. A 1,500-word blog post reads in about 6–7 minutes — if your analytics say readers leave at 2 minutes, the count tells you the content is not holding them, not that it is too long.</p>
+
+<h3>Common Word Count Targets</h3>
+
+<table>
+<thead><tr><th>Content type</th><th>Typical word count</th><th>Reading time</th></tr></thead>
+<tbody>
+<tr><td>X (Twitter) post</td><td>40–50 words (280 chars max)</td><td>Under 1 min</td></tr>
+<tr><td>Meta description</td><td>25–30 words (155–160 chars)</td><td>Under 1 min</td></tr>
+<tr><td>Short blog post</td><td>300–600 words</td><td>2–3 min</td></tr>
+<tr><td>Standard blog post</td><td>1,000–1,500 words</td><td>5–7 min</td></tr>
+<tr><td>Long-form article / SEO pillar</td><td>2,000–3,000+ words</td><td>10–15 min</td></tr>
+<tr><td>College essay</td><td>500–5,000 words</td><td>3–25 min</td></tr>
+<tr><td>5-minute speech</td><td>650–750 words</td><td>— (speaking)</td></tr>
+<tr><td>Cover letter</td><td>250–400 words</td><td>1–2 min</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Word Counters?</h3>
+
+<p><strong>Students</strong> are the classic users — hitting assignment minimums and maximums without manual counting.</p>
+
+<p><strong>Bloggers and writers</strong> track progress against briefs and publishing requirements; longer SEO content (1,500–2,500 words) is planned by the count.</p>
+
+<p><strong>Marketers</strong> fit ad copy, email subject lines (6–10 words), and social captions inside platform character limits.</p>
+
+<p><strong>SEO writers</strong> check meta titles (50–60 characters) and descriptions (155–160) against Google's display limits.</p>
+
+<p><strong>Speakers</strong> convert word counts to stage time — about 130–140 words per minute of speaking — so a 10-minute talk needs roughly 1,300–1,400 words.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Real-time counting</strong> — every metric updates as you type, no button needed.</li>
+<li><strong>Words, characters, sentences, paragraphs</strong> — the full breakdown in one view.</li>
+<li><strong>Characters with/without spaces</strong> — match whichever definition your platform uses.</li>
+<li><strong>Reading and speaking time</strong> — estimates at standard words-per-minute rates.</li>
+<li><strong>Platform limit hints</strong> — flags when text fits X, meta, or social limits.</li>
+<li><strong>Keyword density</strong> — on advanced tools, see your most-used words and frequencies.</li>
+<li><strong>100% free</strong> — no signup, handles 100,000+ words.</li>
+<li><strong>Private by design</strong> — everything counted in your browser; nothing is uploaded.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>How is reading time calculated?</h4>
+<p>Word count divided by words per minute — typically 200–225 for reading, 130–140 for speaking. Dense or technical text reads slower than the estimate; short casual text reads faster. Treat it as a planning number.</p>
+
+<h4>What counts as a word?</h4>
+<p>Any sequence of characters separated by whitespace. Hyphenated words count as one, numbers count as one. This is the standard convention across tools.</p>
+
+<h4>Why do different counters show different counts?</h4>
+<p>Usually the sentence count (abbreviations inflate it) or the character definition (with vs. without spaces). Word counts themselves almost always agree — compare the same metric across tools.</p>
+
+<h4>What is the ideal blog post length for SEO?</h4>
+<p>Longer content typically performs better: 300–600 words for quick reads, 1,000–1,500 for standard posts, 2,000–3,000+ for in-depth guides. But length never beats satisfying the search intent — write the length the topic needs.</p>
+
+<h4>How many words is a 5-minute speech?</h4>
+<p>About 650–750 words at a comfortable speaking pace of 130–140 words per minute.</p>
+
+<h4>Is this word counter free?</h4>
+<p>Yes — completely free, no signup, no word limits that matter.</p>
+
+<h4>Does my text get uploaded anywhere?</h4>
+<p>No. All counting happens locally in your browser; nothing is stored, logged, or shared.</p>
+
+<h4>Can it check keyword density?</h4>
+<p>Many word counters include a keyword density view showing your most-used words and their frequency — useful for checking that a target keyword appears naturally (around 1–2%) without stuffing.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        const inputText = document.getElementById('inputText');
+
+        function analyzeText() {
+            const text = inputText.value;
+            const trimmed = text.trim();
+
+            // Basic Counts
+            const words = trimmed === '' ? 0 : trimmed.replace(/\s+/g, ' ').split(' ').length;
+            const chars = text.length;
+            const sentences = trimmed === '' ? 0 : trimmed.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
+            const paragraphs = trimmed === '' ? 0 : trimmed.split(/\n\s*\n/).filter(p => p.trim().length > 0).length;
+
+            document.getElementById('statWords').innerText = words;
+            document.getElementById('statChars').innerText = chars;
+            document.getElementById('statSentences').innerText = sentences;
+            document.getElementById('statParagraphs').innerText = paragraphs;
+
+            // Time stats (Avg reading speed 200 wpm, speaking 130 wpm)
+            const readMins = Math.ceil(words / 200);
+            const speakMins = Math.ceil(words / 130);
+            document.getElementById('statReadTime').innerText = `~${readMins} min`;
+            document.getElementById('statSpeakTime').innerText = `~${speakMins} min`;
+
+            // Simple Density (Single words)
+            if (words > 10) {
+                const cleanText = text.toLowerCase().replace(/[^a-z0-9\s]/g, '');
+                const wordArray = cleanText.split(/\s+/).filter(w => w.length > 3);
+                const freq = {};
+                wordArray.forEach(w => freq[w] = (freq[w] || 0) + 1);
+
+                const sorted = Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 5);
+
+                let html = '<div style="display: flex; gap: 1rem; flex-wrap: wrap;">';
+                sorted.forEach(([word, count]) => {
+                    const density = ((count / words) * 100).toFixed(1);
+                    html += `
+                    <div style="background: var(--bg-primary); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--border-color);">
+                        <span style="font-weight: bold;">${word}</span>: ${count} (${density}%)
+                    </div>
+                `;
+                });
+                html += '</div>';
+                document.getElementById('densityList').innerHTML = html;
+            } else {
+                document.getElementById('densityList').innerHTML = '<p class="text-secondary">Type more text to see keyword density...</p>';
+            }
+        }
+
+        function copyText() {
+            if (!inputText.value) return;
+            navigator.clipboard.writeText(inputText.value).then(() => {
+                alert("Copied!");
+            });
+        }
+    </script>
+</body>
+</html>

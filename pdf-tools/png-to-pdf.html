@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert PNG images to PDF. Smart arrangement, multiple compression options, and batch conversion. 100% secure, client-side.">
+    <title>PNG to PDF - Convert Images to PDF Online | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">PDF Tools</a> &gt;
+                <span>PNG to PDF Advanced</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">PNG to PDF Advanced</h1>
+                <p class="tool-description">Transform your transparent PNGs and photos into a single, optimized PDF document.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<div class="pdf-tool-container">
+<!-- Main Content Area -->
+<div class="tool-main">
+<div class="pdf-upload-zone" id="drop-zone">
+<span class="pdf-upload-icon"><i class="fa-solid fa-images"></i></span>
+<h2>Upload PNG Images</h2>
+<p>Select one or more images to combine</p>
+<input accept="image/png" id="file-input" multiple="" style="display: none;" type="file"/>
+</div>
+<div class="pdf-page-grid" id="image-grid" style="display: none; margin-top: 2rem;">
+<!-- Images will appear here -->
+</div>
+</div>
+<!-- Sidebar Settings -->
+<aside class="pdf-settings-panel">
+<div class="setting-group">
+<label>Page Orientation</label>
+<select class="form-control" id="page-orientation">
+<option value="auto">Auto (Match Image)</option>
+<option value="portrait">Portrait</option>
+<option value="landscape">Landscape</option>
+</select>
+</div>
+<div class="setting-group">
+<label>Page Margin</label>
+<select class="form-control" id="page-margin">
+<option value="0">No Margin</option>
+<option value="20">Small Margin</option>
+<option value="50">Large Margin</option>
+</select>
+</div>
+<div class="setting-group">
+<label>Image Optimization</label>
+<select class="form-control" id="compression">
+<option value="none">Original Quality</option>
+<option value="medium">Optimized for Web</option>
+<option value="high">Max Compression (Smallest)</option>
+</select>
+</div>
+<button class="btn btn-pdf" disabled="" id="convert-btn">
+<i class="fa-solid fa-file-pdf"></i> Create PDF Now
+                </button>
+<a class="btn-download" href="#" id="download-btn">
+<i class="fa-solid fa-download"></i> Download Combined PDF
+                </a>
+</aside>
+</div>
+ Features Info 
+<section class="tool-features-info" style="margin-top: 5rem;">
+<div class="features-grid">
+<div class="feature-card">
+<h3 class="feature-title">Fast Conversion</h3>
+<p class="feature-desc">Our client-side engine combines your images into a professional PDF
+                        instantly, without uploading your photos to a server.</p>
+</div>
+<div class="feature-card">
+<h3 class="feature-title">Privacy First</h3>
+<p class="feature-desc">All processing happens in your browser. Your images remain private and under
+                        your control throughout the process.</p>
+</div>
+</div>
+</section>
+
+
+ Scripts
+            </div>
+            <section class="seo-article" data-tool="png-to-pdf">
+<article class="tool-article">
+<h2>PNG to PDF Converter — Wrap Images Into Clean PDF Documents</h2>
+
+<p>A client once sent me a "report" that was actually 14 PNG screenshots attached to an email. Printing them meant 14 separate print dialogs and a mess of margins. A PNG to PDF converter solves this neatly: it takes one or more PNG images and wraps them into a proper PDF document — each image on its own page, printable, shareable, and easy to archive.</p>
+
+<h3>What Is a PNG to PDF Converter?</h3>
+
+<p>PNG is a raster image format — a grid of pixels, great for screens, lossless, and capable of transparency. PDF is a document format — pages, margins, print-ready. Converting PNG to PDF means placing each image onto a PDF page, optionally sizing and ordering the pages so the result behaves like a real document.</p>
+
+<p>The conversion is not really about changing the picture; it is about changing the container. The pixels stay identical. What you gain is everything documents do better than loose images: multi-page reading, consistent printing, smaller combined files, and compatibility with every form portal and records system on earth.</p>
+
+<p>Transparency deserves a mention. PNGs support transparent backgrounds, but PDF pages do not — a page has to be some color. Most converters flatten transparency onto white (or a color you choose). If your logo PNG has a transparent background, expect a white page behind it in the PDF. That is standard behavior, not a defect.</p>
+
+<h3>How to Use the PNG to PDF Converter</h3>
+
+<p>Drag your PNG files into the upload area or click to browse. If you are converting several images, drag the thumbnails into the order you want them to appear as pages. Choose page settings — portrait or landscape, page size (A4, Letter, or fit-to-image), and margins — then click Convert and download the PDF.</p>
+
+<p>Two settings matter most. "Fit to page" scales each image to fill the sheet, which is what you want for scanned documents and photos. "Original size" keeps the image at its pixel dimensions, better for small graphics you do not want stretched. When in doubt, fit to page with small margins gives the most document-like result.</p>
+
+<p>For batch jobs — say, 40 product photos — look for a tool with drag-and-drop reordering and a single combined download. Renaming your files alphabetically before upload (01-front.png, 02-side.png) is the low-tech way to guarantee page order.</p>
+
+<h3>How PNG to PDF Conversion Works</h3>
+
+<p>The pipeline is straightforward, which is why results are so reliable.</p>
+
+<p><strong>Step 1 — Image decoding.</strong> Each PNG is decoded into raw pixel data. The tool reads the width, height, color depth, and whether an alpha (transparency) channel is present.</p>
+
+<p><strong>Step 2 — Flattening.</strong> If the image has transparency, it is composited onto a background color — usually white. This step is required because PDF page content has no concept of a see-through background.</p>
+
+<p><strong>Step 3 — Page layout.</strong> The image is placed on a PDF page according to your settings: scaled to fit, centered, or tiled at original size. The tool writes the positioning commands and embeds the image data, usually recompressing it with an efficient encoding.</p>
+
+<p><strong>Step 4 — Assembly.</strong> Pages are stitched into a single PDF with proper page sizes, and the file is finalized with its document catalog and metadata.</p>
+
+<p>Because no text is being recognized or rebuilt, there is no OCR step and nothing to misread. The image that goes in is the image that comes out — just on PDF pages now.</p>
+
+<h3>Common PNG to PDF Scenarios</h3>
+
+<table>
+<thead><tr><th>Situation</th><th>Best setting</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>Scanned pages saved as PNG</td><td>Fit to A4/Letter, portrait</td><td>Produces a proper printable document</td></tr>
+<tr><td>Screenshots for a bug report</td><td>Fit to page, landscape</td><td>Wide screenshots stay readable</td></tr>
+<tr><td>Photos for a portfolio</td><td>One image per page, small margins</td><td>Clean presentation, easy to flip through</td></tr>
+<tr><td>Receipts for expenses</td><td>Combine many images into one PDF</td><td>One file per claim instead of dozens</td></tr>
+<tr><td>Logo with transparency</td><td>Flatten on white</td><td>Avoids black-background surprises</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses PNG to PDF Converters?</h3>
+
+<p><strong>Students</strong> turn photographed notes and textbook pages into a single study document they can annotate.</p>
+
+<p><strong>Office staff</strong> convert scanned receipts, forms, and signed pages into archivable PDFs for records.</p>
+
+<p><strong>Designers</strong> package mockups and screenshots into presentation PDFs for client review.</p>
+
+<p><strong>Real estate and field workers</strong> combine site photos into one report-ready document.</p>
+
+<p><strong>Job applicants</strong> merge scanned certificates into a single PDF for portals that accept one upload.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Free conversion</strong> — no signup, no watermark on the output.</li>
+<li><strong>Batch combining</strong> — merge many PNGs into one multi-page PDF.</li>
+<li><strong>Page control</strong> — set size, orientation, margins, and image fit.</li>
+<li><strong>Drag-and-drop ordering</strong> — arrange pages before converting.</li>
+<li><strong>Quality preserved</strong> — images embedded without visible degradation.</li>
+<li><strong>Private processing</strong> — uploads encrypted, files auto-deleted.</li>
+<li><strong>Works on any device</strong> — browser-based, desktop or mobile.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this PNG to PDF converter free?</h4>
+<p>Yes — free with no account needed and no watermark added to your PDF.</p>
+
+<h4>Will the image quality change?</h4>
+<p>No visible change. The PNG is embedded as-is; the converter may recompress it internally, but quality is preserved.</p>
+
+<h4>What happens to transparent backgrounds?</h4>
+<p>Transparency is flattened onto a solid background (usually white), since PDF pages cannot be transparent.</p>
+
+<h4>Can I convert multiple PNGs into one PDF?</h4>
+<p>Yes — upload several images, order them, and they become consecutive pages in a single PDF.</p>
+
+<h4>How do I control the page size?</h4>
+<p>Choose a standard size like A4 or Letter, or use fit-to-image. Fit-to-page with small margins works best for scanned documents.</p>
+
+<h4>Is there a file size limit?</h4>
+<p>Most free tools accept uploads up to around 100–200 MB total. Very large batches may need to be split.</p>
+
+<h4>Can I convert the PDF back to PNG later?</h4>
+<p>Yes — PDF to image tools extract each page back out as PNG or JPG whenever you need the images again.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="js/pdf-logic.js"></script>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropZone = document.getElementById('drop-zone');
+            const fileInput = document.getElementById('file-input');
+            const imageGrid = document.getElementById('image-grid');
+            const convertBtn = document.getElementById('convert-btn');
+            const downloadBtn = document.getElementById('download-btn');
+
+            let selectedImages = [];
+            let resultBlob = null;
+
+            dropZone.addEventListener('click', () => fileInput.click());
+            fileInput.addEventListener('change', (e) => {
+                const files = Array.from(e.target.files);
+                if (files.length > 0) {
+                    selectedImages = [...selectedImages, ...files];
+                    renderThumbnails();
+                    dropZone.style.display = 'none';
+                    imageGrid.style.display = 'grid';
+                    convertBtn.disabled = false;
+                }
+            });
+
+            function renderThumbnails() {
+                imageGrid.innerHTML = '';
+                selectedImages.forEach((file, index) => {
+                    const reader = new FileReader();
+                    const item = document.createElement('div');
+                    item.className = 'pdf-page-item';
+                    item.innerHTML = `
+                        <div class="pdf-page-number">${index + 1}</div>
+                        <div class="thumb-preview" style="aspect-ratio: 1; background: #eee; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                            <img id="img-${index}" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div style="font-size: 0.6rem; text-align: center; margin-top: 0.2rem;">${file.name}</div>
+                    `;
+                    imageGrid.appendChild(item);
+
+                    reader.onload = (e) => {
+                        const img = document.getElementById(`img-${index}`);
+                        if (img) img.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }
+
+            convertBtn.addEventListener('click', async () => {
+                convertBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Generating PDF...';
+                convertBtn.disabled = true;
+
+                try {
+                    const pdfBytes = await PDFTools.imagesToPDF(selectedImages);
+                    resultBlob = new Blob([pdfBytes], { type: 'application/pdf' });
+
+                    convertBtn.innerHTML = '<i class="fa-solid fa-check"></i> PDF Created';
+                    downloadBtn.style.display = 'block';
+                } catch (err) {
+                    console.error(err);
+                    alert('Error creating PDF.');
+                    convertBtn.innerHTML = '<i class="fa-solid fa-file-pdf"></i> Create PDF Now';
+                    convertBtn.disabled = false;
+                }
+            });
+
+            downloadBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (resultBlob) {
+                    PDFTools.downloadBlob(resultBlob, `converted_${Date.now()}.pdf`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

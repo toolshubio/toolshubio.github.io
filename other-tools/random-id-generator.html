@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Random ID Card Generator | ToolsHub</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Other Tools</a> &gt;
+                <span>Random ID Card Generator</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Random ID Card Generator</h1>
+                <p class="tool-description"></p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+Sidebar 
+ Main Content 
+<div class="main-content-area">
+<!-- Header -->
+<header class="top-header">
+</header>
+<div class="breadcrumb-container" style="max-width: 1200px; margin: 0 auto 3rem; padding: 0 1rem;">
+<nav aria-label="breadcrumb">
+
+</nav>
+</div>
+<h1 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem; color: var(--text-primary);">Random
+                ID Card Generator</h1>
+<!-- Tool Interface -->
+<main class="tool-card mt-4">
+<div class="row" style="display: flex; flex-wrap: wrap; gap: 30px;">
+<!-- Input Section -->
+<div class="col-input" style="flex: 1; min-width: 300px;">
+<div class="form-grid" style="grid-template-columns: 1fr;"> <!-- Stack vertically on left -->
+<div class="form-group">
+<label>Card Style</label>
+<select class="search-input" id="card-style" style="width: 100%;">
+<option value="corp">Corporate Tech</option>
+<option value="student">University</option>
+<option value="press">Press Pass</option>
+<option value="gov">Government</option>
+</select>
+</div>
+<div class="form-group">
+<label>Name</label>
+<div style="display: flex; gap: 10px;">
+<input class="search-input" id="inp-name" placeholder="Full Name" type="text"/>
+<button class="action-btn" id="btn-rand-name" title="Random Name"><i class="fas fa-dice"></i></button>
+</div>
+</div>
+<div class="form-group">
+<label>Role / Title</label>
+<input class="search-input" id="inp-role" placeholder="e.g. Senior Manager" type="text"/>
+</div>
+<div class="form-group">
+<label>Photo</label>
+<input accept="image/*" class="search-input" id="inp-photo" style="padding: 5px;" type="file"/>
+<div class="mt-2 small text-muted">Or leave blank for random avatar</div>
+</div>
+</div>
+<div class="actions mt-4">
+<button class="btn-primary w-100" id="generate">
+<i class="fas fa-sync-alt"></i> Update Preview
+                            </button>
+<div class="mt-3 text-right">
+<button class="action-btn d-inline-flex" id="btn-download" style="width: auto; padding: 0 15px;">
+<i class="fas fa-download mr-2"></i> Download Card
+                                </button>
+</div>
+</div>
+</div>
+<!-- Preview Section -->
+<div class="col-preview" style="flex: 1; min-width: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--gen-bg); border-radius: 16px; padding: 20px;">
+<h4 class="mb-4 text-muted">Live Preview</h4>
+<div class="id-card-preview" id="card-render">
+<div class="id-header">
+<span id="card-org">ToolsHub Corp</span>
+<i class="fas fa-wifi"></i>
+</div>
+<div class="id-body">
+<div class="id-photo-area">
+<img alt="User" id="card-img" src="https://ui-avatars.com/api/?name=User+Name&amp;background=random"/>
+</div>
+<div class="id-details">
+<div class="id-name" id="card-name">USER NAME</div>
+<div class="id-role" id="card-role">VISITOR</div>
+<div class="id-field">ID: <span id="card-id">TH-0000</span></div>
+<div class="id-field">EXP: <span id="card-exp">12/28</span></div>
+<div class="id-field">LOC: <span id="card-loc">EARTH</span></div>
+</div>
+</div>
+<div class="id-footer">
+<div class="id-number" id="card-num-big">000 000 000</div>
+<div class="qr-box">
+<img alt="QR" id="card-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=50x50&amp;data=ToolsHub" width="100%"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+ Html2Canvas for download
+            </div>
+            <section class="seo-article" data-tool="random-id-generator">
+<article class="tool-article">
+<h2>Random ID Generator — UUIDs & Unique Identifiers Online, Free</h2>
+
+<p>Every database record, API request, uploaded file, and tracking event needs a name that no other record will ever accidentally share. Hand-rolling IDs — incrementing numbers, timestamps, usernames plus dates — collides eventually, and "eventually" always arrives at the worst moment. A random ID generator mints identifiers engineered for uniqueness: UUIDs, nanoid-style short strings, serial numbers. One click, copy, done — and the math says you will never see the same one twice.</p>
+
+<h3>What Is a Random ID Generator?</h3>
+
+<p>It is a tool that creates unique identifiers on demand. The headline format is the <strong>UUID</strong> (universally unique identifier): a 128-bit value written as 32 hexadecimal digits in the familiar 8-4-4-4-12 pattern, like <code>f47ac10b-58cc-4372-a567-0e02b2c3d479</code>. Think of it as a serial number so long that duplicates are practically impossible — there are 2<sup>122</sup> possible version-4 UUIDs, roughly 5.3 × 10<sup>36</sup>.</p>
+
+<p>Beyond UUIDs, generators offer compact alternatives: nanoid-style short IDs (URL-safe, ~21 characters), numeric serial numbers, hex tokens, and slug-friendly strings. Each suits a different job — a database primary key, a filename, an API key, an idempotency token.</p>
+
+<p>The randomness matters more than it looks. Serious tools draw from the browser's cryptographic generator (<code>crypto.getRandomValues</code> / <code>crypto.randomUUID()</code>), not the weaker <code>Math.random()</code>. For anything security-adjacent — tokens, keys, session IDs — that difference is the whole ballgame.</p>
+
+<h3>How to Generate a Random ID</h3>
+
+<p><strong>Step 1 — Choose the ID type.</strong> UUID v4 for general-purpose uniqueness, v7 for time-ordered database keys, nanoid-style for short URL-safe strings, numeric for human-readable serials.</p>
+
+<p><strong>Step 2 — Set the quantity.</strong> Generate one ID or bulk-generate up to hundreds or a thousand at once for seeding databases and test fixtures.</p>
+
+<p><strong>Step 3 — Pick a format.</strong> Standard lowercase with hyphens, uppercase, no-hyphens, braces-wrapped <code>{uuid}</code>, or URN form — match whatever your system expects.</p>
+
+<p><strong>Step 4 — Copy or download.</strong> Copy individual IDs or grab the whole list to your clipboard in one click.</p>
+
+<p>Habit worth building: generate IDs at creation time, in code, rather than pasting from a tool into production flows. The tool is for testing, fixtures, filenames, and one-offs — production systems should mint their own.</p>
+
+<h3>UUID Versions — Which One Do You Need?</h3>
+
+<table>
+<thead><tr><th>Version</th><th>Built from</th><th>Best for</th></tr></thead>
+<tbody>
+<tr><td>v4 (random)</td><td>122 random bits</td><td>The default — request IDs, API keys, idempotency keys, anything unpredictable</td></tr>
+<tr><td>v7 (time-ordered)</td><td>Timestamp + random bits</td><td>Database primary keys — sorts by creation time, keeps indexes compact</td></tr>
+<tr><td>v1 (time-based)</td><td>Timestamp + node id</td><td>Legacy systems expecting v1 (uses random node, not your MAC)</td></tr>
+<tr><td>v5 (name-based)</td><td>SHA-1 of namespace + name</td><td>Stable IDs from a name — same input always gives the same UUID</td></tr>
+<tr><td>Nanoid-style</td><td>~126 random bits, URL-safe alphabet</td><td>Short IDs for URLs, filenames, invite codes</td></tr>
+</tbody>
+</table>
+
+<p>For most work, v4 is the answer: fast, collision-resistant, and privacy-preserving since it reveals nothing about when or where it was made. Reach for v7 when database insert performance matters — time-ordered keys keep indexes tight instead of fragmenting them with random inserts.</p>
+
+<h3>Who Generates Random IDs?</h3>
+
+<p><strong>Backend developers</strong> mint UUIDs for database records, distributed systems, and event tracking — anywhere two servers must create IDs without coordinating.</p>
+
+<p><strong>Frontend developers</strong> generate request IDs, idempotency keys, and client-side entity IDs before the server ever sees the data.</p>
+
+<p><strong>QA engineers</strong> bulk-generate identifiers for test fixtures — a thousand unique user IDs for a load test in one click.</p>
+
+<p><strong>DevOps and data engineers</strong> use IDs for filenames, artifact tags, deployment markers, and deduplication keys across pipelines.</p>
+
+<h3>Practical Tips for Working With IDs</h3>
+
+<ul>
+<li><strong>Default to v4.</strong> Unless you have a specific reason (sorting, determinism), random v4 covers nearly every case.</li>
+<li><strong>Use v7 for database keys.</strong> Time-ordered UUIDs sort by creation time — your indexes will thank you at scale.</li>
+<li><strong>Demand crypto-grade randomness.</strong> For tokens and keys, verify the tool uses <code>crypto.getRandomValues</code>, not <code>Math.random()</code>.</li>
+<li><strong>Validate on input.</strong> When accepting IDs from outside, check the format — a malformed UUID is a bug or an attack.</li>
+<li><strong>Pick short IDs for humans.</strong> Nanoid-style strings suit URLs and invite codes; full UUIDs suit machines.</li>
+<li><strong>Never expose sequential IDs.</strong> Auto-increment integers leak your record count and are guessable — UUIDs reveal nothing.</li>
+<li><strong>Generate in bulk for fixtures.</strong> Seeding a test database? Generate hundreds at once and paste the list.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is the random ID generator free?</h4>
+<p>Yes — free, no signup, generate as many IDs as you need.</p>
+
+<h4>What is a UUID?</h4>
+<p>A universally unique identifier — a 128-bit value written as 32 hex digits in an 8-4-4-4-12 pattern. It is designed so that any two independently generated UUIDs are effectively never the same.</p>
+
+<h4>Can two UUIDs ever collide?</h4>
+<p>In practice, no. Version 4 has 2<sup>122</sup> possibilities (about 5.3 × 10<sup>36</sup>) — you could generate billions per second for centuries without expecting a repeat.</p>
+
+<h4>Which UUID version should I use?</h4>
+<p>v4 (random) for general use — request IDs, API keys, tokens. v7 (time-ordered) for database primary keys where sort-friendly inserts matter. v5 when you need the same name to always produce the same ID.</p>
+
+<h4>What is the difference between UUID and nanoid?</h4>
+<p>UUID is the 36-character standard format, ideal for systems and databases. Nanoid-style IDs are shorter (~21 chars), URL-safe, and better for humans — invite codes, short links, filenames.</p>
+
+<h4>Are generated IDs cryptographically secure?</h4>
+<p>Good tools use the browser's Web Crypto API (<code>crypto.getRandomValues</code>), which is cryptographically strong — suitable for tokens and keys. Avoid tools built on plain <code>Math.random()</code> for anything security-sensitive.</p>
+
+<h4>Can I generate IDs in bulk?</h4>
+<p>Yes — generate a single ID or up to 1,000 at once, then copy or download the whole list for fixtures and seeding.</p>
+
+<h4>GUID vs UUID — what is the difference?</h4>
+<p>GUID is Microsoft's name for the same 128-bit format. Technically identical; the terms are interchangeable in practice.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="js/generator-common.js"></script>
+<script>
+        const styles = {
+            corp: { bg: 'linear-gradient(135deg, #1e3c72, #2a5298)', org: 'TECH CORP', color: '#fff' },
+            student: { bg: 'linear-gradient(135deg, #11998e, #38ef7d)', org: 'UNIVERSITY', color: '#fff' },
+            press: { bg: 'linear-gradient(135deg, #f12711, #f5af19)', org: 'PRESS PASS', color: '#fff' },
+            gov: { bg: 'linear-gradient(135deg, #2b5876, #4e4376)', org: 'GOVERNMENT', color: '#fff' }
+        };
+
+        const randomRoles = ['Manager', 'Developer', 'Designer', 'Intern', 'Director', 'Staff'];
+        const randomNames = ['James Smith', 'Maria Garcia', 'Robert Johnson', 'Sarah Wilson', 'David Brown'];
+
+        document.getElementById('generate').addEventListener('click', updateCard);
+
+        // Auto-update on style change
+        document.getElementById('card-style').addEventListener('change', updateCard);
+
+        document.getElementById('btn-rand-name').addEventListener('click', () => {
+            document.getElementById('inp-name').value = randomNames[Math.floor(Math.random() * randomNames.length)];
+            document.getElementById('inp-role').value = randomRoles[Math.floor(Math.random() * randomRoles.length)];
+            updateCard();
+        });
+
+        // Photo Upload
+        document.getElementById('inp-photo').addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('card-img').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function updateCard() {
+            const styleKey = document.getElementById('card-style').value;
+            const style = styles[styleKey];
+            const name = document.getElementById('inp-name').value || 'User Name';
+            const role = document.getElementById('inp-role').value || 'Visitor';
+
+            // Random ID vals
+            const idNum = 'TH-' + Math.floor(Math.random() * 9000 + 1000);
+
+            // Render
+            const card = document.getElementById('card-render');
+            card.style.background = style.bg;
+            document.getElementById('card-org').innerText = style.org;
+            document.getElementById('card-name').innerText = name;
+            document.getElementById('card-role').innerText = role.toUpperCase();
+            document.getElementById('card-id').innerText = idNum;
+            document.getElementById('card-qr').src = `https://api.qrserver.com/v1/create-qr-code/?size=50x50&data=${encodeURIComponent(name + '-' + idNum)}`;
+
+            // Default Avatar if not uploaded
+            if (!document.getElementById('inp-photo').files.length) {
+                document.getElementById('card-img').src = `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=random&size=128`;
+            }
+
+            // Save History
+            HistoryManager.add({ tool: 'ID Generator', preview: `${name} (${style.org})`, value: `Name: ${name}, Role: ${role}, ID: ${idNum}` });
+        }
+
+        // Download Tool
+        document.getElementById('btn-download').addEventListener('click', () => {
+            const card = document.getElementById('card-render');
+            // Temporarily remove shadow for clean capture
+            const oldShadow = card.style.boxShadow;
+            card.style.boxShadow = 'none';
+            card.style.transform = 'scale(1)'; // Reset any hover transform
+
+            // Check if html2canvas loaded
+            if (typeof html2canvas !== 'undefined') {
+                html2canvas(card, { scale: 2, backgroundColor: null }).then(canvas => {
+                    const link = document.createElement('a');
+                    link.download = `ID-Card-${Date.now()}.png`;
+                    link.href = canvas.toDataURL();
+                    link.click();
+                    card.style.boxShadow = oldShadow;
+                });
+            } else {
+                alert('Library loading... please try again in a moment or check internet connection.');
+                card.style.boxShadow = oldShadow;
+            }
+        });
+
+        // Init
+        updateCard();
+    </script>
+</body>
+</html>

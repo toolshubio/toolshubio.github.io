@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Line Tools | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Text & Writing</a> &gt;
+                <span>➖ Line Tools</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">➖ Line Tools</h1>
+                <p class="tool-description">Sort, shuffle, deduplicate, and manipulate lines.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<div class="tool-workspace">
+<section class="input-section">
+<div class="section-header">
+<h2 class="section-title">📝 Input Lines</h2>
+</div>
+<textarea class="text-area" id="input-text" placeholder="Enter lines..."></textarea>
+</section>
+<section class="settings-panel">
+<h2 class="section-title">⚙️ Operations</h2>
+<div class="preset-buttons">
+<button class="preset-btn" onclick="process('sortAsc')">Sort A-Z</button>
+<button class="preset-btn" onclick="process('sortDesc')">Sort Z-A</button>
+<button class="preset-btn" onclick="process('shuffle')">Shuffle</button>
+<button class="preset-btn" onclick="process('dedup')">Remove Duplicates</button>
+<button class="preset-btn" onclick="process('removeEmpty')">Remove Empty</button>
+<button class="preset-btn" onclick="process('trim')">Trim Lines</button>
+<button class="preset-btn" onclick="process('reverse')">Reverse Order</button>
+</div>
+</section>
+<section class="output-section">
+<div class="section-header">
+<h2 class="section-title">✨ Output</h2>
+<button class="btn btn-primary" onclick="ToolUI.copyOutput()">📋 Copy</button>
+</div>
+<textarea class="text-area" id="output-text" readonly=""></textarea>
+<div class="stats-panel">
+<div class="stat-item"><span class="stat-label">Lines</span><span class="stat-value" id="stat-lines">0</span></div>
+<div class="stat-item"><span class="stat-label">Removed</span><span class="stat-value highlight" id="stat-removed">0</span></div>
+</div>
+</section>
+</div>
+            </div>
+            <section class="seo-article" data-tool="line-tools">
+<article class="tool-article">
+<h2>Line Tools — Sort, Shuffle, Deduplicate & Clean Text Lines</h2>
+
+<p>A keyword list with 400 duplicates. A server log in random order. A pasted spreadsheet column full of blank lines. I hit all three in the same week once, and each one would have taken twenty minutes of manual cleanup in a text editor. Line tools do all of it in seconds: paste your lines, sort them A–Z, remove duplicates, strip empty lines, shuffle, reverse, or trim whitespace — pick the operation and the cleaned list is ready.</p>
+
+<h3>What Are Line Tools?</h3>
+
+<p>Line tools are a set of small text operations that work on lists, one line at a time. The core operations: <strong>Sort A–Z / Z–A</strong> (alphabetical ordering, with numeric-aware sorting on good tools), <strong>Remove Duplicates</strong> (keep only the first occurrence of each line), <strong>Remove Empty Lines</strong> (strip blank lines from pasted data), <strong>Shuffle</strong> (randomize the order), <strong>Reverse Order</strong> (flip the list end to end), and <strong>Trim Lines</strong> (remove leading and trailing whitespace from every line). Each is a one-click transformation on whatever you paste in.</p>
+
+<p>They sound trivial until you need them. Deduplicating a keyword list by hand is error-prone; sorting a list of names takes minutes in a spreadsheet but one click here; shuffling is how you randomize quiz questions or giveaway entries fairly. The operations compose, too — trim whitespace first (so " apple" and "apple" deduplicate correctly), then remove empties, then dedupe, then sort. That pipeline replaces a surprising amount of Excel fiddling.</p>
+
+<h3>How to Use Line Tools</h3>
+
+<p>Paste your list into the input box — one item per line. Pick the operation and it applies instantly; most tools let you chain operations, so run them in a sensible order.</p>
+
+<p>My standard cleanup order: <strong>trim lines</strong> first, because invisible leading/trailing spaces break duplicate detection and sorting. Then <strong>remove empty lines</strong>, then <strong>remove duplicates</strong>, then <strong>sort A–Z</strong>. For a giveaway or randomized quiz, skip the sort and hit <strong>shuffle</strong> instead — true randomization, no human bias in the ordering. <strong>Reverse order</strong> is the quick fix when a log or export comes out newest-last and you want newest-first.</p>
+
+<p>Copy the result out with one click. For lists you will reuse, save the cleaned version — there is nothing more annoying than re-cleaning the same messy export twice.</p>
+
+<h3>Operations at a Glance</h3>
+
+<table>
+<thead><tr><th>Operation</th><th>What it does</th><th>When you need it</th></tr></thead>
+<tbody>
+<tr><td>Sort A–Z / Z–A</td><td>Alphabetical ordering</td><td>Names, keywords, inventory lists</td></tr>
+<tr><td>Remove Duplicates</td><td>Keeps first occurrence only</td><td>Keyword research, email lists, scraped data</td></tr>
+<tr><td>Remove Empty Lines</td><td>Strips blank lines</td><td>Pasted spreadsheet columns, exports</td></tr>
+<tr><td>Shuffle</td><td>Randomizes order</td><td>Giveaways, quiz questions, A/B lists</td></tr>
+<tr><td>Reverse Order</td><td>Flips the list end to end</td><td>Logs, chronological exports</td></tr>
+<tr><td>Trim Lines</td><td>Removes leading/trailing whitespace</td><td>Before dedupe/sort, messy pastes</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Line Tools?</h3>
+
+<p><strong>SEOs and marketers</strong> clean keyword lists — dedupe, sort, and trim thousands of terms before analysis.</p>
+
+<p><strong>Data analysts</strong> do quick list cleanup without opening a spreadsheet or writing a script.</p>
+
+<p><strong>Teachers</strong> shuffle quiz questions and sort class lists.</p>
+
+<p><strong>Developers</strong> sort config entries, dedupe log lines, and clean pasted data.</p>
+
+<p><strong>Giveaway organizers</strong> shuffle entrant lists for fair random draws.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>One-click operations</strong> — sort, dedupe, shuffle, reverse, trim, strip empties.</li>
+<li><strong>Chainable</strong> — run operations in sequence for full cleanup pipelines.</li>
+<li><strong>Line and duplicate counts</strong> — see how many lines went in and came out.</li>
+<li><strong>Handles large lists</strong> — thousands of lines processed instantly.</li>
+<li><strong>Copy or download</strong> — take the cleaned list straight to your workflow.</li>
+<li><strong>100% free</strong> — no signup, no limits.</li>
+<li><strong>Private by design</strong> — everything runs in your browser; nothing is uploaded.</li>
+<li><strong>Works everywhere</strong> — any modern browser, desktop or mobile.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>How do I remove duplicate lines from a list?</h4>
+<p>Paste the list, run Trim Lines first (so hidden spaces do not fool the matcher), then Remove Duplicates. The tool keeps the first occurrence of each line and drops the rest.</p>
+
+<h4>Can I sort lines alphabetically online?</h4>
+<p>Yes — paste the list and hit Sort A–Z (or Z–A for reverse). Numeric-aware sorting handles numbered items sensibly on good tools.</p>
+
+<h4>How do I randomize a list fairly?</h4>
+<p>Use the Shuffle operation. It randomizes the order with no human bias — ideal for giveaway draws, randomized quiz orders, and sampling.</p>
+
+<h4>Will trimming affect my data?</h4>
+<p>Trim only removes leading and trailing whitespace from each line — the content is untouched. It is safe and recommended before deduping or sorting.</p>
+
+<h4>Can I combine operations?</h4>
+<p>Yes, and you should. The classic pipeline is trim → remove empties → remove duplicates → sort. Each operation feeds cleanly into the next.</p>
+
+<h4>Is there a line limit?</h4>
+<p>Most tools handle thousands of lines instantly in the browser. For truly massive files (hundreds of thousands of lines), a desktop script is faster.</p>
+
+<h4>Is this tool free?</h4>
+<p>Yes — completely free, no account needed.</p>
+
+<h4>Does my list leave my browser?</h4>
+<p>No. All operations run client-side; nothing is uploaded or stored.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="js/text-utils.js"></script>
+<script src="js/tool-ui.js"></script>
+<script>
+        ToolUI.init({ toolName: 'line-tools' });
+        function process(op) {
+            const input = document.getElementById('input-text').value;
+            const originalLines = input.split('\n').length;
+            let output = '';
+            switch (op) {
+                case 'sortAsc': output = TextUtils.sortLines(input, true); break;
+                case 'sortDesc': output = TextUtils.sortLines(input, false); break;
+                case 'shuffle': output = TextUtils.shuffleLines(input); break;
+                case 'dedup': output = TextUtils.removeDuplicateLines(input); break;
+                case 'removeEmpty': output = TextUtils.removeEmptyLines(input); break;
+                case 'trim': output = TextUtils.trimLines(input); break;
+                case 'reverse': output = TextUtils.reverseByLine(input); break;
+            }
+            document.getElementById('output-text').value = output;
+            const newLines = output.split('\n').length;
+            document.getElementById('stat-lines').textContent = newLines;
+            document.getElementById('stat-removed').textContent = originalLines - newLines;
+        }
+    </script>
+</body>
+</html>

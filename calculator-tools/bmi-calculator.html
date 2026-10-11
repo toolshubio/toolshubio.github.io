@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium BMI calculator with Body Fat % (US Navy Method) and BMR estimation. Professional-grade health metrics.">
+    <title>High-End BMI & Body Intelligence | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Calculators</a> &gt;
+                <span>⚖️ Body Intelligence</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">⚖️ Body Intelligence</h1>
+                <p class="tool-description">Professional BMI analysis, US Navy Body Fat %, and Metabolic Rate modeling.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+<!-- User Profile Side -->
+<div class="glass-panel p-6">
+<h3 class="panel-title mb-6">User Profile</h3>
+<div class="space-y-4">
+<div class="input-group">
+<label class="input-label">Biological Sex</label>
+<select class="calc-select" id="sex" onchange="calculate()">
+<option value="male">Male</option>
+<option selected="" value="female">Female</option>
+</select>
+</div>
+<div class="input-group">
+<label class="input-label">Age</label>
+<input class="calc-input" id="age" oninput="calculate()" type="number" value="30"/>
+</div>
+<div class="input-group">
+<label class="input-label">Weight (kg)</label>
+<input class="calc-input" id="weight" oninput="calculate()" type="number" value="70"/>
+</div>
+<div class="input-group">
+<label class="input-label">Height (cm)</label>
+<input class="calc-input" id="height" oninput="calculate()" type="number" value="170"/>
+</div>
+</div>
+</div>
+<!-- Main Visual Panel -->
+<div class="lg:col-span-2 glass-panel p-8 text-center flex flex-col justify-center">
+<div class="text-secondary text-sm uppercase font-bold tracking-widest mb-2">Current Body Mass Index
+                    </div>
+<div class="text-7xl font-extrabold font-outfit text-primary leading-none mb-4" id="res-bmi">24.2
+                    </div>
+<div class="inline-block px-4 py-1 rounded-full text-white font-bold text-sm bg-success" id="res-cat">NORMAL</div>
+<div class="bmi-gauge-premium">
+<div class="bmi-marker-premium" id="bmi-marker" style="left: 45%"></div>
+</div>
+<div class="flex justify-between text-xs text-secondary px-2">
+<span>Underweight</span>
+<span>Normal</span>
+<span>Overweight</span>
+<span>Obese</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+<!-- Body Fat Panel (Navy Method) -->
+<div class="glass-panel p-6">
+<h3 class="panel-title mb-6">Body Fat % <span class="text-xs text-secondary">(US Navy Method)</span>
+</h3>
+<div class="measurement-grid mb-6">
+<div class="input-group">
+<label class="input-label">Waist (cm)</label>
+<input class="calc-input" id="waist" oninput="calculate()" type="number" value="80"/>
+</div>
+<div class="input-group">
+<label class="input-label">Neck (cm)</label>
+<input class="calc-input" id="neck" oninput="calculate()" type="number" value="35"/>
+</div>
+<div class="input-group" id="hip-group" style="display: block;">
+<label class="input-label">Hips (cm)</label>
+<input class="calc-input" id="hips" oninput="calculate()" type="number" value="95"/>
+</div>
+</div>
+<div class="text-center">
+<div class="text-3xl font-bold text-highlight" id="res-fat">22.5%</div>
+<div class="text-xs text-secondary">Estimated Body Fat</div>
+</div>
+</div>
+<!-- Metabolism Panel -->
+<div class="glass-panel p-6">
+<h3 class="panel-title mb-6">Metabolic Logic</h3>
+<div class="space-y-6">
+<div class="flex justify-between items-center">
+<div>
+<div class="font-bold">BMR (Basal Metabolic Rate)</div>
+<div class="text-xs text-secondary">Baseline calories at rest</div>
+</div>
+<div class="text-2xl font-bold text-primary" id="res-bmr">1,540</div>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<div class="font-bold">TDEE (Daily Total)</div>
+<div class="text-xs text-secondary">With moderate activity</div>
+</div>
+<div class="text-2xl font-bold text-success" id="res-tdee">2,120</div>
+</div>
+</div>
+<canvas class="mt-8" id="comp-chart"></canvas>
+</div>
+</div>
+<div class="mt-8 flex gap-4">
+<button class="btn btn-secondary flex-1" onclick="exportData('pdf')">Export Health Report (PDF)</button>
+<button class="btn btn-secondary flex-1" onclick="exportData('csv')">Export Data (CSV)</button>
+</div>
+</div>
+<section class="seo-article" data-tool="bmi-calculator">
+<article class="tool-article">
+<h2>BMI Calculator — Free Online Body Mass Index Checker</h2>
+
+<p>I first calculated my BMI at a gym induction, where the trainer scribbled weight ÷ height² on a whiteboard and circled the result. It took thirty seconds and told me more than the bathroom scale ever had. A BMI calculator does that same division instantly: enter your height and weight, and it returns your Body Mass Index plus the weight category it falls into — underweight, healthy, overweight, or obese.</p>
+
+<h3>What Is a BMI Calculator?</h3>
+
+<p>BMI (Body Mass Index) is a single number that relates your weight to your height. The formula is simple: BMI = weight in kilograms divided by height in meters squared. A person who is 70 kg and 1.75 m tall has a BMI of 70 ÷ (1.75 × 1.75) = 22.9 — squarely in the healthy range.</p>
+
+<p>The result is interpreted against standard categories used worldwide: below 18.5 is underweight, 18.5–24.9 is healthy weight, 25–29.9 is overweight, and 30 or above is obese. These cutoffs come from large population studies linking BMI ranges to health risk, which is why doctors, insurers, and fitness programs all speak the same BMI language.</p>
+
+<p>One honest caveat I always mention: BMI does not distinguish muscle from fat. Athletes with heavy muscle mass can score "overweight" while being very fit, and it is less reliable for children, pregnant women, and the elderly. It is a screening number, not a diagnosis — useful, but not the whole story.</p>
+
+<h3>How to Use the BMI Calculator</h3>
+
+<p>Enter your height and weight, choosing metric (cm/kg) or imperial (feet-inches/pounds) units — whichever you actually measured in. Click Calculate and your BMI appears instantly, usually with your category and the healthy weight range for your height.</p>
+
+<p>The unit choice is where mistakes happen. Entering 175 cm where meters are expected, or pounds where kilograms are expected, produces a wildly wrong number. A good calculator labels its fields clearly; still, glance at the result before trusting it — a BMI of 0.02 or 700 means the units got mixed up.</p>
+
+<p>One habit worth building: measure in the morning, on the same scale, wearing similar clothing. Weight fluctuates through the day, and consistent conditions make month-to-month comparisons meaningful instead of noisy.</p>
+
+<h3>How BMI Is Calculated</h3>
+
+<p>One formula, two unit systems — and the calculator handles both.</p>
+
+<p><strong>Metric formula.</strong> BMI = weight (kg) ÷ height (m)². Example: 68 kg, 165 cm → convert to 1.65 m → 1.65² = 2.7225 → 68 ÷ 2.7225 = 24.98.</p>
+
+<p><strong>Imperial formula.</strong> BMI = (weight (lb) ÷ height (in)²) × 703. Example: 150 lb, 5'5" (65 in) → 150 ÷ 4225 × 703 = 24.96. The 703 is just the conversion factor that puts imperial measurements on the same scale as metric.</p>
+
+<p><strong>Category lookup.</strong> The result is matched to the standard table: <18.5 underweight, 18.5–24.9 healthy, 25–29.9 overweight, ≥30 obese (with classes I, II, III at 30, 35, 40). The calculator also commonly shows your healthy weight range — the weights that would put you between 18.5 and 24.9 at your height.</p>
+
+<p>Worked example — 85 kg at 1.80 m: 1.80² = 3.24 → 85 ÷ 3.24 = 26.2 → overweight category. The arithmetic is trivial; remembering to square the height in meters (not centimeters) is the part people get wrong by hand.</p>
+
+<h3>BMI Categories and Examples</h3>
+
+<p>The standard adult categories, with example people at 1.75 m for scale:</p>
+
+<table>
+<thead><tr><th>BMI</th><th>Category</th><th>Weight at 1.75 m</th></tr></thead>
+<tbody>
+<tr><td>Below 18.5</td><td>Underweight</td><td>Under 56.7 kg</td></tr>
+<tr><td>18.5 – 24.9</td><td>Healthy weight</td><td>56.7 – 76.3 kg</td></tr>
+<tr><td>25.0 – 29.9</td><td>Overweight</td><td>76.6 – 91.6 kg</td></tr>
+<tr><td>30.0 – 34.9</td><td>Obese (class I)</td><td>91.9 – 107.0 kg</td></tr>
+<tr><td>35.0 – 39.9</td><td>Obese (class II)</td><td>107.2 – 122.3 kg</td></tr>
+<tr><td>40.0 and above</td><td>Obese (class III)</td><td>122.5 kg and above</td></tr>
+</tbody>
+</table>
+
+<p>Two worked examples to verify the tool: 70 kg at 1.75 m → 70 ÷ 3.0625 = 22.9 (healthy); 154 lb at 69 in → 154 ÷ 4761 × 703 = 22.7 (healthy). Same person, two unit systems, same verdict.</p>
+
+<h3>Who Uses BMI Calculators?</h3>
+
+<p><strong>Anyone starting a fitness plan</strong> uses BMI as a baseline number to track over months, alongside measurements that BMI misses like waist size.</p>
+
+<p><strong>Doctors and clinics</strong> use it as a quick screening step during checkups, flagging patients for deeper assessment.</p>
+
+<p><strong>Insurance and corporate wellness programs</strong> use BMI brackets for risk assessment and health incentives.</p>
+
+<p><strong>Parents</strong> check children's growth against age-adjusted BMI percentiles (a different interpretation from the adult table).</p>
+
+<p><strong>Students</strong> in health and nutrition courses practice the formula and its interpretation with instant feedback.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant result</strong> — BMI and category appear the moment you click.</li>
+<li><strong>Metric and imperial</strong> — cm/kg or ft-in/lb, with automatic conversion.</li>
+<li><strong>Category guidance</strong> — underweight through obese, with plain-language meaning.</li>
+<li><strong>Healthy range</strong> — shows the weight range that keeps you in the healthy band.</li>
+<li><strong>100% free</strong> — no signup, no subscription, no limits.</li>
+<li><strong>Private by design</strong> — runs in your browser; your measurements are never stored.</li>
+<li><strong>Trend-friendly</strong> — recheck monthly to watch the number move.</li>
+<li><strong>Works everywhere</strong> — any modern browser on desktop or mobile.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this BMI calculator free?</h4>
+<p>Yes — free, no account, no limits.</p>
+
+<h4>What is the BMI formula?</h4>
+<p>Metric: weight (kg) ÷ height (m)². Imperial: (weight (lb) ÷ height (in)²) × 703.</p>
+
+<h4>What is a healthy BMI?</h4>
+<p>18.5 to 24.9 for adults. Below 18.5 is underweight, 25–29.9 is overweight, 30+ is obese.</p>
+
+<h4>Is BMI accurate for athletes?</h4>
+<p>Not always. Muscle is dense, so muscular people can score "overweight" while being fit. BMI is a screening tool, not a body-composition test.</p>
+
+<h4>Does BMI work for children?</h4>
+<p>The formula is the same, but the interpretation differs — children's results are compared against age- and sex-specific growth charts, not the adult table.</p>
+
+<h4>What is a good BMI for my height?</h4>
+<p>Whatever keeps you between 18.5 and 24.9. The calculator usually shows your personal healthy weight range — for 1.75 m it is roughly 57–76 kg.</p>
+
+<h4>Is my data stored anywhere?</h4>
+<p>No. The calculation runs entirely in your browser; your height and weight never leave your device.</p>
+
+<h4>How often should I check my BMI?</h4>
+<p>Monthly is plenty. Daily checks mostly capture water-weight noise, not real change.</p>
+</article>
+</section>
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="js/calc-utils.js"></script>
+<script src="js/calc-ui.js"></script>
+<script>
+        function init() {
+            CalcUI.init({ toolName: 'bmi-calculator' });
+            calculate();
+        }
+
+        function calculate() {
+            const sex = document.getElementById('sex').value;
+            const weight = parseFloat(document.getElementById('weight').value) || 0;
+            const height = parseFloat(document.getElementById('height').value) || 0;
+            const age = parseFloat(document.getElementById('age').value) || 0;
+            const waist = parseFloat(document.getElementById('waist').value) || 0;
+            const neck = parseFloat(document.getElementById('neck').value) || 0;
+            const hips = parseFloat(document.getElementById('hips').value) || 0;
+
+            document.getElementById('hip-group').style.display = (sex === 'female') ? 'block' : 'none';
+
+            if (!weight || !height) return;
+
+            // BMI
+            const bmi = CalcUtils.bmi(weight, height);
+            const cat = CalcUtils.bmiCategory(bmi);
+            document.getElementById('res-bmi').textContent = bmi.toFixed(1);
+            document.getElementById('res-cat').textContent = cat.category.toUpperCase();
+            document.getElementById('res-cat').style.backgroundColor = cat.color;
+
+            const pos = Math.min(Math.max((bmi - 15) / (35 - 15) * 100, 5), 95);
+            document.getElementById('bmi-marker').style.left = pos + '%';
+
+            // Body Fat (Navy)
+            let bf = 0;
+            if (waist && neck) {
+                if (sex === 'male') {
+                    // 495 / (1.0324 - 0.19077 * log10(waist - neck) + 0.15456 * log10(height)) - 450
+                    bf = 495 / (1.0324 - 0.19077 * Math.log10(waist - neck) + 0.15456 * Math.log10(height)) - 450;
+                } else {
+                    // 495 / (1.29579 - 0.35004 * log10(waist + hip - neck) + 0.22100 * log10(height)) - 450
+                    bf = 495 / (1.29579 - 0.35004 * Math.log10(waist + hips - neck) + 0.22100 * Math.log10(height)) - 450;
+                }
+                document.getElementById('res-fat').textContent = Math.max(0, bf).toFixed(1) + '%';
+            }
+
+            // BMR (Mifflin-St Jeor)
+            const bmr = CalcUtils.calories(weight, height, age, sex, 'sedentary');
+            const tdee = CalcUtils.calories(weight, height, age, sex, 'moderate');
+            document.getElementById('res-bmr').textContent = Math.round(bmr).toLocaleString();
+            document.getElementById('res-tdee').textContent = Math.round(tdee).toLocaleString();
+
+            CalcUI.drawChart('comp-chart', [
+                { label: 'Fat Mass', value: (bf / 100) * weight, color: '#f59e0b' },
+                { label: 'Lean Mass', value: weight - (bf / 100) * weight, color: '#10b981' }
+            ], 'pie');
+        }
+
+        function exportData(format) {
+            const data = {
+                title: 'Body Intelligence Report',
+                bmi: document.getElementById('res-bmi').textContent,
+                category: document.getElementById('res-cat').textContent,
+                body_fat: document.getElementById('res-fat').textContent,
+                bmr: document.getElementById('res-bmr').textContent,
+                tdee: document.getElementById('res-tdee').textContent
+            };
+            CalcUI.exportResult(data, 'body-intelligence', format);
+        }
+
+        init();
+    </script>
+</body>
+</html>

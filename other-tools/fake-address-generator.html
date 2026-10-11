@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Fake Address Generator | ToolsHub</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Other Tools</a> &gt;
+                <span>Fake Address Generator</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Fake Address Generator</h1>
+                <p class="tool-description"></p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+Sidebar 
+ Main Content 
+<div class="main-content-area">
+<!-- Header -->
+<header class="top-header">
+</header>
+<div class="breadcrumb-container" style="max-width: 1200px; margin: 0 auto 3rem; padding: 0 1rem;">
+<nav aria-label="breadcrumb">
+
+</nav>
+</div>
+<h1 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem; color: var(--text-primary);">Fake
+                Address Generator</h1>
+<!-- Tool Interface -->
+<main class="tool-card mt-4">
+<div class="row" style="display: flex; flex-wrap: wrap; gap: 40px;">
+<div style="flex: 1; min-width: 300px;">
+<div class="form-group mb-4">
+<label>Country Format</label>
+<select class="search-input w-100" id="country">
+<option value="us">United States 🇺🇸</option>
+<option value="uk">United Kingdom 🇬🇧</option>
+<option value="ca">Canada 🇨🇦</option>
+<option value="de">Germany 🇩🇪</option>
+<option value="au">Australia 🇦🇺</option>
+<option value="fr">France 🇫🇷</option>
+<option value="jp">Japan 🇯🇵</option>
+</select>
+</div>
+<div class="form-grid">
+<label style="display: flex; align-items: center; gap: 10px;">
+<input checked="" id="inc-name" type="checkbox"/> Include Resident Name
+                            </label>
+<label style="display: flex; align-items: center; gap: 10px;">
+<input checked="" id="inc-coords" type="checkbox"/> Include GPS Coordinates
+                            </label>
+</div>
+<button class="btn-primary w-100 mt-4" id="generate">
+<i class="fas fa-map-pin"></i> Generate Address
+                        </button>
+</div>
+<div style="flex: 1.5; min-width: 300px;">
+<div class="map-container">
+<div class="map-pin">📍</div>
+</div>
+<div class="address-box" id="result-box" style="display: none;">
+<div class="addr-row" id="row-name">
+<span class="addr-label">Resident</span>
+<span class="addr-value" id="val-name">John Doe</span>
+</div>
+<div class="addr-row">
+<span class="addr-label">Street</span>
+<span class="addr-value" id="val-street">123 Main St</span>
+</div>
+<div class="addr-row">
+<span class="addr-label">City</span>
+<span class="addr-value" id="val-city">New York</span>
+</div>
+<div class="addr-row">
+<span class="addr-label">State/Prov</span>
+<span class="addr-value" id="val-state">NY</span>
+</div>
+<div class="addr-row">
+<span class="addr-label">Zip/Postcode</span>
+<span class="addr-value" id="val-zip">10001</span>
+</div>
+<div class="addr-row">
+<span class="addr-label">Country</span>
+<span class="addr-value" id="val-country">United States</span>
+</div>
+<div class="mt-4" style="display: flex; gap: 10px;">
+<button class="action-btn" onclick="copyAddress()" style="flex: 1; border-radius: 8px; width: auto;">
+<i class="fas fa-copy mr-2"></i> Copy Text
+                                </button>
+<a class="action-btn" href="#" id="maps-link" style="flex: 1; border-radius: 8px; width: auto; text-decoration: none; color: inherit;" target="_blank">
+<i class="fas fa-external-link-alt mr-2"></i> Open Maps
+                                </a>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+            </div>
+            <section class="seo-article" data-tool="fake-address-generator">
+<article class="tool-article">
+<h2>Fake Address Generator — Random Test Addresses Online, Free</h2>
+
+<p>Every developer has typed "123 Fake Street" into a form at some point. It works, but it looks wrong — and when you are testing address validation, populating a staging database, or mocking up a checkout flow, wrong-looking data hides real bugs. A fake address generator produces realistic, properly formatted addresses — street number and name, city, state, ZIP — that match the structure of real addresses without pointing to any actual place. One click, copy, paste, done.</p>
+
+<h3>What Is a Fake Address Generator?</h3>
+
+<p>It is a tool that creates random, fictitious addresses for testing and sample-data purposes. The generated addresses follow standard formatting — house number, street name, city, state/province, ZIP or postal code — and realistic generators pair cities with their actual ZIP codes, so an address validator that checks city-ZIP consistency accepts them. Any similarity to a real address is purely coincidental; the street numbers are invented and not tied to real parcels.</p>
+
+<p>Many generators go beyond the street address: a full identity bundle with a name, phone number, company, and sometimes a Luhn-valid credit card number for payment-form testing. Country selectors cover the US, UK, India, and dozens more, each with its own formatting conventions.</p>
+
+<p>Why not just invent addresses by hand? Because handmade test data is suspiciously uniform — every tester writes "Main Street" — and uniform data misses the edge cases that realistic variety catches: long street names, apartment suffixes, unusual ZIP formats.</p>
+
+<h3>How to Generate a Fake Address</h3>
+
+<p><strong>Step 1 — Choose your options.</strong> Select the country (and state, if offered) so the format matches what you are testing. US addresses look different from UK or Indian ones.</p>
+
+<p><strong>Step 2 — Click Generate.</strong> One click produces a complete address: street number and name, city, state, ZIP/postcode, formatted the way a real one would be.</p>
+
+<p><strong>Step 3 — Copy and use.</strong> Each field typically has a copy icon — paste the address straight into your form, spreadsheet, or test script. Generate again for a fresh one; within a batch, results are unique.</p>
+
+<p>Habit worth building: never use real addresses in test environments. Real addresses in staging databases leak into screenshots, logs, and demos — fictitious data keeps real people's homes out of your test fixtures.</p>
+
+<h3>Why Fake Addresses Beat Real Ones in Testing</h3>
+
+<table>
+<thead><tr><th>Scenario</th><th>Risk of a real address</th><th>Fake address wins because</th></tr></thead>
+<tbody>
+<tr><td>Checkout form testing</td><td>Accidental real shipments or charges</td><td>Format-valid but fictitious — nothing ships</td></tr>
+<tr><td>Address validation testing</td><td>Personal data in test fixtures</td><td>City-ZIP pairings pass validators without exposure</td></tr>
+<tr><td>Database seeding</td><td>GDPR/privacy liability</td><td>Realistic structure, zero real people</td></tr>
+<tr><td>UI mockups and demos</td><td>Someone's home on a screenshot</td><td>Looks real in the design, safe in the wild</td></tr>
+<tr><td>Training materials</td><td>Trainees learn with real PII</td><td>Safe sample data for walkthroughs</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Fake Address Generators?</h3>
+
+<p><strong>Developers and QA testers</strong> are the core users — populating shipping forms, testing address validation logic, seeding databases with customer records, and simulating signups without touching real personal data.</p>
+
+<p><strong>Designers</strong> need realistic addresses for UI mockups and prototypes. "123 Fake Street" in a polished checkout mockup breaks the illusion; a properly formatted address keeps the review focused on the design.</p>
+
+<p><strong>Privacy-conscious users</strong> generate placeholder addresses for throwaway signups, surveys, and forums — anywhere a form demands an address it does not actually need.</p>
+
+<p><strong>Data engineers</strong> generate bulk datasets (CSV, SQL-ready) for pipeline testing, with tools like Mockaroo and GenerateData supporting multi-country schemas and large-scale exports.</p>
+
+<h3>Practical Tips for Test Data</h3>
+
+<ul>
+<li><strong>Match the country to the test.</strong> Validation rules differ by country — test with addresses in the format your form expects.</li>
+<li><strong>Generate in bulk for databases.</strong> One address tests a form; a thousand test a database. Use bulk export (CSV/SQL) for seeding.</li>
+<li><strong>Pair with other fake data.</strong> Addresses plus <strong>fake names</strong>, <strong>fake phone numbers</strong>, and emails make complete test identities.</li>
+<li><strong>Keep test data labeled.</strong> Prefix or tag seeded records so nobody mistakes test customers for real ones in analytics.</li>
+<li><strong>Do not use for fraud.</strong> These are testing tools — using fictitious identities to deceive is a different matter entirely, and a serious one.</li>
+<li><strong>Refresh stale fixtures.</strong> Test data rots; regenerate periodically so your fixtures reflect current formats and edge cases.</li>
+<li><strong>Check validator behavior.</strong> If your form rejects a generated address, the bug might be in your validator's strictness, not the data.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is the fake address generator free?</h4>
+<p>Yes — free, no signup, generate as many addresses as you need.</p>
+
+<h4>Are the generated addresses real?</h4>
+<p>No. Street numbers and names are invented; city-ZIP pairings are realistic so validators accept them, but nothing points to an actual property or person. Any resemblance to a real address is coincidental.</p>
+
+<h4>Can I use a fake address for a real shipment?</h4>
+<p>No — that is not what this is for. These are testing placeholders. Using fictitious addresses to deceive merchants or evade verification is fraud.</p>
+
+<h4>Which countries are supported?</h4>
+<p>Most generators cover the US, UK, India, and many more — some support 24+ countries, each with correct local formatting (ZIP codes, postcodes, provinces).</p>
+
+<h4>Can I generate addresses in bulk?</h4>
+<p>Yes. Generate batches for database seeding, and use tools with CSV/SQL export when you need thousands of records for pipeline testing.</p>
+
+<h4>Do I need to sign up?</h4>
+<p>No. Generation happens instantly in your browser with no account.</p>
+
+<h4>What else can I generate alongside addresses?</h4>
+<p>Many tools bundle names, phone numbers, companies, and Luhn-valid test credit card numbers — a complete fake identity for form and payment-flow testing.</p>
+
+<h4>Why not just use "123 Fake Street"?</h4>
+<p>Because uniform fake data hides bugs. Realistic variety — different street names, formats, and edge cases — exercises your validation and parsing logic the way real users will.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="js/generator-common.js"></script>
+<script>
+        const db = {
+            us: { streets: ['Main St', 'Broadway', 'Park Ave', 'Oak St', 'Pine Ln', 'Cedar Dr'], cities: ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix'], states: ['NY', 'CA', 'IL', 'TX', 'AZ'], zips: ['10001', '90001', '60007', '77001', '85001'], full: 'United States' },
+            uk: { streets: ['High St', 'London Rd', 'Station Rd', 'Church St', 'Victoria Rd'], cities: ['London', 'Manchester', 'Birmingham', 'Leeds', 'Glasgow'], states: ['England', 'England', 'England', 'England', 'Scotland'], zips: ['SW1A 1AA', 'M1 1AE', 'B1 1BB', 'LS1 1UR', 'G1 1XQ'], full: 'United Kingdom' },
+            ca: { streets: ['Yonge St', 'Queen St', 'King St', 'Dundas St', 'Front St'], cities: ['Toronto', 'Vancouver', 'Montreal', 'Calgary', 'Ottawa'], states: ['ON', 'BC', 'QC', 'AB', 'ON'], zips: ['M5V 2H1', 'V6B 3P1', 'H3B 1A1', 'T2P 1J9', 'K1A 0G9'], full: 'Canada' },
+            de: { streets: ['Hauptstraße', 'Bahnhofstraße', 'Dorfstraße', 'Schulstraße', 'Ringstraße'], cities: ['Berlin', 'Munich', 'Hamburg', 'Frankfurt', 'Cologne'], states: ['Berlin', 'Bavaria', 'Hamburg', 'Hesse', 'NRW'], zips: ['10115', '80331', '20095', '60311', '50667'], full: 'Germany' },
+            au: { streets: ['George St', 'Pitt St', 'Collins St', 'Bourke St', 'Queen St'], cities: ['Sydney', 'Melbourne', 'Brisbane', 'Perth', 'Adelaide'], states: ['NSW', 'VIC', 'QLD', 'WA', 'SA'], zips: ['2000', '3000', '4000', '6000', '5000'], full: 'Australia' },
+            fr: { streets: ['Rue de la Paix', 'Champs-Élysées', 'Rue de Rivoli', 'Boulevard Saint-Germain'], cities: ['Paris', 'Lyon', 'Marseille', 'Toulouse', 'Nice'], states: ['Île-de-France', 'Auvergne-Rhône-Alpes', 'PACA', 'Occitanie', 'PACA'], zips: ['75001', '69001', '13001', '31000', '06000'], full: 'France' },
+            jp: { streets: ['Chuo-dori', 'Shinjuku-dori', 'Meiji-dori', 'Aoyama-dori'], cities: ['Tokyo', 'Osaka', 'Kyoto', 'Yokohama', 'Sapporo'], states: ['Tokyo', 'Osaka', 'Kyoto', 'Kanagawa', 'Hokkaido'], zips: ['100-0001', '530-0001', '600-8001', '220-0001', '060-0001'], full: 'Japan' }
+        };
+
+        const randomNames = ['John Doe', 'Jane Smith', 'Alice Johnson', 'Bob Brown', 'Charlie Davis'];
+
+        document.getElementById('generate').addEventListener('click', () => {
+            const country = document.getElementById('country').value;
+            const data = db[country];
+            const incName = document.getElementById('inc-name').checked;
+
+            // Generate Data
+            const streetNum = Math.floor(Math.random() * 999) + 1;
+            const street = data.streets[Math.floor(Math.random() * data.streets.length)];
+            const city = data.cities[Math.floor(Math.random() * data.cities.length)];
+            const state = data.states[data.cities.indexOf(city)]; // Match state to city index for simple consistency
+            const zip = data.zips[data.cities.indexOf(city)];
+
+            // Populate UI
+            const fullStreet = `${streetNum} ${street}`;
+            document.getElementById('val-street').innerText = fullStreet;
+            document.getElementById('val-city').innerText = city;
+            document.getElementById('val-state').innerText = state;
+            document.getElementById('val-zip').innerText = zip;
+            document.getElementById('val-country').innerText = data.full;
+
+            if (incName) {
+                const name = randomNames[Math.floor(Math.random() * randomNames.length)];
+                document.getElementById('val-name').innerText = name;
+                document.getElementById('row-name').style.display = 'flex';
+            } else {
+                document.getElementById('row-name').style.display = 'none';
+            }
+
+            // Maps Link
+            const query = encodeURIComponent(`${fullStreet}, ${city}, ${state}, ${data.full}`);
+            document.getElementById('maps-link').href = `https://www.google.com/maps/search/?api=1&query=${query}`;
+
+            document.getElementById('result-box').style.display = 'block';
+
+            // History
+            HistoryManager.add({ tool: 'Address Gen', preview: `${city}, ${data.full}`, value: `${fullStreet}, ${city}, ${state} ${zip}, ${data.full}` });
+        });
+
+        function copyAddress() {
+            const vals = ['val-street', 'val-city', 'val-state', 'val-zip', 'val-country'].map(id => document.getElementById(id).innerText);
+            if (document.getElementById('row-name').style.display !== 'none') vals.unshift(document.getElementById('val-name').innerText);
+
+            GeneratorUtils.copyToClipboard(vals.join(', '));
+        }
+    </script>
+</body>
+</html>

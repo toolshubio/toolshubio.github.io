@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free Text & Writing Tools - 20 professional, client-side tools for text processing, formatting, and analysis. 100% private.">
+    <title>Text & Writing Tools Suite | TOOLSHUB.COM</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+
+    <style>
+        .hero {
+            background: linear-gradient(135deg, #1565C0 0%, #0D47A1 100%);
+            padding: var(--space-12) 0 var(--space-10);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            color: white;
+            border-radius: var(--radius-xl);
+            margin-bottom: 3rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-title {
+            font-size: var(--text-5xl);
+            font-weight: var(--font-bold);
+            margin-bottom: var(--space-4);
+            line-height: 1.1;
+            position: relative;
+        }
+
+        .hero-description {
+            font-size: var(--text-xl);
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .category-title {
+            font-size: var(--text-3xl);
+            font-weight: var(--font-bold);
+            margin-bottom: var(--space-3);
+            background: linear-gradient(135deg, #1565C0 0%, #1A237E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero" style="margin-top: 1.5rem;">
+            <div class="hero-content">
+                <h1 class="hero-title">Text & Writing Suite</h1>
+                <p class="hero-description">
+                    20 professional-grade tools for text analysis, formatting, and creative writing.
+                    100% private, client-side processing.
+                </p>
+            </div>
+        </section>
+
+        <section class="tools-section">
+            <div class="category-header">
+                <h2 class="category-title">📝 All Text Tools</h2>
+            </div>
+            <div class="tools-grid">
+                <a href="text-case-changer.html" class="tool-card">
+                    <div class="tool-card-icon">🔤</div>
+                    <h3 class="tool-card-title">Text Case Changer</h3>
+                    <p class="tool-card-description">Convert text between UPPERCASE, lowercase, Title Case, etc.</p>
+                </a>
+                <a href="paraphrasing-tool.html" class="tool-card">
+                    <div class="tool-card-icon">🔄</div>
+                    <h3 class="tool-card-title">Paraphrasing Tool</h3>
+                    <p class="tool-card-description">Rephrase your content with synonyms for better readability.</p>
+                </a>
+                <a href="rewriter-tool.html" class="tool-card">
+                    <div class="tool-card-icon">✍️</div>
+                    <h3 class="tool-card-title">Rewriter Tool</h3>
+                    <p class="tool-card-description">Rewrite text with different strength levels and styles.</p>
+                </a>
+                <a href="paragraph-rephraser.html" class="tool-card">
+                    <div class="tool-card-icon">📄</div>
+                    <h3 class="tool-card-title">Paragraph Rephraser</h3>
+                    <p class="tool-card-description">Improve the flow and structure of your paragraphs.</p>
+                </a>
+                <a href="sentence-checker.html" class="tool-card">
+                    <div class="tool-card-icon">✅</div>
+                    <h3 class="tool-card-title">Sentence Checker</h3>
+                    <p class="tool-card-description">Quickly catch grammar and punctuation errors.</p>
+                </a>
+                <a href="spell-checker.html" class="tool-card">
+                    <div class="tool-card-icon">✏️</div>
+                    <h3 class="tool-card-title">Spell Checker</h3>
+                    <p class="tool-card-description">Instantly fix common misspellings in your text.</p>
+                </a>
+                <a href="text-summarizer.html" class="tool-card">
+                    <div class="tool-card-icon">📝</div>
+                    <h3 class="tool-card-title">Text Summarizer</h3>
+                    <p class="tool-card-description">Extract key points and summarize long articles.</p>
+                </a>
+                <a href="character-counter.html" class="tool-card">
+                    <div class="tool-card-icon">📊</div>
+                    <h3 class="tool-card-title">Character Counter</h3>
+                    <p class="tool-card-description">Detailed stats including words, characters, and reading time.</p>
+                </a>
+                <a href="text-comparator.html" class="tool-card">
+                    <div class="tool-card-icon">⚖️</div>
+                    <h3 class="tool-card-title">Text Comparator</h3>
+                    <p class="tool-card-description">Side-by-side comparison with highlighted differences.</p>
+                </a>
+                <a href="text-cleaner.html" class="tool-card">
+                    <div class="tool-card-icon">🧹</div>
+                    <h3 class="tool-card-title">Text Cleaner</h3>
+                    <p class="tool-card-description">Remove extra spaces, tags, and formatting artifacts.</p>
+                </a>
+                <a href="text-formatter.html" class="tool-card">
+                    <div class="tool-card-icon">📋</div>
+                    <h3 class="tool-card-title">Text Formatter</h3>
+                    <p class="tool-card-description">Format code, JSON, and beautify messy text.</p>
+                </a>
+                <a href="bold-text-generator.html" class="tool-card">
+                    <div class="tool-card-icon">𝐁</div>
+                    <h3 class="tool-card-title">Bold Text Generator</h3>
+                    <p class="tool-card-description">Generate stylish bold text for social media.</p>
+                </a>
+                <a href="small-caps-generator.html" class="tool-card">
+                    <div class="tool-card-icon">ᴀʙᴄ</div>
+                    <h3 class="tool-card-title">Small Caps Generator</h3>
+                    <p class="tool-card-description">Convert text to elegant sᴍᴀʟʟ ᴄᴀᴘs letters.</p>
+                </a>
+                <a href="upside-down-text.html" class="tool-card">
+                    <div class="tool-card-icon">🙃</div>
+                    <h3 class="tool-card-title">Upside Down Text</h3>
+                    <p class="tool-card-description">Flip your text upside down for fun effects.</p>
+                </a>
+                <a href="reverse-text-generator.html" class="tool-card">
+                    <div class="tool-card-icon">◀️</div>
+                    <h3 class="tool-card-title">Reverse Text</h3>
+                    <p class="tool-card-description">Reverse the order of characters in your text.</p>
+                </a>
+                <a href="line-tools.html" class="tool-card">
+                    <div class="tool-card-icon">➖</div>
+                    <h3 class="tool-card-title">Line Tools</h3>
+                    <p class="tool-card-description">Sort, shuffle, and deduplicate lines of text.</p>
+                </a>
+                <a href="word-changer.html" class="tool-card">
+                    <div class="tool-card-icon">🔁</div>
+                    <h3 class="tool-card-title">Word Changer</h3>
+                    <p class="tool-card-description">Advanced find and replace across your content.</p>
+                </a>
+                <a href="invisible-character.html" class="tool-card">
+                    <div class="tool-card-icon">👻</div>
+                    <h3 class="tool-card-title">Invisible Character</h3>
+                    <p class="tool-card-description">Generate and detect hidden/invisible characters.</p>
+                </a>
+                <a href="sentence-counter.html" class="tool-card">
+                    <div class="tool-card-icon">🔢</div>
+                    <h3 class="tool-card-title">Sentence Counter</h3>
+                    <p class="tool-card-description">Count sentences and analyze sentence structure.</p>
+                </a>
+                <a href="small-text-generator.html" class="tool-card">
+                    <div class="tool-card-icon">🔹</div>
+                    <h3 class="tool-card-title">Small Text Generator</h3>
+                    <p class="tool-card-description">Create tiny text using superscript and subscript.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../scripts/tools-data.js"></script>
+    <script src="../image-tools/js/shared/theme.js"></script>
+    <script src="../image-tools/js/shared/header.js"></script>
+    <script src="../image-tools/js/shared/breadcrumb.js"></script>
+    <script src="../image-tools/js/shared/footer.js"></script>
+</body>
+
+</html>

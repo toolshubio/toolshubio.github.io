@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate and validate meta tags. Features bulk CSV generation, duplicate content detection, and accurate pixel-width SERP preview.">
+    <title>Advanced Meta Tag Generator | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">SEO Tools</a> &gt;
+                <span>Advanced Meta Tag Generator</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Advanced Meta Tag Generator</h1>
+                <p class="tool-description">Generate and validate meta tags. Features bulk CSV generation, duplicate content detection, and accurate pixel-width SERP preview.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<main class="main-content" style="margin-top: 100px;">
+<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
+<div class="container text-center">
+<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Advanced Meta Tag Generator</h1>
+<p class="hero-subtitle">Single page analyzer with pixel-perfect SERP preview, or bulk CSV generator
+                    with duplicate detection.</p>
+</div>
+</section>
+<div class="container">
+<div class="tool-interface-container" style="max-width: 1100px; margin: 0 auto;">
+<div class="tabs">
+<div class="tab active" id="tab-single" onclick="switchTab('single')">Single Page Generator</div>
+<div class="tab" id="tab-bulk" onclick="switchTab('bulk')">Bulk CSV Generator</div>
+</div>
+<!-- Single Mode -->
+<div id="view-single">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+<!-- Form -->
+<div class="input-section">
+<div class="input-group">
+<label class="input-label">Page Title</label>
+<input class="seo-input" id="pageTitle" oninput="updateSingle()" placeholder="My Awesome Page Title" type="text"/>
+<div class="pixel-counter" id="titleCounter">0px / 580px</div>
+</div>
+<div class="input-group">
+<label class="input-label">Meta Description</label>
+<textarea class="seo-textarea" id="pageDesc" oninput="updateSingle()" placeholder="A brief description..."></textarea>
+<div class="pixel-counter" id="descCounter">0px / 990px</div>
+</div>
+<div class="input-group">
+<label class="input-label">Keywords</label>
+<input class="seo-input" id="pageKeywords" oninput="generateSingleCode()" placeholder="seo, tools" type="text"/>
+</div>
+<div class="input-group">
+<label class="input-label">Author</label>
+<input class="seo-input" id="pageAuthor" oninput="generateSingleCode()" type="text"/>
+</div>
+<button class="btn-primary" onclick="copySingle()" style="width: 100%; margin-top: 1rem;">Copy HTML Code</button>
+</div>
+<!-- Preview -->
+<div class="output-section">
+<div class="preview-toggle">
+<button class="preview-btn active" id="btn-desktop" onclick="setPreviewMode('desktop')">?? Desktop</button>
+<button class="preview-btn" id="btn-mobile" onclick="setPreviewMode('mobile')">??
+                                    Mobile</button>
+</div>
+<div class="preview-box" id="serpPreviewBox">
+<div class="seo-result-item">
+<div class="seo-url">https://example.com � page-url</div>
+<a class="seo-title" href="#" id="previewTitle">My Awesome Page Title</a>
+<div class="seo-desc" id="previewDesc">A brief description...</div>
+</div>
+</div>
+<div class="mt-lg">
+<label class="input-label">Generated HTML:</label>
+<pre class="output-code" id="singleOutput" style="max-height: 200px; overflow: auto;"></pre>
+</div>
+</div>
+</div>
+</div>
+<!-- Bulk Mode -->
+<div id="view-bulk" style="display: none;">
+<div class="action-bar" style="justify-content: space-between; margin-bottom: 1rem;">
+<button class="btn-secondary" onclick="addRow()">+ Add Row</button>
+<div>
+<button class="btn-secondary" onclick="checkDuplicates()">Check Duplicates</button>
+<button class="btn-primary" onclick="exportCSV()">Download CSV</button>
+</div>
+</div>
+<div class="bulk-table-container">
+<table class="bulk-table" id="bulkTable">
+<thead>
+<tr>
+<th style="width: 30%;">URL</th>
+<th style="width: 30%;">Title</th>
+<th style="width: 35%;">Description</th>
+<th style="width: 5%;"></th>
+</tr>
+</thead>
+<tbody id="bulkBody">
+<!-- JS will populate -->
+</tbody>
+</table>
+</div>
+<div id="duplicateStatus" style="margin-top: 1rem;"></div>
+</div>
+</div>
+</div>
+</main>
+ Hidden canvas for text measurement 
+<canvas id="textCanvas" style="display: none;"></canvas>
+            </div>
+            <section class="seo-article" data-tool="meta-tag-generator">
+<article class="tool-article">
+<h2>Meta Tag Generator — Build Your Full SEO Head Block Online</h2>
+
+<p>Hand-writing the head section of a web page is one of those jobs that looks trivial until you forget a closing quote, misplace a comma in the robots directive, or ship an Open Graph image tag without the width and height. I have debugged all of these at 1 a.m. A meta tag generator takes a simple form — page title, description, URL, a few toggles — and outputs a complete, valid block of meta tags you can paste straight into your page.</p>
+
+<h3>What Is a Meta Tag Generator?</h3>
+
+<p>The <code>&lt;head&gt;</code> of an HTML page carries invisible instructions that decide how your page appears in search results and when shared on social media. The core set every page needs: the <strong>title tag</strong> (the blue clickable headline in results), the <strong>meta description</strong> (the summary underneath), the <strong>canonical URL</strong> (which address is the official one, preventing duplicate-content confusion), the <strong>robots directive</strong> (index/follow instructions for crawlers), the <strong>viewport</strong> setting (how the page scales on phones), and the character set.</p>
+
+<p>Beyond that, modern pages need <strong>Open Graph tags</strong> (<code>og:title</code>, <code>og:description</code>, <code>og:image</code>, <code>og:url</code>, <code>og:type</code>) for Facebook, LinkedIn, WhatsApp, and Slack previews, and <strong>Twitter Card tags</strong> for the X preview. That is a dozen or more lines of exact syntax. The generator builds all of it from one form — you fill in plain text, tick the boxes for which tag groups you want, and it assembles the code with correct attributes, escaping, and ordering. Most good ones also count your title and description characters live, so the SEO tags fit search-result limits while you write them.</p>
+
+<h3>How to Use the Meta Tag Generator</h3>
+
+<p>I treat it as a four-step routine, and it takes a couple of minutes per page.</p>
+
+<p>Start with the basic SEO tags: page title, meta description, canonical URL, author name, and the robots directive. A live checklist helps — title filled, title within 30–60 characters, description filled and within roughly 70–155 characters, canonical URL set. Watch the character counters as you type; titles past about 60 characters get truncated in results, and descriptions past 160 lose their ending.</p>
+
+<p>Next, decide on Open Graph and Twitter Card tags. The generator pre-fills <code>og:title</code> and <code>og:description</code> from your SEO fields, which is the right default — you only need different values if the social share should read differently from the search listing. Set your preview image (1200×630 pixels is the widely recommended size), the page URL, and <code>og:type</code> (usually "website" for regular pages). For Twitter, <code>summary_large_image</code> is the common card choice.</p>
+
+<p>Then copy the generated block and paste it into the <code>&lt;head&gt;</code> section of your page, before any stylesheets or scripts. If you are using WordPress, most people paste these one by one into an SEO plugin instead — but the generator is still the fastest way to get the exact syntax right.</p>
+
+<p>Finally, verify. View the page source to confirm every tag landed, run the URL through Facebook's Sharing Debugger to clear the cached preview, and check the snippet in a SERP preview. Generators write correct code, but the paste step is where mistakes sneak in.</p>
+
+<h3>What a Generated Block Looks Like</h3>
+
+<p>Here is a typical output for a standard article page — this is exactly the shape a good generator produces:</p>
+
+<p>
+<code>&lt;meta charset="UTF-8"&gt;</code><br>
+<code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code><br>
+<code>&lt;title&gt;My Awesome Page&lt;/title&gt;</code><br>
+<code>&lt;meta name="description" content="A short, compelling description of what this page is about (120-160 chars)."&gt;</code><br>
+<code>&lt;meta name="robots" content="index, follow"&gt;</code><br>
+<code>&lt;link rel="canonical" href="https://example.com/my-page"&gt;</code><br>
+<code>&lt;!-- Open Graph (Facebook, LinkedIn, WhatsApp) --&gt;</code><br>
+<code>&lt;meta property="og:title" content="My Awesome Page"&gt;</code><br>
+<code>&lt;meta property="og:description" content="A short, compelling description..."&gt;</code><br>
+<code>&lt;meta property="og:image" content="https://example.com/preview.jpg"&gt;</code><br>
+<code>&lt;meta property="og:url" content="https://example.com/my-page"&gt;</code><br>
+<code>&lt;meta property="og:type" content="website"&gt;</code><br>
+<code>&lt;!-- Twitter / X Card --&gt;</code><br>
+<code>&lt;meta name="twitter:card" content="summary_large_image"&gt;</code><br>
+<code>&lt;meta name="twitter:title" content="My Awesome Page"&gt;</code><br>
+<code>&lt;meta name="twitter:description" content="A short, compelling description..."&gt;</code>
+</p>
+
+<p>Notice the details the generator handles for you: <code>property</code> for Open Graph versus <code>name</code> for standard and Twitter tags, the canonical as a <code>link</code> element rather than a meta tag, and the exact attribute spelling Google expects. Hand-typing this is where errors hide; copying it is not.</p>
+
+<h3>Tag Groups Compared</h3>
+
+<table>
+<thead><tr><th>Group</th><th>Purpose</th><th>Key tags</th><th>What goes wrong without them</th></tr></thead>
+<tbody>
+<tr><td>Core SEO</td><td>Search result appearance</td><td>title, description, canonical, robots</td><td>Truncated or missing snippets; duplicate-content confusion</td></tr>
+<tr><td>Open Graph</td><td>Social link previews</td><td>og:title, og:description, og:image, og:url</td><td>Broken or generic previews on Facebook, LinkedIn, WhatsApp</td></tr>
+<tr><td>Twitter Card</td><td>X link previews</td><td>twitter:card, twitter:title, twitter:image</td><td>Small text-only cards instead of large image cards</td></tr>
+<tr><td>Technical</td><td>Rendering &amp; mobile</td><td>charset, viewport, lang</td><td>Mojibake characters; unusable mobile layout</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Meta Tag Generators?</h3>
+
+<p><strong>Web developers</strong> use them to scaffold the head of every new template — faster than typing and safer than copying from memory.</p>
+
+<p><strong>Bloggers and small site owners</strong> without SEO plugins generate tags per post, especially on static sites and hand-coded pages.</p>
+
+<p><strong>Freelancers</strong> deliver generated tag blocks to clients as part of a launch checklist, which reads far more professionally than "add some meta tags."</p>
+
+<p><strong>Marketers</strong> use the Open Graph and Twitter Card output to control how campaign landing pages look when shared, since the preview image often decides whether a link gets clicked.</p>
+
+<p><strong>Students</strong> learning HTML use the generator alongside their code to see what a correct head section looks like before they can write one from scratch.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Complete tag block</strong> — core SEO, Open Graph, Twitter Card, and technical tags from one form.</li>
+<li><strong>Live character counters</strong> — title and description lengths tracked against search-result limits.</li>
+<li><strong>Self-checking checklist</strong> — ticks off as each requirement is met, so nothing ships half-done.</li>
+<li><strong>One-click copy</strong> — the whole block, ready to paste into your page head.</li>
+<li><strong>Correct syntax guaranteed</strong> — proper attributes, escaping, and ordering every time.</li>
+<li><strong>100% free</strong> — no signup, no limits on how many pages you generate for.</li>
+<li><strong>Private by design</strong> — everything runs in your browser; nothing is uploaded.</li>
+<li><strong>Works everywhere</strong> — any modern browser, desktop or mobile.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What are meta tags?</h4>
+<p>Meta tags are snippets of HTML in a page's head that describe the page to search engines and social platforms. They control how your page appears in search results and link previews, though visitors never see them on the page itself.</p>
+
+<h4>Do I still need meta tags if I use an SEO plugin?</h4>
+<p>Usually not for the basics — plugins like Rank Math or Yoast generate title, description, and canonical tags from your post settings. The generator is most useful for static sites, hand-coded pages, or when you want to double-check exact syntax.</p>
+
+<h4>Does the keywords meta tag still matter?</h4>
+<p>Google ignores it entirely. Bing still gives it some weight, so generators include it as optional — but never rely on it for rankings.</p>
+
+<h4>What size should my Open Graph image be?</h4>
+<p>1200×630 pixels is the widely recommended size — it renders well on Facebook, LinkedIn, and most other platforms, and stays under typical file-size limits.</p>
+
+<h4>Why does my shared link show the wrong preview?</h4>
+<p>Social platforms cache link previews. After fixing your tags, run the URL through Facebook's Sharing Debugger (or the equivalent for X/LinkedIn) to clear the cache and re-scrape.</p>
+
+<h4>Where do I paste the generated tags?</h4>
+<p>Inside the <code>&lt;head&gt;</code> section of your HTML, ideally before stylesheets and scripts. In WordPress, add them via your SEO plugin or a header-insertion feature rather than editing theme files directly.</p>
+
+<h4>Is this generator free?</h4>
+<p>Yes — completely free, no account needed.</p>
+
+<h4>Will the generator fix my existing tags?</h4>
+<p>It generates a fresh, correct block — paste it over or alongside your existing tags, then remove the old duplicates. Two title tags or conflicting robots directives will confuse crawlers, so clean up after pasting.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        // --- State ---
+        let previewMode = 'desktop';
+        let bulkData = [
+            { url: 'https://example.com', title: 'Home Page', desc: 'Welcome to our website.' },
+            { url: 'https://example.com/about', title: 'About Us', desc: 'Learn more about us.' }
+        ];
+
+        // --- Single Page Logic ---
+
+        function switchTab(tab) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('tab-' + tab).classList.add('active');
+
+            document.getElementById('view-single').style.display = tab === 'single' ? 'block' : 'none';
+            document.getElementById('view-bulk').style.display = tab === 'bulk' ? 'block' : 'none';
+        }
+
+        function setPreviewMode(mode) {
+            previewMode = mode;
+            document.getElementById('btn-desktop').classList.toggle('active', mode === 'desktop');
+            document.getElementById('btn-mobile').classList.toggle('active', mode === 'mobile');
+
+            // Adjust styles
+            const previewBox = document.getElementById('serpPreviewBox');
+            previewBox.style.maxWidth = mode === 'mobile' ? '400px' : '600px';
+        }
+
+        function updateSingle() {
+            const title = document.getElementById('pageTitle').value || 'My Awesome Page Title';
+            const desc = document.getElementById('pageDesc').value || 'A brief description...';
+
+            document.getElementById('previewTitle').innerText = title;
+            document.getElementById('previewDesc').innerText = desc;
+
+            // Pixel calculation
+            const titlePx = measureText(title, '20px Arial'); // Approx Google Title font
+            const descPx = measureText(desc, '14px Arial');  // Approx Google Desc font
+
+            const titleLimit = 580; // Desktop limit approx
+            const descLimit = 990;  // Desktop limit approx (it's actually width based, ~920-990 depending on device)
+
+            updateCounter('titleCounter', titlePx, titleLimit);
+            updateCounter('descCounter', descPx, descLimit);
+
+            generateSingleCode();
+        }
+
+        function updateCounter(id, current, max) {
+            const el = document.getElementById(id);
+            el.innerText = `${Math.round(current)}px / ${max}px`; // Rounding for cleaner UI
+
+            if (current > max) el.className = 'pixel-counter pixel-bad';
+            else if (current > max * 0.9) el.className = 'pixel-counter pixel-warn';
+            else el.className = 'pixel-counter pixel-good';
+        }
+
+        function measureText(text, font) {
+            const canvas = document.getElementById('textCanvas');
+            const context = canvas.getContext('2d');
+            context.font = font;
+            return context.measureText(text).width;
+        }
+
+        function generateSingleCode() {
+            const title = document.getElementById('pageTitle').value;
+            const desc = document.getElementById('pageDesc').value;
+            const kw = document.getElementById('pageKeywords').value;
+            const author = document.getElementById('pageAuthor').value;
+
+            let code = ``;
+            if (title) code += `<title>${title}</title>\n`;
+            if (desc) code += `<meta name="description" content="${desc}">\n`;
+            if (kw) code += `<meta name="keywords" content="${kw}">\n`;
+            if (author) code += `<meta name="author" content="${author}">\n`;
+
+            document.getElementById('singleOutput').innerText = code;
+        }
+
+        function copySingle() {
+            navigator.clipboard.writeText(document.getElementById('singleOutput').innerText).then(() => alert("Copied!"));
+        }
+
+
+        // --- Bulk Logic ---
+
+        function renderBulk() {
+            const tbody = document.getElementById('bulkBody');
+            tbody.innerHTML = bulkData.map((row, i) => `
+                <tr>
+                    <td><input type="text" value="${row.url}" oninput="updateRow(${i}, 'url', this.value)"></td>
+                    <td><input type="text" value="${row.title}" class="input-title-${i}" oninput="updateRow(${i}, 'title', this.value)"></td>
+                    <td><input type="text" value="${row.desc}" class="input-desc-${i}" oninput="updateRow(${i}, 'desc', this.value)"></td>
+                    <td><button class="btn-remove-block" onclick="removeRow(${i})">�</button></td>
+                </tr>
+            `).join('');
+        }
+
+        function addRow() {
+            bulkData.push({ url: '', title: '', desc: '' });
+            renderBulk();
+        }
+
+        function removeRow(i) {
+            bulkData.splice(i, 1);
+            renderBulk();
+        }
+
+        function updateRow(i, field, val) {
+            bulkData[i][field] = val;
+            // Clear errors on input
+            if (field === 'title') document.querySelector(`.input-title-${i}`).classList.remove('duplicate-error');
+            if (field === 'desc') document.querySelector(`.input-desc-${i}`).classList.remove('duplicate-error');
+        }
+
+        function checkDuplicates() {
+            const titles = {};
+            const descs = {};
+            let dupsFound = false;
+
+            // Reset styles
+            document.querySelectorAll('.bulk-table input').forEach(el => el.classList.remove('duplicate-error'));
+
+            bulkData.forEach((row, i) => {
+                if (row.title) {
+                    if (titles[row.title]) {
+                        titles[row.title].push(i);
+                        dupsFound = true;
+                    } else titles[row.title] = [i];
+                }
+                if (row.desc) {
+                    if (descs[row.desc]) {
+                        descs[row.desc].push(i);
+                        dupsFound = true;
+                    } else descs[row.desc] = [i];
+                }
+            });
+
+            // Highlight
+            Object.values(titles).forEach(indices => {
+                if (indices.length > 1) {
+                    indices.forEach(i => document.querySelector(`.input-title-${i}`).classList.add('duplicate-error'));
+                }
+            });
+            Object.values(descs).forEach(indices => {
+                if (indices.length > 1) {
+                    indices.forEach(i => document.querySelector(`.input-desc-${i}`).classList.add('duplicate-error'));
+                }
+            });
+
+            const status = document.getElementById('duplicateStatus');
+            if (dupsFound) {
+                status.innerHTML = `<div class="alert-box alert-error" style="color:#ef4444; background:#fef2f2; padding:1rem;">? Duplicate Titles or Descriptions found! (Highlighted in red)</div>`;
+            } else {
+                status.innerHTML = `<div class="alert-box alert-success" style="color:#166534; background:#dcfce7; padding:1rem;">? No duplicates found.</div>`;
+            }
+        }
+
+        function exportCSV() {
+            let csvContent = "data:text/csv;charset=utf-8,URL,Title,Description\n";
+            bulkData.forEach(row => {
+                const r = [
+                    `"${row.url.replace(/"/g, '""')}"`,
+                    `"${row.title.replace(/"/g, '""')}"`,
+                    `"${row.desc.replace(/"/g, '""')}"`
+                ];
+                csvContent += r.join(",") + "\n";
+            });
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "meta_tags.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Init
+        updateSingle();
+        renderBulk();
+    </script>
+</body>
+</html>

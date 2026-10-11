@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Online EXIF Viewer and Metadata Remover. View camera settings, GPS location, and privacy details. Scrub metadata in batch to protect your privacy.">
+    <title>EXIF Viewer & Metadata Remover | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../../image-tools/css/global.css">
+    <link rel="stylesheet" href="../../image-tools/css/components.css">
+    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../../about-us.html">About</a>
+                <a class="nav-link" href="../../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> &gt;
+                <a href="../index.html">Image Tools</a> &gt;
+                <span>ℹ️ EXIF & Metadata Viewer</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">ℹ️ EXIF & Metadata Viewer</h1>
+                <p class="tool-description">Reveal hidden data in your photos. View location, camera settings, and
+                    privacy risks. Scrub all metadata instantly for safe sharing.</p>
+                <div class="tool-badges"><span class="badge badge-primary">GPS Mapping</span><span class="badge badge-primary">Privacy Check</span><span class="badge badge-secondary">Batch Clean</span></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<section class="preview-area">
+<div id="upload-zone"></div>
+<div id="viewer-content" style="display: none; margin-top: 20px;">
+<div class="privacy-alert" id="privacy-status"></div>
+<div class="meta-stats">
+<div class="stat-card">
+<div class="stat-value" id="stat-tags">0</div>
+<div class="stat-label">Total Tags</div>
+</div>
+<div class="stat-card">
+<div class="stat-value" id="stat-gps">No</div>
+<div class="stat-label">GPS Found</div>
+</div>
+<div class="stat-card">
+<div class="stat-value" id="stat-make">-</div>
+<div class="stat-label">Device</div>
+</div>
+</div>
+<div id="map"></div>
+<h3 style="margin: 20px 0 10px; font-size: 1rem;">Full Metadata Table</h3>
+<div class="meta-table-container">
+<table class="meta-table" id="meta-table">
+<thead>
+<tr>
+<th>Tag Name</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+</div>
+<div class="batch-summary" id="batch-area">
+<h3 style="margin-bottom: 10px;">Batch Scrub Summary</h3>
+<p id="batch-stats">Ready to clean X images.</p>
+<div class="mt-4">
+<button class="btn btn-danger w-full" id="scrub-batch-btn">🚀 Clean All &amp; Download</button>
+</div>
+</div>
+</section>
+<aside class="control-panel">
+<div class="control-section">
+<h3 class="control-section-title">🔍 View Settings</h3>
+<div class="preset-buttons" id="view-mode">
+<button class="preset-btn active" data-mode="all">All Tags</button>
+<button class="preset-btn" data-mode="simple">Camera Only</button>
+</div>
+</div>
+<div class="control-section">
+<h3 class="control-section-title">🛡️ Privacy Action</h3>
+<button class="btn btn-danger w-full" disabled="" id="scrub-btn"><span>✖</span> Remove All
+                            Metadata</button>
+<p class="status-text mt-2">Removes all GPS, Serial Numbers, and Author records.</p>
+</div>
+<div class="control-section" id="after-actions" style="display: none;">
+<button class="btn btn-secondary w-full" id="reset-btn"><span>🔄</span> Start Over</button>
+</div>
+</aside>
+</div>
+</div>
+</main>
+            </div>
+            <section class="seo-article" data-tool="exif-viewer">
+<article class="tool-article">
+<h2>EXIF Viewer — View Photo Metadata & Camera Details Online</h2>
+
+<p>Every photo your phone takes is carrying a secret dossier: the exact camera model, the lens, the shutter speed and aperture, the ISO, the precise GPS coordinates of where you stood, and the timestamp down to the second. You never typed any of it — your device wrote it into the file automatically. An EXIF viewer reads that hidden metadata and shows it to you in plain rows. Upload a JPEG, see everything the camera recorded, and — just as importantly — see what you might be sharing without realizing it.</p>
+
+<h3>What Is EXIF Data?</h3>
+
+<p>EXIF (Exchangeable Image File Format) is the metadata standard cameras and phones use to describe a photo. It lives inside the image file itself, in a dedicated APP1 marker segment, and it is organized into directories: the main IFD (camera and image info), the EXIF sub-IFD (exposure settings), and the GPS sub-IFD (location). A single photo can carry hundreds of hidden fields.</p>
+
+<p>The fields fall into recognizable groups. <strong>Camera info:</strong> make, model, lens, sometimes the body serial number. <strong>Exposure:</strong> shutter speed (1/500s), aperture (f/2.8), ISO, focal length and its 35mm equivalent, exposure bias. <strong>When and where:</strong> capture time and GPS latitude/longitude in decimal degrees, sometimes altitude. <strong>Image properties:</strong> pixel dimensions, color space, orientation. Beyond EXIF proper, files may carry IPTC (creator, copyright) and XMP (editing history, Lightroom presets) blocks too.</p>
+
+<p>Here is the part most people miss: this data travels with the file. Email the original to someone and they can see where it was taken. That is either useful or alarming, depending on what you intended to share.</p>
+
+<h3>How to View EXIF Data Online</h3>
+
+<p><strong>Step 1 — Upload the original photo.</strong> Drag and drop a JPEG (or TIFF, HEIC, RAW) into the viewer. This part matters: use the original file, not a screenshot or a social-media download — screenshots and re-saves strip metadata, and most platforms remove it on upload.</p>
+
+<p><strong>Step 2 — Read the table.</strong> Each row is one metadata tag with its decoded value. Rationals show as decimals, arrays as comma-joined lists. Start with the summary: camera, exposure, date, GPS.</p>
+
+<p><strong>Step 3 — Check the location.</strong> If GPS is present, an "Open in OpenStreetMap" link shows the decoded latitude/longitude on a map — the exact spot the photo was taken. This is the field to audit before sharing publicly.</p>
+
+<p><strong>Step 4 — Copy or export.</strong> Copy the key-value dump to your clipboard or download the full metadata as JSON for records, documentation, or a support ticket.</p>
+
+<p>Habit worth building: check metadata <em>before</em> posting anything from home. Your living room's GPS coordinates are not content.</p>
+
+<h3>What Your Photo Reveals — Field by Field</h3>
+
+<table>
+<thead><tr><th>Group</th><th>Fields</th><th>Why it matters</th></tr></thead>
+<tbody>
+<tr><td>Camera</td><td>Make, model, lens, serial number</td><td>Proves what shot the photo; serial aids theft recovery</td></tr>
+<tr><td>Exposure</td><td>Shutter, aperture, ISO, focal length</td><td>Learn settings from shots you like; copy presets</td></tr>
+<tr><td>GPS</td><td>Latitude, longitude, altitude, timestamp</td><td>Privacy risk — reveals exact location</td></tr>
+<tr><td>Date/time</td><td>Capture time, modification time</td><td>Verifies when a photo was taken</td></tr>
+<tr><td>Creator</td><td>Owner name, copyright, software</td><td>Attribution and editing history</td></tr>
+<tr><td>AI traces</td><td>C2PA credentials, generator tags</td><td>Indicates AI-generated or AI-edited origin</td></tr>
+</tbody>
+</table>
+
+<p>Newer files add another layer: Content Credentials (C2PA) — cryptographically signed origin records used by OpenAI, Adobe Firefly, Google, and Microsoft — plus AI-generation tags and even invisible watermarks. The metadata viewer is increasingly an origin-verification tool, not just a camera-settings readout.</p>
+
+<h3>Who Uses an EXIF Viewer?</h3>
+
+<p><strong>Photographers</strong> verify settings were applied correctly and study the exposure data of shots they like — the fastest way to learn is reading your own winners.</p>
+
+<p><strong>Journalists and fact-checkers</strong> verify when and where a photo was taken. Timestamps and GPS are the first line of image verification.</p>
+
+<p><strong>Privacy-conscious users</strong> audit photos for GPS data before sharing — the single most important use for most people, and the one most often skipped.</p>
+
+<p><strong>Photo editors</strong> confirm orientation, color space, and resolution before processing, and read Lightroom XMP data to copy develop presets from reference shots.</p>
+
+<p><strong>Developers</strong> inspect EXIF structure while building camera and gallery apps, and parse metadata programmatically with tools like ExifTool or Python's Pillow library.</p>
+
+<h3>Practical Tips for Working With Metadata</h3>
+
+<ul>
+<li><strong>Use originals.</strong> WhatsApp, Instagram, and most messengers strip EXIF on send — an empty result usually means the metadata was removed, not that the photo is fake.</li>
+<li><strong>Audit GPS before sharing.</strong> If a photo has location data you do not want public, strip it with a <strong>metadata editor</strong> or remover before posting.</li>
+<li><strong>Disable geotagging for sensitive shots.</strong> Your phone's camera settings can stop recording GPS — the cleanest privacy fix is never writing it.</li>
+<li><strong>Check serial numbers.</strong> A recorded body serial number is genuinely useful for insurance claims and stolen-camera recovery.</li>
+<li><strong>Export for documentation.</strong> Download the JSON dump when you need a paper trail — insurance, legal, or archival work.</li>
+<li><strong>Learn from the exposure trio.</strong> Shutter + aperture + ISO on a shot you love is a free photography lesson; save the good ones.</li>
+<li><strong>Pair it with a watermark.</strong> Metadata proves origin quietly; a visible watermark proves it loudly. Use both for professional work.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this EXIF viewer free?</h4>
+<p>Yes — completely free, no registration required.</p>
+
+<h4>What is EXIF data?</h4>
+<p>Hidden metadata your camera or phone writes into every photo: camera model, lens, exposure settings, capture time, and often GPS location. It lives inside the image file itself.</p>
+
+<h4>Why does my photo show no EXIF data?</h4>
+<p>The file was probably re-saved, screenshotted, or shared through an app that strips metadata (WhatsApp, Instagram, and most social platforms remove it). Upload the original file from the camera or phone.</p>
+
+<h4>Can I see where a photo was taken?</h4>
+<p>If the photo contains GPS data, yes — the viewer decodes the latitude/longitude and can open the exact location on a map. This is why auditing metadata before sharing matters.</p>
+
+<h4>Are my photos uploaded to a server?</h4>
+<p>Browser-based viewers parse the file locally via the File API — nothing is uploaded. (Server-based tools delete files after analysis; check each tool's policy.)</p>
+
+<h4>How do I remove EXIF data?</h4>
+<p>Use a metadata remover tool, or share through apps that strip it automatically (like WhatsApp). To change fields rather than delete them, use a metadata editor.</p>
+
+<h4>Can EXIF tell me if an image is AI-generated?</h4>
+<p>Increasingly, yes. Look for C2PA Content Credentials, IPTC digitalSourceType markers, and generator software tags — signed origin records from major AI tools show up in the metadata.</p>
+
+<h4>What is the difference between EXIF, IPTC, and XMP?</h4>
+<p>EXIF is camera-written capture data (settings, GPS). IPTC carries descriptive/creator info (copyright, captions). XMP holds editing history and extensible metadata (Lightroom presets). A full viewer reads all three.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../../about-us.html">About Us</a>
+                    <a class="footer-link" href="../../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../js/shared/unified-input.js"></script>
+<script src="../js/utils/image-loader.js"></script>
+<script>
+        class ExifViewer {
+            constructor() {
+                this.files = [];
+                this.map = null;
+                this.currentMeta = null;
+                this.init();
+            }
+
+            init() {
+                this.unifiedInput = new UnifiedInput({
+                    containerId: 'upload-zone',
+                    toolIcon: 'ℹ️',
+                    toolName: 'EXIF Viewer',
+                    acceptTypes: 'image/jpeg,image/tiff',
+                    onFilesLoaded: (files) => this.handleFilesLoaded(files)
+                });
+
+                document.getElementById('scrub-btn').onclick = () => this.scrubSingle();
+                document.getElementById('scrub-batch-btn').onclick = () => this.scrubBatch();
+                document.getElementById('reset-btn').onclick = () => location.reload();
+
+                document.querySelectorAll('#view-mode .preset-btn').forEach(btn => {
+                    btn.onclick = () => {
+                        document.querySelectorAll('#view-mode .preset-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        this.renderTable(btn.dataset.mode === 'simple');
+                    };
+                });
+            }
+
+            handleFilesLoaded(files) {
+                this.files = files;
+                if (files.length === 1) {
+                    this.showSingle(files[0]);
+                } else if (files.length > 1) {
+                    this.showBatch();
+                }
+            }
+
+            async showSingle(file) {
+                document.getElementById('upload-zone').style.display = 'none';
+                document.getElementById('viewer-content').style.display = 'block';
+                document.getElementById('scrub-btn').disabled = false;
+                document.getElementById('after-actions').style.display = 'block';
+
+                EXIF.getData(file, () => {
+                    this.currentMeta = EXIF.getAllTags(file);
+                    this.updateUI(this.currentMeta);
+                });
+            }
+
+            showBatch() {
+                document.getElementById('upload-zone').style.display = 'none';
+                document.getElementById('batch-area').style.display = 'block';
+                document.getElementById('batch-stats').textContent = `Ready to scrub metadata from ${this.files.length} images. This will remove all location, camera, and author data.`;
+                document.getElementById('after-actions').style.display = 'block';
+            }
+
+            updateUI(tags) {
+                const tagCount = Object.keys(tags).length;
+                document.getElementById('stat-tags').textContent = tagCount;
+
+                const make = tags.Make || tags.Model || 'Unknown';
+                document.getElementById('stat-make').textContent = make;
+
+                // Privacy Check
+                const hasGPS = tags.GPSLatitude ? true : false;
+                document.getElementById('stat-gps').textContent = hasGPS ? 'Yes' : 'No';
+
+                const privacyBox = document.getElementById('privacy-status');
+                if (hasGPS || tags.SerialNumber || tags.Artist) {
+                    privacyBox.className = 'privacy-alert privacy-high';
+                    privacyBox.innerHTML = `⚠️ <strong>Privacy Risk:</strong> This image contains sensitive metadata (GPS or Serial Number).`;
+                } else {
+                    privacyBox.className = 'privacy-alert privacy-low';
+                    privacyBox.innerHTML = `✅ <strong>Safe:</strong> No critical privacy-leaking tags found.`;
+                }
+
+                // Map
+                if (hasGPS) {
+                    this.showMap(tags);
+                } else {
+                    document.getElementById('map').style.display = 'none';
+                }
+
+                this.renderTable();
+            }
+
+            renderTable(simple = false) {
+                if (!this.currentMeta) return;
+                const tbody = document.querySelector('#meta-table tbody');
+                tbody.innerHTML = '';
+
+                const filter = simple ? ['Make', 'Model', 'Software', 'DateTime', 'ExposureTime', 'FNumber', 'ISOSpeedRatings', 'FocalLength'] : null;
+
+                for (let [tag, val] of Object.entries(this.currentMeta)) {
+                    if (filter && !filter.includes(tag)) continue;
+                    if (typeof val === 'object' && val.length > 10) val = '[Binary Data]';
+
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td class="meta-tag">${tag}</td>
+                        <td class="meta-val">${val}</td>
+                    `;
+                    tbody.appendChild(row);
+                }
+            }
+
+            showMap(tags) {
+                const mapDiv = document.getElementById('map');
+                mapDiv.style.display = 'block';
+
+                const lat = this.toDecimal(tags.GPSLatitude, tags.GPSLatitudeRef);
+                const lon = this.toDecimal(tags.GPSLongitude, tags.GPSLongitudeRef);
+
+                if (!this.map) {
+                    this.map = L.map('map').setView([lat, lon], 13);
+                    const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(this.map);
+                    const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}');
+
+                    const baseMaps = {
+                        "Street": osm,
+                        "Satellite": satellite
+                    };
+                    L.control.layers(baseMaps).addTo(this.map);
+                    L.marker([lat, lon]).addTo(this.map).bindPopup(`Location: ${lat.toFixed(6)}, ${lon.toFixed(6)}<br><a href="https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${lat},${lon}" target="_blank">View in Street View</a>`).openPopup();
+                } else {
+                    this.map.setView([lat, lon], 13);
+                }
+
+                // Add GeoJSON Export Button
+                this.addGeoJSONButton(lat, lon);
+            }
+
+            addGeoJSONButton(lat, lon) {
+                const existing = document.getElementById('geojson-btn');
+                if (existing) existing.remove();
+
+                const btn = document.createElement('button');
+                btn.id = 'geojson-btn';
+                btn.className = 'btn btn-secondary btn-sm mt-3';
+                btn.innerHTML = '📍 Export as GeoJSON';
+                btn.onclick = () => {
+                    const data = {
+                        "type": "Feature",
+                        "geometry": { "type": "Point", "coordinates": [lon, lat] },
+                        "properties": { "name": "Image Location", "metadata": this.currentMeta }
+                    };
+                    const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+                    const a = document.createElement('a');
+                    a.href = URL.createObjectURL(blob);
+                    a.download = "location.geojson";
+                    a.click();
+                };
+                document.getElementById('viewer-content').insertBefore(btn, document.getElementById('meta-table').parentNode);
+            }
+
+            toDecimal(gps, ref) {
+                if (!gps || !gps.length) return 0;
+                let res = gps[0] + gps[1] / 60 + gps[2] / 3600;
+                if (ref === 'S' || ref === 'W') res = -res;
+                return res;
+            }
+
+            async scrubSingle() {
+                const btn = document.getElementById('scrub-btn');
+                btn.textContent = 'Scrubbing...';
+
+                const blob = await this.cleanImage(this.files[0]);
+                const a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = "privacy_protected_" + this.files[0].name;
+                a.click();
+
+                btn.textContent = 'Remove All Metadata';
+                alert("Metadata successfully scrubbed!");
+            }
+
+            async scrubBatch() {
+                const btn = document.getElementById('scrub-batch-btn');
+                btn.disabled = true;
+                btn.textContent = 'Processing Batch...';
+
+                for (let i = 0; i < this.files.length; i++) {
+                    const blob = await this.cleanImage(this.files[i]);
+                    const a = document.createElement('a');
+                    a.href = URL.createObjectURL(blob);
+                    a.download = "clean_" + this.files[i].name;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    this.unifiedInput.setFileStatus(i, 'done');
+                    await new Promise(resolve => setTimeout(resolve, 150));
+                }
+
+                btn.textContent = '🚀 Clean All & Download';
+                btn.disabled = false;
+            }
+
+            cleanImage(file) {
+                return new Promise((resolve) => {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const img = new Image();
+                        img.onload = () => {
+                            const canvas = document.createElement('canvas');
+                            canvas.width = img.width;
+                            canvas.height = img.height;
+                            const ctx = canvas.getContext('2d');
+                            ctx.drawImage(img, 0, 0);
+                            canvas.toBlob((blob) => resolve(blob), 'image/jpeg', 0.95);
+                        };
+                        img.src = e.target.result;
+                    };
+                    reader.readAsDataURL(file);
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => new ExifViewer());
+    </script>
+</body>
+</html>

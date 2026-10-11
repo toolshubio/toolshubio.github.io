@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Online Image Cropper. Crop photos with precise aspect ratios, circle crop, rotation, and flip tools. High-quality export.">
+    <title>Crop Image - Free Online Photo Cropper | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../../image-tools/css/global.css">
+    <link rel="stylesheet" href="../../image-tools/css/components.css">
+    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../../about-us.html">About</a>
+                <a class="nav-link" href="../../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> &gt;
+                <a href="../index.html">Image Tools</a> &gt;
+                <span>✂️ Crop Image</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">✂️ Crop Image</h1>
+                <p class="tool-description">Crop photos easily with preset aspect ratios, rotation, flipping, and circle
+                    crop support.</p>
+                <div class="tool-badges"><span class="badge badge-primary">Aspect Ratios</span><span class="badge badge-primary">Circle Crop</span><span class="badge badge-secondary">Rotate &amp; Flip</span></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<section class="preview-area">
+<div id="editor-container" style="display: none; margin-bottom: 2rem;">
+<div class="img-container">
+<img id="image" src=""/>
+</div>
+</div>
+<div id="upload-zone"></div>
+</section>
+<aside class="control-panel">
+<div class="control-section">
+<h3 class="control-section-title">📐 Aspect Ratio</h3>
+<div class="preset-buttons" id="aspect-ratios">
+<button class="preset-btn active" data-ratio="NaN">Free</button>
+<button class="preset-btn" data-ratio="1">1:1 (Square)</button>
+<button class="preset-btn" data-ratio="1.7777777777">16:9</button>
+<button class="preset-btn" data-ratio="1.3333333333">4:3</button>
+<button class="preset-btn" data-ratio="0.6666666667">2:3</button>
+</div>
+<div class="toggle-control" style="margin-top: 10px;">
+<span class="toggle-label">Circle / Round Crop</span>
+<div class="toggle-switch" id="circle-toggle"></div>
+</div>
+<div class="manual-dimensions" style="margin-top: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+<div class="control-group">
+<label class="control-label">X Position</label>
+<input class="form-input" id="crop-x" placeholder="X" type="number"/>
+</div>
+<div class="control-group">
+<label class="control-label">Y Position</label>
+<input class="form-input" id="crop-y" placeholder="Y" type="number"/>
+</div>
+<div class="control-group">
+<label class="control-label">Width (px)</label>
+<input class="form-input" id="crop-width" placeholder="W" type="number"/>
+</div>
+<div class="control-group">
+<label class="control-label">Height (px)</label>
+<input class="form-input" id="crop-height" placeholder="H" type="number"/>
+</div>
+</div>
+<button class="btn btn-primary btn-sm w-full mt-2" id="apply-manual">Apply Dimensions</button>
+</div>
+<div class="control-section">
+<h3 class="control-section-title">🔄 Transform</h3>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+<button class="btn btn-sm btn-secondary" id="rotate-left" title="Rotate Left">↩️
+                                -90°</button>
+<button class="btn btn-sm btn-secondary" id="rotate-right" title="Rotate Right">↪️
+                                +90°</button>
+<button class="btn btn-sm btn-secondary" id="flip-h" title="Flip Horizontal">↔️ Flip
+                                H</button>
+<button class="btn btn-sm btn-secondary" id="flip-v" title="Flip Vertical">↕️ Flip
+                                V</button>
+</div>
+<div class="control-group" style="margin-top: 15px;">
+<button class="btn btn-sm btn-secondary w-full" id="reset-crop">Reset All</button>
+</div>
+</div>
+<div class="control-section">
+<button class="btn btn-primary w-full" disabled="" id="download-btn"><span>💾</span>
+                            Download</button>
+<button class="btn btn-secondary w-full mt-2" id="new-img-btn" style="display: none;"><span>🔄</span> New Image</button>
+</div>
+</aside>
+</div>
+</div>
+</main>
+            </div>
+            <section class="seo-article" data-tool="crop-image">
+<article class="tool-article">
+<h2>Crop Image — Free Online Image Cropper with Ratio Presets</h2>
+
+<p>Most of my photos arrive with something I wish was not there — a stranger's elbow at the edge of a group shot, a trash can behind an otherwise perfect sunset, too much empty sky above a product photo. Cropping is the fastest fix in all of photo editing: draw a box around the part worth keeping, throw away the rest. This free image cropper lets you do it with a visual selection box, aspect-ratio presets, and exact pixel dimensions, all in your browser with nothing uploaded.</p>
+
+<h3>What Is an Image Crop Tool?</h3>
+
+<p>Cropping removes the outer parts of a photo so the frame holds only what matters. That sounds trivial, but it is genuinely one of the highest-leverage edits you can make. A tighter crop changes the subject's prominence, the composition's balance, and even the file size — fewer pixels to store means a smaller file, which is why cropped photos are also lighter photos.</p>
+
+<p>What surprised me when I started using crop tools seriously is how much composition improves with a deliberate ratio. Instagram's 1:1 square, a 16:9 widescreen banner, a 4:3 classic frame — each forces a different decision about what stays. Freeform cropping works fine for quick trims, but presets are what make platform requirements painless.</p>
+
+<p>The other thing worth knowing: cropping is destructive in one direction only. You can always crop smaller from the original, but you cannot uncrop — so keep your original file and save crops as copies. (If you need the opposite — a bigger frame without losing anything — that is a <strong>canvas extender</strong>, a different job entirely.)</p>
+
+<h3>How to Crop an Image Online</h3>
+
+<p><strong>Step 1 — Upload your image.</strong> Drag and drop or click to browse. JPG, PNG, and WebP work; most tools accept files up to a generous limit. Your image stays on your device — nothing uploads.</p>
+
+<p><strong>Step 2 — Choose a ratio or go freeform.</strong> Pick a preset — <strong>1:1</strong> square, <strong>16:9</strong> widescreen, <strong>4:3</strong>, <strong>2:3</strong> portrait — or leave the box freeform. Presets lock the shape so you can pan the box around without warping it; freeform lets you drag any corner to any rectangle.</p>
+
+<p><strong>Step 3 — Drag the selection box.</strong> Move and resize the highlighted area over the part you want to keep. The live preview shows exactly what the result will look like. For pixel-exact work — an ID photo, a banner spec — type the width and height directly instead of dragging.</p>
+
+<p><strong>Step 4 — Crop and download.</strong> One click generates the cropped image at full quality with no watermarks. Your original file is untouched; the crop saves as a new file.</p>
+
+<p>Habit worth building: crop for the destination first. A profile picture, a YouTube thumbnail, and a marketplace listing all want different shapes — decide which you are making before you drag anything.</p>
+
+<h3>Aspect Ratios Worth Knowing</h3>
+
+<p>These are the presets you will actually use:</p>
+
+<table>
+<thead><tr><th>Ratio</th><th>Common use</th><th>Example size</th></tr></thead>
+<tbody>
+<tr><td>1:1 (Square)</td><td>Instagram posts, profile pictures, product thumbnails</td><td>1080 × 1080</td></tr>
+<tr><td>16:9 (Widescreen)</td><td>YouTube thumbnails, banners, presentations</td><td>1920 × 1080</td></tr>
+<tr><td>4:3</td><td>Classic photos, blog images, eBook covers</td><td>1600 × 1200</td></tr>
+<tr><td>2:3 (Portrait)</td><td>Pinterest pins, posters, phone wallpapers</td><td>1000 × 1500</td></tr>
+<tr><td>9:16 (Vertical)</td><td>Stories, Reels, TikTok</td><td>1080 × 1920</td></tr>
+<tr><td>Freeform</td><td>Quick trims, removing distractions</td><td>Any size</td></tr>
+</tbody>
+</table>
+
+<p>The 2:3 ratio deserves a callout: Pinterest pins at 1000 × 1500 perform notably better than squares on that platform, and cropping to it before upload is a thirty-second job.</p>
+
+<h3>Crop vs. Resize vs. Extend — Which One Do You Need?</h3>
+
+<p>People mix these up constantly, and the wrong choice costs quality:</p>
+
+<ul>
+<li><strong>Crop</strong> when part of the image should go. Removing a photobomber, tightening composition, meeting a platform shape with content to spare.</li>
+<li><strong>Resize</strong> when the whole image should stay but the pixel dimensions or file size must change. Everything shrinks together; nothing is removed.</li>
+<li><strong>Extend</strong> when the image must fit a shape but nothing can be lost — a face near the edge, text in a graphic. Padding gets added instead.</li>
+</ul>
+
+<p>My rule: if the subject fills the frame and the shape is wrong, extend. If there is dead space or distraction at the edges, crop. If the file is just too big, <strong>resize</strong> or <strong>compress</strong>. For ID photos and exact-spec work, crop to the ratio first, then resize to the pixel dimensions.</p>
+
+<h3>Who Crops Images Regularly?</h3>
+
+<p><strong>Content creators and social media managers</strong> crop daily — every platform has its own shape, and one shoot has to become posts, stories, pins, and banners. Ratio presets turn this from a chore into a rhythm.</p>
+
+<p><strong>E-commerce sellers</strong> crop product photos to marketplace specs and to remove cluttered backgrounds around items. Square crops dominate product listings.</p>
+
+<p><strong>Students and job seekers</strong> crop ID photos and profile pictures to exact dimensions — a 2×2 inch crop at the right DPI is a classic use case.</p>
+
+<p><strong>Bloggers and newsletter writers</strong> crop header images and inline photos to fit templates without stretching, keeping layouts clean across devices.</p>
+
+<h3>Practical Tips for Better Crops</h3>
+
+<ul>
+<li><strong>Work from a copy.</strong> Cropping discards pixels permanently — keep the original so you can re-crop differently later.</li>
+<li><strong>Leave breathing room.</strong> Do not crop tight against faces or text; a little margin looks more professional.</li>
+<li><strong>Watch the rule of thirds.</strong> Placing key subjects off-center (on the grid lines) usually composes better than dead center.</li>
+<li><strong>Crop before sharpening.</strong> <strong>Sharpening</strong> after cropping targets the final pixels; sharpening before wastes effort on areas you will delete.</li>
+<li><strong>Type exact pixels for specs.</strong> ID photos, banners, and thumbnails have official dimensions — drag for art, type for specs.</li>
+<li><strong>Check mobile.</strong> A crop that looks great on desktop can feel cramped on a phone screen — preview both.</li>
+<li><strong>Mind the resolution.</strong> Cropping a small area from a low-res photo leaves you with few pixels; start from the largest original you have.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this image cropper free?</h4>
+<p>Yes — completely free, no signup, no limits on how many images you can crop.</p>
+
+<h4>Are my images uploaded to a server?</h4>
+<p>No. Cropping runs entirely in your browser; your photos never leave your device. Some tools even work offline once loaded.</p>
+
+<h4>Will cropping reduce image quality?</h4>
+<p>Cropping keeps the original sharpness of the remaining area — it removes pixels rather than degrading them. Just do not upscale a small crop back to a large size, which does soften it.</p>
+
+<h4>What is the difference between cropping and resizing?</h4>
+<p>Cropping cuts away part of the image to change its shape and content. Resizing scales the whole image to new pixel dimensions without removing anything.</p>
+
+<h4>Can I crop to exact pixel dimensions?</h4>
+<p>Yes. Type the exact width and height (e.g. 1080 × 1080) instead of dragging the box — the selection locks to those dimensions for pixel-perfect results.</p>
+
+<h4>Which ratio should I use for Instagram?</h4>
+<p>1:1 (1080 × 1080) for feed posts, 4:5 portrait for more feed screen space, 9:16 (1080 × 1920) for Stories and Reels, 2:3 for Pinterest pins.</p>
+
+<h4>Does cropping change the file format?</h4>
+<p>No — a JPEG downloads as JPEG, a PNG as PNG. Transparent PNG backgrounds are preserved through the crop.</p>
+
+<h4>Can I undo a crop?</h4>
+<p>The tool never alters your original file, so just re-upload it and crop differently. That is why keeping originals matters.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../../about-us.html">About Us</a>
+                    <a class="footer-link" href="../../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../js/shared/unified-input.js"></script>
+<script src="../js/shared/preview-manager.js"></script>
+<script src="../js/utils/image-loader.js"></script>
+<script src="../js/utils/converter.js"></script>
+<script>
+        class ImageCropper {
+            constructor() {
+                this.cropper = null;
+                this.file = null;
+                this.isCircle = false;
+                this.init();
+            }
+
+            init() {
+                this.unifiedInput = new UnifiedInput({
+                    containerId: 'upload-zone',
+                    toolIcon: '✂️',
+                    toolName: 'Crop Image',
+                    acceptTypes: 'image/*',
+                    onFilesLoaded: (files) => this.handleFileLoaded(files[0])
+                });
+
+                this.setupControls();
+                this.injectAdvancedStyles();
+            }
+
+            setupControls() {
+                document.querySelectorAll('#aspect-ratios .preset-btn').forEach(btn => {
+                    btn.onclick = () => {
+                        document.querySelectorAll('#aspect-ratios .preset-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        this.cropper?.setAspectRatio(parseFloat(btn.dataset.ratio));
+                    };
+                });
+
+                document.getElementById('rotate-left').onclick = () => this.cropper?.rotate(-90);
+                document.getElementById('rotate-right').onclick = () => this.cropper?.rotate(90);
+
+                let scaleX = 1;
+                document.getElementById('flip-h').onclick = () => {
+                    scaleX = -scaleX;
+                    this.cropper?.scaleX(scaleX);
+                };
+
+                let scaleY = 1;
+                document.getElementById('flip-v').onclick = () => {
+                    scaleY = -scaleY;
+                    this.cropper?.scaleY(scaleY);
+                };
+
+                document.getElementById('reset-crop').onclick = () => this.cropper?.reset();
+
+                document.getElementById('circle-toggle').onclick = (e) => {
+                    e.target.classList.toggle('active');
+                    this.isCircle = e.target.classList.contains('active');
+                    if (this.isCircle) {
+                        this.cropper?.setAspectRatio(1);
+                        document.querySelectorAll('#aspect-ratios .preset-btn').forEach(b => b.classList.remove('active'));
+                        document.querySelector('[data-ratio="1"]').classList.add('active');
+                    }
+                };
+
+                document.getElementById('apply-manual').onclick = () => {
+                    const x = parseInt(document.getElementById('crop-x').value) || 0;
+                    const y = parseInt(document.getElementById('crop-y').value) || 0;
+                    const w = parseInt(document.getElementById('crop-width').value);
+                    const h = parseInt(document.getElementById('crop-height').value);
+                    if (w > 0 && h > 0) {
+                        this.cropper.setData({ x, y, width: w, height: h });
+                    }
+                };
+
+                document.getElementById('download-btn').onclick = () => this.download();
+                document.getElementById('new-img-btn').onclick = () => location.reload();
+            }
+
+            async handleFileLoaded(file) {
+                this.file = file;
+                const img = document.getElementById('image');
+                img.src = URL.createObjectURL(file);
+
+                document.getElementById('upload-zone').style.display = 'none';
+                document.getElementById('editor-container').style.display = 'block';
+                document.getElementById('download-btn').disabled = false;
+                document.getElementById('new-img-btn').style.display = 'block';
+
+                if (this.cropper) this.cropper.destroy();
+
+                this.cropper = new Cropper(img, {
+                    viewMode: 1,
+                    dragMode: 'move',
+                    autoCropArea: 0.8,
+                    restore: false,
+                    guides: true,
+                    center: true,
+                    highlight: false,
+                    cropBoxMovable: true,
+                    cropBoxResizable: true,
+                    background: false,
+                    modal: true,
+                    responsive: true,
+                    ready: () => {
+                        this.updatePreview();
+                        this.syncDimensions();
+                    },
+                    cropend: () => {
+                        this.updatePreview();
+                        this.syncDimensions();
+                    },
+                    crop: () => {
+                        this.syncDimensions();
+                    }
+                });
+            }
+
+            syncDimensions() {
+                if (!this.cropper) return;
+                const data = this.cropper.getData(true);
+                document.getElementById('crop-x').value = data.x;
+                document.getElementById('crop-y').value = data.y;
+                document.getElementById('crop-width').value = data.width;
+                document.getElementById('crop-height').value = data.height;
+            }
+
+            async updatePreview() {
+                // Preview is handled by cropper itself
+            }
+
+            getRoundedCanvas(sourceCanvas) {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.width = sourceCanvas.width;
+                canvas.height = sourceCanvas.height;
+                ctx.imageSmoothingEnabled = true;
+                ctx.drawImage(sourceCanvas, 0, 0);
+                ctx.globalCompositeOperation = 'destination-in';
+                ctx.beginPath();
+                ctx.arc(canvas.width / 2, canvas.height / 2, Math.min(canvas.width, canvas.height) / 2, 0, 2 * Math.PI, true);
+                ctx.fill();
+                return canvas;
+            }
+
+            async download() {
+                if (!this.cropper) return;
+                const canvas = this.cropper.getCroppedCanvas();
+                const resultCanvas = this.isCircle ? this.getRoundedCanvas(canvas) : canvas;
+                const format = this.isCircle ? 'image/png' : this.file.type;
+
+                resultCanvas.toBlob((blob) => {
+                    const a = document.createElement('a');
+                    a.href = URL.createObjectURL(blob);
+                    a.download = `cropped-${this.file.name.replace(/\.[^.]+$/, this.isCircle ? '.png' : '.jpg')}`;
+                    a.click();
+                }, format, 0.92);
+            }
+
+            injectAdvancedStyles() {
+                const style = document.createElement('style');
+                style.textContent = `
+                    .cropper-view-box, .cropper-face { border-radius: 0; }
+                    .toggle-switch.active + .cropper-view-box, .toggle-switch.active + .cropper-face { border-radius: 50%; }
+                `;
+                document.head.appendChild(style);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => new ImageCropper());
+    </script>
+</body>
+</html>

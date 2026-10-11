@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free advanced Schema.org JSON-LD generator. Create multi-schema markup for Articles, Products, FAQs, How-Tos, and more with live validation.">
+    <title>Advanced Schema.org Generator | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">SEO Tools</a> &gt;
+                <span>Advanced Schema Generator</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Advanced Schema Generator</h1>
+                <p class="tool-description">Free advanced Schema.org JSON-LD generator. Create multi-schema markup for Articles, Products, FAQs, How-Tos, and more with live validation.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
+<div class="container text-center">
+<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Advanced Schema Generator</h1>
+<p class="hero-subtitle">Create complex, multi-entity JSON-LD markup. Supports Articles, Products, FAQs,
+          How-Tos, and more.</p>
+</div>
+</section>
+<div class="container">
+<div class="schema-builder-layout">
+<!-- Left: Builder Area -->
+<div class="builder-area">
+<div class="schema-toolbar">
+<span style="width: 100%; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.5rem; font-weight: 600;">ADD
+              SCHEMA BLOCK:</span>
+<button class="btn-add-schema" onclick="addSchemaBlock('article')">📝 Article</button>
+<button class="btn-add-schema" onclick="addSchemaBlock('product')">🛍️ Product</button>
+<button class="btn-add-schema" onclick="addSchemaBlock('faq')">❓ FAQ Page</button>
+<button class="btn-add-schema" onclick="addSchemaBlock('breadcrumb')">🛤️ Breadcrumb</button>
+<button class="btn-add-schema" onclick="addSchemaBlock('localBusiness')">📍 Local Business</button>
+<button class="btn-add-schema" onclick="addSchemaBlock('advancedLocalBusiness')">✨ Advanced Local
+              Biz</button>
+<button class="btn-add-schema" onclick="addSchemaBlock('organization')">🏢 Organization</button>
+<button class="btn-add-schema" onclick="addSchemaBlock('advancedOrganization')">🚀 Advanced Org</button>
+<button class="btn-add-schema" onclick="addSchemaBlock('person')">👤 Person (EEAT)</button>
+<button class="btn-add-schema" onclick="addSchemaBlock('itemList')">📋 List View</button>
+<button class="btn-add-schema" onclick="addSchemaBlock('event')">🎉 Event</button>
+<button class="btn-add-schema" onclick="addSchemaBlock('service')">🛠️ Service</button>
+<button class="btn-add-schema" onclick="addSchemaBlock('aboutUs')">ℹ️ About Us</button>
+<button class="btn-add-schema" onclick="addSchemaBlock('contactUs')">📞 Contact Us</button>
+<button class="btn-add-schema" onclick="addSchemaBlock('profilePage')">✍️ Author Page</button>
+<button class="btn-add-schema" onclick="addSchemaBlock('advancedWebPage')">🌐 Advanced WebPage</button>
+<button class="btn-add-schema" onclick="addSchemaBlock('navigation')">🔗 Navigation</button>
+<button class="btn-add-schema" onclick="addSchemaBlock('website')">💻 Website</button>
+</div>
+<div class="schema-blocks-container" id="schemaBlocksContainer">
+<!-- Dynamic Schema Blocks will appear here -->
+<div class="empty-state" id="emptyState" style="text-align: center; padding: 3rem; background: var(--bg-secondary); border-radius: var(--radius-lg); border: 2px dashed var(--border-color);">
+<div style="font-size: 2rem; margin-bottom: 1rem;">??</div>
+<h3 style="margin-bottom: 0.5rem;">Start Building</h3>
+<p style="color: var(--text-secondary);">Select a schema type from the toolbar above to add it to your
+                page.</p>
+</div>
+</div>
+</div>
+<!-- Right: Preview Area -->
+<div class="preview-area">
+<div class="preview-sticky">
+<div class="preview-header">
+<span style="font-weight: 600;">JSON-LD Output</span>
+<div style="display: flex; gap: 0.5rem;">
+<button class="btn-secondary" onclick="copyToClipboard()" style="padding: 0.25rem 0.75rem; font-size: 0.8rem; background: rgba(255,255,255,0.1); color: white; border: none;">Copy</button>
+<button class="btn-secondary" onclick="testRichResults()" style="padding: 0.25rem 0.75rem; font-size: 0.8rem; background: #4CAF50; color: white; border: none;">Test</button>
+</div>
+</div>
+<div class="code-tabs">
+<div class="code-tab active">script.json</div>
+</div>
+<div class="preview-content">
+<pre class="preview-code" id="jsonOutput">// Add a block to see JSON-LD...</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+            <section class="seo-article" data-tool="schema-generator">
+<article class="tool-article">
+<h2>Schema Generator — Free JSON-LD Structured Data Builder</h2>
+
+<p>The first time I pasted schema markup into a page by hand, I missed a single comma. The JSON was invalid, Google's validator rejected it, and the rich results I was chasing never appeared. Schema — structured data that tells search engines what your page actually is — only works when the syntax is perfect, and hand-writing JSON-LD is where perfect goes to die. A schema generator builds it through a form instead: pick the type, fill in the fields, copy valid code.</p>
+
+<h3>What Is a Schema Generator?</h3>
+
+<p>Schema.org is a shared vocabulary (backed by Google, Bing, Yandex, and Yahoo) that lets you label your page's content in machine-readable form. The most common format is JSON-LD, a script block you paste into your page's head. When it is valid, Google can show <strong>rich results</strong>: star ratings on product pages, FAQ dropdowns, recipe cards with cook times, event dates, job listings, breadcrumbs. The generator is a tool that produces this markup without you writing JSON — you select a schema type like Article, FAQPage, Product, LocalBusiness, HowTo, Recipe, or Event, fill in a guided form, and get a paste-ready block.</p>
+
+<p>Two things every beginner should know. First, valid schema is not a ranking factor by itself — but rich results dramatically improve click-through rates, which is traffic. Second, the markup must match what is actually visible on the page. If your FAQPage schema lists questions that do not appear on the page, Google treats it as deceptive and can penalize the page. The generator writes correct code; honesty about the content is your job.</p>
+
+<h3>How to Use the Schema Generator</h3>
+
+<p>The workflow is the same regardless of type, and takes a few minutes.</p>
+
+<p>First, pick one primary schema type per page — the type that matches what the page is. A blog post gets Article (or BlogPosting), a recipe gets Recipe, a shop page gets LocalBusiness, a help page with Q&amp;A gets FAQPage. Fill in the form: for an article, that means headline, author name and URL, publish and modified dates, image, publisher name and logo, page URL, and description. For FAQPage, enter each question and answer pair — five to ten pairs is the sweet spot. For LocalBusiness, the name, address, phone, hours, and category.</p>
+
+<p>Copy the JSON-LD output and paste it into the <code>&lt;head&gt;</code> of your page (or into your SEO plugin's schema field — Rank Math and Yoast both have dedicated spots for custom schema). Then validate: run the page through Google's Rich Results Test and the Schema.org validator. The generator produces valid syntax, but validation confirms the required fields for that type are present and nothing got mangled in the paste.</p>
+
+<p>One pro habit: after validation, check the page a week later in Search Console's enhancements reports to see whether Google is actually picking up the rich results. Valid markup plus eligible content is what triggers them — the test only confirms the code.</p>
+
+<h3>Common Schema Types Compared</h3>
+
+<table>
+<thead><tr><th>Type</th><th>Best for</th><th>Rich result you can get</th></tr></thead>
+<tbody>
+<tr><td>Article / BlogPosting</td><td>Blog posts, news</td><td>Top stories carousel, enhanced listing</td></tr>
+<tr><td>FAQPage</td><td>Pages with Q&amp;A sections</td><td>Expandable FAQ in results (and AI citations)</td></tr>
+<tr><td>Product</td><td>E-commerce product pages</td><td>Price, availability, star ratings</td></tr>
+<tr><td>LocalBusiness</td><td>Physical shops, services</td><td>Knowledge panel, local pack details</td></tr>
+<tr><td>HowTo</td><td>Step-by-step guides</td><td>Step list with images and times</td></tr>
+<tr><td>Recipe</td><td>Cooking content</td><td>Cook time, ratings, ingredient card</td></tr>
+<tr><td>Event</td><td>Concerts, webinars, classes</td><td>Date, location, ticket info</td></tr>
+<tr><td>BreadcrumbList</td><td>Site navigation hierarchy</td><td>Breadcrumb trail in results</td></tr>
+</tbody>
+</table>
+
+<h3>Example: Generated FAQPage Markup</h3>
+
+<p>Here is what the generator produces for a two-question FAQ — exactly the shape that validates:</p>
+
+<p>
+<code>{</code><br>
+<code>&nbsp;&nbsp;"@context": "https://schema.org",</code><br>
+<code>&nbsp;&nbsp;"@type": "FAQPage",</code><br>
+<code>&nbsp;&nbsp;"mainEntity": [{</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;"@type": "Question",</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;"name": "How long does shipping take?",</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;"acceptedAnswer": {</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"@type": "Answer",</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"text": "Orders ship within 2 business days and arrive in 5–7."</code><br>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;}</code><br>
+<code>&nbsp;&nbsp;}]</code><br>
+<code>}</code>
+</p>
+
+<p>Every pair follows the same Question/acceptedAnswer nesting. Hand-typing this across ten FAQs is where the comma errors happen; the generator repeats the structure flawlessly.</p>
+
+<h3>Who Uses Schema Generators?</h3>
+
+<p><strong>Bloggers</strong> add Article and FAQPage schema to posts — it is the fastest path to richer-looking listings.</p>
+
+<p><strong>E-commerce managers</strong> generate Product schema with price, availability, and ratings, since star ratings in results directly lift clicks.</p>
+
+<p><strong>Local businesses</strong> use LocalBusiness schema for address, hours, and phone — the data that feeds knowledge panels and map results.</p>
+
+<p><strong>Developers</strong> scaffold schema for templates (product pages, help centers) once, then let the CMS fill the fields dynamically.</p>
+
+<p><strong>Publishers</strong> use Recipe, HowTo, and Event types for the rich cards those content types earn in search.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Multiple schema types</strong> — Article, FAQ, Product, LocalBusiness, HowTo, Recipe, Event, and more.</li>
+<li><strong>Guided forms</strong> — fields match the selected type; required fields flagged as you type.</li>
+<li><strong>Valid JSON-LD output</strong> — correct syntax, commas, and nesting every time.</li>
+<li><strong>One-click copy</strong> — paste-ready block for your page head or SEO plugin.</li>
+<li><strong>Nested markup support</strong> — Organization, ratings, and breadcrumbs combined correctly.</li>
+<li><strong>100% free</strong> — no signup, no limits.</li>
+<li><strong>Private by design</strong> — everything runs in your browser; nothing is uploaded.</li>
+<li><strong>Works everywhere</strong> — any modern browser, nothing to install.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is schema markup?</h4>
+<p>Schema markup is structured data (a shared vocabulary from schema.org) added to a page in JSON-LD format. It tells search engines what your content is — an article, a product, a local business — so they can show rich results like star ratings, FAQs, and event dates.</p>
+
+<h4>Does schema improve rankings?</h4>
+<p>Not directly — it is not a ranking factor. But valid schema enables rich results, which raise click-through rates and bring more traffic at the same ranking position.</p>
+
+<h4>Which schema type should I use?</h4>
+<p>Pick the one type that matches the page's main content: Article for blog posts, Product for product pages, FAQPage for Q&amp;A sections, LocalBusiness for physical locations. One accurate primary type beats several vague ones.</p>
+
+<h4>How do I validate my schema?</h4>
+<p>Run the page through Google's Rich Results Test and the Schema.org validator. They confirm the JSON is valid and the required fields for your type are present.</p>
+
+<h4>Can schema hurt my site?</h4>
+<p>Yes, if the markup does not match visible page content. Marking up FAQs that are not on the page, or fake review ratings, is treated as deceptive and can lead to penalties. Only mark up what is really there.</p>
+
+<h4>Where do I paste the generated code?</h4>
+<p>Inside the <code>&lt;head&gt;</code> of your HTML, or in your SEO plugin's custom schema field (Rank Math, Yoast). For site-wide markup like Organization, it typically goes in the site header template.</p>
+
+<h4>Is this generator free?</h4>
+<p>Yes — completely free, no account needed.</p>
+
+<h4>Do I need JSON knowledge to use it?</h4>
+<p>No. The form handles the structure; you only fill in your content — titles, dates, addresses, questions and answers — and the tool builds the JSON-LD for you.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+    // State Management
+    let schemaBlocks = [];
+
+    // DOM Elements
+    const blocksContainer = document.getElementById('schemaBlocksContainer');
+    const emptyState = document.getElementById('emptyState');
+    const jsonOutput = document.getElementById('jsonOutput');
+
+    // Schema Definitions & Form Builders
+    const schemaDefinitions = {
+      article: {
+        name: 'Article/BlogPosting',
+        icon: '📝',
+        fields: [
+          { name: 'articleType', label: 'Article Type', type: 'select', options: ['Article', 'BlogPosting', 'NewsArticle', 'TechArticle'] },
+          { name: 'headline', label: 'Headline', type: 'text', required: true },
+          { name: 'url', label: 'Article URL', type: 'url', required: true },
+          { name: 'image', label: 'Image URLs', type: 'array-image' },
+          { name: 'author', label: 'Author Name', type: 'text' },
+          { name: 'publisher', label: 'Publisher Name', type: 'text' },
+          { name: 'publisherLogo', label: 'Publisher Logo URL', type: 'url' },
+          { name: 'datePublished', label: 'Date Published', type: 'date', required: true },
+          { name: 'dateModified', label: 'Date Modified', type: 'date' },
+          { name: 'description', label: 'Short Description', type: 'textarea' }
+        ]
+      },
+      product: {
+        name: 'Product',
+        icon: '🛍️',
+        fields: [
+          { name: 'name', label: 'Product Name', type: 'text', required: true },
+          { name: 'image', label: 'Image URLs', type: 'array-image', required: true },
+          { name: 'description', label: 'Description', type: 'textarea' },
+          { name: 'brand', label: 'Brand', type: 'text' },
+          { name: 'sku', label: 'SKU', type: 'text' },
+          { name: 'price', label: 'Price', type: 'number', required: true },
+          { name: 'currency', label: 'Currency (ISO)', type: 'text', placeholder: 'USD', required: true },
+          { name: 'availability', label: 'Availability', type: 'select', options: ['InStock', 'OutOfStock', 'PreOrder', 'InStoreOnly', 'OnlineOnly'] },
+          { name: 'rating', label: 'Rating (0-5)', type: 'number' },
+          { name: 'reviewCount', label: 'Review Count', type: 'number' }
+        ]
+      },
+      faq: {
+        name: 'FAQPage',
+        icon: '❓',
+        fields: [
+          { name: 'questions', label: 'Questions & Answers', type: 'array-faq', required: true }
+        ]
+      },
+      breadcrumb: {
+        name: 'BreadcrumbList',
+        icon: '🛤️',
+        fields: [
+          { name: 'items', label: 'Breadcrumb Chain', type: 'array-breadcrumb', required: true }
+        ]
+      },
+      localBusiness: {
+        name: 'Local Business',
+        icon: '📍',
+        fields: [
+          { name: 'name', label: 'Business Name', type: 'text', required: true },
+          { name: 'image', label: 'Image URL', type: 'url' },
+          { name: 'telephone', label: 'Telephone', type: 'tel' },
+          { name: 'priceRange', label: 'Price Range', type: 'text', placeholder: '$$' },
+          { name: 'streetAddress', label: 'Street Address', type: 'text', required: true },
+          { name: 'addressLocality', label: 'City', type: 'text', required: true },
+          { name: 'postalCode', label: 'Zip Code', type: 'text', required: true }
+        ]
+      },
+      advancedLocalBusiness: {
+        name: 'Advanced Local Business (AI-Powered)',
+        icon: '✨',
+        fields: [
+          { name: 'name', label: 'Business Name', type: 'text', required: true },
+          { name: 'businessType', label: 'Business Category', type: 'text', placeholder: 'e.g., Dentist, Restaurant, Lawyer' },
+          { name: 'image', label: 'Image URLs', type: 'array-image' },
+          { name: 'url', label: 'Website URL', type: 'url' },
+          { name: 'telephone', label: 'Telephone', type: 'tel' },
+          { name: 'streetAddress', label: 'Street Address', type: 'text' },
+          { name: 'addressLocality', label: 'City', type: 'text' },
+          { name: 'addressRegion', label: 'State/Region', type: 'text' },
+          { name: 'postalCode', label: 'Zip Code', type: 'text' },
+          { name: 'openingHours', label: 'Opening Hours', type: 'array-text', placeholder: 'Mo-Fr 09:00-17:00' },
+          { name: 'geo', label: 'Latitude,Longitude', type: 'text', placeholder: '40.7128,-74.0060' },
+          { name: 'awards', label: 'Awards/Achievements', type: 'array-text' },
+          { name: 'services', label: 'Services Offered', type: 'array-text' }
+        ]
+      },
+      organization: {
+        name: 'Organization',
+        icon: '🏢',
+        fields: [
+          { name: 'name', label: 'Organization Name', type: 'text', required: true },
+          { name: 'url', label: 'Website URL', type: 'url', required: true },
+          { name: 'logo', label: 'Logo URL', type: 'url' },
+          { name: 'socials', label: 'Social Profiles', type: 'array-text' }
+        ]
+      },
+      advancedOrganization: {
+        name: 'Advanced Organization (AI-Powered)',
+        icon: '🚀',
+        fields: [
+          { name: 'name', label: 'Organization Name', type: 'text', required: true },
+          { name: 'url', label: 'Website URL', type: 'url' },
+          { name: 'logo', label: 'Logo URL', type: 'url' },
+          { name: 'socials', label: 'Social Profiles', type: 'array-text' },
+          { name: 'contactPoints', label: 'Contact Phone Numbers', type: 'array-text' },
+          { name: 'services', label: 'Services Catalog', type: 'array-text' },
+          { name: 'areasServed', label: 'Areas Served', type: 'array-text' }
+        ]
+      },
+      person: {
+        name: 'Person (EEAT)',
+        icon: '👤',
+        fields: [
+          { name: 'name', label: 'Full Name', type: 'text', required: true },
+          { name: 'url', label: 'Profile URL', type: 'url' },
+          { name: 'image', label: 'Photo URL', type: 'url' },
+          { name: 'jobTitle', label: 'Job Title', type: 'text' },
+          { name: 'worksFor', label: 'Company/Organization', type: 'text' },
+          { name: 'sameAs', label: 'Social Profiles', type: 'array-text' },
+          { name: 'description', label: 'Biography', type: 'textarea' }
+        ]
+      },
+      itemList: {
+        name: 'ItemList (List View)',
+        icon: '📋',
+        fields: [
+          { name: 'name', label: 'List Title', type: 'text', required: true },
+          { name: 'items', label: 'List Items (Line by line)', type: 'array-text' }
+        ]
+      },
+      event: {
+        name: 'Event',
+        icon: '🎉',
+        fields: [
+          { name: 'name', label: 'Event Name', type: 'text', required: true },
+          { name: 'startDate', label: 'Start Date/Time', type: 'text', placeholder: '2024-12-31T19:00:00' },
+          { name: 'endDate', label: 'End Date/Time', type: 'text' },
+          { name: 'location', label: 'Location Name', type: 'text' },
+          { name: 'address', label: 'Full Address', type: 'text' },
+          { name: 'description', label: 'Description', type: 'textarea' }
+        ]
+      },
+      service: {
+        name: 'Service / Advanced Service',
+        icon: '🛠️',
+        fields: [
+          { name: 'name', label: 'Service Name', type: 'text', required: true },
+          { name: 'serviceType', label: 'Service Type', type: 'text' },
+          { name: 'provider', label: 'Provider Name', type: 'text' },
+          { name: 'offers', label: 'Service Offers/Tags', type: 'array-text' },
+          { name: 'description', label: 'Description', type: 'textarea' }
+        ]
+      },
+      aboutUs: {
+        name: 'AboutPage',
+        icon: 'ℹ️',
+        fields: [
+          { name: 'name', label: 'Page Title', type: 'text', required: true },
+          { name: 'description', label: 'Page Description', type: 'textarea' },
+          { name: 'mainEntityName', label: 'Main Entity (Company/Person)', type: 'text' }
+        ]
+      },
+      contactUs: {
+        name: 'ContactPage',
+        icon: '📞',
+        fields: [
+          { name: 'name', label: 'Page Title', type: 'text', required: true },
+          { name: 'description', label: 'Page Description', type: 'textarea' }
+        ]
+      },
+      profilePage: {
+        name: 'ProfilePage (Author Page)',
+        icon: '✍️',
+        fields: [
+          { name: 'name', label: 'Author Name', type: 'text', required: true },
+          { name: 'image', label: 'Author Photo URL', type: 'url' },
+          { name: 'description', label: 'Author Bio', type: 'textarea' },
+          { name: 'sameAs', label: 'Social & External Profiles', type: 'array-text' }
+        ]
+      },
+      advancedWebPage: {
+        name: 'Advanced WebPage (AI-Powered)',
+        icon: '🌐',
+        fields: [
+          { name: 'name', label: 'Page Name', type: 'text', required: true },
+          { name: 'description', label: 'Metadata Description', type: 'textarea' },
+          { name: 'about', label: 'Main Entities Mentioned', type: 'array-text' },
+          { name: 'mentions', label: 'Other Entities Mentioned', type: 'array-text' }
+        ]
+      },
+      navigation: {
+        name: 'SiteNavigationElement',
+        icon: '🔗',
+        fields: [
+          { name: 'links', label: 'Navigation Links', type: 'array-breadcrumb' }
+        ]
+      },
+      website: {
+        name: 'WebSite',
+        icon: '💻',
+        fields: [
+          { name: 'name', label: 'Site Name', type: 'text', required: true },
+          { name: 'url', label: 'Site URL', type: 'url', required: true },
+          { name: 'searchUrl', label: 'Search URL Template', type: 'text', placeholder: 'https://site.com/search?q={search_term_string}' }
+        ]
+      }
+    };
+
+    // Initialize from LocalStorage or empty
+    function init() {
+      renderBlocks();
+      generateJSON();
+    }
+
+    function addSchemaBlock(type) {
+      const id = Date.now().toString(36) + Math.random().toString(36).substr(2);
+      schemaBlocks.unshift({
+        id: id,
+        type: type,
+        data: initializeData(type)
+      });
+      renderBlocks();
+      generateJSON();
+    }
+
+    function removeSchemaBlock(id) {
+      if (confirm('Are you sure you want to delete this schema block?')) {
+        schemaBlocks = schemaBlocks.filter(b => b.id !== id);
+        renderBlocks();
+        generateJSON();
+      }
+    }
+
+    function initializeData(type) {
+      const data = {};
+      schemaDefinitions[type].fields.forEach(field => {
+        if (field.type.startsWith('array')) {
+          data[field.name] = [];
+          // Add one empty item by default for better UX
+          if (field.type === 'array-faq') data[field.name].push({ q: '', a: '' });
+          else if (field.type === 'array-step') data[field.name].push({ name: '', text: '', image: '' });
+          else if (field.type === 'array-breadcrumb') data[field.name].push({ name: 'Home', url: '' });
+          else data[field.name].push('');
+        } else {
+          data[field.name] = '';
+        }
+      });
+      return data;
+    }
+
+    function renderBlocks() {
+      if (schemaBlocks.length === 0) {
+        emptyState.style.display = 'block';
+        blocksContainer.innerHTML = '';
+        blocksContainer.appendChild(emptyState);
+        return;
+      }
+
+      emptyState.style.display = 'none';
+      blocksContainer.innerHTML = '';
+
+      schemaBlocks.forEach(block => {
+        const def = schemaDefinitions[block.type];
+        const blockEl = document.createElement('div');
+        blockEl.className = 'schema-block';
+        blockEl.innerHTML = `
+                    <div class="schema-block-header">
+                        <div class="schema-block-title">
+                            ${def.icon} ${def.name}
+                        </div>
+                        <button class="btn-remove-block" onclick="removeSchemaBlock('${block.id}')">Remove</button>
+                    </div>
+                    <div class="schema-form-grid">
+                        ${def.fields.map(field => renderField(field, block)).join('')}
+                    </div>
+                `;
+        blocksContainer.appendChild(blockEl);
+      });
+    }
+
+    function renderField(field, block) {
+      const value = block.data[field.name];
+      const fieldId = `${block.id}_${field.name}`;
+      const requiredMark = field.required ? '<span style="color:red">*</span>' : '';
+
+      // Standard Inputs
+      if (['text', 'url', 'date', 'number', 'tel', 'textarea'].includes(field.type)) {
+        const tag = field.type === 'textarea' ? 'textarea' : 'input';
+        const typeAttr = field.type === 'textarea' ? '' : `type="${field.type}"`;
+        return `
+                    <div class="input-group">
+                        <label class="input-label" for="${fieldId}">${field.label} ${requiredMark}</label>
+                        <${tag} ${typeAttr} class="seo-input" id="${fieldId}" 
+                            placeholder="${field.placeholder || ''}"
+                            oninput="updateBlockData('${block.id}', '${field.name}', this.value)"
+                            value="${value}"
+                        >${field.type === 'textarea' ? value : ''}</${tag}>
+                        <div class="validation-error">This field is required</div>
+                    </div>
+                `;
+      }
+
+      // Select
+      if (field.type === 'select') {
+        return `
+                    <div class="input-group">
+                        <label class="input-label" for="${fieldId}">${field.label} ${requiredMark}</label>
+                        <select class="seo-select" id="${fieldId}" onchange="updateBlockData('${block.id}', '${field.name}', this.value)">
+                            ${field.options.map(opt => `<option value="${opt}" ${value === opt ? 'selected' : ''}>${opt}</option>`).join('')}
+                        </select>
+                    </div>
+                `;
+      }
+
+      // Arrays
+      if (field.type === 'array-text' || field.type === 'array-image') {
+        return renderArraySimple(field, block, value);
+      }
+      if (field.type === 'array-faq') {
+        return renderArrayFAQ(field, block, value);
+      }
+      if (field.type === 'array-step') {
+        return renderArrayStep(field, block, value);
+      }
+      if (field.type === 'array-breadcrumb') {
+        return renderArrayBreadcrumb(field, block, value);
+      }
+
+      return '';
+    }
+
+    // --- Array Renderers ---
+
+    function renderArraySimple(field, block, values) {
+      const rows = values.map((val, idx) => `
+                <div class="array-item">
+                    <input type="${field.type === 'array-image' ? 'url' : 'text'}" 
+                        class="seo-input" 
+                        value="${val}" 
+                        placeholder="${field.type === 'array-image' ? 'https://...' : 'Item...'}"
+                        oninput="updateArrayItem('${block.id}', '${field.name}', ${idx}, this.value)"
+                    >
+                    <button class="btn-remove-block" onclick="removeArrayItem('${block.id}', '${field.name}', ${idx})">�</button>
+                </div>
+            `).join('');
+
+      return `
+                <div class="input-group" style="grid-column: 1 / -1;">
+                    <label class="input-label">${field.label}</label>
+                    <div class="array-field-container">
+                        ${rows}
+                        <button class="btn-add-item" onclick="addArrayItem('${block.id}', '${field.name}', '')">+ Add Item</button>
+                    </div>
+                </div>
+            `;
+    }
+
+    function renderArrayFAQ(field, block, values) {
+      const rows = values.map((val, idx) => `
+                <div class="schema-block" style="margin-bottom: 0.5rem; padding: 1rem;">
+                    <div style="display:flex; justify-content: flex-end;"><button class="btn-remove-block" onclick="removeArrayItem('${block.id}', '${field.name}', ${idx})">Remove Question</button></div>
+                    <div class="input-group">
+                        <input type="text" class="seo-input" placeholder="Question" value="${val.q}" oninput="updateArrayObject('${block.id}', '${field.name}', ${idx}, 'q', this.value)">
+                    </div>
+                    <div class="input-group">
+                        <textarea class="seo-textarea" placeholder="Answer" oninput="updateArrayObject('${block.id}', '${field.name}', ${idx}, 'a', this.value)">${val.a}</textarea>
+                    </div>
+                </div>
+            `).join('');
+
+      return `
+                <div class="input-group" style="grid-column: 1 / -1;">
+                    <label class="input-label">Questions & Answers ${field.required ? '<span style="color:red">*</span>' : ''}</label>
+                    <div class="array-field-container">
+                        ${rows}
+                        <button class="btn-add-item" onclick="addArrayItem('${block.id}', '${field.name}', {q:'', a:''})">+ Add Question</button>
+                    </div>
+                </div>
+            `;
+    }
+
+    function renderArrayStep(field, block, values) {
+      const rows = values.map((val, idx) => `
+                <div class="schema-block" style="margin-bottom: 0.5rem; padding: 1rem;">
+                    <div style="display:flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <strong>Step ${idx + 1}</strong>
+                        <button class="btn-remove-block" onclick="removeArrayItem('${block.id}', '${field.name}', ${idx})">Remove</button>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="seo-input" placeholder="Step Title" value="${val.name}" oninput="updateArrayObject('${block.id}', '${field.name}', ${idx}, 'name', this.value)">
+                    </div>
+                    <div class="input-group">
+                        <textarea class="seo-textarea" placeholder="Step Directions/Text" oninput="updateArrayObject('${block.id}', '${field.name}', ${idx}, 'text', this.value)">${val.text}</textarea>
+                    </div>
+                     <div class="input-group">
+                        <input type="url" class="seo-input" placeholder="Image URL (Optional)" value="${val.image}" oninput="updateArrayObject('${block.id}', '${field.name}', ${idx}, 'image', this.value)">
+                    </div>
+                </div>
+            `).join('');
+
+      return `
+                <div class="input-group" style="grid-column: 1 / -1;">
+                    <label class="input-label">HowTo Steps ${field.required ? '<span style="color:red">*</span>' : ''}</label>
+                    <div class="array-field-container">
+                        ${rows}
+                        <button class="btn-add-item" onclick="addArrayItem('${block.id}', '${field.name}', {name:'', text:'', image:''})">+ Add Step</button>
+                    </div>
+                </div>
+            `;
+    }
+
+    function renderArrayBreadcrumb(field, block, values) {
+      const rows = values.map((val, idx) => `
+                <div class="array-item">
+                    <span style="padding-top: 0.5rem; color: var(--text-secondary); font-size: 0.9rem;">${idx + 1}.</span>
+                    <input type="text" class="seo-input" placeholder="Name" value="${val.name}" oninput="updateArrayObject('${block.id}', '${field.name}', ${idx}, 'name', this.value)">
+                    <input type="url" class="seo-input" placeholder="URL" value="${val.url}" oninput="updateArrayObject('${block.id}', '${field.name}', ${idx}, 'url', this.value)">
+                    <button class="btn-remove-block" onclick="removeArrayItem('${block.id}', '${field.name}', ${idx})">�</button>
+                </div>
+            `).join('');
+
+      return `
+                <div class="input-group" style="grid-column: 1 / -1;">
+                    <label class="input-label">Breadcrumb Chain ${field.required ? '<span style="color:red">*</span>' : ''}</label>
+                    <div class="array-field-container">
+                        ${rows}
+                        <button class="btn-add-item" onclick="addArrayItem('${block.id}', '${field.name}', {name:'', url:''})">+ Add Item</button>
+                    </div>
+                </div>
+            `;
+    }
+
+
+    // --- Data Updates ---
+
+    function updateBlockData(id, field, value) {
+      const block = schemaBlocks.find(b => b.id === id);
+      if (block) {
+        block.data[field] = value;
+        generateJSON();
+        validateInput(id, field, value);
+      }
+    }
+
+    function updateArrayItem(id, field, index, value) {
+      const block = schemaBlocks.find(b => b.id === id);
+      if (block && block.data[field]) {
+        block.data[field][index] = value;
+        generateJSON();
+      }
+    }
+
+    function updateArrayObject(id, field, index, key, value) {
+      const block = schemaBlocks.find(b => b.id === id);
+      if (block && block.data[field] && block.data[field][index]) {
+        block.data[field][index][key] = value;
+        generateJSON();
+      }
+    }
+
+    function addArrayItem(id, field, initialValue) {
+      const block = schemaBlocks.find(b => b.id === id);
+      if (block) {
+        // Ensure deep copy if object
+        const val = typeof initialValue === 'object' ? { ...initialValue } : initialValue;
+        block.data[field].push(val);
+        renderBlocks(); // Re-render needed for arrays to show new field
+        generateJSON();
+        // Retain focus? simplified for now implies clicking logic again
+        // In production, we'd want smart focus handling
+      }
+    }
+
+    function removeArrayItem(id, field, index) {
+      const block = schemaBlocks.find(b => b.id === id);
+      if (block) {
+        block.data[field].splice(index, 1);
+        renderBlocks();
+        generateJSON();
+      }
+    }
+
+    function validateInput(blockId, fieldName, value) {
+      // Basic implementation of visual validation
+      const block = schemaBlocks.find(b => b.id === blockId);
+      if (!block) return;
+
+      const def = schemaDefinitions[block.type];
+      const fieldDef = def.fields.find(f => f.name === fieldName);
+
+      if (fieldDef && fieldDef.required) {
+        const el = document.getElementById(`${blockId}_${fieldName}`);
+        if (el) {
+          const group = el.closest('.input-group');
+          if (!value || value.trim() === '') {
+            group.classList.add('invalid');
+          } else {
+            group.classList.remove('invalid');
+          }
+        }
+      }
+    }
+
+    // --- JSON Generation Logic ---
+
+    function generateJSON() {
+      if (schemaBlocks.length === 0) {
+        jsonOutput.textContent = '// Add a block to see JSON-LD...';
+        return;
+      }
+
+      const schemas = schemaBlocks.map(block => buildSchemaObject(block)).filter(s => s !== null);
+
+      let finalJSON;
+      if (schemas.length === 1) {
+        finalJSON = schemas[0];
+      } else {
+        finalJSON = {
+          "@context": "https://schema.org",
+          "@graph": schemas
+        };
+      }
+
+      // If single schema, it already has context. If graph, context is top level.
+      // Adjust buildSchemaObject to handle context locally if single, or clean it up.
+
+      // Refinement: buildSchemaObject always returns object WITH context.
+      // If graphing, we strip context from children.
+
+      if (schemas.length > 1) {
+        schemas.forEach(s => delete s['@context']);
+      }
+
+      const jsonString = JSON.stringify(finalJSON, null, 2);
+      const scriptTag = `<script type="application/ld+json">\n${jsonString}\n<\/script>`;
+
+      jsonOutput.textContent = scriptTag;
+    }
+
+    function buildSchemaObject(block) {
+      const d = block.data;
+      const type = block.type;
+      const schema = { "@context": "https://schema.org" };
+
+      // Helper to clean empty values
+      const clean = (val) => {
+        if (!val) return undefined;
+        if (Array.isArray(val)) {
+          const filtered = val.filter(v => v !== '' && v !== null && v !== undefined);
+          return filtered.length > 0 ? filtered : undefined;
+        }
+        return val;
+      };
+
+      if (type === 'article') {
+        Object.assign(schema, {
+          "@type": d.articleType || "Article",
+          "headline": d.headline,
+          "url": d.url,
+          "image": clean(d.image),
+          "author": d.author ? { "@type": "Person", "name": d.author } : undefined,
+          "publisher": d.publisher ? {
+            "@type": "Organization",
+            "name": d.publisher,
+            "logo": d.publisherLogo ? { "@type": "ImageObject", "url": d.publisherLogo } : undefined
+          } : undefined,
+          "datePublished": d.datePublished,
+          "dateModified": d.dateModified || undefined,
+          "description": d.description || undefined
+        });
+      } else if (type === 'product') {
+        Object.assign(schema, {
+          "@type": "Product",
+          "name": d.name,
+          "image": clean(d.image),
+          "description": d.description || undefined,
+          "brand": d.brand ? { "@type": "Brand", "name": d.brand } : undefined,
+          "sku": d.sku || undefined,
+          "offers": {
+            "@type": "Offer",
+            "price": d.price,
+            "priceCurrency": d.currency,
+            "availability": `https://schema.org/${d.availability}`
+          },
+          "aggregateRating": d.rating ? {
+            "@type": "AggregateRating",
+            "ratingValue": d.rating,
+            "reviewCount": d.reviewCount
+          } : undefined
+        });
+      } else if (type === 'faq') {
+        const validQs = d.questions.filter(i => i.q && i.a);
+        if (validQs.length === 0) return null;
+        Object.assign(schema, {
+          "@type": "FAQPage",
+          "mainEntity": validQs.map(item => ({
+            "@type": "Question",
+            "name": item.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": item.a
+            }
+          }))
+        });
+      } else if (type === 'howto') {
+        const validSteps = d.steps.filter(s => s.name || s.text);
+        Object.assign(schema, {
+          "@type": "HowTo",
+          "name": d.name,
+          "description": d.description || undefined,
+          "totalTime": d.totalTime || undefined,
+          "supply": clean(d.supply) ? d.supply.map(s => ({ "@type": "HowToSupply", "name": s })) : undefined,
+          "tool": clean(d.tool) ? d.tool.map(t => ({ "@type": "HowToTool", "name": t })) : undefined,
+          "step": validSteps.map(step => ({
+            "@type": "HowToStep",
+            "name": step.name,
+            "text": step.text,
+            "image": step.image || undefined,
+            "url": step.url || undefined
+          }))
+        });
+      } else if (type === 'breadcrumb') {
+        const validItems = d.items.filter(i => i.name && i.url);
+        if (validItems.length === 0) return null;
+        Object.assign(schema, {
+          "@type": "BreadcrumbList",
+          "itemListElement": validItems.map((item, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "name": item.name,
+            "item": item.url
+          }))
+        });
+      } else if (type === 'localBusiness' || type === 'advancedLocalBusiness') {
+        Object.assign(schema, {
+          "@type": d.businessType || "LocalBusiness",
+          "name": d.name,
+          "url": d.url || undefined,
+          "image": clean(d.image) || d.image || undefined,
+          "telephone": d.telephone || undefined,
+          "priceRange": d.priceRange || undefined,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": d.streetAddress,
+            "addressLocality": d.addressLocality,
+            "addressRegion": d.addressRegion,
+            "postalCode": d.postalCode
+          },
+          "openingHours": clean(d.openingHours),
+          "geo": d.geo ? {
+            "@type": "GeoCoordinates",
+            "latitude": d.geo.split(',')[0]?.trim(),
+            "longitude": d.geo.split(',')[1]?.trim()
+          } : undefined,
+          "award": clean(d.awards),
+          "hasOfferCatalog": clean(d.services) ? {
+            "@type": "OfferCatalog",
+            "name": "Services",
+            "itemListElement": d.services.map(s => ({ "@type": "Offer", "itemOffered": { "@type": "Service", "name": s } }))
+          } : undefined
+        });
+      } else if (type === 'organization' || type === 'advancedOrganization') {
+        Object.assign(schema, {
+          "@type": "Organization",
+          "name": d.name,
+          "url": d.url,
+          "logo": d.logo,
+          "sameAs": clean(d.socials),
+          "contactPoint": clean(d.contactPoints) ? d.contactPoints.map(cp => ({ "@type": "ContactPoint", "telephone": cp, "contactType": "customer service" })) : undefined,
+          "hasOfferCatalog": clean(d.services) ? {
+            "@type": "OfferCatalog",
+            "name": "Services",
+            "itemListElement": d.services.map(s => ({ "@type": "Offer", "itemOffered": { "@type": "Service", "name": s } }))
+          } : undefined,
+          "areaServed": clean(d.areasServed)
+        });
+      } else if (type === 'person') {
+        Object.assign(schema, {
+          "@type": "Person",
+          "name": d.name,
+          "url": d.url,
+          "image": d.image,
+          "jobTitle": d.jobTitle,
+          "worksFor": d.worksFor ? { "@type": "Organization", "name": d.worksFor } : undefined,
+          "sameAs": clean(d.sameAs),
+          "description": d.description
+        });
+      } else if (type === 'itemList') {
+        Object.assign(schema, {
+          "@type": "ItemList",
+          "name": d.name,
+          "itemListElement": clean(d.items) ? d.items.map((it, idx) => ({ "@type": "ListItem", "position": idx + 1, "name": it })) : []
+        });
+      } else if (type === 'event') {
+        Object.assign(schema, {
+          "@type": "Event",
+          "name": d.name,
+          "startDate": d.startDate,
+          "endDate": d.endDate,
+          "location": { "@type": "Place", "name": d.location, "address": { "@type": "PostalAddress", "streetAddress": d.address } },
+          "description": d.description
+        });
+      } else if (type === 'service') {
+        Object.assign(schema, {
+          "@type": "Service",
+          "name": d.name,
+          "serviceType": d.serviceType,
+          "provider": { "@type": "Organization", "name": d.provider },
+          "hasOfferCatalog": clean(d.offers) ? {
+            "@type": "OfferCatalog",
+            "name": d.name + " Catalog",
+            "itemListElement": d.offers.map(o => ({ "@type": "Offer", "itemOffered": { "@type": "Service", "name": o } }))
+          } : undefined,
+          "description": d.description
+        });
+      } else if (type === 'aboutUs' || type === 'contactUs') {
+        Object.assign(schema, {
+          "@type": type === 'aboutUs' ? "AboutPage" : "ContactPage",
+          "name": d.name,
+          "description": d.description,
+          "mainEntity": d.mainEntityName ? { "@type": "Thing", "name": d.mainEntityName } : undefined
+        });
+      } else if (type === 'profilePage') {
+        Object.assign(schema, {
+          "@type": "ProfilePage",
+          "mainEntity": {
+            "@type": "Person",
+            "name": d.name,
+            "image": d.image,
+            "description": d.description,
+            "sameAs": clean(d.sameAs)
+          }
+        });
+      } else if (type === 'advancedWebPage') {
+        Object.assign(schema, {
+          "@type": "WebPage",
+          "name": d.name,
+          "description": d.description,
+          "about": clean(d.about) ? d.about.map(a => ({ "@type": "Thing", "name": a })) : undefined,
+          "mentions": clean(d.mentions) ? d.mentions.map(m => ({ "@type": "Thing", "name": m })) : undefined
+        });
+      } else if (type === 'navigation') {
+        const validLinks = d.links.filter(l => l.name && l.url);
+        Object.assign(schema, {
+          "@type": "ItemList",
+          "name": "Main Navigation",
+          "itemListElement": validLinks.map((l, i) => ({
+            "@type": "SiteNavigationElement",
+            "position": i + 1,
+            "name": l.name,
+            "url": l.url
+          }))
+        });
+      } else if (type === 'website') {
+        Object.assign(schema, {
+          "@type": "WebSite",
+          "name": d.name,
+          "url": d.url,
+          "potentialAction": d.searchUrl ? {
+            "@type": "SearchAction",
+            "target": d.searchUrl,
+            "query-input": "required name=search_term_string"
+          } : undefined
+        });
+      }
+
+      return schema;
+    }
+
+    // --- Utilities ---
+    function copyToClipboard() {
+      const text = jsonOutput.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector('.preview-header button');
+        const orig = btn.innerText;
+        btn.innerText = 'Copied!';
+        setTimeout(() => btn.innerText = orig, 2000);
+      });
+    }
+
+    function testRichResults() {
+      window.open('https://search.google.com/test/rich-results', '_blank');
+    }
+
+    // Start
+    init();
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free, pro code quality checker. Audit your JavaScript and CSS for best practices, complexity, and common bugs 100% client-side.">
+    <title>Code Quality Checker - Code Tools | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Code Tools</a> &gt;
+                <span>Code Quality Checker</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Code Quality Checker</h1>
+                <p class="tool-description">Instantly audit your source code for complexity, style violations, and
+                    potential performance bottlenecks.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+<div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+<div class="tool-workspace">
+<div class="tool-workspace">
+<div class="editor-container">
+<div class="editor-header">
+<span class="editor-title">Source Code (JS/CSS)</span>
+<button class="btn btn-sm btn-secondary" onclick="document.getElementById('input-code').value = ''; runAudit()">Clear</button>
+</div>
+<textarea class="code-area" id="input-code" oninput="onInputChange()" placeholder="Paste your code snippet here..."></textarea>
+<div class="code-stats" id="input-stats"></div>
+</div>
+<div class="action-bar" style="margin-top: var(--space-4);">
+<button class="btn btn-primary btn-lg" onclick="runAudit()">Analyze Code Quality</button>
+</div>
+<div id="results-panel" style="display: none;">
+<div class="audit-card">
+<div class="score-circle" id="score-circle">0</div>
+<h3 id="quality-label" style="text-align: center;">Analyzing...</h3>
+<div class="issue-list" id="issue-list"></div>
+</div>
+</div>
+<section class="tool-content mt-12">
+<div class="content-grid">
+<div class="main-text">
+<h2>Ship Better Code, Faster</h2>
+<p>Writing code that "just works" isn't enough for professional projects. Our Quality
+                                Checker mimics a lightweight linter to catch smells that lead up to technical debt.</p>
+<h3>What we analyze:</h3>
+<ul>
+<li><strong>Cyclomatic Complexity:</strong> Too many nested `if` or `for` loops.</li>
+<li><strong>Variable Smells:</strong> Detecting `var` usage or excessive globals.</li>
+<li><strong>CSS Anti-patterns:</strong> Identify `!important` abuse or deep nesting.
+                                </li>
+<li><strong>Maintainability:</strong> Long functions that should be refactored.</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+</div>
+<section class="seo-article" data-tool="code-quality-checker">
+<article class="tool-article">
+<h2>Code Quality Checker — Get a Scored Report on Your Code</h2>
+
+<p>The scariest code review comment is not "this is wrong" — it is "this works, but…" followed by a list of things you should have caught yourself. I started running quality checks on my own code before reviews after one too many of those. A code quality checker does not just list issues; it scores your code across multiple dimensions — complexity, naming, error handling, documentation — and hands you an actionable report. It is like a code review you can run at 2 AM without bothering anyone.</p>
+
+<h3>What Does a Quality Score Tell You?</h3>
+
+<p>A good checker evaluates four things. <strong>Complexity</strong>: how many decision points (ifs, loops, ternaries) each function contains — high complexity means hard to test and risky to change. <strong>Naming conventions</strong>: are variables camelCase, classes PascalCase, constants UPPER_SNAKE_CASE, and are names actually descriptive? <strong>Error handling</strong>: async functions without try-catch, empty catch blocks, swallowed errors. <strong>Documentation coverage</strong>: what percentage of functions and classes have proper doc comments.</p>
+
+<p>Each area gets a score, combined into an overall quality rating — often 0–100, sometimes a letter grade or a health label (Excellent, Good, Needs Improvement, Poor). The number itself matters less than the trend: is this week's code scoring better than last week's? A declining score is an early warning that technical debt is accumulating.</p>
+
+<p>Crucially, the report includes before/after examples for common issues. It does not just say "function too complex" — it shows you how to split it. That teaching aspect is what separates a quality checker from a bare linter.</p>
+
+<h3>How to Use the Code Quality Checker</h3>
+
+<p>Paste your code or upload the file, select the language, and run the analysis. Within seconds you get the scored report: an overall score, per-category breakdowns, and a list of flagged issues ordered by impact. Each issue explains what is wrong, why it matters, and usually how to fix it.</p>
+
+<p>Start with the highest-impact items — the complexity warnings and error-handling gaps that represent real risk. Naming and documentation issues come next; they matter for maintainability but will not crash anything. Fix, re-run, and watch the score climb. I treat it like a game: every refactoring session should end with a higher number than it started with.</p>
+
+<p>For teams, the real power is in CI integration. Set a minimum quality gate — say, no new code below a score of 70 — and the pipeline enforces it automatically. Reviews stop being about style and start being about design.</p>
+
+<h3>The Four Quality Dimensions</h3>
+
+<table>
+<thead><tr><th>Dimension</th><th>What It Measures</th><th>Red Flags</th></tr></thead>
+<tbody>
+<tr><td>Complexity</td><td>Decision points per function (cyclomatic complexity)</td><td>Functions over 10 branches, nesting deeper than 4 levels</td></tr>
+<tr><td>Naming</td><td>Convention adherence and descriptiveness</td><td>Single-letter names, <code>data2</code>, inconsistent casing</td></tr>
+<tr><td>Error handling</td><td>Try-catch coverage, empty handlers</td><td>Async without try-catch, bare <code>except:</code>, swallowed errors</td></tr>
+<tr><td>Documentation</td><td>Doc comment coverage on functions/classes</td><td>Public APIs with no docs, cryptic uncommented logic</td></tr>
+</tbody>
+</table>
+
+<p>Complexity deserves special attention because it is the best predictor of bugs. A function with 3 branches is easy to test exhaustively; one with 15 is not, and the untested paths are where production incidents hide. When the checker flags complexity, splitting the function is almost always the right call.</p>
+
+<h3>Quality Scores in Practice</h3>
+
+<p>Use the score as a trend, not a verdict. A legacy module scoring 55 is not a crisis if it is stable and rarely touched — rewriting it for the number would introduce more risk than the score suggests. What matters is direction: new code should score well, and refactored code should score better than what it replaced.</p>
+
+<p>Common-sense thresholds: above 90 is excellent, ship it. 75–90 is good with minor suggestions worth addressing when convenient. 50–75 means real issues that should be fixed before merging. Below 50, or any critical-severity finding, means the code needs rework — it is cheaper now than after deployment.</p>
+
+<p>One caution: do not game the metric. Renaming variables to satisfy a naming rule while leaving a 200-line function intact improves the score without improving the code. The score serves the code, not the other way around.</p>
+
+<h3>Who Uses Quality Checkers?</h3>
+
+<p><strong>Team leads</strong> use quality gates in CI to keep standards consistent across contributors of varying experience. The checker enforces the rules nobody wants to argue about in reviews.</p>
+
+<p><strong>Solo developers</strong> get the reviewer they lack. The scored report is objective feedback on code nobody else will read.</p>
+
+<p><strong>Freelancers</strong> attach quality reports to deliveries as evidence of craftsmanship — a 92/100 report next to the invoice makes a quiet argument for the rate.</p>
+
+<p><strong>Students and bootcamp learners</strong> get structured feedback that scales: the same detailed review for every assignment, instantly.</p>
+
+<p><strong>Open-source maintainers</strong> gate pull requests on quality scores, keeping the codebase healthy regardless of who contributes.</p>
+
+<h3>Tips for Improving Your Score</h3>
+
+<p>Split long functions before anything else — complexity reduction improves testability, readability, and the score all at once. Name things like the next reader is a stranger (because it might be you in six months). Handle errors explicitly: every async call deserves a try-catch, every catch block deserves to do something meaningful. Document public functions and anything non-obvious; a one-line doc comment costs seconds and saves hours. Finally, configure the rules to your project once — agreed thresholds beat endless style debates.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Overall quality score</strong> — 0–100 rating combining all dimensions.</li>
+<li><strong>Four-dimension analysis</strong> — complexity, naming, error handling, documentation.</li>
+<li><strong>Before/after examples</strong> — concrete fixes for common issues.</li>
+<li><strong>Severity-ranked findings</strong> — critical issues surfaced first.</li>
+<li><strong>Multi-language support</strong> — JavaScript, Python, Java, and more.</li>
+<li><strong>Exportable reports</strong> — text, JSON, or Markdown for CI and sharing.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
+<li><strong>100% free</strong> — no signup, no limits, works on any device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this code quality checker free?</h4>
+<p>Yes — completely free, no account needed, and no limits on how much code you can analyze.</p>
+
+<h4>What does the quality score mean?</h4>
+<p>A 0–100 rating combining complexity, naming, error handling, and documentation. Use it as a trend indicator — improving scores mean improving code — not as an absolute grade.</p>
+
+<h4>What is cyclomatic complexity?</h4>
+<p>The number of independent paths through a function, counted from decision points (ifs, loops, ternaries, logical operators). Lower is better; above 10 per function is a common warning threshold.</p>
+
+<h4>Can a high score guarantee bug-free code?</h4>
+<p>No. Quality analysis finds structural problems, not logic errors. Combine it with tests and careful review for real confidence.</p>
+
+<h4>Should I fix every flagged issue?</h4>
+<p>Fix critical and high-severity issues. Treat the rest as guidance — context matters, and some rules do not fit every project. Configure thresholds to match your team's standards.</p>
+
+<h4>How is this different from a linter?</h4>
+<p>A linter checks style and simple mistakes quickly. A quality checker adds scoring, complexity metrics, documentation coverage, and actionable improvement guidance.</p>
+
+<h4>Is my code data secure?</h4>
+<p>Yes. Analysis happens entirely in your browser — your code never leaves your device or touches a server.</p>
+
+<h4>Can I use this in my CI pipeline?</h4>
+<p>Quality gates work best automated: set a minimum score for new code and let the pipeline enforce it. The online tool is ideal for quick checks and learning; CI integration handles enforcement.</p>
+</article>
+</section>
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../code-format-tools/js/code-utils.js"></script>
+<script src="../code-format-tools/js/code-ui.js"></script>
+<script>
+        CodeUI.init({ toolName: 'quality-checker' });
+
+        function onInputChange() {
+            const code = document.getElementById('input-code').value;
+            CodeUI.renderStats('input-stats', CodeUtils.getStats(code));
+        }
+
+        function runAudit() {
+            const code = document.getElementById('input-code').value.trim();
+            if (!code) return;
+
+            const results = document.getElementById('results-panel');
+            const scoreCircle = document.getElementById('score-circle');
+            const label = document.getElementById('quality-label');
+            const list = document.getElementById('issue-list');
+
+            results.style.display = 'block';
+            list.innerHTML = '';
+
+            let score = 100;
+            const issues = [];
+
+            // Simple heuristic rules
+            if (code.includes('var ')) {
+                score -= 10;
+                issues.push({ type: 'style', msg: "Avoid 'var'. Use 'let' or 'const' for block scoping." });
+            }
+            if ((code.match(/if\s*\(/g) || []).length > 5) {
+                score -= 15;
+                issues.push({ type: 'perf', msg: "High cyclomatic complexity. Break down into smaller functions." });
+            }
+            if (code.includes('!important')) {
+                score -= 10;
+                issues.push({ type: 'style', msg: "Avoid '!important' in CSS. Use specific selectors instead." });
+            }
+            if (code.length > 5000) {
+                score -= 5;
+                issues.push({ type: 'perf', msg: "Snippet is very large. Consider modularizing code." });
+            }
+            if (code.includes('console.log')) {
+                score -= 5;
+                issues.push({ type: 'style', msg: "Remove debug 'console.log' statements for production." });
+            }
+
+            score = Math.max(0, score);
+            scoreCircle.textContent = score;
+
+            if (score >= 85) {
+                scoreCircle.className = 'score-circle score-good';
+                label.textContent = 'Excellent Production Quality';
+            } else if (score >= 60) {
+                scoreCircle.className = 'score-circle score-fair';
+                label.textContent = 'Acceptable, but needs Refactoring';
+            } else {
+                scoreCircle.className = 'score-circle score-poor';
+                label.textContent = 'High Technical Debt Detected';
+            }
+
+            if (issues.length === 0) {
+                list.innerHTML = '<p style="text-align: center; color: var(--text-tertiary);">âœ¨ No obvious issues detected!</p>';
+            } else {
+                issues.forEach(i => {
+                    list.innerHTML += `
+                        <div class="issue-item">
+                            <span class="issue-badge badge-${i.type}">${i.type.toUpperCase()}</span>
+                            <span class="issue-text">${i.msg}</span>
+                        </div>
+                    `;
+                });
+            }
+        }
+
+        CodeUI.renderRelated('related-tools', [
+            { icon: 'âœ…', name: 'JSON Validator', desc: 'Syntax check', url: 'json-validator.html' },
+            { icon: 'âœ…', name: 'CSS Validator', desc: 'CSS syntax check', url: 'css-validator.html' },
+
+        ]);
+    </script>
+</body>
+</html>

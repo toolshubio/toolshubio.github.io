@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online Character Counter - Count characters, words, sentences, paragraphs, and estimate reading time. Perfect for Twitter, Instagram, SEO meta descriptions.">
+    <title>Character Counter - Word & Letter Counter | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Text & Writing</a> &gt;
+                <span>📊 Character Counter</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">📊 Character Counter</h1>
+                <p class="tool-description">Count characters, words, sentences, paragraphs, and estimate reading time. Includes
+                    platform-specific limits for Twitter, Instagram, and more.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<div class="tool-workspace">
+<section class="input-section">
+<div class="section-header">
+<h2 class="section-title">📝 Your Text</h2>
+<button class="btn btn-secondary" onclick="clearText()">
+<span class="btn-icon">🗑️</span> Clear
+                        </button>
+</div>
+<textarea class="text-area" id="input-text" oninput="updateStats()" placeholder="Start typing or paste your text here..." style="min-height: 250px;"></textarea>
+</section>
+<!-- Settings Panel -->
+<section class="settings-panel">
+<div class="section-header">
+<h2 class="section-title">⚙️ Options</h2>
+</div>
+<div class="settings-grid">
+<div class="setting-group">
+<div class="toggle-wrapper">
+<span class="setting-label">Include Spaces</span>
+<div class="toggle-switch active" id="include-spaces-toggle"></div>
+</div>
+</div>
+<div class="setting-group">
+<label class="setting-label">Platform Limit</label>
+<select class="form-select" id="platform-select" onchange="updateStats()">
+<option value="none">No Limit</option>
+<option value="twitter">Twitter (280)</option>
+<option value="instagram">Instagram Bio (150)</option>
+<option value="meta-title">Meta Title (60)</option>
+<option value="meta-desc">Meta Description (160)</option>
+<option value="youtube-title">YouTube Title (100)</option>
+<option value="linkedin">LinkedIn Post (3000)</option>
+</select>
+</div>
+</div>
+</section>
+<!-- Stats Panel - Large -->
+<section class="output-section">
+<div class="section-header">
+<h2 class="section-title">📈 Statistics</h2>
+</div>
+<div class="stats-panel" style="background: transparent; padding: 0;">
+<div class="stat-item" style="flex: 1; min-width: 130px;">
+<span class="stat-label">Characters</span>
+<span class="stat-value highlight" id="stat-chars">0</span>
+</div>
+<div class="stat-item" style="flex: 1; min-width: 130px;">
+<span class="stat-label">Characters (no spaces)</span>
+<span class="stat-value" id="stat-chars-no-space">0</span>
+</div>
+<div class="stat-item" style="flex: 1; min-width: 130px;">
+<span class="stat-label">Words</span>
+<span class="stat-value highlight" id="stat-words">0</span>
+</div>
+<div class="stat-item" style="flex: 1; min-width: 130px;">
+<span class="stat-label">Sentences</span>
+<span class="stat-value" id="stat-sentences">0</span>
+</div>
+<div class="stat-item" style="flex: 1; min-width: 130px;">
+<span class="stat-label">Paragraphs</span>
+<span class="stat-value" id="stat-paragraphs">0</span>
+</div>
+<div class="stat-item" style="flex: 1; min-width: 130px;">
+<span class="stat-label">Lines</span>
+<span class="stat-value" id="stat-lines">0</span>
+</div>
+</div>
+<div class="stats-panel" style="margin-top: 1rem; background: transparent; padding: 0;">
+<div class="stat-item" style="flex: 1; min-width: 130px;">
+<span class="stat-label">Reading Time</span>
+<span class="stat-value" id="stat-reading-time">0 min</span>
+</div>
+<div class="stat-item" style="flex: 1; min-width: 130px;">
+<span class="stat-label">Speaking Time</span>
+<span class="stat-value" id="stat-speaking-time">0 min</span>
+</div>
+<div class="stat-item" style="flex: 1; min-width: 130px;">
+<span class="stat-label">Avg Word Length</span>
+<span class="stat-value" id="stat-avg-word">0</span>
+</div>
+<div class="stat-item" style="flex: 1; min-width: 130px;">
+<span class="stat-label">Avg Sentence Length</span>
+<span class="stat-value" id="stat-avg-sentence">0 words</span>
+</div>
+</div>
+<!-- Platform Limit Progress -->
+<div id="platform-limit-section" style="margin-top: 1.5rem; display: none;">
+<div class="setting-label" style="margin-bottom: 0.5rem;">
+                            Platform Limit: <span id="limit-text">0 / 280</span>
+</div>
+<div style="height: 8px; background: var(--bg-tertiary); border-radius: 4px; overflow: hidden;">
+<div id="limit-bar" style="height: 100%; background: var(--primary); width: 0%; transition: width 0.3s;">
+</div>
+</div>
+</div>
+</section>
+</div>
+ Related Tools 
+<section class="related-tools">
+<h3 class="related-tools-title">🔗 Related Tools</h3>
+<div class="related-tools-grid">
+<a class="related-tool-card" href="text-case-changer.html">
+<span class="related-tool-icon">🔤</span>
+<span class="related-tool-name">Text Case Changer</span>
+</a>
+<a class="related-tool-card" href="sentence-counter.html">
+<span class="related-tool-icon">🔢</span>
+<span class="related-tool-name">Sentence Counter</span>
+</a>
+<a class="related-tool-card" href="text-cleaner.html">
+<span class="related-tool-icon">🧹</span>
+<span class="related-tool-name">Text Cleaner</span>
+</a>
+<a class="related-tool-card" href="word-changer.html">
+<span class="related-tool-icon">🔁</span>
+<span class="related-tool-name">Word Changer</span>
+</a>
+</div>
+</section>
+            </div>
+            <section class="seo-article" data-tool="character-counter">
+<article class="tool-article">
+<h2>Character Counter — Free Online Character Count Tool</h2>
+
+<p>Word counts get the glory, but character counts run the internet's hard limits: 280 for a tweet, 60 for a meta title, 160 for a meta description, 2,200 for an Instagram caption. I once wrote a perfect ad headline that got rejected by the platform — 34 characters over the limit, and I had been counting words instead. A character counter measures exactly what the limits measure. Paste your text and watch both counts — with and without spaces — update as you type.</p>
+
+<h3>What Is a Character Counter?</h3>
+
+<p>A character counter tallies every character in your text: letters, numbers, punctuation, spaces, and line breaks. The essential distinction — the one that trips people up — is between <strong>characters with spaces</strong> and <strong>characters without spaces</strong>. Most platforms (X, Instagram, Google's snippet display) count every character including spaces; some forms and style guides count only visible characters. A good tool shows both side by side so you match whichever definition your limit uses.</p>
+
+<p>Modern counters bundle the surrounding stats too: words, sentences, paragraphs, lines, reading time, and the longest word. The reason is practical — when you are trimming text to fit a limit, you need to see what you are cutting. The counts update live with no button to press, and everything runs in your browser so even sensitive or unpublished writing never leaves your device.</p>
+
+<h3>How to Use the Character Counter</h3>
+
+<p>The workflow is built around limits, and it goes like this.</p>
+
+<p>Paste or type your text into the box. The character counts — with spaces and without — update instantly on every keystroke, alongside words, sentences, and paragraphs. Compare your count against your target limit: X's 280 characters, a meta title's ~60, a meta description's ~160, an Instagram caption's 2,200, LinkedIn's 3,000.</p>
+
+<p>If you are over, trim with the counts watching. Cut filler words first, then tighten phrases — "in order to" becomes "to," "due to the fact that" becomes "because." Each edit updates the count immediately, so you can feel your way down to the limit instead of rewriting blind. When you fit, copy the text out with one click.</p>
+
+<p>A habit worth building: check the <em>with-spaces</em> count against platform limits, and the <em>without-spaces</em> count against editorial briefs. Mixing the two up is the most common counting mistake I see — a 160-character meta description measured without spaces will get truncated in Google.</p>
+
+<h3>Character Limits Worth Knowing</h3>
+
+<table>
+<thead><tr><th>Platform / element</th><th>Character limit</th><th>Count type</th></tr></thead>
+<tbody>
+<tr><td>X (Twitter) post</td><td>280</td><td>With spaces</td></tr>
+<tr><td>Meta title (Google display)</td><td>~50–60</td><td>With spaces</td></tr>
+<tr><td>Meta description</td><td>~155–160</td><td>With spaces</td></tr>
+<tr><td>Instagram caption</td><td>2,200</td><td>With spaces</td></tr>
+<tr><td>Facebook post</td><td>63,206</td><td>With spaces</td></tr>
+<tr><td>LinkedIn post</td><td>3,000</td><td>With spaces</td></tr>
+<tr><td>SMS (single segment)</td><td>160</td><td>With spaces</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Character Counters?</h3>
+
+<p><strong>Social media managers</strong> fit captions and posts inside platform limits without trial-and-error posting.</p>
+
+<p><strong>SEO writers</strong> keep titles and meta descriptions inside Google's display widths.</p>
+
+<p><strong>Copywriters</strong> write to exact briefs — ad headlines, subject lines, and slogans all come with character budgets.</p>
+
+<p><strong>Students</strong> meet abstract and short-answer limits that are specified in characters, not words.</p>
+
+<p><strong>Developers</strong> check that user-facing strings fit UI constraints like button labels and notification text.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Live character counting</strong> — updates on every keystroke, no button needed.</li>
+<li><strong>With and without spaces</strong> — both counts shown, matching any limit definition.</li>
+<li><strong>Words, sentences, paragraphs</strong> — the full text stats alongside.</li>
+<li><strong>Reading time estimate</strong> — how long the text takes to read.</li>
+<li><strong>Limit awareness</strong> — compare against common platform limits at a glance.</li>
+<li><strong>Copy and clear</strong> — grab finished text or reset in one click.</li>
+<li><strong>100% free</strong> — no signup, no limits.</li>
+<li><strong>Private by design</strong> — everything counted in your browser; nothing is uploaded.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is the difference between characters with and without spaces?</h4>
+<p>"With spaces" counts every character including spaces and line breaks — the figure most platforms use for hard limits. "Without spaces" strips all whitespace, which some editorial briefs and forms use instead. The tool shows both.</p>
+
+<h4>Do emojis count as one character?</h4>
+<p>It depends on the platform. Most counters count an emoji as one or two characters (some emoji are multi-codepoint sequences). X counts most emoji as two characters toward its 280 limit. When in doubt, test on the platform itself.</p>
+
+<h4>Why does my count differ from Microsoft Word's?</h4>
+<p>Word's default count includes spaces; its "characters (no spaces)" is a separate figure. Line breaks and hidden formatting can also differ. Match the same definition on both sides and the numbers agree.</p>
+
+<h4>How many characters is a tweet?</h4>
+<p>280 characters including spaces, links, and most emoji (counted as two). For best engagement, many guides suggest keeping posts to 71–100 characters.</p>
+
+<h4>Is this character counter free?</h4>
+<p>Yes — completely free, no account needed, no text-length limits that matter.</p>
+
+<h4>Does my text get uploaded anywhere?</h4>
+<p>No. All counting happens locally in your browser; nothing is stored or transmitted.</p>
+
+<h4>Can I count characters in a document?</h4>
+<p>Yes — paste the text from any document, PDF, or webpage into the box. The counter handles 100,000+ words without trouble.</p>
+
+<h4>What is the longest word in my text?</h4>
+<p>Many counters show this as a bonus stat alongside average word length — handy for spotting the clunky words dragging your readability down.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="js/text-utils.js"></script>
+<script src="js/tool-ui.js"></script>
+<script>
+        ToolUI.init({ toolName: 'character-counter' });
+
+        let includeSpaces = true;
+
+        const platformLimits = {
+            'none': 0,
+            'twitter': 280,
+            'instagram': 150,
+            'meta-title': 60,
+            'meta-desc': 160,
+            'youtube-title': 100,
+            'linkedin': 3000
+        };
+
+        ToolUI.setupToggle('include-spaces-toggle', (active) => {
+            includeSpaces = active;
+            updateStats();
+        });
+
+        function updateStats() {
+            const text = document.getElementById('input-text').value;
+
+            // Basic counts
+            const chars = TextUtils.countCharacters(text, true);
+            const charsNoSpace = TextUtils.countCharacters(text, false);
+            const words = TextUtils.countWords(text);
+            const sentences = TextUtils.countSentences(text);
+            const paragraphs = TextUtils.countParagraphs(text);
+            const lines = TextUtils.countLines(text);
+
+            // Update stats
+            document.getElementById('stat-chars').textContent = chars;
+            document.getElementById('stat-chars-no-space').textContent = charsNoSpace;
+            document.getElementById('stat-words').textContent = words;
+            document.getElementById('stat-sentences').textContent = sentences;
+            document.getElementById('stat-paragraphs').textContent = paragraphs;
+            document.getElementById('stat-lines').textContent = lines;
+
+            // Reading/Speaking time
+            const readingTime = Math.ceil(words / 200);
+            const speakingTime = Math.ceil(words / 150);
+            document.getElementById('stat-reading-time').textContent = readingTime + ' min';
+            document.getElementById('stat-speaking-time').textContent = speakingTime + ' min';
+
+            // Averages
+            const avgWord = words > 0 ? (charsNoSpace / words).toFixed(1) : 0;
+            const avgSentence = sentences > 0 ? Math.round(words / sentences) : 0;
+            document.getElementById('stat-avg-word').textContent = avgWord;
+            document.getElementById('stat-avg-sentence').textContent = avgSentence + ' words';
+
+            // Platform limit
+            const platform = document.getElementById('platform-select').value;
+            const limit = platformLimits[platform];
+            const limitSection = document.getElementById('platform-limit-section');
+
+            if (limit > 0) {
+                limitSection.style.display = 'block';
+                const currentCount = includeSpaces ? chars : charsNoSpace;
+                const percentage = Math.min((currentCount / limit) * 100, 100);
+                document.getElementById('limit-text').textContent = `${currentCount} / ${limit}`;
+                const bar = document.getElementById('limit-bar');
+                bar.style.width = percentage + '%';
+                bar.style.background = currentCount > limit ? 'var(--danger)' : 'var(--primary)';
+            } else {
+                limitSection.style.display = 'none';
+            }
+        }
+
+        function clearText() {
+            document.getElementById('input-text').value = '';
+            updateStats();
+            ToolUI.showToast('Cleared!');
+        }
+
+        document.addEventListener('DOMContentLoaded', updateStats);
+    </script>
+</body>
+</html>

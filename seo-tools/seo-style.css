@@ -1,0 +1,186 @@
+/* Specific Styles for SEO Tools */
+
+.tool-interface-container {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    margin-top: var(--spacing-lg);
+}
+
+.input-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.input-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-primary);
+}
+
+.input-desc {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.seo-input,
+.seo-select,
+.seo-textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    color: var(--text-primary);
+    transition: all var(--transition-base);
+}
+
+.seo-input:focus,
+.seo-select:focus,
+.seo-textarea:focus {
+    outline: none;
+    border-color: var(--color-seo);
+    box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.1);
+}
+
+.seo-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.action-bar {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: var(--color-seo);
+    color: white;
+    padding: 0.875rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary:hover {
+    background: #43a047;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.btn-secondary {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    padding: 0.875rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+}
+
+.output-section {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
+}
+
+.output-container {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    position: relative;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.output-code {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.5rem;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.preview-box {
+    border: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.seo-result-item {
+    margin-bottom: 1.5rem;
+}
+
+.seo-title {
+    font-size: 20px;
+    color: #4a90e2;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1.3;
+}
+
+.seo-title:hover {
+    text-decoration: underline;
+}
+
+.seo-url {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 2px;
+}
+
+.seo-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.58;
+}
+
+/* Tool specific layouts */
+.schema-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.drag-area {
+    border: 2px dashed var(--border-color);
+    padding: 2rem;
+    text-align: center;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.drag-area:hover,
+.drag-area.active {
+    border-color: var(--color-seo);
+    background: rgba(76, 175, 80, 0.05);
+}

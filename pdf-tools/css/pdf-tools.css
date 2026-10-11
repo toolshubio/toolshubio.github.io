@@ -1,0 +1,270 @@
+/* PDF Tools - Shared Design System */
+:root {
+    --pdf-primary: #9C27B0;
+    --pdf-primary-hover: #7b1fa2;
+    --pdf-bg-card: var(--bg-secondary);
+    --pdf-border: var(--border-color);
+}
+
+/* Settings Column Layout (Right Sidebar Strategy) */
+.tool-container {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2rem;
+    align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .tool-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Sidebar Settings Column */
+.sidebar-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Settings Cards */
+.settings-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--pdf-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-primary);
+}
+
+.card-title i {
+    color: var(--pdf-primary);
+}
+
+/* Button Groups (Pill Style) */
+.pill-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.pill-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    border: 1px solid var(--pdf-border);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.pill-btn.active {
+    background: var(--pdf-primary);
+    color: white;
+    border-color: var(--pdf-primary);
+}
+
+/* Sliders */
+.setting-item {
+    margin-bottom: 1.25rem;
+}
+
+.setting-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.setting-value {
+    color: var(--pdf-primary);
+}
+
+.slider {
+    width: 100%;
+    height: 6px;
+    background: var(--bg-tertiary);
+    border-radius: 3px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--pdf-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Toggles (Switch Style) */
+.toggle-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.toggle-label-wrap {
+    flex: 1;
+}
+
+.toggle-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.toggle-help {
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+}
+
+.switch {
+    width: 40px;
+    height: 22px;
+    position: relative;
+    display: inline-block;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider-switch {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-tertiary);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider-switch:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider-switch {
+    background-color: var(--pdf-primary);
+}
+
+input:checked+.slider-switch:before {
+    transform: translateX(18px);
+}
+
+/* Process Buttons */
+.process-btn {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, #9C27B0 0%, #E91E63 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.process-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(156, 39, 176, 0.4);
+}
+
+.process-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background: var(--bg-tertiary);
+    color: var(--text-tertiary);
+}
+
+/* Stats Box */
+.stats-box {
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.stat-row:last-child {
+    margin-bottom: 0;
+}
+
+.stat-value {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+/* Dropdown styling */
+.clean-select {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--pdf-border);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+
+    /* Custom Upload Zone Styling for PDF Tools */
+    #upload-zone .unified-dropzone {
+        background: linear-gradient(135deg, rgba(156, 39, 176, 0.03) 0%, rgba(156, 39, 176, 0.08) 100%);
+        border-color: rgba(156, 39, 176, 0.2);
+        padding: 3.5rem 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+        transition: all var(--transition-base);
+    }
+
+    #upload-zone .unified-dropzone:hover {
+        border-color: var(--pdf-primary);
+        background: linear-gradient(135deg, rgba(156, 39, 176, 0.05) 0%, rgba(156, 39, 176, 0.1) 100%);
+        transform: translateY(-2px);
+    }
+
+    .dropzone-actions .btn-primary {
+        background: var(--pdf-primary);
+        border-color: var(--pdf-primary);
+    }
+
+    .dropzone-actions .btn-primary:hover {
+        background: var(--pdf-primary-hover);
+        border-color: var(--pdf-primary-hover);
+    }

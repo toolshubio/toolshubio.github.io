@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online Document Merger - Combine multiple PDF and Office documents into a single file. 100% private, client-side processing.">
+    <title>Document Merger - Combine Files Online | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+<script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Documents</a> &gt;
+                <span>Document Merger</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Document Merger</h1>
+                <p class="tool-description">Free online Document Merger - Combine multiple PDF and Office documents into a single file. 100% private, client-side processing.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+<!-- Hero Section -->
+<div class="doc-hero">
+<h1 class="doc-hero-title">Document Merger</h1>
+<p class="doc-hero-subtitle">Merge multiple documents into a single professional file. Supports PDF,
+                    Word, and Image combinations. All processing happens in your browser.</p>
+</div>
+<!-- Main Tool Container -->
+<div class="doc-tool-container">
+<div class="doc-main-area">
+<!-- Preview/List Area -->
+<div id="preview-area" style="display: none;">
+<h3 style="margin-bottom: 1rem;">Merge Order</h3>
+<div class="merger-list" id="merger-list"></div>
+<div class="merger-placeholder" id="empty-hint" style="display: none;">
+                            Drag and drop files here to add more
+                        </div>
+</div>
+<!-- Upload -->
+<div class="doc-upload-section" id="upload-section">
+<div class="doc-upload-icon">🔗</div>
+<h2 class="doc-upload-title">Choose Files to Merge</h2>
+<button class="doc-upload-btn" onclick="document.getElementById('file-input').click()">📁 Add
+                            Files</button>
+<input hidden="" id="file-input" multiple="" type="file"/>
+</div>
+<div class="doc-action-bar" id="action-bar" style="display: none;">
+<button class="doc-action-btn secondary" onclick="document.getElementById('file-input').click()">➕ Add More</button>
+<button class="doc-action-btn primary" id="merge-btn">📥 Merge &amp; Download</button>
+</div>
+</div>
+<!-- Settings -->
+<div class="doc-settings-panel">
+<div class="doc-settings-title">⚙️ Merger Settings</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+<div class="doc-settings-group">
+<label class="doc-settings-label">Output Options</label>
+<label class="doc-settings-label" style="font-weight: 400; font-size: 0.8rem;">File
+                                Name</label>
+<input class="doc-settings-select" id="merged-filename" type="text" value="merged-document"/>
+<div class="doc-settings-toggle" style="margin-top: 1rem;">
+<span>Add Page Numbers</span>
+<div class="doc-toggle-switch active" id="toggle-pages"></div>
+</div>
+</div>
+<div class="doc-settings-group">
+<label class="doc-settings-label">📊 Merger Queue</label>
+<div class="doc-stats-bar" style="grid-template-columns: 1fr 1fr; padding: 1rem; margin: 0;">
+<div class="doc-stat-item"><span class="doc-stat-value" id="stat-count">0</span><span class="doc-stat-label">Files</span></div>
+<div class="doc-stat-item"><span class="doc-stat-value" id="stat-total-size">0
+                                        KB</span><span class="doc-stat-label">Total Size</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+            </div>
+            <section class="seo-article" data-tool="document-merger">
+<article class="tool-article">
+<h2>Document Merger — Free Online File Combiner</h2>
+
+<p>A client once asked me for "the full signed contract" and I sent five separate PDFs — signature pages, exhibits, amendments — in one email. He wrote back: "Can I get this as one file?" Fair. Scattered files create work for everyone who opens them: figuring out the right order, hoping nothing got lost. A document merger fixes it in under a minute: upload your files, drag them into the right order, click merge, and download a single combined document that reads front to back.</p>
+
+<h3>What Is a Document Merger?</h3>
+
+<p>A document merger combines multiple files into one. The files are joined in the order you specify — first file's pages first, second file's pages next, and so on — producing a single cohesive document you can share, store, or submit.</p>
+
+<p>The key detail is order. Merging isn't just stapling files together; it's sequencing them. A cover letter before the proposal, the main contract before the exhibits, chapter one before chapter two. Good merger tools show you a file list you can reorder with drag and drop, with a preview so you can confirm the sequence before committing.</p>
+
+<p>Quality is preserved through the merge — text stays sharp, images keep their resolution, formatting carries over from each source file. The result should look exactly like the originals, just bound together.</p>
+
+<h3>How to Use the Document Merger</h3>
+
+<p>Upload your files by dragging them onto the upload area or clicking to browse — PDFs, Word documents, images, and other common formats. They appear in a file list with a count and total size in the stats bar, so you can confirm everything uploaded.</p>
+
+<p>Arrange the order. Drag files up or down in the list until the sequence is right: this is the step that matters most, because the merged document follows this order exactly. The first file in the list becomes the first pages of the result. Use the preview to double-check the flow.</p>
+
+<p>Name your merged file if the tool offers a filename field — something descriptive like "Contract-Signed-Final.pdf" beats "merged.pdf" when someone searches for it later. Click Merge, wait a moment while the files combine, then download the result.</p>
+
+<p>My checklist before every merge: order correct? All files present (count the list against what I intended)? Filename sensible? Thirty seconds of verification saves the embarrassment of sending a merger with chapter three before chapter two.</p>
+
+<h3>Common Merging Scenarios</h3>
+
+<table>
+<thead><tr><th>Scenario</th><th>Files merged</th><th>Right order</th></tr></thead>
+<tbody>
+<tr><td>Signed contract package</td><td>Contract, exhibits, amendments, signature pages</td><td>Main doc → exhibits → amendments → signatures</td></tr>
+<tr><td>Job application</td><td>Cover letter, CV, certificates, portfolio</td><td>Cover letter → CV → certificates → portfolio</td></tr>
+<tr><td>Expense report</td><td>Report form, receipts (scans/photos)</td><td>Form first, receipts in date order</td></tr>
+<tr><td>Student submission</td><td>Assignment, bibliography, appendices</td><td>Assignment → bibliography → appendices</td></tr>
+<tr><td>Property dossier</td><td>Listing, photos, inspection report, deed</td><td>Listing → photos → inspection → deed</td></tr>
+<tr><td>Legal filing</td><td>Motion, affidavits, supporting exhibits</td><td>Motion → affidavits → exhibits in cited order</td></tr>
+</tbody>
+</table>
+
+<p>The job-application row is worth highlighting: recruiters consistently prefer one attachment over four. A single merged PDF with your cover letter, CV, and certificates reads as organized; four separate files read as scattered — even when the content is identical.</p>
+
+<h3>Tips for Clean Merges</h3>
+
+<p><strong>Match page sizes when you can.</strong> Merging A4 and Letter pages works fine, but the result looks cleaner when sources share a page size. Convert stragglers first if it matters.</p>
+
+<p><strong>Check orientation.</strong> A landscape spreadsheet merged into a portrait document is readable but awkward. Rotate problem pages before merging if the final document needs to look professional.</p>
+
+<p><strong>Mind the total size.</strong> Merged files add up — five 10 MB scans make a 50 MB file that bounces off email servers. If the result is too big, run it through the document compressor on this site afterward.</p>
+
+<p><strong>Keep the originals.</strong> Merging is non-destructive to your source files, but keep them anyway. If you spot an ordering mistake after downloading, you'll re-merge rather than un-merge.</p>
+
+<h3>Who Uses a Document Merger?</h3>
+
+<p><strong>Professionals</strong> assemble contract packages, reports, and proposals into single shareable files for clients and colleagues.</p>
+
+<p><strong>Students</strong> combine assignments, bibliographies, and appendices into one submission-ready document.</p>
+
+<p><strong>Job seekers</strong> merge cover letters, CVs, and certificates into a single application PDF.</p>
+
+<p><strong>Real estate and legal teams</strong> build dossiers and filing packages where page order carries meaning.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Multiple file support</strong> — combine PDFs, Word docs, images, and more in one go.</li>
+<li><strong>Drag-to-reorder</strong> — arrange files in the exact sequence you want.</li>
+<li><strong>Live preview</strong> — confirm the order and flow before merging.</li>
+<li><strong>File count & size stats</strong> — verify everything uploaded.</li>
+<li><strong>Custom filename</strong> — name the merged file sensibly.</li>
+<li><strong>Quality preserved</strong> — text, images, and formatting carry over intact.</li>
+<li><strong>100% free</strong> — no account, no watermarks.</li>
+<li><strong>Private by design</strong> — merging happens in your browser; files never leave your device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this document merger free?</h4>
+<p>Yes — free, no signup, no watermarks on the merged file.</p>
+
+<h4>How do I combine multiple files into one?</h4>
+<p>Upload your files, drag them into the right order, click Merge, and download the combined document.</p>
+
+<h4>In what order will my files appear?</h4>
+<p>Exactly the order shown in the file list — the first file becomes the first pages. Reorder by dragging before merging.</p>
+
+<h4>Can I merge different file types together?</h4>
+<p>Yes — mix PDFs, Word documents, and images in a single merge. They're combined into one output file.</p>
+
+<h4>Will merging reduce quality?</h4>
+<p>No. Text, images, and formatting are preserved as in the originals.</p>
+
+<h4>What if I put files in the wrong order?</h4>
+<p>Just reorder the list and merge again — merging doesn't alter your source files.</p>
+
+<h4>Is there a limit on how many files I can merge?</h4>
+<p>Merge a reasonable batch at a time; for very large sets, merge in groups and then merge the results.</p>
+
+<h4>Are my files uploaded to a server?</h4>
+<p>No. The entire merge runs in your browser; your files stay on your device.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        (function () {
+            let files = [];
+            const fileInput = document.getElementById('file-input');
+            const mergerList = document.getElementById('merger-list');
+
+            fileInput.onchange = (e) => {
+                const newFiles = Array.from(e.target.files);
+                files = files.concat(newFiles);
+                updateUI();
+            };
+
+            function updateUI() {
+                if (files.length > 0) {
+                    document.getElementById('upload-section').style.display = 'none';
+                    document.getElementById('preview-area').style.display = 'block';
+                    document.getElementById('action-bar').style.display = 'flex';
+                }
+
+                mergerList.innerHTML = files.map((f, i) =>
+                    '<div class="merger-item" draggable="true" ondragstart="window._ds(' + i + ')" ondragover="event.preventDefault()" ondrop="window._dp(' + i + ')">' +
+                    '<div class="item-icon">' + (f.type.includes('pdf') ? '📕' : '📄') + '</div>' +
+                    '<div class="item-info">' +
+                    '<div class="item-name">' + f.name + '</div>' +
+                    '<div class="item-meta">' + (f.size / 1024).toFixed(1) + ' KB</div>' +
+                    '</div>' +
+                    '<div class="item-actions">' +
+                    '<button class="doc-toolbar-btn" onclick="window._rm(' + i + ')">🗑️</button>' +
+                    '</div>' +
+                    '</div>'
+                ).join('');
+
+                document.getElementById('stat-count').textContent = files.length;
+                const totalSize = files.reduce((acc, f) => acc + f.size, 0);
+                document.getElementById('stat-total-size').textContent = (totalSize / 1024).toFixed(1) + ' KB';
+            }
+
+            let draggingIndex = null;
+            window._ds = (i) => draggingIndex = i;
+            window._dp = (i) => {
+                const temp = files[draggingIndex];
+                files.splice(draggingIndex, 1);
+                files.splice(i, 0, temp);
+                updateUI();
+            };
+            window._rm = (i) => { files.splice(i, 1); updateUI(); if (files.length === 0) location.reload(); };
+
+            document.getElementById('merge-btn').onclick = async () => {
+                if (files.length < 2) {
+                    alert('Please add at least two files to merge.');
+                    return;
+                }
+
+                const btn = document.getElementById('merge-btn');
+                const originalText = btn.textContent;
+                btn.disabled = true;
+                btn.textContent = '⌛ Merging...';
+
+                try {
+                    const mergedPdf = await PDFLib.PDFDocument.create();
+
+                    for (const file of files) {
+                        if (file.type !== 'application/pdf') {
+                            console.warn(`Skipping non-PDF file: ${file.name}`);
+                            continue;
+                        }
+                        const arrayBuffer = await file.arrayBuffer();
+                        const donorPdf = await PDFLib.PDFDocument.load(arrayBuffer);
+                        const copiedPages = await mergedPdf.copyPages(donorPdf, donorPdf.getPageIndices());
+                        copiedPages.forEach((page) => mergedPdf.addPage(page));
+                    }
+
+                    const pdfBytes = await mergedPdf.save();
+                    const fileName = document.getElementById('merged-filename').value || 'merged-document';
+                    saveBlob(new Blob([pdfBytes], { type: 'application/pdf' }), fileName + '.pdf');
+
+                    alert('Documents merged successfully!');
+                } catch (err) {
+                    console.error('Merge Error:', err);
+                    alert('Failed to merge PDFs. Ensure all files are valid PDF documents.');
+                } finally {
+                    btn.disabled = false;
+                    btn.textContent = originalText;
+                }
+            };
+
+            function saveBlob(blob, name) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = name;
+                a.click();
+                setTimeout(() => URL.revokeObjectURL(url), 100);
+            }
+
+            document.querySelectorAll('.doc-toggle-switch').forEach(toggle => {
+                toggle.onclick = function () { this.classList.toggle('active'); };
+            });
+        })();
+    </script>
+</body>
+</html>

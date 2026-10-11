@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free Other Tools - Professional, client-side tools for random data generation, ID cards, and more. All 100% free and secure.">
+    <title>Other Tools Suite | TOOLSHUB.COM</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+
+    <style>
+        .category-hero {
+            background: var(--color-other);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: var(--radius-xl);
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .tools-section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .tool-card.other .tool-icon {
+            background: rgba(158, 158, 158, 0.1);
+            color: var(--color-other);
+        }
+
+        .tool-card.other:hover .tool-icon {
+            background: var(--color-other);
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="category-page">
+    <!-- Header injected by shared script -->
+
+    <main class="container" style="margin-top: 120px;">
+        <!-- Breadcrumb will be injected here by shared script -->
+
+        <section class="category-hero" style="margin-bottom: 4rem;">
+            <h1 style="font-size: 4rem; font-weight: 800; margin-bottom: 1.5rem;">Other Advanced Tools</h1>
+            <p style="font-size: 1.4rem; opacity: 0.9; max-width: 900px; margin: 0 auto;">Practical, advanced utility
+                tools for everyday tasks. 100% private and processed entirely in your browser.</p>
+        </section>
+
+        <section class="tools-section" style="margin-top: 5rem;">
+            <h2 class="tools-section-title">✨ All Other Tools</h2>
+            <div class="tools-grid" id="all-tools">
+                <!-- Populated by JS -->
+            </div>
+        </section>
+
+        <section class="tools-section"
+            style="margin-top: 5rem; text-align: center; background: var(--bg-secondary); padding: 4rem; border-radius: var(--radius-xl); border: 1px solid var(--border-color);">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--text-primary);">Need something else?</h2>
+            <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2.5rem;">We are constantly adding
+                new tools. Suggest a tool you'd like to see here!</p>
+            <a href="../contact-us.html" class="btn btn-primary"
+                style="padding: 1.2rem 2.5rem; font-weight: 700; border-radius: var(--radius-lg); background: var(--primary-gradient); color: white; text-decoration: none;">Suggest
+                a Tool</a>
+        </section>
+    </main>
+
+    <!-- Footer injected by shared script -->
+
+    <script src="../scripts/tools-data.js"></script>
+    <script src="../image-tools/js/shared/theme.js"></script>
+    <script src="../image-tools/js/shared/header.js"></script>
+    <script src="../image-tools/js/shared/breadcrumb.js"></script>
+    <script src="../image-tools/js/shared/footer.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof TOOLS_DATA === 'undefined') return;
+            const otherTools = TOOLS_DATA.otherTools.tools;
+            const allGrid = document.getElementById('all-tools');
+
+            otherTools.forEach((tool) => {
+                const card = document.createElement('a');
+                card.href = tool.url.replace('other-tools/', ''); // Since we are already in the directory
+                card.className = 'tool-card other';
+                card.innerHTML = `
+                    <div class="tool-icon">⚒️</div>
+                    <h3 class="tool-name">${tool.name}</h3>
+                    <p class="tool-desc">${tool.desc}</p>
+                    <span class="tool-badge">New</span>
+                `;
+                allGrid.appendChild(card);
+            });
+        });
+    </script>
+</body>
+
+</html>

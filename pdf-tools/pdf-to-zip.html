@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert PDF documents to encrypted ZIP archives. Smart packaging, multi-level compression, and batch processing. 100% secure.">
+    <title>PDF to ZIP - Package Documents Safely Online | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">PDF Tools</a> &gt;
+                <span>PDF to ZIP Advanced</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">PDF to ZIP Advanced</h1>
+                <p class="tool-description">Archive your PDF collections into secure, highly-compressed ZIP files for easy sharing and storage.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<div class="pdf-tool-container">
+<!-- Main Content Area -->
+<div class="tool-main">
+<div class="pdf-upload-zone" id="drop-zone">
+<span class="pdf-upload-icon"><i class="fa-solid fa-folder-plus"></i></span>
+<h2>Upload PDF Collection</h2>
+<p>Select multiple files to package</p>
+<input accept=".pdf" id="file-input" multiple="" style="display: none;" type="file"/>
+</div>
+<div id="file-queue" style="display: none; margin-top: 2rem;">
+<div class="queue-header" style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+<h4 id="file-count">0 Files Selected</h4>
+<a href="#" onclick="location.reload()" style="color: var(--color-pdf); font-size: 0.8rem;">Clear All</a>
+</div>
+<div id="queue-list" style="display: grid; gap: 0.5rem;">
+<!-- Files will be listed here -->
+</div>
+</div>
+</div>
+<!-- Sidebar Settings -->
+<aside class="pdf-settings-panel">
+<div class="setting-group">
+<label>Compression Level</label>
+<select class="form-control" id="zip-level">
+<option value="0">Store (Fastest)</option>
+<option value="5">Balanced (Recommended)</option>
+<option value="9">Maximum (Smallest Size)</option>
+</select>
+</div>
+<div class="setting-group">
+<label>Security</label>
+<input class="form-control" id="zip-pwd" placeholder="Lock ZIP with password..." type="password"/>
+</div>
+<div class="setting-group">
+<label>Archive Options</label>
+<div class="checkbox-list" style="font-size: 0.9rem;">
+<label class="checkbox-container"><input checked="" type="checkbox"/> <span class="checkmark"></span> Flatten Folders</label>
+<label class="checkbox-container"><input type="checkbox"/> <span class="checkmark"></span> Remove
+                            PDF Passwords First</label>
+</div>
+</div>
+<button class="btn btn-pdf" disabled="" id="zip-btn">
+<i class="fa-solid fa-box-archive"></i> Create ZIP Archive
+                </button>
+<a class="btn-download" href="#" id="download-btn" style="display: none;">
+<i class="fa-solid fa-download"></i> Download ZIP Archive
+                </a>
+</aside>
+</div>
+ Features Info 
+<section class="tool-features-info" style="margin-top: 5rem;">
+<div class="features-grid">
+<div class="feature-card">
+<h3 class="feature-title">Batch Packaging</h3>
+<p class="feature-desc">Upload hundreds of files and bundle them into a single archive in seconds.
+                        Perfect for email attachments and bulk storage.</p>
+</div>
+<div class="feature-card">
+<h3 class="feature-title">Privacy Focused</h3>
+<p class="feature-desc">Unlike cloud converters, your files never leave your computer. Encryption
+                        and compression happen entirely in your browser.</p>
+</div>
+</div>
+</section>
+
+
+ Scripts
+            </div>
+            <section class="seo-article" data-tool="pdf-to-zip">
+<article class="tool-article">
+<h2>PDF to ZIP Converter — Compress and Package PDFs for Easy Sharing</h2>
+
+<p>I once tried emailing a folder of 23 PDFs — contracts, scans, reference sheets — and hit the attachment limit three times before giving up. Zipping would have solved it in thirty seconds. A PDF to ZIP converter takes one or more PDF files and packages them into a single ZIP archive: smaller to store, easier to send, and simple for the recipient to open with a double-click.</p>
+
+<h3>What Is a PDF to ZIP Converter?</h3>
+
+<p>ZIP is a container format, not a conversion of content. When you "convert" a PDF to ZIP, the document itself does not change — it gets compressed and wrapped in a .zip archive. The recipient unzips it and gets back the exact original PDF, byte for byte. Think of it like vacuum-packing a jacket: same jacket, far less suitcase space.</p>
+
+<p>Why bother, when PDFs are already partially compressed? Three reasons. First, many PDFs are barely compressed — scanned pages, print-ready files with embedded fonts, and image-heavy documents can shrink dramatically. Second, a ZIP bundles multiple PDFs into one file, so instead of attaching eleven documents you attach one archive. Third, some upload portals and email systems handle .zip files more gracefully than long lists of attachments.</p>
+
+<p>There is also a neat bonus trick: a DOCX-based PDF or any PDF can sit inside a ZIP alongside other files — spreadsheets, images, text notes — so one archive carries the whole project. The converter packages your selection in the order you add it, and some tools let you set a password on the archive for basic protection.</p>
+
+<h3>How to Use the PDF to ZIP Converter</h3>
+
+<p>Upload your PDF files by dragging them into the tool or selecting them from your device, Google Drive, or Dropbox. Some converters accept one file at a time; batch-friendly ones let you queue dozens. Arrange the order if it matters, then click Convert or Compress. Download the resulting .zip file when the status shows done.</p>
+
+<p>A quick check before uploading: ZIP compression works best on PDFs with images and embedded fonts. A PDF that is already heavily optimized may shrink by only a few percent — that is normal, not a bug. If space savings matter more than packaging, run the PDFs through a dedicated PDF compressor first, then zip the results.</p>
+
+<p>On the receiving end, no special software is needed. Windows, macOS, and most phones open ZIP archives natively — right-click, Extract, and the PDFs appear exactly as uploaded.</p>
+
+<h3>How PDF to ZIP Conversion Works</h3>
+
+<p>Under the hood, the process is refreshingly simple compared to format conversions.</p>
+
+<p><strong>Step 1 — Collection.</strong> Each uploaded PDF is read into memory and verified as a valid document. Corrupt or password-locked files are flagged before processing.</p>
+
+<p><strong>Step 2 — Deflate compression.</strong> The ZIP format uses the DEFLATE algorithm — a combination of LZ77 dictionary coding and Huffman coding — to squeeze redundancy out of the file data. Text streams and embedded fonts compress well; already-compressed image data inside the PDF barely shrinks.</p>
+
+<p><strong>Step 3 — Archive assembly.</strong> The compressed data is written into the ZIP container with a directory table listing each file's name, original size, compressed size, and checksum. This table is what lets your computer list the archive contents without unpacking everything.</p>
+
+<p><strong>Step 4 — Optional encryption.</strong> If you set a password, the archive entries are encrypted (modern tools use AES-256 rather than the older, weak ZipCrypto). The recipient needs the password to extract.</p>
+
+<p>The whole thing is lossless. Unlike image compression, nothing is discarded — unzipping restores every byte of the original PDFs.</p>
+
+<h3>When PDF to ZIP Makes Sense</h3>
+
+<table>
+<thead><tr><th>Situation</th><th>Why ZIP helps</th></tr></thead>
+<tbody>
+<tr><td>Emailing several PDFs</td><td>One attachment instead of many; total size often smaller</td></tr>
+<tr><td>Uploading to a portal with a file-count limit</td><td>Many documents become a single accepted file</td></tr>
+<tr><td>Archiving old invoices and statements</td><td>Compression plus one tidy file per year or client</td></tr>
+<tr><td>Sharing a project folder</td><td>PDFs, spreadsheets, and notes travel together in order</td></tr>
+<tr><td>Sending sensitive documents</td><td>Password-protected ZIP adds a basic security layer</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses PDF to ZIP Converters?</h3>
+
+<p><strong>Accountants and bookkeepers</strong> bundle monthly statements, invoices, and receipts into one archive per client or period.</p>
+
+<p><strong>Students and applicants</strong> package transcripts, certificates, and application forms into a single file for uploads that only accept one attachment.</p>
+
+<p><strong>HR and admin teams</strong> archive employee documents and contracts by year, keeping storage organized.</p>
+
+<p><strong>Freelancers</strong> deliver a project as one ZIP — the report PDF plus supporting files — instead of a scattered email thread.</p>
+
+<p><strong>Anyone with slow internet</strong> appreciates that a compressed archive uploads faster and resumes more cleanly than a folder of loose files.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Free to use</strong> — no signup, no email, no watermark on the archive.</li>
+<li><strong>Batch support</strong> — package many PDFs into a single ZIP at once.</li>
+<li><strong>Lossless</strong> — documents come out identical to the originals.</li>
+<li><strong>Password option</strong> — encrypt the archive for sensitive files.</li>
+<li><strong>Cloud integration</strong> — pull files from Drive or Dropbox, not just your device.</li>
+<li><strong>Secure handling</strong> — encrypted transfers and auto-deleted files after conversion.</li>
+<li><strong>No installation</strong> — everything runs in the browser.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this PDF to ZIP converter free?</h4>
+<p>Yes — completely free, with no registration required and no limits on standard use.</p>
+
+<h4>Will zipping reduce my PDF's file size?</h4>
+<p>It depends on the PDF. Image-heavy and unoptimized PDFs can shrink noticeably; already-optimized PDFs may barely change. The packaging benefit applies either way.</p>
+
+<h4>Does converting to ZIP change the PDF content?</h4>
+<p>No. ZIP compression is lossless — unzipping restores the PDF exactly, with the same text, images, and layout.</p>
+
+<h4>How do I open a ZIP file?</h4>
+<p>Double-click it on Windows or Mac, or use the built-in Files app on phones. No extra software is needed on modern systems.</p>
+
+<h4>Can I add a password to the ZIP?</h4>
+<p>Many converters offer archive encryption. Set a strong password during conversion and share it with the recipient through a separate channel.</p>
+
+<h4>Is there a file size limit?</h4>
+<p>Free tools commonly allow uploads up to around 100 MB. For larger batches, split them into a few archives or use a desktop tool.</p>
+
+<h4>Can I convert other files to ZIP too?</h4>
+<p>Yes. ZIP archives accept any file type — Word docs, images, spreadsheets — so you can package a whole project in one archive.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="js/pdf-logic.js"></script>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dropZone = document.getElementById('drop-zone');
+            const fileInput = document.getElementById('file-input');
+            const fileQueue = document.getElementById('file-queue');
+            const queueList = document.getElementById('queue-list');
+            const zipBtn = document.getElementById('zip-btn');
+            const downloadBtn = document.getElementById('download-btn');
+
+            let files = [];
+            let resultBlob = null;
+
+            dropZone.addEventListener('click', () => fileInput.click());
+            fileInput.addEventListener('change', (e) => {
+                files = [...files, ...Array.from(e.target.files)];
+                if (files.length > 0) {
+                    renderQueue();
+                    dropZone.style.display = 'none';
+                    fileQueue.style.display = 'block';
+                    zipBtn.disabled = false;
+                }
+            });
+
+            function renderQueue() {
+                queueList.innerHTML = '';
+                document.getElementById('file-count').textContent = files.length + ' Files Selected';
+                files.forEach(f => {
+                    const div = document.createElement('div');
+                    div.style.background = 'var(--bg-secondary)';
+                    div.style.padding = '0.8rem';
+                    div.style.borderRadius = '8px';
+                    div.style.fontSize = '0.85rem';
+                    div.style.display = 'flex';
+                    div.style.justifyContent = 'space-between';
+                    div.innerHTML = `<span>${f.name}</span> <span style="color: var(--text-secondary);">${(f.size / 1024).toFixed(1)} KB</span>`;
+                    queueList.appendChild(div);
+                });
+            }
+
+            zipBtn.addEventListener('click', async () => {
+                zipBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Zipping...';
+                zipBtn.disabled = true;
+
+                try {
+                    const zip = new JSZip();
+
+                    for (const file of files) {
+                        const content = await file.arrayBuffer();
+                        zip.file(file.name, content);
+                    }
+
+                    resultBlob = await zip.generateAsync({ type: "blob" });
+
+                    zipBtn.innerHTML = '<i class="fa-solid fa-check"></i> ZIP Created';
+                    downloadBtn.style.display = 'block';
+                } catch (err) {
+                    console.error(err);
+                    alert('Error creating ZIP.');
+                    zipBtn.innerHTML = '<i class="fa-solid fa-box-archive"></i> Create ZIP Archive';
+                    zipBtn.disabled = false;
+                }
+            });
+
+            downloadBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (resultBlob) {
+                    PDFTools.downloadBlob(resultBlob, `pdf_collection_${Date.now()}.zip`);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

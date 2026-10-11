@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Invisible Character Tool | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Text & Writing</a> &gt;
+                <span>👻 Invisible Character Tool</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">👻 Invisible Character Tool</h1>
+                <p class="tool-description">Generate and detect invisible Unicode characters.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<div class="tool-workspace">
+<section class="settings-panel">
+<h2 class="section-title">⚙️ Character Type</h2>
+<div class="preset-buttons" id="char-buttons">
+<button class="preset-btn active" data-char="​">Zero Width Space (U+200B)</button>
+<button class="preset-btn" data-char="‌">Zero Width Non-Joiner</button>
+<button class="preset-btn" data-char="‍">Zero Width Joiner</button>
+<button class="preset-btn" data-char=" ">Non-Breaking Space</button>
+</div>
+<div class="settings-grid" style="margin-top:1rem;">
+<div class="setting-group">
+<label class="setting-label">Repeat Count</label>
+<input class="form-input" id="repeat-count" max="100" min="1" type="number" value="1"/>
+</div>
+</div>
+<div class="action-buttons" style="margin-top:1rem;">
+<button class="btn btn-primary" onclick="generateInvisible()">📋 Copy Invisible Char</button>
+</div>
+</section>
+<section class="input-section">
+<div class="section-header">
+<h2 class="section-title">🔍 Detect Mode - Paste Text</h2>
+</div>
+<textarea class="text-area" id="input-text" oninput="detect()" placeholder="Paste text to detect invisible chars..."></textarea>
+<div class="stats-panel" style="margin-top:1rem;">
+<div class="stat-item"><span class="stat-label">Found</span><span class="stat-value highlight" id="stat-found">0</span></div>
+</div>
+<div id="detection-results" style="margin-top:1rem;font-size:0.875rem;color:var(--text-secondary);">
+</div>
+</section>
+</div>
+            </div>
+            <section class="seo-article" data-tool="invisible-character">
+<article class="tool-article">
+<h2>Invisible Character — Copy Blank Unicode Text Online</h2>
+
+<p>Have you ever seen a WhatsApp message that looked completely empty — no text, no emoji, just a blank bubble? Or an Instagram bio with a perfectly empty line that the app normally refuses to save? The trick is an invisible character: a real Unicode character that takes up space but renders as nothing. This tool generates and detects them. Copy the invisible text, paste it anywhere, and watch people wonder how you did it.</p>
+
+<h3>What Is an Invisible Character?</h3>
+
+<p>Unicode — the system behind every character your device displays — includes several characters designed to be invisible. The most useful ones: <strong>Zero Width Space</strong> (U+200B), a space with no width; <strong>Zero Width Non-Joiner</strong> (U+200C) and <strong>Zero Width Joiner</strong> (U+200D), which control how adjacent characters connect in scripts like Arabic but are invisible in Latin text; and the <strong>Non-Breaking Space</strong> (U+00A0), which looks like a regular space but prevents line breaks. The generator produces these characters; the detector finds them hiding inside pasted text.</p>
+
+<p>They are invisible, but they are not nothing — the character is really there, occupying a position in the text. That is why apps accept them where they reject truly empty input. A "blank" message made of zero-width spaces passes a minimum-length check because, technically, it is not empty. A non-breaking space holds an Instagram bio line open where a normal space would collapse.</p>
+
+<h3>How to Use the Invisible Character Tool</h3>
+
+<p>Generating is a two-click job; detecting takes a paste.</p>
+
+<p>To generate: choose the invisible character type — zero-width space is the default and works almost everywhere. Set a repeat count if you need more than one (a single character usually suffices). Click copy, then paste into the app: an empty WhatsApp message, a blank Instagram bio line, a Discord username that looks empty, a form field that requires input you do not want to give.</p>
+
+<p>To detect: paste any suspicious text into the detector. It scans for invisible Unicode characters and reports what it found and where — useful when you receive a "blank" message and want to know what is actually in it, or when debugging text that behaves strangely (invisible characters in code and URLs are a classic source of mysterious bugs).</p>
+
+<p>One caution from experience: some platforms strip zero-width characters on paste, and a few treat them as suspicious in usernames. If it does not work in one app, try a different character type — non-breaking spaces survive in places zero-width spaces do not.</p>
+
+<h3>The Invisible Characters, Compared</h3>
+
+<table>
+<thead><tr><th>Character</th><th>Code</th><th>What it does</th><th>Common use</th></tr></thead>
+<tbody>
+<tr><td>Zero Width Space</td><td>U+200B</td><td>Invisible break opportunity</td><td>Blank messages, empty bios</td></tr>
+<tr><td>Zero Width Non-Joiner</td><td>U+200C</td><td>Prevents character joining</td><td>Breaking ligatures invisibly</td></tr>
+<tr><td>Zero Width Joiner</td><td>U+200D</td><td>Forces character joining</td><td>Emoji sequences (family, professions)</td></tr>
+<tr><td>Non-Breaking Space</td><td>U+00A0</td><td>Visible-width space, no line break</td><td>Holding empty lines open</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Invisible Characters?</h3>
+
+<p><strong>Social media users</strong> create blank messages, empty bio lines, and invisible usernames on WhatsApp, Instagram, and Discord.</p>
+
+<p><strong>Gamers</strong> make blank or "invisible" nicknames in games and chat platforms.</p>
+
+<p><strong>Designers</strong> use non-breaking spaces to control line breaks in headlines and layouts.</p>
+
+<p><strong>Developers</strong> use the detector to find invisible characters causing bugs in code, URLs, and data imports.</p>
+
+<p><strong>Testers</strong> use them for edge-case testing — how does the app handle "empty" input that is not really empty?</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Multiple character types</strong> — zero-width space, joiner, non-joiner, non-breaking space.</li>
+<li><strong>Repeat count</strong> — generate one character or a whole string of them.</li>
+<li><strong>One-click copy</strong> — the invisible text lands on your clipboard instantly.</li>
+<li><strong>Invisible character detector</strong> — paste text to find hidden characters inside it.</li>
+<li><strong>Works everywhere</strong> — paste into WhatsApp, Instagram, Discord, games, forms.</li>
+<li><strong>100% free</strong> — no signup, no limits.</li>
+<li><strong>Private by design</strong> — everything runs in your browser; nothing is uploaded.</li>
+<li><strong>Mobile friendly</strong> — generate on your phone, paste straight into apps.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>What is an invisible character?</h4>
+<p>A real Unicode character (like U+200B Zero Width Space) that occupies a position in text but renders as nothing visible. Apps treat it as content, so it passes "required field" and "minimum length" checks while looking blank.</p>
+
+<h4>How do I send a blank message on WhatsApp?</h4>
+<p>Copy an invisible character from the generator, paste it into the message box, and send. The bubble arrives empty. If one character type does not work, try another.</p>
+
+<h4>Can I make my Instagram bio have empty lines?</h4>
+<p>Yes — paste a non-breaking space or zero-width space on the "empty" line. Instagram collapses truly empty lines, but a line containing an invisible character stays.</p>
+
+<h4>How do I detect invisible characters in text?</h4>
+<p>Paste the text into the detector. It scans for zero-width and other invisible Unicode characters and shows you exactly what is hiding where.</p>
+
+<h4>Are invisible characters safe to use?</h4>
+<p>Generally yes for casual use. Avoid them in code, URLs, and passwords — an invisible character in a pasted password or URL is a classic cause of "it looks right but does not work" bugs.</p>
+
+<h4>Why did the platform remove my invisible text?</h4>
+<p>Some apps strip zero-width characters on paste or reject them in usernames as anti-abuse measures. Try a different character type, or accept that the platform blocks it.</p>
+
+<h4>Is this tool free?</h4>
+<p>Yes — completely free, no account needed.</p>
+
+<h4>Does anything I paste get uploaded?</h4>
+<p>No. Generation and detection both run entirely in your browser; nothing leaves your device.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="js/text-utils.js"></script>
+<script src="js/tool-ui.js"></script>
+<script>
+        ToolUI.init({ toolName: 'invisible-char' });
+        let selectedChar = '​';
+        document.querySelectorAll('#char-buttons .preset-btn').forEach(btn => {
+            btn.onclick = () => {
+                document.querySelectorAll('#char-buttons .preset-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                selectedChar = btn.dataset.char;
+            };
+        });
+        function generateInvisible() {
+            const count = parseInt(document.getElementById('repeat-count').value) || 1;
+            const text = selectedChar.repeat(count);
+            ToolUI.copyToClipboard(text);
+        }
+        function detect() {
+            const text = document.getElementById('input-text').value;
+            const found = TextUtils.detectInvisibleChars(text);
+            const total = found.reduce((s, f) => s + f.count, 0);
+            document.getElementById('stat-found').textContent = total;
+            document.getElementById('detection-results').innerHTML = found.length > 0
+                ? found.map(f => `<div>${f.name}: ${f.count}</div>`).join('')
+                : 'No invisible characters detected.';
+        }
+    </script>
+</body>
+</html>

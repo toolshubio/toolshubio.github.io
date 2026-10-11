@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free, pro JavaScript beautifier. Prettify messy JS code, fix indentation, and improve script readability 100% client-side.">
+    <title>Javascript Beautifier - Code Tools | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Code Tools</a> &gt;
+                <span>Javascript Beautifier</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Javascript Beautifier</h1>
+                <p class="tool-description">Un-minify and format cryptic JavaScript code into clean, readable source
+                    code.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+<div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+<div class="tool-workspace">
+<div class="tool-workspace">
+<div class="code-workspace">
+<div class="editor-container">
+<div class="editor-header">
+<span class="editor-title">Obscure JS</span>
+<button class="btn btn-sm btn-secondary" onclick="document.getElementById('input-code').value = ''; onInputChange()">Clear</button>
+</div>
+<textarea class="code-area" id="input-code" oninput="onInputChange()" placeholder="Paste your JS code here..."></textarea>
+<div class="code-stats" id="input-stats"></div>
+</div>
+<div class="editor-container">
+<div class="editor-header">
+<span class="editor-title">Clean JS</span>
+<button class="btn btn-sm btn-primary" onclick="CodeUI.copyToClipboard('output-code', this)">Copy Result</button>
+</div>
+<textarea class="code-area" id="output-code" placeholder="Output will appear here..." readonly=""></textarea>
+<div class="code-stats" id="output-stats"></div>
+</div>
+</div>
+<div class="action-bar">
+<div class="input-group" style="flex-direction: row; align-items: center; gap: 10px; margin: 0;">
+<label class="input-label" style="margin: 0;">Indent:</label>
+<select class="calc-select" id="indent-size" onchange="format()" style="width: 120px;">
+<option value="2">2 Spaces</option>
+<option selected="" value="4">4 Spaces</option>
+<option value="tab">Tabs</option>
+</select>
+</div>
+<button class="btn btn-primary btn-lg" onclick="format()">💎 Beautify JavaScript</button>
+</div>
+<section class="tool-content mt-12">
+<div class="content-grid">
+<div class="main-text">
+<h2>Master Your Code Review</h2>
+<p>Debugging third-party libraries or legacy code often involves dealing with minified
+                                scripts. Our JS Beautifier restores the structural integrity of the code, making it easy
+                                to trace logic flows and variable assignments.</p>
+<h3>Advanced Logic</h3>
+<ul>
+<li><strong>Brace Style:</strong> Consistent curly brace positioning.</li>
+<li><strong>Operator Spacing:</strong> Adds clarity to mathematical and logical
+                                    operations.</li>
+<li><strong>Newlines:</strong> Logical separation of functions and classes.</li>
+</ul>
+</div>
+<div class="faq-section">
+<h3>Usage Tip</h3>
+<div class="faq-item">
+<strong>Does this un-obfuscate?</strong>
+<p>It fixes formatting. While it helps in understanding obfuscated code by adding
+                                    whitespace, it does not rename variable names (e.g., `a`, `b`, `c`) back to their
+                                    original names.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="related-tools mt-12">
+<h3 class="panel-title">Related Code Tools</h3>
+<div class="related-tools-grid" id="related-tools"></div>
+</section>
+</div>
+</div>
+<section class="seo-article" data-tool="javascript-beautifier">
+<article class="tool-article">
+<h2>JavaScript Beautifier — Free Online JS Code Formatter</h2>
+
+<p>I have lost count of how many times I have opened a JavaScript file and found it crammed onto a single line — thousands of characters with no breaks, no indentation, nothing to hold onto. It usually comes from a library I downloaded, or from a previous developer who shipped minified code straight into the repo, or from me pasting a snippet out of a minified bundle in a hurry. A JavaScript beautifier takes that unreadable wall of code and reshapes it into something a human can actually read: proper line breaks, sensible indentation, braces where your eyes expect them. Paste the mess in, get clean formatting out, no install needed.</p>
+
+<h3>What Is a JavaScript Beautifier?</h3>
+
+<p>Think of it as the reverse of a minifier. Where a minifier strips everything a browser doesn't need (spaces, line breaks, comments) to shrink file size, a beautifier — sometimes called a formatter or unminifier — puts that structure back so your eyes can follow the logic. It works by parsing the code the way a browser engine does, recognizing functions, loops, and conditionals, then re-printing it with consistent rules.</p>
+
+<p>The thing I appreciate most is that beautifying never changes what the code does. It only changes whitespace and layout. Variable names, strings, and logic stay exactly as they were — which is why it's safe to run even on production scripts you need to understand quickly. If the output of the minifier on this site turned your file into one long line, this tool is the undo button.</p>
+
+<p>One detail beginners miss: a beautifier is not a validator. It will reformat code with missing semicolons and sloppy style happily, because its job is layout, not correctness. Pair it with a quick test in your browser console if you're unsure the original code actually runs.</p>
+
+<h3>How to Use the JavaScript Beautifier</h3>
+
+<p>The workflow takes about ten seconds. Copy your minified or badly formatted JavaScript — from a file, a <code>&lt;script&gt;</code> tag in your HTML, or the sources panel of your browser's dev tools — and paste it into the input box at the top of the tool.</p>
+
+<p>Set your indentation size (2 spaces is the most common convention in modern JavaScript projects; 4 spaces is the older standard). Then click the Beautify button and the formatted code appears in the output area. From there, copy it to your clipboard or save it as a <code>.js</code> file.</p>
+
+<p>If you're experimenting, use the sample button first. It loads a realistic snippet of messy code so you can see the before-and-after before touching your own file. I always do this when I inherit a script from someone else — it tells me instantly whether the tool's default style matches what I want to read.</p>
+
+<p>A habit worth building: if the original code has syntax errors — an unclosed brace, a stray parenthesis — the beautifier may produce odd output or refuse to parse. Fix the error first, then beautify. Also, don't beautify code you intend to ship to production; keep the minified version for deployment and the beautified version for reading. Small files get faster downloads, which is exactly what the minifier on this site is for.</p>
+
+<h3>Formatting Options Worth Knowing</h3>
+
+<p>Most good beautifiers give you a few dials to turn, and this tool follows that pattern.</p>
+
+<p><strong>Indent size.</strong> The number of spaces per nesting level. JavaScript style guides like Airbnb and Standard lean toward 2 spaces, while many older codebases use 4. Pick whichever matches the project you're working in, so the beautified code blends in rather than looking foreign.</p>
+
+<p><strong>Brace style.</strong> The two classic schools: "collapsed" (opening brace on the same line as the <code>if</code> or <code>function</code>) and "expanded" (opening brace on its own line). Collapsed is the dominant JavaScript convention — nearly every popular open-source project uses it — and expanded is common in C# and Java codebases. Neither is better; consistency with your team is what matters.</p>
+
+<p><strong>Preserve newlines.</strong> Some codebases deliberately leave big gaps between functions for visual breathing room. This option keeps those empty lines instead of collapsing everything to a uniform single gap. I leave it on when I'm reading unfamiliar code, since those gaps often mark the original author's mental sections.</p>
+
+<p>The table below shows how the same snippet changes with different brace styles:</p>
+
+<table>
+<thead><tr><th>Option</th><th>Example output</th></tr></thead>
+<tbody>
+<tr><td>Collapsed braces</td><td><code>function greet(name) { console.log("Hi, " + name); }</code></td></tr>
+<tr><td>Expanded braces</td><td><code>function greet(name)<br>{<br>&nbsp;&nbsp;console.log("Hi, " + name);<br>}</code></td></tr>
+<tr><td>2-space indent</td><td><code>if (ok) {<br>&nbsp;&nbsp;save();<br>}</code></td></tr>
+<tr><td>4-space indent</td><td><code>if (ok) {<br>&nbsp;&nbsp;&nbsp;&nbsp;save();<br>}</code></td></tr>
+</tbody>
+</table>
+
+<h3>Before and After Example</h3>
+
+<p>Here is a realistic chunk of minified code — the kind you get when you view-source a production site — and what the beautifier makes of it.</p>
+
+<p><strong>Input (minified):</strong></p>
+<p><code>function calc(a,b){var t=a+b;if(t>100){console.log("large:",t);}else{console.log("small:",t);}return t;}calc(40,70);</code></p>
+
+<p><strong>Output (beautified, 2-space indent, collapsed braces):</strong></p>
+<p><code>function calc(a, b) {<br>&nbsp;&nbsp;var t = a + b;<br>&nbsp;&nbsp;if (t &gt; 100) {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log("large:", t);<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log("small:", t);<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;return t;<br>}<br>calc(40, 70);</code></p>
+
+<p>Same logic, same behavior — but now I can trace it in seconds. That readability is also what makes debugging possible: line numbers in a stack trace only help if your code actually has lines. When I'm fixing a bug in someone else's script, beautifying is always step one before I even open the debugger.</p>
+
+<h3>Who Uses a JavaScript Beautifier?</h3>
+
+<p><strong>Front-end developers</strong> use it constantly — to read third-party libraries, to untangle code pasted from Stack Overflow, and to normalize style across files before a code review. A consistent brace style and indent size make pull requests far easier to review.</p>
+
+<p><strong>Students</strong> learning JavaScript get more from reading formatted code. A minified example from a tutorial becomes a teaching example once the structure is visible, and spotting the missing semicolon that broke a homework assignment is much easier with proper line breaks.</p>
+
+<p><strong>QA testers and support engineers</strong> beautify scripts from customer-reported issues. When a user pastes a broken snippet into a ticket, reformatting it is the fastest way to reproduce and isolate the problem.</p>
+
+<p><strong>Security researchers</strong> run beautifiers on obfuscated payloads. Malware and phishing kits hide their intent in compressed JavaScript, and a formatter is usually the first pass before deeper analysis — the equivalent of decoding a payload before reading it.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant formatting</strong> — paste messy code, get readable output in one click, even for long files.</li>
+<li><strong>100% free</strong> — no account, no limits, no watermark on your code.</li>
+<li><strong>Private by design</strong> — formatting runs in your browser; your source code is never uploaded.</li>
+<li><strong>Adjustable indent size</strong> — match the 2-space or 4-space convention of your project.</li>
+<li><strong>Brace style control</strong> — collapsed or expanded, whichever your team uses.</li>
+<li><strong>Newline preservation</strong> — keeps the blank-line spacing the original author intended.</li>
+<li><strong>Sample code</strong> — try a realistic example before formatting your own file.</li>
+<li><strong>Copy and download</strong> — send the result to your clipboard or save it as a <code>.js</code> file.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this JavaScript beautifier free?</h4>
+<p>Yes — free, no signup, and no limit on how much code you can format.</p>
+
+<h4>Does beautifying change how my code works?</h4>
+<p>No. Only whitespace and line breaks change. The logic, variable names, and behavior stay identical.</p>
+
+<h4>Can it format minified jQuery plugins?</h4>
+<p>Yes. Paste the minified plugin source and the tool restructures it into readable, indented code.</p>
+
+<h4>What is the difference between beautifying and minifying?</h4>
+<p>They are opposites: beautifying adds formatting for humans, minifying strips it for smaller downloads. Use the beautifier while developing and debugging, and the minifier when deploying.</p>
+
+<h4>Will it fix syntax errors in my code?</h4>
+<p>No — it only adjusts layout. If the code has an unclosed brace or bad syntax, fix that first, then beautify.</p>
+
+<h4>Which indent size should I choose?</h4>
+<p>Match your project: 2 spaces is the modern JavaScript standard (Airbnb, Standard.js), 4 spaces is common in older codebases.</p>
+
+<h4>Is my code uploaded to a server?</h4>
+<p>No. All formatting happens locally in your browser, so private or client code stays private.</p>
+
+<h4>Can I beautify code from a URL or file?</h4>
+<p>Paste the code directly into the input box. For a file, open it in any text editor, copy the contents, and paste.</p>
+</article>
+</section>
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.7/beautify.min.js"></script>
+<script src="../code-format-tools/js/code-utils.js"></script>
+<script src="../code-format-tools/js/code-ui.js"></script>
+<script>
+        CodeUI.init({ toolName: 'javascript-beautifier' });
+
+        function onInputChange() {
+            const code = document.getElementById('input-code').value;
+            CodeUI.renderStats('input-stats', CodeUtils.getStats(code));
+        }
+
+        function format() {
+            const input = document.getElementById('input-code').value;
+            if (!input) return;
+
+            const indentField = document.getElementById('indent-size').value;
+            const options = {
+                indent_size: indentField === 'tab' ? 1 : parseInt(indentField),
+                indent_with_tabs: indentField === 'tab',
+                space_in_empty_paren: true
+            };
+
+            const output = js_beautify(input, options);
+            document.getElementById('output-code').value = output;
+            CodeUI.renderStats('output-stats', CodeUtils.getStats(output));
+        }
+
+        CodeUI.renderRelated('related-tools', [
+            { icon: '🔥', name: 'JS Minifier', desc: 'Optimize performance', url: '../minifiers/javascript-minifier.html' },
+            { icon: '🎨', name: 'JSON Formatter', desc: 'Format JSON data', url: 'json-formatter.html' },
+            { icon: 'ðŸ”', name: 'Base64 Tool', desc: 'Safe encoding', url: '../encoders/base64-encoder-decoder.html' }
+        ]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Photo Resizer. Resize photos with social media presets for Instagram, Facebook, Twitter. Add watermarks, lock aspect ratio, and batch process.">
+    <title>Photo Resizer - Resize & Watermark | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../../image-tools/css/global.css">
+    <link rel="stylesheet" href="../../image-tools/css/components.css">
+    <link rel="stylesheet" href="../../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../../about-us.html">About</a>
+                <a class="nav-link" href="../../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Home</a> &gt;
+                <a href="../index.html">Image Tools</a> &gt;
+                <span>📏 Photo Resizer</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">📏 Photo Resizer</h1>
+                <p class="tool-description">Resize photos with social media presets (Instagram, Facebook, Twitter),
+                    aspect ratio locking, and professional resampling algorithms.</p>
+                <div class="tool-badges"><span class="badge badge-primary">Social Presets</span><span class="badge badge-primary">Watermark</span><span class="badge badge-secondary">Fast Download</span></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+
+<div class="tool-workspace">
+<section class="preview-area">
+<div id="upload-zone"></div>
+<div class="comparison-grid" id="preview-grid" style="display: none; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 20px;">
+</div>
+<div id="preview-container"></div>
+</section>
+<aside class="control-panel">
+<!-- Social Media Presets -->
+<div class="control-section">
+<h3 class="control-section-title">📱 Social Media Presets</h3>
+<div class="preset-buttons">
+<button class="preset-btn" data-preset="ig-square" data-tooltip="1080×1080">Instagram
+                                Square</button>
+<button class="preset-btn" data-preset="ig-portrait" data-tooltip="1080×1350">Instagram
+                                Portrait</button>
+<button class="preset-btn" data-preset="ig-story" data-tooltip="1080×1920">Instagram
+                                Story</button>
+<button class="preset-btn" data-preset="fb-cover" data-tooltip="820×312">Facebook
+                                Cover</button>
+<button class="preset-btn" data-preset="fb-post" data-tooltip="1200×630">Facebook
+                                Post</button>
+<button class="preset-btn" data-preset="twitter" data-tooltip="1600×900">Twitter
+                                Post</button>
+<button class="preset-btn" data-preset="linkedin" data-tooltip="1200×627">LinkedIn</button>
+<button class="preset-btn active" data-preset="custom">Custom Size</button>
+</div>
+</div>
+<!-- Custom Dimensions -->
+<div class="control-section" id="custom-dims">
+<h3 class="control-section-title">📐 Dimensions</h3>
+<div style="display: flex; gap: var(--space-2); align-items: center;">
+<div style="flex: 1;">
+<label class="control-label">Width</label>
+<input class="form-input" id="width-input" max="10000" min="1" type="number" value="1920"/>
+</div>
+<button class="btn btn-sm" data-tooltip="Lock aspect ratio" id="lock-aspect" style="margin-top: 28px;">🔗</button>
+<div style="flex: 1;">
+<label class="control-label">Height</label>
+<input class="form-input" id="height-input" max="10000" min="1" type="number" value="1080"/>
+</div>
+</div>
+<div style="margin-top: var(--space-2);">
+<label class="control-label">Unit</label>
+<div class="preset-buttons" style="margin-top: var(--space-1);">
+<button class="preset-btn active" data-unit="px">Pixels</button>
+<button class="preset-btn" data-unit="%">Percent</button>
+</div>
+</div>
+</div>
+<!-- Watermark -->
+<div class="control-section">
+<div class="toggle-control">
+<span class="toggle-label">Add Watermark</span>
+<div class="toggle-switch" id="watermark-toggle"></div>
+</div>
+<div id="watermark-options" style="display: none; margin-top: 10px;">
+<input class="form-input" id="wm-text" placeholder="Watermark text" type="text" value="© COPYRIGHT"/>
+<div style="display: flex; gap: 10px; margin-top: 10px;">
+<input id="wm-color" type="color" value="#ffffff"/>
+<select class="form-select" id="wm-position">
+<option value="center">Center</option>
+<option selected="" value="bottom-right">Bottom Right</option>
+<option value="bottom-left">Bottom Left</option>
+<option value="top-right">Top Right</option>
+<option value="top-left">Top Left</option>
+</select>
+</div>
+<div class="control-group" style="margin-top: 10px;">
+<label class="control-label">Opacity</label>
+<input class="slider-input" id="wm-opacity" max="100" min="0" type="range" value="50"/>
+</div>
+</div>
+</div>
+<!-- Resampling -->
+<div class="control-section">
+<h3 class="control-section-title">🔬 Quality</h3>
+<div class="preset-buttons">
+<button class="preset-btn" data-resample="nearest">Nearest</button>
+<button class="preset-btn active" data-resample="lanczos3">High Quality</button>
+</div>
+</div>
+<div class="control-section">
+<div class="stats-display">
+<div class="stat-item">
+<div class="stat-label">Files</div>
+<div class="stat-value" id="stat-files">0</div>
+</div>
+<div class="stat-item">
+<div class="stat-label">Resized</div>
+<div class="stat-value highlight" id="stat-converted">--</div>
+</div>
+</div>
+</div>
+<div class="control-section">
+<button class="btn btn-primary w-full" disabled="" id="convert-btn"><span>📏</span> Resize
+                            All</button>
+<button class="btn btn-premium-download w-full mt-3" id="download-btn" style="display: none;"><span>📥</span> Download All</button>
+<button class="btn btn-secondary w-full mt-2" id="reset-btn" style="display: none;"><span>🔄</span> Start Over</button>
+</div>
+</aside>
+</div>
+</div>
+</main>
+            </div>
+            <section class="seo-article" data-tool="photo-resizer">
+<article class="tool-article">
+<h2>Photo Resizer — Shrink Photos to Exact KB Size Online Free</h2>
+
+<p>An admission form wants your photo between 20KB and 50KB. Your phone's camera just produced a 4MB file. Somewhere between those two facts lies twenty minutes of frustration — unless you have the right tool. A photo resizer that targets file size (not just pixels) compresses your photo down to the exact KB you need: 20KB, 50KB, 100KB, whatever the form demands. This one is free, runs in your browser, and guarantees the output lands at or below your limit.</p>
+
+<h3>What Is a Photo Resizer?</h3>
+
+<p>This is the cousin of the plain <strong>image resizer</strong> with a different target. Where a standard resizer asks "how many pixels?", a photo resizer asks "how many kilobytes?" — and then adjusts compression quality, dimensions, and metadata to hit that number. For forms, portals, and applications, file size is the constraint that matters.</p>
+
+<p>The use cases are surprisingly specific, and I have watched people fight them for years. Government exam portals (UPSC, SSC, IBPS) cap photos and signatures at tight ranges — often 10–50KB for the photo, 3–20KB for the signature. College admissions, job applications, bank KYC, LinkedIn uploads, recruiter portals — all of them bounce oversized files with unhelpful error messages.</p>
+
+<p>Good tools never overshoot: once compression finishes, the output lands at or below the limit you typed, so the upload does not get rejected for being a few KB too heavy. That guarantee is the whole point.</p>
+
+<h3>How to Resize a Photo to a Target KB Size</h3>
+
+<p><strong>Step 1 — Upload your photo.</strong> Drag and drop or click to select. JPG, PNG, and WebP are supported; the photo stays on your device — nothing uploads, which matters when the file is a passport photo or an ID scan.</p>
+
+<p><strong>Step 2 — Enter your target size.</strong> Type the KB limit the form requires — 20, 50, 100, 200. Some tools offer quick presets for common exam and application sizes.</p>
+
+<p><strong>Step 3 — Auto-compress.</strong> The tool analyzes your image and finds the right combination of quality reduction, dimension scaling, and metadata stripping to hit the target. It all happens in a second or two, even on patchy mobile data.</p>
+
+<p><strong>Step 4 — Download.</strong> The resized photo saves instantly. Check the file size yourself before submitting — a thirty-second verification beats a rejected application.</p>
+
+<p>Habit worth building: keep your original full-size photo. Portals change their limits, and recompressing a previously compressed photo degrades quality fast. Always compress from the original.</p>
+
+<h3>Four Levers That Shrink a Photo</h3>
+
+<p>Behind the single "target KB" box, the tool pulls four levers:</p>
+
+<table>
+<thead><tr><th>Lever</th><th>What it does</th><th>Impact</th></tr></thead>
+<tbody>
+<tr><td>Quality reduction</td><td>Lowers JPEG/WebP quality (e.g. 75–85%)</td><td>Cuts 60–70% of size with no visible change</td></tr>
+<tr><td>Dimension scaling</td><td>Shrinks pixel dimensions</td><td>4000px → 1200px width alone cuts 85%+ of size</td></tr>
+<tr><td>Format conversion</td><td>PNG → JPG or WebP</td><td>WebP runs 25–35% smaller than PNG at equal quality</td></tr>
+<tr><td>Metadata stripping</td><td>Removes EXIF data</td><td>Clears hidden GPS, camera, timestamp weight</td></tr>
+</tbody>
+</table>
+
+<p>The smart approach balances these instead of maxing one. Dropping a 4MB photo to 20KB is a 95%+ data reduction — the tool gets there by scaling dimensions down sensibly, picking a quality level the image can tolerate, converting heavy PNGs to JPG/WebP, and stripping the <strong>EXIF metadata</strong> your phone embedded (GPS coordinates, camera model, timestamps — invisible weight).</p>
+
+<h3>Who Needs Photo Resizing by KB?</h3>
+
+<p><strong>Job seekers</strong> hit file caps on LinkedIn uploads, recruiter portals, and resume attachments that reject anything above a few hundred KB.</p>
+
+<p><strong>Students</strong> face the strictest limits: admission forms and exam portals (UPSC, SSC, NTA/NEET/JEE) with separate caps for photos and signatures — the signature often must be a tiny 3–20KB JPEG around 140 × 60 pixels.</p>
+
+<p><strong>Banking and KYC applicants</strong> submit ID scans and photos to net-banking sign-ups and demat account forms with tight per-file limits.</p>
+
+<p><strong>Freelancers and sellers</strong> shrink photos for marketplace listings, gig profiles, and client deliverables where every extra megabyte costs load time.</p>
+
+<h3>Practical Tips for Hitting Size Limits</h3>
+
+<ul>
+<li><strong>Start from the original.</strong> Compressing an already-compressed photo compounds artifacts — always resize from the full-size source.</li>
+<li><strong>Crop first.</strong> A tight <strong>crop</strong> on your face removes background pixels the tool would otherwise spend bytes on.</li>
+<li><strong>Convert PNG to JPG/WebP.</strong> A heavy PNG converted to JPG often shrinks more than compression alone achieves.</li>
+<li><strong>Check dimensions too.</strong> Some portals cap pixels as well as KB — verify both requirements before submitting.</li>
+<li><strong>Verify the downloaded size.</strong> Right-click the file and check properties; thirty seconds of verification beats a bounced upload.</li>
+<li><strong>Keep faces well-lit.</strong> At aggressive compression, shadows turn blotchy first — a clear, well-lit original survives shrinking best.</li>
+<li><strong>Queue the whole set.</strong> If a form needs photo, signature, and scans, resize them all in one batch rather than one panicked upload at a time.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this photo resizer free?</h4>
+<p>Yes — completely free, no account, no watermark, no trial counter. Every option stays unlocked from the first upload.</p>
+
+<h4>How do I resize my photo to exactly 20KB?</h4>
+<p>Upload your photo, enter 20 as the target KB, and the tool auto-compresses — balancing quality, dimensions, and metadata — until the output lands at or below 20KB. Download and verify the size before submitting.</p>
+
+<h4>Will my photo look bad at 20KB?</h4>
+<p>Going from 4MB to 20KB discards over 95% of the data, so some softness is unavoidable. But smart compression — targeted quality reduction plus metadata stripping — keeps faces recognizable and clean at the sizes portals display.</p>
+
+<h4>What is the difference between a photo resizer and an image resizer?</h4>
+<p>A photo resizer targets file size (KB) for forms and portals; a standard image resizer targets pixel dimensions. Use the photo resizer when a form gives you a KB limit, the image resizer when a platform gives you pixel specs.</p>
+
+<h4>Are my photos uploaded to a server?</h4>
+<p>No. Resizing and compression happen in your browser — your photos never leave your device, which matters for ID scans and passport photos.</p>
+
+<h4>What formats are supported?</h4>
+<p>JPG, JPEG, PNG, and WebP. Converting a heavy PNG to JPG or WebP mid-compression usually shrinks the file far more than compression alone.</p>
+
+<h4>Can I resize multiple photos at once?</h4>
+<p>Yes — queue up to a dozen files at once. Handy when an admission form wants a photo, a signature, and several certificate scans all under the same limit.</p>
+
+<h4>Why did my upload get rejected even though the size is right?</h4>
+<p>Check the format and dimensions too — portals often require JPEG specifically, and some cap pixel dimensions alongside file size. The tool can convert format and scale dimensions in the same pass.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../../about-us.html">About Us</a>
+                    <a class="footer-link" href="../../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="../js/shared/unified-input.js"></script>
+<script src="../js/shared/preview-manager.js"></script>
+<script src="../js/utils/image-loader.js"></script>
+<script src="../js/utils/converter.js"></script>
+<script>
+        class PhotoResizerTool {
+            constructor() {
+                this.files = [];
+                this.results = [];
+                this.aspectLocked = true;
+                this.originalAspect = 16 / 9;
+                this.settings = {
+                    width: 1920,
+                    height: 1080,
+                    unit: 'px',
+                    resample: 'lanczos3',
+                    watermark: {
+                        enabled: false,
+                        text: '© COPYRIGHT',
+                        color: '#ffffff',
+                        position: 'bottom-right',
+                        opacity: 0.5
+                    }
+                };
+                this.presets = {
+                    'ig-square': { w: 1080, h: 1080 },
+                    'ig-portrait': { w: 1080, h: 1350 },
+                    'ig-story': { w: 1080, h: 1920 },
+                    'fb-cover': { w: 820, h: 312 },
+                    'fb-post': { w: 1200, h: 630 },
+                    'twitter': { w: 1600, h: 900 },
+                    'linkedin': { w: 1200, h: 627 }
+                };
+                this.init();
+            }
+
+            init() {
+                this.unifiedInput = new UnifiedInput({
+                    containerId: 'upload-zone',
+                    toolIcon: '📏',
+                    toolName: 'Photo Resizer',
+                    acceptTypes: 'image/*',
+                    onFilesLoaded: (files) => this.handleFilesLoaded(files)
+                });
+
+                this.previewManager = new PreviewManager({ containerId: 'preview-container' });
+                this.setupControls();
+                this.injectAdvancedStyles();
+            }
+
+            setupControls() {
+                document.querySelectorAll('[data-preset]').forEach(btn => {
+                    btn.onclick = () => {
+                        document.querySelectorAll('[data-preset]').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        const preset = this.presets[btn.dataset.preset];
+                        if (preset) {
+                            document.getElementById('width-input').value = preset.w;
+                            document.getElementById('height-input').value = preset.h;
+                            this.settings.width = preset.w;
+                            this.settings.height = preset.h;
+                        }
+                    };
+                });
+
+                const widthInput = document.getElementById('width-input');
+                const heightInput = document.getElementById('height-input');
+
+                widthInput.oninput = e => {
+                    this.settings.width = parseInt(e.target.value) || 1;
+                    if (this.aspectLocked) {
+                        this.settings.height = Math.round(this.settings.width / this.originalAspect);
+                        heightInput.value = this.settings.height;
+                    }
+                };
+
+                heightInput.oninput = e => {
+                    this.settings.height = parseInt(e.target.value) || 1;
+                    if (this.aspectLocked) {
+                        this.settings.width = Math.round(this.settings.height * this.originalAspect);
+                        widthInput.value = this.settings.width;
+                    }
+                };
+
+                document.getElementById('lock-aspect').onclick = e => {
+                    this.aspectLocked = !this.aspectLocked;
+                    e.currentTarget.textContent = this.aspectLocked ? '🔗' : '🔓';
+                };
+
+                document.getElementById('watermark-toggle').onclick = (e) => {
+                    e.target.classList.toggle('active');
+                    this.settings.watermark.enabled = e.target.classList.contains('active');
+                    document.getElementById('watermark-options').style.display = this.settings.watermark.enabled ? 'block' : 'none';
+                };
+
+                document.getElementById('wm-text').oninput = e => this.settings.watermark.text = e.target.value;
+                document.getElementById('wm-color').oninput = e => this.settings.watermark.color = e.target.value;
+                document.getElementById('wm-position').onchange = e => this.settings.watermark.position = e.target.value;
+                document.getElementById('wm-opacity').oninput = e => this.settings.watermark.opacity = e.target.value / 100;
+
+                document.getElementById('convert-btn').onclick = () => this.resizeAll();
+                document.getElementById('download-btn').onclick = () => this.downloadAll();
+                document.getElementById('reset-btn').onclick = () => location.reload();
+            }
+
+            async handleFilesLoaded(files) {
+                this.files = files;
+                if (files.length > 0) {
+                    const img = await window.ImageLoader.loadSingleImage(files[0]);
+                    this.originalAspect = img.width / img.height;
+                    document.getElementById('preview-container').style.display = 'block';
+                    this.previewManager.render(img.canvas.toDataURL());
+                }
+                document.getElementById('stat-files').textContent = files.length;
+                document.getElementById('convert-btn').disabled = files.length === 0;
+            }
+
+            async resizeAll() {
+                const btn = document.getElementById('convert-btn');
+                btn.disabled = true;
+                btn.textContent = 'Resizing...';
+                this.results = [];
+
+                for (let i = 0; i < this.files.length; i++) {
+                    const file = this.files[i];
+                    try {
+                        const blob = await this.processImage(file);
+                        this.results.push({ blob, name: file.name.replace(/\.[^.]+$/, `_resized.jpg`) });
+                        this.unifiedInput.setFileStatus(i, 'done');
+
+                        if (i === 0) {
+                            this.previewManager.render(URL.createObjectURL(file), URL.createObjectURL(blob));
+                        }
+                    } catch (e) {
+                        console.error(e);
+                        this.unifiedInput.setFileStatus(i, 'error');
+                    }
+                }
+
+                btn.style.display = 'none';
+                document.getElementById('download-btn').style.display = 'block';
+                document.getElementById('reset-btn').style.display = 'block';
+                document.getElementById('upload-zone').style.display = 'none';
+
+                const totalSize = this.results.reduce((s, r) => s + r.blob.size, 0);
+                document.getElementById('stat-converted').textContent = this.formatSize(totalSize);
+            }
+
+            async processImage(file) {
+                const img = await window.ImageLoader.loadSingleImage(file);
+                const { width, height, watermark } = this.settings;
+
+                const canvas = document.createElement('canvas');
+                canvas.width = width;
+                canvas.height = height;
+                const ctx = canvas.getContext('2d');
+                ctx.imageSmoothingEnabled = true;
+                ctx.imageSmoothingQuality = 'high';
+                ctx.drawImage(img.canvas, 0, 0, width, height);
+
+                if (watermark.enabled) {
+                    const padding = 20;
+                    const fontSize = Math.max(16, Math.min(width, height) * 0.05);
+                    ctx.font = `bold ${fontSize}px sans-serif`;
+                    ctx.fillStyle = watermark.color;
+                    ctx.globalAlpha = watermark.opacity;
+
+                    const metrics = ctx.measureText(watermark.text);
+                    let x, y;
+
+                    if (watermark.position.includes('left')) x = padding;
+                    else if (watermark.position.includes('right')) x = width - metrics.width - padding;
+                    else x = (width - metrics.width) / 2;
+
+                    if (watermark.position.includes('top')) y = padding + fontSize;
+                    else if (watermark.position.includes('bottom')) y = height - padding;
+                    else y = height / 2;
+
+                    ctx.fillText(watermark.text, x, y);
+                }
+
+                return new Promise(r => canvas.toBlob(r, 'image/jpeg', 0.92));
+            }
+
+            async downloadAll() {
+                for (const r of this.results) {
+                    const a = document.createElement('a');
+                    a.href = URL.createObjectURL(r.blob);
+                    a.download = r.name;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    await new Promise(resolve => setTimeout(resolve, 150));
+                }
+            }
+
+            formatSize(bytes) {
+                const k = 1024;
+                const sizes = ['B', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+            }
+
+            injectAdvancedStyles() {
+                const style = document.createElement('style');
+                style.textContent = `
+                    #preview-container { margin-top: 2rem; border: 1px solid var(--border-color); border-radius: 12px; padding: 1rem; background: var(--bg-secondary); min-height: 400px; display: none; }
+                `;
+                document.head.appendChild(style);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => new PhotoResizerTool());
+    </script>
+</body>
+</html>

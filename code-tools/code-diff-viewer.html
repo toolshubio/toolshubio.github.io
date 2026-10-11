@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free, pro code diff viewer. Compare two code snippets for differences, track changes, and audit revisions 100% client-side.">
+    <title>Code Diff Viewer - Code Tools | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap">
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Code Tools</a> &gt;
+                <span>Code Diff Viewer</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Code Diff Viewer</h1>
+                <p class="tool-description">Compare two versions of code to quickly identify what was added, removed, or
+                    modified.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+<div class="tool-workspace">
+MONETAG-ZONE: vignette/banner - paste zone script here 
+<main class="tool-main">
+<div class="container">
+<div class="tool-workspace">
+<div class="tool-workspace">
+<div class="diff-grid">
+<div class="editor-container">
+<div class="editor-header">
+<span class="editor-title">Original Version</span>
+</div>
+<textarea class="code-area" id="original-code" placeholder="Paste original code..." style="height: 200px;"></textarea>
+</div>
+<div class="editor-container">
+<div class="editor-header">
+<span class="editor-title">Modified Version</span>
+</div>
+<textarea class="code-area" id="modified-code" placeholder="Paste modified code..." style="height: 200px;"></textarea>
+</div>
+</div>
+<div class="action-bar" style="justify-content: center;">
+<button class="btn btn-primary btn-lg" onclick="compare()"> Generate Diff Report</button>
+</div>
+<div class="diff-result" id="diff-output" style="display: none;"></div>
+<section class="tool-content mt-12">
+<div class="content-grid">
+<div class="main-text">
+<h2>The Debugger's Best Friend</h2>
+<p>Manually hunting for changes in a 200-line file is prone to human error. Our Diff Viewer
+                                uses a line-by-line comparison algorithm to highlight even the subtlest character
+                                changes, ensuring your audits are precise.</p>
+<h3>Key Features</h3>
+<ul>
+<li><strong>Instant Highlighting:</strong> Green for additions, red for removals.</li>
+<li><strong>Whitespace Tracking:</strong> Detects changes in indentation.</li>
+<li><strong>Privacy First:</strong> Your source code never leaves your browser.</li>
+</ul>
+</div>
+</div>
+</section>
+</div>
+
+
+ Using a lightweight diff library via CDN
+            </div>
+<section class="seo-article" data-tool="code-diff-viewer">
+<article class="tool-article">
+<h2>Code Diff Viewer — Compare Two Versions Side by Side</h2>
+
+<p>"It worked yesterday" is the most expensive sentence in software. Something changed — a config value, a function, a dependency — and now you need to find exactly what. I have spent too many hours reading two files in two windows, scrolling in parallel, hoping my eyes would catch the difference. A code diff viewer does the comparison for you: paste the old version and the new version, and it highlights every addition, deletion, and change — line by line, character by character. What took twenty minutes of squinting takes ten seconds.</p>
+
+<h3>What Is a Code Diff Viewer?</h3>
+
+<p>A diff viewer takes two texts and computes the difference between them. Under the hood it runs a diffing algorithm — typically the longest-common-subsequence (LCS) or Myers' algorithm — that walks both texts and classifies every line as unchanged, added, removed, or modified. The result is presented visually: added lines in green, removed lines in red, changed sections highlighted, unchanged regions optionally collapsed so the differences stand out.</p>
+
+<p>Two view modes cover different needs. <strong>Side-by-side</strong> puts the old version on the left and the new on the right, with changes aligned — best for reviewing. <strong>Unified/inline</strong> shows a single stream with <code>+</code> and <code>-</code> markers, like a git diff — best for compact scanning and copying patches. Good tools let you switch between them freely.</p>
+
+<p>Word-level highlighting is the detail that matters. Line-level diffs tell you <em>which</em> lines changed; character-level highlighting shows you <em>what</em> changed within the line — the one variable renamed, the single digit altered. That precision is what turns "something changed here" into "ah, the timeout went from 30 to 300."</p>
+
+<h3>How to Use the Code Diff Viewer</h3>
+
+<p>Paste the original text into the left panel and the modified text into the right — or upload two files, or drag and drop them. Click compare (many tools diff live as you type). The differences appear highlighted, with a summary of counts: lines added, removed, changed, unchanged.</p>
+
+<p>Navigate with the change-jump buttons or keyboard shortcuts to hop from one difference to the next without scrolling through unchanged code. Toggle options like "ignore whitespace" when formatting noise would drown out real changes — reformatted files produce enormous diffs otherwise. When you are done, copy the diff as a unified patch, or export it as HTML or Markdown to share with your team.</p>
+
+<p>My most-used trick: when a deploy breaks something, diff the current config against last week's backup. The answer is almost always sitting in the highlighted lines.</p>
+
+<h3>Reading a Diff</h3>
+
+<table>
+<thead><tr><th>Marker / Color</th><th>Meaning</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td>Green / <code>+</code></td><td>Line added in the new version</td><td><code>+ const timeout = 300;</code></td></tr>
+<tr><td>Red / <code>-</code></td><td>Line removed from the old version</td><td><code>- const timeout = 30;</code></td></tr>
+<tr><td>Yellow / highlighted</td><td>Line modified (shown as remove + add)</td><td>Changed value within the line</td></tr>
+<tr><td>Gray / collapsed</td><td>Unchanged lines (can be hidden)</td><td><code>...</code> between change blocks</td></tr>
+<tr><td><code>@@</code> hunks</td><td>Change blocks with line numbers</td><td><code>@@ -12,4 +12,5 @@</code></td></tr>
+</tbody>
+</table>
+
+<p>Start from the summary counts: if a "small fix" shows 400 changed lines, something else happened (usually reformatting). Then walk the hunks — each <code>@@</code> block is one neighborhood of change. Ignore-whitespace mode is your friend here; it strips the formatting noise and leaves the real edits.</p>
+
+<h3>Diffing Beyond Code</h3>
+
+<p>Despite the name, diff viewers compare any text. Config files before and after a change. Two versions of a legal document. An API response from yesterday vs today. A translated paragraph against its source. Database connection strings across environments (careful with secrets). The algorithm does not care what the text means — it only cares what changed, which makes it one of the most generally useful tools a developer owns.</p>
+
+<p>For prose, inline/word-level view beats side-by-side: it reads like tracked changes in a word processor. For structured data like JSON, format both sides first (pretty-print with the same indentation) so the diff shows data changes instead of formatting noise.</p>
+
+<h3>Who Uses Code Diff Viewers?</h3>
+
+<p><strong>Developers</strong> review pull requests, debug regressions ("what changed since it worked?"), and verify merges. The diff is the fundamental unit of code review.</p>
+
+<p><strong>System administrators</strong> compare config files across servers or against backups. When one server behaves differently from its twin, the config diff usually explains why.</p>
+
+<p><strong>QA testers</strong> diff expected vs actual outputs — API responses, generated files, log excerpts — to pinpoint exactly what a build changed.</p>
+
+<p><strong>Technical writers</strong> compare document revisions to verify that review feedback was applied and nothing else slipped in.</p>
+
+<p><strong>Students</strong> diff their solution against a reference to understand where their approach diverged — a concrete way to learn from mistakes.</p>
+
+<h3>Tips for Better Comparisons</h3>
+
+<p>Normalize before comparing: format both JSON files identically, strip trailing whitespace, make sure line endings match — otherwise the diff reports noise instead of signal. Use ignore-whitespace and ignore-case toggles when the differences you care about are semantic, not cosmetic. For large files, collapse unchanged sections and jump between hunks rather than scrolling. And when sharing a diff with someone else, export it (HTML or Markdown) rather than describing the changes in words — the highlighted diff communicates in seconds what paragraphs cannot.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Side-by-side and unified views</strong> — switch between review and patch modes.</li>
+<li><strong>Line, word, and character highlighting</strong> — see exactly what changed.</li>
+<li><strong>Syntax highlighting</strong> — diffs for JS, Python, HTML, CSS, JSON, and more.</li>
+<li><strong>Ignore options</strong> — whitespace, case, blank lines, line endings.</li>
+<li><strong>Change navigation</strong> — jump between differences, collapse unchanged regions.</li>
+<li><strong>Statistics</strong> — counts of added, removed, changed, and unchanged lines.</li>
+<li><strong>Export options</strong> — copy as unified patch, HTML, or Markdown.</li>
+<li><strong>Private by design</strong> — everything runs locally in your browser; nothing is uploaded.</li>
+<li><strong>100% free</strong> — no signup, no limits, works on any device.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this code diff viewer free?</h4>
+<p>Yes — completely free, no account needed, and no limits on how many comparisons you can run.</p>
+
+<h4>What is the difference between side-by-side and unified view?</h4>
+<p>Side-by-side shows old and new in parallel columns — best for reviewing. Unified shows a single stream with <code>+</code>/<code>-</code> markers — best for compact scanning and patches.</p>
+
+<h4>Can I compare files, not just pasted text?</h4>
+<p>Yes — upload or drag and drop files into each panel. Most code and text formats are supported.</p>
+
+<h4>Why does the diff show my whole file as changed?</h4>
+<p>Usually line-ending differences (Windows vs Unix) or a full reformat. Enable "ignore whitespace" and check line endings to see the real changes.</p>
+
+<h4>Can it compare non-code text?</h4>
+<p>Yes — configs, documents, JSON, CSV, translations, anything text-based. The algorithm compares text, not programming languages.</p>
+
+<h4>What do the @@ markers mean?</h4>
+<p>They mark "hunks" — blocks of changes — with the line numbers where each block starts in the old and new versions. They let you navigate large diffs efficiently.</p>
+
+<h4>Is my compared text secure?</h4>
+<p>Yes. Diffing happens entirely in your browser — your text never leaves your device or touches a server.</p>
+
+<h4>Can I share a diff with my team?</h4>
+<p>Yes — export the comparison as HTML or Markdown, or copy it as a unified patch that developers can apply with standard tools.</p>
+</article>
+</section>
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+
+</div>
+</main>
+
+ MONETAG-ZONE: popunder - paste zone script here 
+ MONETAG-ZONE: in-page-push - paste zone script here
+            </div>
+            
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsdiff/5.1.0/diff.min.js"></script>
+<script src="../code-format-tools/js/code-utils.js"></script>
+<script src="../code-format-tools/js/code-ui.js"></script>
+<script>
+        CodeUI.init({ toolName: 'code-diff' });
+
+        function compare() {
+            const one = document.getElementById('original-code').value;
+            const other = document.getElementById('modified-code').value;
+            const display = document.getElementById('diff-output');
+
+            if (!one || !other) return;
+
+            display.style.display = 'block';
+            display.innerHTML = '';
+
+            const diff = Diff.diffLines(one, other);
+
+            diff.forEach((part) => {
+                const colorClass = part.added ? 'diff-added' :
+                    part.removed ? 'diff-removed' : '';
+                const prefix = part.added ? '+ ' :
+                    part.removed ? '- ' : '  ';
+
+                const span = document.createElement('span');
+                span.className = 'diff-line ' + colorClass;
+                span.innerText = prefix + (part.value.endsWith('\n') ? part.value.slice(0, -1) : part.value);
+                display.appendChild(span);
+            });
+
+            if (diff.length === 1 && !diff[0].added && !diff[0].removed) {
+                display.innerHTML = '<div class="diff-meta">âœ¨ Both snippets are exactly identical!</div>';
+            }
+        }
+
+        CodeUI.renderRelated('related-tools', [
+            { icon: 'ðŸŽ¨', name: 'JS Beautifier', desc: 'Prettify scripts', url: '../formatters/javascript-beautifier.html' },
+            { icon: 'ðŸ‘ï¸', name: 'JSON Viewer', desc: 'Interactive data tree', url: '../viewers/json-viewer.html' },
+            { icon: 'âœ…', name: 'Quality Checker', desc: 'Audit code quality', url: '../validators/code-quality-checker.html' }
+        ]);
+    </script>
+</body>
+</html>

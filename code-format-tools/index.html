@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="22 professional, free code and format tools - Minifiers, Formatters, Validators, Encoders, and more. 100% client-side, offline supported.">
+    <title>Code & Format Tools - Free Online Developer Utilities | TOOLSHUB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .hero {
+            text-align: center;
+            padding: var(--space-12) var(--space-4);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            border-radius: var(--radius-xl);
+            margin-bottom: var(--space-8);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-3);
+        }
+
+        .hero p {
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-container {
+            max-width: 800px;
+            margin: -40px auto var(--space-10);
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: var(--space-4) var(--space-6);
+            padding-left: var(--space-12);
+            border-radius: var(--radius-lg);
+            border: none;
+            box-shadow: var(--shadow-xl);
+            font-size: 1.125rem;
+            outline: none;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: var(--space-4);
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.25rem;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .category-card {
+            background: var(--bg-primary);
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--space-6);
+            transition: var(--transition);
+        }
+
+        .category-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cat-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            margin-bottom: var(--space-4);
+        }
+
+        .cat-icon {
+            font-size: 2rem;
+        }
+
+        .cat-info h3 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .cat-desc {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        .tool-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2);
+            margin-top: var(--space-4);
+        }
+
+        .tool-link {
+            padding: var(--space-2) var(--space-3);
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .tool-link:hover {
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <button class="theme-toggle" id="theme-toggle">🌙</button>
+    <div id="header-placeholder"></div>
+    <div class="container">
+        <nav class="breadcrumb" style="margin-top: var(--space-6);">
+            <a href="../index.html">Home</a><span>›</span><span>Code & Format Tools</span>
+        </nav>
+
+        <section class="hero">
+            <h1>💻 Code & Format Tools</h1>
+            <p>High-performance developer utilities. Minify, beautify, validate, and convert code 100% client-side.</p>
+        </section>
+
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" id="tool-search"
+                placeholder="Search 22 code tools (e.g. JSON Formatter)...">
+        </div>
+
+        <div class="category-grid" id="category-grid">
+            <!-- Minifiers -->
+            <div class="category-card" data-cat="minifiers">
+                <div class="cat-header">
+                    <span class="cat-icon">🔥</span>
+                    <div class="cat-info">
+                        <h3>Minifiers & Compressors</h3>
+                        <p class="cat-desc">Optimize code for performance</p>
+                    </div>
+                </div>
+                <div class="tool-links">
+                    <a href="minifiers/html-minifier.html" class="tool-link">HTML Minifier</a>
+                    <a href="minifiers/css-minifier.html" class="tool-link">CSS Minifier</a>
+                    <a href="minifiers/javascript-minifier.html" class="tool-link">JS Minifier</a>
+                    <a href="minifiers/universal-code-compressor.html" class="tool-link">Code Compressor</a>
+                </div>
+            </div>
+
+            <!-- Formatters -->
+            <div class="category-card" data-cat="formatters">
+                <div class="cat-header">
+                    <span class="cat-icon">🎨</span>
+                    <div class="cat-info">
+                        <h3>Formatters & Beautifiers</h3>
+                        <p class="cat-desc">Clean up messy source code</p>
+                    </div>
+                </div>
+                <div class="tool-links">
+                    <a href="formatters/html-formatter.html" class="tool-link">HTML Formatter</a>
+                    <a href="formatters/javascript-beautifier.html" class="tool-link">JS Beautifier</a>
+                    <a href="formatters/css-beautifier.html" class="tool-link">CSS Beautifier</a>
+                    <a href="formatters/json-formatter.html" class="tool-link">JSON Formatter</a>
+                    <a href="formatters/sql-formatter.html" class="tool-link">SQL Formatter</a>
+                    <a href="formatters/xml-formatter.html" class="tool-link">XML Formatter</a>
+                </div>
+            </div>
+
+            <!-- Validators -->
+            <div class="category-card" data-cat="validators">
+                <div class="cat-header">
+                    <span class="cat-icon">✅</span>
+                    <div class="cat-info">
+                        <h3>Validators & Quality</h3>
+                        <p class="cat-desc">Check syntax and code quality</p>
+                    </div>
+                </div>
+                <div class="tool-links">
+                    <a href="validators/css-validator.html" class="tool-link">CSS Validator</a>
+                    <a href="validators/json-validator.html" class="tool-link">JSON Validator</a>
+                    <a href="validators/code-quality-checker.html" class="tool-link">Quality Checker</a>
+                </div>
+            </div>
+
+            <!-- Encoders -->
+            <div class="category-card" data-cat="encoders">
+                <div class="cat-header">
+                    <span class="cat-icon">ðŸ”</span>
+                    <div class="cat-info">
+                        <h3>Encoders & Decoders</h3>
+                        <p class="cat-desc">Safe data conversion</p>
+                    </div>
+                </div>
+                <div class="tool-links">
+                    <a href="encoders/base64-encoder-decoder.html" class="tool-link">Base64 Encode</a>
+                    <a href="encoders/url-encoder-decoder.html" class="tool-link">URL Encode</a>
+                </div>
+            </div>
+
+            <!-- Utilities -->
+            <div class="category-card" data-cat="utilities">
+                <div class="cat-header">
+                    <span class="cat-icon">🌈</span>
+                    <div class="cat-info">
+                        <h3>Syntax & Utilities</h3>
+                        <p class="cat-desc">Dev productivity boosters</p>
+                    </div>
+                </div>
+                <div class="tool-links">
+                    <a href="code-utilities/syntax-highlighter.html" class="tool-link">Syntax Highlighting</a>
+                    <a href="code-utilities/code-diff-viewer.html" class="tool-link">Diff Viewer</a>
+                    <a href="code-utilities/code-obfuscator.html" class="tool-link">Obfuscator</a>
+                    <a href="code-utilities/regular-expression-tester.html" class="tool-link">Regex Tester</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/code-ui.js"></script>
+    <script>
+        CodeUI.init({ toolName: 'code-tools-hub' });
+
+        // Search functionality
+        const searchInput = document.getElementById('tool-search');
+        const toolLinks = document.querySelectorAll('.tool-link');
+        const cards = document.querySelectorAll('.category-card');
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+
+            cards.forEach(card => {
+                let cardVisible = false;
+                card.querySelectorAll('.tool-link').forEach(link => {
+                    const matches = link.textContent.toLowerCase().includes(query);
+                    link.style.display = matches ? '' : 'none';
+                    if (matches) cardVisible = true;
+                });
+                card.style.display = cardVisible ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+
+</html>

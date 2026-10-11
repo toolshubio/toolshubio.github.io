@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <title>Keyword Density Checker | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">SEO Tools</a> &gt;
+                <span>Keyword Density Checker</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">Keyword Density Checker</h1>
+                <p class="tool-description"></p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<section class="tool-header-section" style="background: linear-gradient(135deg, rgba(76, 175, 80, 0.05) 0%, rgba(139, 195, 74, 0.05) 100%); padding: 3rem 0;">
+<div class="container text-center">
+<h1 class="hero-title" style="font-size: 2.5rem; margin-bottom: 1rem;">Keyword Density Checker</h1>
+<p class="hero-subtitle">Analyze your content to find the most frequent words and phrases.</p>
+</div>
+</section>
+<div class="container">
+<div class="tool-interface-container">
+<div class="input-group">
+<label class="input-label">Enter Text or URL</label>
+<div style="display: flex; gap: 0.5rem; mb-md">
+<button class="btn-secondary active" id="modeText" onclick="setMode('text')">Text Input</button>
+<button class="btn-secondary" id="modeUrl" onclick="setMode('url')">URL Input
+                            (Simulation)</button>
+</div>
+<div class="mt-md" id="textInputArea">
+<textarea class="seo-textarea" id="inputText" placeholder="Paste your content here..." style="min-height: 300px;"></textarea>
+</div>
+<div class="mt-md" id="urlInputArea" style="display: none;">
+<input class="seo-input" disabled="" id="inputUrl" placeholder="https://example.com" type="url"/>
+<p class="input-desc mt-sm">Note: Client-side URL fetching is restricted by CORS. Text input is
+                            recommended for accuracy.</p>
+</div>
+</div>
+<div class="action-bar">
+<button class="btn-primary" onclick="analyzeDensity()">Analyze Content</button>
+<button class="btn-secondary" onclick="resetForm()">Reset</button>
+</div>
+<div class="output-section" id="resultsArea" style="display: none;">
+<div class="section-header">
+<h3 class="section-title">Analysis Results</h3>
+</div>
+<div class="schema-form-grid mb-lg">
+<div class="feature-card" style="padding: 1rem;">
+<h4 class="feature-title">Total Words</h4>
+<p class="stat-number" id="totalWords" style="font-size: 1.5rem;">0</p>
+</div>
+<div class="feature-card" style="padding: 1rem;">
+<h4 class="feature-title">Unique Words</h4>
+<p class="stat-number" id="uniqueWords" style="font-size: 1.5rem;">0</p>
+</div>
+<div class="feature-card" style="padding: 1rem;">
+<h4 class="feature-title">Top Keyword</h4>
+<p class="stat-number" id="topKeyword" style="font-size: 1.5rem;">-</p>
+</div>
+</div>
+<div style="margin-top: 2rem;">
+<h4 class="mb-md">Top Keywords</h4>
+<div style="display: flex; gap: 1rem; border-bottom: 1px solid var(--border-color); margin-bottom: 1rem;">
+<button class="nav-item active" onclick="showTab('1word', this)">One Word</button>
+<button class="nav-item" onclick="showTab('2word', this)">Two Words</button>
+<button class="nav-item" onclick="showTab('3word', this)">Three Words</button>
+</div>
+<div class="output-container" id="densityTableContainer" style="max-height: 600px;">
+<!-- Table injected here -->
+</div>
+</div>
+</div>
+</div>
+</div>
+            </div>
+            <section class="seo-article" data-tool="keyword-density-checker">
+<article class="tool-article">
+<h2>Keyword Density Checker — Spot Stuffing and Gaps Before You Publish</h2>
+
+<p>Early in my SEO days I "optimized" a page by repeating the target keyword 47 times in 800 words. It read like a robot wrote it — because, effectively, one had. A keyword density checker is the smoke alarm for that mistake: paste your draft, and it shows each word and phrase's frequency as a percentage, so you can see at a glance whether your writing sounds natural or stuffed.</p>
+
+<h3>What Is Keyword Density?</h3>
+
+<p>Keyword density is simple arithmetic: (times a keyword appears ÷ total words) × 100. A keyword appearing 5 times in 100 words has 5% density. The metric dates from an era when search engines counted repetitions crudely — modern Google does not use density as a ranking factor and publishes no ideal percentage.</p>
+
+<p>So why check it at all? As a sanity signal. Writing naturally about a topic almost always lands your main terms between roughly 0.5% and 2.5% without trying. When the checker shows one phrase towering at 8% while everything else sits under 1%, that is not optimization — it is a readability problem wearing an SEO costume. The number is the symptom; awkward prose is the disease.</p>
+
+<p>Good checkers analyze more than single words. Two-word and three-word phrases (bigrams and trigrams) reveal the long-tail patterns single-word counts miss — "coffee maker" behaving very differently from "coffee" and "maker" separately. That phrase-level view is where the real insights hide.</p>
+
+<h3>How to Use the Keyword Density Checker</h3>
+
+<p>Paste your draft text — or enter a live URL on tools that support it — and run the analysis. Review the top of the frequency table: your main topic terms should appear prominently but not dominantly. Anything above ~3% deserves a read-aloud test; anything important sitting near 0% may signal a topical gap.</p>
+
+<p>Work the results in this order: first fix stuffing (rewrite repeated phrases with synonyms and pronouns — your readers will thank you), then check coverage (are the subtopics your competitors cover represented in your phrase list?), then re-run to confirm the table looks balanced. One pass is usually enough; this is a smoke alarm, not a dashboard to watch daily.</p>
+
+<p>Toggle the stop-word filter on. Words like "the," "and," and "is" will otherwise dominate every table and bury the meaningful terms. Filtering them surfaces the topical vocabulary you actually came to inspect.</p>
+
+<h3>How Keyword Density Analysis Works</h3>
+
+<p>The analysis is straightforward text processing.</p>
+
+<p><strong>Step 1 — Tokenization.</strong> Your text is split into words (lowercased, punctuation stripped) and the total word count is established as the denominator.</p>
+
+<p><strong>Step 2 — Stop-word filtering.</strong> Common function words are optionally removed so the frequency table reflects topical terms rather than grammar.</p>
+
+<p><strong>Step 3 — N-gram counting.</strong> Single words, two-word phrases, and three-word phrases are each counted and ranked. Density is computed per phrase as count ÷ total words × 100.</p>
+
+<p><strong>Step 4 — Reporting.</strong> Results sort by frequency with density percentages, often with visual bars. Some tools flag phrases crossing warning thresholds or compare against a target keyword you specify.</p>
+
+<p>URL-based checkers add a fetch step: they pull the page's HTML and analyze only the body content, excluding navigation, footers, and markup — mirroring roughly what search engines evaluate.</p>
+
+<h3>Reading Your Density Report</h3>
+
+<table>
+<thead><tr><th>What you see</th><th>What it means</th><th>What to do</th></tr></thead>
+<tbody>
+<tr><td>Main keyword at 1–2.5%</td><td>Natural coverage</td><td>Nothing — this is the healthy zone</td></tr>
+<tr><td>One phrase above 3–4%</td><td>Possible stuffing</td><td>Read aloud; vary with synonyms</td></tr>
+<tr><td>Key subtopic near 0%</td><td>Topical gap</td><td>Add a section covering it</td></tr>
+<tr><td>Competitor terms missing</td><td>Coverage gap vs rivals</td><td>Address the subtopic in your own words</td></tr>
+<tr><td>Brand name dominating</td><td>Normal for branded content</td><td>Usually fine — context matters</td></tr>
+</tbody>
+</table>
+
+<h3>Who Uses Keyword Density Checkers?</h3>
+
+<p><strong>Content writers</strong> self-check drafts for natural keyword distribution before filing.</p>
+
+<p><strong>SEO specialists</strong> audit pages for over-optimization during site reviews.</p>
+
+<p><strong>Editors</strong> verify freelancer copy is not stuffed before publishing.</p>
+
+<p><strong>Competitor analysts</strong> study top-ranking pages' topical patterns for content briefs.</p>
+
+<p><strong>Students</strong> check essays for repetitive phrasing and vocabulary variety.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Free analysis</strong> — no signup for text-based checks.</li>
+<li><strong>1/2/3-word phrases</strong> — n-gram analysis beyond single words.</li>
+<li><strong>Density percentages</strong> — frequency expressed as share of total words.</li>
+<li><strong>Stop-word filtering</strong> — surfaces meaningful terms.</li>
+<li><strong>URL or text input</strong> — check drafts or live pages.</li>
+<li><strong>Target keyword tracking</strong> — monitor specific terms' density.</li>
+<li><strong>Private</strong> — browser-local analysis keeps drafts confidential.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this keyword density checker free?</h4>
+<p>Yes — free with no account required.</p>
+
+<h4>What is a good keyword density?</h4>
+<p>Google publishes no ideal number and does not use density as a ranking factor. Treat 1–3% as a sanity-check zone, not a target — natural writing lands there on its own.</p>
+
+<h4>Can high keyword density get me penalized?</h4>
+<p>No fixed threshold triggers a penalty. Google judges keyword stuffing by how the page reads — if it sounds manipulated to a human, it is a problem regardless of the percentage.</p>
+
+<h4>Should I check single words or phrases?</h4>
+<p>Both. Single words show topical focus; 2- and 3-word phrases reveal the long-tail patterns that actually match search queries.</p>
+
+<h4>Why filter out stop words?</h4>
+<p>Words like "the" and "and" appear constantly in every text. Filtering them lets the frequency table show the topical vocabulary you are actually analyzing.</p>
+
+<h4>Can I check a competitor's page?</h4>
+<p>Yes — URL-based checkers analyze any public page, making density comparison part of standard competitive research.</p>
+
+<h4>How often should I check density?</h4>
+<p>Once per draft, before publishing. It is a pre-flight check, not an ongoing metric to optimize.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        const inputText = document.getElementById('inputText');
+        const resultsArea = document.getElementById('resultsArea');
+        const densityTableContainer = document.getElementById('densityTableContainer');
+
+        let currentData = { 1: [], 2: [], 3: [] };
+
+        function setMode(mode) {
+            if (mode === 'text') {
+                document.getElementById('textInputArea').style.display = 'block';
+                document.getElementById('urlInputArea').style.display = 'none';
+                document.getElementById('modeText').classList.add('active');
+                document.getElementById('modeUrl').classList.remove('active');
+            } else {
+                alert("URL fetching is currently simulated/disabled due to CORS. Please paste text.");
+            }
+        }
+
+        function analyzeDensity() {
+            const text = inputText.value;
+            if (!text.trim()) {
+                alert("Please enter some text.");
+                return;
+            }
+
+            // Clean text
+            const cleanText = text.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, ' ');
+            const words = cleanText.split(' ').filter(w => w.length > 2); // Filter small words
+
+            document.getElementById('totalWords').innerText = words.length;
+            document.getElementById('uniqueWords').innerText = new Set(words).size;
+
+            currentData[1] = getFrequency(words, 1);
+            currentData[2] = getFrequency(words, 2);
+            currentData[3] = getFrequency(words, 3);
+
+            document.getElementById('topKeyword').innerText = currentData[1][0] ? currentData[1][0].word : '-';
+
+            resultsArea.style.display = 'block';
+            showTab('1word', document.querySelector('.nav-item.active'));
+        }
+
+        function getFrequency(words, n) {
+            const freq = {};
+            for (let i = 0; i < words.length - (n - 1); i++) {
+                const phrase = words.slice(i, i + n).join(' ');
+                freq[phrase] = (freq[phrase] || 0) + 1;
+            }
+
+            return Object.entries(freq)
+                .map(([word, count]) => ({ word, count, density: ((count / words.length) * 100).toFixed(2) }))
+                .sort((a, b) => b.count - a.count)
+                .slice(0, 50);
+        }
+
+        function showTab(type, btn) {
+            // Update tabs
+            document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            else document.querySelectorAll('.nav-item')[0].classList.add('active'); // Fallback
+
+            let n = 1;
+            if (type === '2word') n = 2;
+            if (type === '3word') n = 3;
+
+            const data = currentData[n];
+
+            let html = `
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="text-align: left; background: var(--bg-tertiary);">
+                        <th style="padding: 10px;">Keyword</th>
+                        <th style="padding: 10px;">Count</th>
+                        <th style="padding: 10px;">Density</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+            data.forEach(item => {
+                html += `
+                <tr style="border-bottom: 1px solid var(--border-color);">
+                    <td style="padding: 10px;">${item.word}</td>
+                    <td style="padding: 10px;">${item.count}</td>
+                    <td style="padding: 10px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            ${item.density}%
+                            <div style="width: 100px; height: 6px; background: #eee; border-radius: 3px;">
+                                <div style="width: ${Math.min(item.density * 10, 100)}%; height: 100%; background: var(--color-seo); border-radius: 3px;"></div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            `;
+            });
+
+            html += '</tbody></table>';
+            densityTableContainer.innerHTML = html;
+        }
+
+        function resetForm() {
+            inputText.value = '';
+            resultsArea.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

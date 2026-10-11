@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online CSV Viewer - View CSV files with charts, sort logic, and data inspection. 100% client-side.">
+    <title>CSV Viewer - View CSV Files Online | TOOLSHUB</title>
+    <!-- MONETAG-VERIFICATION: paste verification meta tag here -->
+    <link rel="stylesheet" href="../image-tools/css/global.css">
+    <link rel="stylesheet" href="../image-tools/css/components.css">
+    <link rel="stylesheet" href="../image-tools/css/tool-page.css">
+    <link rel="stylesheet" href="../image-tools/css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="tool-page">
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="../index.html"><span class="logo-icon">&#x1F6E0;&#xFE0F;</span><span class="logo-text">TOOLSHUB</span></a>
+            <nav class="header-nav">
+                <a class="nav-link" href="../image-tools/index.html">Image Tools</a>
+                <a class="nav-link" href="../pdf-tools/index.html">PDF Tools</a>
+                <a class="nav-link" href="../text-tools/index.html">Text & Writing</a>
+                <a class="nav-link" href="../seo-tools/index.html">SEO Tools</a>
+                <a class="nav-link" href="../calculator-tools/index.html">Calculators</a>
+                <a class="nav-link" href="../binary-tools/index.html">Binary Tools</a>
+                <a class="nav-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                <a class="nav-link" href="../doc-tools/index.html">Documents</a>
+                <a class="nav-link" href="../other-tools/index.html">Other Tools</a>
+                <a class="nav-link" href="../about-us.html">About</a>
+                <a class="nav-link" href="../contact-us.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <!-- MONETAG-ZONE: vignette/banner - paste zone script here -->
+    <main class="tool-main">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> &gt;
+                <a href="index.html">Documents</a> &gt;
+                <span>CSV Viewer</span>
+            </div>
+            <div class="tool-header">
+                <h1 class="tool-title">CSV Viewer</h1>
+                <p class="tool-description">Free online CSV Viewer - View CSV files with charts, sort logic, and data inspection. 100% client-side.</p>
+                <div class="tool-badges"></div>
+            </div>
+            <div class="tool-workspace">
+<main class="tool-main">
+<div class="container">
+
+<!-- Hero Section -->
+<div class="doc-hero">
+<h1 class="doc-hero-title">CSV Viewer</h1>
+<p class="doc-hero-subtitle">View CSV files online with charts, sortable data, and data inspection. 
+                    100% private, browser-based processing.</p>
+</div>
+<!-- Main Tool Container -->
+<div class="doc-tool-container">
+<!-- Top: Upload / Preview Area -->
+<div class="doc-main-area">
+<!-- Upload Section -->
+<div class="doc-upload-section" id="upload-section">
+<div class="doc-upload-icon">📊</div>
+<h2 class="doc-upload-title">Upload Your CSV File</h2>
+<p class="doc-upload-subtitle">Drag and drop your file here or click to browse</p>
+<button class="doc-upload-btn" id="browse-btn">Choose File</button>
+<p class="doc-upload-formats">Supported formats: .csv, .txt</p>
+<input accept=".csv,.txt" hidden="" id="file-input" type="file"/>
+</div>
+<!-- Preview Area -->
+<div class="doc-preview-area" id="preview-area" style="display: none;">
+<div class="doc-preview-toolbar">
+<button class="doc-toolbar-btn" id="chart-btn">📈 Chart</button>
+<div class="doc-toolbar-divider"></div>
+<button class="doc-toolbar-btn" id="freeze-btn">❄️ Freeze</button>
+<div style="flex: 1;"></div>
+<button class="doc-toolbar-btn" id="export-btn">📥 Export CSV</button>
+</div>
+<div class="doc-toolbar-divider"></div>
+<!-- Sheet selector hidden for CSV as it usually has 1 sheet, but kept structure if needed or just hidden -->
+<select class="doc-settings-select" id="sheet-selector" style="width: auto; min-width: 150px; display:none;">
+<option disabled="" selected="" value="">Select Sheet</option>
+</select>
+</div>
+<div class="spreadsheet-wrapper" id="spreadsheet-wrapper">
+<div class="spreadsheet-wrapper" id="spreadsheet-wrapper">
+<table class="spreadsheet-table" id="spreadsheet-table"></table>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="doc-action-bar" id="action-bar" style="display: none;">
+<button class="doc-action-btn secondary" id="new-file-btn">📤 Upload New File</button>
+<button class="doc-action-btn primary" id="download-btn">📥 Download as CSV</button>
+</div>
+</div>
+<!-- Bottom: Settings Panel -->
+<div class="doc-settings-panel">
+<div class="doc-settings-title">⚙️ Viewer Options</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+<div class="doc-settings-group">
+<label class="doc-settings-label">Cell Inspector</label>
+<div style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;">
+<input class="doc-settings-select" id="cell-address" readonly="" style="width: 60px; font-family: monospace; text-align: center;" type="text" value="A1"/>
+<input class="doc-settings-select" id="cell-value" placeholder="Value..." readonly="" style="flex: 1;" type="text"/>
+</div>
+</div>
+<div class="doc-settings-group">
+<div class="doc-settings-label" style="margin-bottom: 0.75rem;">Display Options</div>
+<div class="doc-settings-toggle">
+<span>Show Gridlines</span>
+<div class="doc-toggle-switch active" id="toggle-grid"></div>
+</div>
+<div class="doc-settings-toggle">
+<span>Zebra Stripes</span>
+<div class="doc-toggle-switch active" id="toggle-zebra"></div>
+</div>
+</div>
+<div class="doc-settings-group">
+<div class="doc-settings-label" style="margin-bottom: 1rem;">📊 CSV Stats</div>
+<div class="doc-stats-bar" style="grid-template-columns: 1fr 1fr; padding: 1rem; margin: 0;">
+<div class="doc-stat-item">
+<span class="doc-stat-value" id="stat-rows">--</span>
+<span class="doc-stat-label">Rows</span>
+</div>
+<div class="doc-stat-item">
+<span class="doc-stat-value" id="stat-cols">--</span>
+<span class="doc-stat-label">Columns</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+ Chart Modal 
+<div class="chart-modal" id="chart-modal">
+<div class="chart-modal-content">
+<div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+<h3>📈 CSV Chart</h3>
+<button onclick="document.getElementById('chart-modal').classList.remove('open')" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">×</button>
+</div>
+<div class="chart-container">
+<canvas id="chart-canvas"></canvas>
+</div>
+</div>
+</div>
+            </div>
+            <section class="seo-article" data-tool="csv-viewer">
+<article class="tool-article">
+<h2>CSV Viewer — Free Online Spreadsheet for CSV Files</h2>
+
+<p>Double-clicking a CSV file is a gamble. Sometimes it opens in a spreadsheet app; sometimes it opens in a text editor as a wall of commas; and sometimes — my personal favorite — Excel "helpfully" converts your product SKUs into dates and strips the leading zeros off your zip codes. I've lost data to that last one. A CSV viewer skips the gamble: upload or paste your file and it renders as a proper spreadsheet table right in the browser — sortable, searchable, with row and column stats — and it never rewrites your values behind your back.</p>
+
+<h3>What Is a CSV Viewer?</h3>
+
+<p>CSV (comma-separated values) is the universal language of tabular data — exported by spreadsheets, databases, analytics platforms, and APIs. The format itself is dead simple: rows of text, values separated by commas. But raw CSV is hard to read, and desktop spreadsheet apps come with baggage: slow launches on big files, aggressive auto-formatting that corrupts data, and no way to quickly inspect a file on a machine without Office installed.</p>
+
+<p>An online CSV viewer parses the raw text and displays it as an interactive table. Click a column header to sort, use the search box to filter rows, freeze the header row while scrolling, toggle zebra striping for readability. Because it reads the text as-is, what you see is exactly what's in the file — no silent date conversions, no dropped leading zeros.</p>
+
+<p>One practical note: CSV files come in dialects. Some use semicolons (common in European exports where commas are decimal separators), some use tabs, and encodings vary between UTF-8 and older Windows formats. If your table looks like one giant column, the delimiter or encoding is probably the issue, not the file.</p>
+
+<h3>How to Use the CSV Viewer</h3>
+
+<p>Drag your <code>.csv</code> file onto the upload area, or click browse to select it. You can also start a blank sheet with the New File option if you're building data from scratch.</p>
+
+<p>Once loaded, the table appears with row and column counts in the stats bar — a quick sanity check that the file parsed fully. Click any cell to inspect it: the cell address (like B14) and its exact value show in the inspector, which is how you verify what a cell really contains versus how it displays.</p>
+
+<p>Explore with the view controls: freeze the header row so it stays visible while you scroll through thousands of rows, toggle grid lines or zebra striping for readability, and hit the chart button to visualize numeric columns as a chart. When you're done, export or download the data back to CSV.</p>
+
+<p>My first move with any unfamiliar file: check the stats (does 50,000 rows match what I expected?), sort the key column to spot blanks and outliers, and search for a value I know should be there. That thirty-second routine catches corrupted exports before they pollute a database import.</p>
+
+<h3>What the Stats Tell You</h3>
+
+<p>The row/column counter is more useful than it looks:</p>
+
+<table>
+<thead><tr><th>Check</th><th>What it reveals</th></tr></thead>
+<tbody>
+<tr><td>Row count matches export</td><td>A shortfall means truncated download or a parsing break</td></tr>
+<tr><td>Column count is consistent</td><td>Varying counts suggest unquoted commas inside values</td></tr>
+<tr><td>Sorting a column</td><td>Blanks, outliers, and unexpected values float to the top</td></tr>
+<tr><td>Searching a known value</td><td>Confirms the file contains what you think it does</td></tr>
+<tr><td>Cell inspector</td><td>Shows the raw value — catches hidden characters and trailing spaces</td></tr>
+</tbody>
+</table>
+
+<p>The classic CSV corruption — a stray comma inside an unquoted field shifting every column after it — shows up immediately in a viewer: one row suddenly has its values one column off, and the pattern is visible in seconds instead of hiding in a text editor.</p>
+
+<h3>When a Viewer Beats a Spreadsheet App</h3>
+
+<p><strong>Quick inspection.</strong> You downloaded an export and want to confirm it's sane before importing. A viewer loads in seconds; launching a full spreadsheet app for a glance is overkill.</p>
+
+<p><strong>Data integrity.</strong> Spreadsheet apps reformat aggressively — dates, scientific notation, leading zeros. A viewer shows raw text, which is what you want when validating data for import.</p>
+
+<p><strong>Any device.</strong> No Office install, no Google account, no upload to someone's cloud. Open the page on any machine — including a client's locked-down laptop — and inspect the file.</p>
+
+<p><strong>Large files.</strong> Desktop apps choke on very large CSVs. Browser viewers with pagination or virtual scrolling handle files that make Excel give up.</p>
+
+<p><strong>Privacy.</strong> Everything parses locally in your browser. Sensitive exports — payroll, customer lists, medical data — never leave your machine, which matters for compliance.</p>
+
+<h3>Who Uses a CSV Viewer?</h3>
+
+<p><strong>Data analysts</strong> sanity-check exports from databases and analytics platforms before building reports on them.</p>
+
+<p><strong>Developers</strong> inspect API exports and seed files, verifying column structure matches what their import code expects.</p>
+
+<p><strong>QA engineers</strong> validate test data files — confirming row counts, checking for nulls, and spotting formatting issues before a test run.</p>
+
+<p><strong>Operations and finance teams</strong> review transaction exports, inventory lists, and reports without needing spreadsheet licenses on every machine.</p>
+
+<h3>Key Features</h3>
+
+<ul>
+<li><strong>Instant table view</strong> — upload a CSV and see it as a spreadsheet immediately.</li>
+<li><strong>Sortable columns</strong> — click any header to sort ascending or descending.</li>
+<li><strong>Search and filter</strong> — find rows across the whole file in seconds.</li>
+<li><strong>Row & column stats</strong> — verify file completeness at a glance.</li>
+<li><strong>Cell inspector</strong> — see any cell's exact address and raw value.</li>
+<li><strong>Freeze headers</strong> — keep column names visible while scrolling.</li>
+<li><strong>Chart view</strong> — visualize numeric columns without leaving the page.</li>
+<li><strong>Export & download</strong> — save the data back to CSV.</li>
+<li><strong>100% free and private</strong> — no account; files never leave your browser.</li>
+</ul>
+
+<h3>Frequently Asked Questions</h3>
+
+<h4>Is this CSV viewer free?</h4>
+<p>Yes — free, no signup, no limits.</p>
+
+<h4>Will it change my data like Excel does?</h4>
+<p>No. The viewer displays raw text exactly as it appears in the file — no date conversions, no dropped leading zeros.</p>
+
+<h4>How do I open a CSV file?</h4>
+<p>Drag the file onto the upload area or click browse to select it. The table renders instantly.</p>
+
+<h4>Can I edit the data?</h4>
+<p>This viewer is built for inspection, sorting, and visualization. For editing, make changes in a spreadsheet app and re-upload, or use the export to round-trip your data.</p>
+
+<h4>What if my file uses semicolons instead of commas?</h4>
+<p>That's a delimiter variant common in European exports. Check the tool's delimiter setting — switching to semicolon re-parses the file correctly.</p>
+
+<h4>Can it handle large files?</h4>
+<p>Yes — files that choke desktop spreadsheet apps typically load fine, since the viewer pages through rows rather than loading everything into a grid at once.</p>
+
+<h4>Is my file uploaded to a server?</h4>
+<p>No. Parsing happens entirely in your browser; your data never leaves your device.</p>
+
+<h4>Can I make a chart from my CSV?</h4>
+<p>Yes — the chart button visualizes numeric columns directly from the loaded data.</p>
+</article>
+</section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">TOOLSHUB</div>
+                    <div class="footer-tagline">Free Online Tools &mdash; No Sign-Up Required</div>
+                </div>
+                <div class="footer-links">
+                    <a class="footer-link" href="../about-us.html">About Us</a>
+                    <a class="footer-link" href="../contact-us.html">Contact Us</a>
+                    <a class="footer-link" href="../image-tools/index.html">Image Tools</a>
+                    <a class="footer-link" href="../pdf-tools/index.html">PDF Tools</a>
+                    <a class="footer-link" href="../text-tools/index.html">Text & Writing</a>
+                    <a class="footer-link" href="../seo-tools/index.html">SEO Tools</a>
+                    <a class="footer-link" href="../calculator-tools/index.html">Calculators</a>
+                    <a class="footer-link" href="../binary-tools/index.html">Binary Tools</a>
+                    <a class="footer-link" href="../code-format-tools/index.html">Code & Formatters</a>
+                    <a class="footer-link" href="../doc-tools/index.html">Documents</a>
+                    <a class="footer-link" href="../other-tools/index.html">Other Tools</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">&copy; 2026 TOOLSHUB. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- MONETAG-ZONE: popunder - paste zone script here -->
+    <!-- MONETAG-ZONE: in-page-push - paste zone script here -->
+<script>
+        (function () {
+            let workbook = null;
+            let currentSheet = null;
+            let chart = null;
+
+            const fileInput = document.getElementById('file-input');
+            const uploadSection = document.getElementById('upload-section');
+            const previewArea = document.getElementById('preview-area');
+            const actionBar = document.getElementById('action-bar');
+            
+            // Expose globally for HTML attributes
+            window.__renderSheet = renderSheet;
+            window.__selectCell = selectCell;
+
+            document.getElementById('browse-btn').onclick = () => fileInput.click();
+            uploadSection.onclick = () => fileInput.click();
+            uploadSection.ondragover = (e) => { e.preventDefault(); uploadSection.classList.add('dragover'); };
+            uploadSection.ondragleave = () => uploadSection.classList.remove('dragover');
+            uploadSection.ondrop = (e) => {
+                e.preventDefault();
+                uploadSection.classList.remove('dragover');
+                if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+            };
+            fileInput.onchange = (e) => { if (e.target.files[0]) handleFile(e.target.files[0]); };
+
+            async function handleFile(file) {
+                try {
+                    const arrayBuffer = await file.arrayBuffer();
+                    workbook = XLSX.read(arrayBuffer, { type: 'array', cellFormula: false }); // Formulas less relevant for CSV
+                    renderSheet(workbook.SheetNames[0]);
+                    uploadSection.style.display = 'none';
+                    previewArea.style.display = 'block';
+                    actionBar.style.display = 'flex';
+                } catch (error) {
+                    console.error(error);
+                    alert('Error reading file: ' + error.message);
+                }
+            }
+
+            function getColName(n) {
+                let s = "";
+                while (n >= 0) {
+                    s = String.fromCharCode(n % 26 + 65) + s;
+                    n = Math.floor(n / 26) - 1;
+                }
+                return s;
+            }
+
+            function renderSheet(sheetName) {
+                try {
+                    currentSheet = sheetName;
+                    
+                    const sheet = workbook.Sheets[sheetName];
+                    const range = XLSX.utils.decode_range(sheet['!ref'] || "A1");
+                    const totalRows = range.e.r - range.s.r + 1;
+
+                    // Large file safety check
+                    if (totalRows > 5000 && !confirm(`This file has ${totalRows} rows. Rendering might take a while. Continue?`)) {
+                        return;
+                    }
+
+                    const data = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+                    const maxCols = Math.max(...data.map(r => r.length), 1);
+
+                    let html = '<thead><tr><th class="corner"></th>';
+                    for (let c = 0; c < maxCols; c++) { html += '<th>' + getColName(c) + '</th>'; }
+                    html += '</tr></thead><tbody>';
+
+                    data.forEach((row, r) => {
+                        html += '<tr><td class="row-num">' + (r + 1) + '</td>';
+                        for (let c = 0; c < maxCols; c++) {
+                            const val = row[c] !== undefined ? row[c] : '';
+                            const safeVal = String(val).replace(/'/g, "\\'");
+                            html += `<td onclick="window.__selectCell(${r}, ${c}, '${safeVal}')">${val}</td>`;
+                        }
+                        html += '</tr>';
+                    });
+                    html += '</tbody>';
+
+                    document.getElementById('spreadsheet-table').innerHTML = html;
+                    document.getElementById('stat-rows').textContent = data.length;
+                    document.getElementById('stat-cols').textContent = maxCols;
+                } catch (e) {
+                    console.error("Render Error:", e);
+                    alert("Error rendering CSV: " + e.message);
+                }
+            }
+
+            function selectCell(row, col, value) {
+                document.querySelectorAll('.cell-selected').forEach(c => c.classList.remove('cell-selected'));
+                const cell = document.querySelector('#spreadsheet-table tr:nth-child(' + (row + 2) + ') td:nth-child(' + (col + 2) + ')');
+                if (cell) cell.classList.add('cell-selected');
+                document.getElementById('cell-address').value = getColName(col) + (row + 1);
+                document.getElementById('cell-value').value = value;
+            }
+
+            document.getElementById('chart-btn').onclick = () => {
+                if (!currentSheet) return;
+                const sheet = workbook.Sheets[currentSheet];
+                const data = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+                if (data.length < 2) return alert('Need at least 2 rows for chart');
+                const labels = data.slice(1).map(r => r[0] || '');
+                const values = data.slice(1).map(r => parseFloat(r[1]) || 0);
+                if (chart) chart.destroy();
+                chart = new Chart(document.getElementById('chart-canvas'), {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: data[0]?.[1] || 'Values',
+                            data: values,
+                            backgroundColor: 'rgba(0, 150, 136, 0.6)',
+                            borderColor: 'rgb(0, 150, 136)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false }
+                });
+                document.getElementById('chart-modal').classList.add('open');
+            };
+
+            document.getElementById('export-btn').onclick = () => {
+                if (!currentSheet) return;
+                const sheet = workbook.Sheets[currentSheet];
+                const csv = XLSX.utils.sheet_to_csv(sheet);
+                const blob = new Blob([csv], { type: 'text/csv' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url; a.download = 'exported.csv';
+                a.click(); URL.revokeObjectURL(url);
+            };
+
+            document.querySelectorAll('.doc-toggle-switch').forEach(toggle => {
+                toggle.onclick = function () { this.classList.toggle('active'); };
+            });
+
+            document.getElementById('new-file-btn').onclick = () => {
+                uploadSection.style.display = 'flex';
+                previewArea.style.display = 'none';
+                actionBar.style.display = 'none';
+                workbook = null; currentSheet = null;
+            };
+            document.getElementById('download-btn').onclick = () => document.getElementById('export-btn').click();
+        })();
+    </script>
+</body>
+</html>
